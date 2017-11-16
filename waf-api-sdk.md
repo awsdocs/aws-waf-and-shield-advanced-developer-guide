@@ -1,3 +1,0 @@
-# Using the AWS SDKs<a name="waf-api-sdk"></a>
-
-If you use a language that AWS provides an SDK for, use the SDK rather than trying to work your way through the APIs\. The SDKs make authentication simpler, integrate easily with your development environment, and provide easy access to AWS WAF and Shield Advanced commands\. For more information about the AWS SDKs, see [Step 3: Download Tools](setting-up-waf.md#setting-up-waf-tools) in the topic [Setting Up for AWS WAF and AWS Shield](setting-up-waf.md)\.

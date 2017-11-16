@@ -1,5 +1,0 @@
-# AWS WAF PCI DSS Compliance<a name="pci-compliance"></a>
-
-AWS WAF is now a Payment Card Industry \(PCI\) Data Security Standard \(DSS\) 3\.2 compliant service\. The PCI Standards Council published PCI DSS version 3\.2 in April 2016 as the most updated set of requirements available\. PCI DSS 3\.2 has revised and clarified the online credit card transaction requirements for encryption, access control, change management, application security, and risk management programs\.
-
-For more information about AWS and PCI DSS 3\.2 compliance, see [AWS Becomes First Cloud Service Provider to Adopt New PCI DSS 3\.2](https://blogs.aws.amazon.com/security/post/Tx20SIO4LU1XDFA/AWS-Becomes-First-Cloud-Service-Provider-to-Adopt-New-PCI-DSS-3-2) on the AWS Security Blog\. For more information about PCI DSS version 3\.2, see [PCI DSS 3\.2: What's New?](https://blog.pcisecuritystandards.org/pci-dss-32-is-here)\.
