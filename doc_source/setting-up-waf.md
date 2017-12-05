@@ -2,6 +2,8 @@
 
 This topic describes preliminary steps, such as creating an AWS account, to prepare you to use AWS WAF and AWS Shield Advanced\. You do not get charged to set up this account and other preliminary items\. You are only charged for AWS services that you use\. 
 
+After you complete these steps, see [Getting Started with AWS WAF](getting-started.md) to continue getting started with AWS WAF\.
+
 **Note**  
 AWS Shield Standard is included with AWS WAF and does not require additional setup\. For more information, see [How AWS Shield Works](ddos-overview.md)\.
 
@@ -88,9 +90,11 @@ https://your_account_alias.signin.aws.amazon.com/console/
 
 To verify the sign\-in link for IAM users for your account, open the IAM console and check under the **IAM users sign\-in link** on the dashboard\. 
 
+After you complete these steps, you can stop here and go to [Getting Started with AWS WAF](getting-started.md) to continue getting started with AWS WAF using the console\. If you want to access AWS WAF programatically using the AWS WAF API, continue on to the next step, [Step 3: Download Tools](#setting-up-waf-tools)\.
+
 ## Step 3: Download Tools<a name="setting-up-waf-tools"></a>
 
-The AWS Management Console includes a console for AWS WAF, but if you want to access AWS WAF programmatically, the following documentation and tools will help you:
+The AWS Management Console includes a console for AWS WAF, but if you want to access AWS WAF programatically, the following documentation and tools will help you:
 
 + If you want to call the AWS WAF API without having to handle low\-level details like assembling raw HTTP requests, you can use an AWS SDK\. The AWS SDKs provide functions and data types that encapsulate the functionality of AWS WAF and other AWS services\. To download an AWS SDK, see the applicable page, which also includes prerequisites and installation instructions:
 

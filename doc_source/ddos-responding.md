@@ -1,6 +1,8 @@
 # Responding to DDoS Attacks<a name="ddos-responding"></a>
 
-Layer 3 and layer 4 attacks are addressed automatically by AWS\. However, if DDoS alarms in CloudWatch  indicate a possible layer 7 attack, you have two options:
+Layer 3 and layer 4 attacks are addressed automatically by AWS\. If you use Shield Advanced to protect your Amazon EC2 instances, during an attack Shield Advanced will automatically deploy your Amazon VPC network ACLs to the border of the AWS network, which allows Shield Advanced to provide protection against larger DDoS events\. For more information about network ACLs, see [Network ACLs](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html)\.
+
+If DDoS alarms in CloudWatch  indicate a possible layer 7 attack, you have two options:
 
 + Investigate and mitigate the attack on your own: If you determine that activity represents a DDoS attack, you can create your own AWS WAF rules to mitigate the attack\. AWS WAF is included with AWS Shield Advanced at no additional cost\. AWS provides preconfigured templates to get you started quickly\. The templates include a set of AWS WAF rules, which are designed to block common web\-based attacks\. You can customize the rules to fit your business needs\. For more information, see [AWS WAF Security Automations](https://aws.amazon.com/answers/security/aws-waf-security-automations/) and [Creating a Web ACL](web-acl-creating.md)\. 
 
@@ -9,3 +11,5 @@ Layer 3 and layer 4 attacks are addressed automatically by AWS\. However, if DDo
   To get DRT support, contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/) and explain that you are an AWS Shield Advanced customer experiencing a possible attack\. Our representative will direct your call to the appropriate DDoS experts\. If you open a case with the [AWS Support Center](https://console.aws.amazon.com/support/home#/) using the **Distributed Denial of Service \(DDoS\)** service type, you can speak directly with a DDoS expert by chat or telephone\. DDoS support engineers can help you identify attacks, recommend improvements to your AWS architecture, and provide guidance in the use of AWS services for DDoS attack mitigation\.
 **Important**  
 For layer 7 attacks, the DRT can help you analyze the suspicious activity, and then assist you to mitigate the issue\. This mitigation often requires the DRT to create or update AWS WAF web access control lists \(web ACLs\) in your account\. However, they need your permission to do so\. We recommend that as part of enabling AWS Shield Advanced, you follow the steps in [Step 3: Authorize the DDoS Response Team to Create Rules and Web ACLs on Your Behalf](authorize-DRT.md) to proactively provide the DRT with the needed permissions\. Providing permission ahead of time helps to prevent any delays in the event of an actual attack\.
+
+  You can also contact the DRT before or during a possible attack to develop and deploy custom mitigations\. For example, if you are running a web application and only need ports 80 and 443 open, you can work with the DRT to pre\-configure an ACL to only "Allow" ports 80 and 443\.

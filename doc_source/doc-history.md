@@ -9,6 +9,8 @@ The following table describes important changes in each release of the *AWS WAF 
 
 | Change | API Version | Description | Release Date | 
 | --- | --- | --- | --- | 
+| Update | 2016\-08\-24 | Marketplace rule groups | November, 2017 | 
+| Update | 2016\-08\-24 | Shield Advanced support for Elastic IP addresses | November, 2017 | 
 | Update | 2016\-08\-24 | Global threat environment dashboard | November, 2017 | 
 | Update | 2016\-08\-24 | DDoS\-resistant website tutorial | October, 2017 | 
 | Update | 2016\-08\-24 | Geo and regex conditions | October, 2017 | 

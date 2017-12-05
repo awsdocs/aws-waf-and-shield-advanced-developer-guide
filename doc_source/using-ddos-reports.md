@@ -1,6 +1,22 @@
 # Reviewing DDoS Incidents<a name="using-ddos-reports"></a>
 
-AWS Shield Advanced provides real\-time metrics and reports for extensive visibility into attacks on your AWS resources\. Details about active and past incidents that have occurred in the last 12 months include attack type, start time, and duration\. For a description of each of the attack types, see [Types of DDoS Attacks](ddos-overview.md#types-of-ddos-attacks)\. Choose a specific incident to review additional details\. 
+AWS Shield Advanced provides real\-time metrics and reports for extensive visibility into attacks on your AWS resources\.
+
+You can view near real\-time metrics about attacks, including:
+
++ Attack type
+
++ Start time
+
++ Duration
+
++ Blocked packet per second
+
++ HTTP request samples
+
+Details are available for active and past incidents that have occurred in the last 12 months\.
+
+Additionally, AWS Shield Advanced gives you insight into your overall traffic at the time of the attack, including details about top IPs, URLS, Referrers, ASNs, countries and User Agents\.
 
 These metrics and reports are available only for AWS Shield Advanced customers\. To activate AWS Shield Advanced, see [To enable and configure AWS Shield Advanced](enable-ddos-prem.md#enable-ddos-prem-procedure)\.
 

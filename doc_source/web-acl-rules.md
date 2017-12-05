@@ -6,3 +6,4 @@ Rules let you precisely target the web requests that you want AWS WAF to allow o
 + [Creating a Rule and Adding Conditions](web-acl-rules-creating.md)
 + [Adding and Removing Conditions in a Rule](web-acl-rules-editing.md)
 + [Deleting a Rule](web-acl-rules-deleting.md)
++ [AWS Marketplace Rule Groups](waf-managed-rule-groups.md)

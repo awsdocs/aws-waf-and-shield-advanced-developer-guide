@@ -25,5 +25,7 @@ To add or remove rules from a web ACL or change the default action, perform the 
 1. To remove a rule from the web ACL, choose the **x** at the right of the row for that rule\. This doesn't delete the rule from AWS WAF, it just removes the rule from this web ACL\.
 
 1. To change the action for a rule or the default action for the web ACL, choose the preferred option\.
+**Note**  
+When setting the action for an AWS Marketplace rule group \(as opposed to a single rule\), the action you set for the rule group \(either **No override** or **Override to count**\) is called the override action\. For more information, see [Rule Group Override](waf-managed-rule-groups.md#waf-managed-rule-group-override)
 
 1. Choose **Save changes**\.

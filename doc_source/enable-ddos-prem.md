@@ -15,6 +15,8 @@ You must enable Shield Advanced for each AWS account that you want to protect\. 
 
 1. Choose the resource type and resource to protect\.
 
+   If you want to protect an Amazon EC2 instance, you must first associate an Elastic IP address to the instance, then choose the Elastic IP address as the resource to protect\.
+
 1. For **Name**, enter a friendly name to help you identify the AWS resources that are protected\. For example, **My CloudFront AWS Shield Advanced distributions**\.
 
 1. \(Optional\) For **Web DDoS attack**, select **Enable**\. You are prompted to associate an existing web ACL with these resources, or create a web ACL if you don't have one yet\.
@@ -24,6 +26,9 @@ You must enable Shield Advanced for each AWS account that you want to protect\. 
 1. Choose **Add DDoS protection**\.
 
 To protect additional resources, see [Step 2: Add AWS Shield Advanced Protection to AWS Resources](configure-new-protection.md)\.
+
+**Note**  
+If you choose an Elastic IP address as the resource to protect, Shield Advanced will protect whatever resource is associated with that Elastic IP address, either an Amazon EC2 instance or an Elastic Load Balancing load balancer\. Shield Advanced automatically identifies the type of resource associated with the Elastic IP address and applies the appropriate mitigations for that resource, including configuring network ACLs specific to that Elastic IP address\. For more information on using Elastic IP addresses with your AWS resources, see the appropriate guide: [Amazon Elastic Compute Cloud Documentation](https://aws.amazon.com/documentation/ec2/) or [Elastic Load Balancing Documentation](https://aws.amazon.com/documentation/elastic-load-balancing/)\.
 
 ## Enabling and Configuring AWS Shield Advanced for Multiple Accounts<a name="enable-ddos-prem-multi-account-procedure"></a>
 

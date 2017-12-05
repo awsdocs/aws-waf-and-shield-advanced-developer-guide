@@ -10,11 +10,13 @@ AWS services and technologies are built from the ground up to provide resilience
 
 ## AWS Shield Advanced<a name="ddos-advanced"></a>
 
-AWS Shield Advanced provides expanded DDoS attack protection for your Elastic Load Balancing load balancers, CloudFront distributions, and Amazon Route 53 hosted zones\.
+AWS Shield Advanced provides expanded DDoS attack protection for your Elastic Load Balancing load balancers, CloudFront distributions, Amazon Route 53 hosted zones and resources attached to an Elastic IP address, such Amazon EC2 instances\.
 
-AWS Shield Advanced includes intelligent DDoS attack detection and mitigation for not only for network layer \(layer 3\) and transport layer \(layer 4\) attacks, but also for application layer \(layer 7\) attacks\. As an AWS Shield Advanced customer, you can contact a 24x7 DDoS response team \(DRT\) for assistance during a DDoS attack\. You also have exclusive access to advanced, real\-time metrics and reports for extensive visibility into attacks on your AWS resources\. 
+As an example of this added protection, if you use Shield Advanced to protect an Elastic IP address, during an attack Shield Advanced will automatically deploy your network ACLs to the border of the AWS network, which allows Shield Advanced to provide protection against larger DDoS events\. Typically, network ACLs are applied near your Amazon EC2 instances within your Amazon VPC\. The network ACL can mitigate attacks only as large as your Amazon VPC and instance can handle\. For example, if the network interface attached to your Amazon EC2 instance can process up to 10 Gbps, volumes over 10 Gbps will slow down and possibly block traffic to that instance\. During an attack, Shield Advanced promotes your network ACL to the AWS border, which can process multiple terabytes of traffic\. Your network ACL is able to provide protection for your resource well beyond your network's typical capacity\. For more information about network ACLs, see [Network ACLs](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html)\. 
 
-AWS Shield Advanced also offers some cost protection against spikes in your AWS bill that could result from a DDoS attack\. This cost protection is provided for your Elastic Load Balancing load balancers, CloudFront distributions, and Amazon Route 53 hosted zones\.
+As an AWS Shield Advanced customer, you can contact a 24x7 DDoS response team \(DRT\) for assistance during a DDoS attack\. You also have exclusive access to advanced, real\-time metrics and reports for extensive visibility into attacks on your AWS resources\. With the assistance of the DRT, AWS Shield Advanced includes intelligent DDoS attack detection and mitigation for not only for network layer \(layer 3\) and transport layer \(layer 4\) attacks, but also for application layer \(layer 7\) attacks\. 
+
+AWS Shield Advanced also offers some cost protection against spikes in your AWS bill that could result from a DDoS attack\. This cost protection is provided for your Elastic Load Balancing load balancers, CloudFront distributions, Amazon Route 53 hosted zones, and Amazon EC2 instances\.
 
 AWS WAF is included with AWS Shield Advanced at no extra cost\. For more information about AWS Shield Advanced pricing, see [AWS Shield Advanced Pricing](http://aws.amazon.com/shield/pricing/)\.
 
@@ -39,6 +41,8 @@ With an HTTP flood, including GET and POST floods, an attacker sends multiple HT
 With AWS Shield Advanced, complex DDoS events can be escalated to the AWS DDoS Response team \(DRT\), which has deep experience in protecting AWS, Amazon\.com, and its subsidiaries\.
 
 For layer 3 and layer 4 attacks, AWS provides automatic attack detection and proactively applies mitigations on your behalf\. For layer 7 DDoS attacks, AWS attempts to detect and notify AWS Shield Advanced customers through CloudWatch alarms, but does not apply mitigations proactively\. This is to avoid inadvertently dropping valid user traffic\.
+
+You can also contact the DRT before or during a possible attack to develop and deploy custom mitigations\. For example, if you are running a web application and only need ports 80 and 443 open, you can work with the DRT to pre\-configure an ACL to only "Allow" ports 80 and 443\.
 
 AWS Shield Advanced customers have two options to mitigate layer 7 attacks:
 
@@ -78,7 +82,7 @@ The following table shows a comparison of AWS Shield Standard and AWS Shield Adv
 | Automated application \(layer 7\) traffic monitoring |  | Yes | 
 | DDoS Mitigations | 
 | Helps protect against common DDoS attacks, such as SYN flood and UDP reflection attacks | Yes | Yes | 
-| Access to additional DDoS mitigation capacity |  | Yes | 
+| Access to additional DDoS mitigation capacity, including automatic deployment of network ACLs to the AWS border during an attack |  | Yes | 
 | Custom application layer \(layer 7\) mitigations | Yes, through user\-created AWS WAF ACLs\. Incurs standard AWS WAF charges\. | Yes, through user\-created or DRT\-created AWS WAF ACLs\. Included as part of the AWS Shield Advanced subscription\. | 
 | Instant rule updates | Yes, through user\-created AWS WAF ACLs\. Incurs standard AWS WAF charges\. | Yes | 
 | AWS WAF for app vulnerability protection | Yes, through user\-created AWS WAF ACLs\. Incurs standard AWS WAF charges\. | Yes | 
@@ -92,10 +96,13 @@ The following table shows a comparison of AWS Shield Standard and AWS Shield Adv
 | Incident management during high severity events |  | Yes | 
 | Custom mitigations during attacks |  | Yes | 
 | Post\-attack analysis |  | Yes | 
-| Cost Protection | 
-| Reimburse Amazon Route 53 DNS DDoS charges |  | Yes | 
-| Reimburse CloudFront DDoS charges |  | Yes | 
-| Reimburse Elastic Load Balancing \(ELB\) DDoS charges |  | Yes | 
+| Cost Protection \(Service credits for DDoS scaling charges\) | 
+| Amazon Route 53 |  | Yes | 
+| CloudFront |  | Yes | 
+| Elastic Load Balancing \(ELB\) |  | Yes | 
+| Amazon EC2 |  | Yes | 
+
+AWS Shield Advanced benefits, including DDoS cost protection, are subject to your fulfillment of the 1\-year subscription commitment\.
 
 **Note**  
 Although both AWS Shield Standard and AWS Shield Advanced provide significant protection against DDoS attacks, we recommend that you also use Amazon CloudWatch and AWS CloudTrail to monitor all of your AWS services\. For information about monitoring AWS WAF by using CloudWatch and CloudTrail, see [Monitoring AWS WAF and AWS Shield Advanced](monitoring_overview.md) and [Logging AWS WAF API Calls with AWS CloudTrail](logging-using-cloudtrail.md)\. 

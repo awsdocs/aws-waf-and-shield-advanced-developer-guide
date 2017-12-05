@@ -25,7 +25,7 @@ This tutorial shows you how to use several AWS services together to build a resi
 
 The tutorial shows how to integrate AWS services such as Amazon EC2, Elastic Load Balancing, CloudFront, Amazon Route 53, and AWS WAF\. Although the tutorial is designed as an end\-to\-end solution, you don’t have to complete every step if you’re already using some of those AWS services\. For example, if you’ve already registered your website domain with Amazon Route 53 and are using Amazon Route 53 as your DNS service, you can skip those steps\. 
 
-The tutorial is intended to help you launch each AWS service quickly\. For that reason, it doesn't cover all possible options\. For detailed information about each service, see [AWS Documentation](docs.aws.amazon.com)\. For many of the steps, this tutorial provides specific values to enter\. Generally you should use those values\. However, in certain cases, such as domain name for your website, use what is appropriate for your needs\.
+The tutorial is intended to help you launch each AWS service quickly\. For that reason, it doesn't cover all possible options\. For detailed information about each service, see [AWS Documentation](https://aws.amazon.com/documentation/)\. For many of the steps, this tutorial provides specific values to enter\. Generally you should use those values\. However, in certain cases, such as domain name for your website, use what is appropriate for your needs\.
 
 Each main step of the tutorial briefly describes the following:
 
