@@ -13,26 +13,18 @@ Create your HTTP request in canonical format as described in [Task 1: Create a C
 
 **[Task 2: Create a String to Sign](http://docs.aws.amazon.com/general/latest/gr/sigv4-create-string-to-sign.html)**  
 Create a string that you will use as one of the input values to your cryptographic hash function\. The string, called the string to sign, is a concatenation of the following values:  
-
 + Name of the hash algorithm
-
 + Request date
-
 + Credential scope string
-
 + Canonicalized request from the previous task
 The credential scope string itself is a concatenation of date, region, and service information\.  
 For the `X-Amz-Credential` parameter, specify the following:  
-
 + The code for the endpoint to which you're sending the request, `us-east-2`
-
 + `waf` for the service abbreviation
 For example:  
 `X-Amz-Credential=AKIAIOSFODNN7EXAMPLE/20130501/us-east-2/waf/aws4_request`
 
 **[Task 3: Create a Signature](http://docs.aws.amazon.com/general/latest/gr/sigv4-calculate-signature.html)**  
 Create a signature for your request by using a cryptographic hash function that accepts two input strings:  
-
 + Your string to sign, from Task 2\.
-
 + A derived key\. The derived key is calculated by starting with your secret access key and using the credential scope string to create a series of hash\-based message authentication codes \(HMACs\)\.

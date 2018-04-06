@@ -23,11 +23,8 @@ Type: String
 ## Error Responses<a name="waf-api-making-requests-error-response"></a>
 
 If a request results in an error, the HTTP response contains the following values:
-
 + A JSON error document as the response body
-
 + Content\-Type
-
 + The applicable 3xx, 4xx, or 5xx HTTP status code
 
 The following is an example of a JSON error document:

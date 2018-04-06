@@ -7,7 +7,7 @@ To authorize the DRT to inspect your AWS WAF configuration and create and update
 The policy gives the DRT access only to your AWS WAF and Shield resources\. By running this template, you authorize the DRT to inspect your AWS WAF and Shield configuration and create and update AWS WAF rules and web ACLs on your behalf\. The DRT takes these actions only if explicitly authorized by you, as described on this page\. 
 
 **Important**  
-You must complete [Step 1: Enable and Configure AWS Shield Advanced](enable-ddos-prem.md) and [Step 2: Add AWS Shield Advanced Protection to AWS Resources](configure-new-protection.md) before you start this procedure\.
+You must complete [Step 1: Enable and Configure AWS Shield Advanced](enable-ddos-prem.md) and [Step 2: Add AWS Shield Advanced Protection to more AWS Resources](configure-new-protection.md) before you start this procedure\.<a name="authorize-DRT-procedure"></a>
 
 **To authorize the DRT to mitigate potential attacks on your behalf**
 
@@ -21,4 +21,4 @@ You must complete [Step 1: Enable and Configure AWS Shield Advanced](enable-ddos
 
 1. Review the summary, and then choose **Create**\.
 
-After you authorize the DRT to act on your behalf, you should deploy AWS WAF security automations as described in [Step 4: Deploy AWS WAF Security Automations](deploy-waf-automations.md)\.
+After you authorize the DRT to act on your behalf, you should go to [Step 4: Create a DDoS Dashboard in CloudWatch and set CloudWatch alarms ](deploy-waf-dashboard.md)\.

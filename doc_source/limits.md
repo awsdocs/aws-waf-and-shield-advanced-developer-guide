@@ -7,6 +7,7 @@ AWS WAF has default limits on the number of entities per account\. You can [requ
 | --- | --- | 
 | Web ACLs per AWS account | 50 | 
 | Rules per AWS account | 100 | 
+| Rate\-based\-rules per AWS account | 5 | 
 | Conditions per AWS account | 100 of each condition type \(For example: 100 size constraint conditions, 100 IP match conditions, and so on\. The exception is regex match conditions\. You can have a maximum of 10 regex match conditions per account\. This limit cannot be increased\.\) | 
 | Requests per Second | 10,000 per web ACL\* | 
 
@@ -32,3 +33,5 @@ The following limits on AWS WAF entities can't be changed\.
 | In regex match conditions, the number of patterns per pattern set | 10 | 
 | In regex match conditions, the number of pattern sets per regex condition | 1 | 
 | The number of pattern sets per account | 5 | 
+| GeoMatchSets per account | 50 | 
+| Locations per GeoMatchSet | 10 | 

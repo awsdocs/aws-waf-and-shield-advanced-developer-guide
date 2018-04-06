@@ -6,7 +6,7 @@ If a web request doesn't match any of the rules in a web ACL, AWS WAF takes the 
 
 If you want to test a rule before you start using it to allow or block requests, you can configure AWS WAF to count the web requests that match the conditions in the rule\. For more information, see [Testing Web ACLs](web-acl-testing.md)\.
 
-
+**Topics**
 + [Deciding on the Default Action for a Web ACL](web-acl-default-action.md)
 + [Creating a Web ACL](web-acl-creating.md)
 + [Associating or Disassociating a Web ACL with a CloudFront Distribution or an Application Load Balancer](web-acl-associating-cloudfront-distribution.md)

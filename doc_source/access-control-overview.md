@@ -8,15 +8,10 @@ An *account administrator* \(or administrator user\) is a user with administrato
 When granting permissions, you decide who is getting the permissions, the resources they get permissions for, and the specific operations that you want to allow on those resources\.
 
 ## Topics<a name="topics1"></a>
-
 + [AWS WAF Resources and Operations](#access-control-resources)
-
 + [Understanding Resource Ownership](#access-control-resource-ownership)
-
 +  [Managing Access to Resources ](#access-control-manage-access-intro)
-
 + [Specifying Policy Elements: Actions, Effects, Resources, and Principals](#access-control-specify-waf-actions)
-
 + [Specifying Conditions in a Policy](#specifying-conditions)
 
 ## AWS WAF Resources and Operations<a name="access-control-resources"></a>
@@ -45,11 +40,8 @@ arn:aws:waf::account:resource/ID
 ```
 
 Replace the *account*, *resource*, and *ID* variables with valid values\. Valid values can be the following:
-
 + *account*: The ID of your AWS account\. You must specify a value\.
-
 + *resource*: The type of AWS WAF resource\. 
-
 + *ID*: The ID of the AWS WAF resource, or a wildcard \(`*`\) to indicate all resources of the specified type that are associated with the specified AWS account\.
 
 For example, the following ARN specifies all web ACLs for the account `111122223333`:
@@ -65,11 +57,8 @@ AWS WAF provides a set of operations to work with AWS WAF resources\. For a list
 ## Understanding Resource Ownership<a name="access-control-resource-ownership"></a>
 
 A *resource owner* is the AWS account that creates the resource\. That is, the resource owner is the AWS account of the *principal entity* \(the root account, an IAM user, or an IAM role\) that authenticates the request that creates the resource\. The following examples illustrate how this works:
-
 + If you use the root account credentials of your AWS account to create an AWS WAF resource, your AWS account is the owner of the resource\.
-
 + If you create an IAM user in your AWS account and grant permissions to create an AWS WAF resource to that user, the user can create an AWS WAF resource\. However, your AWS account, to which the user belongs, owns the AWS WAF resource\.
-
 + If you create an IAM role in your AWS account with permissions to create an AWS WAF resource, anyone who can assume the role can create an AWS WAF resource\. Your AWS account, to which the role belongs, owns the AWS WAF resource\. 
 
 ## Managing Access to Resources<a name="access-control-manage-access-intro"></a>
@@ -82,17 +71,13 @@ This section discusses using IAM in the context of AWS WAF\. It doesn't provide 
 Policies that are attached to an IAM identity are known as *identity\-based* policies and policies that are attached to a resource are known as *resource\-based* policies\. AWS WAF supports only identity\-based policies\.
 
 ### Topics<a name="topics2"></a>
-
 + [Identity\-Based Policies \(IAM Policies\)](#access-control-manage-access-identity-based)
-
 + [Resource\-Based Policies](#access-control-manage-access-resource-based)
 
 ### Identity\-Based Policies \(IAM Policies\)<a name="access-control-manage-access-identity-based"></a>
 
 You can attach policies to IAM identities\. For example, you can do the following: 
-
 + **Attach a permissions policy to a user or a group in your account** – An account administrator can use a permissions policy that is associated with a particular user to grant permissions for that user to create an AWS WAF resource\. 
-
 + **Attach a permissions policy to a role \(grant cross\-account permissions\)** – You can attach an identity\-based permissions policy to an IAM role to grant cross\-account permissions\. For example, the administrator in Account A can create a role to grant cross\-account permissions to another AWS account \(for example, Account B\) or an AWS service as follows:
 
   1. Account A administrator creates an IAM role and attaches a permissions policy to the role that grants permissions on resources in Account A\.
@@ -132,13 +117,9 @@ Other services, such as Amazon S3, also support resource\-based permissions poli
 For each AWS WAF resource \(see [AWS WAF Resources and Operations](#access-control-resources)\), the service defines a set of API operations \(see [AWS WAF API Permissions: Actions, Resources, and Conditions Reference](waf-api-permissions-ref.md)\)\. To grant permissions for these API operations, AWS WAF defines a set of actions that you can specify in a policy\. Note that performing an API operation can require permissions for more than one action\. When granting permissions for specific actions, you also identify the resource on which the actions are allowed or denied\.
 
 The following are the most basic policy elements:
-
 + **Resource** – In a policy, you use an Amazon Resource Name \(ARN\) to identify the resource to which the policy applies\. For more information, see [AWS WAF Resources and Operations](#access-control-resources)\. 
-
 + **Action** – You use action keywords to identify resource operations that you want to allow or deny\. For example, the `waf:CreateRule` permission allows the user permissions to perform the AWS WAF `CreateRule` operation\. 
-
 + **Effect** – You specify the effect when the user requests the specific action\. This can be either allow or deny\. If you don't explicitly grant access to allow a resource, access is implicitly denied\. You also can explicitly deny access to a resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
-
 + **Principal** – In identity\-based policies \(IAM policies\), the user that the policy is attached to is the implicit principal\. AWS WAF doesn't support resource\-based policies\.
 
 To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.

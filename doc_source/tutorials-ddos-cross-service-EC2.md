@@ -5,7 +5,7 @@ You can mitigate infrastructure \(layer 3 and layer 4\) DDoS attacks by using te
 **Important**  
 You are responsible for the cost of the AWS services implemented in this tutorial\. For full details about EC2 costs, see the [Amazon EC2 pricing page](https://aws.amazon.com/ec2/pricing)\. 
 
-
+**Topics**
 + [Create an Amazon EC2 Instance](#tutorials-ddos-cross-service-EC2-launch)
 + [Connect to Your Instance](#tutorials-ddos-cross-service-EC2-connect)
 + [Install a Web Server and Host Your Site](#tutorials-ddos-cross-service-EC2-install-web-server)
@@ -79,9 +79,7 @@ You will use Microsoft Remote Desktop to connect to your instances\. If you are 
 1. Record the default administrator password, or copy it to the clipboard\. You need this password to connect to the instance\.
 
 1. Choose **Download Remote Desktop File**\. Your browser prompts you to either open or save the \.rdp file\. Either option is fine\. When you have finished, you can choose **Close** to dismiss the **Connect To Your Instance** dialog box\. 
-
    + If you opened the \.rdp file, you see the **Remote Desktop Connection** dialog box\.
-
    + If you saved the \.rdp file, navigate to your downloads directory, and then open the \.rdp file to display the dialog box\.
 
 1. You might get a warning that the publisher of the remote connection is unknown\. You can continue to connect to your instance\.
@@ -113,15 +111,10 @@ Sometimes copying and pasting content can corrupt data\. If you encounter a "Pas
 The next step is to install a web hosting service on your Amazon EC2 instance and build your website\. You have several options for a web server, such as Microsoft Internet Information Server \(IIS\), which is already part of your instance, Apache HTTP Server for Windows, and others\.
 
 Installing a web server and configuring your website is outside the scope of this tutorial\. Refer to the proper product documentation to implement a web server on your instance\. However, as an example, at a general level, the steps for installing IIS are the following:
-
 + Connect to your instance as described earlier\.
-
 + Using Windows Server Manager, choose **Add roles and features**\.
-
 + Choose **Role\-based or feature\-based installation**\.
-
 + Choose **Web Server \(IIS\)** and begin the installation process\.
-
 + After the installation is complete, build your website\.
 
 ## Launch a Second EC2 Instance<a name="tutorials-ddos-cross-service-EC2-second"></a>
@@ -129,11 +122,8 @@ Installing a web server and configuring your website is outside the scope of thi
 You now must repeat this process \(launch another EC2 instance and build your website\) to create a duplicate of your first EC2 instance\. This is necessary to enable load balancing later in the tutorial\.
 
 Follow all the same steps just described to launch an instance\. Be sure to edit the second instance details and security group as per the previous steps\. When editing the instance details, note the following:
-
 + Choose the same VPC as your first instance, the VPC that you created in the prerequisites\. 
-
 + For **Subnet**, choose **subnet\-2**\. This is the *second* subnet that you created in the prerequisites step\. This is *not* the same subnet that you used for your first instance\.
-
 + For **Auto\-assign Public IP**, choose **Enable**\.
 
 After launching your second Amazon EC2 instance, install the same web hosting service and files as your first EC2 instance\.

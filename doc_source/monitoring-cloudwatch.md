@@ -25,7 +25,6 @@ Metrics are grouped first by the service namespace, and then by the various dime
 1. On the **All metrics** tab, choose the appropriate service\.
 
 **To view metrics using the AWS CLI**
-
 + For AWS WAF, at a command prompt use the following command:
 
   ```

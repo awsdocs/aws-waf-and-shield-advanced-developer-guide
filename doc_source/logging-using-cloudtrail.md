@@ -11,11 +11,8 @@ When CloudTrail logging is enabled in your AWS account, API calls made to AWS WA
 All AWS WAF actions are logged by CloudTrail and are documented in the [AWS WAF API Reference](http://docs.aws.amazon.com/waf/latest/APIReference/)\. For example, calls to `ListWebACL`, `UpdateWebACL`, and `DeleteWebACL` generate entries in the CloudTrail log files\. 
 
 Every log entry contains information about who generated the request\. The user identity information in the log entry helps you determine the following: 
-
 + Whether the request was made with root or IAM user credentials
-
 + Whether the request was made with temporary security credentials for a role or federated user
-
 + Whether the request was made by another AWS service
 
 For more information, see [CloudTrail userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.
@@ -33,13 +30,9 @@ For more information, see [Receiving CloudTrail Log Files from Multiple Regions]
 CloudTrail log files can contain one or more log entries\. Each entry lists multiple JSON\-formatted events\. A log entry represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. Log entries are not an ordered stack trace of the public API calls, so they do not appear in any specific order\. 
 
 The following example shows a CloudTrail log entry that demonstrates the following actions \(see the `eventName` elements\):
-
 + `CreateRule`
-
 + `GetRule`
-
 + `UpdateRule`
-
 + `DeleteRule`
 
 ```

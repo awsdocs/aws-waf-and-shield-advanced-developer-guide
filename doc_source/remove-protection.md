@@ -1,6 +1,6 @@
 # Removing AWS Shield Advanced from an AWS Resource<a name="remove-protection"></a>
 
-You can remove AWS Shield Advanced protection from any of your resources at any time\.
+You can remove AWS Shield Advanced protection from any of your resources at any time\.<a name="remove-protection-procedure"></a>
 
 **Remove AWS Shield Advanced protection from an AWS resource**
 

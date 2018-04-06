@@ -13,7 +13,7 @@ The template uses some AWS features, such as AWS Lambda and Amazon API Gateway, 
 **Important**  
 You are responsible for the cost of all the AWS services that are deployed as part of this template, including Amazon S3, AWS Lambda, Amazon API Gateway, AWS WAF, and others\. For full details, see the pricing page for each AWS service\.
 
-
+**Topics**
 + [Launch the Stack \(Template\)](#tutorials-ddos-cross-service-waf-launch)
 + [Associate the Web ACL with Your Web Application](#tutorials-ddos-cross-service-waf-associate)
 + [Configure Web Access Logging](#tutorials-ddos-cross-service-waf-store)

@@ -2,7 +2,7 @@
 
 The following tasks are not specifically related to DDoS protection, but are necessary to complete the tutorial\.
 
-
+**Topics**
 + [Sign Up for AWS](#tutorials-ddos-cross-service-prereq-aws)
 + [Create an IAM User](#tutorials-ddos-cross-service-prereq-iam)
 + [Create a Key Pair](#tutorials-ddos-cross-service-prereq-pair)
@@ -19,7 +19,7 @@ If you have an AWS account already, skip to the next task\. If you don't have an
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign In to the Console**, and then choose **Create a new AWS account**\.
+This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 
@@ -116,13 +116,9 @@ For more information about Amazon VPC, see [What is Amazon VPC?](http://docs.aws
 1. On the **Step 1: Select a VPC Configuration** page, ensure that **VPC with a Single Public Subnet** is selected, and then choose **Select**\.
 
 1. On the **Step 2: VPC with a Single Public Subnet** page, specify the following details:
-
    + For **VPC name**, type a friendly name for your VPC\.
-
    + For **Availability Zone**, choose **us\-west\-2a**\. 
-
    + For **Subnet name**, type `subnet-1`\.
-
    + Keep the other default configuration settings\.
 
 1. Choose **Create VPC**\. On the confirmation page, choose **OK**\.
@@ -138,13 +134,9 @@ For increased availability, later in this tutorial you configure a load balancer
 1. In the navigation pane, choose **Subnets, Create Subnet**\. 
 
 1. Specify the following subnet details: 
-
    + For **Name tag**, provide a name for your subnet\. For example, type `subnet-2`\. Doing so creates a tag with a key of Name and the value that you specify\. 
-
    + For **VPC**, choose the VPC that you just created in the previous steps\.
-
    + For **Availability Zone**, choose an Availability Zone that your subnet will reside in\. This should be different than the Availability Zone that you created with your VPC earlier in this tutorial\. The tutorial used `us-west-2a` as an example\. So this time, choose something other than `us-west-2a`, such as `us-west-2b`\. 
-
    + For **IPv4 CIDR block**, specify an IPv4 CIDR block for this second subnet\. You must specify an IPv4 CIDR block for the subnet from the range of your VPC\. The IP addresses for your two subnets cannot overlap\. Assuming you used the defaults when setting up your VPC, your first subnet used CIDR block 10\.0\.0\.0/24\. So for this second CIDR block, you can use 10\.0\.1\.0/24\. For more information, see [VPC and Subnet Sizing for IPv4](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#vpc-sizing-ipv4)\. 
 
 1. Choose **Yes, create**\.
@@ -183,11 +175,8 @@ You need the public IPv4 address of your local computer\. The security group edi
 1. In the **VPC** list, select the VPC that you created earlier in this tutorial\.
 
 1. On the **Inbound** tab, create the following rules \(choose **Add Rule** for each new rule\): 
-
    + Choose **HTTP** from the **Type** list, and make sure that **Source** is set to **Anywhere** \(`0.0.0.0/0`\)\.
-
    + Choose **HTTPS** from the **Type** list, and make sure that **Source** is set to **Anywhere** \(`0.0.0.0/0`\)\.
-
    + Choose **RDP** from the **Type** list\. In the **Source** box, choose **MyIP** to automatically populate the field with the public IPv4 address of your local computer\. Alternatively, choose **Custom** and specify the public IPv4 address of your computer or network in CIDR notation\. To specify an individual IP address in CIDR notation, add the routing suffix `/32`, for example, `203.0.113.25/32`\. If your company allocates addresses from a range, specify the entire range, such as `203.0.113.0/24`\.
 **Warning**  
 For security reasons, we don't recommend that you allow RDP access from all IPv4 addresses \(`0.0.0.0/0`\) to your instance, except for testing purposes and only for a short time\.

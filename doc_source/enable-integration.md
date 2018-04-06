@@ -1,0 +1,21 @@
+# Step 2: Set the AWS Firewall Manager Administrator Account<a name="enable-integration"></a>
+
+AWS Firewall Manager must be associated with the master account of your AWS organization or associated with a member account that has the appropriate permissions\. The account that you associate with Firewall Manager is called the Firewall Manager administrator account\. 
+
+For more information about AWS Organizations and master accounts, see [Managing the AWS Accounts in Your Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html)\.<a name="enable-integration-procedure-console"></a>
+
+**To set the Firewall Manager administrator account \(console\)**
+
+1. Sign in to the AWS Management Console using an existing AWS Organizations master account\. You can sign in using the account's root user \(not recommended\) or another IAM user or IAM role within the account that has equivalent permissions\.
+
+1. Open the Firewall Manager console at https://console\.aws\.amazon\.com/waf/fms\. 
+
+1. Choose **Get started**\.
+
+1. Type an account ID to associate with Firewall Manager\. This will be the Firewall Manager administrator account\. The account ID can be the account that you are signed in with, or a different account\. If the account ID that you type is not an AWS Organizations master account, Firewall Manager sets the appropriate permissions for the member account that you specify\. 
+**Note**  
+The account that you enter in this step is given permission to create and manage AWS WAF rules across all accounts within your organization\.
+
+1. Choose **Set administrator**\.
+
+After you set the AWS Firewall Manager administrator account, go to [Step 3: Enable AWS Config](enable-config.md)\.

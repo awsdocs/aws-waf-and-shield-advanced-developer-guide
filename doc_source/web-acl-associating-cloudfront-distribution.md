@@ -19,7 +19,7 @@ You can associate a web ACL with as many CloudFront distributions or Application
 
 1. Choose **Add**\.
 
-1. To associate this web ACL with additional CloudFront distributions or Application Load Balancers, repeat steps 4 through 6\.
+1. To associate this web ACL with additional CloudFront distributions or Application Load Balancers, repeat steps 4 through 6\.<a name="web-acl-disassociating-cloudfront-distribution-procedure"></a>
 
 **To disassociate a web ACL from a CloudFront distribution or Application Load Balancer**
 

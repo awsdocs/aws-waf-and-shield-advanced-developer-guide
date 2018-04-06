@@ -2,7 +2,7 @@
 
 If you want to allow or block web requests based on strings that match a regular expression \(regex\) pattern that appear in the requests, create one or more regex match conditions\. A regex match condition is a type of string match condition that identifies the pattern that you want to search for and the part of web requests, such as a specified header or the query string, that you want AWS WAF to inspect for the pattern\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that contain the pattern\.
 
-
+**Topics**
 + [Creating a Regex Match Condition](#web-acl-regex-conditions-creating)
 + [Values That You Specify When You Create or Edit RegEx Match Conditions](#web-acl-regex-conditions-values)
 + [Editing a Regex Match Condition](#web-acl-regex-conditions-editing)
@@ -16,26 +16,16 @@ You can add multiple regular expressions to a single pattern set\. If you do so,
 When you add a regex match condition to a rule, you also can configure AWS WAF to allow or block web requests that *do not* match the values in the condition\.
 
 AWS WAF supports most [standard Perl Compatible Regular Expressions \(PCRE\)](http://www.pcre.org/)\. However, the following are not supported:
-
 + Backreferences and capturing subexpressions
-
 + Arbitrary zero\-width assertions
-
 + Subroutine references and recursive patterns
-
 + Conditional patterns
-
 + Backtracking control verbs
-
 + The \\C single\-byte directive
-
 + The \\R newline match directive
-
 + The \\K start of match reset directive
-
 + Callouts and embedded code
-
-+ Atomic grouping and possessive quantifiers
++ Atomic grouping and possessive quantifiers<a name="web-acl-regex-conditions-creating-procedure"></a>
 
 **To create a regex match condition**
 
@@ -56,7 +46,7 @@ AWS WAF supports most [standard Perl Compatible Regular Expressions \(PCRE\)](ht
 When you create or update a regex match condition, you specify the following values: 
 
 **Name**  
-Type a name for the regex match condition\. The value can contain only the characters A\-Z, a\-z, and 0\-9\. You can't change the name of a condition after you create it\.
+Type a name for the regex match condition\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. You can't change the name of a condition after you create it\.
 
 **Type**  
 Choose **Regex match**\.
@@ -79,51 +69,36 @@ If you choose **Body** for the value of **Part of the request to filter on**, AW
 If you chose **Header** from the **Part of the request to filter on** list, choose a header from the list of common headers, or type the name of a header that you want AWS WAF to inspect\.
 
 **Transformation**  
-A transformation reformats a web request before AWS WAF inspects the request\. This eliminates some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF\. Transformations can perform the following operations:    
+A transformation reformats a web request before AWS WAF inspects the request\. This eliminates some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF\.   
+You can only specify a single type of text transformation\.  
+Transformations can perform the following operations:    
 **None**  
 AWS WAF doesn't perform any text transformations on the web request before inspecting it for the string in **Value to match**\.  
 **Convert to lowercase**  
 AWS WAF converts uppercase letters \(A\-Z\) to lowercase \(a\-z\)\.  
 **HTML decode**  
 AWS WAF replaces HTML\-encoded characters with unencoded characters:  
-
 + Replaces `&quot;` with `&`
-
 + Replaces `&nbsp;` with a non\-breaking space
-
 + Replaces `&lt;` with `<`
-
 + Replaces `&gt;` with `>`
-
 + Replaces characters that are represented in hexadecimal format, `&#xhhhh;`, with the corresponding characters
-
 + Replaces characters that are represented in decimal format, `&#nnnn;`, with the corresponding characters  
 **Normalize whitespace**  
 AWS WAF replaces the following characters with a space character \(decimal 32\):  
-
 + \\f, formfeed, decimal 12
-
 + \\t, tab, decimal 9
-
 + \\n, newline, decimal 10
-
 + \\r, carriage return, decimal 13
-
 + \\v, vertical tab, decimal 11
-
 + non\-breaking space, decimal 160
 In addition, this option replaces multiple spaces with one space\.  
 **Simplify command line**  
 When you're concerned that attackers are injecting an operating system command line command and using unusual formatting to disguise some or all of the command, use this option to perform the following transformations:  
-
 + Delete the following characters: \\ " ' ^
-
 + Delete spaces before the following characters: / \(
-
 + Replace the following characters with a space: , ;
-
 + Replace multiple spaces with one space
-
 + Convert uppercase letters \(A\-Z\) to lowercase \(a\-z\)  
 **URL decode**  
 Decode a URL\-encoded request\.
@@ -138,19 +113,14 @@ The maximum length of **Value to match** is 70 characters\. If you want to speci
 ## Editing a Regex Match Condition<a name="web-acl-regex-conditions-editing"></a>
 
 You can make the following changes to an existing regex match condition:
-
 + Delete a pattern from an existing pattern set
-
 + Add a pattern to an existing pattern set
-
 + Delete a filter to an existing regeex match condition
-
 + Add a filter to an existing regeex match condition \(You can have only one filter in a regex match condition\. Therefore, in order to add a filter, you must delete the existing filter first\.\)
-
 + Delete an existing regeex match condition
 
 **Note**  
-You cannot add or delete a pattern set from an existing filter\. You must either edit the pattern set, or delete the filter and create a new filter with a new pattern set\.
+You cannot add or delete a pattern set from an existing filter\. You must either edit the pattern set, or delete the filter and create a new filter with a new pattern set\.<a name="web-acl-regex-conditions-editing-procedure-delete-pattern"></a>
 
 **To delete a pattern from an existing pattern set**
 
@@ -166,7 +136,7 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 
 1. Choose the **X** next to the pattern you want to delete\.
 
-1. Choose **Save**\.
+1. Choose **Save**\.<a name="web-acl-regex-conditions-editing-procedure-add-pattern"></a>
 
 **To add a pattern to an existing pattern set**
 
@@ -184,7 +154,7 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 
 1. Choose the **\+** next to the new pattern\.
 
-1. Choose **Save**\.
+1. Choose **Save**\.<a name="web-acl-regex-conditions-editing-procedure-delete-filter"></a>
 
 **To delete a filter from an existing regex match condition**
 
@@ -196,7 +166,7 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 
 1. Choose the box next to the filter you want to delete\.
 
-1. Choose **Delete filter**\.
+1. Choose **Delete filter**\.<a name="web-acl-regex-conditions-editing-procedure-delete-regex-condition"></a>
 
 **To delete a regex match condition**
 
@@ -222,7 +192,7 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 
 1. Select the button next to the condition you want to delete\.
 
-1. Choose **Delete**\.
+1. Choose **Delete**\.<a name="web-acl-regex-conditions-editing-procedure-add-filter"></a>
 
 **To add or change a filter to an existing regex match condition**
 

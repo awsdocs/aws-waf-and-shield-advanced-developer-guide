@@ -1,6 +1,6 @@
 # Deleting a Rule<a name="web-acl-rules-deleting"></a>
 
-If you want to delete a rule, you need to first remove the rule from the web ACLs that are using it and remove the conditions that are included in the rule\.
+If you want to delete a rule, you need to first remove the rule from the web ACLs that are using it and remove the conditions that are included in the rule\.<a name="web-acl-rules-deleting-procedure"></a>
 
 **To delete a rule**
 

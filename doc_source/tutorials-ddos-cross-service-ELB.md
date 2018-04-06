@@ -5,7 +5,7 @@ Elastic Load Balancing provides additional protection against application layer 
 **Important**  
 You are responsible for the cost of the AWS services implemented in this tutorial\. For full details about Elastic Load Balancing costs, see the [Elastic Load Balancing pricing page](https://aws.amazon.com/elasticloadbalancing/pricing/)\. 
 
-
+**Topics**
 + [Before You Begin](#tutorials-ddos-cross-service-ELB-before)
 + [Create Your Load Balancer](#tutorials-ddos-cross-service-ELB-create)
 + [Test Your Load Balancer](#tutorials-ddos-cross-service-ELB-test)
@@ -29,17 +29,11 @@ Next, you configure a load balancer that automatically routes traffic to your tw
 1. Choose **Create target group**\.
 
 1. Specify a name, protocol, port, and VPC for the target group, and then choose **Create**\. For this tutorial, use the following values:
-
    + **Name**: MyWebServers
-
    + **Protocol**: HTTP
-
    + **Port**: 80
-
    + **Target type**: Instance
-
    + **VPC**: The VPC that contains your EC2 instances
-
    + Keep the other settings\.
 
 1. Select the new target group\.

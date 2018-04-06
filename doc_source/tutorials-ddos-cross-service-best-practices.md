@@ -2,7 +2,7 @@
 
 You now have several components in place to help protect your website from DDoS attacks\. However, there is still more you can do\. Following are several best practices you should consider\. This tutorial does not cover the implementation details of the best practices, but links to relevant documentation are provided\.
 
-
+**Topics**
 + [Obscuring AWS Resources](#tutorials-ddos-cross-service-best-practices-obscure)
 + [Using Security Groups](#tutorials-ddos-cross-service-best-practices-SG)
 + [Network Access Control Lists \(ACLs\)](#tutorials-ddos-cross-service-best-practices-ACL)
@@ -32,7 +32,5 @@ You should consider configuring CloudFront to prevent users from bypassing Cloud
 The best practices outlined in this tutorial can help you to build a DDoS\-resilient architecture that can protect the availability of your website against many common infrastructure and application layer DDoS attacks\. The degree to which you are able to architect your application according to these best practices influences the type and volume of DDoS attacks that you can mitigate\. 
 
 For more information, see the following:
-
 + [AWS Best Practices for DDoS Resiliency](https://d0.awsstatic.com/whitepapers/Security/DDoS_White_Paper.pdf)
-
 + [AWS Documentation](https://docs.aws.amazon.com)

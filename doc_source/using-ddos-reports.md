@@ -2,23 +2,31 @@
 
 AWS Shield Advanced provides real\-time metrics and reports for extensive visibility into attacks on your AWS resources\.
 
+These metrics and reports are available only for AWS Shield Advanced customers\. To activate AWS Shield Advanced, see [To enable and configure AWS Shield Advanced](enable-ddos-prem.md#enable-ddos-prem-procedure)\.
+
 You can view near real\-time metrics about attacks, including:
-
 + Attack type
-
 + Start time
-
 + Duration
-
 + Blocked packet per second
-
 + HTTP request samples
 
 Details are available for active and past incidents that have occurred in the last 12 months\.
 
-Additionally, AWS Shield Advanced gives you insight into your overall traffic at the time of the attack, including details about top IPs, URLS, Referrers, ASNs, countries and User Agents\.
+## Shield Advanced Details Report<a name="shield-details"></a>
 
-These metrics and reports are available only for AWS Shield Advanced customers\. To activate AWS Shield Advanced, see [To enable and configure AWS Shield Advanced](enable-ddos-prem.md#enable-ddos-prem-procedure)\.
+Additionally, AWS Shield Advanced gives you insight into your overall traffic at the time of the attack\. You can review details about top:
++ IPs
++ URLs
++ Referrers
++ ASNs
++ Countries
++ User Agents
+
+Use this information to create AWS WAF rules to help prevent future attacks\. For example, if you see that you have a lot of requests coming from a country that you don't typically do business in, you can create a AWS WAF rule to block requests from that country\.
+
+**Note**  
+You should always test your rules first by initially using `Count` rather than `Block`\. Once you are comfortable that the new rule is identifying the correct requests, you can modify your rule to block those requests\.<a name="review-ddos-reports-procedure"></a>
 
 **To review DDoS incidents**
 
@@ -28,7 +36,7 @@ These metrics and reports are available only for AWS Shield Advanced customers\.
 
 1. Choose the **Incident type** of the attack you want to investigate\.
 
-If you determine a possible attack is underway, you can contact the DRT through the [AWS Support Center](https://console.aws.amazon.com/support/home#/), or attempt to mitigate the attack on your own by creating a new web access control list \(web ACL\)\. 
+If you determine a possible attack is underway, you can contact the DRT through the [AWS Support Center](https://console.aws.amazon.com/support/home#/), or attempt to mitigate the attack on your own by creating a new web access control list \(web ACL\)\. <a name="mitigating-ddos-attack-procedure"></a>
 
 **To mitigate a potential DDoS attack**
 
@@ -46,9 +54,9 @@ AWS provides preconfigured templates to get you started quickly\. The templates 
 
 ## Monitoring Threats Across AWS<a name="aws-shield-global-threats"></a>
 
-If you are a Shield Advanced customer, in addition to the information provided on the **Incidents** page about attacks on your own resources, you can use the global threat environment dashboard to view trends and metrics about the DDoS threat landscape across Amazon CloudFront, Elastic Load Balancing, and Amazon Route 53\.
+If you are a Shield Advanced customer, in addition to the information provided on the **Incidents** page about attacks on your own resources, you can use the global threat environment dashboard to view trends and metrics about the DDoS threat landscape across Amazon CloudFront, Elastic Load Balancing, and Route 53\.
 
-The global threat environment dashboard provides a near real\-time summary of the global AWS threat landscape, including the largest attack, the top attack vectors, and the relative number of significant attacks\. You can customize the dashboard view for different time durations to see the history of significant DDoS attacks\.
+The global threat environment dashboard provides a near real\-time summary of the global AWS threat landscape, including the largest attack, the top attack vectors, and the relative number of significant attacks\. You can customize the dashboard view for different time durations to see the history of significant DDoS attacks\.<a name="review-ddos-threat-dashboard"></a>
 
 **To view the global threat environment dashboard**
 

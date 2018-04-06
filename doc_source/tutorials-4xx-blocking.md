@@ -1,20 +1,16 @@
 # Tutorial: Blocking IP Addresses That Submit Bad Requests<a name="tutorials-4xx-blocking"></a>
 
 Using [AWS Lambda](https://aws.amazon.com/lambda/), you can set a threshold of how many bad requests per minute your web application will tolerate from a given IP address\. A bad request is one for which your CloudFront origin returns one of the following HTTP 40x status codes:
-
 + 400, Bad Request
-
 + 403, Forbidden
-
 + 404, Not Found
-
 + 405, Method Not Allowed
 
 If users \(based on IP addresses\) exceed this error code threshold, Lambda automatically updates your AWS WAF rules to block IP addresses and specify for how long requests from those IP addresses should be blocked\.
 
 This tutorial shows you how to use an [AWS CloudFormation](https://aws.amazon.com/cloudformation/) template to specify the request threshold and time to block requests\. The tutorial also uses CloudFront [access logs](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html) \(stored in [Amazon S3](https://aws.amazon.com/s3/)\) to count requests as they are served by [CloudFront](https://aws.amazon.com/cloudfront/) and by [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) metrics\.
 
-
+**Topics**
 + [Solution Overview](#tutorials-4xx-blocking-overview)
 + [Step 1: Create an AWS CloudFormation Stack for Blocking IP Addresses That Submit Bad Requests](#tutorials-4xx-blocking-cloudformation)
 + [Step 2: Associate a Web ACL with a CloudFront Distribution](#tutorials-4xx-blocking-cloudfront)
@@ -38,9 +34,7 @@ The following illustration shows how you can use AWS WAF with AWS Lambda to bloc
 1. The Lambda function publishes execution metrics in CloudWatch, such as the number of requests analyzed and IP addresses blocked\.
 
 The AWS CloudFormation template creates a web access control list \(web ACL\) and two separate rules in AWS WAF that block and monitor requests from IP addresses, depending on the settings that you configure during the tutorial\. The two rules are defined here: 
-
 + **Auto Block** – This rule adds IP addresses that exceed the request\-per\-minute limit\. New requests from those IP addresses are blocked until Lambda removes the IP addresses from the block list after the specified expiration period\. The default is four hours\.
-
 + **Manual Block** – This rule adds IP addresses manually to the auto\-block list\. The IP addresses are permanently blocked; they can access the web application only if you remove them from the block list\. You can use this list to block known bad IP addresses or IP addresses that frequently are added to the auto\-block rule\.
 
 **Requirements:** This tutorial assumes that you already have a CloudFront distribution that you use to deliver content for your web application\. If you don't have a CloudFront distribution, see [Creating or Updating a Web Distribution Using the CloudFront Console](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html) in the *Amazon CloudFront Developer Guide*\. This tutorial also uses AWS CloudFormation to simplify the provisioning process\. For more information, see the [AWS CloudFormation User Guide](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)\.
@@ -48,23 +42,14 @@ The AWS CloudFormation template creates a web access control list \(web ACL\) an
 **Estimated time:** 15 minutes if you already have a CloudFront distribution, or 30 minutes if you need to create a CloudFront distribution\.
 
 **Estimated cost:**
-
 + **AWS WAF**
-
   + $5\.00 per month per web ACL \(the tutorial creates one web ACL\)
-
   + $1\.00 per month per rule \(x2 for the two rules that AWS CloudFormation creates for this tutorial\)
-
   + $0\.60 per million requests
-
 + **AWS Lambda** – Each new CloudFront access log represents a new request and triggers the Lambda function that is created by this tutorial\. Lambda charges include the following:
-
   + **Requests** – The first million requests are free, and then Lambda charges $0\.20 per million requests\. CloudFront delivers access logs for a distribution up to several times an hour\. 
-
   + **Memory used per second** – $0\.00001667 per GB of memory used per second\.
-
 + **Amazon S3** – Amazon S3 charges for storing CloudFront access logs\. The size of the logs and, therefore, the charge for storage depends on the number of requests that CloudFront receives for your objects\. For more information, see [Amazon S3 Pricing](https://aws.amazon.com/s3/pricing/)\.
-
 + **CloudFront** – You don't incur any additional CloudFront charges for this solution\. For more information, see [Amazon CloudFront Pricing](http://aws.amazon.com/cloudfront/pricing/)\.
 
 ## Step 1: Create an AWS CloudFormation Stack for Blocking IP Addresses That Submit Bad Requests<a name="tutorials-4xx-blocking-cloudformation"></a>
@@ -72,18 +57,14 @@ The AWS CloudFormation template creates a web access control list \(web ACL\) an
 In the following procedure, you use an AWS CloudFormation template to create a stack that launches the AWS resources required by Lambda, CloudFront, Amazon S3, AWS WAF, and CloudWatch\.
 
 **Important**  
-You begin to incur charges for the different services when you create the AWS CloudFormation stack that deploys this solution\. Charges continue to accrue until you delete the AWS CloudFormation stack\. For more information, see [Step 5: \(Optional\) Delete Your AWS CloudFormation Stack](#tutorials-4xx-blocking-delete-stack)\. 
+You begin to incur charges for the different services when you create the AWS CloudFormation stack that deploys this solution\. Charges continue to accrue until you delete the AWS CloudFormation stack\. For more information, see [Step 5: \(Optional\) Delete Your AWS CloudFormation Stack](#tutorials-4xx-blocking-delete-stack)\. <a name="tutorials-4xx-blocking-cloudformation-procedure"></a>
 
 **To create an AWS CloudFormation stack for blocking IP addresses that submit bad requests**
 
 1. To start the process that creates an AWS CloudFormation stack, choose the link for the region in which you want to create AWS resources:
-
    + [Create a stack in US East \(N\. Virginia\)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn%7eBadBehavingIP%7cturl%7ehttps:%2f%2fs3.amazonaws.com/awswaf.us-east-1/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
-
    + [Create a stack in US West \(Oregon\)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#cstack=sn%7eBadBehavingIP%7cturl%7ehttps:%2f%2fs3.amazonaws.com/awswaf.us-west-2/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
-
    + [Create a stack in EU \(Ireland\)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#cstack=sn%7eBadBehavingIP%7cturl%7ehttps:%2f%2fs3.amazonaws.com/awswaf.eu-west-1/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
-
    + [Create a stack in Asia Pacific \(Tokyo\)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#cstack=sn%7eBadBehavingIP%7cturl%7ehttps:%2f%2fs3.amazonaws.com/awswaf.ap-northeast-1/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
 
 1. If you are not already signed in to the AWS Management Console, sign in when prompted\. 
@@ -111,13 +92,9 @@ Specify how long \(in minutes\) an IP address should be blocked after crossing t
 1. On the **Review** page, select the **I acknowledge** check box, and then choose **Create**\.
 
    After you choose **Create**, AWS CloudFormation creates the AWS resources that are necessary to run the solution:
-
    + Lambda function
-
    + AWS WAF web ACL \(named **Malicious Requesters**\) with the necessary rules configured
-
    + CloudWatch custom metric
-
    + Amazon S3 bucket with the name that you specified in the **CloudFront Access Log Bucket Name** field in step 6, if you selected **yes** for **Create CloudFront Access Log Bucket**
 
 ## Step 2: Associate a Web ACL with a CloudFront Distribution<a name="tutorials-4xx-blocking-cloudfront"></a>
@@ -177,7 +154,7 @@ Choose **BadBehavingIP** or the name that you specified for your AWS CloudFormat
 
 ## Step 3: \(Optional\) Edit AWS CloudFormation Parameter Values<a name="tutorials-4xx-blocking-cloudformation-parameters"></a>
 
-If you want to change the parameters after you create the AWS CloudFormation stack—for example, if you want to change the threshold value or how long IPs are blocked—you can update the AWS CloudFormation stack\.
+If you want to change the parameters after you create the AWS CloudFormation stack—for example, if you want to change the threshold value or how long IPs are blocked—you can update the AWS CloudFormation stack\.<a name="tutorials-4xx-blocking-cloudformation-parameters-procedure"></a>
 
 **To edit AWS CloudFormation parameter values**
 
@@ -203,7 +180,7 @@ Specify the new value of how long \(in minutes\) that you want AWS WAF to block 
 
 ## Step 4: \(Optional\) Test Your Thresholds and IP Rules<a name="tutorials-4xx-blocking-test"></a>
 
-To test your solution, you can wait until CloudFront generates a new access log file, or you can simulate this process by uploading a sample access log into the Amazon S3 bucket that you specified for receiving log files\.
+To test your solution, you can wait until CloudFront generates a new access log file, or you can simulate this process by uploading a sample access log into the Amazon S3 bucket that you specified for receiving log files\.<a name="tutorials-4xx-blocking-test-thresholds-procedure"></a>
 
 **To test your thresholds and IP rules**
 
@@ -217,7 +194,7 @@ To test your solution, you can wait until CloudFront generates a new access log 
 
 1. Choose **Add Files**, choose the sample access log file, and then choose **Start Upload**\.
 
-After the upload finishes, perform the following procedure to confirm that the IP addresses were populated automatically in the AWS WAF **Auto Block** rule\. Lambda takes a few seconds to process the log file and update the rule\.
+After the upload finishes, perform the following procedure to confirm that the IP addresses were populated automatically in the AWS WAF **Auto Block** rule\. Lambda takes a few seconds to process the log file and update the rule\.<a name="tutorials-4xx-blocking-test-review-ip-addresses-procedure"></a>
 
 **To review IP addresses in the **Auto Block** rule**
 

@@ -1,7 +1,7 @@
-# AWS WAF and AWS Shield Advanced Developer Guide
+# AWS WAF, AWS Firewall Manager, and AWS Shield Advanced Developer Guide
 
 -----
-*****Copyright &copy; 2017 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -14,8 +14,9 @@ Amazon's trademarks and trade dress may not be used in
 
 -----
 ## Contents
-+ [What Is AWS WAF and AWS Shield?](what-is-aws-waf.md)
-+ [Setting Up for AWS WAF and AWS Shield](setting-up-waf.md)
++ [What Are AWS WAF, AWS Shield, and AWS Firewall Manager?](what-is-aws-waf.md)
+   + [Which Should I Choose?](waf-which-to-choose.md)
++ [Setting Up](setting-up-waf.md)
 + [AWS WAF](waf-chapter.md)
    + [How AWS WAF Works](how-aws-waf-works.md)
    + [AWS WAF Pricing](aws-waf-pricing.md)
@@ -28,7 +29,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Step 1: Launch a Virtual Server Using Amazon EC2](tutorials-ddos-cross-service-EC2.md)
          + [Step 2: Scale Your Traffic Using Elastic Load Balancing](tutorials-ddos-cross-service-ELB.md)
          + [Step 3: Improve Performance and Absorb Attacks Using Amazon CloudFront](tutorials-ddos-cross-service-CF.md)
-         + [Step 4: Register Your Domain Name and Implement DNS Service Using Amazon Route 53](tutorials-ddos-cross-service-R53.md)
+         + [Step 4: Register Your Domain Name and Implement DNS Service Using Route 53](tutorials-ddos-cross-service-R53.md)
          + [Step 5: Detect and Filter Malicious Web Requests Using AWS WAF](tutorials-ddos-cross-service-WAF.md)
          + [Additional Best Practices](tutorials-ddos-cross-service-best-practices.md)
       + [Blog Tutorials](blog_tutorials.md)
@@ -61,15 +62,37 @@ Amazon's trademarks and trade dress may not be used in
       + [Using Identity-Based Policies (IAM Policies) for AWS WAF](access-control-identity-based.md)
       + [AWS WAF API Permissions: Actions, Resources, and Conditions Reference](waf-api-permissions-ref.md)
    + [AWS WAF Limits](limits.md)
++ [AWS Firewall Manager](fms-chapter.md)
+   + [AWS Firewall Manager Pricing](aws-fms-pricing.md)
+   + [AWS Firewall Manager Prerequisites](fms-prereq.md)
+      + [Step 1: Join AWS Organizations](join-aws-orgs.md)
+      + [Step 2: Set the AWS Firewall Manager Administrator Account](enable-integration.md)
+      + [Step 3: Enable AWS Config](enable-config.md)
+   + [Getting Started with AWS Firewall Manager](getting-started-fms.md)
+      + [Step 1: Complete the Prerequisites](complete-prereq.md)
+      + [Step 2: Create Rules](get-started-fms-create-rules.md)
+      + [Step 3: Create a Rule Group](get-started-fms-create-rule-group.md)
+      + [Step 4: Create and Apply an AWS Firewall Manager Policy](get-started-fms-create-security-policy.md)
+   + [AWS Firewall Manager Limits](fms-limits.md)
+   + [Working with Rule Groups](working-with-rule-groups.md)
+      + [Creating a Rule Group](create-rule-group.md)
+      + [Adding and Deleting Rules from a Rule Group](rule-group-editing.md)
+   + [Working with AWS Firewall Manager Policies](working-with-policies.md)
+      + [Creating an AWS Firewall Manager Policy](create-policy.md)
+      + [Deleting an AWS Firewall Manager Policy](policy-deleting.md)
+   + [Viewing Resource Compliance with a Policy](fms-compliance.md)
+   + [Designating a Different Account as the AWS Firewall Manager Administrator Account](fms-change-administrator.md)
 + [AWS Shield](shield-chapter.md)
    + [How AWS Shield Works](ddos-overview.md)
    + [Example AWS Shield Advanced Use Cases](aws-shield-use-case.md)
    + [AWS Shield Advanced Pricing](aws-shield-pricing.md)
    + [Getting Started with AWS Shield Advanced](getting-started-ddos.md)
       + [Step 1: Enable and Configure AWS Shield Advanced](enable-ddos-prem.md)
-      + [Step 2: Add AWS Shield Advanced Protection to AWS Resources](configure-new-protection.md)
+      + [Step 2: Add AWS Shield Advanced Protection to more AWS Resources](configure-new-protection.md)
       + [Step 3: Authorize the DDoS Response Team to Create Rules and Web ACLs on Your Behalf](authorize-DRT.md)
-      + [Step 4: Deploy AWS WAF Security Automations](deploy-waf-automations.md)
+      + [Step 4: Create a DDoS Dashboard in CloudWatch and set CloudWatch alarms](deploy-waf-dashboard.md)
+      + [Step 5: Deploy AWS WAF Rules](deploy-waf-automations.md)
+      + [Step 6: Monitor the global threat environment dashboard](monitor-global-dashboard.md)
    + [Removing AWS Shield Advanced from an AWS Resource](remove-protection.md)
    + [AWS Shield Advanced: Requesting a Credit](request-refund.md)
    + [AWS Shield Advanced Limits](shield-limits.md)
@@ -80,6 +103,7 @@ Amazon's trademarks and trade dress may not be used in
       + [AWS WAF Dimensions](waf-metricdimensions.md)
       + [Shield Advanced Metrics](set-ddos-alarms.md)
    + [Logging AWS WAF API Calls with AWS CloudTrail](logging-using-cloudtrail.md)
+   + [Logging Shield Advanced API Calls with AWS CloudTrail](logging-shield-using-cloudtrail.md)
 + [Responding to DDoS Attacks](ddos-responding.md)
    + [Reviewing DDoS Incidents](using-ddos-reports.md)
 + [Using the AWS WAF and AWS Shield Advanced API](waf-api-using.md)
@@ -87,7 +111,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Making HTTPS Requests to AWS WAF or Shield Advanced](waf-api-making-requests.md)
    + [HTTP Responses](waf-api-making-requests-response.md)
    + [Authenticating Requests](authenticating-requests.md)
-+ [AWS WAF PCI DSS Compliance](pci-compliance.md)
++ [AWS WAF and AWS Shield Advanced PCI DSS Compliance](pci-compliance.md)
 + [Resources](resources.md)
 + [Document History](doc-history.md)
 + [AWS Glossary](glossary.md)

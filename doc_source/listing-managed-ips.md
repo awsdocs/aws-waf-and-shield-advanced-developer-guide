@@ -1,6 +1,6 @@
 # Listing IP addresses blocked by rate\-based rules<a name="listing-managed-ips"></a>
 
-AWS WAF provides a list of IP addresses that are blocked by rate\-based rules\.
+AWS WAF provides a list of IP addresses that are blocked by rate\-based rules\.<a name="listing-managed-ips-procedure"></a>
 
 **To view addresses blocked by rate\-based rules**
 

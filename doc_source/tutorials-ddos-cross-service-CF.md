@@ -1,11 +1,11 @@
 # Step 3: Improve Performance and Absorb Attacks Using Amazon CloudFront<a name="tutorials-ddos-cross-service-CF"></a>
 
-Highly scaled, diverse internet connections can significantly improve the response time of your website, better absorb DDoS attacks, and isolate faults\. Amazon CloudFront edge servers along with Amazon Route 53 provide the additional layer of network infrastructure that you need to achieve these benefits\. Your content is served and DNS queries are resolved from locations that typically are closer to your users than your EC2 origin servers\. This reduces the load on your origin EC2 servers\.
+Highly scaled, diverse internet connections can significantly improve the response time of your website, better absorb DDoS attacks, and isolate faults\. Amazon CloudFront edge servers along with Route 53 provide the additional layer of network infrastructure that you need to achieve these benefits\. Your content is served and DNS queries are resolved from locations that typically are closer to your users than your EC2 origin servers\. This reduces the load on your origin EC2 servers\.
 
 **Important**  
 You are responsible for the cost of the AWS services implemented in this tutorial\. For full details about CloudFront costs, see the [CloudFront pricing page](https://aws.amazon.com/cloudfront/pricing/)\. 
 
-
+**Topics**
 + [Deliver Your Content Using Amazon CloudFront](#tutorials-ddos-cross-service-CF-implement)
 
 ## Deliver Your Content Using Amazon CloudFront<a name="tutorials-ddos-cross-service-CF-implement"></a>
@@ -31,19 +31,12 @@ All of these capabilities can greatly improve your ability to continue serving t
 1. Accept all the default values for the remainder of the **Origin Settings** fields\.
 
 1. Under **Default Cache Behavior Settings**, accept the default values, and CloudFront will do the following:
-
    + Forward all requests that use the CloudFront URL for your distribution \(for example, `http://d111111abcdef8.cloudfront.net/image.jpg`\) to the load balancer that you specified earlier
-
    + Allow users to use either HTTP or HTTPS to access your objects
-
    + Respond to requests for your objects
-
    + Cache your objects at CloudFront edge locations for 24 hours
-
    + Forward only the default request headers to your origin and not cache your objects based on the values in the headers
-
    + Allow everyone to view your content
-
    + Not automatically compress your content
 
    For more information, see [Cache Behavior Settings](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior)\.
@@ -75,4 +68,4 @@ Enter any comments that you want to save with the distribution\.
 
 1. Open that domain name in a browser\. You should see your website\. It might take about 15 minutes or so for the distribution to be active\. If you get an error that indicates that your origin closed the connection, give it some more time and try again\. You might also have to refresh the page in your browser\.
 
-Next: [Step 4: Register Your Domain Name and Implement DNS Service Using Amazon Route 53](tutorials-ddos-cross-service-R53.md)\.
+Next: [Step 4: Register Your Domain Name and Implement DNS Service Using Route 53](tutorials-ddos-cross-service-R53.md)\.

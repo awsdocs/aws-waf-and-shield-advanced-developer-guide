@@ -30,7 +30,7 @@ For AWS Marketplace rule group pricing, see [AWS WAF Pricing](https://aws.amazon
 
 ## Use AWS Marketplace Rule Groups<a name="waf-managed-rule-group-using"></a>
 
-You can subscribe to and unsubscribe from AWS Marketplace rule groups on the AWS WAF console\.
+You can subscribe to and unsubscribe from AWS Marketplace rule groups on the AWS WAF console\.<a name="waf-managed-rule-group-using-procedure"></a>
 
 **To subscribe to and use an AWS Marketplace rule group**
 
@@ -48,7 +48,7 @@ If you don't want to subscribe to this rule group, simply close this page in you
 
 1. Add the rule group to a web ACL, just as you would add an individual rule\. For more information, see [Creating a Web ACL](web-acl-creating.md) or [Editing a Web ACL](web-acl-editing.md)\.
 **Note**  
-When adding a rule group to a web ACL, the action you set for the rule group \(either **No override** or **Override to count**\) is called the rule group override action\. For more information, see [Rule Group Override](#waf-managed-rule-group-override)\.
+When adding a rule group to a web ACL, the action you set for the rule group \(either **No override** or **Override to count**\) is called the rule group override action\. For more information, see [Rule Group Override](#waf-managed-rule-group-override)\.<a name="waf-managed-rule-group-unsubscribe-procedure"></a>
 
 **To unsubscribe from an AWS Marketplace rule group**
 
@@ -70,7 +70,7 @@ AWS Marketplace rule groups have two possible actions: **No override** and **Ove
 
 ## Troubleshooting AWS Marketplace Rule Groups<a name="waf-managed-rule-group-troubleshooting"></a>
 
-If you find that an AWS Marketplace rule group is blocking legitimate traffic, perform the following steps\.
+If you find that an AWS Marketplace rule group is blocking legitimate traffic, perform the following steps\.<a name="waf-managed-rule-group-troubleshooting-procedure"></a>
 
 **To troubleshoot an AWS Marketplace rule group**
 

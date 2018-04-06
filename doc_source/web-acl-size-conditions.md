@@ -4,7 +4,7 @@ If you want to allow or block web requests based on the length of specified part
 
 Note that if you configure AWS WAF to inspect the request body, for example, by searching the body for a specified string, AWS WAF inspects only the first 8192 bytes \(8 KB\)\. If the request body for your web requests will never exceed 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes\.
 
-
+**Topics**
 + [Creating Size Constraint Conditions](#web-acl-size-conditions-creating)
 + [Values That You Specify When You Create or Edit Size Constraint Conditions](#web-acl-size-conditions-values)
 + [Adding and Deleting Filters in a Size Constraint Condition](#web-acl-size-conditions-editing)
@@ -13,17 +13,15 @@ Note that if you configure AWS WAF to inspect the request body, for example, by 
 ## Creating Size Constraint Conditions<a name="web-acl-size-conditions-creating"></a>
 
 When you create size constraint conditions, you specify filters that identify the part of web requests for which you want AWS WAF to evaluate the length\. You can add more than one filter to a size constraint condition, or you can create a separate condition for each filter\. Here's how each configuration affects AWS WAF behavior:
-
 + **One filter per size constraint condition** – When you add the separate size constraint conditions to a rule and add the rule to a web ACL, web requests must match all the conditions for AWS WAF to allow or block requests based on the conditions\. 
 
   For example, suppose you create two conditions\. One matches web requests for which query strings are greater than 100 bytes\. The other matches web requests for which the request body is greater than 1024 bytes\. When you add both conditions to the same rule and add the rule to a web ACL, AWS WAF allows or blocks requests only when both conditions are true\.
-
 + **More than one filter per size constraint condition** – When you add a size constraint condition that contains multiple filters to a rule and add the rule to a web ACL, a web request needs only to match one of the filters in the size constraint condition for AWS WAF to allow or block the request based on that condition\.
 
   Suppose you create one condition instead of two, and the one condition contains the same two filters as in the preceding example\. AWS WAF allows or blocks requests if either the query string is greater than 100 bytes or the request body is greater than 1024 bytes\.
 
 **Note**  
-When you add a size constraint condition to a rule, you also can configure AWS WAF to allow or block web requests that *do not* match the values in the condition\.
+When you add a size constraint condition to a rule, you also can configure AWS WAF to allow or block web requests that *do not* match the values in the condition\.<a name="web-acl-size-conditions-creating-procedure"></a>
 
 **To create a size constraint condition**
 
@@ -47,7 +45,7 @@ When you create or update a size constraint condition, you specify the following
 
 **Name**  
 Type a name for the size constraint condition\.  
-The name can contain only the characters A\-Z, a\-z, and 0\-9\. You can't change the name of a condition after you create it\.
+The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. You can't change the name of a condition after you create it\.
 
 **Part of the request to filter on**  
 Choose the part of each web request for which you want AWS WAF to evaluate the length:    
@@ -76,6 +74,7 @@ If you choose **URI** for the value of **Part of the request to filter on**, the
 **Transformation**  
 A transformation reformats a web request before AWS WAF evaluates the length of the specified part of the request\. This eliminates some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF\.   
 If you choose **Body** for **Part of the request to filter on**, you can't configure AWS WAF to perform a transformation because only the first 8192 bytes are forwarded for inspection\. However, you can still filter your traffic based on the size of the HTTP request body and specify a transformation of **None**\. \(AWS WAF gets the length of the body from the request headers\.\)
+You can only specify a single type of text transformation\.  
 Transformations can perform the following operations:    
 **None**  
 AWS WAF doesn't perform any text transformations on the web request before checking the length\.  
@@ -83,51 +82,34 @@ AWS WAF doesn't perform any text transformations on the web request before check
 AWS WAF converts uppercase letters \(A\-Z\) to lowercase \(a\-z\)\.  
 **HTML decode**  
 AWS WAF replaces HTML\-encoded characters with unencoded characters:  
-
 + Replaces `&quot;` with `&`
-
 + Replaces `&nbsp;` with a non\-breaking space
-
 + Replaces `&lt;` with `<`
-
 + Replaces `&gt;` with `>`
-
 + Replaces characters that are represented in hexadecimal format, `&#xhhhh;`, with the corresponding characters
-
 + Replaces characters that are represented in decimal format, `&#nnnn;`, with the corresponding characters  
 **Normalize whitespace**  
 AWS WAF replaces the following characters with a space character \(decimal 32\):  
-
 + \\f, formfeed, decimal 12
-
 + \\t, tab, decimal 9
-
 + \\n, newline, decimal 10
-
 + \\r, carriage return, decimal 13
-
 + \\v, vertical tab, decimal 11
-
 + non\-breaking space, decimal 160
 In addition, this option replaces multiple spaces with one space\.  
 **Simplify command line**  
 For requests that contain operating system command line commands, use this option to perform the following transformations:  
-
 + Delete the following characters: \\ " ' ^
-
 + Delete spaces before the following characters: / \(
-
 + Replace the following characters with a space: , ;
-
 + Replace multiple spaces with one space
-
 + Convert uppercase letters \(A\-Z\) to lowercase \(a\-z\)  
 **URL decode**  
 Decode a URL\-encoded request\.
 
 ## Adding and Deleting Filters in a Size Constraint Condition<a name="web-acl-size-conditions-editing"></a>
 
-You can add or delete filters in a size constraint condition\. To change a filter, add a new one and delete the old one\.
+You can add or delete filters in a size constraint condition\. To change a filter, add a new one and delete the old one\.<a name="web-acl-size-conditions-editing-procedure"></a>
 
 **To add or delete filters in a size constraint condition**
 
@@ -153,7 +135,7 @@ You can add or delete filters in a size constraint condition\. To change a filte
 
 ## Deleting Size Constraint Conditions<a name="web-acl-size-conditions-deleting"></a>
 
-If you want to delete a size constraint condition, you need to first delete all filters in the condition and remove the condition from all the rules that are using it, as described in the following procedure\.
+If you want to delete a size constraint condition, you need to first delete all filters in the condition and remove the condition from all the rules that are using it, as described in the following procedure\.<a name="web-acl-size-conditions-deleting-procedure"></a>
 
 **To delete a size constraint condition**
 

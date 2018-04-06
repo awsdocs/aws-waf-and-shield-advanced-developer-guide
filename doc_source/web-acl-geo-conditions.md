@@ -7,7 +7,7 @@ You can use geo match conditions with other AWS WAF conditions or rules to build
 **Note**  
 If you are using the CloudFront geo restriction feature to block a country from accessing your content, any request from that country is blocked and is not forwarded to AWS WAF\. So if you want to allow or block requests based on geography in conjunction with other AWS WAF conditions, you should *not* use the CloudFront geo restriction feature and use an AWS WAF geo match condition instead\.
 
-
+**Topics**
 + [Creating a Geo Match Condition](#web-acl-geo-conditions-creating)
 + [Editing Geo Match Conditions](#web-acl-geo-conditions-editing)
 + [Deleting Geo Match Conditions](#web-acl-geo-conditions-deleting)
@@ -17,7 +17,7 @@ If you are using the CloudFront geo restriction feature to block a country from 
 If you want to allow some web requests and block others based on the countries that the requests originate from, create a geo match condition for the countries that you want to allow and another geo match condition for the countries that you want to block\.
 
 **Note**  
-When you add a geo match condition to a rule, you also can configure AWS WAF to allow or block web requests that *do not* originate from the country that you specify in the condition\.
+When you add a geo match condition to a rule, you also can configure AWS WAF to allow or block web requests that *do not* originate from the country that you specify in the condition\.<a name="web-acl-geo-conditions-creating-procedure"></a>
 
 **To create a geo match condition**
 
@@ -29,7 +29,7 @@ When you add a geo match condition to a rule, you also can configure AWS WAF to 
 
 1. Type a name in the **Name** field\.
 
-   The name can contain only the characters A\-Z, a\-z, and 0\-9\. You can't change the name of a condition after you create it\.
+   The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \. You can't change the name of a condition after you create it\.
 
 1. Choose a **Region**\.
 
@@ -41,7 +41,7 @@ When you add a geo match condition to a rule, you also can configure AWS WAF to 
 
 ## Editing Geo Match Conditions<a name="web-acl-geo-conditions-editing"></a>
 
-You can add countries to or delete countries from your geo match condition\.
+You can add countries to or delete countries from your geo match condition\.<a name="web-acl-geo-conditions-editing-procedure"></a>
 
 **To edit a geo match condition**
 
@@ -67,7 +67,7 @@ You can add countries to or delete countries from your geo match condition\.
 
 ## Deleting Geo Match Conditions<a name="web-acl-geo-conditions-deleting"></a>
 
-If you want to delete a geo match condition, you must first remove all countries in the condition and remove the condition from all the rules that are using it, as described in the following procedure\.
+If you want to delete a geo match condition, you must first remove all countries in the condition and remove the condition from all the rules that are using it, as described in the following procedure\.<a name="web-acl-geo-conditions-deleting-procedure"></a>
 
 **To delete a geo match condition**
 

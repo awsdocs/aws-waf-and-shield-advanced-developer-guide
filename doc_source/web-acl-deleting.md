@@ -1,6 +1,6 @@
 # Deleting a Web ACL<a name="web-acl-deleting"></a>
 
-To delete a web ACL, you must remove the rules that are included in the web ACL and disassociate all CloudFront distributions and Application Load Balancers from the web ACL\. Perform the following procedure\.
+To delete a web ACL, you must remove the rules that are included in the web ACL and disassociate all CloudFront distributions and Application Load Balancers from the web ACL\. Perform the following procedure\.<a name="web-acl-deleting-procedure"></a>
 
 **To delete a web ACL**
 

@@ -1,6 +1,6 @@
-# Setting Up for AWS WAF and AWS Shield<a name="setting-up-waf"></a>
+# Setting Up<a name="setting-up-waf"></a>
 
-This topic describes preliminary steps, such as creating an AWS account, to prepare you to use AWS WAF and AWS Shield Advanced\. You do not get charged to set up this account and other preliminary items\. You are only charged for AWS services that you use\. 
+This topic describes preliminary steps, such as creating an AWS account, to prepare you to use AWS WAF, AWS Firewall Manager, and AWS Shield Advanced\. You are not charged to set up this account and other preliminary items\. You are charged only for AWS services that you use\. 
 
 After you complete these steps, see [Getting Started with AWS WAF](getting-started.md) to continue getting started with AWS WAF\.
 
@@ -8,11 +8,8 @@ After you complete these steps, see [Getting Started with AWS WAF](getting-start
 AWS Shield Standard is included with AWS WAF and does not require additional setup\. For more information, see [How AWS Shield Works](ddos-overview.md)\.
 
 Before you use AWS WAF or AWS Shield Advanced for the first time, complete the following tasks:
-
 + [Step 1: Sign Up for an AWS Account](#setting-up-waf-aws-account)
-
 + [Step 2: Create an IAM User](#setting-up-waf-iam)
-
 + [Step 3: Download Tools](#setting-up-waf-tools)
 
 ## Step 1: Sign Up for an AWS Account<a name="setting-up-waf-aws-account"></a>
@@ -34,10 +31,8 @@ Note your AWS account number, because you'll need it for the next task\.
 ## Step 2: Create an IAM User<a name="setting-up-waf-iam"></a>
 
 To use the AWS WAF console, you must sign in to confirm that you have permission to perform AWS WAF operations\. You can use the root credentials for your AWS account, but we don't recommend it\. For greater security and control of your account, we recommend that you use AWS Identity and Access Management \(IAM\) to do the following:
-
-+ Create an IAM user account for yourself or your business
-
-+ Either add the IAM user account to an IAM group that has administrative permissions, or grant the IAM user account administrative permissions directly
++ Create an IAM user account for yourself or your business\.
++ Either add the IAM user account to an IAM group that has administrative permissions, or grant administrative permissions directly to the IAM user account\.
 
 You then can sign in to the AWS WAF console \(and other service consoles\) by using a special URL and the credentials for the IAM user\. You also can add other users to the IAM user account, and control their level of access to AWS services and to your resources\.
 
@@ -48,7 +43,9 @@ If you signed up for AWS but have not created an IAM user for yourself, you can 
 
 **To create an IAM user for yourself and add the user to an Administrators group**
 
-1. Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the *[AWS account root user](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)*\.
+1. Use your AWS account email address and password to sign in as the *[AWS account root user](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)* to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+**Note**  
+We strongly recommend that you adhere to the best practice of using the **Administrator** user below and securely lock away the root user credentials\. Sign in as the root user only to perform a few [account and service management tasks](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
 1. In the navigation pane of the console, choose **Users**, and then choose **Add user**\.
 
@@ -90,32 +87,21 @@ https://your_account_alias.signin.aws.amazon.com/console/
 
 To verify the sign\-in link for IAM users for your account, open the IAM console and check under the **IAM users sign\-in link** on the dashboard\. 
 
-After you complete these steps, you can stop here and go to [Getting Started with AWS WAF](getting-started.md) to continue getting started with AWS WAF using the console\. If you want to access AWS WAF programatically using the AWS WAF API, continue on to the next step, [Step 3: Download Tools](#setting-up-waf-tools)\.
+After you complete these steps, you can stop here and go to [Getting Started with AWS WAF](getting-started.md) to continue getting started with AWS WAF using the console\. If you want to access AWS WAF programmatically using the AWS WAF API, continue on to the next step, [Step 3: Download Tools](#setting-up-waf-tools)\.
 
 ## Step 3: Download Tools<a name="setting-up-waf-tools"></a>
 
-The AWS Management Console includes a console for AWS WAF, but if you want to access AWS WAF programatically, the following documentation and tools will help you:
-
+The AWS Management Console includes a console for AWS WAF, but if you want to access AWS WAF programmatically, the following documentation and tools will help you:
 + If you want to call the AWS WAF API without having to handle low\-level details like assembling raw HTTP requests, you can use an AWS SDK\. The AWS SDKs provide functions and data types that encapsulate the functionality of AWS WAF and other AWS services\. To download an AWS SDK, see the applicable page, which also includes prerequisites and installation instructions:
-
   + [Java](https://aws.amazon.com/sdk-for-java/)
-
   + [JavaScript](http://aws.amazon.com/sdkforbrowser/)
-
   + [\.NET](https://aws.amazon.com/sdk-for-net/)
-
   + [Node\.js](https://aws.amazon.com/sdk-for-node-js/)
-
   + [PHP](https://aws.amazon.com/sdk-for-php/)
-
   + [Python](https://github.com/boto/boto)
-
   + [Ruby](https://aws.amazon.com/sdk-for-ruby/)
 
   For a complete list of AWS SDKs, see [Tools for Amazon Web Services](http://aws.amazon.com/tools/)\.
-
 + If you're using a programming language for which AWS doesn't provide an SDK, the [AWS WAF API Reference](http://docs.aws.amazon.com/waf/latest/APIReference/) documents the operations that AWS WAF supports\. 
-
 + The AWS Command Line Interface \(AWS CLI\) supports AWS WAF\. The AWS CLI lets you control multiple AWS services from the command line and automate them through scripts\. For more information, see [AWS Command Line Interface](https://aws.amazon.com/cli/)\.
-
-+ AWS Tools for Windows PowerShell supports AWS WAF\. For more information, see [AWS Tools for Windows PowerShell Reference](http://aws.amazon.com/documentation/powershell/)\.
++ AWS Tools for Windows PowerShell supports AWS WAF\. For more information, see [AWS Tools for PowerShell Cmdlet Reference](http://aws.amazon.com/documentation/powershell/)\.

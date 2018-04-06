@@ -1,0 +1,3 @@
+# Step 6: Monitor the global threat environment dashboard<a name="monitor-global-dashboard"></a>
+
+The global threat environment dashboard provides a near real\-time summary of the global AWS threat landscape, including the largest attack, the top attack vectors, and the relative number of significant attacks\. You can customize the dashboard view for different time durations to see the history of significant DDoS attacks\. For more information, see [ Monitoring Threats Across AWS](using-ddos-reports.md#aws-shield-global-threats)\. 

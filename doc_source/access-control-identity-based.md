@@ -37,9 +37,7 @@ The following shows an example of a permissions policy:
 ```
 
  The policy has two statements: 
-
 + The first statement grants permissions to view statistics for AWS WAF web ACLs, using the `waf:ListWebACLs`, `waf:ListRules`, `waf:GetWebACL`, `waf:GetRule`, `cloudwatch:ListMetrics`, and `waf:GetSampledRequests` actions\. AWS WAF doesn't support permissions for some of these actions at the resource level\. Therefore, the policy specifies a wildcard character \(\*\) as the `Resource` value\. 
-
 + The second statement grants permissions for the IAM action `iam:PassRole` on IAM roles\. The wildcard character \(\*\) at the end of the `Resource` value means that the statement allows permissions for the `iam:PassRole` action on any IAM role\. To limit these permissions to a specific role, replace the wildcard character \(\*\) in the resource ARN with the specific role name\. 
 
 The policy doesn't specify the `Principal` element because in an identity\-based policy you don't specify the principal who gets the permissions\. When you attach a policy to a user, the user is the implicit principal\. When you attach a permissions policy to an IAM role, the principal identified in the role's trust policy gets the permissions\.
@@ -47,11 +45,8 @@ The policy doesn't specify the `Principal` element because in an identity\-based
 For a table that shows all the AWS WAF API actions and the resources that they apply to, see [AWS WAF API Permissions: Actions, Resources, and Conditions Reference](waf-api-permissions-ref.md)\. 
 
 ## Topics<a name="topics3"></a>
-
 + [Permissions Required to Use the AWS WAF Console](#additional-console-required-permissions)
-
 + [AWS Managed \(Predefined\) Policies for AWS WAF](#access-policy-examples-aws-managed) 
-
 + [Customer Managed Policy Examples](#access-policy-examples-for-sdk-cli) 
 
 ## Permissions Required to Use the AWS WAF Console<a name="additional-console-required-permissions"></a>
@@ -63,9 +58,7 @@ The AWS WAF console provides an integrated environment for you to create and man
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
 The following AWS managed policies, which you can attach to users in your account, are specific to AWS WAF and are grouped by use case scenario:
-
 + **AWSWAFReadOnlyAccess** – Grants read\-only access to AWS WAF resources\. 
-
 + **AWSWAFFullAccess** – Grants full access to AWS WAF resources\.
 
 **Note**  
@@ -84,13 +77,9 @@ We recommend that you use two browser windows: one to create the user and grant 
 For examples that show how to create an IAM role that you can use as an execution role for your AWS WAF resource, see [Creating IAM Roles](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) in the *IAM User Guide*\.
 
 ### Example Topics<a name="topics4"></a>
-
 + [Example 1: Give Users Read\-only Access to AWS WAF, CloudFront, and CloudWatch](#example1)
-
 + [Example 2: Give Users Full Access to AWS WAF, CloudFront, and CloudWatch](#example2) 
-
 + [Example 3: Granting Access to a Specified AWS Account](#example3) 
-
 + [Example 4: Granting Access to a Specified Web ACL](#example4) 
 
 ### Create an IAM User<a name="console-permissions-list-functions"></a>
@@ -158,11 +147,8 @@ We strongly recommend that you configure multi\-factor authentication \(MFA\) fo
 ### Example 3: Granting Access to a Specified AWS Account<a name="example3"></a>
 
 This policy grants the following permissions to the account 444455556666:
-
 + Full access to all AWS WAF operations and resources\.
-
 + Read and update access to all CloudFront distributions, which allows you to associate web ACLs and CloudFront distributions\.
-
 + Read access to all CloudWatch metrics and metric statistics, so that you can view CloudWatch data and a sample of requests in the AWS WAF console\. 
 
 ```
@@ -200,7 +186,6 @@ This policy grants the following permissions to the account 444455556666:
 ### Example 4: Granting Access to a Specified Web ACL<a name="example4"></a>
 
 This policy grants the following permissions to the `webacl` ID 112233d7c\-86b2\-458b\-af83\-51c51example in the account 444455556666:
-
 + Full access to AWS WAF `Get`, `Update`, and `Delete` operations and resources
 
 ```

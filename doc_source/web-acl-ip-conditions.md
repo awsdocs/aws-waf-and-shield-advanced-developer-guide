@@ -2,7 +2,7 @@
 
 If you want to allow or block web requests based on the IP addresses that the requests originate from, create one or more IP match conditions\. An IP match condition lists up to 10,000 IP addresses or IP address ranges that your requests originate from\. Later in the process, when you create a web ACL, you specify whether to allow or block requests from those IP addresses\.
 
-
+**Topics**
 + [Creating an IP Match Condition](#web-acl-ip-conditions-creating)
 + [Editing IP Match Conditions](#web-acl-ip-conditions-editing)
 + [Deleting IP Match Conditions](#web-acl-ip-conditions-deleting)
@@ -12,7 +12,7 @@ If you want to allow or block web requests based on the IP addresses that the re
 If you want to allow some web requests and block others based on the IP addresses that the requests originate from, create an IP match condition for the IP addresses that you want to allow and another IP match condition for the IP addresses that you want to block\.
 
 **Note**  
-When you add an IP match condition to a rule, you also can configure AWS WAF to allow or block web requests that *do not* originate from the IP addresses that you specify in the condition\.
+When you add an IP match condition to a rule, you also can configure AWS WAF to allow or block web requests that *do not* originate from the IP addresses that you specify in the condition\.<a name="web-acl-ip-conditions-creating-procedure"></a>
 
 **To create an IP match condition**
 
@@ -24,16 +24,12 @@ When you add an IP match condition to a rule, you also can configure AWS WAF to 
 
 1. Type a name in the **Name** field\.
 
-   The name can contain only the characters A\-Z, a\-z, and 0\-9\. You can't change the name of a condition after you create it\.
+   The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \. You can't change the name of a condition after you create it\.
 
 1. Select the correct IP version and specify an IP address or range of IP addresses by using CIDR notation\. Here are some examples:
-
    + To specify the IPv4 address 192\.0\.2\.44, type **192\.0\.2\.44/32**\.
-
    + To specify the IPv6 address 0:0:0:0:0:ffff:c000:22c, type **0:0:0:0:0:ffff:c000:22c/128**\.
-
    + To specify the range of IPv4 addresses from 192\.0\.2\.0 to 192\.0\.2\.255, type **192\.0\.2\.0/24**\.
-
    + To specify the range of IPv6 addresses from 2620:0:2d0:200:0:0:0:0 to 2620:0:2d0:200:ffff:ffff:ffff:ffff, type **2620:0:2d0:200::/64**\.
 
    AWS WAF supports /8, /16, /24, and /32 IPv4 address ranges and /16, /24, /32, /48, /56, /64, and /128 IPv6 address ranges\. For more information about CIDR notation, see the Wikipedia entry [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\.
@@ -46,7 +42,7 @@ When you add an IP match condition to a rule, you also can configure AWS WAF to 
 
 ## Editing IP Match Conditions<a name="web-acl-ip-conditions-editing"></a>
 
-You can add an IP address range to an IP match condition or delete a range\. To change a range, add a new one and delete the old one\.
+You can add an IP address range to an IP match condition or delete a range\. To change a range, add a new one and delete the old one\.<a name="web-acl-ip-conditions-editing-procedure"></a>
 
 **To edit an IP match condition**
 
@@ -61,13 +57,9 @@ You can add an IP address range to an IP match condition or delete a range\. To 
    1. In the right pane, choose **Add IP address or range**\.
 
    1. Select the correct IP version and type an IP address range by using CIDR notation\. Here are some examples:
-
       + To specify the IPv4 address 192\.0\.2\.44, type **192\.0\.2\.44/32**\.
-
       + To specify the IPv6 address 0:0:0:0:0:ffff:c000:22c, type **0:0:0:0:0:ffff:c000:22c/128**\.
-
       + To specify the range of IPv4 addresses from 192\.0\.2\.0 to 192\.0\.2\.255, type **192\.0\.2\.0/24**\.
-
       + To specify the range of IPv6 addresses from 2620:0:2d0:200:0:0:0:0 to 2620:0:2d0:200:ffff:ffff:ffff:ffff, type **2620:0:2d0:200::/64**\.
 
       AWS WAF supports /8, /16, /24, and /32 IPv4 address ranges and /16, /24, /32, /56, /64, and /128 IPv6 address ranges\. For more information about CIDR notation, see the Wikipedia entry [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\.
@@ -84,7 +76,7 @@ You can add an IP address range to an IP match condition or delete a range\. To 
 
 ## Deleting IP Match Conditions<a name="web-acl-ip-conditions-deleting"></a>
 
-If you want to delete an IP match condition, you must first delete all IP addresses and ranges in the condition and remove the condition from all the rules that are using it, as described in the following procedure\.
+If you want to delete an IP match condition, you must first delete all IP addresses and ranges in the condition and remove the condition from all the rules that are using it, as described in the following procedure\.<a name="web-acl-ip-conditions-deleting-procedure"></a>
 
 **To delete an IP match condition**
 

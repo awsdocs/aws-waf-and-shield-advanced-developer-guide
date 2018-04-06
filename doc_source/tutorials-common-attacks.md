@@ -1,17 +1,14 @@
 # Tutorial: Quickly Setting Up AWS WAF Protection Against Common Attacks<a name="tutorials-common-attacks"></a>
 
 This tutorial shows you how to use [AWS CloudFormation](https://aws.amazon.com/cloudformation/) to quickly configure AWS WAF to protect against the following common attacks:
-
 + **Cross\-site scripting attacks** – Attackers sometimes insert scripts into web requests in an effort to exploit vulnerabilities in web applications\. Cross\-site scripting match conditions identify the parts of web requests, such as the URI or the query string, that you want AWS WAF to inspect for possible malicious scripts\.
-
 + **SQL injection attacks** – Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database\. SQL injection match conditions identify the part of web requests that you want AWS WAF to inspect for possible malicious SQL code\.
-
 + **Attacks from known bad IP addresses** – You can use IP match conditions to allow, block, or count web requests based on the IP addresses that the requests originate from\. An IP match condition lists up to 1,000 IP addresses or IP address ranges that you specify\.
 
 **Note**  
 This tutorial assumes that you have a CloudFront distribution that you use to deliver content for your web application\. If you don't have a CloudFront distribution, see [Creating or Updating a Web Distribution Using the CloudFront Console](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html) in the *Amazon CloudFront Developer Guide*\. 
 
-
+**Topics**
 + [Solution Overview](#tutorials-common-attacks-overview)
 + [Step 1: Create an AWS CloudFormation Stack That Sets Up AWS WAF Protection Against Common Attacks](#tutorials-common-attacks-cloudformation)
 + [Step 2: Associate a Web ACL with a CloudFront Distribution](#tutorials-common-attacks-cloudfront)
@@ -39,25 +36,17 @@ The name of the condition is *prefix***LargeBodyMatch** where *prefix* is the na
 
 **SQL Injection Condition**  
 Filters requests that contain possible malicious SQL code\. The condition includes filters that evaluate the following parts of requests:  
-
 + Query string \(URL decode transformation\)
-
 + URI \(URL decode transformation\)
-
 + Body \(URL decode transformation\)
-
 + Body \(HTML decode transformation\)
 The name of the condition is *prefix***SqliMatch** where *prefix* is the name that you specify for the web ACL when you create the AWS CloudFormation stack\.
 
 **Cross\-site Scripting Condition**  
 Filters requests that contain possible malicious scripts\. The condition includes filters that evaluate the following parts of requests:  
-
 + Query string \(URL decode transformation\)
-
 + URI \(URL decode transformation\)
-
 + Body \(URL decode transformation\)
-
 + Body \(HTML decode transformation\)
 The name of the condition is *prefix***XssMatch** where *prefix* is the name that you specify for the web ACL when you create the AWS CloudFormation stack\.
 
@@ -110,18 +99,14 @@ There is a cost associated with the resources that you create during this tutori
 In the following procedure, you use an AWS CloudFormation template to create a stack that sets up AWS WAF protection against common attacks\.
 
 **Important**  
-You begin to incur charges for the different services when you create the AWS CloudFormation stack that deploys this solution\. Charges continue to accrue until you delete the AWS CloudFormation stack\. For more information, see [Step 5: \(Optional\) Delete Your AWS CloudFormation Stack](#tutorials-common-attacks-delete-stack)\. 
+You begin to incur charges for the different services when you create the AWS CloudFormation stack that deploys this solution\. Charges continue to accrue until you delete the AWS CloudFormation stack\. For more information, see [Step 5: \(Optional\) Delete Your AWS CloudFormation Stack](#tutorials-common-attacks-delete-stack)\. <a name="tutorials-common-attacks-cloudformation-procedure"></a>
 
 **To create an AWS CloudFormation stack for blocking IP addresses that submit bad requests**
 
 1. To start the process that creates an AWS CloudFormation stack, choose the link for the region in which you want to create AWS resources:
-
    + [Create a stack in US East \(N\. Virginia\)](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new)
-
    + [Create a stack in US West \(Oregon\)](https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new)
-
    + [Create a stack in EU \(Ireland\)](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new)
-
    + [Create a stack in Asia Pacific \(Tokyo\)](https://ap-northeast-1.console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new)
 
 1. If you are not already signed in to the AWS Management Console, sign in when prompted\. 
@@ -171,7 +156,7 @@ You can associate a web ACL with as many distributions as you want, but you can 
 
 ## Step 3: \(Optional\) Add IP Addresses to the IP Match Condition<a name="tutorials-common-attacks-add-ips"></a>
 
-When you created the AWS CloudFormation stack, AWS CloudFormation created an IP match condition for you, added it to a rule, added the rule to a web ACL, and configured the web ACL to block requests based on IP addresses\. The IP match condition doesn't include any IP addresses, though\. If you want to block requests based on IP addresses, perform the following procedure\. 
+When you created the AWS CloudFormation stack, AWS CloudFormation created an IP match condition for you, added it to a rule, added the rule to a web ACL, and configured the web ACL to block requests based on IP addresses\. The IP match condition doesn't include any IP addresses, though\. If you want to block requests based on IP addresses, perform the following procedure\. <a name="tutorials-common-attacks-cloudformation-parameters-procedure"></a>
 
 **To edit AWS CloudFormation parameter values**
 
@@ -186,9 +171,7 @@ When you created the AWS CloudFormation stack, AWS CloudFormation created an IP 
    1. In the right pane, choose **Add IP address or range**\.
 
    1. Type an IP address or range by using CIDR notation\. Here are two examples:
-
       + To specify the IP address 192\.0\.2\.44, type **192\.0\.2\.44/32**\.
-
       + To specify the range of IP addresses from 192\.0\.2\.0 to 192\.0\.2\.255, type **192\.0\.2\.0/24**\.
 
       AWS WAF supports /8, /16, /24, and /32 IP address ranges\. For more information about CIDR notation, see the Wikipedia entry [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\.
@@ -203,7 +186,7 @@ AWS WAF supports both IPv4 and IPv6 IP addresses\.
 
 When you created the AWS CloudFormation stack, AWS CloudFormation created a size constraint condition that filters requests that have request bodies longer than 8,192 bytes\. It also added the condition to a rule, and added the rule to the web ACL\. In this example, AWS CloudFormation configured the web ACL to count requests, not to block requests\. This is useful when you want to confirm you are not blocking valid requests inadvertently\. 
 
-If you want to block requests that are longer than 8,192 bytes, perform the following procedure\.
+If you want to block requests that are longer than 8,192 bytes, perform the following procedure\.<a name="tutorials-common-attacks-block-large-bodies-procedure"></a>
 
 **To change the action for a rule in a web ACL**
 
