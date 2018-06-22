@@ -34,4 +34,4 @@ The following limits on AWS WAF entities can't be changed\.
 | In regex match conditions, the number of pattern sets per regex condition | 1 | 
 | The number of pattern sets per account | 5 | 
 | GeoMatchSets per account | 50 | 
-| Locations per GeoMatchSet | 10 | 
+| Locations per GeoMatchSet | 50 | 

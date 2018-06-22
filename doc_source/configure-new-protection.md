@@ -1,9 +1,9 @@
-# Step 2: Add AWS Shield Advanced Protection to more AWS Resources<a name="configure-new-protection"></a>
+# Add AWS Shield Advanced Protection to more AWS Resources<a name="configure-new-protection"></a>
 
 As part of enabling Shield Advanced for an account, you choose initial resources to protect\. You might want to add protection to more resources\. Shield Advanced offers advanced monitoring and protection for up to 100 resources that include any combination of Elastic IP addresses, CloudFront distributions, Amazon Route 53 hosted zones, or Elastic Load Balancing resources\. If you want to increase these limits, contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
 
 **Important**  
-You must complete [Step 1: Enable and Configure AWS Shield Advanced](enable-ddos-prem.md) before you start Step 2\.<a name="configure-new-protection-procedure"></a>
+You must complete [Step 1: Activate AWS Shield Advanced](enable-ddos-prem.md) before you perform this procedure\.<a name="configure-new-protection-procedure"></a>
 
 **To add protection for an AWS resource**
 
@@ -30,8 +30,6 @@ Shield Advanced does not support EC2\-Classic\.
    You can disable this protection later by following the steps described in [Removing AWS Shield Advanced from an AWS Resource](remove-protection.md)\.
 
 1. Choose **Add DDoS protection**\.
-
-After you have added DDoS protection to all the appropriate resources, go to [Step 3: Authorize the DDoS Response Team to Create Rules and Web ACLs on Your Behalf](authorize-DRT.md)\.
 
 **Note**  
 If you choose an Elastic IP address as the resource to protect, Shield Advanced will protect whatever resource is associated with that Elastic IP address, either an Amazon EC2 instance or an Elastic Load Balancing load balancer\. Shield Advanced automatically identifies the type of resource associated with the Elastic IP address and applies the appropriate mitigations for that resource, including configuring network ACLs specific to that Elastic IP address\. For more information on using Elastic IP addresses with your AWS resources, see the appropriate guide: [Amazon Elastic Compute Cloud Documentation](https://aws.amazon.com/documentation/ec2/) or [Elastic Load Balancing Documentation](https://aws.amazon.com/documentation/elastic-load-balancing/)\. Shield Advanced does not support EC2\-Classic\.

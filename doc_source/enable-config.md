@@ -6,4 +6,8 @@ You must enable AWS Config for each AWS Region that contains the resources that 
 
 You must, at a minimum, specify the following resource types that you want to protect with AWS Firewall Manager: Application Load Balancers, CloudFront distributions, or both\.
 
+When enabling AWS Config to protect an Application Load Balancer, choose **ElasticLoadBalancingV2** in the provided list of resource types\. 
+
+When enabling AWS Config to protect a CloudFront distribution, you must be in the US East \(N\. Virginia\) region\. Other regions will not have CloudFront as an option\.
+
 You can now configure AWS Firewall Manager to begin protecting your resources\. For more information, see [Getting Started with AWS Firewall Manager](getting-started-fms.md) \.

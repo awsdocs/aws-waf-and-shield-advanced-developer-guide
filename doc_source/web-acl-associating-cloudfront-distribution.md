@@ -2,8 +2,10 @@
 
 To associate or disassociate a web ACL, perform the applicable procedure\. Note that you also can associate a web ACL with a CloudFront distribution when you create or update the distribution\. For more information, see [Using AWS WAF to Control Access to Your Content](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-awswaf.html) in the *Amazon CloudFront Developer Guide*\.
 
-**Note**  
-You can associate a web ACL with as many CloudFront distributions or Application Load Balancers as you want, but you can associate only one web ACL with a given distribution\.
+The following restrictions apply when associating a web ACL:
++ Web ACLs associated with an Application Load Balancer can only be associated with other Application Load Balancers in the same region\.
++ Web ACLs associated with a CloudFront distribution cannot be associated with an Application Load Balancer\. The web ACL can, however, be associated with other CloudFront distributions\.
++ Each Application Load Balancer and CloudFront distribution can be associated with only one web ACL\.
 
 **To associate a web ACL with a CloudFront distribution or Application Load Balancer**
 

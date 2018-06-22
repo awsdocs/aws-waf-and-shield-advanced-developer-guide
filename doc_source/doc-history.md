@@ -1,6 +1,12 @@
 # Document History<a name="doc-history"></a>
-+ **API Version:** 2015\-08\-24
-+ **Latest documentation update:** July 25, 2016
+
+| Change | Description | Date | 
+| --- |--- |--- |
+| [Support for query parameters in conditions](https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-create-condition.html) | When creating a condition, you can now search the requests for specific parameters\. | June 5, 2018 | 
+| [Shield Advanced Getting Started Wizard](https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html) | Introduces a new streamlined process for subscribing to AWS Shield Advanced\. | June 5, 2018 | 
+| [Expanded allowed CIDR ranges](https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-ip-conditions.html) | When creating an IP match condition, AWS WAF now supports IPv4 address ranges: /8 and any range between /16 through /32\.  | June 5, 2018 | 
+
+## Earlier updates<a name="doc-history-early-changes"></a>
 
 The following table describes important changes in each release of the *AWS WAF Developer Guide*\.
 

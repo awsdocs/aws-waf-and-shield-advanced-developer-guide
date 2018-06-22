@@ -1,33 +1,29 @@
-# Logging AWS WAF API Calls with AWS CloudTrail<a name="logging-using-cloudtrail"></a>
+# Logging API Calls with AWS CloudTrail<a name="logging-using-cloudtrail"></a>
 
-AWS WAF is integrated with CloudTrail, a service that captures all the AWS WAF API calls and delivers the log files to an Amazon S3 bucket that you specify\. CloudTrail captures API calls from the AWS WAF console or from your code to the AWS WAF API\. Using the information collected by CloudTrail, you can identify the request that was made to AWS WAF, the source IP address from which the request was made, who made the request, when it was made, and so on\. 
+AWS WAF, AWS Shield Advanced and AWS Firewall Manager are integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or an AWS service\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, Amazon CloudWatch Logs, and Amazon CloudWatch Events\.  Using the information collected by CloudTrail, you can determine the request that was made to these services, the IP address from which the request was made, who made the request, when it was made, and additional details\. 
+
+Every event or log entry contains information about who generated the request\. The identity information helps you determine the following: 
++ Whether the request was made with root or IAM user credentials\.
++ Whether the request was made with temporary security credentials for a role or federated user\.
++ Whether the request was made by another AWS service\.
+
+For more information, see the [CloudTrail userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.
+
+CloudTrail log files can contain one or more log entries\. Each entry lists multiple JSON\-formatted events\. A log entry represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. Log entries are not an ordered stack trace of the public API calls, so they do not appear in any specific order\. 
+
+ You can create a trail and store your log files in your Amazon S3 bucket for as long as you want, and define Amazon S3 lifecycle rules to archive or delete log files automatically\. By default, your log files are encrypted with Amazon S3 server\-side encryption \(SSE\)\.
+
+You can also aggregate log files from multiple AWS regions and multiple AWS accounts into a single Amazon S3 bucket\. 
+
+To be notified of log file delivery, configure CloudTrail to publish Amazon SNS notifications when new log files are delivered\. For more information, see [Configuring Amazon SNS Notifications for CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_notifications_top_level.html)\.
+
+For more information, see [Receiving CloudTrail Log Files from Multiple Regions](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html) and [Receiving CloudTrail Log Files from Multiple Accounts](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html)\.
 
 To learn more about CloudTrail, including how to configure and enable it, see the [AWS CloudTrail User Guide](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 
-## AWS WAF Information in CloudTrail<a name="waf-info-in-cloudtrail"></a>
+## AWS WAF Information in CloudTrail<a name="understanding-waf-entries"></a>
 
-When CloudTrail logging is enabled in your AWS account, API calls made to AWS WAF actions are tracked in CloudTrail log files, where they are written with other AWS service records\. CloudTrail determines when to create and write to a new file based on a time period and file size\.
-
-All AWS WAF actions are logged by CloudTrail and are documented in the [AWS WAF API Reference](http://docs.aws.amazon.com/waf/latest/APIReference/)\. For example, calls to `ListWebACL`, `UpdateWebACL`, and `DeleteWebACL` generate entries in the CloudTrail log files\. 
-
-Every log entry contains information about who generated the request\. The user identity information in the log entry helps you determine the following: 
-+ Whether the request was made with root or IAM user credentials
-+ Whether the request was made with temporary security credentials for a role or federated user
-+ Whether the request was made by another AWS service
-
-For more information, see [CloudTrail userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.
-
-You can store your log files in your Amazon S3 bucket for as long as you want, but you also can define Amazon S3 lifecycle rules to archive or delete log files automatically\. By default, your log files are encrypted with Amazon S3 server\-side encryption \(SSE\)\.
-
-If you want to be notified upon log file delivery, you can configure CloudTrail to publish Amazon SNS notifications when new log files are delivered\. For more information, see [Configuring Amazon SNS Notifications for CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_notifications_top_level.html)\.
-
-You also can aggregate AWS WAF log files from multiple AWS Regions and multiple AWS accounts into a single Amazon S3 bucket\. 
-
-For more information, see [Receiving CloudTrail Log Files from Multiple Regions](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html) and [Receiving CloudTrail Log Files from Multiple Accounts](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html)\.
-
-## Understanding AWS WAF Log File Entries<a name="understanding-waf-entries"></a>
-
-CloudTrail log files can contain one or more log entries\. Each entry lists multiple JSON\-formatted events\. A log entry represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. Log entries are not an ordered stack trace of the public API calls, so they do not appear in any specific order\. 
+All AWS WAF actions are logged by CloudTrail and are documented in the [AWS WAF API Reference](http://docs.aws.amazon.com/waf/latest/APIReference/) \. For example, calls to ListWebACL, UpdateWebACL, and DeleteWebACL generate entries in the CloudTrail log files\.
 
 The following example shows a CloudTrail log entry that demonstrates the following actions \(see the `eventName` elements\):
 + `CreateRule`
@@ -172,4 +168,133 @@ The following example shows a CloudTrail log entry that demonstrates the followi
     }
   ]
 }
+```
+
+## AWS Shield Advanced Information in CloudTrail<a name="shield-info-in-cloudtrail"></a>
+
+AWS Shield Advanced supports logging the following actions as events in CloudTrail log files:
++ [ListAttacks](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference//API_ListAttacks.html)
++ [DescribeAttack](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference//API_DescribeAttack.html)
++ [CreateProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference//API_CreateProtection.html)
++ [DescribeProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference//API_DescribeProtection.html)
++ [DeleteProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference//API_DeleteProtection.html)
++ [ListProtections](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference//API_ListProtections.html)
++ [CreateSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference//API_CreateSubscription.html)
++ [DescribeSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference//API_DescribeSubscription.html)
++ [GetSubscriptionState](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference//API_GetSubscriptionState.html)
++ [DeleteSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference//API_DeleteSubscription.html)
+
+The following example shows a CloudTrail log entry that demonstrates the `DeleteProtection` action\.
+
+```
+ 
+ [
+  {
+    "eventVersion": "1.05",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "1234567890987654321231",
+      "arn": "arn:aws:iam::123456789012:user/SampleUser",
+      "accountId": "123456789012",
+      "accessKeyId": "1AFGDT647FHU83JHFI81H",
+      "userName": "SampleUser"
+    },
+    "eventTime": "2018-01-10T21:31:14Z",
+    "eventSource": "shield.amazonaws.com",
+    "eventName": "DeleteProtection",
+    "awsRegion": "us-west-2",
+    "sourceIPAddress": "AWS Internal",
+    "userAgent": "aws-cli/1.14.10 Python/3.6.4 Darwin/16.7.0 botocore/1.8.14",
+    "requestParameters": {
+      "protectionId": "12345678-5104-46eb-bd03-agh4j8rh3b6n"
+    },
+    "responseElements": null,
+    "requestID": "95bc0042-f64d-11e7-abd1-1babdc7aa857",
+    "eventID": "85263bf4-17h4-43bb-b405-fh84jhd8urhg",
+    "eventType": "AwsApiCall",
+    "apiVersion": "AWSShield_20160616",
+    "recipientAccountId": "123456789012"
+  },
+  {
+    "eventVersion": "1.05",
+    "userIdentity": {
+      "type": "IAMUser",
+      "principalId": "123456789098765432123",
+      "arn": "arn:aws:iam::123456789012:user/SampleUser",
+      "accountId": "123456789012",
+      "accessKeyId": "1AFGDT647FHU83JHFI81H",
+      "userName": "SampleUser"
+    },
+    "eventTime": "2018-01-10T21:30:03Z",
+    "eventSource": "shield.amazonaws.com",
+    "eventName": "ListProtections",
+    "awsRegion": "us-west-2",
+    "sourceIPAddress": "AWS Internal",
+    "userAgent": "aws-cli/1.14.10 Python/3.6.4 Darwin/16.7.0 botocore/1.8.14",
+    "requestParameters": null,
+    "responseElements": null,
+    "requestID": "6accca40-f64d-11e7-abd1-1bjfi8urhj47",
+    "eventID": "ac0570bd-8dbc-41ac-a2c2-987j90j3h78f",
+    "eventType": "AwsApiCall",
+    "apiVersion": "AWSShield_20160616",
+    "recipientAccountId": "123456789012"
+  }
+]
+```
+
+## AWS Firewall Manager Information in CloudTrail<a name="cloudtrail-fms"></a>
+
+AWS Firewall Manager supports logging the following actions as events in CloudTrail log files:
++ [AssociateAdminAccount](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateAdminAccount.html)
++ [DeleteNotificationChannel](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteNotificationChannel.html)
++ [DeletePolicy](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html)
++ [DisassociateAdminAccount](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DisassociateAdminAccount.html)
++ [PutNotificationChannel](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutNotificationChannel.html)
++ [PutPolicy](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutPolicy.html)
++ [GetAdminAccount](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAdminAccount.html)
++ [GetComplianceDetail](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetComplianceDetail.html)
++ [GetNotificationChannel](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetNotificationChannel.html)
++ [GetPolicy](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetPolicy.html)
++ [ListComplianceStatus](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListComplianceStatus.html)
++ [ListPolicies](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListPolicies.html)
+
+The following example shows a CloudTrail log entry that demonstrates the `GetAdminAccount` action\.
+
+```
+	{
+                "eventVersion": "1.05",
+                "userIdentity": {
+                                "type": "AssumedRole",
+                                "principalId": "1234567890987654321231",
+                                "arn": "arn:aws:sts::123456789012:assumed-role/Admin/SampleUser",
+                                "accountId": "123456789012",
+                                "accessKeyId": "1AFGDT647FHU83JHFI81H",
+                                "sessionContext": {
+                                                "attributes": {
+                                                                "mfaAuthenticated": "false",
+                                                                "creationDate": "2018-04-14T02:51:50Z"
+                                                              },
+                                                "sessionIssuer": {
+                                                                "type": "Role",
+                                                                "principalId": "1234567890987654321231",
+                                                                "arn": "arn:aws:iam::123456789012:role/Admin",
+                                                                "accountId": "123456789012",
+                                                                "userName": "Admin"
+                                                                 }
+                                                  }
+                                },
+                "eventTime": "2018-04-14T03:12:35Z",
+                "eventSource": "fms.amazonaws.com",
+                "eventName": "GetAdminAccount",
+                "awsRegion": "us-east-1",
+                "sourceIPAddress": "72.21.198.65",
+                "userAgent": "console.amazonaws.com",
+                "requestParameters": null,
+                "responseElements": null,
+                "requestID": "ae244f41-3f91-11e8-787b-dfaafef95fc1",
+                "eventID": "5769af1e-14b1-4bd1-ba75-f023981d0a4a",
+                "eventType": "AwsApiCall",
+                "apiVersion": "2018-01-01",
+                "recipientAccountId": "123456789012"
+     }
 ```

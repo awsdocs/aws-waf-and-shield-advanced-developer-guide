@@ -3,7 +3,7 @@
 You can use Route 53 to register the domain name for your website, route internet traffic to the resources for your domain, and check the health of your web server to verify that it's reachable, available, and functional\. Route 53 helps to protect against DDoS attacks by providing redundancy and load balancing across multiple DNS servers\. Route 53 can also detect anomalies in DNS queries and prioritize requests from users that are known to be reliable and, by extension, deprioritize requests that are from potentially less reliable sources\.
 
 **Important**  
-You are responsible for the cost of the AWS services implemented in this tutorial\. For full details about CloudFront costs, see the [Route 53 pricing page](https://aws.amazon.com/route53/pricing/)\. 
+You are responsible for the cost of the AWS services implemented in this tutorial\. For full details about Route 53 costs, see the [Route 53 pricing page](https://aws.amazon.com/route53/pricing/)\. 
 
 **Topics**
 + [Register Your Domain with Route 53](#tutorials-ddos-cross-service-r53-register)

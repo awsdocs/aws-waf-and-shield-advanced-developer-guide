@@ -5,7 +5,7 @@ If you want to allow or block web requests based on the country that the request
 You can use geo match conditions with other AWS WAF conditions or rules to build sophisticated filtering\. For example, if you want to block certain countries, but still allow specific IP addresses from that country, you could create a rule containing a geo match condition and an IP match condition\. Configure the rule to block requests that originate from that country and do not match the approved IP addresses\. As another example, if you want to prioritize resources for users in a particular country, you could include a geo match condition in two different rate\-based rules\. Set a higher rate limit for users in the preferred country and set a lower rate limit for all other users\.
 
 **Note**  
-If you are using the CloudFront geo restriction feature to block a country from accessing your content, any request from that country is blocked and is not forwarded to AWS WAF\. So if you want to allow or block requests based on geography in conjunction with other AWS WAF conditions, you should *not* use the CloudFront geo restriction feature and use an AWS WAF geo match condition instead\.
+If you are using the CloudFront geo restriction feature to block a country from accessing your content, any request from that country is blocked and is not forwarded to AWS WAF\. So if you want to allow or block requests based on geography plus other AWS WAF conditions, you should *not* use the CloudFront geo restriction feature\. Instead, you should use an AWS WAF geo match condition\.
 
 **Topics**
 + [Creating a Geo Match Condition](#web-acl-geo-conditions-creating)

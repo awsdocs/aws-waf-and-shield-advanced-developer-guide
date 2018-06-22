@@ -1,4 +1,4 @@
-# Monitoring AWS WAF and AWS Shield Advanced<a name="monitoring_overview"></a>
+# Monitoring AWS WAF, AWS Firewall Manager, and AWS Shield Advanced<a name="monitoring_overview"></a>
 
 Monitoring is an important part of maintaining the reliability, availability, and performance of AWS WAF and for identifying possible DDoS attacks using AWS Shield\. As you start monitoring AWS WAF and AWS Shield, you should create a monitoring plan that includes answers to the following questions:
 + What are your monitoring goals?
@@ -17,5 +17,4 @@ For AWS WAF, you should monitor the following items at a minimum to establish a 
 **Topics**
 + [Monitoring Tools](monitoring_automated_manual.md)
 + [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)
-+ [Logging AWS WAF API Calls with AWS CloudTrail](logging-using-cloudtrail.md)
-+ [Logging Shield Advanced API Calls with AWS CloudTrail](logging-shield-using-cloudtrail.md)
++ [Logging API Calls with AWS CloudTrail](logging-using-cloudtrail.md)

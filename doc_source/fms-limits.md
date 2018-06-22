@@ -5,15 +5,15 @@ AWS Firewall Manager has default limits on the number of entities per account\. 
 
 | Resource | Default Limit | 
 | --- | --- | 
-| Firewall Manager policies per AWS account | 20 | 
-| Rule groups per Firewall Manager policy | 1 | 
+| Accounts per organization in AWS Organizations | Varies\. An invitation sent to an account counts against this limit\. The count is returned if the invited account declines, the master account cancels the invitation, or the invitation expires\. | 
+| Firewall Manager policies per organization in AWS Organizations | 20 | 
 |  Tags that include or exclude resources per Firewall Manager policy  | 8 | 
-| Rule groups per Firewall Manager administrator account | 3 | 
 
 The following limits related to AWSFirewall Manager can't be changed\.
 
 
 | Resource | Limit | 
 | --- | --- | 
-| Accounts per organization in AWS Organizations | 2500 | 
+| Rule groups per Firewall Manager administrator account | 3 | 
+| Rule groups per Firewall Manager policy | 1 | 
 | Rules per rule group | 10 | 

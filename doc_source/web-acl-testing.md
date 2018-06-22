@@ -70,7 +70,7 @@ The sample of requests contains up to 100 requests that matched all the conditio
 **Source IP**  
 Either the IP address that the request originated from or, if the viewer used an HTTP proxy or an Application Load Balancer to send the request, the IP address of the proxy or Application Load Balancer\.   
 **URI**  
-The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\.   
+The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\.  
 **Matches rule**  
 Identifies the first rule in the web ACL for which the web request matched all the conditions\. If a web request doesn't match all the conditions in any rule in the web ACL, the value of **Matches rule** is **Default**\.  
 Note that when a web request matches all the conditions in a rule and the action for that rule is **Count**, AWS WAF continues inspecting the web request based on subsequent rules in the web ACL\. In this case, a web request could appear twice in the list of sampled requests: once for the rule that has an action of **Count** and again for a subsequent rule or for the default action\.  

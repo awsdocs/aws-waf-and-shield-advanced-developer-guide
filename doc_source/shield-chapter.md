@@ -7,6 +7,8 @@ AWS provides AWS Shield Standard and AWS Shield Advanced for protection against 
 + [Example AWS Shield Advanced Use Cases](aws-shield-use-case.md)
 + [AWS Shield Advanced Pricing](aws-shield-pricing.md)
 + [Getting Started with AWS Shield Advanced](getting-started-ddos.md)
++ [Add AWS Shield Advanced Protection to more AWS Resources](configure-new-protection.md)
 + [Removing AWS Shield Advanced from an AWS Resource](remove-protection.md)
++ [Editing AWS Shield Advanced Settings](ddos-edit-drt.md)
 + [AWS Shield Advanced: Requesting a Credit](request-refund.md)
 + [AWS Shield Advanced Limits](shield-limits.md)

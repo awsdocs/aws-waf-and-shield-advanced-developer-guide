@@ -10,7 +10,7 @@ Attackers sometimes insert scripts into web requests in an effort to exploit vul
 
 ## Creating Cross\-site Scripting Match Conditions<a name="web-acl-xss-conditions-creating"></a>
 
-When you create cross\-site scripting match conditions, you specify filters, which indicate the part of web requests that you want AWS WAF to inspect for malicious scripts, such as the URI or the query string\. You can add more than one filter to a cross\-site scripting match condition, or you can create a separate condition for each filter\. Here's how each configuration affects AWS WAF behavior:
+When you create cross\-site scripting match conditions, you specify filters\. The filters indicate the part of web requests that you want AWS WAF to inspect for malicious scripts, such as the URI or the query string\. You can add more than one filter to a cross\-site scripting match condition, or you can create a separate condition for each filter\. Here's how each configuration affects AWS WAF behavior:
 + **More than one filter per cross\-site scripting match condition \(recommended\)** – When you add a cross\-site scripting match condition that contains multiple filters to a rule and add the rule to a web ACL, a web request must match only one of the filters in the cross\-site scripting match condition for AWS WAF to allow or block the request based on that condition\.
 
   For example, suppose you create one cross\-site scripting match condition, and the condition contains two filters\. One filter instructs AWS WAF to inspect the URI for malicious scripts, and the other instructs AWS WAF to inspect the query string\. AWS WAF allows or blocks requests if they appear to contain malicious scripts *either* in the URI *or* in the query string\.
@@ -54,10 +54,15 @@ The HTTP method, which indicates the type of operation that the request is askin
 **Query string**  
 The part of a URL that appears after a `?` character, if any\.  
 **URI**  
-The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\.  
+The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\. Unless a **Transformation** is specified, a URI is not normalized and is inspected just as AWS receives it from the client as part of the request\. A **Transformation** will reformat the URI as specified\.  
 **Body**  
 The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form\.  
-If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF inspects only the first 8192 bytes \(8 KB\)\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF gets the length of the body from the request headers\.\) For more information, see [Working with Size Constraint Conditions](web-acl-size-conditions.md)\.
+If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF inspects only the first 8192 bytes \(8 KB\)\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF gets the length of the body from the request headers\.\) For more information, see [Working with Size Constraint Conditions](web-acl-size-conditions.md)\.  
+**Single query parameter \(value only\)**  
+Any parameter that you have defined as part of the query string\. For example, if the URL is "www\.xyz\.com?UserName=abc&SalesRegion=seattle" you can add a filter to either the *UserName* or *SalesRegion* parameter\.   
+If you choose **Single query parameter \(value only\)**, you will also specify a **Query parameter name**\. This is the parameter in the query string that you will inspect, such as *UserName* or *SalesRegion*\. The maximum length for **Query parameter name** is 30 characters\. **Query parameter name** is not case sensitive\. For example, it you specify *UserName* as the **Query parameter name**, this will match all variations of *UserName*, such as *username* and *UsERName*\.  
+**All query parameters \(values only\)**  
+Similar to **Single query parameter \(value only\)**, but rather than inspecting the values of a single parameter, AWS WAF inspects all parameter values within the query string for possible malicious scripts\. For example, if the URL is "www\.xyz\.com?UserName=abc&SalesRegion=seattle," and you choose **All query parameters \(values only\)**, AWS WAF will trigger a match if either the value of *UserName* or *SalesRegion* contain possible malicious scripts\. 
 
 **Header**  
 If you chose **Header** for **Part of the request to filter on**, choose a header from the list of common headers, or type the name of a header that you want AWS WAF to inspect for malicious scripts\.

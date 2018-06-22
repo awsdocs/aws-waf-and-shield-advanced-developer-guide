@@ -6,7 +6,7 @@ AWS provides two levels of protection against DDoS attacks: AWS Shield Standard 
 
 ## AWS Shield Standard<a name="ddos-standard"></a>
 
-All AWS customers benefit from the automatic protections of AWS Shield Standard, at no additional charge\. AWS Shield Standard defends against most common, frequently occurring network and transport layer DDoS attacks that target your web site or applications\. When you use AWS Shield Standard with Amazon CloudFront and Amazon Route 53, you receive comprehensive availability protection against all known infrastructure \(Layer 3 and 4\) attacks\. 
+All AWS customers benefit from the automatic protections of AWS Shield Standard, at no additional charge\. AWS Shield Standard defends against most common, frequently occurring network and transport layer DDoS attacks that target your web site or applications\. While AWS Shield Standard helps protect all AWS customers, you get particular benefit if you are using Amazon CloudFront and Amazon Route 53\. These services receive comprehensive availability protection against all known infrastructure \(Layer 3 and 4\) attacks\.
 
 ## AWS Shield Advanced<a name="ddos-advanced"></a>
 
@@ -57,7 +57,7 @@ AWS Shield Advanced customers have two options to mitigate layer 7 attacks:
 When AWS Shield Advanced detects a large layer 7 attack against one of your applications, the DRT might proactively contact you\. The DRT triages the DDoS incident and creates AWS WAF mitigations\. The DRT then contacts you for consent to apply the AWS WAF rules\. 
 
 **Important**  
-The DRT can help you to analyze suspicious activity and assist you to mitigate the issue\. This mitigation often requires the DRT to create or update web access control lists \(web ACLs\) in your account\. However, they need your permission to do so\. We recommend that as part of enabling AWS Shield Advanced, you follow the steps in [Step 3: Authorize the DDoS Response Team to Create Rules and Web ACLs on Your Behalf](authorize-DRT.md) to proactively provide the DRT with the needed permissions\. Providing permission ahead of time helps prevent any delays in the event of an actual attack\.
+The DRT can help you to analyze suspicious activity and assist you to mitigate the issue\. This mitigation often requires the DRT to create or update web access control lists \(web ACLs\) in your account\. However, they need your permission to do so\. We recommend that as part of enabling AWS Shield Advanced, you follow the steps in [Step 3: \(Optional\) Authorize the DDoS Response Team](authorize-DRT.md) to proactively provide the DRT with the needed permissions\. Providing permission ahead of time helps prevent any delays in the event of an actual attack\.
 
 ## Help Me Choose a Protection Plan<a name="ddos-help-me-choose"></a>
 
@@ -103,4 +103,4 @@ The following table shows a comparison of AWS Shield Standard and AWS Shield Adv
 AWS Shield Advanced benefits, including DDoS cost protection, are subject to your fulfillment of the 1\-year subscription commitment\.
 
 **Note**  
-Although both AWS Shield Standard and AWS Shield Advanced provide significant protection against DDoS attacks, we recommend that you also use Amazon CloudWatch and AWS CloudTrail to monitor all of your AWS services\. For information about monitoring AWS WAF by using CloudWatch and CloudTrail, see [Monitoring AWS WAF and AWS Shield Advanced](monitoring_overview.md) and [Logging AWS WAF API Calls with AWS CloudTrail](logging-using-cloudtrail.md)\. 
+Although both AWS Shield Standard and AWS Shield Advanced provide significant protection against DDoS attacks, we recommend that you also use Amazon CloudWatch and AWS CloudTrail to monitor all of your AWS services\. For information about monitoring AWS WAF by using CloudWatch and CloudTrail, see [Monitoring AWS WAF, AWS Firewall Manager, and AWS Shield Advanced](monitoring_overview.md) and [Logging API Calls with AWS CloudTrail](logging-using-cloudtrail.md)\. 
