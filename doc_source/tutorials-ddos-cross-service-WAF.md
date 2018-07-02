@@ -38,7 +38,7 @@ Choose **yes** to enable the component that is designed to block common SQL inje
 **Activate Cross\-site Scripting Protection**  
 Choose **yes** to enable the component that is designed to block common XSS attacks\.   
 **Activate HTTP Flood Protection**  
-Choose **no**\. The rate\-based rules provided by AWS WAF are a more efficient way to set up this protection\. After completing this tutorial, if you want to add rate\-based rules, you can find more information in [How AWS WAF Works](http://docs.aws.amazon.com/waf/latest/developerguide/how-aws-waf-works.html)\.  
+Choose **yes**\. This component configures a rate\-based rule to protect against attacks that consist of a large number of requests from a particular IP address, such as a web\-layer DDoS attack or a brute\-force login attempt\. The rate\-based rule is automatically triggered when web requests from a client exceed a configurable threshold, which defines the maximum number of incoming requests allowed from a single IP address within a five\-minute period\. Once this threshold is breached, additional requests from the IP address are blocked until the request rate falls below the threshold\. For more information on rate\-based rules, see [How AWS WAF Works](http://docs.aws.amazon.com/waf/latest/developerguide/how-aws-waf-works.html)\.  
 **Activate Scanner & Probe Protection**  
 Choose **yes** to enable the component that is designed to block scanners and probes\.  
 **Activate Reputation List Protection**  
@@ -48,11 +48,11 @@ Choose **yes**\. The template requires this protection to be enabled\. However, 
 **CloudFront Access Log Bucket Name**  
 Type a name for the Amazon S3 bucket where you want to store access logs for your CloudFront distribution\. This is the name of a new bucket that the template creates during stack launch\. Do not use an existing name\.   
 **Request Threshold**  
-This is used for the HTTP flood protection, so is not applicable for this tutorial\. You can leave the default, which is `400`\.  
+This is used for the HTTP flood protection, so is not applicable for this tutorial\. You can leave the default, which is `2000`\.  
 **Error Threshold**  
-Type `50`\. This is the maximum acceptable bad requests per minute per IP address\. This is used by the scanner and probe protection\.  
+This is the maximum acceptable bad requests per minute per IP address\. This is used by the scanner and probe protection\. Use the default value, which is 50\.  
 **WAF Block Period**  
-Type `240`\. This is the period \(in minutes\) to block applicable IP addresses that are identified by the scanner and probe protection\.  
+This is the period \(in minutes\) to block applicable IP addresses that are identified by the scanner and probe protection\. Use the default value, which is 240\.  
 **Send Anonymous Usage Data**  
 Choose **yes** to send anonymous data to AWS to help us understand solution usage across our customer base as a whole\. To opt out of this feature, choose **no**\. 
 

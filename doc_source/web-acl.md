@@ -1,6 +1,6 @@
 # Creating and Configuring a Web Access Control List \(Web ACL\)<a name="web-acl"></a>
 
-A web access control list \(web ACL\) gives you fine\-grained control over the web requests that your Amazon CloudFront distributions or Application Load Balancers respond to\. You can allow or block the following types of requests: 
+A web access control list \(web ACL\) gives you fine\-grained control over the web requests that your Amazon CloudFront distribution or Application Load Balancer responds to\. You can allow or block the following types of requests: 
 + Originate from an IP address or a range of IP addresses
 + Originate from a specific country or countries
 + Contain a specified string or match a regular expression \(regex\) pattern in a particular part of requests
@@ -26,6 +26,8 @@ To choose the requests that you want to allow to have access to your content or 
 1. Add the conditions to one or more rules\. If you add more than one condition to the same rule, web requests must match all the conditions for AWS WAF to allow or block requests based on the rule\. For more information, see [Working with Rules](web-acl-rules.md)\. Optionally, also add a rate limit to the rule, which specifies the maximum number of requests that are allowed from a specific IP address\.
 
 1. Add the rules to a web ACL\. For each rule, specify whether you want AWS WAF to allow or block requests based on the conditions that you added to the rule\. If you add more than one rule to a web ACL, AWS WAF evaluates the rules in the order that they're listed in the web ACL\. For more information, see [Working with Web ACLs](web-acl-working-with.md)\.
+
+   When you add a new rule or update existing rules, it can take up to one minute for those changes to appear and be active across your web ACLs and resources\.
 
 **Topics**
 + [Working with conditions](web-acl-create-condition.md)

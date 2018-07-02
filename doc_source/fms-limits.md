@@ -9,7 +9,7 @@ AWS Firewall Manager has default limits on the number of entities per account\. 
 | Firewall Manager policies per organization in AWS Organizations | 20 | 
 |  Tags that include or exclude resources per Firewall Manager policy  | 8 | 
 
-The following limits related to AWSFirewall Manager can't be changed\.
+The following limits related to AWS Firewall Manager can't be changed\.
 
 
 | Resource | Limit | 
