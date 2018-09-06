@@ -11,7 +11,7 @@ You must complete [Step 1: Activate AWS Shield Advanced](enable-ddos-prem.md) be
 
 1. Choose **Protected resources**\. 
 
-1. Choose **Add DDoS protection**\.
+1. Choose **Add protected resources**\.
 
 1. Choose or enter the resource types and resources to protect\. For Classic Load Balancer and Application Load Balancer resources, you also must choose a region\. 
 
@@ -23,13 +23,11 @@ You must complete [Step 1: Activate AWS Shield Advanced](enable-ddos-prem.md) be
 **Note**  
 Shield Advanced does not support EC2\-Classic\.
 
-1. For **Name**, type a friendly name to help you identify the AWS resources that are protected\. For example, **My CloudFront AWS Shield Advanced distributions**\.
+1. Choose **Protect selected resources**\.
 
-1. \(Optional\) For **Web DDoS attack**, select **Enable**\. You are prompted to associate an existing web ACL with these resources, or create a web ACL if you don't have one yet\.
+1. Add a web ACL and rate\-based rule as described in the Getting Started section, [Step 3: Add Rate\-based Rules](ddos-get-started-rate-based-rules.md)\.
 
-   You can disable this protection later by following the steps described in [Removing AWS Shield Advanced from an AWS Resource](remove-protection.md)\.
-
-1. Choose **Add DDoS protection**\.
+1. Configure a CloudWatch alarm as described in the Getting Started section, [Step 5: Configure Amazon CloudWatch Alarms](ddos-get-started-cloudwatch.md)\.
 
 **Note**  
 If you choose an Elastic IP address as the resource to protect, Shield Advanced will protect whatever resource is associated with that Elastic IP address, either an Amazon EC2 instance or an Elastic Load Balancing load balancer\. Shield Advanced automatically identifies the type of resource associated with the Elastic IP address and applies the appropriate mitigations for that resource, including configuring network ACLs specific to that Elastic IP address\. For more information on using Elastic IP addresses with your AWS resources, see the appropriate guide: [Amazon Elastic Compute Cloud Documentation](https://aws.amazon.com/documentation/ec2/) or [Elastic Load Balancing Documentation](https://aws.amazon.com/documentation/elastic-load-balancing/)\. Shield Advanced does not support EC2\-Classic\.

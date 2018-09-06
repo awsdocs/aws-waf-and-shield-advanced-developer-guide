@@ -8,6 +8,7 @@ AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS r
 + [Getting Started with AWS WAF](getting-started.md)
 + [Tutorials](tutorials.md)
 + [Creating and Configuring a Web Access Control List \(Web ACL\)](web-acl.md)
++ [Logging Web ACL Traffic Information](logging.md)
 + [Listing IP addresses blocked by rate\-based rules](listing-managed-ips.md)
 + [How AWS WAF Works with Amazon CloudFront Features](cloudfront-features.md)
 + [Authentication and Access Control for AWS WAF](waf-auth-and-access-control.md)

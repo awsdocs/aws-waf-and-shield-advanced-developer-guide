@@ -1,4 +1,4 @@
-# Step 5: Deploy AWS WAF Rules<a name="deploy-waf-automations"></a>
+# Step 6: Deploy AWS WAF Rules<a name="deploy-waf-automations"></a>
 
 Several resources are available to help you quickly deploy AWS WAF rules\. Consider taking advantage of one or more of the following offerings when creating your initial set of rules:
 
@@ -12,4 +12,4 @@ AWS WAF provides *AWS Marketplace rule groups* to help you protect your resource
 **AWS WAF for OWASP Top 10 Web Application Vulnerabilities**  
 This document outlines how you can use AWS WAF to mitigate the application vulnerabilities that are defined in the Open Web Application Security Project \(OWASP\) Top 10 list\. This list shows the most common categories of application security flaws\. For more information, see [AWS WAF Security Automations](https://d0.awsstatic.com/whitepapers/Security/aws-waf-owasp.pdf)\. 
 
-As a final step for getting started with Shield Advanced, review the global threat environment dashboard, as described in [Step 6: Monitor the Global Threat Environment Dashboard ](monitor-global-dashboard.md)\.
+As a final step for getting started with Shield Advanced, review the global threat environment dashboard, as described in [Step 7: Monitor the Global Threat Environment Dashboard ](monitor-global-dashboard.md)\.

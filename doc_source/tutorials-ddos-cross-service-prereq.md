@@ -103,7 +103,7 @@ For more information, see [Amazon EC2 Key Pairs](http://docs.aws.amazon.com/AWSE
 
 Amazon VPC enables you to launch AWS resources into a virtual network that you've defined\. In this tutorial your VPC will contain the two Amazon EC2 instances that host your website along with two subnets connected to those instances\. 
 
-For more information about Amazon VPC, see [What is Amazon VPC?](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) in the *Amazon VPC User Guide*\.
+For more information about Amazon VPC, see [What is Amazon VPC?](http://docs.aws.amazon.com/vpc/latest/userguide/) in the *Amazon VPC User Guide*\.
 
 **To create a nondefault VPC**
 

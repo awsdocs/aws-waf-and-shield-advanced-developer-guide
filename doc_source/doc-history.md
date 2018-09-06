@@ -2,6 +2,8 @@
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Expanded AWS Shield Advanced Getting Started wizard](https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html) | New wizard provides opportunity to create rate\-based rules and Amazon CloudWatch Events\. | August 31, 2018 | 
+| [AWS WAF logging](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | Enable logging to get detailed information about traffic that is analyzed by your web ACL\. | August 31, 2018 | 
 | [Support for query parameters in conditions](https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-create-condition.html) | When creating a condition, you can now search the requests for specific parameters\. | June 5, 2018 | 
 | [Shield Advanced Getting Started Wizard](https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html) | Introduces a new streamlined process for subscribing to AWS Shield Advanced\. | June 5, 2018 | 
 | [Expanded allowed CIDR ranges](https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-ip-conditions.html) | When creating an IP match condition, AWS WAF now supports IPv4 address ranges: /8 and any range between /16 through /32\.  | June 5, 2018 | 

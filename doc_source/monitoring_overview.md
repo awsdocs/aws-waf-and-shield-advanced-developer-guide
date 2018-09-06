@@ -16,5 +16,6 @@ For AWS WAF, you should monitor the following items at a minimum to establish a 
 
 **Topics**
 + [Monitoring Tools](monitoring_automated_manual.md)
++ [View Protection Changes of Your Resources Using AWS Config](ddos-add-config.md)
 + [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)
 + [Logging API Calls with AWS CloudTrail](logging-using-cloudtrail.md)

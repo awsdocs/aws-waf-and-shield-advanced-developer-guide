@@ -57,7 +57,8 @@ AWS Shield Advanced customers have two options to mitigate layer 7 attacks:
 When AWS Shield Advanced detects a large layer 7 attack against one of your applications, the DRT might proactively contact you\. The DRT triages the DDoS incident and creates AWS WAF mitigations\. The DRT then contacts you for consent to apply the AWS WAF rules\. 
 
 **Important**  
-The DRT can help you to analyze suspicious activity and assist you to mitigate the issue\. This mitigation often requires the DRT to create or update web access control lists \(web ACLs\) in your account\. However, they need your permission to do so\. We recommend that as part of enabling AWS Shield Advanced, you follow the steps in [Step 3: \(Optional\) Authorize the DDoS Response Team](authorize-DRT.md) to proactively provide the DRT with the needed permissions\. Providing permission ahead of time helps prevent any delays in the event of an actual attack\.
+The DRT can help you to analyze suspicious activity and assist you to mitigate the issue\. This mitigation often requires the DRT to create or update web access control lists \(web ACLs\) in your account\. However, they need your permission to do so\. We recommend that as part of enabling AWS Shield Advanced, you follow the steps in [Step 4: \(Optional\) Authorize the DDoS Response Team](authorize-DRT.md) to proactively provide the DRT with the needed permissions\. Providing permission ahead of time helps prevent any delays in the event of an actual attack\.  
+To use the services of the DRT, you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
 
 ## Help Me Choose a Protection Plan<a name="ddos-help-me-choose"></a>
 

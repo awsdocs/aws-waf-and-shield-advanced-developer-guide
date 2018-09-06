@@ -2,7 +2,7 @@
 
 AWS Shield Advanced provides real\-time metrics and reports for extensive visibility into attacks on your AWS resources\.
 
-These metrics and reports are available only for AWS Shield Advanced customers\. To activate AWS Shield Advanced, see [To activate and AWS Shield Advanced](enable-ddos-prem.md#enable-ddos-prem-procedure)\.
+These metrics and reports are available only for AWS Shield Advanced customers\. To activate AWS Shield Advanced, see [To activate AWS Shield Advanced](enable-ddos-prem.md#enable-ddos-prem-procedure)\.
 
 You can view near real\-time metrics about attacks, including:
 + Attack type
