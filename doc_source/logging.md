@@ -135,7 +135,7 @@ The action\. Possible values for a terminating rule: ALLOW, BLOCK\. COUNT would 
 The source of the request\. Possible values: CF,ALB \(Amazon CloudFront or an Application Load Balancer\)\.
 
 **httpSourceId**  
-The source ID\. Here it is the distribution ID\. This will be the HTTP source name for Amazon CloudFrontCF\. The ARN will be listed for application load balancers\.
+The source ID\. This field will show the ID of the associated Amazon CloudFront distribution\. The ARN will be listed for application load balancers\.
 
 **ruleGroupList**  
 The list of rule groups that acted on this request\. In this sample there is only one\.
