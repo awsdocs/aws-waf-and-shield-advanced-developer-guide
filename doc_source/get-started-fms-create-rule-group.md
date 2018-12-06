@@ -8,7 +8,7 @@ To create your own rule group, perform the following procedure\.<a name="get-sta
 
 **To create a rule group \(console\)**
 
-1. Sign in to the AWS Management Console using the AWS Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at https://console\.aws\.amazon\.com/waf/fms\. 
+1. Sign in to the AWS Management Console using the AWS Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at [https://console\.aws\.amazon\.com/waf/fms](https://console.aws.amazon.com/waf/fms)\. 
 
 1. In the navigation pane, choose **Security policies**\. 
 
@@ -26,9 +26,9 @@ To create your own rule group, perform the following procedure\.<a name="get-sta
 
 1. Choose **Create rule group**\.
 
-1. For **Name**, type a friendly name\. 
+1. For **Name**, enter a friendly name\. 
 
-1. Type a name for the CloudWatch metric that AWS WAF will create and will associate with the rule group\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. It can't contain white space\.
+1. Enter a name for the CloudWatch metric that AWS WAF will create and will associate with the rule group\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. It can't contain white space\.
 
 1. Select a rule, and then choose **Add rule**\. Repeat adding rules until you have added all the rules that you want to the rule group\.
 

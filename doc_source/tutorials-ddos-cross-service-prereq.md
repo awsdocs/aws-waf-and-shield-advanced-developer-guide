@@ -19,11 +19,11 @@ If you have an AWS account already, skip to the next task\. If you don't have an
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
+If you previously signed in to the AWS Management Console using AWS account root user credentials, choose **Sign in to a different account**\. If you previously signed in to the console using IAM credentials, choose **Sign\-in using root account credentials**\. Then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 
-   Part of the sign\-up procedure involves receiving a phone call and entering a PIN using the phone keypad\.
+   Part of the sign\-up procedure involves receiving a phone call and entering a verification code using the phone keypad\.
 
 Note your AWS account number, because you'll need it for the next task\.
 
@@ -69,7 +69,7 @@ Enter the IAM user name \(not your email address\) and password that you just cr
 
 To verify the sign\-in link for IAM users for your account, open the IAM console and check under **IAM users sign\-in link** on the dashboard\.
 
-For more information about IAM, see the [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/)\.
+For more information about IAM, see the [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)\.
 
 ## Create a Key Pair<a name="tutorials-ddos-cross-service-prereq-pair"></a>
 
@@ -97,13 +97,13 @@ The navigation pane is on the left side of the console\. If you do not see the p
 **Important**  
 This is the only chance for you to save the private key file\. You must provide the name of your key pair when you launch an instance and the corresponding private key each time you connect to the instance\.
 
-For more information, see [Amazon EC2 Key Pairs](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide//ec2-key-pairs.html)\. 
+For more information, see [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide//ec2-key-pairs.html)\. 
 
 ## Create a Virtual Private Cloud \(VPC\) with Two Subnets<a name="tutorials-ddos-cross-service-prereq-vpc"></a>
 
 Amazon VPC enables you to launch AWS resources into a virtual network that you've defined\. In this tutorial your VPC will contain the two Amazon EC2 instances that host your website along with two subnets connected to those instances\. 
 
-For more information about Amazon VPC, see [What is Amazon VPC?](http://docs.aws.amazon.com/vpc/latest/userguide/) in the *Amazon VPC User Guide*\.
+For more information about Amazon VPC, see [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/) in the *Amazon VPC User Guide*\.
 
 **To create a nondefault VPC**
 

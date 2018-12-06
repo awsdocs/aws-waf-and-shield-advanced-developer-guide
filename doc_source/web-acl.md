@@ -1,6 +1,6 @@
 # Creating and Configuring a Web Access Control List \(Web ACL\)<a name="web-acl"></a>
 
-A web access control list \(web ACL\) gives you fine\-grained control over the web requests that your Amazon CloudFront distribution or Application Load Balancer responds to\. You can allow or block the following types of requests: 
+A web access control list \(web ACL\) gives you fine\-grained control over the web requests that your Amazon API Gateway API, Amazon CloudFront distribution or Application Load Balancer responds to\. You can allow or block the following types of requests: 
 + Originate from an IP address or a range of IP addresses
 + Originate from a specific country or countries
 + Contain a specified string or match a regular expression \(regex\) pattern in a particular part of requests

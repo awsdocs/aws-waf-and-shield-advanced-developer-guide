@@ -6,7 +6,7 @@ This tutorial shows how to use AWS WAF to perform the following tasks:
 + Add the conditions to a rule\. Rules let you target the web requests that you want to block or allow\. A web request must match all the conditions in a rule before AWS WAF blocks or allows requests based on the conditions that you specify\.
 + Add the rules to your web ACL\. This is where you specify whether you want to block web requests or allow them based on the conditions that you add to each rule\.
 + Specify a default action, either block or allow\. This is the action that AWS WAF takes when a web request doesn't match any of your rules\.
-+ Choose the Amazon CloudFront distribution that you want AWS WAF to inspect web requests for\. This tutorial covers the steps only for CloudFront, but the process for an Application Load Balancer essentially is the same\. AWS WAF for CloudFront is available for all regions\. AWS WAF for use with an Application Load Balancer is available in the regions listed at [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region)\.
++ Choose the Amazon CloudFront distribution that you want AWS WAF to inspect web requests for\. This tutorial covers the steps only for CloudFront, but the process for an Application Load Balancer and Amazon API Gateway APIs essentially is the same\. AWS WAF for CloudFront is available for all regions\. AWS WAF for use with API Gateway or an Application Load Balancer is available in the regions listed at [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region)\.
 
 **Note**  
 AWS typically bills you less than US $0\.25 per day for the resources that you create during this tutorial\. When you're finished with the tutorial, we recommend that you delete the resources to prevent incurring unnecessary charges\. 
@@ -21,8 +21,8 @@ AWS typically bills you less than US $0\.25 per day for the resources that you c
 + [Step 6: Create a SQL Injection Match Condition](#getting-started-wizard-create-sql-condition)
 + [Step 7: \(Optional\) Create Additional Conditions](#getting-started-wizard-create-optional-conditions)
 + [Step 8: Create a Rule and Add Conditions](#getting-started-wizard-create-rule)
-+ [Step 8: Add the Rule to a Web ACL](#getting-started-wizard-add-rule)
-+ [Step 9: Clean Up Your Resources](#getting-started-wizard-clean-up)
++ [Step 9: Add the Rule to a Web ACL](#getting-started-wizard-add-rule)
++ [Step 10: Clean Up Your Resources](#getting-started-wizard-clean-up)
 
 ## Step 1: Set Up AWS WAF<a name="getting-started-aws-account"></a>
 
@@ -278,7 +278,7 @@ If you are creating a rate\-based rule, enter the maximum number of requests fro
 
 1. Choose **Review and create**\. 
 
-## Step 8: Add the Rule to a Web ACL<a name="getting-started-wizard-add-rule"></a>
+## Step 9: Add the Rule to a Web ACL<a name="getting-started-wizard-add-rule"></a>
 
 When you add the rule to a web ACL, you specify the following settings:
 + The action that you want AWS WAF to take on web requests that match all the conditions in the rule: allow, block, or count the requests\.
@@ -293,7 +293,7 @@ AWS WAF starts blocking CloudFront web requests that match all the following con
 
 AWS WAF allows CloudFront to respond to any requests that don't meet all three of these conditions\. 
 
-## Step 9: Clean Up Your Resources<a name="getting-started-wizard-clean-up"></a>
+## Step 10: Clean Up Your Resources<a name="getting-started-wizard-clean-up"></a>
 
 You've now successfully completed the tutorial\. To prevent your account from accruing additional AWS WAF charges, you should clean up the AWS WAF objects that you created\. Alternatively, you can change the configuration to match the web requests that you really want to allow, block, and count\.
 

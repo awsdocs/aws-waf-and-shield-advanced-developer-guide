@@ -9,7 +9,7 @@ If you want to test a rule before you start using it to allow or block requests,
 **Topics**
 + [Deciding on the Default Action for a Web ACL](web-acl-default-action.md)
 + [Creating a Web ACL](web-acl-creating.md)
-+ [Associating or Disassociating a Web ACL with a CloudFront Distribution or an Application Load Balancer](web-acl-associating-cloudfront-distribution.md)
++ [Associating or Disassociating a Web ACL with an Amazon API Gateway API, a CloudFront Distribution or an Application Load Balancer](web-acl-associating-cloudfront-distribution.md)
 + [Editing a Web ACL](web-acl-editing.md)
 + [Deleting a Web ACL](web-acl-deleting.md)
 + [Testing Web ACLs](web-acl-testing.md)

@@ -6,7 +6,7 @@ This tutorial shows you how to use [AWS CloudFormation](https://aws.amazon.com/c
 + **Attacks from known bad IP addresses** – You can use IP match conditions to allow, block, or count web requests based on the IP addresses that the requests originate from\. An IP match condition lists up to 1,000 IP addresses or IP address ranges that you specify\.
 
 **Note**  
-This tutorial assumes that you have a CloudFront distribution that you use to deliver content for your web application\. If you don't have a CloudFront distribution, see [Creating or Updating a Web Distribution Using the CloudFront Console](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html) in the *Amazon CloudFront Developer Guide*\. 
+This tutorial assumes that you have a CloudFront distribution that you use to deliver content for your web application\. If you don't have a CloudFront distribution, see [Creating or Updating a Web Distribution Using the CloudFront Console](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html) in the *Amazon CloudFront Developer Guide*\. 
 
 **Topics**
 + [Solution Overview](#tutorials-common-attacks-overview)
@@ -84,7 +84,7 @@ AWS WAF blocks requests based on the settings in this rule\.
 
 ### Requirements<a name="tutorials-common-attacks-overview-requirements"></a>
 
-This tutorial assumes that you have a CloudFront distribution that you use to deliver content for your web application\. If you don't have a CloudFront distribution, see [Creating or Updating a Web Distribution Using the CloudFront Console](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html) in the *Amazon CloudFront Developer Guide*\. This tutorial also uses AWS CloudFormation to simplify the provisioning process\. For more information, see the [AWS CloudFormation User Guide](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)\.
+This tutorial assumes that you have a CloudFront distribution that you use to deliver content for your web application\. If you don't have a CloudFront distribution, see [Creating or Updating a Web Distribution Using the CloudFront Console](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html) in the *Amazon CloudFront Developer Guide*\. This tutorial also uses AWS CloudFormation to simplify the provisioning process\. For more information, see the [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)\.
 
 ### Estimated Time<a name="tutorials-common-attacks-overview-time"></a>
 

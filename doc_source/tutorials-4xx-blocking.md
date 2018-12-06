@@ -8,7 +8,7 @@ Using [AWS Lambda](https://aws.amazon.com/lambda/), you can set a threshold of h
 
 If users \(based on IP addresses\) exceed this error code threshold, Lambda automatically updates your AWS WAF rules to block IP addresses and specify for how long requests from those IP addresses should be blocked\.
 
-This tutorial shows you how to use an [AWS CloudFormation](https://aws.amazon.com/cloudformation/) template to specify the request threshold and time to block requests\. The tutorial also uses CloudFront [access logs](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html) \(stored in [Amazon S3](https://aws.amazon.com/s3/)\) to count requests as they are served by [CloudFront](https://aws.amazon.com/cloudfront/) and by [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) metrics\.
+This tutorial shows you how to use an [AWS CloudFormation](https://aws.amazon.com/cloudformation/) template to specify the request threshold and time to block requests\. The tutorial also uses CloudFront [access logs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html) \(stored in [Amazon S3](https://aws.amazon.com/s3/)\) to count requests as they are served by [CloudFront](https://aws.amazon.com/cloudfront/) and by [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) metrics\.
 
 **Topics**
 + [Solution Overview](#tutorials-4xx-blocking-overview)
@@ -37,7 +37,7 @@ The AWS CloudFormation template creates a web access control list \(web ACL\) an
 + **Auto Block** – This rule adds IP addresses that exceed the request\-per\-minute limit\. New requests from those IP addresses are blocked until Lambda removes the IP addresses from the block list after the specified expiration period\. The default is four hours\.
 + **Manual Block** – This rule adds IP addresses manually to the auto\-block list\. The IP addresses are permanently blocked; they can access the web application only if you remove them from the block list\. You can use this list to block known bad IP addresses or IP addresses that frequently are added to the auto\-block rule\.
 
-**Requirements:** This tutorial assumes that you already have a CloudFront distribution that you use to deliver content for your web application\. If you don't have a CloudFront distribution, see [Creating or Updating a Web Distribution Using the CloudFront Console](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html) in the *Amazon CloudFront Developer Guide*\. This tutorial also uses AWS CloudFormation to simplify the provisioning process\. For more information, see the [AWS CloudFormation User Guide](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)\.
+**Requirements:** This tutorial assumes that you already have a CloudFront distribution that you use to deliver content for your web application\. If you don't have a CloudFront distribution, see [Creating or Updating a Web Distribution Using the CloudFront Console](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html) in the *Amazon CloudFront Developer Guide*\. This tutorial also uses AWS CloudFormation to simplify the provisioning process\. For more information, see the [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)\.
 
 **Estimated time:** 15 minutes if you already have a CloudFront distribution, or 30 minutes if you need to create a CloudFront distribution\.
 
@@ -123,7 +123,7 @@ You can associate a web ACL with as many distributions as you want, but you can 
 
 1. To associate this web ACL with additional CloudFront distributions, repeat steps 4 through 6\.
 
-If you already have an Amazon S3 bucket for CloudFront access logs \(if you selected **no** for **Create CloudFront Access Log Bucket** in the preceding procedure\), enable Amazon S3 event notification to trigger the Lambda function when a new log file is added to the bucket\. For more information, see [Enabling Event Notifications](http://docs.aws.amazon.com/AmazonS3/latest/user-guide/SettingBucketNotifications.html) in the *Amazon Simple Storage Service Console User Guide*\.
+If you already have an Amazon S3 bucket for CloudFront access logs \(if you selected **no** for **Create CloudFront Access Log Bucket** in the preceding procedure\), enable Amazon S3 event notification to trigger the Lambda function when a new log file is added to the bucket\. For more information, see [Enabling Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/SettingBucketNotifications.html) in the *Amazon Simple Storage Service Console User Guide*\.
 
 **Note**  
 If you chose to have AWS CloudFormation create the bucket for you, AWS CloudFormation also enabled event notifications for the bucket\. 

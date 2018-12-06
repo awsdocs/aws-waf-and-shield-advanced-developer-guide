@@ -18,16 +18,16 @@ If you'd rather display a custom error message, possibly using the same formatti
 **Note**  
 CloudFront can't distinguish between an HTTP status code 403 that is returned by your origin and one that is returned by AWS WAF when a request is blocked\. This means that you can't return different custom error pages based on the different causes of an HTTP status code 403\. 
 
-For more information about CloudFront custom error pages, see [Customizing Error Responses](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html) in the *Amazon CloudFront Developer Guide*\.
+For more information about CloudFront custom error pages, see [Customizing Error Responses](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html) in the *Amazon CloudFront Developer Guide*\.
 
 ## Using AWS WAF with CloudFront Geo Restriction<a name="cloudfront-features-geo-restriction"></a>
 
 You can use the Amazon CloudFront *geo restriction* feature, also known as *geoblocking*, to prevent users in specific geographic locations from accessing content that you distribute through a CloudFront web distribution\. If you want to block web requests from specific countries and also block requests based on other conditions, you can use CloudFront geo restriction in conjunction with AWS WAF\. CloudFront returns the same HTTP status code to viewers—HTTP 403 \(Forbidden\)—whether they try to access your content from a country on a CloudFront geo restriction blacklist or whether the request is blocked by AWS WAF\. 
 
 **Note**  
-You can see the two\-letter country code of the country that requests originate from in the sample of web requests for a web ACL\. For more information, see [Viewing a Sample of the Web Requests That CloudFront or an Application Load Balancer Has Forwarded to AWS WAF](web-acl-testing.md#web-acl-testing-view-sample)\.
+You can see the two\-letter country code of the country that requests originate from in the sample of web requests for a web ACL\. For more information, see [Viewing a Sample of the Web Requests That API Gateway CloudFront or an Application Load Balancer Has Forwarded to AWS WAF](web-acl-testing.md#web-acl-testing-view-sample)\.
 
-For more information about CloudFront geo restriction, see [Restricting the Geographic Distribution of Your Content](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/georestrictions.html) in the *Amazon CloudFront Developer Guide*\.
+For more information about CloudFront geo restriction, see [Restricting the Geographic Distribution of Your Content](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/georestrictions.html) in the *Amazon CloudFront Developer Guide*\.
 
 ## Choosing the HTTP Methods That CloudFront Responds To<a name="cloudfront-features-allowed-http-methods"></a>
 
@@ -38,4 +38,4 @@ When you create an Amazon CloudFront web distribution, you choose the HTTP metho
 
 You also can use AWS WAF string match conditions to allow or block requests based on the HTTP method, as described in [Working with String Match Conditions](web-acl-string-conditions.md)\. If you want to use a combination of methods that CloudFront supports, such as `GET` and `HEAD`, then you don't need to configure AWS WAF to block requests that use the other methods\. If you want to allow a combination of methods that CloudFront doesn't support, such as `GET`, `HEAD`, and `POST`, you can configure CloudFront to respond to all methods, and then use AWS WAF to block requests that use other methods\.
 
-For more information about choosing the methods that CloudFront responds to, see [Allowed HTTP Methods](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesAllowedHTTPMethods) in the topic [Values that You Specify When You Create or Update a Web Distribution](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html) in the *Amazon CloudFront Developer Guide*\.
+For more information about choosing the methods that CloudFront responds to, see [Allowed HTTP Methods](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesAllowedHTTPMethods) in the topic [Values that You Specify When You Create or Update a Web Distribution](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html) in the *Amazon CloudFront Developer Guide*\.

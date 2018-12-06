@@ -29,7 +29,7 @@ You can't change the name after you create the web ACL\.
    + [Working with String Match Conditions](web-acl-string-conditions.md)
    + [Working with Regex Match Conditions](web-acl-regex-conditions.md)
 
-1. If you've already created the rules \(or subscribed to an AWS Marketplace rule group\) that you want to add to this web ACL, add the rules to the web ACL:
+1. If you've already created the rules or rule groups \(or subscribed to an AWS Marketplace rule group\) that you want to add to this web ACL, add the rules to the web ACL:
 
    1. In the **Rules** list, choose a rule\.
 
@@ -77,13 +77,13 @@ Choose the condition that you want to add to the rule\. The list displays only c
    1. Continue with step 10\.
 
 1. For each rule that you've added to the web ACL, choose whether you want AWS WAF to allow, block, or count web requests based on the conditions in the rule:
-   + **Allow** – CloudFront or an Application Load Balancer responds with the requested object\. In the case of CloudFront, if the object isn't in the edge cache, CloudFront forwards the request to the origin\.
-   + **Block** – CloudFront or an Application Load Balancer responds to the request with an HTTP 403 \(Forbidden\) status code\. CloudFront also can respond with a custom error page\. For more information, see [Using AWS WAF with CloudFront Custom Error Pages](cloudfront-features.md#cloudfront-features-custom-error-pages)\.
+   + **Allow** – API Gateway, CloudFront or an Application Load Balancer responds with the requested object\. In the case of CloudFront, if the object isn't in the edge cache, CloudFront forwards the request to the origin\.
+   + **Block** – API Gateway, CloudFront or an Application Load Balancer responds to the request with an HTTP 403 \(Forbidden\) status code\. CloudFront also can respond with a custom error page\. For more information, see [Using AWS WAF with CloudFront Custom Error Pages](cloudfront-features.md#cloudfront-features-custom-error-pages)\.
    + **Count** – AWS WAF increments a counter of requests that match the conditions in the rule, and then continues to inspect the web request based on the remaining rules in the web ACL\. 
 
      For information about using **Count** to test a web ACL before you start to use it to allow or block web requests, see [Counting the Web Requests That Match the Rules in a Web ACL](web-acl-testing.md#web-acl-testing-count)\. 
 **Note**  
-When adding an AWS Marketplace rule group to a web ACL \(as opposed to a single rule\), the action you set for the rule group \(either **No override** or **Override to count**\) is called the override action\. For more information, see [Rule Group Override](waf-managed-rule-groups.md#waf-managed-rule-group-override)\.
+When adding a rule group or an AWS Marketplace rule group to a web ACL \(as opposed to a single rule\), the action you set for the rule group \(either **No override** or **Override to count**\) is called the override action\. For more information, see [Rule Group Override](waf-managed-rule-groups.md#waf-managed-rule-group-override)\.
 
 1. If you want to change the order of the rules in the web ACL, use the arrows in the **Order** column\. AWS WAF inspects web requests based on the order in which rules appear in the web ACL\. 
 

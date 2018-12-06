@@ -6,7 +6,7 @@ After you create the rule group, you create an AWS Firewall Manager policy\. A F
 
 1. After you create the rule group \(the last step in the preceding procedure, [Step 3: Create a Rule Group](get-started-fms-create-rule-group.md)\), the console displays the **Rule group summary** page\. Choose **Next**\.
 
-1. For **Name**, type a friendly name\. 
+1. For **Name**, enter a friendly name\. 
 
 1. For **Region**, choose an AWS Region\.
 
@@ -16,9 +16,13 @@ After you create the rule group, you create an AWS Firewall Manager policy\. A F
 
 1. Choose **Next**\.
 
+1. If you want to include only specific accounts in the policy, or alternatively exclude specific accounts from the policy, select **Select accounts to include/exclude from this policy \(optional\)**\. Choose either **Include only these accounts in this policy** or **Exclude these accounts from this policy**\. You can choose only one option\. Choose **Add**\. Select the account numbers to include or exclude and choose **OK**\. 
+**Note**  
+If you don't select this option, Firewall Manager applies a policy to all accounts in your organization in AWS Organizations\. If you add a new account to the organization, Firewall Manager automatically applies the policy to that account\.
+
 1. Choose the type of resource that you want to protect\.
 
-1. If you want to protect only resources with specific tags, or alternatively exclude resources with specific tags, select **Use tags to include/exclude resources**, type the tags and then choose either **Include** or **Exclude**\. You can choose only one option\. 
+1. If you want to protect only resources with specific tags, or alternatively exclude resources with specific tags, select **Use tags to include/exclude resources**, type the tags, and then choose either **Include** or **Exclude**\. You can choose only one option\. 
 
    If you enter more than one tag \(separated by commas\), and if a resource has any of those tags, it is considered a match\.
 
@@ -26,10 +30,8 @@ After you create the rule group, you create an AWS Firewall Manager policy\. A F
 
 1. Choose **Create and apply this policy to existing and new resources**\.
 
-   This option creates a web ACL in each account within an organization in AWS Organizations, and associates the web ACL with the specified resources in the accounts\. This option also applies the policy to all new resources that match the above criteria \(resource type and tags\)\. Alternatively, if you choose **Create policy but do not apply the policy to existing or new resources**, Firewall Manager creates a web ACL in each account within the organization, but doesn't apply the web ACL to any resources\. You must apply the policy to resources later\.
+   This option creates a web ACL in each applicable account within an organization in AWS Organizations, and associates the web ACL with the specified resources in the accounts\. This option also applies the policy to all new resources that match the preceding criteria \(resource type and tags\)\. Alternatively, if you choose **Create but do not apply this policy to existing or new resources**, Firewall Manager creates a web ACL in each applicable account within the organization, but doesn't apply the web ACL to any resources\. You must apply the policy to resources later\.
 
 1. Choose **Next**\.
 
 1. Review the new policy\. To make any changes, choose **Edit**\. When you are satisfied with the policy, choose **Create policy**\.
-**Note**  
-Firewall Manager applies a policy to all accounts in your organization in AWS Organizations\. You can't include or exclude individual accounts\. If you add a new account to the organization, Firewall Manager automatically applies the policy to that account\.

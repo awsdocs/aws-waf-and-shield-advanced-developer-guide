@@ -102,7 +102,7 @@ Sometimes copying and pasting content can corrupt data\. If you encounter a "Pas
 
    1. \[Windows\] Choose **Yes** in the **Remote Desktop Connection** window to connect to your instance\.
 
-      \[Mac OS\] Log in as prompted, using the default administrator account and the default administrator password that you recorded or copied previously\. You might need to switch spaces to see the login screen\. For more information about spaces, see [http://support\.apple\.com/kb/PH14155](http://support.apple.com/kb/PH14155)\.
+      \[Mac OS\] Log in as prompted, using the default administrator account and the default administrator password that you recorded or copied previously\. You might need to switch spaces to see the login screen\. For more information about spaces, see the Apple website\.
 
    1. If you receive an error while attempting to connect to your instance, see [Remote Desktop can't connect to the remote computer](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/troubleshooting-windows-instances.html#rdp-issues)\.
 

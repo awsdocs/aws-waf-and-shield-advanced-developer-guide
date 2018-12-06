@@ -55,7 +55,7 @@ The AWS WAF console provides an integrated environment for you to create and man
 
 ## AWS Managed \(Predefined\) Policies for AWS WAF<a name="access-policy-examples-aws-managed"></a>
 
-AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
+AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
 The following AWS managed policies, which you can attach to users in your account, are specific to AWS WAF and are grouped by use case scenario:
 + **AWSWAFReadOnlyAccess** – Grants read\-only access to AWS WAF resources\. 
@@ -74,7 +74,7 @@ You can use the console to verify the effects of each policy as you attach the p
 
 We recommend that you use two browser windows: one to create the user and grant permissions, and the other to sign in to the AWS Management Console using the user's credentials and verify permissions as you grant them to the user\.
 
-For examples that show how to create an IAM role that you can use as an execution role for your AWS WAF resource, see [Creating IAM Roles](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) in the *IAM User Guide*\.
+For examples that show how to create an IAM role that you can use as an execution role for your AWS WAF resource, see [Creating IAM Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html) in the *IAM User Guide*\.
 
 ### Example Topics<a name="topics4"></a>
 + [Example 1: Give Users Read\-only Access to AWS WAF, CloudFront, and CloudWatch](#example1)
@@ -86,7 +86,7 @@ For examples that show how to create an IAM role that you can use as an executio
 
 First, you need to create an IAM user, add the user to an IAM group with administrative permissions, and then grant administrative permissions to the IAM user that you created\. You then can access AWS using a special URL and the user's credentials\. 
 
-For instructions, see [Creating Your First IAM User and Administrators Group](http://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\. 
+For instructions, see [Creating Your First IAM User and Administrators Group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html) in the *IAM User Guide*\. 
 
 ### Example 1: Give Users Read\-only Access to AWS WAF, CloudFront, and CloudWatch<a name="example1"></a>
 
@@ -142,7 +142,7 @@ The following policy lets users perform any AWS WAF operation, perform any opera
 }
 ```
 
-We strongly recommend that you configure multi\-factor authentication \(MFA\) for users who have administrative permissions\. For more information, see [Using Multi\-Factor Authentication \(MFA\) Devices with AWS](http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingMFA.html) in the *IAM User Guide*\. 
+We strongly recommend that you configure multi\-factor authentication \(MFA\) for users who have administrative permissions\. For more information, see [Using Multi\-Factor Authentication \(MFA\) Devices with AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingMFA.html) in the *IAM User Guide*\. 
 
 ### Example 3: Granting Access to a Specified AWS Account<a name="example3"></a>
 

@@ -1,6 +1,6 @@
 # Monitoring with Amazon CloudWatch<a name="monitoring-cloudwatch"></a>
 
-You can monitor web requests and web ACLs and rules using CloudWatch, which collects and processes raw data from AWS WAF into readable, near real\-time metrics\. These statistics are recorded for a period of two weeks, so that you can access historical information and gain a better perspective on how your web application or service is performing\.  For more information, see [What is CloudWatch](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html) in the *Amazon CloudWatch User Guide*\.
+You can monitor web requests and web ACLs and rules using CloudWatch, which collects and processes raw data from AWS WAF into readable, near real\-time metrics\. These statistics are recorded for a period of two weeks, so that you can access historical information and gain a better perspective on how your web application or service is performing\.  For more information, see [What is CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html) in the *Amazon CloudWatch User Guide*\.
 
 ## Creating CloudWatch Alarms<a name="creating_alarms"></a>
 
@@ -111,9 +111,9 @@ Shield Advanced posts the DDoSDetected metric with no other dimensions\. The oth
 
 You can use these Shield Advanced metrics for CloudWatch alarms\. CloudWatch alarms send notifications or automatically make changes to the resources you are monitoring based on rules that you define\.
 
-Detailed instructions for creating a CloudWatch alarm are in the [Amazon CloudWatch User Guide](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html)\. When creating the alarm in the CloudWatch console, after choosing **Create an alarm**, choose **AWSDDOSProtectionMetrics** to use these Shield Advanced metrics\. You can then create an alarm based on a specific volume of traffic, or you can trigger the alarm whenever either of the above metrics is greater than zero\. Because Shield Advanced metrics are only reported when an attack is detected, the second option would trigger an alarm for any potential attack observed by Shield Advanced\.
+Detailed instructions for creating a CloudWatch alarm are in the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html)\. When creating the alarm in the CloudWatch console, after choosing **Create an alarm**, choose **AWSDDOSProtectionMetrics** to use these Shield Advanced metrics\. You can then create an alarm based on a specific volume of traffic, or you can trigger the alarm whenever either of the above metrics is greater than zero\. Because Shield Advanced metrics are only reported when an attack is detected, the second option would trigger an alarm for any potential attack observed by Shield Advanced\.
 
 **Note**  
 The **AWSDDOSProtectionMetrics** are only available to Shield Advanced customers\.
 
-For more information, see [What is CloudWatch](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html) in the *Amazon CloudWatch User Guide*\.
+For more information, see [What is CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html) in the *Amazon CloudWatch User Guide*\.

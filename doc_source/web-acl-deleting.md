@@ -16,6 +16,6 @@ To delete a web ACL, you must remove the rules that are included in the web ACL 
 
 1. Choose **Update**\.
 
-1. Disassociate the web ACL from all CloudFront distributions and Application Load Balancers\. On the **Rules** tab, under **AWS resources using this web ACL**, choose the **x** for each CloudFront distribution or Application Load Balancer\.
+1. Disassociate the web ACL from all CloudFront distributions and Application Load Balancers\. On the **Rules** tab, under **AWS resources using this web ACL**, choose the **x** for each API Gateway API, CloudFront distribution or Application Load Balancer\.
 
 1. On the **Web ACLs** page, confirm that the web ACL that you want to delete is selected, and then choose **Delete**\.

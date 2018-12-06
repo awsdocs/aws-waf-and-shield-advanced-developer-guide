@@ -7,7 +7,7 @@ To get started, you set up an Amazon Kinesis Data Firehose\. As part of that pro
 You must have the following permissions to successfully enable logging:
 + `iam:CreateServiceLinkedRole`
 + `firehose:ListDeliveryStreams`
-+ `firehose:PutLoggingConfiguration`
++ `waf:PutLoggingConfiguration`
 
 For more information about service linked roles and the `iam:CreateServiceLinkedRole` permission, see [Using Service\-Linked Roles for AWS WAF](using-service-linked-roles.md)\.<a name="logging-procedure"></a>
 
@@ -15,7 +15,7 @@ For more information about service linked roles and the `iam:CreateServiceLinked
 
 1. Create an Amazon Kinesis Data Firehose using a name starting with the prefix "aws\-waf\-logs\-" For example, `aws-waf-logs-us-east-2-analytics`\. Create the data firehose with a `PUT` source and in the region that you are operating\. If you are capturing logs for Amazon CloudFront, create the firehose in US East \(N\. Virginia\)\. For more information, see [Creating an Amazon Kinesis Data Firehose Delivery Stream](https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html)\.
 **Note**  
-One AWS WAF log is equivalent to one Kinesis Data Firehose record\. If you typically receive 10,000 requests per second and you enable full logs, you should have a 10,000 records per second limit in Kinesis Data Firehose\. For more information about Kinesis Data Firehose limits, see [Amazon Kinesis Data Firehose Limits](https://docs.aws.amazon.com/firehose/latest/dev/limits.html)\. 
+One AWS WAF log is equivalent to one Kinesis Data Firehose record\. If you typically receive 10,000 requests per second and you enable full logs, you should have a 10,000 records per second limit in Kinesis Data Firehose\. If you do not configure Kinesis Data Firehose correctly, AWS WAF will not record all logs\. For more information about Kinesis Data Firehose limits, see [Amazon Kinesis Data Firehose Limits](https://docs.aws.amazon.com/firehose/latest/dev/limits.html)\. 
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
 
@@ -114,7 +114,7 @@ When you successfully enable logging, AWS WAF will create a service linked role 
 Following is an explanation of each item listed in these logs\.
 
 **timestamp**  
-The timestamp in seconds\.
+The timestamp in milliseconds\.
 
 **formatVersion**  
 The format version for the log\.
@@ -132,10 +132,10 @@ The type of rule that terminated the request\. Possible values: RATE\_BASED, REG
 The action\. Possible values for a terminating rule: ALLOW, BLOCK\. COUNT would not be a terminating rule\.
 
 **httpSourceName**  
-The source of the request\. Possible values: CF,ALB \(Amazon CloudFront or an Application Load Balancer\)\.
+The source of the request\. Possible values: CF, APIGW, ALB \(Amazon CloudFront, Amazon API Gateway or an Application Load Balancer\)\.
 
 **httpSourceId**  
-The source ID\. This field will show the ID of the associated Amazon CloudFront distribution\. The ARN will be listed for application load balancers\.
+The source ID\. This field will show the ID of the associated Amazon CloudFront distribution, the REST API for API Gateway or the ARN for application load balancers\.
 
 **ruleGroupList**  
 The list of rule groups that acted on this request\. In this sample there is only one\.

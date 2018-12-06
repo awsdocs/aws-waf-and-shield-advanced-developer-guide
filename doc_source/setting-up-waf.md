@@ -39,13 +39,13 @@ You then can sign in to the AWS WAF console \(and other service consoles\) by us
 **Note**  
 For information about creating access keys to access AWS WAF by using the [AWS Command Line Interface](http://aws.amazon.com/cli/) \(AWS CLI\), [Tools for Windows PowerShell](http://aws.amazon.com/documentation/powershell), the [AWS SDKs](http://aws.amazon.com/tools/), or the AWS WAF API, see [Managing Access Keys for IAM Users](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)\.
 
-If you signed up for AWS but have not created an IAM user for yourself, you can create one using the IAM console\. If you aren't familiar with using the console, see [Working with the AWS Management Console](http://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/getting-started.html) for an overview\. 
+If you signed up for AWS but have not created an IAM user for yourself, you can create one using the IAM console\. If you aren't familiar with using the console, see [Working with the AWS Management Console](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/getting-started.html) for an overview\. 
 
 **To create an IAM user for yourself and add the user to an Administrators group**
 
-1. Use your AWS account email address and password to sign in as the *[AWS account root user](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)* to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+1. Use your AWS account email address and password to sign in as the *[AWS account root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)* to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 **Note**  
-We strongly recommend that you adhere to the best practice of using the **Administrator** IAM user below and securely lock away the root user credentials\. Sign in as the root user only to perform a few [account and service management tasks](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
+We strongly recommend that you adhere to the best practice of using the **Administrator** IAM user below and securely lock away the root user credentials\. Sign in as the root user only to perform a few [account and service management tasks](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
 1. In the navigation pane of the console, choose **Users**, and then choose **Add user**\.
 
@@ -69,7 +69,7 @@ We strongly recommend that you adhere to the best practice of using the **Admini
 
 1. Choose **Next: Review** to see the list of group memberships to be added to the new user\. When you are ready to proceed, choose **Create user**\.
 
-You can use this same process to create more groups and users, and to give your users access to your AWS account resources\. To learn about using policies to restrict users' permissions to specific AWS resources, go to [Access Management](http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) and [Example Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_examples.html)\.
+You can use this same process to create more groups and users, and to give your users access to your AWS account resources\. To learn about using policies to restrict users' permissions to specific AWS resources, go to [Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) and [Example Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_examples.html)\.
 
 To sign in as this new IAM user, first sign out of the AWS console\. Then use the following URL, where *your\_aws\_account\_id* is your AWS account number without the hyphens\. For example, if your AWS account number is `1234-5678-9012`, your AWS account ID is `123456789012`:
 
@@ -102,6 +102,6 @@ The AWS Management Console includes a console for AWS WAF, but if you want to ac
   + [Ruby](https://aws.amazon.com/sdk-for-ruby/)
 
   For a complete list of AWS SDKs, see [Tools for Amazon Web Services](http://aws.amazon.com/tools/)\.
-+ If you're using a programming language for which AWS doesn't provide an SDK, the [AWS WAF API Reference](http://docs.aws.amazon.com/waf/latest/APIReference/) documents the operations that AWS WAF supports\. 
++ If you're using a programming language for which AWS doesn't provide an SDK, the [AWS WAF API Reference](https://docs.aws.amazon.com/waf/latest/APIReference/) documents the operations that AWS WAF supports\. 
 + The AWS Command Line Interface \(AWS CLI\) supports AWS WAF\. The AWS CLI lets you control multiple AWS services from the command line and automate them through scripts\. For more information, see [AWS Command Line Interface](https://aws.amazon.com/cli/)\.
 + AWS Tools for Windows PowerShell supports AWS WAF\. For more information, see [AWS Tools for PowerShell Cmdlet Reference](http://aws.amazon.com/documentation/powershell/)\.

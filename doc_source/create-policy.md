@@ -26,6 +26,10 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Next**\.
 
+1. If you want to include only specific accounts in the policy, or alternatively exclude specific accounts from the policy, select **Select accounts to include/exclude from this policy \(optional\)**\. Choose either **Include only these accounts in this policy** or **Exclude these accounts from this policy**\. You can choose only one option\. Choose **Add**\. Select the account numbers to include or exclude and choose **OK**\. 
+**Note**  
+If you don't select this option, Firewall Manager applies a policy to all accounts in your organization in AWS Organizations\. If you add a new account to the organization, Firewall Manager automatically applies the policy to that account\.
+
 1. Choose the type of resource that you want to protect\.
 
    You can select only one type of resource per policy\.
@@ -38,10 +42,8 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. If you want to automatically apply the policy to existing resources, choose **Create and apply this policy to existing and new resources**\.
 
-   This option creates a web ACL in each account within an organization in AWS Organizations and associates the web ACL with the resources in the accounts\. This option also applies the policy to all new resources that match the preceding criteria \(resource type and tags\)\. Alternatively, if you choose **Create policy but do not apply the policy to existing or new resources**, Firewall Manager creates a web ACL in each account within the organization, but doesn't apply the web ACL to any resources\. You must apply the policy to resources later\. Choose the appropriate option\.
+   This option creates a web ACL in each applicable account within an organization in AWS Organizations and associates the web ACL with the resources in the accounts\. This option also applies the policy to all new resources that match the preceding criteria \(resource type and tags\)\. Alternatively, if you choose **Create policy but do not apply the policy to existing or new resources**, Firewall Manager creates a web ACL in each applicable account within the organization, but doesn't apply the web ACL to any resources\. You must apply the policy to resources later\. Choose the appropriate option\.
 
 1. Choose **Next**\.
 
 1. Review the new policy\. To make any changes, choose **Edit**\. When you are satisfied with the policy, choose **Create and apply policy**\.
-**Note**  
-Firewall Manager applies a policy to all accounts in your organization in AWS Organizations\. You can't include or exclude individual accounts\. If you add a new account to the organization, Firewall Manager automatically applies the policy to that account\.

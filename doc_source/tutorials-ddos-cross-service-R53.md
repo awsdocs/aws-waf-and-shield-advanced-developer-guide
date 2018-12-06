@@ -55,7 +55,7 @@ For more information about transferring an existing domain registration from ano
 
 1. Choose **Complete Purchase**\.
 
-   For [generic TLDs](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html#registrar-tld-list-generic), we typically send an email to the registrant for the domain to verify that the registrant contact can be reached at the email address that you specified\. \(We don't send an email if we already have confirmation that the email address is valid\.\) The email comes from one of the following email addresses: 
+   For [generic TLDs](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html#registrar-tld-list-generic), we typically send an email to the registrant for the domain to verify that the registrant contact can be reached at the email address that you specified\. \(We don't send an email if we already have confirmation that the email address is valid\.\) The email comes from one of the following email addresses: 
    + **noreply@registrar\.amazon\.com** – for TLDs registered by Amazon Registrar\.
    + **noreply@domainnameverification\.net** – for TLDs registered by our registrar associate, Gandi\. To determine who the registrar is for your TLD, see [Domains That You Can Register with Route 53](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html)\.
 **Important**  

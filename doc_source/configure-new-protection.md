@@ -1,6 +1,6 @@
 # Add AWS Shield Advanced Protection to more AWS Resources<a name="configure-new-protection"></a>
 
-As part of enabling Shield Advanced for an account, you choose initial resources to protect\. You might want to add protection to more resources\. Shield Advanced offers advanced monitoring and protection for up to 100 resources that include any combination of Elastic IP addresses, CloudFront distributions, Amazon Route 53 hosted zones, or Elastic Load Balancing resources\. If you want to increase these limits, contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
+As part of enabling Shield Advanced for an account, you choose initial resources to protect\. You might want to add protection to more resources\. Shield Advanced offers advanced monitoring and protection for up to 100 resources that include any combination of Elastic IP addresses, Amazon CloudFront distributions, Amazon Route 53 hosted zones, Elastic Load Balancing resources or your AWS Global Accelerator accelerators\. If you want to increase these limits, contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
 
 **Important**  
 You must complete [Step 1: Activate AWS Shield Advanced](enable-ddos-prem.md) before you perform this procedure\.<a name="configure-new-protection-procedure"></a>

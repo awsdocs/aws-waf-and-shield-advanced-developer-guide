@@ -3,7 +3,7 @@
 Every AWS resource is owned by an AWS account, and permissions to create or access a resource are governed by permissions policies\. An account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\), and some services also support attaching permissions policies to resources\.
 
 **Note**  
-An *account administrator* \(or administrator user\) is a user with administrator privileges\. For more information, see [IAM Best Practices](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the *IAM User Guide*\.
+An *account administrator* \(or administrator user\) is a user with administrator privileges\. For more information, see [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the *IAM User Guide*\.
 
 When granting permissions, you decide who is getting the permissions, the resources they get permissions for, and the specific operations that you want to allow on those resources\.
 
@@ -50,9 +50,9 @@ For example, the following ARN specifies all web ACLs for the account `111122223
 arn:aws:waf::111122223333:webacl/*
 ```
 
-For more information, see [Resources](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Resource) in the *IAM User Guide*\.
+For more information, see [Resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Resource) in the *IAM User Guide*\.
 
-AWS WAF provides a set of operations to work with AWS WAF resources\. For a list of available operations, see [Actions](http://docs.aws.amazon.com/waf/latest/APIReference/API_Operations.html)\.
+AWS WAF provides a set of operations to work with AWS WAF resources\. For a list of available operations, see [Actions](https://docs.aws.amazon.com/waf/latest/APIReference/API_Operations.html)\.
 
 ## Understanding Resource Ownership<a name="access-control-resource-ownership"></a>
 
@@ -66,7 +66,7 @@ A *resource owner* is the AWS account that creates the resource\. That is, the r
 A *permissions policy* describes who has access to what\. The following section explains the available options for creating permissions policies\.
 
 **Note**  
-This section discusses using IAM in the context of AWS WAF\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What Is IAM?](http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
+This section discusses using IAM in the context of AWS WAF\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What Is IAM?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
 Policies that are attached to an IAM identity are known as *identity\-based* policies and policies that are attached to a resource are known as *resource\-based* policies\. AWS WAF supports only identity\-based policies\.
 
@@ -86,7 +86,7 @@ You can attach policies to IAM identities\. For example, you can do the followin
 
   1. Account B administrator can then delegate permissions to assume the role to any users in Account B\. Doing this allows users in Account B to create or access resources in Account A\. The principal in the trust policy also can be an AWS service principal if you want to grant an AWS service permissions to assume the role\.
 
-   For more information about using IAM to delegate permissions, see [Access Management](http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\. 
+   For more information about using IAM to delegate permissions, see [Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\. 
 
 The following is an example policy that grants permissions for the `waf:ListRules` action on all resources\. In the current implementation, AWS WAF doesn't support identifying specific resources using the resource ARNs \(also referred to as resource\-level permissions\) for some of the API actions, so you must specify a wildcard character \(\*\):
 
@@ -106,7 +106,7 @@ The following is an example policy that grants permissions for the `waf:ListRule
 }
 ```
 
-For more information about using identity\-based policies with AWS WAF, see [Using Identity\-Based Policies \(IAM Policies\) for AWS WAF](access-control-identity-based.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
+For more information about using identity\-based policies with AWS WAF, see [Using Identity\-Based Policies \(IAM Policies\) for AWS WAF](access-control-identity-based.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
 
 ### Resource\-Based Policies<a name="access-control-manage-access-resource-based"></a>
 
@@ -122,12 +122,12 @@ The following are the most basic policy elements:
 + **Effect** – You specify the effect when the user requests the specific action\. This can be either allow or deny\. If you don't explicitly grant access to allow a resource, access is implicitly denied\. You also can explicitly deny access to a resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
 + **Principal** – In identity\-based policies \(IAM policies\), the user that the policy is attached to is the implicit principal\. AWS WAF doesn't support resource\-based policies\.
 
-To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
+To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
 For a table that shows all the AWS WAF API actions and the resources that they apply to, see [AWS WAF API Permissions: Actions, Resources, and Conditions Reference](waf-api-permissions-ref.md)\. 
 
 ## Specifying Conditions in a Policy<a name="specifying-conditions"></a>
 
-When you grant permissions, you can use the IAM policy language to specify the conditions when a policy should take effect\. For example, you might want a policy to be applied only after a specific date\. For more information about specifying conditions in a policy language, see [Condition](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Condition) in the *IAM User Guide*\.
+When you grant permissions, you can use the IAM policy language to specify the conditions when a policy should take effect\. For example, you might want a policy to be applied only after a specific date\. For more information about specifying conditions in a policy language, see [Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Condition) in the *IAM User Guide*\.
 
-To express conditions, you use predefined condition keys\. There are no condition keys specific to AWS WAF\. However, there are AWS\-wide condition keys that you can use as appropriate\. For a complete list of AWS\-wide keys, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\.
+To express conditions, you use predefined condition keys\. There are no condition keys specific to AWS WAF\. However, there are AWS\-wide condition keys that you can use as appropriate\. For a complete list of AWS\-wide keys, see [Available Keys for Conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\.

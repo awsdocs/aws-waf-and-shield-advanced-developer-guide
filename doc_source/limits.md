@@ -18,6 +18,7 @@ The following limits on AWS WAF entities can't be changed\.
 
 | Resource | Limit | 
 | --- | --- | 
+| Rule groups per web ACL | 2: 1 customer\-created rule group and 1 AWS Marketplace rule group | 
 | Rules per web ACL | 10 | 
 | Conditions per rule | 10 | 
 | IP address ranges \(in CIDR notation\) per IP match condition | 10,000 | 
