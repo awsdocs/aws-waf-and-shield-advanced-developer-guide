@@ -80,7 +80,7 @@ AWS Shield Advanced includes the following metrics\.
 
 | Metric | Description | 
 | --- | --- | 
-| DDoSDetected | Indicates a DDoS event for a particular Amazon Resource Name \(ARN\)\. Reporting criteria: Non\-zero value indicates a DDoS event\. Zero when there is no DDoS event detected\.  | 
+| DDoSDetected | Indicates a DDoS event for a particular Amazon Resource Name \(ARN\)\. Reporting criteria: A value of 1 indicates a DDoS event\. Zero when there is no DDoS event detected\.  | 
 | DDoSAttackBitsPerSecond | The number of bytes observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is only available for layer 3/4 DDoS events\. Reporting criteria: Non\-zero value during an attack\. Zero when there is no attack\. Units: Bits  | 
 | DDoSAttackPacketsPerSecond | The number of packets observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is only available for layer 3/4 DDoS events\. Reporting criteria: Non\-zero value during an attack\. Zero when there is no attack\. Units: Packets  | 
 | DDoSAttackRequestsPerSecond | The number of requests observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is only available for layer 7 DDoS events and will only be reported for the most significant layer 7 events\. Reporting criteria: Non\-zero value during an attack\. Zero when there is no attack\. Units: Requests  | 
