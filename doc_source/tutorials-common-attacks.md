@@ -174,7 +174,7 @@ When you created the AWS CloudFormation stack, AWS CloudFormation created an IP 
       + To specify the IP address 192\.0\.2\.44, type **192\.0\.2\.44/32**\.
       + To specify the range of IP addresses from 192\.0\.2\.0 to 192\.0\.2\.255, type **192\.0\.2\.0/24**\.
 
-      AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32\. AWS WAF supports IPv6 address ranges: /16, /24, /32, /48, /56, /64, and /128\. For more information about CIDR notation, see the Wikipedia entry [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\.
+      AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32\. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128\. For more information about CIDR notation, see the Wikipedia entry [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\.
 **Note**  
 AWS WAF supports both IPv4 and IPv6 IP addresses\.
 

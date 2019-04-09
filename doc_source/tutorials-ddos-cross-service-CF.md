@@ -12,7 +12,7 @@ You are responsible for the cost of the AWS services implemented in this tutoria
 
 Amazon CloudFront is a content delivery network \(CDN\) service that you can use to deliver your entire website, including static, dynamic, streaming, and interactive content\. You can use persistent TCP connections and variable time\-to\-live \(TTL\) to accelerate the delivery of your content, even if it can’t be cached at an edge location\. This allows you to use CloudFront to protect your web application, even if you are not serving static content\.
 
-CloudFront accepts only well\-formed connections to prevent many common DDoS attacks, like [SYN floods](https://en.wikipedia.org/wiki/SYN_flood) and [UDP reflection](https://en.wikipedia.org/wiki/SYN_flood) attacks, from reaching your origin\. CloudFront can automatically close connections that are unusually slow, which can indicate a potential DDoS attack\. 
+CloudFront accepts only well\-formed connections to prevent many common DDoS attacks, like [SYN floods](https://en.wikipedia.org/wiki/SYN_flood) and UDP reflection attacks, from reaching your origin\. CloudFront can automatically close connections that are unusually slow, which can indicate a potential DDoS attack\. 
 
 Further, DDoS attacks are geographically isolated close to the source, which prevents the traffic from affecting other locations\. You can also use the CloudFront geo restriction feature to prevent users in specific geographic locations from accessing your content\. This can be useful in case you want to block attacks that are originating from geographic locations where you do not expect to serve users\. 
 

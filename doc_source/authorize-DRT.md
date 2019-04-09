@@ -11,7 +11,7 @@ To use the services of the DRT, you must be subscribed to the [Business Support 
 
 1.  Select either **Create new role for the DRT to access my account** or **Choose an existing role for the DRT to access my account**\.
 
-   If you choose to use an existing role, you must attach the `AWSShieldDRTAccessPolicy` managed policy to the role\. For more information, see [Attaching and Detaching IAM Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html)\. If you choose **Create new role for the DRT to access my account**, the policy attached to the role automatically\.
+   If you choose to use an existing role, you must attach the `AWSShieldDRTAccessPolicy` managed policy to the role\. For more information, see [Attaching and Detaching IAM Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html)\. If you choose **Create new role for the DRT to access my account**, the policy is attached to the role automatically\.
 
    If you choose to use an existing role, the role must also trust the service principal `drt.shield.amazonaws.com`\. For more information, see [IAM JSON Policy Elements: Principal](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html)\. 
 
@@ -19,7 +19,7 @@ To use the services of the DRT, you must be subscribed to the [Business Support 
 
 1. Complete the necessary information, either the new role name or the existing role name\.
 
-1. \(Optional\) If you want to authorize the DRT to access your flow logs stored in Amazon S3 buckets, enter the name of your Amazon S3 bucket where those logs are stored\. Choose **Add bucket**\. Repeat as necessary, adding more buckets, up to a maximum of 10\. 
+1. \(Optional\) If you want to authorize the DRT to access your AWS WAF logs stored in an Amazon S3 bucket, enter the name of your bucket where those logs are stored\. Choose **Add bucket**\. Repeat as necessary, adding more buckets, up to a maximum of 10\. For more information, see [Publishing Flow Logs to Amazon S3](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html)\.
 
    When you add a bucket to the list, the following permissions are granted to the DRT: `s3:GetBucketLocation`, `s3:GetObject`, and `s3:ListBucket`\.
 

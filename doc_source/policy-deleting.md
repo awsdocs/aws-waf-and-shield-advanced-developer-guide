@@ -6,6 +6,9 @@ You can delete a Firewall Manager policy by performing the following steps\.<a n
 
 1. In the navigation pane, choose **Security policies**\.
 
-1. Choose the circle next to the policy that you want to delete\.
+1. Choose the option next to the policy that you want to delete\.
 
 1. Choose **Delete**\.
+
+**Important**  
+If you delete a Firewall Manager\-Shield Advanced policy, the policy is deleted, but your accounts remain subscribed to Shield Advanced\.

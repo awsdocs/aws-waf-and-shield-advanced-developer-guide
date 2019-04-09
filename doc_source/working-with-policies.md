@@ -1,11 +1,17 @@
 # Working with AWS Firewall Manager Policies<a name="working-with-policies"></a>
 
-An AWS Firewall Manager policy contains the rule group that you want to apply to your resources\. A rule group is a set of rules, and each rule includes conditions that you specify\. You can apply only one rule group to a policy, but you can apply the same rule group to multiple policies\.
+AWS Firewall Manager provides two types of policies: 
++ **Shield Advanced policy** – This policy applies AWS Shield Advanced protection to specified accounts and resources\.
++ **AWS WAF** **policy** – This policy contains a rule group and defines which resources will be protected by that rule group\. 
 
-Firewall Manager applies the policy to resource types that you specify \(such as CloudFront distributions or Application Load Balancers\) belonging to specified accounts within your organization in AWS Organizations\.
+ A Firewall Manager policy is specific to either AWS WAF or Shield Advanced\. If you want to enforce both AWS WAF rules and Shield Advanced protection across accounts, you can create multiple policies\. You can create one or more policies for AWS WAF rules, and one or more policies for Shield Advanced\.
 
-If you add a new account to your organization, Firewall Manager automatically applies the policy to the specified resources in that account\. 
+**Note**  
+A rule group is a set of rules, and each rule includes conditions that you specify\. You can apply only one rule group to a policy, but you can apply the same rule group to multiple policies\.
+
+If you add a new account to an organization that you created with AWS Organizations, Firewall Manager automatically applies the policy to the specified resources in that account\. 
 
 **Topics**
 + [Creating an AWS Firewall Manager Policy](create-policy.md)
 + [Deleting an AWS Firewall Manager Policy](policy-deleting.md)
++ [AWS Shield Advanced Policy Scope Changes](policy-scope-changes.md)

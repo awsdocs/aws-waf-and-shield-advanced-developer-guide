@@ -10,4 +10,4 @@ When enabling AWS Config to protect an Application Load Balancer, choose **Elast
 
 When enabling AWS Config to protect a CloudFront distribution, you must be in the US East \(N\. Virginia\) region\. Other regions will not have CloudFront as an option\.
 
-You can now configure AWS Firewall Manager to begin protecting your resources\. For more information, see [Getting Started with AWS Firewall Manager](getting-started-fms.md) \.
+You can now configure AWS Firewall Manager to begin protecting your resources\. For more information, see [Getting Started with AWS Firewall Manager to Enable AWS WAF Rules](getting-started-fms.md) \.

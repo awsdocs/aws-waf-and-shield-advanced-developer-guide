@@ -2,4 +2,4 @@
 
 ## <a name="fms-pricing"></a>
 
-AWS Firewall Manager incurs charges for AWS WAF web ACLs and rules that you create, along with charges for some related services\. For more information, see [AWS Firewall Manager Pricing](https://aws.amazon.com/firewall-manager/pricing)\. 
+Charges incurred by AWS Firewall Manager are for the underlying services, such as AWS WAF and AWS Config\. For more information, see [AWS Firewall Manager Pricing](https://aws.amazon.com/firewall-manager/pricing)\. 

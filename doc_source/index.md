@@ -1,7 +1,7 @@
 # AWS WAF, AWS Firewall Manager, and AWS Shield Advanced Developer Guide
 
 -----
-*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -70,11 +70,19 @@ Amazon's trademarks and trade dress may not be used in
       + [Step 1: Join AWS Organizations](join-aws-orgs.md)
       + [Step 2: Set the AWS Firewall Manager Administrator Account](enable-integration.md)
       + [Step 3: Enable AWS Config](enable-config.md)
-   + [Getting Started with AWS Firewall Manager](getting-started-fms.md)
+   + [Getting Started with AWS Firewall Manager to Enable AWS WAF Rules](getting-started-fms.md)
       + [Step 1: Complete the Prerequisites](complete-prereq.md)
       + [Step 2: Create Rules](get-started-fms-create-rules.md)
       + [Step 3: Create a Rule Group](get-started-fms-create-rule-group.md)
-      + [Step 4: Create and Apply an AWS Firewall Manager Policy](get-started-fms-create-security-policy.md)
+      + [Step 4: Create and Apply an AWS Firewall Manager AWS WAF Policy](get-started-fms-create-security-policy.md)
+   + [Getting Started with AWS Firewall Manager to Enable AWS Shield Advanced Protection](getting-started-fms-shield.md)
+      + [Step 1: Complete the Prerequisites](complete-prereq-fms-shield.md)
+      + [Step 2: Create and Apply an AWS Firewall Manager Shield Advanced Policy](get-started-fms-shield-create-security-policy.md)
+      + [Step 3: (Optional) Authorize the DDoS Response Team](get-started-fms-shield-authorize-DRT.md)
+      + [Step 4: Configure Amazon SNS Notifications and Amazon CloudWatch Alarms](get-started-fms-shield-cloudwatch.md)
+         + [Configure Amazon CloudWatch Alarms](get-started-fms-shield-alarms.md)
+      + [Step 5: Deploy AWS WAF Rules](get-started-fms-shield-deploy-waf-automations.md)
+      + [Step 6: Monitor the Global Threat Environment Dashboard](get-started-fms-shield-monitor-global-dashboard.md)
    + [AWS Firewall Manager Limits](fms-limits.md)
    + [Working with Rule Groups](working-with-rule-groups.md)
       + [Creating a Rule Group](create-rule-group.md)
@@ -82,6 +90,8 @@ Amazon's trademarks and trade dress may not be used in
    + [Working with AWS Firewall Manager Policies](working-with-policies.md)
       + [Creating an AWS Firewall Manager Policy](create-policy.md)
       + [Deleting an AWS Firewall Manager Policy](policy-deleting.md)
+      + [AWS Shield Advanced Policy Scope Changes](policy-scope-changes.md)
+   + [Tutorial: Creating a Policy with Hierarchical Rules](hierarchical-rules.md)
    + [Viewing Resource Compliance with a Policy](fms-compliance.md)
    + [Designating a Different Account as the AWS Firewall Manager Administrator Account](fms-change-administrator.md)
 + [AWS Shield](shield-chapter.md)
@@ -96,7 +106,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Step 5: Configure Amazon CloudWatch Alarms](ddos-get-started-cloudwatch.md)
       + [Step 6: Deploy AWS WAF Rules](deploy-waf-automations.md)
       + [Step 7: Monitor the Global Threat Environment Dashboard](monitor-global-dashboard.md)
-   + [Add AWS Shield Advanced Protection to more AWS Resources](configure-new-protection.md)
+   + [Adding AWS Shield Advanced Protection to More AWS Resources](configure-new-protection.md)
    + [Removing AWS Shield Advanced from an AWS Resource](remove-protection.md)
    + [Managing AWS Shield Advanced Protections](manage-protection.md)
    + [Editing AWS Shield Advanced Settings](ddos-edit-drt.md)
@@ -104,8 +114,8 @@ Amazon's trademarks and trade dress may not be used in
    + [AWS Shield Advanced Limits](shield-limits.md)
 + [Monitoring AWS WAF, AWS Firewall Manager, and AWS Shield Advanced](monitoring_overview.md)
    + [Monitoring Tools](monitoring_automated_manual.md)
-   + [View Protection Changes of Your Resources Using AWS Config](ddos-add-config.md)
-   + [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)
+      + [View Protection Changes of Your Resources Using AWS Config](ddos-add-config.md)
+      + [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)
    + [Logging API Calls with AWS CloudTrail](logging-using-cloudtrail.md)
 + [Responding to DDoS Attacks](ddos-responding.md)
    + [Reviewing DDoS Incidents](using-ddos-reports.md)

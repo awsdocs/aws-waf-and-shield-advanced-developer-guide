@@ -2,6 +2,10 @@
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [AWS Firewall Manager support for AWS Shield Advanced](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | Added support for Shield Advanced to Firewall Manager\. | March 15, 2019 | 
+| [Tutorial: Creating Hierarchical Policies](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | Added tutorial on creating hierarchical policies in AWS Firewall Manager\. | February 11, 2019 | 
+| [Rule\-level control in rule groups](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | You can now exclude individual rules from AWS Marketplace rule groups, as well as your own rule groups\. | December 12, 2018 | 
+| [AWS Shield Advanced support for AWS Global Accelerator](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | Shield Advanced can now protect AWS Global Accelerator\. | November 26, 2018 | 
 | [AWS WAF support for Amazon API Gateway](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | AWS WAF now protects API Gateway APIs\. | October 25, 2018 | 
 | [Expanded AWS Shield Advanced Getting Started wizard](https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html) | New wizard provides opportunity to create rate\-based rules and Amazon CloudWatch Events\. | August 31, 2018 | 
 | [AWS WAF logging](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | Enable logging to get detailed information about traffic that is analyzed by your web ACL\. | August 31, 2018 | 

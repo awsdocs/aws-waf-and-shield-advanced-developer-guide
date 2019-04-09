@@ -1,6 +1,9 @@
 # Step 3: Add Rate\-based Rules<a name="ddos-get-started-rate-based-rules"></a>
 
-We recommend that you add rate\-based rules as part of your AWS Shield Advanced protections\. These rules can alert you to sudden spikes in traffic that might indicate a potential DDoS event\. A rate\-based rule counts the requests that arrive from a specified IP address every five minutes\. If the number of requests exceed a rate limit that you define, the rule can trigger an action such as sending you a notification\. For more information about rate\-base rules, see [How AWS WAF Works](how-aws-waf-works.md)\. <a name="ddos-get-started-rate-based-rules-procedure"></a>
+We recommend that you add rate\-based rules as part of your AWS Shield Advanced protections\. These rules can alert you to sudden spikes in traffic that might indicate a potential DDoS event\. A rate\-based rule counts the requests that arrive from a specified IP address every five minutes\. If the number of requests exceed a rate limit that you define, the rule can trigger an action such as sending you a notification\. For more information about rate\-base rules, see [How AWS WAF Works](how-aws-waf-works.md)\. 
+
+**Important**  
+If you have used AWS Firewall Manager to create a Firewall Manager\-Shield Advanced policy, do not do this step\. Firewall Manager does not support rate\-based rules\.<a name="ddos-get-started-rate-based-rules-procedure"></a>
 
 **To add rate\-based rules**
 
@@ -12,8 +15,8 @@ We recommend that you add rate\-based rules as part of your AWS Shield Advanced 
 
    1. Choose **Create web ACL**\.
 **Note**  
-If a resource is already associated with a web ACL, you cannot change to a different web ACL\. If you want to change the ACL, you must first remove the associated web ACLs from the resource using the AWS WAF console\. For more information see [Associating or Disassociating a Web ACL with an Amazon API Gateway API, a CloudFront Distribution or an Application Load Balancer](web-acl-associating-cloudfront-distribution.md)\.  
-Only Amazon CloudFront distributions and Application Load Balancers will be listed in the table\. You cannot associate web ACLs and rate\-based rules with other types of resources\.
+If a resource is already associated with a web ACL, you can't change to a different web ACL\. If you want to change the ACL, you must first remove the associated web ACLs from the resource using the AWS WAF console\. For more information, see [Associating or Disassociating a Web ACL with an Amazon API Gateway API, a CloudFront Distribution or an Application Load Balancer](web-acl-associating-cloudfront-distribution.md)\.  
+Only Amazon CloudFront distributions and Application Load Balancers will be listed in the table\. You can't associate web ACLs and rate\-based rules with other types of resources\.
 
 1. For each resource that is listed in the table, choose an existing rate\-based rule\. Alternatively, you can create a different rate\-based rule by following these steps:
 

@@ -36,4 +36,4 @@ To create your own rule group, perform the following procedure\.<a name="get-sta
 
 1. Choose **Create**\.
 
-You are now ready to go to [Step 4: Create and Apply an AWS Firewall Manager Policy](get-started-fms-create-security-policy.md)\.
+You are now ready to go to [Step 4: Create and Apply an AWS Firewall Manager AWS WAF Policy](get-started-fms-create-security-policy.md)\.

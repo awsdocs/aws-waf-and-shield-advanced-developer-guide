@@ -1,14 +1,18 @@
-# Step 4: Create and Apply an AWS Firewall Manager Policy<a name="get-started-fms-create-security-policy"></a>
+# Step 4: Create and Apply an AWS Firewall Manager AWS WAF Policy<a name="get-started-fms-create-security-policy"></a>
 
-After you create the rule group, you create an AWS Firewall Manager policy\. A Firewall Manager policy contains the rule group that you want to apply to your resources\.<a name="get-started-fms-create-security-policy-procedure"></a>
+After you create the rule group, you create an AWS Firewall Manager AWS WAF policy\. A Firewall Manager\-AWS WAF policy contains the rule group that you want to apply to your resources\.<a name="get-started-fms-create-security-policy-procedure"></a>
 
-**To create a Firewall Manager policy \(console\)**
+**To create a Firewall Manager\-AWS WAF policy \(console\)**
 
 1. After you create the rule group \(the last step in the preceding procedure, [Step 3: Create a Rule Group](get-started-fms-create-rule-group.md)\), the console displays the **Rule group summary** page\. Choose **Next**\.
 
 1. For **Name**, enter a friendly name\. 
 
-1. For **Region**, choose an AWS Region\.
+1. For **Policy type**, choose **WAF**\. 
+
+1. For **Region**, choose an AWS Region\. To protect Amazon CloudFront resources, choose **Global**\.
+
+   To protect resources in multiple regions \(other than CloudFront resources\), you must create separate Firewall Manager policies for each Region\.
 
 1. Select a rule group to add, and then choose **Add rule group**\. 
 
@@ -16,13 +20,13 @@ After you create the rule group, you create an AWS Firewall Manager policy\. A F
 
 1. Choose **Next**\.
 
-1. If you want to include only specific accounts in the policy, or alternatively exclude specific accounts from the policy, select **Select accounts to include/exclude from this policy \(optional\)**\. Choose either **Include only these accounts in this policy** or **Exclude these accounts from this policy**\. You can choose only one option\. Choose **Add**\. Select the account numbers to include or exclude and choose **OK**\. 
+1. If you want to include only specific accounts in the policy, or alternatively exclude specific accounts from the policy, select **Select accounts to include/exclude from this policy \(optional\)**\. Choose either **Include only these accounts in this policy** or **Exclude these accounts from this policy**\. You can choose only one option\. Choose **Add**\. Select the account numbers to include or exclude, and then choose **OK**\. 
 **Note**  
 If you don't select this option, Firewall Manager applies a policy to all accounts in your organization in AWS Organizations\. If you add a new account to the organization, Firewall Manager automatically applies the policy to that account\.
 
-1. Choose the type of resource that you want to protect\.
+1. Choose the types of resources that you want to protect\.
 
-1. If you want to protect only resources with specific tags, or alternatively exclude resources with specific tags, select **Use tags to include/exclude resources**, type the tags, and then choose either **Include** or **Exclude**\. You can choose only one option\. 
+1. If you want to protect only resources with specific tags, or alternatively exclude resources with specific tags, select **Use tags to include/exclude resources**, enter the tags, and then choose either **Include** or **Exclude**\. You can choose only one option\. 
 
    If you enter more than one tag \(separated by commas\), and if a resource has any of those tags, it is considered a match\.
 

@@ -1,33 +1,33 @@
 # Logging API Calls with AWS CloudTrail<a name="logging-using-cloudtrail"></a>
 
-AWS WAF, AWS Shield Advanced and AWS Firewall Manager are integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or an AWS service\. CloudTrail captures a subset of API calls for these services as events, including calls from the AWS WAF, Shield Advanced or Firewall Manager consoles and from code calls to the AWS WAF, Shield Advanced or Firewall Manager APIs\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for AWS WAF, Shield Advanced or Firewall Manager\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. Using the information collected by CloudTrail, you can determine the request that was made to these services, the IP address from which the request was made, who made the request, when it was made, and additional details\. 
+AWS WAF, AWS Shield Advanced, and AWS Firewall Manager are integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or an AWS service\. CloudTrail captures a subset of API calls for these services as events, including calls from the AWS WAF, Shield Advanced or Firewall Manager consoles and from code calls to the AWS WAF, Shield Advanced, or Firewall Manager APIs\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for AWS WAF, Shield Advanced, or Firewall Manager\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. Using the information collected by CloudTrail, you can determine the request that was made to these services, the IP address that the request was made from, who made the request, when it was made, and additional details\. 
 
 To learn more about CloudTrail, including how to configure and enable it, see the [AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 
-CloudTrail is enabled on your AWS account when you create the account\. When supported event activity occurs in AWS WAF, Shield Advanced or Firewall Manager, that activity is recorded in a CloudTrail event along with other AWS service events in **Event history**\. You can view, search, and download recent events in your AWS account\. For more information, see [Viewing Events with CloudTrail Event History](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)\. 
+CloudTrail is enabled on your AWS account when you create the account\. When supported event activity occurs in AWS WAF, Shield Advanced, or Firewall Manager, that activity is recorded in a CloudTrail event along with other AWS service events in **Event history**\. You can view, search, and download recent events in your AWS account\. For more information, see [Viewing Events with CloudTrail Event History](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)\. 
 
-For an ongoing record of events in your AWS account, including events for AWS WAF, Shield Advanced or Firewall Manager, create a trail\. A trail enables CloudTrail to deliver log files to an Amazon S3 bucket\. By default, when you create a trail in the console, the trail applies to all regions\. The trail logs events from all regions in the AWS partition and delivers the log files to the Amazon S3 bucket that you specify\. Additionally, you can configure other AWS services to further analyze and act upon the event data collected in CloudTrail logs\. For more information, see: 
+For an ongoing record of events in your AWS account, including events for AWS WAF, Shield Advanced, or Firewall Manager, create a trail\. A trail enables CloudTrail to deliver log files to an Amazon S3 bucket\. By default, when you create a trail on the console, the trail applies to all Regions\. The trail logs events from all Regions in the AWS partition and delivers the log files to the Amazon S3 bucket that you specify\. Additionally, you can configure other AWS services to further analyze and act upon the event data collected in CloudTrail logs\. For more information, see the following: 
 + [Overview for Creating a Trail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html)
 + [CloudTrail Supported Services and Integrations](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-aws-service-specific-topics.html#cloudtrail-aws-service-specific-topics-integrations)
 + [Configuring Amazon SNS Notifications for CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_notifications_top_level.html)
 + [Receiving CloudTrail Log Files from Multiple Regions](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html) and [Receiving CloudTrail Log Files from Multiple Accounts](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html)
 
-## AWS WAF Information in CloudTrail<a name="understanding-waf-entries"></a>
+## AWS WAF Information in AWS CloudTrail<a name="understanding-waf-entries"></a>
 
-All AWS WAF actions are logged by CloudTrail and are documented in the [AWS WAF API Reference](http://docs.aws.amazon.com/waf/latest/APIReference/)\. For example, calls to ListWebACL, UpdateWebACL, and DeleteWebACL generate entries in the CloudTrail log files\. 
+All AWS WAF actions are logged by AWS CloudTrail and are documented in the [AWS WAF API Reference](http://docs.aws.amazon.com/waf/latest/APIReference/)\. For example, calls to `ListWebACL`, `UpdateWebACL`, and `DeleteWebACL` generate entries in the CloudTrail log files\. 
 
 Every event or log entry contains information about who generated the request\. The identity information helps you determine the following: 
-+ Whether the request was made with root or IAM user credentials\.
-+ Whether the request was made with temporary security credentials for a role or federated user\.
-+ Whether the request was made by another AWS service\.
++ Whether the request was made with root or IAM user credentials
++ Whether the request was made with temporary security credentials for a role or federated user
++ Whether the request was made by another AWS service
 
-For more information, see the [CloudTrail userIdentity Element](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.
+For more information, see [CloudTrail userIdentity Element](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.
 
 ## Example: AWS WAF Log File Entries<a name="understanding-service-name-entries-WAF"></a>
 
- A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files are not an ordered stack trace of the public API calls, so they do not appear in any specific order\.
+A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. AWS CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files are not an ordered stack trace of the public API calls, so they do not appear in any specific order\.
 
-The following example shows a CloudTrail log entry that demonstrates the `CreateRule`, `GetRule`, `UpdateRule` and `DeleteRule` actions\.
+The following example shows a CloudTrail log entry that demonstrates the `CreateRule`, `GetRule`, `UpdateRule`, and `DeleteRule` operations:
 
 ```
 {

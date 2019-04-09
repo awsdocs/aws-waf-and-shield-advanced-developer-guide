@@ -69,7 +69,7 @@ For more information about IP match conditions, see [Working with IP Match Condi
 
 1. For **Address**, type **192\.0\.2\.0/24**\. This IP address range, specified in CIDR notation, includes the IP addresses from 192\.0\.2\.0 to 192\.0\.2\.255\. \(The 192\.0\.2\.0/24 IP address range is reserved for examples, so no web requests will originate from these IP addresses\.\)
 
-   AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32\. AWS WAF supports IPv6 address ranges: /16, /24, /32, /48, /56, /64, and /128\. \(To specify a single IP address, such as 192\.0\.2\.44, type **192\.0\.2\.44/32**\.\) Other ranges aren't supported\.
+   AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32\. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128\. \(To specify a single IP address, such as 192\.0\.2\.44, type **192\.0\.2\.44/32**\.\) Other ranges aren't supported\.
 
    For more information about CIDR notation, see the Wikipedia article [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\.
 

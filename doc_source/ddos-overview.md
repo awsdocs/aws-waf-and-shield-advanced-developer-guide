@@ -16,6 +16,8 @@ As an example of this added protection, if you use Shield Advanced to protect an
 
 As an AWS Shield Advanced customer, you can contact a 24x7 DDoS response team \(DRT\) for assistance during a DDoS attack\. You also have exclusive access to advanced, real\-time metrics and reports for extensive visibility into attacks on your AWS resources\. With the assistance of the DRT, AWS Shield Advanced includes intelligent DDoS attack detection and mitigation for not only for network layer \(layer 3\) and transport layer \(layer 4\) attacks, but also for application layer \(layer 7\) attacks\. 
 
+To use the services of the DRT, you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
+
 AWS Shield Advanced also offers some cost protection against spikes in your AWS bill that could result from a DDoS attack\. This cost protection is provided for your Elastic Load Balancing load balancers, Amazon CloudFront distributions, Amazon Route 53 hosted zones, Amazon Elastic Compute Cloud instances, and your AWS Global Accelerator accelerators\.
 
 AWS WAF is included with AWS Shield Advanced at no extra cost\. For more information about AWS Shield Advanced pricing, see [AWS Shield Advanced Pricing](http://aws.amazon.com/shield/pricing/)\.
@@ -91,7 +93,7 @@ The following table shows a comparison of AWS Shield Standard and AWS Shield Adv
 | Layer 7 attack notification | Yes, through AWS WAF\. Incurs standard AWS WAF charges\. | Yes | 
 | Layer 7 attack forensics reports \(Top talkers report, sampled requests, and more\) | Yes, through AWS WAF\. Incurs standard AWS WAF charges\. | Yes | 
 | Layer 3/4/7 attack historical report |  | Yes | 
-| DDoS Response Team Support | 
+| DDoS Response Team Support \(Must be subscribed to the Business Support plan or the Enterprise Support plan\. | 
 | Incident management during high severity events |  | Yes | 
 | Custom mitigations during attacks |  | Yes | 
 | Post\-attack analysis |  | Yes | 
