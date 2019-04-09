@@ -8,6 +8,6 @@ If the AWS Shield Advanced team determines that the incident is a valid DDoS att
 To be eligible for a credit, AWS must receive your credit request by the end of the second billing cycle after the incident occurred\. 
 
 To request your credit, submit a billing query to the [AWS Support Center](https://console.aws.amazon.com/support/home#/) that contains the following information:
-+ The words “DDoS Concession” in the subject line
++ The words "DDoS Concession" in the subject line
 + The dates and times of each incident interruption that you are claiming
 + The AWS services \(Amazon CloudFront, Elastic Load Balancing, Route 53, Amazon EC2\) and specific resources that were affected by the DDoS activity

@@ -61,8 +61,8 @@ When you successfully enable logging, AWS WAF will create a service linked role 
                           "ruleGroupId":"41f4eb08-4e1b-2985-92b5-e8abf434fad3",
                           "terminatingRule":null,    
                           "nonTerminatingMatchingRules":[                  
-                                                         {“action” : “COUNT"},   
-                                                         {“ruleId” : “4659b169-2083-4a91-bbd4-08851a9aaf74”}       
+                                                         {"action" : "COUNT"},   
+                                                         {"ruleId" : "4659b169-2083-4a91-bbd4-08851a9aaf74"}       
                                                         ]
                          }
                         ],
@@ -81,8 +81,8 @@ When you successfully enable logging, AWS WAF will create a service linked role 
                               ],
 			
 	"nonTerminatingMatchingRules":[                                
-                                       {“action” : “COUNT"},                                                           
-                                       {“ruleId” : “4659b181-2011-4a91-bbd4-08851a9aaf52”}    
+                                       {"action" : "COUNT"},                                                           
+                                       {"ruleId" : "4659b181-2011-4a91-bbd4-08851a9aaf52"}    
                                       ],
                                   
 	"httpRequest":{                                                             
@@ -106,7 +106,7 @@ When you successfully enable logging, AWS WAF will create a service linked role 
                       "args":"usernam=abc",                                         
                       "httpVersion":"HTTP/1.1",
                       "httpMethod":"GET",
-                      "requestId”:”cloud front Request id”                    
+                      "requestId":"cloud front Request id"                    
                       }
 }
 ```
@@ -123,7 +123,7 @@ The format version for the log\.
 The GUID of the Web ACL\.
 
 **terminatingRuleId**  
-The ID of the rule that terminated the request\. If nothing terminates the request, the value is “Default\_Action\.”
+The ID of the rule that terminated the request\. If nothing terminates the request, the value is "Default\_Action\."
 
 **terminatingRuleType**  
 The type of rule that terminated the request\. Possible values: RATE\_BASED, REGULAR, GROUP\.
