@@ -11,6 +11,9 @@ A rule group is a set of rules, and each rule includes conditions that you speci
 
 If you add a new account to an organization that you created with AWS Organizations, Firewall Manager automatically applies the policy to the specified resources in that account\. 
 
+**Note**  
+When using Firewall Manager to protect Amazon API Gateway resources, Firewall Manager will typically apply the appropriate Firewall Manager policy to new in\-scope API Gateway stages within seconds\. However if you create a new stage as part of creating a new deployment using the API Gateway console or the `createDeployment` API, it might take up to 24 hours until Firewall Manager applies the policy\.
+
 **Topics**
 + [Creating an AWS Firewall Manager Policy](create-policy.md)
 + [Deleting an AWS Firewall Manager Policy](policy-deleting.md)

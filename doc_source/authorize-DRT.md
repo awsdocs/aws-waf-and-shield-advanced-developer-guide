@@ -19,7 +19,7 @@ To use the services of the DRT, you must be subscribed to the [Business Support 
 
 1. Complete the necessary information, either the new role name or the existing role name\.
 
-1. \(Optional\) If you want to authorize the DRT to access your AWS WAF logs stored in an Amazon S3 bucket, enter the name of your bucket where those logs are stored\. Choose **Add bucket**\. Repeat as necessary, adding more buckets, up to a maximum of 10\. For more information, see [Publishing Flow Logs to Amazon S3](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html)\.
+1. \(Optional\) If you want to authorize the DRT to access your AWS WAF logs stored in an Amazon S3 bucket, enter the name of your bucket where those logs are stored\. Choose **Add bucket**\. Repeat as necessary, adding more buckets, up to a maximum of 10\. For more information, see [Logging Web ACL Traffic Information](logging.md)\.
 
    When you add a bucket to the list, the following permissions are granted to the DRT: `s3:GetBucketLocation`, `s3:GetObject`, and `s3:ListBucket`\.
 

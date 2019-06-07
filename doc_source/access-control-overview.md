@@ -1,6 +1,6 @@
 # Overview of Managing Access Permissions to Your AWS WAF Resources<a name="access-control-overview"></a>
 
-Every AWS resource is owned by an AWS account, and permissions to create or access a resource are governed by permissions policies\. An account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\), and some services also support attaching permissions policies to resources\.
+Every AWS resource is owned by an AWS account, and permissions to create or access a resource are governed by permissions policies\. An account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\)\. Some services also support attaching permissions policies to resources\.
 
 **Note**  
 An *account administrator* \(or administrator user\) is a user with administrator privileges\. For more information, see [IAM Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the *IAM User Guide*\.
@@ -18,16 +18,16 @@ When granting permissions, you decide who is getting the permissions, the resour
 
 In AWS WAF, the resources are *web ACLs* and *rules*\. AWS WAF also supports conditions such as *byte match*, *IP match*, and *size constraint*\. 
 
-These resources and conditions have unique Amazon Resource Names \(ARNs\) associated with them as shown in the following table\. 
+These resources and conditions have unique Amazon Resource Names \(ARNs\) associated with them, as shown in the following table\. 
 
 
 ****  
 
-| Name in WAF Console | Name in WAF SDK/CLI | ARN Format  | 
+| Name in AWS WAF Console | Name in AWS WAF SDK/CLI | ARN Format  | 
 | --- | --- | --- | 
-| Web ACL | WebACL |  arn:aws:waf::*account*:*webacl*/*ID*  | 
-| Rule | Rule |  arn:aws:waf::*account*:*rule*/*ID*   | 
-| String match condition | ByteMatchSet |  arn:aws:waf::*account*:*bytematchset*/*ID*  | 
+| Web ACL | WebACL |  `arn:aws:waf::account:webacl/ID`  | 
+| Rule | Rule |  `arn:aws:waf::account:rule/ID `  | 
+| String match condition | ByteMatchSet |  `arn:aws:waf::account:bytematchset/ID`  | 
 | SQL injection match condition | SqlInjectionMatchSet | arn:aws:waf::account:sqlinjectionset/ID | 
 | Size constraint condition | SizeConstraintSet | arn:aws:waf::account:sizeconstraintset/ID | 
 | IP match condition | IPSet | arn:aws:waf::account:ipset/ID | 
@@ -63,18 +63,18 @@ A *resource owner* is the AWS account that creates the resource\. That is, the r
 
 ## Managing Access to Resources<a name="access-control-manage-access-intro"></a>
 
-A *permissions policy* describes who has access to what\. The following section explains the available options for creating permissions policies\.
+A *permissions policy* describes who has access to what\. The following sections explain the available options for creating permissions policies\.
 
 **Note**  
-This section discusses using IAM in the context of AWS WAF\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What Is IAM?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
+These sections discuss using IAM in the context of AWS WAF\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What Is IAM?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
-Policies that are attached to an IAM identity are known as *identity\-based* policies and policies that are attached to a resource are known as *resource\-based* policies\. AWS WAF supports only identity\-based policies\.
+Policies that are attached to an IAM identity are known as *identity\-based* policies, and policies that are attached to a resource are known as *resource\-based* policies\. AWS WAF supports only identity\-based policies\.
 
 ### Topics<a name="topics2"></a>
-+ [Identity\-Based Policies \(IAM Policies\)](#access-control-manage-access-identity-based)
-+ [Resource\-Based Policies](#access-control-manage-access-resource-based)
++ [Identity\-based Policies \(IAM Policies\)](#access-control-manage-access-identity-based)
++ [Resource\-based Policies](#access-control-manage-access-resource-based)
 
-### Identity\-Based Policies \(IAM Policies\)<a name="access-control-manage-access-identity-based"></a>
+### Identity\-based Policies \(IAM Policies\)<a name="access-control-manage-access-identity-based"></a>
 
 You can attach policies to IAM identities\. For example, you can do the following: 
 + **Attach a permissions policy to a user or a group in your account** – An account administrator can use a permissions policy that is associated with a particular user to grant permissions for that user to create an AWS WAF resource\. 
@@ -106,9 +106,9 @@ The following is an example policy that grants permissions for the `waf:ListRule
 }
 ```
 
-For more information about using identity\-based policies with AWS WAF, see [Using Identity\-Based Policies \(IAM Policies\) for AWS WAF](access-control-identity-based.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
+For more information about using identity\-based policies with AWS WAF, see [Using Identity\-based Policies \(IAM Policies\) for AWS WAF](access-control-identity-based.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
 
-### Resource\-Based Policies<a name="access-control-manage-access-resource-based"></a>
+### Resource\-based Policies<a name="access-control-manage-access-resource-based"></a>
 
 Other services, such as Amazon S3, also support resource\-based permissions policies\. For example, you can attach a policy to an S3 bucket to manage access permissions to that bucket\. AWS WAF doesn't support resource\-based policies\. 
 

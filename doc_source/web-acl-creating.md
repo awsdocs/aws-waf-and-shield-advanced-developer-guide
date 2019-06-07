@@ -10,7 +10,7 @@
 **Note**  
 You can't change the name after you create the web ACL\.
 
-1. For **CloudWatch metric name**, change the default name if applicable\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. It can't contain whitespace\.
+1. For **CloudWatch metric name**, change the default name if applicable\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\), with maximum length 128 and minimum length one\. It can't contain whitespace or metric names reserved for AWS WAF , including "All" and "Default\_Action\."
 **Note**  
 You can't change the name after you create the web ACL\.
 
@@ -47,7 +47,7 @@ You can't change the name after you create the web ACL\.
 **Name**  
 Type a name\.  
 **CloudWatch metric name**  
-Type a name for the CloudWatch metric that AWS WAF will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\)\. It can't contain whitespace\.   
+Type a name for the CloudWatch metric that AWS WAF will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\), with maximum length 128 and minimum length one\. It can't contain whitespace or metric names reserved for AWS WAF , including "All" and "Default\_Action\."  
 You can't change the metric name after you create the rule\.
 
    1. To add a condition to the rule, specify the following values:   

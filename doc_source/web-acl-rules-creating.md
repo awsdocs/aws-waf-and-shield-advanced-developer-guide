@@ -14,7 +14,7 @@ If you add more than one condition to a rule, a web request must match all the c
 **Name**  
 Type a name\.   
 **CloudWatch metric name**  
-Type a name for the CloudWatch metric that AWS WAF will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. It can't contain whitespace\.  
+Type a name for the CloudWatch metric that AWS WAF will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\), with maximum length 128 and minimum length one\. It can't contain whitespace or metric names reserved for AWS WAF , including "All" and "Default\_Action\.  
 **Rule type**  
 Choose either `Regular rule` or `Rate–based rule`\. Rate–based rules are identical to regular rules, but also take into account how many requests arrive from a specified IP address every five minutes\. For more information about these rule types, see [How AWS WAF Works](how-aws-waf-works.md)\.  
 **Rate limit**  

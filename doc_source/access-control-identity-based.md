@@ -1,6 +1,6 @@
-# Using Identity\-Based Policies \(IAM Policies\) for AWS WAF<a name="access-control-identity-based"></a>
+# Using Identity\-based Policies \(IAM Policies\) for AWS WAF<a name="access-control-identity-based"></a>
 
-This topic provides examples of identity\-based policies that demonstrate how an account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\) and thereby grant permissions to perform operations on AWS WAF resources\. 
+This section provides examples of identity\-based policies that demonstrate how an account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\) and thereby grant permissions to perform operations on AWS WAF resources\. 
 
 **Important**  
 We recommend that you first review the introductory topics that explain the basic concepts and options available for you to manage access to your AWS WAF resources\. For more information, see [Overview of Managing Access Permissions to Your AWS WAF Resources](access-control-overview.md)\.
@@ -58,8 +58,8 @@ The AWS WAF console provides an integrated environment for you to create and man
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
 The following AWS managed policies, which you can attach to users in your account, are specific to AWS WAF and are grouped by use case scenario:
-+ **AWSWAFReadOnlyAccess** – Grants read\-only access to AWS WAF resources\. 
-+ **AWSWAFFullAccess** – Grants full access to AWS WAF resources\.
++ `AWSWAFReadOnlyAccess` – Grants read\-only access to AWS WAF resources\. 
++ `AWSWAFFullAccess` – Grants full access to AWS WAF resources\.
 
 **Note**  
 You can review these permissions policies by signing in to the IAM console and searching for specific policies there\.
@@ -70,7 +70,7 @@ You also can create your own custom IAM policies to allow permissions for AWS WA
 
 The examples in this section provide a group of sample policies that you can attach to a user\. If you are new to creating policies, we recommend that you first create an IAM user in your account and attach the policies to the user, in the sequence outlined in the steps in this section\.
 
-You can use the console to verify the effects of each policy as you attach the policy to the user\. Initially, the user doesn't have permissions, and the user won't be able to do anything in the console\. As you attach policies to the user, you can verify that the user can perform various operations in the console\. 
+You can use the console to verify the effects of each policy as you attach the policy to the user\. Initially, the user doesn't have permissions, and the user won't be able to do anything on the console\. As you attach policies to the user, you can verify that the user can perform various operations on the console\. 
 
 We recommend that you use two browser windows: one to create the user and grant permissions, and the other to sign in to the AWS Management Console using the user's credentials and verify permissions as you grant them to the user\.
 
@@ -90,7 +90,7 @@ For instructions, see [Creating Your First IAM User and Administrators Group](ht
 
 ### Example 1: Give Users Read\-only Access to AWS WAF, CloudFront, and CloudWatch<a name="example1"></a>
 
-The following policy grants users read\-only access to AWS WAF resources, to Amazon CloudFront web distributions, and to Amazon CloudWatch metrics\. It's useful for users who need permission to view the settings in AWS WAF conditions, rules, and web ACLs to see which distribution is associated with a web ACL, and to monitor metrics and a sample of requests in CloudWatch\. These users can't create, update, or delete AWS WAF resources:
+The following policy grants users read\-only access to AWS WAF resources, to Amazon CloudFront web distributions, and to Amazon CloudWatch metrics\. It's useful for users who need permission to view the settings in AWS WAF conditions, rules, and web ACLs to see which distribution is associated with a web ACL, and to monitor metrics and a sample of requests in CloudWatch\. These users can't create, update, or delete AWS WAF resources\.
 
 ```
 {
@@ -116,7 +116,7 @@ The following policy grants users read\-only access to AWS WAF resources, to Ama
 
 ### Example 2: Give Users Full Access to AWS WAF, CloudFront, and CloudWatch<a name="example2"></a>
 
-The following policy lets users perform any AWS WAF operation, perform any operation on CloudFront web distributions, and monitor metrics and a sample of requests in CloudWatch\. It's useful for users who are AWS WAF administrators:
+The following policy lets users perform any AWS WAF operation, perform any operation on CloudFront web distributions, and monitor metrics and a sample of requests in CloudWatch\. It's useful for users who are AWS WAF administrators\.
 
 ```
 {
