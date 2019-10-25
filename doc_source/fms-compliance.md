@@ -2,9 +2,9 @@
 
 You can check to see what resources an AWS Firewall Manager policy is being applied to\.<a name="fms-compliance-procedure"></a>
 
-**To check what resources a Firewall Manager policy is being applied to \(console\)**
+**To check what resources an AWS Firewall Manager policy is being applied to \(console\)**
 
-1. Sign in to the AWS Management Console using the AWS Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at https://console\.aws\.amazon\.com/waf/fms\. 
+1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager Administrator Account](enable-integration.md)\.
 

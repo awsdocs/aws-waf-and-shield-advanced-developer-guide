@@ -24,7 +24,7 @@ Only Amazon CloudFront distributions and Application Load Balancers will be list
 
    1. Enter a name\.
 
-   1. Enter a rate limit\. This is the maximum number of requests from a single IP address allowed in a five\-minute period\. The rate limit must be equal to or greater than 2,000\. 
+   1. Enter a rate limit\. This is the maximum number of requests from a single IP address allowed in a five\-minute period\. The rate limit must be equal to or greater than 100\. 
 
    1. Choose the action to take if the rule is triggered\. **Block** will block the request\. **Count** will allow the request but increment a counter tracking how many times this rule was triggered\.
 

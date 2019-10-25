@@ -6,7 +6,7 @@ This tutorial shows how to use AWS WAF to perform the following tasks:
 + Add the conditions to a rule\. Rules let you target the web requests that you want to block or allow\. A web request must match all the conditions in a rule before AWS WAF blocks or allows requests based on the conditions that you specify\.
 + Add the rules to your web ACL\. This is where you specify whether you want to block web requests or allow them based on the conditions that you add to each rule\.
 + Specify a default action, either block or allow\. This is the action that AWS WAF takes when a web request doesn't match any of your rules\.
-+ Choose the Amazon CloudFront distribution that you want AWS WAF to inspect web requests for\. This tutorial covers the steps only for CloudFront, but the process for an Application Load Balancer and Amazon API Gateway APIs essentially is the same\. AWS WAF for CloudFront is available for all regions\. AWS WAF for use with API Gateway or an Application Load Balancer is available in the regions listed at [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region)\.
++ Choose the Amazon CloudFront distribution that you want AWS WAF to inspect web requests for\. This tutorial covers the steps only for CloudFront, but the process for an Application Load Balancer and Amazon API Gateway APIs essentially is the same\. AWS WAF for CloudFront is available for all Regions\. AWS WAF for use with API Gateway or an Application Load Balancer is available in the Regions listed at [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region)\.
 
 **Note**  
 AWS typically bills you less than US $0\.25 per day for the resources that you create during this tutorial\. When you're finished with the tutorial, we recommend that you delete the resources to prevent incurring unnecessary charges\. 
@@ -36,21 +36,21 @@ The AWS WAF console guides you through the process of configuring AWS WAF to blo
 
 **To create a web ACL**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. If this is your first time using AWS WAF, choose **Go to AWS WAF**, and then choose **Configure web ACL**\. 
 
    If you've used AWS WAF before, choose **Web ACLs** in the navigation pane, and then choose **Create web ACL**\.
 
-1. On the **Name web ACL** page, for **Web ACL name**, type a name\. 
+1. On the **Name web ACL** page, for **Web ACL name**, enter a name\. 
 **Note**  
 You can't change the name after you create the web ACL\.
 
-1. For **CloudWatch metric name**, type a name\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\)\. It can't contain whitespace\.
+1. For **CloudWatch metric name**, enter a name\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\)\. It can't contain white space\.
 **Note**  
 You can't change the name after you create the web ACL\.
 
-1. For **Region**, choose a region\. If you will associate this web ACL with a CloudFront distribution, choose **Global \(CloudFront\)**\. 
+1. For **Region**, choose a Region\. If you will associate this web ACL with a CloudFront distribution, choose **Global \(CloudFront\)**\. 
 
 1. For **AWS resource to associate**, choose the resource that you want to associate with your web ACL, and then choose **Next**\.
 
@@ -65,11 +65,11 @@ For more information about IP match conditions, see [Working with IP Match Condi
 
 1. On the **Create conditions** page, for **IP match conditions**, choose **Create condition**\.
 
-1. In the **Create IP match condition** dialog box, for **Name**, type a name\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \.
+1. In the **Create IP match condition** dialog box, for **Name**, enter a name\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \.
 
-1. For **Address**, type **192\.0\.2\.0/24**\. This IP address range, specified in CIDR notation, includes the IP addresses from 192\.0\.2\.0 to 192\.0\.2\.255\. \(The 192\.0\.2\.0/24 IP address range is reserved for examples, so no web requests will originate from these IP addresses\.\)
+1. For **Address**, enter **192\.0\.2\.0/24**\. This IP address range, specified in CIDR notation, includes the IP addresses from 192\.0\.2\.0 to 192\.0\.2\.255\. \(The 192\.0\.2\.0/24 IP address range is reserved for examples, so no web requests will originate from these IP addresses\.\)
 
-   AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32\. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128\. \(To specify a single IP address, such as 192\.0\.2\.44, type **192\.0\.2\.44/32**\.\) Other ranges aren't supported\.
+   AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32\. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128\. \(To specify a single IP address, such as 192\.0\.2\.44, enter **192\.0\.2\.44/32**\.\) Other ranges aren't supported\.
 
    For more information about CIDR notation, see the Wikipedia article [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\.
 
@@ -86,7 +86,7 @@ For more information about geo match conditions, see [Working with Geographic Ma
 
 1. On the **Create conditions** page, for **Geo match conditions**, choose **Create condition**\.
 
-1. In the **Create geo match condition** dialog box, for **Name**, type a name\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \. 
+1. In the **Create geo match condition** dialog box, for **Name**, enter a name\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \. 
 
 1. Choose a **Location type** and a country\. **Location type** is currently limited to **Country**\.
 
@@ -103,11 +103,11 @@ For more information about string match conditions, see [Working with String Mat
 
 **To create a string match condition**
 
-1. On the **Create conditions** page, for **String match conditions**, choose **Create condition**\.
+1. On the **Create conditions** page, for **String and regex match conditions**, choose **Create condition**\.
 
-1. In the **Create string match condition** dialog box, type the following values:  
+1. In the **Create string match condition** dialog box, enter the following values:  
 **Name**  
-Type a name\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \.  
+Enter a name\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \.  
 **Type**  
 Choose **String match**\.  
 **Part of the request to filter on**  
@@ -115,20 +115,20 @@ Choose the part of the web request that you want AWS WAF to inspect for a specif
 For this example, choose **Header**\.  
 If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF inspects only the first 8192 bytes \(8 KB\) because CloudFront forwards only the first 8192 bytes for inspection\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF gets the length of the body from the request headers\.\) For more information, see [Working with Size Constraint Conditions](web-acl-size-conditions.md)\.  
 **Header \(Required if "Part of the request to filter on" is "Header"\)**  
-Because you chose **Header** for **Part of the request to filter on**, you must specify which header you want AWS WAF to inspect\. Type **User\-Agent**\. \(This value is not case sensitive\.\)  
+Because you chose **Header** for **Part of the request to filter on**, you must specify which header you want AWS WAF to inspect\. Enter **User\-Agent**\. \(This value is not case sensitive\.\)  
 **Match type**  
 Choose where the specified string must appear in the **User\-Agent** header, for example, at the beginning, at the end, or anywhere in the string\.   
 For this example, choose **Exactly matches**, which indicates that AWS WAF inspects web requests for a header value that is identical to the value that you specify\.  
 **Transformation**  
-In an effort to bypass AWS WAF, attackers use unusual formatting in web requests, for example, by adding whitespace or by URL\-encoding some or all of the request\. Transformations convert the web request to a more standard format by removing whitespace, by URL\-decoding the request, or by performing other operations that eliminate much of the unusual formatting that attackers commonly use\.  
+In an effort to bypass AWS WAF, attackers use unusual formatting in web requests, for example, by adding white space or by URL\-encoding some or all of the request\. Transformations convert the web request to a more standard format by removing white space, by URL\-decoding the request, or by performing other operations that eliminate much of the unusual formatting that attackers commonly use\.  
 You can only specify a single type of text transformation\.  
 For this example, choose **None**\.  
 **Value is base64 encoded**  
-When the value that you type in **Value to match** is already base64\-encoded, select this check box\.   
+When the value that you enter in **Value to match** is already base64\-encoded, select this check box\.   
 For this example, don't select the check box\.  
 **Value to match**  
 Specify the value that you want AWS WAF to search for in the part of web requests that you indicated in **Part of the request to filter on**\.  
-For this example, type **BadBot**\. AWS WAF will inspect the `User-Agent` header in web requests for the value **BadBot**\.  
+For this example, enter **BadBot**\. AWS WAF will inspect the `User-Agent` header in web requests for the value **BadBot**\.  
 The maximum length of **Value to match** is 50 characters\. If you want to specify a base64\-encoded value, the limit is 50 characters before encoding\.
 
 1. If you want AWS WAF to inspect web requests for multiple values, such as a `User-Agent` header that contains `BadBot` and a query string that contains `BadParameter`, you have two choices:
@@ -146,11 +146,11 @@ For more information about regex match conditions, see [Working with Regex Match
 
 **To create a regex match condition**
 
-1. On the **Create conditions** page, for **String match conditions**, choose **Create condition**\.
+1. On the **Create conditions** page, for **String match and regex conditions**, choose **Create condition**\.
 
-1. In the **Create string match condition** dialog box, type the following values:  
+1. In the **Create string match condition** dialog box, enter the following values:  
 **Name**  
-Type a name\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \.  
+Enter a name\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \.  
 **Type**  
 Choose **Regex match**\.  
 **Part of the request to filter on**  
@@ -158,14 +158,14 @@ Choose the part of the web request that you want AWS WAF to inspect for a specif
 For this example, choose **Body**\.  
 If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF inspects only the first 8192 bytes \(8 KB\) because CloudFront forwards only the first 8192 bytes for inspection\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF gets the length of the body from the request headers\.\) For more information, see [Working with Size Constraint Conditions](web-acl-size-conditions.md)\.  
 **Transformation**  
-In an effort to bypass AWS WAF, attackers use unusual formatting in web requests, for example, by adding whitespace or by URL\-encoding some or all of the request\. Transformations convert the web request to a more standard format by removing whitespace, by URL\-decoding the request, or by performing other operations that eliminate much of the unusual formatting that attackers commonly use\.  
+In an effort to bypass AWS WAF, attackers use unusual formatting in web requests, for example, by adding white space or by URL\-encoding some or all of the request\. Transformations convert the web request to a more standard format by removing white space, by URL\-decoding the request, or by performing other operations that eliminate much of the unusual formatting that attackers commonly use\.  
 You can only specify a single type of text transformation\.  
 For this example, choose **None**\.  
 **Regex patterns to match to request**  
 Choose **Create regex pattern set**\.  
 **New pattern set name**  
-Type a name and then specify the regex pattern that you want AWS WAF to search for\.   
-Next, type the regular expression **I\[a@\]mAB\[a@\]dRequest**\. AWS WAF will inspect the `User-Agent` header in web requests for the values:  
+Enter a name and then specify the regex pattern that you want AWS WAF to search for\.   
+Next, enter the regular expression **I\[a@\]mAB\[a@\]dRequest**\. AWS WAF will inspect the `User-Agent` header in web requests for the values:  
    + **IamABadRequest**
    + **IamAB@dRequest**
    + **I@mABadRequest**
@@ -186,9 +186,9 @@ For more information about string match conditions, see [Working with SQL Inject
 
 1. On the **Create conditions** page, for **SQL injection match conditions**, choose **Create condition**\.
 
-1. In the **Create SQL injection match condition** dialog box, type the following values:  
+1. In the **Create SQL injection match condition** dialog box, enter the following values:  
 **Name**  
-Type a name\.  
+Enter a name\.  
 **Part of the request to filter on**  
 Choose the part of web requests that you want AWS WAF to inspect for malicious SQL code\.   
 For this example, choose **Query string**\.  
@@ -221,15 +221,15 @@ For more information about rules, see [Working with Rules](web-acl-rules.md)\.<a
 
 1. On the **Create rules** page, choose **Create rule**\.
 
-1. In the **Create rule** dialog box, type the following values:  
+1. In the **Create rule** dialog box, enter the following values:  
 **Name**  
-Type a name\.   
+Enter a name\.   
 **CloudWatch metric name**  
-Type a name for the CloudWatch metric that AWS WAF will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\)\. It can't contain whitespace\.  
+Enter a name for the CloudWatch metric that AWS WAF will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\)\. It can't contain white space\.  
 **Rule type**  
-Choose either `Regular rule` or `Rate based rule`\. Rate based rules are identical to regular rules but also take into account how many requests arrive from the identified IP address every five minutes\. For more information on these rule types, see [How AWS WAF Works](how-aws-waf-works.md)\. For this example, choose `Regular rule`\.  
+Choose either **Regular rule** or **Rate\-based rule**\. Rate\-based rules are identical to regular rules but also take into account how many requests arrive from the identified IP address in any five\-minute period\. For more information about the rule types, see [How AWS WAF Works](how-aws-waf-works.md)\. For this example, choose `Regular rule`\.  
 **Rate limit**  
-If you are creating a rate\-based rule, enter the maximum number of requests from a single IP address allowed in a five\-minute period\.
+For a rate\-based rule, enter the maximum number of requests to allow in any five\-minute period from an IP address that matches the rule's conditions\.
 
 1. For the first condition that you want to add to the rule, specify the following settings:
    + Choose whether you want AWS WAF to allow or block requests based on whether a web request does or does not match the settings in the condition\.
@@ -288,7 +288,7 @@ AWS WAF starts blocking CloudFront web requests that match all the following con
 + The value of the `User-Agent` header is `BadBot`
 + \(If you created and added the regex condition\) The value of the `Body` is any of the four strings that matches the pattern `I[a@]mAB[a@]dRequest`
 + The requests originate from IP addresses in the range 192\.0\.2\.0\-192\.0\.2\.255
-+ The requests originate from country you selected in your geo match condition
++ The requests originate from the country that you selected in your geo match condition
 + The requests appear to include malicious SQL code in the query string
 
 AWS WAF allows CloudFront to respond to any requests that don't meet all three of these conditions\. 
@@ -304,7 +304,7 @@ AWS typically bills you less than US $0\.25 per day for the resources that you c
 
 1. Disassociate your web ACL from your CloudFront distribution:
 
-   1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+   1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
    1. Choose the web ACL that you want to delete\.
 

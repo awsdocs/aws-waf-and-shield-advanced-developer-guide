@@ -29,6 +29,6 @@ For more information about AWS Shield Standard and AWS Shield Advanced, see [AWS
 
 ## AWS Firewall Manager<a name="fms-intro"></a>
 
-AWS Firewall Manager simplifies your AWS WAF administration and maintenance tasks across multiple accounts and resources\. With Firewall Manager, you set up your firewall rules just once\. The service automatically applies your rules across your accounts and resources, even as you add new resources\. 
+AWS Firewall Manager simplifies your administration and maintenance tasks across multiple accounts and resources for AWS WAF rules, AWS Shield Advanced protections, and Amazon VPC security groups\. The Firewall Manager service automatically applies your rules and other security protections across your accounts and resources, even as you add new accounts and resources\. 
 
 For more information about Firewall Manager, see [AWS Firewall Manager](fms-chapter.md)\.

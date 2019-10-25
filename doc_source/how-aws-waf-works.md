@@ -20,22 +20,21 @@ Regular rules use only conditions to target specific requests\. For example, bas
 + They contain the value `BadBot` in the `User-Agent` header\.
 + They appear to include SQL\-like code in the query string\.
 When a rule includes multiple conditions, as in this example, AWS WAF looks for requests that match all conditions—that is, it `AND`s the conditions together\.   
+Add at least one condition to a regular rule\. A regular rule without conditions can't match any requests, so the rule's action \(allow, count, or block\) is never triggered\.   
 Rate\-based rule  
-Rate\-based rules are similar to regular rules, with one addition: a rate limit\. Rate\-based rules count the requests that arrive from a specified IP address every five minutes\. The rule can trigger an action if the number of requests exceed the rate limit\.  
-You can combine conditions with the rate limit\. In this case, if the requests match all of the conditions and the number of requests exceed the rate limit in any five\-minute period, the rule will trigger the action designated in the web ACL\.  
+Rate\-based rules are like regular rules with an added rate limit\. A rate\-based rule counts the requests that arrive from IP addresses that satisfy the rule's conditions\. If the requests from an IP address exceed the rate limit in a five\-minute period, the rule can trigger an action\.   
+Conditions are optional for rate\-based rules\. If you don't add any conditions in a rate\-based rule, the rate limit applies to all IP addresses\. If you combine conditions with the rate limit, the rate limit applies to IP addresses that match the conditions\.   
 For example, based on recent requests that you've seen from an attacker, you might create a rate\-based rule that includes the following conditions:   
 + The requests come from 192\.0\.2\.44\.
 + They contain the value `BadBot` in the `User-Agent` header\.
-In this rate\-based rule, you also define a rate limit\. In this example, let's say that you create a rate limit of 15,000\. Requests that meet both of the preceding conditions and exceed 15,000 requests per five minutes trigger the rule's action \(block or count\), which is defined in the web ACL\.  
-Requests that do not meet both conditions will not be counted towards the rate limit and would not be blocked by this rule\.  
+In this rate\-based rule, you also define a rate limit\. In this example, let's say that you create a rate limit of 1,000\. Requests that meet both of the preceding conditions and exceed 1,000 requests per five minutes trigger the rule's action \(block or count\), which is defined in the web ACL\.  
+Requests that don't meet both conditions aren't counted towards the rate limit and aren't affected by this rule\.  
 As a second example, suppose that you want to limit requests to a particular page on your website\. To do this, you could add the following string match condition to a rate\-based rule:  
 + The **Part of the request to filter on** is `URI`\.
 + The **Match Type** is `Starts with`\. 
 + A **Value to match** is `login`\. 
-Further, you specify a `RateLimit` of 15,000\.  
+Further, you specify a `RateLimit` of 1,000\.  
 By adding this rate\-based rule to a web ACL, you could limit requests to your login page without affecting the rest of your site\.
-You should add at least one condition to a regular rule\. A regular rule with no conditions will not match any requests and therefore the rule's action \(allow, count, block\) will never be triggered\.   
-However, conditions are optional for rate\-based rules\. If you don't add any conditions to a rate\-based rule, AWS WAF assumes that *all* requests match the rule and therefore will be counted against the rate limit when arriving from the same IP address\. Requests from the same IP address that exceed the rate limit will trigger the rule's action \(count or block\)\. 
 
 **Web ACLs**  
 After you combine your conditions into rules, you combine the rules into a web ACL\. This is where you define an action for each rule—allow, block, or count—and a default action:    

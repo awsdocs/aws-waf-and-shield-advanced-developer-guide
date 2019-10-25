@@ -16,13 +16,13 @@ When you add an IP match condition to a rule, you also can configure AWS WAF to 
 
 **To create an IP match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **IP addresses**\.
 
 1. Choose **Create condition**\.
 
-1. Type a name in the **Name** field\.
+1. Enter a name in the **Name** field\.
 
    The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \. You can't change the name of a condition after you create it\.
 
@@ -30,7 +30,7 @@ When you add an IP match condition to a rule, you also can configure AWS WAF to 
    + To specify the IPv4 address 192\.0\.2\.44, type **192\.0\.2\.44/32**\.
    + To specify the IPv6 address 0:0:0:0:0:ffff:c000:22c, type **0:0:0:0:0:ffff:c000:22c/128**\.
    + To specify the range of IPv4 addresses from 192\.0\.2\.0 to 192\.0\.2\.255, type **192\.0\.2\.0/24**\.
-   + To specify the range of IPv6 addresses from 2620:0:2d0:200:0:0:0:0 to 2620:0:2d0:200:ffff:ffff:ffff:ffff, type **2620:0:2d0:200::/64**\.
+   + To specify the range of IPv6 addresses from 2620:0:2d0:200:0:0:0:0 to 2620:0:2d0:200:ffff:ffff:ffff:ffff, enter **2620:0:2d0:200::/64**\.
 
    AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32\. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128\. For more information about CIDR notation, see the Wikipedia entry [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\.
 
@@ -46,7 +46,7 @@ You can add an IP address range to an IP match condition or delete a range\. To 
 
 **To edit an IP match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **IP addresses**\.
 
@@ -56,15 +56,15 @@ You can add an IP address range to an IP match condition or delete a range\. To 
 
    1. In the right pane, choose **Add IP address or range**\.
 
-   1. Select the correct IP version and type an IP address range by using CIDR notation\. Here are some examples:
-      + To specify the IPv4 address 192\.0\.2\.44, type **192\.0\.2\.44/32**\.
-      + To specify the IPv6 address 0:0:0:0:0:ffff:c000:22c, type **0:0:0:0:0:ffff:c000:22c/128**\.
-      + To specify the range of IPv4 addresses from 192\.0\.2\.0 to 192\.0\.2\.255, type **192\.0\.2\.0/24**\.
-      + To specify the range of IPv6 addresses from 2620:0:2d0:200:0:0:0:0 to 2620:0:2d0:200:ffff:ffff:ffff:ffff, type **2620:0:2d0:200::/64**\.
+   1. Select the correct IP version and enter an IP address range by using CIDR notation\. Here are some examples:
+      + To specify the IPv4 address 192\.0\.2\.44, enter **192\.0\.2\.44/32**\.
+      + To specify the IPv6 address 0:0:0:0:0:ffff:c000:22c, enter **0:0:0:0:0:ffff:c000:22c/128**\.
+      + To specify the range of IPv4 addresses from 192\.0\.2\.0 to 192\.0\.2\.255, enter **192\.0\.2\.0/24**\.
+      + To specify the range of IPv6 addresses from 2620:0:2d0:200:0:0:0:0 to 2620:0:2d0:200:ffff:ffff:ffff:ffff, enter **2620:0:2d0:200::/64**\.
 
       AWS WAF supports IPv4 address ranges: /8 and any range between /16 through /32\. AWS WAF supports IPv6 address ranges: /24, /32, /48, /56, /64, and /128\. For more information about CIDR notation, see the Wikipedia entry [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\.
 
-   1. To add more IP addresses, choose **Add another IP address** and type the value\.
+   1. To add more IP addresses, choose **Add another IP address** and enter the value\.
 
    1. Choose **Add**\.
 
@@ -80,7 +80,7 @@ If you want to delete an IP match condition, you must first delete all IP addres
 
 **To delete an IP match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **IP addresses**\.
 

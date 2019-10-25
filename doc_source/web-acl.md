@@ -23,13 +23,13 @@ To choose the requests that you want to allow to have access to your content or 
    + To allow or block requests based on strings that appear in the requests, create string match conditions\. For more information, see [Working with String Match Conditions](web-acl-string-conditions.md)\.
    + To allow or block requests based on a regex pattern that appear in the requests, create regex match conditions\. For more information, see [Working with Regex Match Conditions](web-acl-regex-conditions.md)\.
 
-1. Add the conditions to one or more rules\. If you add more than one condition to the same rule, web requests must match all the conditions for AWS WAF to allow or block requests based on the rule\. For more information, see [Working with Rules](web-acl-rules.md)\. Optionally, also add a rate limit to the rule, which specifies the maximum number of requests that are allowed from a specific IP address\.
+1. Add the conditions to one or more rules\. If you add more than one condition to the same rule, web requests must match all the conditions for AWS WAF to allow or block requests based on the rule\. For more information, see [Working with Rules](web-acl-rules.md)\. Optionally, you can use a rate\-based rule instead of a regular rule to limit the number of requests from any IP address that meets the conditions\.
 
 1. Add the rules to a web ACL\. For each rule, specify whether you want AWS WAF to allow or block requests based on the conditions that you added to the rule\. If you add more than one rule to a web ACL, AWS WAF evaluates the rules in the order that they're listed in the web ACL\. For more information, see [Working with Web ACLs](web-acl-working-with.md)\.
 
    When you add a new rule or update existing rules, it can take up to one minute for those changes to appear and be active across your web ACLs and resources\.
 
 **Topics**
-+ [Working with conditions](web-acl-create-condition.md)
++ [Working with Conditions](web-acl-create-condition.md)
 + [Working with Rules](web-acl-rules.md)
 + [Working with Web ACLs](web-acl-working-with.md)

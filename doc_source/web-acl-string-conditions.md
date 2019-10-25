@@ -23,7 +23,7 @@ When you add a string match condition to a rule, you also can configure AWS WAF 
 
 **To create a string match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **String and regex matching**\.
 
@@ -42,7 +42,7 @@ When you add a string match condition to a rule, you also can configure AWS WAF 
 When you create or update a string match condition, you specify the following values: 
 
 **Name**  
-Type a name for the string match condition\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. You can't change the name of a condition after you create it\.
+Enter a name for the string match condition\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. You can't change the name of a condition after you create it\.
 
 **Type**  
 Choose **String match**\.
@@ -68,7 +68,7 @@ If you choose **Single query parameter \(value only\)** you will also specify a 
 Similar to **Single query parameter \(value only\)**, but rather than inspecting the value of a single parameter, AWS WAF inspects the value of all parameters within the query string for the **Value to match**\. For example, if the URL is "www\.xyz\.com?UserName=abc&SalesRegion=seattle," and you choose **All query parameters \(values only\)**, AWS WAF will trigger a match if the value of either *UserName* or *SalesRegion* is specified as the **Value to match**\. 
 
 **Header \(Only When "Part of the request to filter on" is "Header"\)**  
-If you chose **Header** from the **Part of the request to filter on** list, choose a header from the list of common headers, or type the name of a header that you want AWS WAF to inspect\.
+If you chose **Header** from the **Part of the request to filter on** list, choose a header from the list of common headers, or enter the name of a header that you want AWS WAF to inspect\.
 
 **Match type**  
 Within the part of the request that you want AWS WAF to inspect, choose where the string in **Value to match** must appear to match this filter:    
@@ -103,7 +103,7 @@ AWS WAF replaces HTML\-encoded characters with unencoded characters:
 + Replaces `&gt;` with `>`
 + Replaces characters that are represented in hexadecimal format, `&#xhhhh;`, with the corresponding characters
 + Replaces characters that are represented in decimal format, `&#nnnn;`, with the corresponding characters  
-**Normalize whitespace**  
+**Normalize white space**  
 AWS WAF replaces the following characters with a space character \(decimal 32\):  
 + \\f, formfeed, decimal 12
 + \\t, tab, decimal 9
@@ -134,7 +134,7 @@ You can add filters to a string match condition or delete filters\. To change a 
 
 **To add or delete filters in a string match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **String and regex matching**\.
 
@@ -160,7 +160,7 @@ If you want to delete a string match condition, you need to first delete all fil
 
 **To delete a string match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. Remove the string match condition from the rules that are using it:
 

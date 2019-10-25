@@ -171,7 +171,7 @@ This policy grants the following permissions to the account 444455556666:
             "cloudfront:GetDistributionConfig",
             "cloudfront:ListDistributions",
             "cloudfront:ListDistributionsByWebACLId",
-            "cloudfront:UpdateDistributions",
+            "cloudfront:UpdateDistribution",
             "cloudwatch:ListMetrics",
             "cloudwatch:GetMetricStatistics"
          ],

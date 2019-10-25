@@ -4,7 +4,7 @@ You can change AWS Shield Advanced settings, such as adding or removing DDoS res
 
 **Edit AWS Shield Advanced settings**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. Choose **Summary** under **AWS Shield** in the navigation pane\.
 

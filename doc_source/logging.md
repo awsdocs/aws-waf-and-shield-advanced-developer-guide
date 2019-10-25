@@ -18,7 +18,7 @@ For more information about service\-linked roles and the `iam:CreateServiceLinke
 Do not choose `Kinesis stream` as your source\.  
 One AWS WAF log is equivalent to one Kinesis Data Firehose record\. If you typically receive 10,000 requests per second and you enable full logs, you should have a 10,000 records per second limit in Kinesis Data Firehose\. If you don't configure Kinesis Data Firehose correctly, AWS WAF won't record all logs\. For more information, see [Amazon Kinesis Data Firehose Limits](https://docs.aws.amazon.com/firehose/latest/dev/limits.html)\. 
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **Web ACLs**\.
 
@@ -67,7 +67,8 @@ When you successfully enable logging, AWS WAF will create a service linked role 
                                                         ]
                           "excludedRules":              [
                                                          {"exclusionType" : "EXCLUDED_AS_COUNT",   
-                                                          "ruleId" : "5432a230-0113-5b83-bbb2-89375c5bfa98"}                          
+                                                          "ruleId" : "5432a230-0113-5b83-bbb2-89375c5bfa98"}
+                                                        ]                          
                          }
                         ],
      
@@ -75,12 +76,12 @@ When you successfully enable logging, AWS WAF will create a service linked role 
                              {  
                               "rateBasedRuleId":"7c968ef6-32ec-4fee-96cc-51198e412e7f",   
                               "limitKey":"IP",
-                              "maxRateAllowed":2000                                                                                           
+                              "maxRateAllowed":100                                                                                           
                              },
                              {  
                               "rateBasedRuleId":"462b169-2083-4a93-bbd4-08851a9aaf30",
                               "limitKey":"IP",
-                              "maxRateAllowed":2000
+                              "maxRateAllowed":100
                               }
                               ],
 			

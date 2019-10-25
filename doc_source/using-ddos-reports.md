@@ -30,7 +30,7 @@ You should always test your rules first by initially using `Count` rather than `
 
 **To review DDoS incidents**
 
-1. Sign in to the AWS Management Console and open the Shield Advanced console at [https://console\.aws\.amazon\.com/waf/home\#/attacks](https://console.aws.amazon.com/waf/home#/attacks)\. 
+1. Sign in to the AWS Management Console and open the Shield Advanced console at [https://console\.aws\.amazon\.com/wafv2/shield\#/attacks](https://console.aws.amazon.com/wafv2/shield#/attacks)\. 
 
 1. Choose the **Incident type** of the attack that you want to investigate\.
 
@@ -72,7 +72,7 @@ The global threat environment dashboard provides a near real\-time summary of th
 
 **To view the global threat environment dashboard**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, under **AWS Shield**, choose **Global threat environment**\.
 

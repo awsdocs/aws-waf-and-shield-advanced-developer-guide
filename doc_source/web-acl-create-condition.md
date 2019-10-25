@@ -1,4 +1,4 @@
-# Working with conditions<a name="web-acl-create-condition"></a>
+# Working with Conditions<a name="web-acl-create-condition"></a>
 
 Conditions specify when you want to allow or block requests\.
 + To allow or block requests based on whether the requests appear to contain malicious scripts, create cross\-site scripting match conditions\. For more information, see [Working with Cross\-site Scripting Match Conditions](web-acl-xss-conditions.md)\.

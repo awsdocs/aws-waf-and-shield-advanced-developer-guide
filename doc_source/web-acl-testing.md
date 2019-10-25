@@ -60,7 +60,7 @@ The sample of requests contains up to 100 requests that matched all the conditio
 
 **To view a sample of the web requests that API Gateway; CloudFront or an Application Load Balancer has forwarded to AWS WAF**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose the web ACL for which you want to view requests\.
 

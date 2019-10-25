@@ -1,0 +1,3 @@
+# Step 1: Complete the Prerequisites<a name="complete-prereq-security-group"></a>
+
+There are several mandatory steps to prepare your account for AWS Firewall Manager\. Those steps are described in [AWS Firewall Manager Prerequisites](fms-prereq.md)\. Complete all the prerequisites before proceeding to [Step 2: Create a Security Group to Use in Your Policy](get-started-fms-create-security-groups.md)\.

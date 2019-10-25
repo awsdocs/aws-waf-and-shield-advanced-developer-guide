@@ -1,6 +1,6 @@
 # Working with Regex Match Conditions<a name="web-acl-regex-conditions"></a>
 
-If you want to allow or block web requests based on strings that match a regular expression \(regex\) pattern that appear in the requests, create one or more regex match conditions\. A regex match condition is a type of string match condition that identifies the pattern that you want to search for and the part of web requests, such as a specified header or the query string, that you want AWS WAF to inspect for the pattern\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that contain the pattern\.
+If you want to allow or block web requests based on strings that match a regular expression \(regex\) pattern that appears in the requests, create one or more regex match conditions\. A regex match condition is a type of string match condition that identifies the pattern that you want to search for and the part of web requests, such as a specified header or the query string, that you want AWS WAF to inspect for the pattern\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that contain the pattern\.
 
 **Topics**
 + [Creating a Regex Match Condition](#web-acl-regex-conditions-creating)
@@ -29,7 +29,7 @@ AWS WAF supports most [standard Perl Compatible Regular Expressions \(PCRE\)](ht
 
 **To create a regex match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **String and regex matching**\.
 
@@ -46,7 +46,7 @@ AWS WAF supports most [standard Perl Compatible Regular Expressions \(PCRE\)](ht
 When you create or update a regex match condition, you specify the following values: 
 
 **Name**  
-Type a name for the regex match condition\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. You can't change the name of a condition after you create it\.
+Enter a name for the regex match condition\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. You can't change the name of a condition after you create it\.
 
 **Type**  
 Choose **Regex match**\.
@@ -72,7 +72,7 @@ If you choose **Single query parameter \(value only\)** you will also specify a 
 Similar to **Single query parameter \(value only\)**, but rather than inspecting the value of a single parameter, AWS WAF inspects the value of all parameters within the query string for the pattern specified in the **Value to match**\. For example, in the URL "www\.xyz\.com?UserName=abc&SalesRegion=seattle", a pattern in **Value to match** that matches either the value in *UserName* or *SalesRegion* will trigger a match\.
 
 **Header \(Only When "Part of the request to filter on" is "Header"\)**  
-If you chose **Header** from the **Part of the request to filter on** list, choose a header from the list of common headers, or type the name of a header that you want AWS WAF to inspect\.
+If you chose **Header** from the **Part of the request to filter on** list, choose a header from the list of common headers, or enter the name of a header that you want AWS WAF to inspect\.
 
 **Transformation**  
 A transformation reformats a web request before AWS WAF inspects the request\. This eliminates some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF\.   
@@ -90,7 +90,7 @@ AWS WAF replaces HTML\-encoded characters with unencoded characters:
 + Replaces `&gt;` with `>`
 + Replaces characters that are represented in hexadecimal format, `&#xhhhh;`, with the corresponding characters
 + Replaces characters that are represented in decimal format, `&#nnnn;`, with the corresponding characters  
-**Normalize whitespace**  
+**Normalize white space**  
 AWS WAF replaces the following characters with a space character \(decimal 32\):  
 + \\f, formfeed, decimal 12
 + \\t, tab, decimal 9
@@ -112,7 +112,7 @@ Decode a URL\-encoded request\.
 **Regex pattern to match to request**  
 You can choose an existing pattern set, or create a new one\. If you create a new one specify the following:    
 New pattern set name  
-Type a name and then specify the regex pattern that you want AWS WAF to search for\.   
+Enter a name and then specify the regex pattern that you want AWS WAF to search for\.   
 If you add multiple regular expressions to a pattern set, those expressions are combined with an *OR*\. That is, a web request will match the pattern set if the appropriate part of the request matches any of the expressions listed\.  
 The maximum length of **Value to match** is 70 characters\. If you want to specify a base64\-encoded value, the limit is 70 characters before encoding\.
 
@@ -121,16 +121,16 @@ The maximum length of **Value to match** is 70 characters\. If you want to speci
 You can make the following changes to an existing regex match condition:
 + Delete a pattern from an existing pattern set
 + Add a pattern to an existing pattern set
-+ Delete a filter to an existing regeex match condition
-+ Add a filter to an existing regeex match condition \(You can have only one filter in a regex match condition\. Therefore, in order to add a filter, you must delete the existing filter first\.\)
-+ Delete an existing regeex match condition
++ Delete a filter to an existing regex match condition
++ Add a filter to an existing regex match condition \(You can have only one filter in a regex match condition\. Therefore, in order to add a filter, you must delete the existing filter first\.\)
++ Delete an existing regex match condition
 
 **Note**  
 You cannot add or delete a pattern set from an existing filter\. You must either edit the pattern set, or delete the filter and create a new filter with a new pattern set\.<a name="web-acl-regex-conditions-editing-procedure-delete-pattern"></a>
 
 **To delete a pattern from an existing pattern set**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **String and regex matching**\.
 
@@ -146,7 +146,7 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 
 **To add a pattern to an existing pattern set**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **String and regex matching**\.
 
@@ -156,7 +156,7 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 
 1. Choose **Edit**\.
 
-1. Type a new regex pattern\.
+1. Enter a new regex pattern\.
 
 1. Choose the **\+** next to the new pattern\.
 
@@ -164,7 +164,7 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 
 **To delete a filter from an existing regex match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **String and regex matching**\.
 
@@ -176,7 +176,7 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 
 **To delete a regex match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. Delete the filter from the regex condition\. See [To delete a filter from an existing regex match condition](#web-acl-regex-conditions-editing-procedure-delete-filter) for instructions to do this\.\)
 
@@ -204,7 +204,7 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 
 You can have only one filter in a regex match condition\. If you want to add or change the filter, you must first delete the existing filter\.
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. Delete the filter from the regex condition you want to change\. See [To delete a filter from an existing regex match condition](#web-acl-regex-conditions-editing-procedure-delete-filter) for instructions to do this\.\)
 

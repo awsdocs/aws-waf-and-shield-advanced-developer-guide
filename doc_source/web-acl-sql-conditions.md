@@ -23,7 +23,7 @@ When you add a SQL injection match condition to a rule, you also can configure A
 
 **To create a SQL injection match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **SQL injection**\.
 
@@ -53,6 +53,7 @@ A specified request header, for example, the `User-Agent` or `Referer` header\. 
 The HTTP method, which indicates the type of operation that the request is asking the origin to perform\. CloudFront supports the following methods: `DELETE`, `GET`, `HEAD`, `OPTIONS`, `PATCH`, `POST`, and `PUT`\.  
 **Query string**  
 The part of a URL that appears after a `?` character, if any\.  
+For SQL injection match conditions, we recommend that you choose **All query parameters \(values only\)** instead of **Query string** for **Part of the request to filter on**\.  
 **URI**  
 The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\. Unless a **Transformation** is specified, a URI is not normalized and is inspected just as AWS receives it from the client as part of the request\. A **Transformation** will reformat the URI as specified\.  
 **Body**  
@@ -65,7 +66,7 @@ If you choose **Single query parameter \(value only\)** you will also specify a 
 Similar to **Single query parameter \(value only\)**, but rather than inspecting the value of a single parameter, AWS WAF inspects the value of all parameters within the query string for possible malicious SQL code\. For example, if the URL is "www\.xyz\.com?UserName=abc&SalesRegion=seattle," and you choose **All query parameters \(values only\)**, AWS WAF will trigger a match if the value of either *UserName* or *SalesRegion* contain possible malicious SQL code\. 
 
 **Header**  
-If you chose **Header** for **Part of the request to filter on**, choose a header from the list of common headers, or type the name of a header that you want AWS WAF to inspect for malicious SQL code\.
+If you chose **Header** for **Part of the request to filter on**, choose a header from the list of common headers, or enter the name of a header that you want AWS WAF to inspect for malicious SQL code\.
 
 **Transformation**  
 A transformation reformats a web request before AWS WAF inspects the request\. This eliminates some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF\.   
@@ -83,7 +84,7 @@ AWS WAF replaces HTML\-encoded characters with unencoded characters:
 + Replaces `&gt;` with `>`
 + Replaces characters that are represented in hexadecimal format, `&#xhhhh;`, with the corresponding characters
 + Replaces characters that are represented in decimal format, `&#nnnn;`, with the corresponding characters  
-**Normalize whitespace**  
+**Normalize white space**  
 AWS WAF replaces the following characters with a space character \(decimal 32\):  
 + \\f, formfeed, decimal 12
 + \\t, tab, decimal 9
@@ -108,7 +109,7 @@ You can add or delete filters in a SQL injection match condition\. To change a f
 
 **To add or delete filters in a SQL injection match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **SQL injection**\.
 
@@ -134,7 +135,7 @@ If you want to delete a SQL injection match condition, you need to first delete 
 
 **To delete a SQL injection match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **SQL injection**\.
 

@@ -7,7 +7,7 @@ Firewall Manager does not support Amazon Route 53 or AWS Global Accelerator\. I
 
 **To create a Firewall Manager\-Shield Advanced policy \(console\)**
 
-1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at [https://console\.aws\.amazon\.com/waf/fms](https://console.aws.amazon.com/waf/fms)\. 
+1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at [https://console\.aws\.amazon\.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager Administrator Account](enable-integration.md)\.
 

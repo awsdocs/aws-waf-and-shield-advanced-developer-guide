@@ -4,7 +4,7 @@ In this step, you create rules using AWS WAF\. If you already have AWS WAF rules
 
 **To create AWS WAF rules \(console\)**
 
-1. Create your conditions\. For more information, see [Working with conditions](web-acl-create-condition.md)\.
+1. Create your conditions\. For more information, see [Working with Conditions](web-acl-create-condition.md)\.
 
 1. Create your rules, and then add your conditions to your rules\. For more information, see [Creating a Rule and Adding Conditions](web-acl-rules-creating.md)\. 
 

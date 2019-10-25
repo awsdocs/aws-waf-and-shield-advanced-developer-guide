@@ -38,7 +38,7 @@ You can subscribe to and unsubscribe from AWS Marketplace rule groups on the AWS
 
 **To subscribe to and use an AWS Marketplace rule group**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **Marketplace**\.
 
@@ -56,7 +56,7 @@ When adding a rule group to a web ACL, the action that you set for the rule grou
 
 **To unsubscribe from an AWS Marketplace rule group**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. Remove the rule group from all web ACLs\. For more information, see [Editing a Web ACL](web-acl-editing.md)\.
 
@@ -70,7 +70,7 @@ When adding a rule group to a web ACL, the action that you set for the rule grou
 
 **To exclude a rule from a rule group \(Rule group exception\)**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. If not already enabled, enable AWS WAF logging\. For more information, see [Logging Web ACL Traffic Information](logging.md)\. Use the AWS WAF logs to identify the IDs of the rules that you want to exclude\. These are typically rules that are blocking legitimate requests\.
 

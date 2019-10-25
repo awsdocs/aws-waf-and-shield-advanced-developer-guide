@@ -12,3 +12,4 @@ Your compliance responsibility when using AWS WAF is determined by the sensitivi
 + [AWS Compliance Resources](https://aws.amazon.com/compliance/resources/) – This collection of workbooks and guides might apply to your industry and location\.
 + [AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html) – This AWS service assesses how well your resource configurations comply with internal practices, industry guidelines, and regulations\.
 + [AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html) – This AWS service provides a comprehensive view of your security state within AWS that helps you check your compliance with security industry standards and best practices\.
++ [AWS Well\-Architected Framework](https://aws.amazon.com/architecture/well-architected/) – The AWS Well\-Architected Framework helps you build secure cloud applications\. 

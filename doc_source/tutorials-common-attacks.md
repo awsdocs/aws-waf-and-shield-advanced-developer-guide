@@ -111,11 +111,11 @@ You begin to incur charges for the different services when you create the AWS Cl
 
 1. If you are not already signed in to the AWS Management Console, sign in when prompted\. 
 
-1. On the **Select Template** page, choose **Specify an Amazon S3 template URL**\. For the template URL, type **https://s3\.amazonaws\.com/cloudformation\-examples/community/common\-attacks\.json**\.
+1. On the **Specify template** page, choose **Amazon S3 URL**\. For the template URL, type **https://s3\.amazonaws\.com/cloudformation\-examples/community/common\-attacks\.json**\.
 
 1. Choose **Next**\.
 
-1. On the **Specify Details** page, specify the following values:  
+1. On the **Specify stack details** page, specify the following values:  
 **Stack Name**  
 You can use the default name \(**CommonAttackProtection**\), or you can change the name\. The stack name must not contain spaces and must be unique within your AWS account\.   
 **Name**  
@@ -123,13 +123,13 @@ Specify a name for the web ACL that AWS CloudFormation will create\. The name th
 
 1. Choose **Next**\.
 
-1. \(Optional\) On the **Options** page, enter tags and advanced settings or leave the boxes blank\.
+1. \(Optional\) On the **Configure stack options** page, enter tags and advanced settings or leave the boxes blank\.
 
 1. Choose **Next**\.
 
-1. On the **Review** page, review the configuration, and then choose **Create**\.
+1. On the **Review** page, review the configuration, and then choose **Create stack**\.
 
-   After you choose **Create**, AWS CloudFormation creates the AWS WAF resources that are identified in [Solution Overview](#tutorials-common-attacks-overview)\.
+   After you choose **Create stack**, AWS CloudFormation creates the AWS WAF resources that are identified in [Solution Overview](#tutorials-common-attacks-overview)\.
 
 ## Step 2: Associate a Web ACL with a CloudFront Distribution<a name="tutorials-common-attacks-cloudfront"></a>
 
@@ -140,7 +140,9 @@ You can associate a web ACL with as many distributions as you want, but you can 
 
 **To associate a web ACL with a CloudFront distribution**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+1. Choose **Go to AWS WAF**\.
 
 1. In the navigation pane, choose **Web ACLs**\.
 
@@ -160,7 +162,7 @@ When you created the AWS CloudFormation stack, AWS CloudFormation created an IP 
 
 **To edit AWS CloudFormation parameter values**
 
-1. Open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **IP addresses**\.
 
@@ -190,7 +192,7 @@ If you want to block requests that are longer than 8,192 bytes, perform the foll
 
 **To change the action for a rule in a web ACL**
 
-1. Open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **Web ACLs**\.
 

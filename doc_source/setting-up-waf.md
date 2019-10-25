@@ -20,11 +20,11 @@ If you have an AWS account already, skip to the next task\. If you don't have an
 
 **To sign up for AWS**
 
-1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/) and choose **Sign Up**\.
+1. Open [https://portal\.aws\.amazon\.com/billing/signup](https://portal.aws.amazon.com/billing/signup)\.
 
-1. Follow the on\-page instructions\.
+1. Follow the online instructions\.
 
-   Part of the sign\-up procedure involves receiving a phone call and entering a PIN using the phone keypad\.
+   Part of the sign\-up procedure involves receiving a phone call and entering a verification code on the phone keypad\.
 
 Note your AWS account number, because you'll need it for the next task\.
 

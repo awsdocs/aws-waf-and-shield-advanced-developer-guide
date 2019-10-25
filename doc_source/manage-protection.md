@@ -8,7 +8,7 @@ The following procedure shows how to add a web ACL and rate\-based rule to a pro
 
 **To add a web ACL and rate\-based rule to a protected resource**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. Choose **Protected resources**\.
 
@@ -30,7 +30,7 @@ The following procedure shows how to add a web ACL and rate\-based rule to a pro
 
    1. Enter a name\.
 
-   1. Enter a rate limit\. This is the maximum number of requests from a single IP address allowed in a five\-minute period\. The rate limit must be equal to or greater than 2,000\. 
+   1. Enter a rate limit\. This is the maximum number of requests from a single IP address allowed in a five\-minute period\. The rate limit must be equal to or greater than 100\. 
 
    1. Choose **Create rule**\.
 
@@ -38,7 +38,7 @@ The following procedure shows how to add a web ACL and rate\-based rule to a pro
 
 1. Choose **Apply web protections**\. 
 
-1. To skip the Amazon CloudWatch alarms page, uncheck all the checkboxes and choose **Create alarms**\. 
+1. To skip the Amazon CloudWatch alarms page, uncheck all the check boxes and choose **Create alarms**\. 
 
 ## Adding a CloudWatch Alarm to Your Shield Advanced Protections<a name="add-alarm-ddos"></a>
 
@@ -49,7 +49,7 @@ CloudWatch incurs additional costs\. For CloudWatch pricing, see [Amazon CloudWa
 
 **To add a CloudWatch alarm to a protected resource**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. Choose **Protected resources**\.
 

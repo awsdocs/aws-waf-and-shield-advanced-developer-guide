@@ -7,9 +7,9 @@ If you designate an account as an administrator account, and you later want to d
 **Important**  
 To designate a different account, you first must revoke administrator privileges from the current administrator account\. When you revoke the privileges, all Firewall Manager policies created by that account are deleted\. You then must sign into Firewall Manager with the AWS Organizations master account to designate a new administrator account\. <a name="fms-change-administrator-procedure"></a>
 
-**To designate a different account as the Firewall Manager administrator account \(console\)**
+**To designate a different account as the AWS Firewall Manager administrator account \(console\)**
 
-1. Sign in to the AWS Management Console using the current Firewall Manager administrator account, and then open the Firewall Manager console at https://console\.aws\.amazon\.com/waf/fms\. 
+1. Sign in to the AWS Management Console using the current Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
 
 1. In the navigation pane, choose **Settings**\.
 
@@ -21,7 +21,7 @@ When you revoke administrator privileges from the current administrator account,
 
 1. Sign in to the AWS Management Console using your AWS Organizations master account\. You can sign in using your root user credentials for the account \(not recommended\) or you can sign in using an IAM user or IAM role within the account that has equivalent permissions\.
 
-1. Open the Firewall Manager console at https://console\.aws\.amazon\.com/waf/fms\. 
+1. Open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
 
 1. Choose **Get started**\.
 
@@ -33,7 +33,7 @@ The account is given permission to create and manage AWS WAF rules across all ac
 
 ## Closing the AWS Firewall Manager Administrator Account<a name="closed-admin-account"></a>
 
-If you close your AWS Firewall Administrator account without first revoking that account \(as described in step three, immediately above\), then:
+If you close your AWS Firewall Manager Administrator account without first revoking that account \(as described in step three, immediately above\), then:
 + AWS will revoke the account’s administrator access from Firewall Manager\. After AWS revokes the account’s administrator access from Firewall Manager, all Firewall Manager policies applied to any account previously governed by the administrator account will be deactivated and such policy protection will no longer be applied to any of these accounts\.
 + AWS will retain the Firewall Manager policy data for the account for 90 days from the effective date of your Administrator account closure\. If you elect to reopen the previously closed account during this 90\-day window, AWS will reassign the account as the Firewall Manager administrator and recover the account’s previous Firewall Manager policy data\.
 + After the 90\-day window expires, if the closed account has not been reopened, AWS will permanently delete all Firewall Manager policy data for that account\.

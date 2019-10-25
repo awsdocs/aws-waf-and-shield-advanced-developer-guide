@@ -62,10 +62,10 @@ You begin to incur charges for the different services when you create the AWS Cl
 **To create an AWS CloudFormation stack for blocking IP addresses that submit bad requests**
 
 1. To start the process that creates an AWS CloudFormation stack, choose the link for the region in which you want to create AWS resources:
-   + [Create a stack in US East \(N\. Virginia\)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn%7eBadBehavingIP%7cturl%7ehttps:%2f%2fs3.amazonaws.com/awswaf.us-east-1/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
-   + [Create a stack in US West \(Oregon\)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#cstack=sn%7eBadBehavingIP%7cturl%7ehttps:%2f%2fs3.amazonaws.com/awswaf.us-west-2/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
-   + [Create a stack in EU \(Ireland\)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#cstack=sn%7eBadBehavingIP%7cturl%7ehttps:%2f%2fs3.amazonaws.com/awswaf.eu-west-1/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
-   + [Create a stack in Asia Pacific \(Tokyo\)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#cstack=sn%7eBadBehavingIP%7cturl%7ehttps:%2f%2fs3.amazonaws.com/awswaf.ap-northeast-1/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
+   + [Create a stack in US East \(N\. Virginia\)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=BadBehavingIP&templateURL=https://s3.amazonaws.com/awswaf.us-east-1/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
+   + [Create a stack in US West \(Oregon\)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=BadBehavingIP&templateURL=https://s3.amazonaws.com/awswaf.us-west-2/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
+   + [Create a stack in EU \(Ireland\)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=BadBehavingIP&templateURL=https://s3.amazonaws.com/awswaf.eu-west-1/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
+   + [Create a stack in Asia Pacific \(Tokyo\)](https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=BadBehavingIP&templateURL=https://s3.amazonaws.com/awswaf.ap-northeast-1/block-bad-behaving-ips/block-bad-behaving-ips_template.json)
 
 1. If you are not already signed in to the AWS Management Console, sign in when prompted\. 
 
@@ -109,7 +109,9 @@ You can associate a web ACL with as many distributions as you want, but you can 
 
 **To associate a web ACL with a CloudFront distribution**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+1. Choose **Go to AWS WAF**\.
 
 1. In the navigation pane, choose **Web ACLs**\.
 
@@ -198,7 +200,7 @@ After the upload finishes, perform the following procedure to confirm that the I
 
 **To review IP addresses in the **Auto Block** rule**
 
-1. Open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **Rules**\.
 

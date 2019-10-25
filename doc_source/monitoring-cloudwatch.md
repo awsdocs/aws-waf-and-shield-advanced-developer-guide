@@ -77,19 +77,21 @@ AWS WAF for an Application Load Balancer can use the following dimension combina
 
 ## AWS Shield Advanced Metrics and Alarms<a name="set-ddos-alarms"></a>
 
+This section discusses the metrics and alarms available with AWS Shield Advanced\.
+
 ### AWS Shield Advanced Metrics<a name="shield-metrics"></a>
 
-AWS Shield Advanced includes the following metrics\.
+Shield Advanced reports metrics to Amazon CloudWatch on an AWS resource more frequently during DDoS attacks than while no attacks are underway\. Shield Advanced reports metrics once a minute during an attack, and then once right after the attack ends\. While no attacks are underway, Shield Advanced reports metrics once a day, at a time assigned to the resource\. This periodic report keeps the metrics active and available for use in custom CloudWatch alarms\. 
+
+Shield Advanced provides the following metrics\. 
 
 
 | Metric | Description | 
 | --- | --- | 
-| DDoSDetected | Indicates a DDoS event for a particular Amazon Resource Name \(ARN\)\. Reporting criteria: A value of 1 indicates a DDoS event\. Zero when there is no DDoS event detected\.  | 
-| DDoSAttackBitsPerSecond | The number of bytes observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. Reporting criteria: Non\-zero value during an attack\. Zero when there is no attack\.Units: Bits  | 
-| DDoSAttackPacketsPerSecond | The number of packets observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. Reporting criteria: Non\-zero value during an attack\. Zero when there is no attack\. Units: Packets  | 
-| DDoSAttackRequestsPerSecond | The number of requests observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 7 DDoS events\. The metric is reported only for the most significant layer 7 events\. Reporting criteria: Non\-zero value during an attack\. Zero when there is no attack\. Units: Requests  | 
-
-AWS Shield Advanced reports metrics to Amazon CloudWatch only when an attack on an AWS resource is detected\. If there are no attacks for a specified period, AWS Shield Advanced reports zero\.
+| DDoSDetected | Indicates whether a DDoS event is underway for a particular Amazon Resource Name \(ARN\)\. This metric has a value of 1 during an attack and a value of 0 otherwise\.   | 
+| DDoSAttackBitsPerSecond | The number of bytes observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an attack and a value of 0 otherwise\.Units: Bits  | 
+| DDoSAttackPacketsPerSecond | The number of packets observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an attack and a value of 0 otherwise\.Units: Packets  | 
+| DDoSAttackRequestsPerSecond | The number of requests observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 7 DDoS events\. The metric is reported only for the most significant layer 7 events\. This metric has a non\-zero value during an attack and a value of 0 otherwise\.Units: Requests  | 
 
 For the global services Amazon CloudFront and Amazon Route 53, metrics are reported in the US East \(N\. Virginia\) Region\.
 
@@ -116,7 +118,7 @@ Shield Advanced posts the `DDoSDetected` metric with no other dimensions\. The o
 
 You can use AWS Shield Advanced metrics for Amazon CloudWatch alarms\. CloudWatch alarms send notifications or automatically make changes to the resources that you are monitoring based on rules that you define\.
 
-For detailed instructions on creating a CloudWatch alarm, see the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html)\. When creating the alarm on the CloudWatch console, after choosing **Create an alarm**, choose **AWSDDOSProtectionMetrics** to use the Shield Advanced metrics\. You can then create an alarm based on a specific volume of traffic, or you can trigger the alarm whenever either of the above metrics is greater than zero\. Because Shield Advanced metrics are reported only when an attack is detected, the second option would trigger an alarm for any potential attack observed by Shield Advanced\.
+For detailed instructions on creating a CloudWatch alarm, see the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html)\. When creating the alarm on the CloudWatch console, after choosing **Create an alarm**, choose **AWSDDOSProtectionMetrics** to use the Shield Advanced metrics\. You can then create an alarm based on a specific volume of traffic, or you can trigger an alarm whenever a metric is non\-zero\. The second option triggers an alarm for any potential attack observed by Shield Advanced\.
 
 **Note**  
 The **AWSDDOSProtectionMetrics** are available only to Shield Advanced customers\.

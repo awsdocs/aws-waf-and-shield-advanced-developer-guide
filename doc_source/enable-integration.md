@@ -8,7 +8,7 @@ For more information about AWS Organizations and master accounts, see [Managing 
 
 1. Sign in to the AWS Management Console using an existing AWS Organizations master account\. You can sign in using the account's root user \(not recommended\) or another IAM user or IAM role within the account that has equivalent permissions\.
 
-1. Open the Firewall Manager console at https://console\.aws\.amazon\.com/waf/fms\. 
+1. Open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
 
 1. Choose **Get started**\.
 
@@ -18,4 +18,4 @@ The account that you enter in this step is given permission to create and manage
 
 1. Choose **Set administrator**\.
 
-After you set the AWS Firewall Manager administrator account, go to [Step 3: Enable AWS Config](enable-config.md)\.
+After you set the Firewall Manager administrator account, go to [Step 3: Enable AWS Config](enable-config.md)\.

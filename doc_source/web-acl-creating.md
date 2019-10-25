@@ -2,19 +2,19 @@
 
 **To create a web ACL**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. If this is your first time using AWS WAF, choose **Go to AWS WAF** and then **Configure Web ACL**\. If you've used AWS WAF before, choose **Web ACLs** in the navigation pane, and then choose **Create web ACL**\.
 
-1. For **Web ACL name**, type a name\. 
+1. For **Web ACL name**, enter a name\. 
 **Note**  
 You can't change the name after you create the web ACL\.
 
-1. For **CloudWatch metric name**, change the default name if applicable\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\), with maximum length 128 and minimum length one\. It can't contain whitespace or metric names reserved for AWS WAF , including "All" and "Default\_Action\."
+1. For **CloudWatch metric name**, change the default name if applicable\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\), with maximum length 128 and minimum length one\. It can't contain white space or metric names reserved for AWS WAF, including "All" and "Default\_Action\."
 **Note**  
 You can't change the name after you create the web ACL\.
 
-1. For **Region**, choose a region\.
+1. For **Region**, choose a Region\.
 
 1.  For **AWS resource**, choose the resource that you want to associate with this web ACL, and then choose **Next**\.
 
@@ -43,11 +43,11 @@ You can't change the name after you create the web ACL\.
 
    1. Choose **Create rule**\.
 
-   1. Type the following values:  
+   1. Enter the following values:  
 **Name**  
-Type a name\.  
+Enter a name\.  
 **CloudWatch metric name**  
-Type a name for the CloudWatch metric that AWS WAF will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\), with maximum length 128 and minimum length one\. It can't contain whitespace or metric names reserved for AWS WAF , including "All" and "Default\_Action\."  
+Enter a name for the CloudWatch metric that AWS WAF will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\), with maximum length 128 and minimum length one\. It can't contain white space or metric names reserved for AWS WAF, including "All" and "Default\_Action\."  
 You can't change the metric name after you create the rule\.
 
    1. To add a condition to the rule, specify the following values:   
@@ -67,8 +67,8 @@ Choose the type of condition that you want to add to the rule:
 Choose the condition that you want to add to the rule\. The list displays only conditions of the type that you chose in the preceding list\.
 
    1. To add another condition to the rule, choose **Add another condition**, and then repeat steps b and c\. Note the following:
-      + If you add more than one condition, a web request must match at least one filter in every condition for AWS WAF to allow or block requests based on that rule 
-      + If you add two IP match conditions to the same rule, AWS WAF will only allow or block requests that originate from IP addresses that appear in both IP match conditions 
+      + If you add more than one condition, a web request must match at least one filter in every condition for AWS WAF to allow or block requests based on that rule\. 
+      + If you add two IP match conditions to the same rule, AWS WAF will only allow or block requests that originate from IP addresses that appear in both IP match conditions\. 
 
    1. Repeat step 9 until you've created all the rules that you want to add to this web ACL\. 
 
@@ -76,14 +76,18 @@ Choose the condition that you want to add to the rule\. The list displays only c
 
    1. Continue with step 10\.
 
-1. For each rule that you've added to the web ACL, choose whether you want AWS WAF to allow, block, or count web requests based on the conditions in the rule:
-   + **Allow** – API Gateway, CloudFront or an Application Load Balancer responds with the requested object\. In the case of CloudFront, if the object isn't in the edge cache, CloudFront forwards the request to the origin\.
-   + **Block** – API Gateway, CloudFront or an Application Load Balancer responds to the request with an HTTP 403 \(Forbidden\) status code\. CloudFront also can respond with a custom error page\. For more information, see [Using AWS WAF with CloudFront Custom Error Pages](cloudfront-features.md#cloudfront-features-custom-error-pages)\.
-   + **Count** – AWS WAF increments a counter of requests that match the conditions in the rule, and then continues to inspect the web request based on the remaining rules in the web ACL\. 
+1. For each rule or rule group in the web ACL, choose the kind of management you want AWS WAF to provide, as follows: 
+   + For each rule, choose whether you want AWS WAF to allow, block, or count web requests based on the conditions in the rule:
+     + **Allow** – API Gateway, CloudFront or an Application Load Balancer responds with the requested object\. In the case of CloudFront, if the object isn't in the edge cache, CloudFront forwards the request to the origin\.
+     + **Block** – API Gateway, CloudFront or an Application Load Balancer responds to the request with an HTTP 403 \(Forbidden\) status code\. CloudFront also can respond with a custom error page\. For more information, see [Using AWS WAF with CloudFront Custom Error Pages](cloudfront-features.md#cloudfront-features-custom-error-pages)\.
+     + **Count** – AWS WAF increments a counter of requests that match the conditions in the rule, and then continues to inspect the web request based on the remaining rules in the web ACL\. 
 
-     For information about using **Count** to test a web ACL before you start to use it to allow or block web requests, see [Counting the Web Requests That Match the Rules in a Web ACL](web-acl-testing.md#web-acl-testing-count)\. 
-**Note**  
-When adding a rule group or an AWS Marketplace rule group to a web ACL \(as opposed to a single rule\), the action you set for the rule group \(either **No override** or **Override to count**\) is called the override action\. For more information, see [Rule Group Override](waf-managed-rule-groups.md#waf-managed-rule-group-override)\.
+       For information about using **Count** to test a web ACL before you start to use it to allow or block web requests, see [Counting the Web Requests That Match the Rules in a Web ACL](web-acl-testing.md#web-acl-testing-count)\. 
+   + For each rule group, set the override action for the rule group: 
+     + **No override** – Causes the actions of the individual rules within the rule group to be used\.
+     + **Override to count** – Overrides any block actions that are specifieid by individual rules in the group, so that all matching requests are only counted\. 
+
+     For more information, see [Rule Group Override](waf-managed-rule-groups.md#waf-managed-rule-group-override)\.
 
 1. If you want to change the order of the rules in the web ACL, use the arrows in the **Order** column\. AWS WAF inspects web requests based on the order in which rules appear in the web ACL\. 
 

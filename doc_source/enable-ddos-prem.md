@@ -7,7 +7,7 @@ You must activate Shield Advanced for each AWS account that you want to protect\
 
 **To activate AWS Shield Advanced**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. If this is your first time signing in to the AWS WAF console, choose **Go to Shield**, and then choose **Activate AWS Shield Advanced**\. Otherwise, in the navigation pane, under **AWS Shield**, choose **Protected resources**\. 
 

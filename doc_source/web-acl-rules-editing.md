@@ -4,7 +4,7 @@ You can change a rule by adding or removing conditions\. <a name="web-acl-rules-
 
 **To add or remove conditions in a rule**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **Rules**\.
 

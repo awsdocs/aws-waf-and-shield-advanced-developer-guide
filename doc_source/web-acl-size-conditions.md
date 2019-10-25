@@ -25,7 +25,7 @@ When you add a size constraint condition to a rule, you also can configure AWS W
 
 **To create a size constraint condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **Size constraints**\.
 
@@ -44,7 +44,7 @@ When you add a size constraint condition to a rule, you also can configure AWS W
 When you create or update a size constraint condition, you specify the following values: 
 
 **Name**  
-Type a name for the size constraint condition\.  
+Enter a name for the size constraint condition\.  
 The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. You can't change the name of a condition after you create it\.
 
 **Part of the request to filter on**  
@@ -73,7 +73,7 @@ Choose how you want AWS WAF to evaluate the length of the query string in web re
 For example, if you choose **Is greater than** for **Comparison operator** and type **100** for **Size**, AWS WAF evaluates web requests for a query string that is longer than 100 bytes\.
 
 **Size**  
-Type the length, in bytes, that you want AWS WAF to watch for in query strings\.  
+Enter the length, in bytes, that you want AWS WAF to watch for in query strings\.  
 If you choose **URI** for the value of **Part of the request to filter on**, the **/** in the URI counts as one character\. For example, the URI `/logo.jpg` is nine characters long\.
 
 **Transformation**  
@@ -93,7 +93,7 @@ AWS WAF replaces HTML\-encoded characters with unencoded characters:
 + Replaces `&gt;` with `>`
 + Replaces characters that are represented in hexadecimal format, `&#xhhhh;`, with the corresponding characters
 + Replaces characters that are represented in decimal format, `&#nnnn;`, with the corresponding characters  
-**Normalize whitespace**  
+**Normalize white space**  
 AWS WAF replaces the following characters with a space character \(decimal 32\):  
 + \\f, formfeed, decimal 12
 + \\t, tab, decimal 9
@@ -118,7 +118,7 @@ You can add or delete filters in a size constraint condition\. To change a filte
 
 **To add or delete filters in a size constraint condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **Size constraint**\.
 
@@ -144,7 +144,7 @@ If you want to delete a size constraint condition, you need to first delete all 
 
 **To delete a size constraint condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **Size constraints**\.
 

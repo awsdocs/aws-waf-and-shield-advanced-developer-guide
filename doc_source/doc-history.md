@@ -2,6 +2,7 @@
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [AWS Firewall Manager support for Amazon Virtual Private Cloud security groups](https://docs.aws.amazon.com/waf/latest/developerguide/working-with-policies.html) | Added support for Amazon VPC security groups to Firewall Manager\. | October 10, 2019 | 
 | [AWS Firewall Manager support for AWS Shield Advanced](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | Added support for Shield Advanced to Firewall Manager\. | March 15, 2019 | 
 | [Tutorial: Creating Hierarchical Policies](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | Added tutorial on creating hierarchical policies in AWS Firewall Manager\. | February 11, 2019 | 
 | [Rule\-level control in rule groups](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | You can now exclude individual rules from AWS Marketplace rule groups, as well as your own rule groups\. | December 12, 2018 | 

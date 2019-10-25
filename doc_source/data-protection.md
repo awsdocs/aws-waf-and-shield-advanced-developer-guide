@@ -2,14 +2,12 @@
 
 AWS WAF conforms to the AWS [shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model/), which includes regulations and guidelines for data protection\. AWS is responsible for protecting the global infrastructure that runs all the AWS services\. AWS maintains control over data hosted on this infrastructure, including the security configuration controls for handling customer content and personal data\. AWS customers and APN partners, acting either as data controllers or data processors, are responsible for any personal data that they put in the AWS Cloud\. 
 
-AWS WAF entities—such as web ACLs, rules, and conditions—are encrypted at rest except in certain Regions where encryption is not available, including China \(Beijing\) and China \(Ningxia\)\. Unique encryption keys are used for each Region\. 
-
-Access to AWS WAF logs are accessible only to specific AWS WAF personnel\.
+AWS WAF entities—such as web ACLs, rules, and conditions—are encrypted at rest, except in certain Regions where encryption is not available, including China \(Beijing\) and China \(Ningxia\)\. Unique encryption keys are used for each Region\. 
 
 For data protection purposes, we recommend that you protect AWS account credentials and set up individual user accounts with AWS Identity and Access Management \(IAM\), so that each user is given only the permissions necessary to fulfill their job duties\. We also recommend that you secure your data in the following ways:
 + Use multi\-factor authentication \(MFA\) with each account\.
 + Use SSL/TLS to communicate with AWS resources\.
-+ Set up API and user activity logging with AWS CloudTrail\.
++ Set up API and user activity logging with AWS CloudTrail\. See [AWS CloudTrail API Reference](https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/Welcome.html)\.
 + Use AWS encryption solutions, along with all default security controls within AWS services\.
 + Use advanced managed security services such as Amazon Macie, which assists in discovering and securing personal data stored in Amazon S3\.
 

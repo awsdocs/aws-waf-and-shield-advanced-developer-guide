@@ -9,7 +9,7 @@ Before you perform the following procedure, you must complete the procedure in [
 
 **To add protection for an AWS resource**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. Choose **Protected resources**\. 
 

@@ -21,13 +21,13 @@ When you add a geo match condition to a rule, you also can configure AWS WAF to 
 
 **To create a geo match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **Geo match**\.
 
 1. Choose **Create condition**\.
 
-1. Type a name in the **Name** field\.
+1. Enter a name in the **Name** field\.
 
    The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \. You can't change the name of a condition after you create it\.
 
@@ -45,7 +45,7 @@ You can add countries to or delete countries from your geo match condition\.<a n
 
 **To edit a geo match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **Geo match**\.
 
@@ -71,7 +71,7 @@ If you want to delete a geo match condition, you must first remove all countries
 
 **To delete a geo match condition**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. Remove the geo match condition from the rules that are using it:
 

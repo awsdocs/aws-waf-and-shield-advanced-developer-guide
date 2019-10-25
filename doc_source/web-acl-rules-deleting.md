@@ -4,7 +4,7 @@ If you want to delete a rule, you need to first remove the rule from the web ACL
 
 **To delete a rule**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. To remove the rule from the web ACLs that are using it, perform the following steps:
 

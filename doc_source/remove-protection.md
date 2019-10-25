@@ -7,7 +7,7 @@ Deleting a resource will not remove the resource from AWS Shield Advanced\. You 
 
 **Remove AWS Shield Advanced protection from an AWS resource**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. Choose **Protected resources**\.
 

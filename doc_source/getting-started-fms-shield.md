@@ -1,6 +1,6 @@
 # Getting Started with AWS Firewall Manager to Enable AWS Shield Advanced Protection<a name="getting-started-fms-shield"></a>
 
-You can use AWS Firewall Manager to enable both AWS WAF rules and AWS Shield Advanced protection\. However, the steps for AWS WAF and Shield Advanced are slightly different\. This topic shows you how to get started with Firewall Manager to enable Shield Advanced protection\. If you want to use Firewall Manager to enable AWS WAF rules, follow the steps in [Getting Started with AWS Firewall Manager to Enable AWS WAF Rules](getting-started-fms.md)\.
+You can use AWS Firewall Manager to enable AWS WAF rules, AWS Shield Advanced protections, and Amazon VPC security groups\. The steps for getting set up are slightly different for each\. If you want to use Firewall Manager to enable AWS WAF rules, follow the steps in [Getting Started with AWS Firewall Manager to Enable AWS WAF Rules](getting-started-fms.md)\. If you want to use Firewall Manager to enable Amazon VPC security groups, follow the steps in [Getting Started with AWS Firewall Manager Amazon VPC Security Group Policies](getting-started-fms-security-group.md)\. 
 
 **Important**  
 Firewall Manager does not support Amazon Route 53 or AWS Global Accelerator\. If you need to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced Protection to More AWS Resources](configure-new-protection.md)\.

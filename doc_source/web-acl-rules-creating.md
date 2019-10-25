@@ -4,25 +4,27 @@ If you add more than one condition to a rule, a web request must match all the c
 
 **To create a rule and add conditions**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/waf/](https://console.aws.amazon.com/waf/)\. 
+1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the navigation pane, choose **Rules**\.
 
 1. Choose **Create rule**\.
 
-1. Type the following values:  
+1. Enter the following values:  
 **Name**  
-Type a name\.   
+Enter a name\.   
 **CloudWatch metric name**  
-Type a name for the CloudWatch metric that AWS WAF will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\), with maximum length 128 and minimum length one\. It can't contain whitespace or metric names reserved for AWS WAF , including "All" and "Default\_Action\.  
+Enter a name for the CloudWatch metric that AWS WAF will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\), with maximum length 128 and minimum length one\. It can't contain white space or metric names reserved for AWS WAF, including "All" and "Default\_Action\.  
 **Rule type**  
-Choose either `Regular rule` or `Rate–based rule`\. Rate–based rules are identical to regular rules, but also take into account how many requests arrive from a specified IP address every five minutes\. For more information about these rule types, see [How AWS WAF Works](how-aws-waf-works.md)\.  
+Choose either `Regular rule` or `Rate–based rule`\. Rate–based rules are identical to regular rules, but also take into account how many requests arrive from an IP address in a five\-minute period\. For more information about these rule types, see [How AWS WAF Works](how-aws-waf-works.md)\.  
 **Rate limit**  
-If you are creating a rate–based rule, enter the maximum number of requests from a single IP address allowed in a five\-minute period\. The rate limit must be equal to or greater than 2000\.
+For a rate\-based rule, enter the maximum number of requests to allow in any five\-minute period from an IP address that matches the rule's conditions\. The rate limit must be at least 100\.   
+You can specify a rate limit alone, or a rate limit and conditions\. If you specify only a rate limit, AWS WAF places the limit on all IP addresses\. If you specify a rate limit and conditions, AWS WAF places the limit on IP addresses that match the conditions\.   
+When an IP address reaches the rate limit threshold, AWS WAF applies the assigned action \(block or count\) as quickly as possible, usually within 30 seconds\. Once the action is in place, if five minutes pass with no requests from the IP address, AWS WAF resets the counter to zero\.
 
 1. To add a condition to the rule, specify the following values:   
 **When a request does/does not**  
-If you want AWS WAF to allow or block requests based on the filters in a condition, for example, web requests that originate from the range of IP addresses 192\.0\.2\.0/24, choose **does**\.  
+If you want AWS WAF to allow or block requests based on the filters in a condition, choose **does**\. For example, if an IP match condition includes the IP address range 192\.0\.2\.0/24 and you want AWS WAF to allow or block requests that come from those IP addresses, choose **does**\.  
 If you want AWS WAF to allow or block requests based on the inverse of the filters in a condition, choose **does not**\. For example, if an IP match condition includes the IP address range 192\.0\.2\.0/24 and you want AWS WAF to allow or block requests that *do not* come from those IP addresses, choose **does not**\.  
 **match/originate from**  
 Choose the type of condition that you want to add to the rule:  

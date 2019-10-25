@@ -6,7 +6,7 @@ Deleting a rule from the rule group does not delete the rule itself\. It only re
 
 **To add or delete rules in a rule group \(console\)**
 
-1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at https://console\.aws\.amazon\.com/waf/fms\. 
+1. Sign in to the AWS Management Console using the AWS Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager Administrator Account](enable-integration.md)\.
 
@@ -18,7 +18,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. To add rules, perform the following steps:
 
-   1. Select a rule, and then choose **Add another rule**\. Repeat to add more rules to the rule group\. 
+   1. Select a rule, and then choose **Add rule to rule group**\. Choose whether to allow, block, or count requests that match the rule's conditions\. For more information on the choices, see [How AWS WAF Works](how-aws-waf-works.md)\. Repeat to add more rules to the rule group\. 
 **Note**  
 You cannot add rate\-based rules to rule group\.
 
