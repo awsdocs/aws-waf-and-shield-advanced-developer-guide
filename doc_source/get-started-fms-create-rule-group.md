@@ -1,8 +1,6 @@
 # Step 3: Create a Rule Group<a name="get-started-fms-create-rule-group"></a>
 
-A rule group is a set of rules that defines what actions to take when a particular set of conditions is met\. You can purchase managed rule groups from AWS Marketplace, or you can create your own rule group\.
-
-To purchase a managed rule group from AWS Marketplace, see [AWS Marketplace Rule Groups](waf-managed-rule-groups.md)\.
+A rule group is a set of rules that defines what actions to take when a particular set of conditions is met\. You can use managed rule groups from AWS Managed Rules or AWS Marketplace, and you can create your own rule groups\. For information about managed rule groups, see [AWS Marketplace Rule Groups](classic-waf-managed-rule-groups.md)\.
 
 To create your own rule group, perform the following procedure\.<a name="get-started-fms-create-rule-group-procedure"></a>
 
@@ -28,10 +26,10 @@ To create your own rule group, perform the following procedure\.<a name="get-sta
 
 1. For **Name**, enter a friendly name\. 
 
-1. Enter a name for the CloudWatch metric that AWS WAF will create and will associate with the rule group\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. It can't contain white space\.
+1. Enter a name for the CloudWatch metric that AWS WAF Classic will create and will associate with the rule group\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./\. It can't contain white space\.
 
 1. Select a rule, and then choose **Add rule**\. A rule has an action setting that allows you to choose whether to allow, block, or count requests that match the rule's conditions\. For this tutorial, choose **Count**\. Repeat adding rules until you have added all the rules that you want to the rule group\.
 
 1. Choose **Create**\.
 
-You are now ready to go to [Step 4: Create and Apply an AWS Firewall Manager AWS WAF Policy](get-started-fms-create-security-policy.md)\.
+You are now ready to go to [Step 4: Create and Apply an AWS Firewall Manager AWS WAF Classic Policy](get-started-fms-create-security-policy.md)\.

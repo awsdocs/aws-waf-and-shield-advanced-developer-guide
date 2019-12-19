@@ -1,0 +1,3 @@
+# Using a Regex Pattern Set in a Rule Group or Web ACL<a name="waf-regex-pattern-set-using"></a>
+
+To use a regex pattern set in a rule group or web ACL, in the console, when you add or update the rules in your rule group or web ACL, in the **Rule builder** interface, for **Request option**, choose the request component that you want to compare to your pattern set\. Choose **Match type** > **String match condition** > **Matches pattern from regular expression**, and then choose the name of the regex pattern set that you want to use\. 

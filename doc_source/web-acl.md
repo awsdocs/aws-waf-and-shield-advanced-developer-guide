@@ -1,35 +1,28 @@
-# Creating and Configuring a Web Access Control List \(Web ACL\)<a name="web-acl"></a>
+# Managing and Using a Web Access Control List \(Web ACL\)<a name="web-acl"></a>
 
-A web access control list \(web ACL\) gives you fine\-grained control over the web requests that your Amazon API Gateway API, Amazon CloudFront distribution or Application Load Balancer responds to\. You can allow or block the following types of requests: 
-+ Originate from an IP address or a range of IP addresses
-+ Originate from a specific country or countries
-+ Contain a specified string or match a regular expression \(regex\) pattern in a particular part of requests
-+ Exceed a specified length
-+ Appear to contain malicious SQL code \(known as SQL injection\)
-+ Appear to contain malicious scripts \(known as cross\-site scripting\)
+A web access control list \(web ACL\) gives you fine\-grained control over the web requests that your Amazon CloudFront distribution, Amazon API Gateway API, or Application Load Balancer responds to\. 
 
-You can also test for any combination of these conditions, or block or count web requests that not only meet the specified conditions, but also exceed a specified number of requests in any 5\-minute period\. 
+You can use criteria like the following to allow or block requests: 
++ IP address origin of the request
++ Country of origin of the request
++ String match or regular expression \(regex\) match in a part of the request
++ Size of a particular part of the request
++ Detection of malicious SQL code or scripting 
+
+You can also test for any combination of these conditions\. You can block or count web requests that not only meet the specified conditions, but also exceed a specified number of requests in any 5\-minute period\. You can combine conditions using logical operators\. 
+
+This criteria is provided inside the rules that you include in your web ACL and in rule groups that you use in the web ACL\. It's specified in the rule statement\. For a full list of the options, see [AWS WAF Rule Statements](waf-rule-statements.md)\.
 
 To choose the requests that you want to allow to have access to your content or that you want to block, perform the following tasks:
 
-1. Choose the default action, allow or block, for web requests that don't match any of the conditions that you specify\. For more information, see [Deciding on the Default Action for a Web ACL](web-acl-default-action.md)\.
+1. Choose the default action, either allow or block, for web requests that don't match any of the rules that you specify\. For more information, see [Deciding on the Default Action for a Web ACL](web-acl-processing.md#web-acl-default-action)\.
 
-1. Specify the conditions under which you want to allow or block requests:
-   + To allow or block requests based on whether the requests appear to contain malicious scripts, create cross\-site scripting match conditions\. For more information, see [Working with Cross\-site Scripting Match Conditions](web-acl-xss-conditions.md)\.
-   + To allow or block requests based on the IP addresses that they originate from, create IP match conditions\. For more information, see [Working with IP Match Conditions](web-acl-ip-conditions.md)\.
-   + To allow or block requests based on the country that they originate from, create geo match conditions\. For more information, see [Working with Geographic Match Conditions](web-acl-geo-conditions.md)\.
-   + To allow or block requests based on whether the requests exceed a specified length, create size constraint conditions\. For more information, see [Working with Size Constraint Conditions](web-acl-size-conditions.md)\.
-   + To allow or block requests based on whether the requests appear to contain malicious SQL code, create SQL injection match conditions\. For more information, see [Working with SQL Injection Match Conditions](web-acl-sql-conditions.md)\.
-   + To allow or block requests based on strings that appear in the requests, create string match conditions\. For more information, see [Working with String Match Conditions](web-acl-string-conditions.md)\.
-   + To allow or block requests based on a regex pattern that appear in the requests, create regex match conditions\. For more information, see [Working with Regex Match Conditions](web-acl-regex-conditions.md)\.
+1. Add any rule groups that you want to use in your web ACL\. Managed rule groups usually contain rules that block web requests\. For information about rule groups, see [Rule Groups](waf-rule-groups.md)\. 
 
-1. Add the conditions to one or more rules\. If you add more than one condition to the same rule, web requests must match all the conditions for AWS WAF to allow or block requests based on the rule\. For more information, see [Working with Rules](web-acl-rules.md)\. Optionally, you can use a rate\-based rule instead of a regular rule to limit the number of requests from any IP address that meets the conditions\.
+1. Specify additional conditions under which you want to allow or block requests in one or more rules\. To add more than one, start with AND or OR rule statements and nest the rules that you want to combine under those\. If you want to negate a rule option, nest the rule in a NOT statement\. You can optionally use a rate\-based rule instead of a regular rule to limit the number of requests from any single IP address that meets the conditions\. For information about rules, see [AWS WAF Rules](waf-rules.md)\.
 
-1. Add the rules to a web ACL\. For each rule, specify whether you want AWS WAF to allow or block requests based on the conditions that you added to the rule\. If you add more than one rule to a web ACL, AWS WAF evaluates the rules in the order that they're listed in the web ACL\. For more information, see [Working with Web ACLs](web-acl-working-with.md)\.
-
-   When you add a new rule or update existing rules, it can take up to one minute for those changes to appear and be active across your web ACLs and resources\.
+ If you add more than one rule to a web ACL, AWS WAF evaluates the rules in the order that they're listed for the web ACL\. For more information, see [How AWS WAF Processes a Web ACL](web-acl-processing.md)\.
 
 **Topics**
-+ [Working with Conditions](web-acl-create-condition.md)
-+ [Working with Rules](web-acl-rules.md)
++ [How AWS WAF Processes a Web ACL](web-acl-processing.md)
 + [Working with Web ACLs](web-acl-working-with.md)

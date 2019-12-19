@@ -10,18 +10,13 @@ For information about other services that support service\-linked roles, see [AW
 
 ## Service\-Linked Role Permissions for AWS WAF<a name="slr-permissions"></a>
 
-AWS WAF uses the following service\-linked roles:
-+ `AWSServiceRoleForWAFLogging`
-+ `AWSServiceRoleForWAFRegionalLogging`
+AWS WAF uses the service\-linked role `AWSServiceRoleForWAFV2Logging`\.
 
-AWS WAF uses these service\-linked roles to write logs to Amazon Kinesis Data Firehose\. These roles are used only if you enable logging in AWS WAF\. For more information, see [Logging Web ACL Traffic Information](logging.md)\.
+AWS WAF uses this service\-linked role to write logs to Amazon Kinesis Data Firehose\. This role is used only if you enable logging in AWS WAF\. For more information, see [Logging Web ACL Traffic Information](logging.md)\.
 
-The `AWSServiceRoleForWAFLogging` and `AWSServiceRoleForWAFRegionalLogging` service\-linked roles trust the following services \(respectively\) to assume the role:
-+ `waf.amazonaws.com`
+The `AWSServiceRoleForWAFV2Logging` service\-linked role trusts the service to assume the role `wafv2.amazonaws.com`\. 
 
-  `waf-regional.amazonaws.com`
-
-The permissions policies of the roles allow AWS WAF to complete the following actions on the specified resources:
+The permissions policies of the role allows AWS WAF to complete the following actions on the specified resources:
 + Action: `firehose:PutRecord` and `firehose:PutRecordBatch` on Amazon Kinesis Data Firehose data stream resources with a name that starts with "aws\-waf\-logs\-\." For example, `aws-waf-logs-us-east-2-analytics`\.
 
 You must configure permissions to allow an IAM entity \(such as a user, group, or role\) to create, edit, or delete a service\-linked role\. For more information, see [Service\-Linked Role Permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#service-linked-role-permissions) in the *IAM User Guide*\.
@@ -36,7 +31,7 @@ If you delete this service\-linked role, and then need to create it again, you c
 
 ## Editing a Service\-Linked Role for AWS WAF<a name="edit-slr"></a>
 
-AWS WAF doesn't allow you to edit the `AWSServiceRoleForWAFLogging` and `AWSServiceRoleForWAFRegionalLogging` service\-linked roles\. After you create a service\-linked role, you can't change the name of the role because various entities might reference the role\. However, you can edit the description of the role using IAM\. For more information, see [Editing a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
+AWS WAF doesn't allow you to edit the `AWSServiceRoleForWAFV2Logging` service\-linked role\. After you create a service\-linked role, you can't change the name of the role because various entities might reference the role\. However, you can edit the description of the role using IAM\. For more information, see [Editing a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
 
 ## Deleting a Service\-Linked Role for AWS WAF<a name="delete-slr"></a>
 
@@ -45,7 +40,7 @@ If you no longer need to use a feature or service that requires a service\-linke
 **Note**  
 If the AWS WAF service is using the role when you try to delete the resources, then the deletion might fail\. If that happens, wait for a few minutes and try the operation again\.
 
-**To delete AWS WAF resources used by the `AWSServiceRoleForWAFLogging` and `AWSServiceRoleForWAFRegionalLogging`**
+**To delete AWS WAF resources used by the `AWSServiceRoleForWAFV2Logging`**
 
 1. On the AWS WAF console, remove logging from every web ACL\. For more information, see [Logging Web ACL Traffic Information](logging.md)\.
 
@@ -53,7 +48,7 @@ If the AWS WAF service is using the role when you try to delete the resources, t
 
 **To manually delete the service\-linked role using IAM**
 
-Use the IAM console, the IAM CLI, or the IAM API to delete the `AWSServiceRoleForWAFLogging` and `AWSServiceRoleForWAFRegionalLogging` service\-linked roles\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
+Use the IAM console, the IAM CLI, or the IAM API to delete the `AWSServiceRoleForWAFV2Logging` service\-linked role\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
 
 ## Supported Regions for AWS WAF Service\-Linked Roles<a name="slr-regions"></a>
 
@@ -75,8 +70,8 @@ AWS WAF supports using service\-linked roles in the following AWS Regions\.
 | Asia Pacific \(Sydney\) | ap\-southeast\-2 | Yes | 
 | Asia Pacific \(Tokyo\) | ap\-northeast\-1 | Yes | 
 | Canada \(Central\) | ca\-central\-1 | Yes | 
-| EU \(Frankfurt\) | eu\-central\-1 | Yes | 
-| EU \(Ireland\) | eu\-west\-1 | Yes | 
-| EU \(London\) | eu\-west\-2 | Yes | 
-| EU \(Paris\) | eu\-west\-3 | Yes | 
+| Europe \(Frankfurt\) | eu\-central\-1 | Yes | 
+| Europe \(Ireland\) | eu\-west\-1 | Yes | 
+| Europe \(London\) | eu\-west\-2 | Yes | 
+| Europe \(Paris\) | eu\-west\-3 | Yes | 
 | South America \(São Paulo\) | sa\-east\-1 | Yes | 

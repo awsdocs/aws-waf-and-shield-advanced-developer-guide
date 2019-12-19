@@ -19,7 +19,7 @@ CloudWatch metrics and alarms are not enabled for Firewall Manager\.
 
 Another important part of monitoring AWS WAF and AWS Shield Advanced involves manually monitoring those items that the CloudWatch alarms don't cover\. You can view the AWS WAF, Shield Advanced, CloudWatch, and other AWS console dashboards to see the state of your AWS environment\. We recommend that you also check the log files for your web ACLs and rules\.
 + For example, to view the AWS WAF dashboard: 
-  + On the **Requests** tab of the AWS WAF **Web ACLs** page, view a graph of total requests and requests that match each rule that you have created\. For more information, see [Viewing a Sample of the Web Requests That API Gateway CloudFront or an Application Load Balancer Has Forwarded to AWS WAF](web-acl-testing.md#web-acl-testing-view-sample)\.
+  + On the **Requests** tab of the AWS WAF **Web ACLs** page, view a graph of total requests and requests that match each rule that you have created\. For more information, see [Viewing a Sample of Web Requests](web-acl-testing.md#web-acl-testing-view-sample)\.
 + View the CloudWatch home page for the following:
   + Current alarms and status
   + Graphs of alarms and resources

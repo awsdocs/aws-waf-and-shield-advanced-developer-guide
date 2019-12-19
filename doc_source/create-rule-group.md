@@ -18,12 +18,16 @@ You can't add rate\-based rules to a rule group\.
 
 1. Choose **Next**\.
 
-1. If you chose to create rules, follow the steps to create conditions and then rules\. For more information, see [Working with Conditions](web-acl-create-condition.md) and [Working with Rules](web-acl-rules.md)\. When all of the rules you need have been created, go to the next step\.
+1. If you chose to create rules, follow the steps to create them at [Creating a Rule and Adding Conditions](classic-web-acl-rules-creating.md)\. 
+**Note**  
+Use the AWS WAF Classic console to create your rules\. 
+
+   When you've created all the rules you need, go to the next step\.
 
 1. Type a rule group name\.
 
-1. To add a rule to the rule group, select a rule then choose **Add rule**\. Choose whether to allow, block, or count requests that match the rule's conditions\. For more information on the choices, see [How AWS WAF Works](how-aws-waf-works.md)\. 
+1. To add a rule to the rule group, select a rule then choose **Add rule**\. Choose whether to allow, block, or count requests that match the rule's conditions\. For more information on the choices, see [How AWS WAF Classic Works](classic-how-aws-waf-works.md)\. 
 
 1. When you are finished adding rules, choose **Create**\.
 
-You can test your rule group by adding it to an AWS WAF WebACL and setting the WebACL action to **Override to Count**\. This action overrides any action that you choose for the rules contained in the group, and only counts matching requests\. For more information, see [Creating a Web ACL](web-acl-creating.md)\.
+You can test your rule group by adding it to an AWS WAF WebACL and setting the WebACL action to **Override to Count**\. This action overrides any action that you choose for the rules contained in the group, and only counts matching requests\. For more information, see [Creating a Web ACL](classic-web-acl-creating.md)\.

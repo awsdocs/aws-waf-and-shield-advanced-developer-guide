@@ -16,27 +16,22 @@ When granting permissions, you decide who is getting the permissions, the resour
 
 ## AWS WAF Resources and Operations<a name="access-control-resources"></a>
 
-In AWS WAF, the resources are *web ACLs* and *rules*\. AWS WAF also supports conditions such as *byte match*, *IP match*, and *size constraint*\. 
-
-These resources and conditions have unique Amazon Resource Names \(ARNs\) associated with them, as shown in the following table\. 
+In AWS WAF, the resources are *web ACLs*, *rulegroups*, *IP sets*, and *regex pattern sets*\. These resources have unique Amazon Resource Names \(ARNs\) associated with them, as shown in the following table\. 
 
 
 ****  
 
 | Name in AWS WAF Console | Name in AWS WAF SDK/CLI | ARN Format  | 
 | --- | --- | --- | 
-| Web ACL | WebACL |  `arn:aws:waf::account:webacl/ID`  | 
-| Rule | Rule |  `arn:aws:waf::account:rule/ID `  | 
-| String match condition | ByteMatchSet |  `arn:aws:waf::account:bytematchset/ID`  | 
-| SQL injection match condition | SqlInjectionMatchSet | arn:aws:waf::account:sqlinjectionset/ID | 
-| Size constraint condition | SizeConstraintSet | arn:aws:waf::account:sizeconstraintset/ID | 
-| IP match condition | IPSet | arn:aws:waf::account:ipset/ID | 
-| Cross\-site scripting match condition | XssMatchSet | arn:aws:waf::account:xssmatchset/ID |  | 
+| Web ACL | WebACL |  `arn:aws:wafv2:region:account:webacl/ID`  | 
+| Rule group | RuleGroup |  `arn:aws:wafv2:region:account:rulegroup/ID `  | 
+| IP set | IPSet | arn:aws:wafv2:region:account:ipset/ID | 
+| Regex pattern set | RegexPatternSet |  `arn:aws:wafv2:region:account:regexpatternset/ID`  | 
 
 To allow or deny access to a subset of AWS WAF resources, include the ARN of the resource in the `resource` element of your policy\. The ARNs for AWS WAF have the following format:
 
 ```
-arn:aws:waf::account:resource/ID
+arn:aws:wafv2:region:account:resource/ID
 ```
 
 Replace the *account*, *resource*, and *ID* variables with valid values\. Valid values can be the following:
@@ -44,10 +39,10 @@ Replace the *account*, *resource*, and *ID* variables with valid values\. Valid 
 + *resource*: The type of AWS WAF resource\. 
 + *ID*: The ID of the AWS WAF resource, or a wildcard \(`*`\) to indicate all resources of the specified type that are associated with the specified AWS account\.
 
-For example, the following ARN specifies all web ACLs for the account `111122223333`:
+For example, the following ARN specifies all web ACLs for the account `111122223333` in region `us-east-1`:
 
 ```
-arn:aws:waf::111122223333:webacl/*
+arn:aws:wafv2:us-east-1:111122223333:webacl/*
 ```
 
 For more information, see [Resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Resource) in the *IAM User Guide*\.
@@ -86,19 +81,19 @@ You can attach policies to IAM identities\. For example, you can do the followin
 
   1. Account B administrator can then delegate permissions to assume the role to any users in Account B\. Doing this allows users in Account B to create or access resources in Account A\. The principal in the trust policy also can be an AWS service principal if you want to grant an AWS service permissions to assume the role\.
 
-   For more information about using IAM to delegate permissions, see [Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\. 
+  For more information about using IAM to delegate permissions, see [Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\. 
 
-The following is an example policy that grants permissions for the `waf:ListRules` action on all resources\. In the current implementation, AWS WAF doesn't support identifying specific resources using the resource ARNs \(also referred to as resource\-level permissions\) for some of the API actions, so you must specify a wildcard character \(\*\):
+The following is an example policy that grants permissions for the `wafv2:ListWebACLs` action on all resources\. In the current implementation, AWS WAF doesn't support identifying specific resources using the resource ARNs \(also referred to as resource\-level permissions\) for some of the API actions, so you must specify a wildcard character \(\*\):
 
 ```
 {
-    "Version": "2012-10-17",
+    "Version": "2019-07-29",
     "Statement": [
         {
-            "Sid": "ListRules",
+            "Sid": "ListWebACLs",
             "Effect": "Allow",
             "Action": [
-                "waf:ListRules"
+                "wafv2:ListWebACLs"
             ],
             "Resource": "*"
         }
@@ -118,8 +113,8 @@ For each AWS WAF resource \(see [AWS WAF Resources and Operations](#access-contr
 
 The following are the most basic policy elements:
 + **Resource** – In a policy, you use an Amazon Resource Name \(ARN\) to identify the resource to which the policy applies\. For more information, see [AWS WAF Resources and Operations](#access-control-resources)\. 
-+ **Action** – You use action keywords to identify resource operations that you want to allow or deny\. For example, the `waf:CreateRule` permission allows the user permissions to perform the AWS WAF `CreateRule` operation\. 
-+ **Effect** – You specify the effect when the user requests the specific action\. This can be either allow or deny\. If you don't explicitly grant access to allow a resource, access is implicitly denied\. You also can explicitly deny access to a resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
++ **Action** – You use action keywords to identify resource operations that you want to allow or deny\. For example, the `wafv2:CreateRuleGroup` permission allows the user permissions to perform the AWS WAF `CreateRuleGroup` operation\. 
++ **Effect** – You specify the effect when the user requests the specific action\. This can be either allow or deny\. If you don't explicitly grant access to a resource, access is implicitly denied\. You also can explicitly deny access to a resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
 + **Principal** – In identity\-based policies \(IAM policies\), the user that the policy is attached to is the implicit principal\. AWS WAF doesn't support resource\-based policies\.
 
 To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.

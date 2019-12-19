@@ -28,7 +28,7 @@ You can access AWS as any of the following types of identities:
 
 ## Access Control<a name="access-control"></a>
 
-You can have valid credentials to authenticate your requests, but unless you have permissions you can't create or access AWS WAF resources\. For example, you must have permissions to create an AWS WAF *web ACL* or *rule*\.
+You can have valid credentials to authenticate your requests, but unless you have permissions you can't create or access AWS WAF resources\. For example, you must have permissions to create an AWS WAF *web ACL* or *rule group*\.
 
 The following sections describe how to manage permissions for AWS WAF\. We recommend that you read the overview first\.
 + [Overview of Managing Access Permissions to Your AWS WAF Resources](access-control-overview.md)

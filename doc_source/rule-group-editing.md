@@ -18,7 +18,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. To add rules, perform the following steps:
 
-   1. Select a rule, and then choose **Add rule to rule group**\. Choose whether to allow, block, or count requests that match the rule's conditions\. For more information on the choices, see [How AWS WAF Works](how-aws-waf-works.md)\. Repeat to add more rules to the rule group\. 
+   1. Select a rule, and then choose **Add rule to rule group**\. Choose whether to allow, block, or count requests that match the rule's conditions\. For more information on the choices, see [How AWS WAF Classic Works](classic-how-aws-waf-works.md)\. Repeat to add more rules to the rule group\. 
 **Note**  
 You cannot add rate\-based rules to rule group\.
 

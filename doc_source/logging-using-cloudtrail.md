@@ -23,11 +23,274 @@ Every event or log entry contains information about who generated the request\. 
 
 For more information, see [CloudTrail userIdentity Element](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.
 
-## Example: AWS WAF Log File Entries<a name="understanding-service-name-entries-WAF"></a>
+### Example: AWS WAF Log File Entries<a name="understanding-service-name-entries-WAF"></a>
 
 A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. AWS CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files are not an ordered stack trace of the public API calls, so they do not appear in any specific order\.
 
-The following example shows a CloudTrail log entry that demonstrates the `CreateRule`, `GetRule`, `UpdateRule`, and `DeleteRule` operations:
+The following are examples of CloudTrail log entries for AWS WAF web ACL operations\. 
+
+Example: CloudTrail log entry for `CreateWebACL`
+
+```
+{
+  "eventVersion": "1.05",
+  "userIdentity": {
+    "type": "AssumedRole",
+    "principalId": "principalId",
+    "arn": "arn:aws:sts::112233445566:assumed-role/Admin",
+    "accountId": "112233445566",
+    "accessKeyId": "accessKeyId",
+    "sessionContext": {
+      "sessionIssuer": {
+        "type": "Role",
+        "principalId": "principalId",
+        "arn": "arn:aws:iam::112233445566:role/Admin",
+        "accountId": "112233445566",
+        "userName": "Admin"
+      },
+      "webIdFederationData": {},
+      "attributes": {
+        "mfaAuthenticated": "false",
+        "creationDate": "2019-11-06T03:43:07Z"
+      }
+    }
+  },
+  "eventTime": "2019-11-06T03:44:21Z",
+  "eventSource": "wafv2.amazonaws.com",
+  "eventName": "CreateWebACL",
+  "awsRegion": "us-west-2",
+  "sourceIPAddress": "10.0.0.1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36",
+  "requestParameters": {
+    "name": "foo",
+    "scope": "CLOUDFRONT",
+    "defaultAction": {
+      "block": {}
+    },
+    "description": "foo",
+    "rules": [
+      {
+        "name": "foo",
+        "priority": 1,
+        "statement": {
+          "geoMatchStatement": {
+            "countryCodes": [
+              "AF",
+              "AF"
+            ]
+          }
+        },
+        "action": {
+          "block": {}
+        },
+        "visibilityConfig": {
+          "sampledRequestsEnabled": true,
+          "cloudWatchMetricsEnabled": true,
+          "metricName": "foo"
+        }
+      }
+    ],
+    "visibilityConfig": {
+      "sampledRequestsEnabled": true,
+      "cloudWatchMetricsEnabled": true,
+      "metricName": "foo"
+    }
+  },
+  "responseElements": {
+    "summary": {
+      "name": "foo",
+      "id": "ebbcb976-8d59-4d20-8ca8-4ab2f6b7c07b",
+      "description": "foo",
+      "lockToken": "67551e73-49d8-4363-be48-244deea72ea9",
+      "aRN": "arn:aws:wafv2:us-west-2:112233445566:global/webacl/foo/ebbcb976-8d59-4d20-8ca8-4ab2f6b7c07b"
+    }
+  },
+  "requestID": "c51521ba-3911-45ca-ba77-43aba50471ca",
+  "eventID": "afd1a60a-7d84-417f-bc9c-7116cf029065",
+  "eventType": "AwsApiCall",
+  "apiVersion": "2019-04-23",
+  "recipientAccountId": "112233445566"
+}
+```
+
+Example: CloudTrail log entry for `GetWebACL`
+
+```
+{
+  "eventVersion": "1.05",
+  "userIdentity": {
+    "type": "AssumedRole",
+    "principalId": "AssumedRole",
+    "arn": "arn:aws:sts::112233445566:assumed-role/Admin/admin",
+    "accountId": "112233445566",
+    "accessKeyId": "accessKeyId",
+    "sessionContext": {
+      "sessionIssuer": {
+        "type": "Role",
+        "principalId": "AssumedRole",
+        "arn": "arn:aws:iam::112233445566:role/Admin",
+        "accountId": "112233445566",
+        "userName": "Admin"
+      },
+      "webIdFederationData": {},
+      "attributes": {
+        "mfaAuthenticated": "false",
+        "creationDate": "2019-11-06T19:17:20Z"
+      }
+    }
+  },
+  "eventTime": "2019-11-06T19:18:28Z",
+  "eventSource": "wafv2.amazonaws.com",
+  "eventName": "GetWebACL",
+  "awsRegion": "us-west-2",
+  "sourceIPAddress": "10.0.0.1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36",
+  "requestParameters": {
+    "name": "foo",
+    "scope": "CLOUDFRONT",
+    "id": "webacl"
+  },
+  "responseElements": null,
+  "requestID": "f2db4884-4eeb-490c-afe7-67cbb494ce3b",
+  "eventID": "7d563cd6-4123-4082-8880-c2d1fda4d90b",
+  "readOnly": true,
+  "eventType": "AwsApiCall",
+  "apiVersion": "2019-04-23",
+  "recipientAccountId": "112233445566"
+}
+```
+
+Example: CloudTrail log entry for `UpdateWebACL`
+
+```
+{
+  "eventVersion": "1.05",
+  "userIdentity": {
+    "type": "AssumedRole",
+    "principalId": "principalId",
+    "arn": "arn:aws:sts::112233445566:assumed-role/Admin",
+    "accountId": "112233445566",
+    "accessKeyId": "accessKeyId",
+    "sessionContext": {
+      "sessionIssuer": {
+        "type": "Role",
+        "principalId": "principalId",
+        "arn": "arn:aws:iam::112233445566:role/Admin",
+        "accountId": "112233445566",
+        "userName": "Admin"
+      },
+      "webIdFederationData": {},
+      "attributes": {
+        "mfaAuthenticated": "false",
+        "creationDate": "2019-11-06T19:17:20Z"
+      }
+    }
+  },
+  "eventTime": "2019-11-06T19:20:56Z",
+  "eventSource": "wafv2.amazonaws.com",
+  "eventName": "UpdateWebACL",
+  "awsRegion": "us-west-2",
+  "sourceIPAddress": "10.0.0.1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36",
+  "requestParameters": {
+    "name": "foo",
+    "scope": "CLOUDFRONT",
+    "id": "ebbcb976-8d59-4d20-8ca8-4ab2f6b7c07b",
+    "defaultAction": {
+      "block": {}
+    },
+    "description": "foo",
+    "rules": [
+      {
+        "name": "foo",
+        "priority": 1,
+        "statement": {
+          "geoMatchStatement": {
+            "countryCodes": [
+              "AF"
+            ]
+          }
+        },
+        "action": {
+          "block": {}
+        },
+        "visibilityConfig": {
+          "sampledRequestsEnabled": true,
+          "cloudWatchMetricsEnabled": true,
+          "metricName": "foo"
+        }
+      }
+    ],
+    "visibilityConfig": {
+      "sampledRequestsEnabled": true,
+      "cloudWatchMetricsEnabled": true,
+      "metricName": "foo"
+    },
+    "lockToken": "67551e73-49d8-4363-be48-244deea72ea9"
+  },
+  "responseElements": {
+    "nextLockToken": "a6b54c01-7975-4e6d-b7d0-2653cb6e231d"
+  },
+  "requestID": "41c96e12-9790-46ab-b145-a230f358f2c2",
+  "eventID": "517a10e6-4ca9-4828-af90-a5cff9756594",
+  "eventType": "AwsApiCall",
+  "apiVersion": "2019-04-23",
+  "recipientAccountId": "112233445566"
+}
+```
+
+Example: CloudTrail log entry for `DeleteWebACL`
+
+```
+{
+  "eventVersion": "1.05",
+  "userIdentity": {
+    "type": "AssumedRole",
+    "principalId": "principalId",
+    "arn": "arn:aws:sts::112233445566:assumed-role/Admin/sheqiang-Isengard",
+    "accountId": "112233445566",
+    "accessKeyId": "accessKeyId",
+    "sessionContext": {
+      "sessionIssuer": {
+        "type": "Role",
+        "principalId": "principalId",
+        "arn": "arn:aws:iam::112233445566:role/Admin",
+        "accountId": "112233445566",
+        "userName": "Admin"
+      },
+      "webIdFederationData": {},
+      "attributes": {
+        "mfaAuthenticated": "false",
+        "creationDate": "2019-11-06T19:17:20Z"
+      }
+    }
+  },
+  "eventTime": "2019-11-06T19:25:17Z",
+  "eventSource": "wafv2.amazonaws.com",
+  "eventName": "DeleteWebACL",
+  "awsRegion": "us-west-2",
+  "sourceIPAddress": "10.0.0.1",
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36",
+  "requestParameters": {
+    "name": "foo",
+    "scope": "CLOUDFRONT",
+    "id": "ebbcb976-8d59-4d20-8ca8-4ab2f6b7c07b",
+    "lockToken": "a6b54c01-7975-4e6d-b7d0-2653cb6e231d"
+  },
+  "responseElements": null,
+  "requestID": "71703f89-e139-440c-96d4-9c77f4cd7565",
+  "eventID": "2f976624-b6a5-4a09-a8d0-aa3e9f4e5187",
+  "eventType": "AwsApiCall",
+  "apiVersion": "2019-04-23",
+  "recipientAccountId": "112233445566"
+}
+```
+
+### Example: AWS WAF Classic Log File Entries<a name="understanding-service-name-entries-WAF"></a>
+
+AWS WAF Classic is the prior version of AWS WAF\. For information, see [AWS WAF Classic](classic-waf-chapter.md)\.
+
+The log entry demonstrates the `CreateRule`, `GetRule`, `UpdateRule`, and `DeleteRule` operations:
 
 ```
 {

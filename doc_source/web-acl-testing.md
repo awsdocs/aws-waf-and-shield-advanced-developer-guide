@@ -4,7 +4,7 @@ To ensure that you don't accidentally configure AWS WAF to block web requests th
 
 **Topics**
 + [Counting the Web Requests That Match the Rules in a Web ACL](#web-acl-testing-count)
-+ [Viewing a Sample of the Web Requests That API Gateway CloudFront or an Application Load Balancer Has Forwarded to AWS WAF](#web-acl-testing-view-sample)
++ [Viewing a Sample of Web Requests](#web-acl-testing-view-sample)
 
 ## Counting the Web Requests That Match the Rules in a Web ACL<a name="web-acl-testing-count"></a>
 
@@ -14,7 +14,7 @@ When you add rules to a web ACL, you specify whether you want AWS WAF to allow, 
 
 In this configuration, AWS WAF inspects each web request based on the conditions in the first rule\. If the web request matches all the conditions in that rule, AWS WAF increments a counter for that rule\. Then AWS WAF inspects the web request based on the conditions in the next rule\. If the request matches all the conditions in that rule, AWS WAF increments a counter for the rule\. This continues until AWS WAF has inspected the request based on the conditions in all of your rules\. 
 
-After you've configured all the rules in a web ACL to count requests and associated the web ACL with an Amazon API Gateway API, CloudFront distribution or Application Load Balancer, you can view the resulting counts in an Amazon CloudWatch graph\. For each rule in a web ACL and for all the requests that API Gateway, CloudFront or an Application Load Balancer forwards to AWS WAF for a web ACL, CloudWatch lets you:
+After you've configured all the rules in a web ACL to count requests and associated the web ACL with one or more AWS resources \(Amazon API Gateway API, CloudFront distribution, or Application Load Balancer\) you can view the resulting counts in an Amazon CloudWatch graph\. For each rule in a web ACL and for all the requests that an associated resource forwards to AWS WAF for a web ACL, CloudWatch lets you do the following:
 + View data for the preceding hour or preceding three hours,
 + Change the interval between data points
 + Change the calculation that CloudWatch performs on the data, such as maximum, minimum, average, or sum
@@ -41,24 +41,24 @@ Choose the interval between data points in the graph\.
 Choose the rules for which you want to view data\.
 
    Note the following:
-   + If you just associated a web ACL with an API Gateway API, CloudFront distribution or Application Load Balancer, you might need to wait a few minutes for data to appear in the graph and for the metric for the web ACL to appear in the list of available metrics\.
-   + If you associate more than one API Gateway API, CloudFront distribution or Application Load Balancer with a web ACL, the CloudWatch data will include all the requests for all the distributions that are associated with the web ACL\.
+   + If you recently associated a web ACL with an AWS resource, you might need to wait a few minutes for data to appear in the graph and for the metric for the web ACL to appear in the list of available metrics\.
+   + If you associate more than one resource with a web ACL, the CloudWatch data will include requests for all of them\.
    + You can hover the mouse cursor over a data point to get more information\.
    + The graph doesn't refresh itself automatically\. To update the display, choose the refresh \(![\[Icon to refresh the CloudWatch graph\]](http://docs.aws.amazon.com/waf/latest/developerguide/images/cloudwatch-refresh-icon.png)\) icon\.
 
-1. \(Optional\) View detailed information about individual requests that API Gateway CloudFront or an Application Load Balancer has forwarded to AWS WAF\. For more information, see [Viewing a Sample of the Web Requests That API Gateway CloudFront or an Application Load Balancer Has Forwarded to AWS WAF](#web-acl-testing-view-sample)\.
+1. \(Optional\) View detailed information about individual requests that an associated AWS resource has forwarded to AWS WAF\. For more information, see [Viewing a Sample of Web Requests](#web-acl-testing-view-sample)\.
 
-1. If you determine that a rule is intercepting requests that you don't want it to intercept, change the applicable settings\. For more information, see [Creating and Configuring a Web Access Control List \(Web ACL\)](web-acl.md)\.
+1. If you determine that a rule is intercepting requests that you don't want it to intercept, change the applicable settings\. For more information, see [Managing and Using a Web Access Control List \(Web ACL\)](web-acl.md)\.
 
    When you're satisfied that all of your rules are intercepting only the correct requests, change the action for each of your rules to **Allow** or **Block**\. For more information, see [Editing a Web ACL](web-acl-editing.md)\.
 
-## Viewing a Sample of the Web Requests That API Gateway CloudFront or an Application Load Balancer Has Forwarded to AWS WAF<a name="web-acl-testing-view-sample"></a>
+## Viewing a Sample of Web Requests<a name="web-acl-testing-view-sample"></a>
 
-In the AWS WAF console, you can view a sample of the requests that API Gateway CloudFront or an Application Load Balancer has forwarded to AWS WAF for inspection\. For each sampled request, you can view detailed data about the request, such as the originating IP address and the headers included in the request\. You also can view which rule the request matched, and whether the rule is configured to allow or block requests\.
+In the AWS WAF console, if you have request sampling enabled, you can view a sample of the requests that an associated resource has forwarded to AWS WAF for inspection\. For each sampled request, you can view detailed data about the request, such as the originating IP address and the headers included in the request\. You also can view which rule the request matched, and whether the rule is configured to allow or block requests\.
 
 The sample of requests contains up to 100 requests that matched all the conditions in each rule and another 100 requests for the default action, which applies to requests that didn't match all the conditions in any rule\. The requests in the sample come from all the API Gateway APIs, CloudFront edge locations or Application Load Balancers that have received requests for your content in the previous 15 minutes\.<a name="web-acl-testing-view-sample-procedure"></a>
 
-**To view a sample of the web requests that API Gateway; CloudFront or an Application Load Balancer has forwarded to AWS WAF**
+**To view a sample of the web requests that an associated resource has forwarded to AWS WAF**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 

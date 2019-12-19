@@ -6,15 +6,18 @@ The steps for creating a policy vary between the different policy types\. Make s
 AWS Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator\. If you want to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced Protection to More AWS Resources](configure-new-protection.md)\. 
 
 **Topics**
-+ [Creating an AWS Firewall Manager Policy for AWS WAF](#creating-firewall-manager-policy-for-waf)
++ [Creating an AWS Firewall Manager Policy for AWS WAF Classic](#creating-firewall-manager-policy-for-waf)
 + [Creating an AWS Firewall Manager Policy for Shield Advanced](#creating-firewall-manager-policy-for-shield-advanced)
 + [Creating an AWS Firewall Manager Common Security Group Policy](#creating-firewall-manager-policy-common-security-group)
 + [Creating an AWS Firewall Manager Content Audit Security Group Policy](#creating-firewall-manager-policy-audit-security-group)
 + [Creating an AWS Firewall Manager Usage Audit Security Group Policy](#creating-firewall-manager-policy-usage-security-group)
 
-## Creating an AWS Firewall Manager Policy for AWS WAF<a name="creating-firewall-manager-policy-for-waf"></a><a name="create-policy-procedure"></a>
+## Creating an AWS Firewall Manager Policy for AWS WAF Classic<a name="creating-firewall-manager-policy-for-waf"></a>
 
-**To create a Firewall Manager policy for AWS WAF \(console\)**
+**Note**  
+The latest version of AWS WAF was released in November, 2019\. AWS Firewall Manager currently works with the prior version, AWS WAF Classic, and not AWS WAF\. For information about AWS WAF Classic, see [AWS WAF Classic](classic-waf-chapter.md) <a name="create-policy-procedure"></a>
+
+**To create a Firewall Manager policy for AWS WAF Classic \(console\)**
 
 1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites \([AWS Firewall Manager Prerequisites](fms-prereq.md)\), and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
 **Note**  
@@ -24,7 +27,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Create policy**\.
 
-1. If you already created the rule group that you want to add to the policy, choose **Create an AWS Firewall Manager policy and add existing rule groups**\. If you want to create a new rule group, choose **Create a Firewall Manager policy and add a new rule group**\.
+1. If you already created the AWS WAF Classic rule group that you want to add to the policy, choose **Create an AWS Firewall Manager policy and add existing rule groups**\. If you want to create a new rule group, choose **Create a Firewall Manager policy and add a new rule group**\.
 
 1. If you are using an existing rule group, skip this step and go to the next step\. If you are creating a rule group, follow the instructions in [Creating a Rule Group](create-rule-group.md)\. After you create the rule group, continue with the following steps\.
 
@@ -52,7 +55,7 @@ If you don't select this option, Firewall Manager applies a policy to all accoun
 
    If you enter more than one tag \(separated by commas\), if a resource has any of those tags, it is considered a match\.
 
-   For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) \.
+   For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\.
 
 1. If you want to automatically apply the policy to existing resources, choose **Create and apply this policy to existing and new resources**\.
 

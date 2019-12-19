@@ -1,4 +1,4 @@
-# Step 4: Create and Apply an AWS Firewall Manager AWS WAF Policy<a name="get-started-fms-create-security-policy"></a>
+# Step 4: Create and Apply an AWS Firewall Manager AWS WAF Classic Policy<a name="get-started-fms-create-security-policy"></a>
 
 After you create the rule group, you create an AWS Firewall Manager AWS WAF policy\. A Firewall Manager\-AWS WAF policy contains the rule group that you want to apply to your resources\.<a name="get-started-fms-create-security-policy-procedure"></a>
 
@@ -30,7 +30,7 @@ If you don't select this option, Firewall Manager applies a policy to all accoun
 
    If you enter more than one tag \(separated by commas\), and if a resource has any of those tags, it is considered a match\.
 
-   For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) \.
+   For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\.
 
 1. Choose **Create and apply this policy to existing and new resources**\.
 

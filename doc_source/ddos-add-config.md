@@ -13,4 +13,4 @@ If you already have AWS Config enabled for the necessary Regions and resources, 
 
 After enabling AWS Config, use the US East \(N\. Virginia\) Region in the AWS Config console to view the configuration change history for AWS Shield Advanced global resources\. 
 
-View the change history for AWS Shield Advanced regional resources via the AWS Config console in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), US West \(N\. California\), EU \(Ireland\), EU \(Frankfurt\), Asia Pacific \(Tokyo\), and Asia Pacific \(Sydney\) Regions\.
+View the change history for AWS Shield Advanced regional resources via the AWS Config console in the US East \(N\. Virginia\), US East \(Ohio\), US West \(Oregon\), US West \(N\. California\), Europe \(Ireland\), Europe \(Frankfurt\), Asia Pacific \(Tokyo\), and Asia Pacific \(Sydney\) Regions\.

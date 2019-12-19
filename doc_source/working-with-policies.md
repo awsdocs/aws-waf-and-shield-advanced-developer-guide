@@ -1,7 +1,9 @@
 # Working with AWS Firewall Manager Policies<a name="working-with-policies"></a>
 
 AWS Firewall Manager provides the following types of policies: 
-+ **AWS WAF** **policy** – This policy contains a rule group and defines which resources will be protected by that rule group\. 
++ **AWS WAF** **policy** – This policy contains a AWS WAF Classic rule group and defines which resources will be protected by that rule group\. 
+**Note**  
+The latest version of AWS WAF was released in November, 2019\. AWS Firewall Manager currently works with the prior version, AWS WAF Classic, and not AWS WAF\. For information about AWS WAF Classic, see [AWS WAF Classic](classic-waf-chapter.md) 
 + **Shield Advanced policy** – This policy applies AWS Shield Advanced protection to specified accounts and resources\.
 + **Amazon VPC security group policy** – This type of policy gives you control over security groups that are in use throughout your organization in AWS Organizations and lets you enforce a baseline set of rules across your organization\. 
 

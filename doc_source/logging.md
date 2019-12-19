@@ -7,13 +7,13 @@ To get started, you set up an Amazon Kinesis Data Firehose\. As part of that pro
 You must have the following permissions to successfully enable logging:
 + `iam:CreateServiceLinkedRole`
 + `firehose:ListDeliveryStreams`
-+ `waf:PutLoggingConfiguration`
++ `wafv2:PutLoggingConfiguration`
 
 For more information about service\-linked roles and the `iam:CreateServiceLinkedRole` permission, see [Using Service\-Linked Roles for AWS WAF](using-service-linked-roles.md)\.<a name="logging-procedure"></a>
 
 **To enable logging for a web ACL**
 
-1. Create an Amazon Kinesis Data Firehose using a name starting with the prefix "aws\-waf\-logs\-" For example, `aws-waf-logs-us-east-2-analytics`\. Create the data firehose with a `PUT` source and in the region that you are operating\. If you are capturing logs for Amazon CloudFront, create the firehose in US East \(N\. Virginia\)\. For more information, see [Creating an Amazon Kinesis Data Firehose Delivery Stream](https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html)\.
+1. Create an Amazon Kinesis Data Firehose using a name starting with the prefix `aws-waf-logs-`\. For example, `aws-waf-logs-us-east-2-analytics`\. Create the data firehose with a `PUT` source and in the region that you are operating\. If you are capturing logs for Amazon CloudFront, create the firehose in US East \(N\. Virginia\)\. For more information, see [Creating an Amazon Kinesis Data Firehose Delivery Stream](https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html)\.
 **Important**  
 Do not choose `Kinesis stream` as your source\.  
 One AWS WAF log is equivalent to one Kinesis Data Firehose record\. If you typically receive 10,000 requests per second and you enable full logs, you should have a 10,000 records per second limit in Kinesis Data Firehose\. If you don't configure Kinesis Data Firehose correctly, AWS WAF won't record all logs\. For more information, see [Amazon Kinesis Data Firehose Limits](https://docs.aws.amazon.com/firehose/latest/dev/limits.html)\. 

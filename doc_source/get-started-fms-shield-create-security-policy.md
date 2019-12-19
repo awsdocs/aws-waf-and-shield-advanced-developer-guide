@@ -41,7 +41,7 @@ If you don't select this option, Firewall Manager applies a policy to all accoun
 
    If you enter more than one tag \(separated by commas\), and if a resource has any of those tags, it is considered a match\.
 
-   For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) \.
+   For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\.
 
 1. Choose **Create and apply this policy to existing and new resources**\.
 

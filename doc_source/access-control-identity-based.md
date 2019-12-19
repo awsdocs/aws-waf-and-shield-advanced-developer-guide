@@ -9,18 +9,16 @@ The following shows an example of a permissions policy:
 
 ```
 {
-    "Version": "2012-10-17",
+    "Version": "2019-07-29",
     "Statement": [
         {
             "Sid": "CreateFunctionPermissions",
             "Effect": "Allow",
             "Action": [
-                "waf:ListWebACLs",               
-                "waf:ListRules",               
-                "waf:GetWebACL",               
-                "waf:GetRule",               
+                "wafv2:ListWebACLs",              
+                "wafv2:GetWebACL",              
                 "cloudwatch:ListMetrics",
-                "waf:GetSampledRequests"
+                "wafv2:GetSampledRequests"
             ],
             "Resource": "*"
         },
@@ -36,8 +34,8 @@ The following shows an example of a permissions policy:
 }
 ```
 
- The policy has two statements: 
-+ The first statement grants permissions to view statistics for AWS WAF web ACLs, using the `waf:ListWebACLs`, `waf:ListRules`, `waf:GetWebACL`, `waf:GetRule`, `cloudwatch:ListMetrics`, and `waf:GetSampledRequests` actions\. AWS WAF doesn't support permissions for some of these actions at the resource level\. Therefore, the policy specifies a wildcard character \(\*\) as the `Resource` value\. 
+The policy has two statements: 
++ The first statement grants permissions to view statistics for AWS WAF web ACLs, using the `wafv2:ListWebACLs`, `wafv2:GetWebACL`, `cloudwatch:ListMetrics`, and `wafv2:GetSampledRequests` actions\. AWS WAF doesn't support permissions for some of these actions at the resource level\. Therefore, the policy specifies a wildcard character \(\*\) as the `Resource` value\. 
 + The second statement grants permissions for the IAM action `iam:PassRole` on IAM roles\. The wildcard character \(\*\) at the end of the `Resource` value means that the statement allows permissions for the `iam:PassRole` action on any IAM role\. To limit these permissions to a specific role, replace the wildcard character \(\*\) in the resource ARN with the specific role name\. 
 
 The policy doesn't specify the `Principal` element because in an identity\-based policy you don't specify the principal who gets the permissions\. When you attach a policy to a user, the user is the implicit principal\. When you attach a permissions policy to an IAM role, the principal identified in the role's trust policy gets the permissions\.
@@ -98,8 +96,8 @@ The following policy grants users read\-only access to AWS WAF resources, to Ama
    "Statement": [
       {
          "Action": [
-            "waf:Get*",
-            "waf:List*",
+            "wafv2:Get*",
+            "wafv2:List*",
             "cloudfront:GetDistribution",
             "cloudfront:GetDistributionConfig",
             "cloudfront:ListDistributions",
@@ -124,7 +122,7 @@ The following policy lets users perform any AWS WAF operation, perform any opera
    "Statement": [
       {
          "Action": [
-            "waf:*",
+            "wafv2:*",
             "cloudfront:CreateDistribution",
             "cloudfront:GetDistribution",
             "cloudfront:GetDistributionConfig",
@@ -158,10 +156,10 @@ This policy grants the following permissions to the account 444455556666:
       {
          "Effect": "Allow",
          "Action": [
-            "waf:*"
+            "wafv2:*"
          ],
          "Resource": [
-            "arn:aws:waf::444455556666:*"
+            "arn:aws:wafv2:us-east-1:444455556666:*"
          ]
       },
       {
@@ -195,10 +193,10 @@ This policy grants the following permissions to the `webacl` ID 112233d7c\-86b2\
       {
          "Effect": "Allow",
          "Action": [
-            "waf:*"
+            "wafv2:*"
          ],
          "Resource": [
-            "arn:aws:waf::444455556666:webacl/112233d7c-86b2-458b-af83-51c51example"
+            "arn:aws:wafv2:us-east-1:444455556666:webacl/112233d7c-86b2-458b-af83-51c51example"
          ]
       }
    ]

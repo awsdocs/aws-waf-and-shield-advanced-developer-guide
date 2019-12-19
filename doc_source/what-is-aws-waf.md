@@ -18,6 +18,7 @@ Using AWS WAF has several benefits:
   + Presence of a script that is likely to be malicious \(known as *cross\-site scripting*\)\.
 + Rules that can allow, block, or count web requests that meet the specified conditions\. Alternatively, rules can block or count web requests that not only meet the specified conditions, but also exceed a specified number of requests in any 5\-minute period\. 
 + Rules that you can reuse for multiple web applications\.
++ Managed rule groups from AWS and AWS Marketplace sellers\.
 + Real\-time metrics and sampled web requests\.
 + Automated administration using the AWS WAF API\.
 

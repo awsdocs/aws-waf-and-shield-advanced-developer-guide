@@ -46,9 +46,7 @@ In this tutorial, we refer to this web ACL as **Administrator\-Created\-ACL**\. 
 
 Each member account in the organization can now add their own account\-specific rules to the **Administrator\-Created\-ACL** that exists in their account\. The common rules already in **Administrator\-Created\-ACL** continue to apply, along with the new, account\-specific rules\. AWS WAF inspects web requests based on the order in which rules appear in the web ACL\. This applies to both **Administrator\-Created\-ACL** and account\-specific rules\.
 
-To create the rules, see the instructions in [Creating a Rule and Adding Conditions](web-acl-rules-creating.md)\.
-
-To add those rules to **Administrator\-Created\-ACL**, see [Editing a Web ACL](web-acl-editing.md)\.
+To add rules to **Administrator\-Created\-ACL**, see [Editing a Web ACL](web-acl-editing.md)\.
 
 ## Conclusion<a name="hierarchical-rules-conclusion"></a>
 

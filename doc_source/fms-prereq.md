@@ -7,4 +7,4 @@ This topic shows you how to prepare your account to use AWS Firewall Manager\. B
 + [Step 2: Set the AWS Firewall Manager Administrator Account](enable-integration.md)
 + [Step 3: Enable AWS Config](enable-config.md)
 
-You can now configure Firewall Manager to begin protecting your resources\. For more information, see [Getting Started with AWS Firewall Manager to Enable AWS WAF Rules](getting-started-fms.md) \.
+You can now configure Firewall Manager to begin protecting your resources\. For more information, see [Getting Started with AWS Firewall Manager to Enable AWS WAF Classic Rules](getting-started-fms.md)\.

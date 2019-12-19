@@ -73,10 +73,6 @@ CloudWatch incurs additional costs\. For CloudWatch pricing, see [Amazon CloudWa
 
 1. Choose **Create alarms**\.
 
-## Removing a Rate\-based Rule from Your Shield Advanced Protections<a name="remove-rule-ddos"></a>
-
-To remove a rate\-based rule from your Shield Advanced protections, follow the instructions in [Deleting a Rule](web-acl-rules-deleting.md)\.
-
 ## Removing a CloudWatch Alarm from Your Shield Advanced Protections<a name="remove-cloudwatch-ddos"></a>
 
 To remove a CloudWatch alarm from your Shield Advanced protections, you have two options:
