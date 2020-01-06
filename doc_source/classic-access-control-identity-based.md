@@ -42,7 +42,7 @@ The following shows an example of a permissions policy:
 
  The policy has two statements: 
 + The first statement grants permissions to view statistics for AWS WAF Classic web ACLs, using the `waf:ListWebACLs`, `waf:ListRules`, `waf:GetWebACL`, `waf:GetRule`, `cloudwatch:ListMetrics`, and `waf:GetSampledRequests` actions\. AWS WAF Classic doesn't support permissions for some of these actions at the resource level\. Therefore, the policy specifies a wildcard character \(\*\) as the `Resource` value\. 
-+ The second statement grants permissions for the IAM action `iam:PassRole` on IAM roles\. The wildcard character \(\*\) at the end of the `Resource` value means that the statement allows permissions for the `iam:PassRole` action on any IAM role\. To limit these permissions to a specific role, replace the wildcard character \(\*\) in the resource ARN with the specific role name\. 
++ The second statement grants permissions for the IAM action `iam:PassRole` on IAM roles\. The wildcard character \(\*\) at the end of the `Resource` value means that the statement allows permissions for the `iam:PassRole` action on any IAM role\. To only extend these permissions to a specific role, replace the wildcard character \(\*\) in the resource ARN with the specific role name\. 
 
 The policy doesn't specify the `Principal` element because in an identity\-based policy you don't specify the principal who gets the permissions\. When you attach a policy to a user, the user is the implicit principal\. When you attach a permissions policy to an IAM role, the principal identified in the role's trust policy gets the permissions\.
 

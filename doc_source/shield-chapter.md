@@ -12,4 +12,5 @@ AWS provides AWS Shield Standard and AWS Shield Advanced for protection against 
 + [Managing AWS Shield Advanced Protections](manage-protection.md)
 + [Editing AWS Shield Advanced Settings](ddos-edit-drt.md)
 + [AWS Shield Advanced: Requesting a Credit](request-refund.md)
-+ [AWS Shield Advanced Limits](shield-limits.md)
++ [Security in AWS Shield](shd-security.md)
++ [AWS Shield Advanced Quotas](shield-limits.md)

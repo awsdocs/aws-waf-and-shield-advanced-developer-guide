@@ -18,7 +18,7 @@ This statement operates on a web request component, and requires the following r
 
 Additionally, this statement requires the following settings: 
 + **Size match condition** – This indicates the numerical comparison operator to use to compare the size that you provide with the request component that you've chosen\. Choose the operator from the list\.
-+ **Size ** – The size limit, in bytes, to use in the comparison\. 
++ **Size ** – The size setting, in bytes, to use in the comparison\. 
 
 **Where to find this**
 + **Rule builder** on the console – For **Match type**, under **Size match condition**, choose the condition that you want to use\.

@@ -17,4 +17,4 @@ AWS WAF Classic is a web application firewall that lets you monitor the HTTP and
 + [Listing IP addresses blocked by rate\-based rules](classic-listing-managed-ips.md)
 + [How AWS WAF Classic Works with Amazon CloudFront Features](classic-cloudfront-features.md)
 + [Security in AWS WAF Classic](classic-security.md)
-+ [AWS WAF Classic Limits](classic-limits.md)
++ [AWS WAF Classic Quotas](classic-limits.md)

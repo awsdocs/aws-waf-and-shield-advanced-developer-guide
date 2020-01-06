@@ -14,7 +14,9 @@ In the resource settings in this section, use the following `scope` and `region`
 
 ## AWS WAF Standard API Permissions<a name="waf-api-standard-permissions"></a>
 
-The basic CRUD and list operations on AWS resources follow a standard pattern for permissions granting\. This section shows the pattern for web ACL operations\. The pattern applies to web ACLs, rule groups, IP sets, and regex pattern sets\. 
+The basic CRUD and list operations on AWS resources follow a standard pattern for permissions granting\. This section shows the pattern for web ACL operations\. 
+
+This pattern applies to web ACLs, rule groups, IP sets, and regex pattern sets\. 
 
 **CRUD operations**
 + **AWS WAF API Operations** – [CreateWebACL](https://docs.aws.amazon.com/waf/latest/APIReference/API_CreateWebACL.html), [GetWebACL](https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACL.html), [UpdateWebACL](https://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateWebACL.html), and [DeleteWebACL](https://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteWebACL.html) 
@@ -30,9 +32,9 @@ The basic CRUD and list operations on AWS resources follow a standard pattern fo
 
 ## AWS WAF Non\-Standard API Permissions<a name="waf-api-nonstandard-permissions"></a>
 
-The following operations don't follow the standard CRUD and list pattern\. 
+The following operations don't follow the standard CRUD and list pattern and require specific resource permissions settings\. 
 
-For each operation, we list the required policy actions and their associated policy resourses\. <a name="actions-related-to-objects-table_pdf"></a>
+For each operation, we list the required policy actions and their associated policy resources\. <a name="actions-related-to-objects-table_pdf"></a>
 
 [AssociateWebACL ](https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html)  
 **API Actions** – `wafv2:AssociateWebACL`, `elasticloadbalancing:SetWebACL`  

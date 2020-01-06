@@ -11,7 +11,7 @@ When granting permissions, you decide who is getting the permissions, the resour
 + [AWS WAF Resources and Operations](#access-control-resources)
 + [Understanding Resource Ownership](#access-control-resource-ownership)
 +  [Managing Access to Resources ](#access-control-manage-access-intro)
-+ [Specifying Policy Elements: Actions, Effects, Resources, and Principals](#access-control-specify-waf-actions)
++ [Specifying Policy Elements: Actions, Effects, Resources, and Principals](#waf-access-control-specify-actions)
 + [Specifying Conditions in a Policy](#specifying-conditions)
 
 ## AWS WAF Resources and Operations<a name="access-control-resources"></a>
@@ -39,7 +39,7 @@ Replace the *account*, *resource*, and *ID* variables with valid values\. Valid 
 + *resource*: The type of AWS WAF resource\. 
 + *ID*: The ID of the AWS WAF resource, or a wildcard \(`*`\) to indicate all resources of the specified type that are associated with the specified AWS account\.
 
-For example, the following ARN specifies all web ACLs for the account `111122223333` in region `us-east-1`:
+For example, the following ARN specifies all web ACLs for the account `111122223333` in Region `us-east-1`:
 
 ```
 arn:aws:wafv2:us-east-1:111122223333:webacl/*
@@ -107,7 +107,7 @@ For more information about using identity\-based policies with AWS WAF, see [Usi
 
 Other services, such as Amazon S3, also support resource\-based permissions policies\. For example, you can attach a policy to an S3 bucket to manage access permissions to that bucket\. AWS WAF doesn't support resource\-based policies\. 
 
-## Specifying Policy Elements: Actions, Effects, Resources, and Principals<a name="access-control-specify-waf-actions"></a>
+## Specifying Policy Elements: Actions, Effects, Resources, and Principals<a name="waf-access-control-specify-actions"></a>
 
 For each AWS WAF resource \(see [AWS WAF Resources and Operations](#access-control-resources)\), the service defines a set of API operations \(see [AWS WAF API Permissions: Actions, Resources, and Conditions Reference](waf-api-permissions-ref.md)\)\. To grant permissions for these API operations, AWS WAF defines a set of actions that you can specify in a policy\. Note that performing an API operation can require permissions for more than one action\. When granting permissions for specific actions, you also identify the resource on which the actions are allowed or denied\.
 

@@ -37,7 +37,7 @@ When you add a geo match condition to a rule, you also can configure AWS WAF Cla
 
 1. Choose a **Region**\.
 
-1. Choose a **Location type** and a country\. **Location type** is currently limited to **Country**\.
+1. Choose a **Location type** and a country\. **Location type** can currently only be **Country**\.
 
 1. Choose **Add location**\.
 
@@ -59,7 +59,7 @@ You can add countries to or delete countries from your geo match condition\.<a n
 
    1. In the right pane, choose **Add filter**\.
 
-   1. Choose a **Location type** and a country\. **Location type** is currently limited to **Country**\.
+   1. Choose a **Location type** and a country\. **Location type** can currently only be **Country**\.
 
    1. Choose **Add**\.
 

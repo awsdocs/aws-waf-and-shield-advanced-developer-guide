@@ -118,7 +118,7 @@ You can choose an existing pattern set, or create a new one\. If you create a ne
 New pattern set name  
 Enter a name and then specify the regex pattern that you want AWS WAF Classic to search for\.   
 If you add multiple regular expressions to a pattern set, those expressions are combined with an *OR*\. That is, a web request will match the pattern set if the appropriate part of the request matches any of the expressions listed\.  
-The maximum length of **Value to match** is 70 characters\. If you want to specify a base64\-encoded value, the limit is 70 characters before encoding\.
+The maximum length of **Value to match** is 70 characters\. 
 
 ## Editing a Regex Match Condition<a name="classic-web-acl-regex-conditions-editing"></a>
 

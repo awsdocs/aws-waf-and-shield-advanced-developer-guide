@@ -1,9 +1,11 @@
-# AWS WAF Limits<a name="limits"></a>
+# AWS WAF Quotas<a name="limits"></a>
 
-AWS WAF has default limits on the number of entities per account\. You can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-waf) in these limits\.
+AWS WAF is subject to the following quotas \(formerly referred to as limits\)\. 
+
+AWS WAF has default quotas on the maximum number of entities you can have per account\. You can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-waf) in these quotas\.
 
 
-| Resource | Default Limit | 
+| Resource | Default quota | 
 | --- | --- | 
 | Web ACLs per Region | 100 | 
 | Rule groups per Region | 100 | 
@@ -12,12 +14,12 @@ AWS WAF has default limits on the number of entities per account\. You can [requ
 | IP sets per Region | 100 | 
 | Requests per second per web ACL \(applies only to Application Load Balancers\) | 10,000 | 
 
-Requests per second \(RPS\) limit for AWS WAF on CloudFront is set by CloudFront and described in the [CloudFront Developer Guide](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html)\.
+The maximum requests per second \(RPS\) allowed for AWS WAF on CloudFront is set by CloudFront and described in the [CloudFront Developer Guide](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html)\.
 
-The following limits on AWS WAF entities can't be changed\.
+The following quotas on AWS WAF entities can't be changed\.
 
 
-| Resource | Default Limit | 
+| Resource | Quota | 
 | --- | --- | 
 | IP addresses in CIDR notation per IP set |  10,000  | 
 | Unique IP addresses that can be blocked per rate\-based rule |  10,000  | 

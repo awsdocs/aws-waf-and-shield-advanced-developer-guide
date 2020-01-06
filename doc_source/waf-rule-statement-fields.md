@@ -39,7 +39,7 @@ The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg
 
 **Body**  
 The part of the request that immediately follows the request headers\. This contains any additional data that is needed for the web request, for example, data from a form\.  
-Only the first 8 KB \(8,192 bytes\) of the request body are forwarded to AWS WAF for inspection\. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining your statement that inspects the body of the web request, such as a string match rule statement, with a size constraint rule statement that enforces an 8 KB size limit on the body of the request\. For information about size constraint statements, see [Size Constraint Rule Statement](waf-rule-statement-type-size-constraint-match.md)\. AWS WAF doesn't support inspecting the entire contents of web requests whose bodies exceed the 8 KB limit\. 
+Only the first 8 KB \(8,192 bytes\) of the request body are forwarded to AWS WAF for inspection\. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining your statement that inspects the body of the web request, such as a string match rule statement, with a size constraint rule statement that enforces an 8 KB max size on the body of the request\. For information about size constraint statements, see [Size Constraint Rule Statement](waf-rule-statement-type-size-constraint-match.md)\. AWS WAF doesn't support inspecting the entire contents of web requests whose bodies exceed 8 KB\. 
 
 ## Text Transformations<a name="waf-rule-statement-transformation"></a>
 

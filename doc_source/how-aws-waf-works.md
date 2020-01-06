@@ -17,7 +17,7 @@ AWS WAF uses web ACL capacity units \(WCU\) to calculate and control the operati
 
 AWS WAF manages capacity for rules, rule groups, and web ACLs:
 + **Rule capacity** – AWS WAF calculates rule capacity when you create or update a rule\. For some basic guidelines for rule capacity requirements, see the listings for the various rule statements at [AWS WAF Rule Statements](waf-rule-statements.md)\. You can also get an idea of the capacity required for the various rule types in the AWS WAF console by creating a web ACL or rule group and adding individual rules to it\. The console displays the capacity units used as you add the rules\. 
-+ **Rule group capacity** – AWS WAF requires that each rule group is assigned an immutable capacity at creation\. This is true for managed rule groups and rule groups that you create through AWS WAF\. When you modify a rule group, your changes must keep the rule group's WCU within its limit\. This ensures that web ACLs that are using the rule group remain within their limits\. 
++ **Rule group capacity** – AWS WAF requires that each rule group is assigned an immutable capacity at creation\. This is true for managed rule groups and rule groups that you create through AWS WAF\. When you modify a rule group, your changes must keep the rule group's WCU within its max quote\. This ensures that web ACLs that are using the rule group remain within their quotas\. 
 + **Web ACL capacity** – The maximum capacity for a web ACL is 1,500, which is sufficient for most use cases\. If you need more capacity, contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\. 
 
 ## AWS WAF Pricing<a name="aws-waf-pricing"></a>

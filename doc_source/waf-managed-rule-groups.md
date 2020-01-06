@@ -14,7 +14,7 @@ AWS and many of the AWS Marketplace sellers are notified of new vulnerabilities 
 **Access to the Rules in a Managed Rule Group**  
 Each AWS Marketplace rule group provides a comprehensive description of the types of attacks and vulnerabilities that it's designed to protect against\. To protect the intellectual property of the rule group providers, you can't view the individual rules within a rule group\. This restriction also helps to keep malicious users from designing threats that specifically circumvent published rules\.
 
-Because you can’t view individual rules in a managed rule group, you also can't edit them\. However, you can exclude specific rules from a rule group when you add it to your web ACL\. You can also override all rule actions in the group to `COUNT`\. For more information, see the following section and also see the steps for adding a managed rule group in the procedure [Creating a Web ACL](web-acl-creating.md)\. 
+You can’t view individual rules in a managed rule group, and you can't edit them\. However, you can exclude specific rules from a rule group when you add it to your web ACL\. You can also override all rule actions in the group to `COUNT`\. For more information, see the following section and also see the steps for adding a managed rule group in the procedure [Creating a Web ACL](web-acl-creating.md)\. 
 
 **Topics**
 + [Working With Managed Rule Groups](waf-using-managed-rule-groups.md)

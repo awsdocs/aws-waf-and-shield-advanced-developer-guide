@@ -92,7 +92,7 @@ For more information about geo match conditions, see [Working with Geographic Ma
 
 1. In the **Create geo match condition** dialog box, for **Name**, enter a name\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\) or the following special characters: \_\-\!"\#`\+\*\},\./ \. 
 
-1. Choose a **Location type** and a country\. **Location type** is currently limited to **Country**\.
+1. Choose a **Location type** and a country\. Currently, **Location type** can only be **Country**\.
 
 1. Choose **Add location**\.
 
@@ -133,7 +133,7 @@ For this example, don't select the check box\.
 **Value to match**  
 Specify the value that you want AWS WAF Classic to search for in the part of web requests that you indicated in **Part of the request to filter on**\.  
 For this example, enter **BadBot**\. AWS WAF Classic will inspect the `User-Agent` header in web requests for the value **BadBot**\.  
-The maximum length of **Value to match** is 50 characters\. If you want to specify a base64\-encoded value, the limit is 50 characters before encoding\.
+The maximum length of **Value to match** is 50 characters\. If you want to specify a base64\-encoded value, you can provide up to 50 characters before encoding\.
 
 1. If you want AWS WAF Classic to inspect web requests for multiple values, such as a `User-Agent` header that contains `BadBot` and a query string that contains `BadParameter`, you have two choices:
    + If you want to allow or block web requests only when they contain both values \(`AND`\), you create one string match condition for each value\. 

@@ -28,9 +28,9 @@ Excluding rules can be helpful when troubleshooting rule groups that are blockin
 
 In addition to excluding specific rules, you can refine your protection by enabling or disabling entire rule groups, as well as choosing the rule group action to perform\. For more information, see [Using AWS Marketplace Rule Groups](#classic-waf-managed-rule-group-using)\. 
 
-## Limits<a name="classic-waf-managed-rule-group-limits"></a>
+## Quotas<a name="classic-waf-managed-rule-group-limits"></a>
 
-You can enable only one AWS Marketplace rule group\. You can also enable one custom rule group that you create using AWS Firewall Manager\. These rule groups count towards the 10 rule limit per web ACL\. Therefore, you can have one AWS Marketplace rule group, one custom rule group, and up to eight custom rules in a single web ACL\.
+You can enable only one AWS Marketplace rule group\. You can also enable one custom rule group that you create using AWS Firewall Manager\. These rule groups count towards the 10 rule maximum quota per web ACL\. Therefore, you can have one AWS Marketplace rule group, one custom rule group, and up to eight custom rules in a single web ACL\.
 
 ## Pricing<a name="classic-waf-managed-rule-group-pricing"></a>
 

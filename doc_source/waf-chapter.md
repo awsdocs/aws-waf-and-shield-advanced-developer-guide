@@ -19,4 +19,4 @@ You can also use AWS WAF to protect your applications that are hosted in Amazon 
 + [Listing IP addresses blocked by rate\-based rules](listing-managed-ips.md)
 + [How AWS WAF Works with Amazon CloudFront Features](cloudfront-features.md)
 + [Security in AWS WAF](security.md)
-+ [AWS WAF Limits](limits.md)
++ [AWS WAF Quotas](limits.md)

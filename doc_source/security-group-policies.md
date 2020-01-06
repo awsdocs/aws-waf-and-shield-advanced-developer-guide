@@ -41,7 +41,7 @@ With a common security group policy, Firewall Manager provides a centrally contr
 For each common security group policy, you provide AWS Firewall Manager with one or more primary security groups:
 + Primary security groups must be created by the Firewall Manager administrator account and can reside in any Amazon VPC instance in the account\. 
 + You manage your primary security groups through Amazon Virtual Private Cloud \(Amazon VPC\) or Amazon Elastic Compute Cloud \(Amazon EC2\)\. For information, see [Working with Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide//VPC_SecurityGroups.html#WorkingWithSecurityGroups) in the [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)\. 
-+ You can name one or more security groups as primaries for a Firewall Manager security group policy\. By default, the number of security groups in a policy is limited to one, but you can submit a request to increase it\. For information, see [AWS Firewall Manager Limits](fms-limits.md)\.
++ You can name one or more security groups as primaries for a Firewall Manager security group policy\. By default, the number of security groups allowed in a policy is one, but you can submit a request to increase it\. For information, see [AWS Firewall Manager Quotas](fms-limits.md)\.
 
 **Policy rules settings**  
 You can choose one or both of the following change control behaviors for the security groups and resources of your common security group policy:

@@ -141,7 +141,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
    1. From the rules options, choose the restrictions that you want to apply to the security group rules and the resources that are within policy scope\. 
 
-   1. For **Primary security groups**, choose **Add primary security group**, and then choose the security group that you want to use\. Firewall Manager populates the list of primary security groups from all Amazon VPC instances in the Firewall Manager administrator account\. The default limit on the number of primary security groups for a policy is one\. For information on increasing the limit, see [AWS Firewall Manager Limits](fms-limits.md)\.
+   1. For **Primary security groups**, choose **Add primary security group**, and then choose the security group that you want to use\. Firewall Manager populates the list of primary security groups from all Amazon VPC instances in the Firewall Manager administrator account\. The default maximum number of primary security groups for a policy is one\. For information on increasing the maximum, see [AWS Firewall Manager Quotas](fms-limits.md)\.
 
    1. For **Policy action**, we recommend creating the policy with the option that doesn't automatically remediate\. This allows you to assess the effects of your new policy before you apply it\. When you are satisfied that the changes are what you want, then edit the policy and change the policy action to enable automatic remediation of noncompliant resources\. 
 
@@ -161,7 +161,7 @@ If you enter more than one tag, a resource must have all the tags to be a match\
 
 1. Review the policy settings to be sure they're what you want, and then choose **Create policy**\.
 
-Firewall Manager creates a replica of the primary security group in every Amazon VPC instance contained within the in\-scope accounts up to the supported Amazon VPC limit per account\. Firewall Manager associates the replica security groups to the resources that are within policy scope for each in\-scope account\. For more information about how this policy works, see [Common Security Group Policies](security-group-policies.md#security-group-policies-common)\.
+Firewall Manager creates a replica of the primary security group in every Amazon VPC instance contained within the in\-scope accounts up to the supported Amazon VPC maximum quota per account\. Firewall Manager associates the replica security groups to the resources that are within policy scope for each in\-scope account\. For more information about how this policy works, see [Common Security Group Policies](security-group-policies.md#security-group-policies-common)\.
 
 ## Creating an AWS Firewall Manager Content Audit Security Group Policy<a name="creating-firewall-manager-policy-audit-security-group"></a>
 
@@ -193,7 +193,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
    1. From the rules options, choose whether to allow only the rules defined in the audit security groups or deny all the rules\. For information on this choice, see [Content Audit Security Group Policies](security-group-policies.md#security-group-policies-audit)\. 
 
-   1. For **Audit security groups**, choose **Add audit security groups**, and then choose the security group that you want to use\. Firewall Manager populates the list of audit security groups from all Amazon VPC instances in the Firewall Manager administrator account\. The default limit on the number of audit security groups for a policy is one\. For information on increasing the limit, see [AWS Firewall Manager Limits](fms-limits.md)\.
+   1. For **Audit security groups**, choose **Add audit security groups**, and then choose the security group that you want to use\. Firewall Manager populates the list of audit security groups from all Amazon VPC instances in the Firewall Manager administrator account\. The default maximum quota for the number of audit security groups for a policy is one\. For information on increasing the quota, see [AWS Firewall Manager Quotas](fms-limits.md)\.
 
    1. For **Policy action**, you must create the policy with the option that doesn't automatically remediate\. This allows you to assess the effects of your new policy before you apply it\. When you are satisfied that the changes are what you want, edit the policy and change the policy action to enable automatic remediation of noncompliant resources\. 
 

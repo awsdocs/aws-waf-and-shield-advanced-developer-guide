@@ -13,10 +13,10 @@ AWS typically bills you less than US $0\.25 per day for the resources that you c
 **Topics**
 + [Step 1: Set Up AWS WAF](#getting-started-aws-account)
 + [Step 2: Create a Web ACL](#getting-started-wizard-create-web-acl)
-+ [Step 4: Add a String Match Rule](#getting-started-wizard-create-string-condition)
-+ [Step 3: Add an AWS Managed Rules Rule Group](#getting-started-wizard-add-rule-group)
-+ [Step 3: Finish Your Web ACL Configuration](#getting-started-wizard-finish-webacl-options)
-+ [Step 8: Clean Up Your Resources](#getting-started-wizard-clean-up)
++ [Step 3: Add a String Match Rule](#getting-started-wizard-create-string-condition)
++ [Step 4: Add an AWS Managed Rules Rule Group](#getting-started-wizard-add-rule-group)
++ [Step 5: Finish Your Web ACL Configuration](#getting-started-wizard-finish-webacl-options)
++ [Step 6: Clean Up Your Resources](#getting-started-wizard-clean-up)
 
 ## Step 1: Set Up AWS WAF<a name="getting-started-aws-account"></a>
 
@@ -52,7 +52,7 @@ You can't change the CloudWatch metric name after you create the web ACL\.
 
 1. Choose **Next**\.
 
-## Step 4: Add a String Match Rule<a name="getting-started-wizard-create-string-condition"></a>
+## Step 3: Add a String Match Rule<a name="getting-started-wizard-create-string-condition"></a>
 
 A string match rule statement identifies strings that you want AWS WAF to search for in a request, such as a specified value in a header or in a query string\. Usually, a string consists of printable ASCII characters, but you can specify any character from hexadecimal 0x00 to 0xFF \(decimal 0 to 255\)\. In this step, you create a rule with a string match statement and indicate what to do with matching requests\. 
 
@@ -84,7 +84,7 @@ If you choose to inspect the web request **Body**, AWS WAF inspects only the fir
 
    For this example, choose **Exactly matches string**\. This indicates that AWS WAF inspects the user\-agent header in each web request for a string that is identical to the string that you specify\.
 
-1. For **String to match**, specify a string that you want AWS WAF to search for\. The maximum length of **String to match** is 200 characters\. If you want to specify a base64\-encoded value, the limit is 200 characters before encoding\.
+1. For **String to match**, specify a string that you want AWS WAF to search for\. The maximum length of **String to match** is 200 characters\. If you want to specify a base64\-encoded value, you can specify up to 200 characters before encoding\.
 
    For this example, enter **BadBot**\. AWS WAF will inspect the `User-Agent` header in web requests for the value `BadBot`\.
 
@@ -96,7 +96,7 @@ If you choose to inspect the web request **Body**, AWS WAF inspects only the fir
 
 1. Choose **Add rule**\.
 
-## Step 3: Add an AWS Managed Rules Rule Group<a name="getting-started-wizard-add-rule-group"></a>
+## Step 4: Add an AWS Managed Rules Rule Group<a name="getting-started-wizard-add-rule-group"></a>
 
 AWS Managed Rules offers a set of managed rule groups for your use, free of charge to AWS WAF customers\. For more information about rule groups, see [Rule Groups](waf-rule-groups.md)\. We'll add an AWS Managed Rules rule group to this web ACL\. <a name="getting-started-wizard-add-rule-group-procedure"></a>
 
@@ -112,7 +112,7 @@ AWS Managed Rules offers a set of managed rule groups for your use, free of char
 
 1. Choose **Next**\.
 
-## Step 3: Finish Your Web ACL Configuration<a name="getting-started-wizard-finish-webacl-options"></a>
+## Step 5: Finish Your Web ACL Configuration<a name="getting-started-wizard-finish-webacl-options"></a>
 
 When you're done adding rules and rule groups to your web ACL configuration, finish up by managing the priority of the rules in the web ACL and configuring settings like metrics, tagging, and logging\. 
 
@@ -134,7 +134,7 @@ When you're done adding rules and rule groups to your web ACL configuration, fin
 
 The wizard returns you to the **Web ACL** page, where your new web ACL is listed\.
 
-## Step 8: Clean Up Your Resources<a name="getting-started-wizard-clean-up"></a>
+## Step 6: Clean Up Your Resources<a name="getting-started-wizard-clean-up"></a>
 
 You've now successfully completed the tutorial\. To prevent your account from accruing additional AWS WAF charges, clean up the AWS WAF objects that you created\. Alternatively, you can change the configuration to match the web requests that you really want to allow, block, and count\.
 

@@ -16,7 +16,7 @@ For more information about service\-linked roles and the `iam:CreateServiceLinke
 1. Create an Amazon Kinesis Data Firehose using a name starting with the prefix `aws-waf-logs-`\. For example, `aws-waf-logs-us-east-2-analytics`\. Create the data firehose with a `PUT` source and in the region that you are operating\. If you are capturing logs for Amazon CloudFront, create the firehose in US East \(N\. Virginia\)\. For more information, see [Creating an Amazon Kinesis Data Firehose Delivery Stream](https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html)\.
 **Important**  
 Do not choose `Kinesis stream` as your source\.  
-One AWS WAF log is equivalent to one Kinesis Data Firehose record\. If you typically receive 10,000 requests per second and you enable full logs, you should have a 10,000 records per second limit in Kinesis Data Firehose\. If you don't configure Kinesis Data Firehose correctly, AWS WAF won't record all logs\. For more information, see [Amazon Kinesis Data Firehose Limits](https://docs.aws.amazon.com/firehose/latest/dev/limits.html)\. 
+One AWS WAF log is equivalent to one Kinesis Data Firehose record\. If you typically receive 10,000 requests per second and you enable full logs, you should have a 10,000 records per second setting in Kinesis Data Firehose\. If you don't configure Kinesis Data Firehose correctly, AWS WAF won't record all logs\. For more information, see [Amazon Kinesis Data Firehose Quotas](https://docs.aws.amazon.com/firehose/latest/dev/limits.html)\. 
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
@@ -44,75 +44,59 @@ When you successfully enable logging, AWS WAF will create a service linked role 
 
 1. In the dialog box, choose **Disable logging**\.
 
-**Example Example Log**  
+**Example Example log**  
 
 ```
 {
-			
-	"timestamp":1533689070589,                            
-	"formatVersion":1,                                   
-	"webaclId":"385cb038-3a6f-4f2f-ac64-09ab912af590",  
-	"terminatingRuleId":"Default_Action",                
-	"terminatingRuleType":"REGULAR",                     
-	"action":"ALLOW",                                    
-	"httpSourceName":"CF",                               
-	"httpSourceId":"i-123",                             
-	"ruleGroupList":[                                    
-                         {  
-                          "ruleGroupId":"41f4eb08-4e1b-2985-92b5-e8abf434fad3",
-                          "terminatingRule":null,    
-                          "nonTerminatingMatchingRules":[                  
-                                                         {"action" : "COUNT",   
-                                                         "ruleId" : "4659b169-2083-4a91-bbd4-08851a9aaf74"}       
-                                                        ]
-                          "excludedRules":              [
-                                                         {"exclusionType" : "EXCLUDED_AS_COUNT",   
-                                                          "ruleId" : "5432a230-0113-5b83-bbb2-89375c5bfa98"}
-                                                        ]                          
-                         }
-                        ],
-     
-	"rateBasedRuleList":[                                 
-                             {  
-                              "rateBasedRuleId":"7c968ef6-32ec-4fee-96cc-51198e412e7f",   
-                              "limitKey":"IP",
-                              "maxRateAllowed":100                                                                                           
-                             },
-                             {  
-                              "rateBasedRuleId":"462b169-2083-4a93-bbd4-08851a9aaf30",
-                              "limitKey":"IP",
-                              "maxRateAllowed":100
-                              }
-                              ],
-			
-	"nonTerminatingMatchingRules":[                                
-                                       {"action" : "COUNT",                                                           
-                                       "ruleId" : "4659b181-2011-4a91-bbd4-08851a9aaf52"}    
-                                      ],
-                                  
-	"httpRequest":{                                                             
-                       "clientIp":"192.10.23.23",                                           
-                       "country":"US",                                                         
-                       "headers":[                                                                 
-                                   {  
-                                    "name":"Host",
-                                    "value":"127.0.0.1:1989"
-                                   },
-                                   {  
-                                    "name":"User-Agent",
-                                    "value":"curl/7.51.2"
-                                   },
-                                   {  
-                                    "name":"Accept",
-                                    "value":"*/*"
-                                   }
-                                 ],
-                      "uri":"REDACTED",                                                
-                      "args":"usernam=abc",                                         
-                      "httpVersion":"HTTP/1.1",
-                      "httpMethod":"GET",
-                      "requestId":"cloud front Request id"                    
-                      }
+    "timestamp": 1576280412771,
+    "formatVersion": 1,
+    "webaclId": "arn:aws:wafv2:ap-southeast-2:EXAMPLE12345:regional/webacl/STMTest/1EXAMPLE-2ARN-3ARN-4ARN-123456EXAMPLE,
+    "terminatingRuleId": "STMTest_SQLi_XSS",
+    "terminatingRuleType": "REGULAR",
+    "action": "BLOCK",
+    "terminatingRuleMatchDetails": [
+        {
+            "conditionType": "SQL_INJECTION",
+            "location": "HEADER",
+            "matchedData": [
+                "10",
+                "AND",
+                "1"
+            ]
+        }
+    ],
+    "httpSourceName": "-",
+    "httpSourceId": "-",
+    "ruleGroupList": [],
+    "rateBasedRuleList": [],
+    "nonTerminatingMatchingRules": [],
+    "httpRequest": {
+        "clientIp": "1.1.1.1",
+        "country": "AU",
+        "headers": [
+            {
+                "name": "Host",
+                "value": "localhost:1989"
+            },
+            {
+                "name": "User-Agent",
+                "value": "curl/7.61.1"
+            },
+            {
+                "name": "Accept",
+                "value": "*/*"
+            },
+            {
+                "name": "x-stm-test",
+                "value": "10 AND 1=1"
+            }
+        ],
+        "uri": "/foo",
+        "args": "",
+        "httpVersion": "HTTP/1.1",
+        "httpMethod": "GET",
+        "requestId": "rid"
+    }
 }
 ```
 
@@ -136,6 +120,9 @@ The type of rule that terminated the request\. Possible values: RATE\_BASED, REG
 **action**  
 The action\. Possible values for a terminating rule: ALLOW and BLOCK\. COUNT is not a valid value for a terminating rule\.
 
+**terminatingRuleMatchDetails**  
+Detailed information about the terminating rule that matched the request\. A terminating rule has an action that ends the inspection process against a web request\. Possible actions for a terminating rule are ALLOW and BLOCK\. This is only populated for SQL injection and cross\-site scripting \(XSS\) match rule statements\. As with all rule statements that inspect for more than one thing, AWS WAF applies the action on the first match and stops inspecting the web request\. A web request with a terminating action could contain other threats, in addition to the one reported in the log\.
+
 **httpSourceName**  
 The source of the request\. Possible values: CF \(if the source is Amazon CloudFront\), APIGW \(if the source is Amazon API Gateway\), and ALB \(if the source is an Application Load Balancer\)\.
 
@@ -152,7 +139,7 @@ The ID of the rule group\. If the rule blocked the request, the ID for `ruleGrou
 The rule within the rule group that terminated the request\. If this is a non\-null value, it also contains a **ruleid** and **action**\. In this case, the action is always BLOCK\.
 
 **nonTerminatingMatchingRules**  
-The list of rules in the rule group that match the request\. These are always COUNT rules \(non\-terminating rules that match\)\.
+The list of non\-terminating rules in the rule group that match the request\. These are always COUNT rules \(non\-terminating rules that match\)\.
 
 **action \(nonTerminatingMatchingRules group\)**  
 This is always COUNT \(non\-terminating rules that match\)\.

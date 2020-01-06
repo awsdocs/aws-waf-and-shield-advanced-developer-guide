@@ -16,7 +16,7 @@ You can't change the name after you create the rule group\.
 
 1. Add rules to the rule group using the **Rule builder** wizard, the same as you do in web ACL management\. The only difference is that you can't add a rule group to another rule group\. 
 
-1. For **Capacity**, set the limit for the rule group's use of web ACL capacity units \(WCUs\)\. This is an immutable limit\. For information about WCUs, see [AWS WAF Web ACL Capacity Units \(WCU\)](how-aws-waf-works.md#aws-waf-capacity-units)\. 
+1. For **Capacity**, set the maximum for the rule group's use of web ACL capacity units \(WCUs\)\. This is an immutable setting\. For information about WCUs, see [AWS WAF Web ACL Capacity Units \(WCU\)](how-aws-waf-works.md#aws-waf-capacity-units)\. 
 
    As you add rules to the rule group, the**Add rules and set capacity** pane displays the minimum required capacity, which is based on the rules that you've already added\. You can use this and your future plans for the rule group to help estimate the capacity that the rule group will require\. 
 

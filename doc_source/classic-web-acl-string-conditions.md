@@ -130,7 +130,7 @@ Decode a URL\-encoded request\.
 If the value in **Value to match** is base64\-encoded, select this check box\. Use base64\-encoding to specify non\-printable characters, such as tabs and linefeeds, that attackers include in their requests\.
 
 **Value to match**  
-Specify the value that you want AWS WAF Classic to search for in web requests\. The maximum length is 50 bytes\. If you're base64\-encoding the value, the 50\-byte limit applies to the value before you encode it\.
+Specify the value that you want AWS WAF Classic to search for in web requests\. The maximum length is 50 bytes\. If you're base64\-encoding the value, the 50\-byte maximum length applies to the value before you encode it\.
 
 ## Adding and Deleting Filters in a String Match Condition<a name="classic-web-acl-string-conditions-editing"></a>
 

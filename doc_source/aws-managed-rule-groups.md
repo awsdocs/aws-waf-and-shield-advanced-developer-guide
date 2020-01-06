@@ -1,6 +1,6 @@
 # AWS Managed Rules for AWS WAF<a name="aws-managed-rule-groups"></a>
 
-AWS Managed Rules for AWS WAF is a managed service that provides protection against common application vulnerabilities or other unwanted traffic, without having to write your own rules\. You have the option of selecting one or more rule groups from AWS Managed Rules for each web ACL, up to the allowed web ACL capacity unit \(WCU\) limit\. You can choose whether to count \(monitor\) or block requests that are matched by the managed rules\.
+AWS Managed Rules for AWS WAF is a managed service that provides protection against common application vulnerabilities or other unwanted traffic, without having to write your own rules\. You have the option of selecting one or more rule groups from AWS Managed Rules for each web ACL, up to the allowed maximum web ACL capacity unit \(WCU\) limit\. You can choose whether to count \(monitor\) or block requests that are matched by the managed rules\.
 
 As a best practice, before using a rule group in production, test it in a non\-production environment, with the action override set to count\. Evaluate the rule group using Amazon CloudWatch metrics combined with AWS WAF sampled requests or AWS WAF logs\. When you're satisfied that the rule group does what you want, remove the override on the group\. 
 

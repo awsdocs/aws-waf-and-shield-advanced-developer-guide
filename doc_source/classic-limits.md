@@ -1,26 +1,28 @@
-# AWS WAF Classic Limits<a name="classic-limits"></a>
+# AWS WAF Classic Quotas<a name="classic-limits"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
-AWS WAF Classic has default limits on the number of entities per account\. You can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-waf) in these limits\.
+AWS WAF Classic is subject to the following quotas \(formerly referred to as limits\)\. 
+
+AWS WAF Classic has default quotas on the number of entities per account\. You can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-waf) to these\.
 
 
-| Resource | Default Limit | 
+| Resource | Default quota | 
 | --- | --- | 
 | Web ACLs per AWS account per Region | 50 | 
 | Rules per AWS account per Region | 100 | 
 | Rate\-based\-rules per AWS account per Region | 5 | 
-| Conditions per AWS account per Region | 100 of each condition type \(For example: 100 size constraint conditions, 100 IP match conditions, and so on\. The exception is regex match conditions\. You can have a maximum of 10 regex match conditions per account per Region\. This limit cannot be increased\.\) | 
+| Conditions per AWS account per Region | 100 of each condition type \(For example: 100 size constraint conditions, 100 IP match conditions, and so on\. The exception is regex match conditions\. You can have a maximum of 10 regex match conditions per account per Region\. This quota cannot be increased\.\) | 
 | Requests per Second | 10,000 per web ACL\* | 
 
-\*This limit applies only to AWS WAF Classic on an Application Load Balancer\. Requests per Second \(RPS\) limits for AWS WAF Classic on CloudFront are the same as the RPS limits support by CloudFront that is described in the [CloudFront Developer Guide](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html)\.
+\*This quota applies only to AWS WAF Classic on an Application Load Balancer\. Requests per Second \(RPS\) quotas for AWS WAF Classic on CloudFront are the same as the RPS quotas support by CloudFront that is described in the [CloudFront Developer Guide](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html)\.
 
-The following limits on AWS WAF Classic entities can't be changed\.
+The following quotas on AWS WAF Classic entities can't be changed\.
 
 
-| Resource | Limit | 
+| Resource | Quota | 
 | --- | --- | 
 | Rule groups per web ACL | 2: 1 customer\-created rule group and 1 AWS Marketplace rule group | 
 | Rules per web ACL | 10 | 
