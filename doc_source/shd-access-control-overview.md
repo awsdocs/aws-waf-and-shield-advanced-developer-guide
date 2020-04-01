@@ -1,4 +1,4 @@
-# Overview of Managing Access Permissions to Your AWS Shield Resources<a name="shd-access-control-overview"></a>
+# Overview of managing access permissions to your AWS Shield resources<a name="shd-access-control-overview"></a>
 
 Every AWS resource is owned by an AWS account, and permissions to create or access a resource are governed by permissions policies\. An account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\)\. Some services also support attaching permissions policies to resources\.
 
@@ -8,13 +8,13 @@ An *account administrator* \(or administrator user\) is a user with administrato
 When granting permissions, you decide who is getting the permissions, the resources they get permissions for, and the specific operations that you want to allow on those resources\.
 
 ## Topics<a name="shd-topics1"></a>
-+ [AWS Shield Resources and Operations](#shd-access-control-resources)
-+ [Understanding Resource Ownership](#shd-access-control-resource-ownership)
-+  [Managing Access to Resources ](#shd-access-control-manage-access-intro)
-+ [Specifying Policy Elements: Actions, Effects, Resources, and Principals](#shd-access-control-specify-actions)
-+ [Specifying Conditions in a Policy](#shd-specifying-conditions)
++ [AWS Shield resources and operations](#shd-access-control-resources)
++ [Understanding resource ownership](#shd-access-control-resource-ownership)
++  [Managing access to resources ](#shd-access-control-manage-access-intro)
++ [Specifying policy elements: Actions, effects, resources, and principals](#shd-access-control-specify-actions)
++ [Specifying conditions in a policy](#shd-specifying-conditions)
 
-## AWS Shield Resources and Operations<a name="shd-access-control-resources"></a>
+## AWS Shield resources and operations<a name="shd-access-control-resources"></a>
 
 In AWS Shield, the resources are *protections* and *attacks*\. These resources have unique Amazon Resource Names \(ARNs\) associated with them, as shown in the following table\. 
 
@@ -47,7 +47,7 @@ For more information, see [Resources](https://docs.aws.amazon.com/IAM/latest/Use
 
 AWS Shield provides a set of operations to work with Shield resources\. For a list of available operations, see [Actions](https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_Operations.html)\.
 
-## Understanding Resource Ownership<a name="shd-access-control-resource-ownership"></a>
+## Understanding resource ownership<a name="shd-access-control-resource-ownership"></a>
 
 A *resource owner* is the AWS account that creates the resource\. That is, the resource owner is the AWS account of the *principal entity* \(the root account, an IAM user, or an IAM role\) that authenticates the request that creates the resource\. The following examples illustrate how this works:
 + If you use the root account credentials of your AWS account to create a Shield resource, your AWS account is the owner of the resource\.
@@ -55,7 +55,7 @@ A *resource owner* is the AWS account that creates the resource\. That is, the r
 + If you create an IAM role in your AWS account with permissions to create a Shield resource, anyone who can assume the role can create a Shield resource\. Your AWS account, to which the role belongs, owns the Shield resource\. 
 + With AWS Shield, to create a protection or describe an attack associated with a specific resource, a user must have an access to the resource itself in addition to having access to the Shield resource\. For example to create a protection for an Amazon CloudFront distribution, the user needs read access for the distribution to protect\. To describe an attack against a CloudFront distribution, the user needs read access to the distribution\.
 
-## Managing Access to Resources<a name="shd-access-control-manage-access-intro"></a>
+## Managing access to resources<a name="shd-access-control-manage-access-intro"></a>
 
 A *permissions policy* describes who has access to what\. The following sections explain the available options for creating permissions policies\.
 
@@ -65,10 +65,10 @@ These sections discuss using IAM in the context of AWS Shield\. It doesn't provi
 Policies that are attached to an IAM identity are known as *identity\-based* policies, and policies that are attached to a resource are known as *resource\-based* policies\. AWS Shield supports only identity\-based policies\.
 
 ### Topics<a name="shd-topics2"></a>
-+ [Identity\-based Policies \(IAM Policies\)](#shd-access-control-manage-access-identity-based)
-+ [Resource\-based Policies](#shd-access-control-manage-access-resource-based)
++ [Identity\-based policies \(IAM policies\)](#shd-access-control-manage-access-identity-based)
++ [Resource\-based policies](#shd-access-control-manage-access-resource-based)
 
-### Identity\-based Policies \(IAM Policies\)<a name="shd-access-control-manage-access-identity-based"></a>
+### Identity\-based policies \(IAM policies\)<a name="shd-access-control-manage-access-identity-based"></a>
 
 You can attach policies to IAM identities\. For example, you can do the following: 
 + **Attach a permissions policy to a user or a group in your account** – An account administrator can use a permissions policy that is associated with a particular user to grant permissions for that user to create an Shield resource\. 
@@ -102,27 +102,27 @@ The following is an example policy that grants permissions for the `shield:ListP
 }
 ```
 
-For more information about using identity\-based policies with Shield, see [Using Identity\-based Policies \(IAM Policies\) for AWS Shield](shd-access-control-identity-based.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
+For more information about using identity\-based policies with Shield, see [Using identity\-based policies \(IAM policies\) for AWS Shield](shd-access-control-identity-based.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
 
-### Resource\-based Policies<a name="shd-access-control-manage-access-resource-based"></a>
+### Resource\-based policies<a name="shd-access-control-manage-access-resource-based"></a>
 
 Other services, such as Amazon S3, also support resource\-based permissions policies\. For example, you can attach a policy to an S3 bucket to manage access permissions to that bucket\. AWS Shield doesn't support resource\-based policies\. 
 
-## Specifying Policy Elements: Actions, Effects, Resources, and Principals<a name="shd-access-control-specify-actions"></a>
+## Specifying policy elements: Actions, effects, resources, and principals<a name="shd-access-control-specify-actions"></a>
 
-For each AWS Shield resource \(see [AWS Shield Resources and Operations](#shd-access-control-resources)\), the service defines a set of API operations \(see [Shield Required Permissions for API Actions](shd-api-permissions-ref.md)\)\. To grant permissions for these API operations, Shield defines a set of actions that you can specify in a policy\. Note that performing an API operation can require permissions for more than one action\. When granting permissions for specific actions, you also identify the resource on which the actions are allowed or denied\.
+For each AWS Shield resource \(see [AWS Shield resources and operations](#shd-access-control-resources)\), the service defines a set of API operations \(see [Shield required permissions for API actions](shd-api-permissions-ref.md)\)\. To grant permissions for these API operations, Shield defines a set of actions that you can specify in a policy\. Note that performing an API operation can require permissions for more than one action\. When granting permissions for specific actions, you also identify the resource on which the actions are allowed or denied\.
 
 The following are the most basic policy elements:
-+ **Resource** – In a policy, you use an Amazon Resource Name \(ARN\) to identify the resource to which the policy applies\. For more information, see [AWS Shield Resources and Operations](#shd-access-control-resources)\. 
++ **Resource** – In a policy, you use an Amazon Resource Name \(ARN\) to identify the resource to which the policy applies\. For more information, see [AWS Shield resources and operations](#shd-access-control-resources)\. 
 + **Action** – You use action keywords to identify resource operations that you want to allow or deny\. For example, the `shield:CreateRuleGroup` permission allows the user permissions to perform the AWS Shield `CreateRuleGroup` operation\. 
 + **Effect** – You specify the effect when the user requests the specific action\. This can be either allow or deny\. If you don't explicitly grant access to a resource, access is implicitly denied\. You also can explicitly deny access to a resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
 + **Principal** – In identity\-based policies \(IAM policies\), the user that the policy is attached to is the implicit principal\. AWS Shield doesn't support resource\-based policies\.
 
 To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
-For a table that shows all the AWS Shield API actions and the resources that they apply to, see [Shield Required Permissions for API Actions](shd-api-permissions-ref.md)\. 
+For a table that shows all the AWS Shield API actions and the resources that they apply to, see [Shield required permissions for API actions](shd-api-permissions-ref.md)\. 
 
-## Specifying Conditions in a Policy<a name="shd-specifying-conditions"></a>
+## Specifying conditions in a policy<a name="shd-specifying-conditions"></a>
 
 When you grant permissions, you can use the IAM policy language to specify the conditions when a policy should take effect\. For example, you might want a policy to be applied only after a specific date\. For more information about specifying conditions in a policy language, see [Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Condition) in the *IAM User Guide*\.
 

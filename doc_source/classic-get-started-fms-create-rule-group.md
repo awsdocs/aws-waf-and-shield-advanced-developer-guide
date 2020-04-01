@@ -1,8 +1,12 @@
-# Step 3: Create a Rule Group<a name="get-started-fms-create-rule-group"></a>
+# Step 3: Create a rule group<a name="classic-get-started-fms-create-rule-group"></a>
 
-A rule group is a set of rules that defines what actions to take when a particular set of conditions is met\. You can use managed rule groups from AWS Managed Rules or AWS Marketplace, and you can create your own rule groups\. For information about managed rule groups, see [AWS Marketplace Rule Groups](classic-waf-managed-rule-groups.md)\.
+**Note**  
+This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+**For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
-To create your own rule group, perform the following procedure\.<a name="get-started-fms-create-rule-group-procedure"></a>
+A rule group is a set of rules that defines what actions to take when a particular set of conditions is met\. You can use managed rule groups from AWS Marketplace, and you can create your own rule groups\. For information about managed rule groups, see [AWS marketplace rule groups](classic-waf-managed-rule-groups.md)\.
+
+To create your own rule group, perform the following procedure\.<a name="classic-get-started-fms-create-rule-group-procedure"></a>
 
 **To create a rule group \(console\)**
 
@@ -13,6 +17,8 @@ To create your own rule group, perform the following procedure\.<a name="get-sta
 1. If you have not met the prerequisites, the console displays instructions about how to fix any issues\. Follow the instructions, and then begin this step \(create a rule group\) again\. If you have met the prerequisites, choose **Close**\. 
 
 1. Choose **Create policy**\.
+
+   For **Policy type**, choose **AWS WAF Classic**\. 
 
 1. Choose **Create an AWS Firewall Manager policy and add a new rule group**\.
 
@@ -32,4 +38,4 @@ To create your own rule group, perform the following procedure\.<a name="get-sta
 
 1. Choose **Create**\.
 
-You are now ready to go to [Step 4: Create and Apply an AWS Firewall Manager AWS WAF Classic Policy](get-started-fms-create-security-policy.md)\.
+You are now ready to go to [Step 4: Create and apply an AWS Firewall Manager AWS WAF Classic policy](classic-get-started-fms-create-security-policy.md)\.

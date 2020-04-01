@@ -1,5 +1,5 @@
-# AWS Firewall Manager Pricing<a name="aws-fms-pricing"></a>
+# AWS Firewall Manager pricing<a name="aws-fms-pricing"></a>
 
 ## <a name="fms-pricing"></a>
 
-Charges incurred by AWS Firewall Manager are for the underlying services, such as AWS WAF Classic and AWS Config\. For more information, see [AWS Firewall Manager Pricing](https://aws.amazon.com/firewall-manager/pricing)\. 
+Charges incurred by AWS Firewall Manager are for the underlying services, such as AWS WAF and AWS Config\. For more information, see [AWS Firewall Manager Pricing](https://aws.amazon.com/firewall-manager/pricing)\. 

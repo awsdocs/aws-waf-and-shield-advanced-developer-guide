@@ -1,4 +1,4 @@
-# Working with Size Constraint Conditions<a name="classic-web-acl-size-conditions"></a>
+# Working with size constraint conditions<a name="classic-web-acl-size-conditions"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -9,12 +9,12 @@ If you want to allow or block web requests based on the length of specified part
 Note that if you configure AWS WAF Classic to inspect the request body, for example, by searching the body for a specified string, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\)\. If the request body for your web requests will never exceed 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes\.
 
 **Topics**
-+ [Creating Size Constraint Conditions](#classic-web-acl-size-conditions-creating)
-+ [Values That You Specify When You Create or Edit Size Constraint Conditions](#classic-web-acl-size-conditions-values)
-+ [Adding and Deleting Filters in a Size Constraint Condition](#classic-web-acl-size-conditions-editing)
-+ [Deleting Size Constraint Conditions](#classic-web-acl-size-conditions-deleting)
++ [Creating size constraint conditions](#classic-web-acl-size-conditions-creating)
++ [Values that you specify when you create or edit size constraint conditions](#classic-web-acl-size-conditions-values)
++ [Adding and deleting filters in a size constraint condition](#classic-web-acl-size-conditions-editing)
++ [Deleting size constraint conditions](#classic-web-acl-size-conditions-deleting)
 
-## Creating Size Constraint Conditions<a name="classic-web-acl-size-conditions-creating"></a>
+## Creating size constraint conditions<a name="classic-web-acl-size-conditions-creating"></a>
 
 When you create size constraint conditions, you specify filters that identify the part of web requests for which you want AWS WAF Classic to evaluate the length\. You can add more than one filter to a size constraint condition, or you can create a separate condition for each filter\. Here's how each configuration affects AWS WAF Classic behavior:
 + **One filter per size constraint condition** – When you add the separate size constraint conditions to a rule and add the rule to a web ACL, web requests must match all the conditions for AWS WAF Classic to allow or block requests based on the conditions\. 
@@ -35,7 +35,7 @@ When you add a size constraint condition to a rule, you also can configure AWS W
 
 1. Choose **Create condition**\.
 
-1. Specify the applicable filter settings\. For more information, see [Values That You Specify When You Create or Edit Size Constraint Conditions](#classic-web-acl-size-conditions-values)\.
+1. Specify the applicable filter settings\. For more information, see [Values that you specify when you create or edit size constraint conditions](#classic-web-acl-size-conditions-values)\.
 
 1. Choose **Add another filter**\.
 
@@ -43,7 +43,7 @@ When you add a size constraint condition to a rule, you also can configure AWS W
 
 1. When you're finished adding filters, choose **Create size constraint condition**\.
 
-## Values That You Specify When You Create or Edit Size Constraint Conditions<a name="classic-web-acl-size-conditions-values"></a>
+## Values that you specify when you create or edit size constraint conditions<a name="classic-web-acl-size-conditions-values"></a>
 
 When you create or update a size constraint condition, you specify the following values: 
 
@@ -116,7 +116,7 @@ For requests that contain operating system command line commands, use this optio
 **URL decode**  
 Decode a URL\-encoded request\.
 
-## Adding and Deleting Filters in a Size Constraint Condition<a name="classic-web-acl-size-conditions-editing"></a>
+## Adding and deleting filters in a size constraint condition<a name="classic-web-acl-size-conditions-editing"></a>
 
 You can add or delete filters in a size constraint condition\. To change a filter, add a new one and delete the old one\.<a name="classic-web-acl-size-conditions-editing-procedure"></a>
 
@@ -132,7 +132,7 @@ You can add or delete filters in a size constraint condition\. To change a filte
 
    1. Choose **Add filter**\.
 
-   1. Specify the applicable filter settings\. For more information, see [Values That You Specify When You Create or Edit Size Constraint Conditions](#classic-web-acl-size-conditions-values)\.
+   1. Specify the applicable filter settings\. For more information, see [Values that you specify when you create or edit size constraint conditions](#classic-web-acl-size-conditions-values)\.
 
    1. Choose **Add**\.
 
@@ -142,7 +142,7 @@ You can add or delete filters in a size constraint condition\. To change a filte
 
    1. Choose **Delete filter**\.
 
-## Deleting Size Constraint Conditions<a name="classic-web-acl-size-conditions-deleting"></a>
+## Deleting size constraint conditions<a name="classic-web-acl-size-conditions-deleting"></a>
 
 If you want to delete a size constraint condition, you need to first delete all filters in the condition and remove the condition from all the rules that are using it, as described in the following procedure\.<a name="classic-web-acl-size-conditions-deleting-procedure"></a>
 

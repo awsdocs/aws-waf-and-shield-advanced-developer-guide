@@ -1,4 +1,4 @@
-# Deleting an IP Set<a name="waf-ip-set-deleting"></a>
+# Deleting an IP set<a name="waf-ip-set-deleting"></a>
 
 Follow the guidance in this section to delete a referenced set\.
 

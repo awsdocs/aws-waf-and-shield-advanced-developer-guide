@@ -1,4 +1,4 @@
-# Creating a Regex Pattern IP Set<a name="waf-regex-pattern-set-creating"></a>
+# Creating a regex pattern set<a name="waf-regex-pattern-set-creating"></a>
 
 Follow the procedure in this section to create a new regex pattern set\.
 
@@ -16,14 +16,9 @@ You can't change the name after you create the regex pattern set\.
 
 1. In the **Regular expressions** text box, enter one regex pattern per line\. 
 
-   Here are some examples:
-   + To specify the IPv4 address 192\.0\.2\.44, type **192\.0\.2\.44/32**\.
-   + To specify the IPv6 address 0:0:0:0:0:ffff:c000:22c, type **0:0:0:0:0:ffff:c000:22c/128**\.
-   + To specify the range of IPv4 addresses from 192\.0\.2\.0 to 192\.0\.2\.255, type **192\.0\.2\.0/24**\.
-   + To specify the range of IPv6 addresses from 2620:0:2d0:200:0:0:0:0 to 2620:0:2d0:200:ffff:ffff:ffff:ffff, enter **2620:0:2d0:200::/64**\.
+   For example, the regular expression `I[a@]mAB[a@]dRequest` matches the following strings: `IamABadRequest`, `IamAB@dRequest`, `I@mABadRequest`, and `I@mAB@dRequest`\.
 
-**Regex pattern use limitations**  
-AWS WAF supports [standard Perl Compatible Regular Expressions \(PCRE\)](http://www.pcre.org/) with the following exceptions, which it doesn't support: 
+   AWS WAF supports [standard Perl Compatible Regular Expressions \(PCRE\)](http://www.pcre.org/) with the following exceptions, which it doesn't support: 
    + Backreferences and capturing subexpressions
    + Arbitrary zero\-width assertions
    + Subroutine references and recursive patterns

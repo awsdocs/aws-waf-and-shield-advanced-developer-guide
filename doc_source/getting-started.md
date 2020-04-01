@@ -1,4 +1,4 @@
-# Getting Started with AWS WAF<a name="getting-started"></a>
+# Getting started with AWS WAF<a name="getting-started"></a>
 
 This tutorial shows how to use AWS WAF to perform the following tasks:
 + Set up AWS WAF\.
@@ -11,18 +11,18 @@ This tutorial shows how to use AWS WAF to perform the following tasks:
 AWS typically bills you less than US $0\.25 per day for the resources that you create during this tutorial\. When you're finished with the tutorial, we recommend that you delete the resources to prevent incurring unnecessary charges\. 
 
 **Topics**
-+ [Step 1: Set Up AWS WAF](#getting-started-aws-account)
++ [Step 1: Set up AWS WAF](#getting-started-aws-account)
 + [Step 2: Create a Web ACL](#getting-started-wizard-create-web-acl)
-+ [Step 3: Add a String Match Rule](#getting-started-wizard-create-string-condition)
-+ [Step 4: Add an AWS Managed Rules Rule Group](#getting-started-wizard-add-rule-group)
-+ [Step 5: Finish Your Web ACL Configuration](#getting-started-wizard-finish-webacl-options)
-+ [Step 6: Clean Up Your Resources](#getting-started-wizard-clean-up)
++ [Step 3: Add a string match rule](#getting-started-wizard-create-string-condition)
++ [Step 4: Add an AWS Managed Rules rule group](#getting-started-wizard-add-rule-group)
++ [Step 5: Finish your Web ACL configuration](#getting-started-wizard-finish-webacl-options)
++ [Step 6: Clean up your resources](#getting-started-wizard-clean-up)
 
-## Step 1: Set Up AWS WAF<a name="getting-started-aws-account"></a>
+## Step 1: Set up AWS WAF<a name="getting-started-aws-account"></a>
 
-If you already signed up for an AWS account and created an IAM user as described in [Setting Up](setting-up-waf.md), go to [Step 2: Create a Web ACL](#getting-started-wizard-create-web-acl)\.
+If you already signed up for an AWS account and created an IAM user as described in [Setting up](setting-up-waf.md), go to [Step 2: Create a Web ACL](#getting-started-wizard-create-web-acl)\.
 
-If not, go to [Setting Up](setting-up-waf.md) and perform at least the first two steps\. \(You can skip downloading tools for now because this Getting Started topic focuses on using the AWS WAF console\.\)
+If not, go to [Setting up](setting-up-waf.md) and perform at least the first two steps\. \(You can skip downloading tools for now because this Getting Started topic focuses on using the AWS WAF console\.\)
 
 ## Step 2: Create a Web ACL<a name="getting-started-wizard-create-web-acl"></a>
 
@@ -52,12 +52,12 @@ You can't change the CloudWatch metric name after you create the web ACL\.
 
 1. Choose **Next**\.
 
-## Step 3: Add a String Match Rule<a name="getting-started-wizard-create-string-condition"></a>
+## Step 3: Add a string match rule<a name="getting-started-wizard-create-string-condition"></a>
 
 A string match rule statement identifies strings that you want AWS WAF to search for in a request, such as a specified value in a header or in a query string\. Usually, a string consists of printable ASCII characters, but you can specify any character from hexadecimal 0x00 to 0xFF \(decimal 0 to 255\)\. In this step, you create a rule with a string match statement and indicate what to do with matching requests\. 
 
 **Note**  
-For more information about string match rule statements, see [String Match Rule Statement](waf-rule-statement-type-string-match.md)\.<a name="getting-started-wizard-create-string-condition-procedure"></a>
+For more information about string match rule statements, see [String match rule statement](waf-rule-statement-type-string-match.md)\.<a name="getting-started-wizard-create-string-condition-procedure"></a>
 
 **To create a string match rule statement**
 
@@ -78,7 +78,7 @@ This procedure uses the **Rule visual editor**\.
 
    When you choose **Header**, you also specify which header you want AWS WAF to inspect\. Enter **User\-Agent**\. \(This value isn't case sensitive\.\)
 **Note**  
-If you choose to inspect the web request **Body**, AWS WAF inspects only the first 8192 bytes \(8 KB\), because the underlying host service forwards only the first 8192 bytes for inspection\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. AWS WAF gets the length of the body from the request headers\. For more information, see [Size Constraint Rule Statement](waf-rule-statement-type-size-constraint-match.md)\.
+If you choose to inspect the web request **Body**, AWS WAF inspects only the first 8192 bytes \(8 KB\), because the underlying host service forwards only the first 8192 bytes for inspection\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. AWS WAF gets the length of the body from the request headers\. For more information, see [Size constraint rule statement](waf-rule-statement-type-size-constraint-match.md)\.
 
 1. For **Match type**, choose where the specified string must appear in the `User-Agent` header\. 
 
@@ -92,13 +92,13 @@ If you choose to inspect the web request **Body**, AWS WAF inspects only the fir
 
    In an effort to bypass AWS WAF, attackers use unusual formatting in web requests, for example, by adding white space or by URL\-encoding some or all of the request\. Transformations convert the web request to a more standard format by removing white space, by URL\-decoding the request, or by performing other operations that eliminate much of the unusual formatting that attackers commonly use\. You can specify multiple transformations\. AWS WAF processes them all in order before inspecting the web request component\. 
 
-1. For **Action**, select the action you want the rule to take when it matches a web request\. For this example, choose **Count**\. This creates metrics for web requests that match the rule, but doesn't affect whether the rule is allowed or blocked\. For information on your choices, see [AWS WAF Rule Action](waf-rule-action.md) and [How AWS WAF Processes a Web ACL](web-acl-processing.md)\.
+1. For **Action**, select the action you want the rule to take when it matches a web request\. For this example, choose **Count**\. This creates metrics for web requests that match the rule, but doesn't affect whether the rule is allowed or blocked\. For information on your choices, see [AWS WAF rule action](waf-rule-action.md) and [How AWS WAF processes a Web ACL](web-acl-processing.md)\.
 
 1. Choose **Add rule**\.
 
-## Step 4: Add an AWS Managed Rules Rule Group<a name="getting-started-wizard-add-rule-group"></a>
+## Step 4: Add an AWS Managed Rules rule group<a name="getting-started-wizard-add-rule-group"></a>
 
-AWS Managed Rules offers a set of managed rule groups for your use, free of charge to AWS WAF customers\. For more information about rule groups, see [Rule Groups](waf-rule-groups.md)\. We'll add an AWS Managed Rules rule group to this web ACL\. <a name="getting-started-wizard-add-rule-group-procedure"></a>
+AWS Managed Rules offers a set of managed rule groups for your use, free of charge to AWS WAF customers\. For more information about rule groups, see [Rule groups](waf-rule-groups.md)\. We'll add an AWS Managed Rules rule group to this web ACL\. <a name="getting-started-wizard-add-rule-group-procedure"></a>
 
 **To add an AWS Managed Rules rule group**
 
@@ -112,7 +112,7 @@ AWS Managed Rules offers a set of managed rule groups for your use, free of char
 
 1. Choose **Next**\.
 
-## Step 5: Finish Your Web ACL Configuration<a name="getting-started-wizard-finish-webacl-options"></a>
+## Step 5: Finish your Web ACL configuration<a name="getting-started-wizard-finish-webacl-options"></a>
 
 When you're done adding rules and rule groups to your web ACL configuration, finish up by managing the priority of the rules in the web ACL and configuring settings like metrics, tagging, and logging\. 
 
@@ -124,9 +124,7 @@ When you're done adding rules and rule groups to your web ACL configuration, fin
 
 1. Choose **Next**\.
 
-1. On the **Configure metrics and tags** page, for **Amazon CloudWatch metrics**, you can see the planned metrics for your rules and rule groups\. Deselect any you don't want metrics for\. As needed, change the names of the ones you want metrics for\. For more information about Amazon CloudWatch metrics, see [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)\.
-
-1. For **Tags**, enter key and optional value for any tag that you want added to this web ACL\. Tags help you organize and manage your AWS resources\. For more information about tagging your resources, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. 
+1. On the **Configure metrics** page, for **Amazon CloudWatch metrics**, you can see the planned metrics for your rules and rule groups\. Deselect any you don't want metrics for\. As needed, change the names of the ones you want metrics for\. For more information about Amazon CloudWatch metrics, see [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)\.
 
 1. Choose **Next**\.
 
@@ -134,7 +132,7 @@ When you're done adding rules and rule groups to your web ACL configuration, fin
 
 The wizard returns you to the **Web ACL** page, where your new web ACL is listed\.
 
-## Step 6: Clean Up Your Resources<a name="getting-started-wizard-clean-up"></a>
+## Step 6: Clean up your resources<a name="getting-started-wizard-clean-up"></a>
 
 You've now successfully completed the tutorial\. To prevent your account from accruing additional AWS WAF charges, clean up the AWS WAF objects that you created\. Alternatively, you can change the configuration to match the web requests that you really want to allow, block, and count\.
 

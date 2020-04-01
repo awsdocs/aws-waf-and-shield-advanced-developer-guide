@@ -1,4 +1,4 @@
-# Working with Cross\-site Scripting Match Conditions<a name="classic-web-acl-xss-conditions"></a>
+# Working with cross\-site scripting match conditions<a name="classic-web-acl-xss-conditions"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -7,12 +7,12 @@ This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, li
 Attackers sometimes insert scripts into web requests in an effort to exploit vulnerabilities in web applications\. You can create one or more cross\-site scripting match conditions to identify the parts of web requests, such as the URI or the query string, that you want AWS WAF Classic to inspect for possible malicious scripts\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious scripts\.
 
 **Topics**
-+ [Creating Cross\-site Scripting Match Conditions](#classic-web-acl-xss-conditions-creating)
-+ [Values That You Specify When You Create or Edit Cross\-site Scripting Match Conditions](#classic-web-acl-xss-conditions-values)
-+ [Adding and Deleting Filters in a Cross\-site Scripting Match Condition](#classic-web-acl-xss-conditions-editing)
-+ [Deleting Cross\-site Scripting Match Conditions](#classic-web-acl-xss-conditions-deleting)
++ [Creating cross\-site scripting match conditions](#classic-web-acl-xss-conditions-creating)
++ [Values that you specify when you create or edit cross\-site scripting match conditions](#classic-web-acl-xss-conditions-values)
++ [Adding and deleting filters in a cross\-site scripting match condition](#classic-web-acl-xss-conditions-editing)
++ [Deleting cross\-site scripting match conditions](#classic-web-acl-xss-conditions-deleting)
 
-## Creating Cross\-site Scripting Match Conditions<a name="classic-web-acl-xss-conditions-creating"></a>
+## Creating cross\-site scripting match conditions<a name="classic-web-acl-xss-conditions-creating"></a>
 
 When you create cross\-site scripting match conditions, you specify filters\. The filters indicate the part of web requests that you want AWS WAF Classic to inspect for malicious scripts, such as the URI or the query string\. You can add more than one filter to a cross\-site scripting match condition, or you can create a separate condition for each filter\. Here's how each configuration affects AWS WAF Classic behavior:
 + **More than one filter per cross\-site scripting match condition \(recommended\)** – When you add a cross\-site scripting match condition that contains multiple filters to a rule and add the rule to a web ACL, a web request must match only one of the filters in the cross\-site scripting match condition for AWS WAF Classic to allow or block the request based on that condition\.
@@ -33,7 +33,7 @@ When you add a cross\-site scripting match condition to a rule, you also can con
 
 1. Choose **Create condition**\.
 
-1. Specify the applicable filter settings\. For more information, see [Values That You Specify When You Create or Edit Cross\-site Scripting Match Conditions](#classic-web-acl-xss-conditions-values)\.
+1. Specify the applicable filter settings\. For more information, see [Values that you specify when you create or edit cross\-site scripting match conditions](#classic-web-acl-xss-conditions-values)\.
 
 1. Choose **Add another filter**\.
 
@@ -41,7 +41,7 @@ When you add a cross\-site scripting match condition to a rule, you also can con
 
 1. When you're done adding filters, choose **Create**\.
 
-## Values That You Specify When You Create or Edit Cross\-site Scripting Match Conditions<a name="classic-web-acl-xss-conditions-values"></a>
+## Values that you specify when you create or edit cross\-site scripting match conditions<a name="classic-web-acl-xss-conditions-values"></a>
 
 When you create or update a cross\-site scripting match condition, you specify the following values: 
 
@@ -62,7 +62,7 @@ For cross\-site scripting match conditions, we recommend that you choose **All q
 The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\. Unless a **Transformation** is specified, a URI is not normalized and is inspected just as AWS receives it from the client as part of the request\. A **Transformation** will reformat the URI as specified\.  
 **Body**  
 The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form\.  
-If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\)\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with Size Constraint Conditions](classic-web-acl-size-conditions.md)\.  
+If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\)\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with size constraint conditions](classic-web-acl-size-conditions.md)\.  
 **Single query parameter \(value only\)**  
 Any parameter that you have defined as part of the query string\. For example, if the URL is "www\.xyz\.com?UserName=abc&SalesRegion=seattle" you can add a filter to either the *UserName* or *SalesRegion* parameter\.   
 If you choose **Single query parameter \(value only\)**, you will also specify a **Query parameter name**\. This is the parameter in the query string that you will inspect, such as *UserName* or *SalesRegion*\. The maximum length for **Query parameter name** is 30 characters\. **Query parameter name** is not case sensitive\. For example, it you specify *UserName* as the **Query parameter name**, this will match all variations of *UserName*, such as *username* and *UsERName*\.  
@@ -107,7 +107,7 @@ For requests that contain operating system command line commands, use this optio
 **URL decode**  
 Decode a URL\-encoded request\.
 
-## Adding and Deleting Filters in a Cross\-site Scripting Match Condition<a name="classic-web-acl-xss-conditions-editing"></a>
+## Adding and deleting filters in a cross\-site scripting match condition<a name="classic-web-acl-xss-conditions-editing"></a>
 
 You can add or delete filters in a cross\-site scripting match condition\. To change a filter, add a new one and delete the old one\.<a name="classic-web-acl-xss-conditions-editing-procedure"></a>
 
@@ -123,7 +123,7 @@ You can add or delete filters in a cross\-site scripting match condition\. To ch
 
    1. Choose **Add filter**\.
 
-   1. Specify the applicable filter settings\. For more information, see [Values That You Specify When You Create or Edit Cross\-site Scripting Match Conditions](#classic-web-acl-xss-conditions-values)\.
+   1. Specify the applicable filter settings\. For more information, see [Values that you specify when you create or edit cross\-site scripting match conditions](#classic-web-acl-xss-conditions-values)\.
 
    1. Choose **Add**\.
 
@@ -133,7 +133,7 @@ You can add or delete filters in a cross\-site scripting match condition\. To ch
 
    1. Choose **Delete filter**\.
 
-## Deleting Cross\-site Scripting Match Conditions<a name="classic-web-acl-xss-conditions-deleting"></a>
+## Deleting cross\-site scripting match conditions<a name="classic-web-acl-xss-conditions-deleting"></a>
 
 If you want to delete a cross\-site scripting match condition, you must first delete all filters in the condition and remove the condition from all the rules that are using it, as described in the following procedure\.<a name="classic-web-acl-xss-conditions-deleting-procedure"></a>
 

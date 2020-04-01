@@ -1,4 +1,4 @@
-# Step 4: Configure Amazon SNS Notifications and Amazon CloudWatch Alarms<a name="get-started-fms-shield-cloudwatch"></a>
+# Step 4: Configure Amazon SNS notifications and Amazon CloudWatch alarms<a name="get-started-fms-shield-cloudwatch"></a>
 
 You can monitor your protected resources for potential DDoS activity using Amazon SNS\. To receive notification of possible attacks, create an Amazon SNS topic for each Region\.<a name="get-started-fms-shield-sns-procedure"></a>
 
@@ -6,7 +6,7 @@ You can monitor your protected resources for potential DDoS activity using Amazo
 
 1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
 **Note**  
-For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager Administrator Account](enable-integration.md)\.
+For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\.
 
 1. In the navigation pane, under **AWS FMS**, choose **Settings**\.
 
@@ -20,4 +20,4 @@ For information about setting up a Firewall Manager administrator account, see [
 
 You can continue from this step without configuring Amazon SNS notifications or CloudWatch alarms\. However, doing so significantly reduces your visibility of possible DDoS events\.
 
-After you configure the Amazon SNS notifications and CloudWatch alarms, we recommend that you follow the instructions in [Step 5: Deploy AWS WAF Classic Rules](get-started-fms-shield-deploy-waf-automations.md)\.
+After you configure the Amazon SNS notifications and CloudWatch alarms, we recommend that you follow the instructions in [Step 5: Deploy AWS WAF Classic rules](get-started-fms-shield-deploy-waf-automations.md)\.

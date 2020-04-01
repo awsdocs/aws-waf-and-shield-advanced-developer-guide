@@ -4,6 +4,6 @@ This section describes how to make requests to the AWS WAF and Shield Advanced A
 
 **Topics**
 + [Using the AWS SDKs](waf-api-sdk.md)
-+ [Making HTTPS Requests to AWS WAF or Shield Advanced](waf-api-making-requests.md)
-+ [HTTP Responses](waf-api-making-requests-response.md)
-+ [Authenticating Requests](authenticating-requests.md)
++ [Making HTTPS requests to AWS WAF or Shield Advanced](waf-api-making-requests.md)
++ [HTTP responses](waf-api-making-requests-response.md)
++ [Authenticating requests](authenticating-requests.md)

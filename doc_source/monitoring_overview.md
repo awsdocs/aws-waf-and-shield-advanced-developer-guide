@@ -15,5 +15,5 @@ For AWS WAF, you should monitor the following items at a minimum to establish a 
 + The number of blocked web requests
 
 **Topics**
-+ [Monitoring Tools](monitoring_automated_manual.md)
-+ [Logging API Calls with AWS CloudTrail](logging-using-cloudtrail.md)
++ [Monitoring tools](monitoring_automated_manual.md)
++ [Logging API calls with AWS CloudTrail](logging-using-cloudtrail.md)

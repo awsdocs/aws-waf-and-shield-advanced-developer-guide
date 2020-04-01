@@ -1,12 +1,12 @@
-# Testing Web ACLs<a name="web-acl-testing"></a>
+# Testing web ACLs<a name="web-acl-testing"></a>
 
 To ensure that you don't accidentally configure AWS WAF to block web requests that you want to allow or allow requests that you want to block, we recommend that you test your web ACL thoroughly before you start using it on your website or web application\. 
 
 **Topics**
-+ [Counting the Web Requests That Match the Rules in a Web ACL](#web-acl-testing-count)
-+ [Viewing a Sample of Web Requests](#web-acl-testing-view-sample)
++ [Counting the web requests that match the rules in a web ACL](#web-acl-testing-count)
++ [Viewing a sample of web requests](#web-acl-testing-view-sample)
 
-## Counting the Web Requests That Match the Rules in a Web ACL<a name="web-acl-testing-count"></a>
+## Counting the web requests that match the rules in a web ACL<a name="web-acl-testing-count"></a>
 
 When you add rules to a web ACL, you specify whether you want AWS WAF to allow, block, or count the web requests that match all the conditions in that rule\. We recommend that you begin with the following configuration:
 + Configure all the rules in a web ACL to count web requests
@@ -26,7 +26,7 @@ AWS WAF with CloudFront is a global service and metrics are available only when 
 
 1. Sign in to the AWS Management Console and open the CloudWatch console at [https://console\.aws\.amazon\.com/cloudwatch/](https://console.aws.amazon.com/cloudwatch/)\.
 
-1. In the navigation pane, under **Metrics**, choose **WAF**\.
+1. In the navigation pane, under **Metrics**, choose **AWS/WAFV2**\.
 
 1. Select the check box for the web ACL that you want to view data for\.
 
@@ -46,13 +46,13 @@ Choose the rules for which you want to view data\.
    + You can hover the mouse cursor over a data point to get more information\.
    + The graph doesn't refresh itself automatically\. To update the display, choose the refresh \(![\[Icon to refresh the CloudWatch graph\]](http://docs.aws.amazon.com/waf/latest/developerguide/images/cloudwatch-refresh-icon.png)\) icon\.
 
-1. \(Optional\) View detailed information about individual requests that an associated AWS resource has forwarded to AWS WAF\. For more information, see [Viewing a Sample of Web Requests](#web-acl-testing-view-sample)\.
+1. \(Optional\) View detailed information about individual requests that an associated AWS resource has forwarded to AWS WAF\. For more information, see [Viewing a sample of web requests](#web-acl-testing-view-sample)\.
 
-1. If you determine that a rule is intercepting requests that you don't want it to intercept, change the applicable settings\. For more information, see [Managing and Using a Web Access Control List \(Web ACL\)](web-acl.md)\.
+1. If you determine that a rule is intercepting requests that you don't want it to intercept, change the applicable settings\. For more information, see [Managing and using a Web Access Control List \(Web ACL\)](web-acl.md)\.
 
    When you're satisfied that all of your rules are intercepting only the correct requests, change the action for each of your rules to **Allow** or **Block**\. For more information, see [Editing a Web ACL](web-acl-editing.md)\.
 
-## Viewing a Sample of Web Requests<a name="web-acl-testing-view-sample"></a>
+## Viewing a sample of web requests<a name="web-acl-testing-view-sample"></a>
 
 In the AWS WAF console, if you have request sampling enabled, you can view a sample of the requests that an associated resource has forwarded to AWS WAF for inspection\. For each sampled request, you can view detailed data about the request, such as the originating IP address and the headers included in the request\. You also can view which rule the request matched, and whether the rule is configured to allow or block requests\.
 
@@ -62,11 +62,11 @@ The sample of requests contains up to 100 requests that matched all the conditio
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
-1. In the navigation pane, choose the web ACL for which you want to view requests\.
+1. In the navigation pane, choose **Web ACLs**
 
-1. In the right pane, choose the **Requests** tab\.
+1. Choose the web ACL for which you want to view requests\.
 
-   The **Sampled requests** table displays the following values for each request:  
+1. In the **Overview** tab, the **Sampled requests** table displays the following values for each request:  
 **Source IP**  
 Either the IP address that the request originated from or, if the viewer used an HTTP proxy or an Application Load Balancer to send the request, the IP address of the proxy or Application Load Balancer\.   
 **URI**  

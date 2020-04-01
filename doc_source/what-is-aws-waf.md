@@ -1,4 +1,4 @@
-# What Are AWS WAF, AWS Shield, and AWS Firewall Manager?<a name="what-is-aws-waf"></a>
+# What are AWS WAF, AWS shield, and AWS Firewall Manager?<a name="what-is-aws-waf"></a>
 
 AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to an Amazon API Gateway API, Amazon CloudFront or an Application Load Balancer\. AWS WAF also lets you control access to your content\. Based on conditions that you specify, such as the IP addresses that requests originate from or the values of query strings, API Gateway, CloudFront or an Application Load Balancer responds to requests either with the requested content or with an HTTP 403 status code \(Forbidden\)\. You also can configure CloudFront to return a custom error page when a request is blocked\.
 
@@ -22,7 +22,7 @@ Using AWS WAF has several benefits:
 + Real\-time metrics and sampled web requests\.
 + Automated administration using the AWS WAF API\.
 
-## AWS Shield<a name="ddos-intro"></a>
+## AWS shield<a name="ddos-intro"></a>
 
 You can use AWS WAF web access control lists \(web ACLs\) to help minimize the effects of a distributed denial of service \(DDoS\) attack\. For additional protection against DDoS attacks, AWS also provides AWS Shield Standard and AWS Shield Advanced\. AWS Shield Standard is automatically included at no extra cost beyond what you already pay for AWS WAF and your other AWS services\. AWS Shield Advanced provides expanded DDoS attack protection for your Amazon EC2 instances, Elastic Load Balancing load balancers, CloudFront distributions, and Route 53 hosted zones\. AWS Shield Advanced incurs additional charges\. 
 

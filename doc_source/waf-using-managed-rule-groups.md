@@ -1,4 +1,4 @@
-# Working With Managed Rule Groups<a name="waf-using-managed-rule-groups"></a>
+# Working with managed rule groups<a name="waf-using-managed-rule-groups"></a>
 
 This section provides guidance for accessing and managing managed rule groups\. 
 
@@ -12,7 +12,7 @@ The API and CLI calls return a list of all managed rules that you can reference 
 **To retrieve the list of rules in a managed rule group**
 + **Console** 
 
-  1. Add the managed rule group into your web ACL and finish creating your web ACL\. For guidance, see [Creating a Web ACL](web-acl-creating.md)\. 
+  1. Add the managed rule group into your web ACL and finish creating your web ACL\. For guidance, see [Creating a web ACL](web-acl-creating.md)\. 
 
   1. From the **Web ACLs** page, choose the web ACL you just created\. This takes you to the web ACL edit page\. 
 

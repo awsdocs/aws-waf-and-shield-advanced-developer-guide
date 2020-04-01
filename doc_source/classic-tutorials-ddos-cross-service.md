@@ -1,4 +1,4 @@
-# Tutorial: Implementing a DDoS\-resistant Website Using AWS Services<a name="classic-tutorials-ddos-cross-service"></a>
+# Tutorial: Implementing a DDoS\-resistant website using AWS services<a name="classic-tutorials-ddos-cross-service"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -10,12 +10,12 @@ This tutorial provides step\-by\-step instructions for setting up a website that
 + [Overview](#classic-tutorials-ddos-cross-service-overview)
 + [Architecture](#classic-tutorials-ddos-cross-service-architecture)
 + [Prerequisites](classic-tutorials-ddos-cross-service-prereq.md)
-+ [Step 1: Launch a Virtual Server Using Amazon EC2](classic-tutorials-ddos-cross-service-EC2.md)
-+ [Step 2: Scale Your Traffic Using Elastic Load Balancing](classic-tutorials-ddos-cross-service-ELB.md)
-+ [Step 3: Improve Performance and Absorb Attacks Using Amazon CloudFront](classic-tutorials-ddos-cross-service-CF.md)
-+ [Step 4: Register Your Domain Name and Implement DNS Service Using Route 53](classic-tutorials-ddos-cross-service-R53.md)
-+ [Step 5: Detect and Filter Malicious Web Requests Using AWS WAF Classic](classic-tutorials-ddos-cross-service-WAF.md)
-+ [Additional Best Practices](classic-tutorials-ddos-cross-service-best-practices.md)
++ [Step 1: Launch a virtual server using Amazon EC2](classic-tutorials-ddos-cross-service-EC2.md)
++ [Step 2: Scale your traffic using Elastic Load Balancing](classic-tutorials-ddos-cross-service-ELB.md)
++ [Step 3: Improve performance and absorb attacks using Amazon CloudFront](classic-tutorials-ddos-cross-service-CF.md)
++ [Step 4: Register your Domain name and implement DNS service using Route 53](classic-tutorials-ddos-cross-service-R53.md)
++ [Step 5: Detect and filter malicious web requests using AWS WAF Classic](classic-tutorials-ddos-cross-service-WAF.md)
++ [Additional best practices](classic-tutorials-ddos-cross-service-best-practices.md)
 
 ## Overview<a name="classic-tutorials-ddos-cross-service-overview"></a>
 

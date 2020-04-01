@@ -1,4 +1,4 @@
-# Getting Started with AWS WAF Classic<a name="classic-getting-started"></a>
+# Getting started with AWS WAF Classic<a name="classic-getting-started"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -16,23 +16,23 @@ This tutorial shows how to use AWS WAF Classic to perform the following tasks:
 AWS typically bills you less than US $0\.25 per day for the resources that you create during this tutorial\. When you're finished with the tutorial, we recommend that you delete the resources to prevent incurring unnecessary charges\. 
 
 **Topics**
-+ [Step 1: Set Up AWS WAF Classic](#classic-getting-started-aws-account)
++ [Step 1: Set up AWS WAF Classic](#classic-getting-started-aws-account)
 + [Step 2: Create a Web ACL](#classic-getting-started-wizard-create-web-acl)
-+ [Step 3: Create an IP Match Condition](#classic-getting-started-wizard-create-ip-condition)
-+ [Step 4: Create a Geo Match Condition](#classic-getting-started-wizard-create-geo-condition)
-+ [Step 5: Create a String Match Condition](#classic-getting-started-wizard-create-string-condition)
-+ [Step 5A: Create a Regex Condition \(Optional\)](#classic-getting-started-wizard-create-regex-condition)
-+ [Step 6: Create a SQL Injection Match Condition](#classic-getting-started-wizard-create-sql-condition)
-+ [Step 7: \(Optional\) Create Additional Conditions](#classic-getting-started-wizard-create-optional-conditions)
-+ [Step 8: Create a Rule and Add Conditions](#classic-getting-started-wizard-create-rule)
-+ [Step 9: Add the Rule to a Web ACL](#classic-getting-started-wizard-add-rule)
-+ [Step 10: Clean Up Your Resources](#classic-getting-started-wizard-clean-up)
++ [Step 3: Create an IP match condition](#classic-getting-started-wizard-create-ip-condition)
++ [Step 4: Create a geo match condition](#classic-getting-started-wizard-create-geo-condition)
++ [Step 5: Create a string match condition](#classic-getting-started-wizard-create-string-condition)
++ [Step 5A: Create a regex condition \(optional\)](#classic-getting-started-wizard-create-regex-condition)
++ [Step 6: Create a SQL injection match condition](#classic-getting-started-wizard-create-sql-condition)
++ [Step 7: \(Optional\) create additional conditions](#classic-getting-started-wizard-create-optional-conditions)
++ [Step 8: Create a rule and add conditions](#classic-getting-started-wizard-create-rule)
++ [Step 9: Add the rule to a Web ACL](#classic-getting-started-wizard-add-rule)
++ [Step 10: Clean up your resources](#classic-getting-started-wizard-clean-up)
 
-## Step 1: Set Up AWS WAF Classic<a name="classic-getting-started-aws-account"></a>
+## Step 1: Set up AWS WAF Classic<a name="classic-getting-started-aws-account"></a>
 
-If you already signed up for an AWS account and created an IAM user as described in [Setting Up AWS WAF Classic](classic-setting-up-waf.md), go to [Step 2: Create a Web ACL](#classic-getting-started-wizard-create-web-acl)\.
+If you already signed up for an AWS account and created an IAM user as described in [Setting up AWS WAF Classic](classic-setting-up-waf.md), go to [Step 2: Create a Web ACL](#classic-getting-started-wizard-create-web-acl)\.
 
-If not, go to [Setting Up AWS WAF Classic](classic-setting-up-waf.md) and perform at least the first two steps\. \(You can skip downloading tools for now because this Getting Started topic focuses on using the AWS WAF Classic console\.\)
+If not, go to [Setting up AWS WAF Classic](classic-setting-up-waf.md) and perform at least the first two steps\. \(You can skip downloading tools for now because this Getting Started topic focuses on using the AWS WAF Classic console\.\)
 
 ## Step 2: Create a Web ACL<a name="classic-getting-started-wizard-create-web-acl"></a>
 
@@ -58,12 +58,12 @@ You can't change the name after you create the web ACL\.
 
 1. For **AWS resource to associate**, choose the resource that you want to associate with your web ACL, and then choose **Next**\.
 
-## Step 3: Create an IP Match Condition<a name="classic-getting-started-wizard-create-ip-condition"></a>
+## Step 3: Create an IP match condition<a name="classic-getting-started-wizard-create-ip-condition"></a>
 
 An IP match condition specifies the IP addresses or IP address ranges that requests originate from\. In this step, you create an IP match condition\. In a later step, you specify whether you want to allow requests or block requests that originate from the specified IP addresses\.
 
 **Note**  
-For more information about IP match conditions, see [Working with IP Match Conditions](classic-web-acl-ip-conditions.md)\.<a name="classic-getting-started-wizard-create-ip-condition-procedure"></a>
+For more information about IP match conditions, see [Working with IP match conditions](classic-web-acl-ip-conditions.md)\.<a name="classic-getting-started-wizard-create-ip-condition-procedure"></a>
 
 **To create an IP match condition**
 
@@ -79,12 +79,12 @@ For more information about IP match conditions, see [Working with IP Match Condi
 
 1. Choose **Create**\.
 
-## Step 4: Create a Geo Match Condition<a name="classic-getting-started-wizard-create-geo-condition"></a>
+## Step 4: Create a geo match condition<a name="classic-getting-started-wizard-create-geo-condition"></a>
 
 A geo match condition specifies the country or countries that requests originate from\. In this step, you create a geo match condition\. In a later step, you specify whether you want to allow requests or block requests that originate from the specified countries\.
 
 **Note**  
-For more information about geo match conditions, see [Working with Geographic Match Conditions](classic-web-acl-geo-conditions.md)\.<a name="classic-getting-started-wizard-create-geo-condition-procedure"></a>
+For more information about geo match conditions, see [Working with geographic match conditions](classic-web-acl-geo-conditions.md)\.<a name="classic-getting-started-wizard-create-geo-condition-procedure"></a>
 
 **To create a geo match condition**
 
@@ -98,12 +98,12 @@ For more information about geo match conditions, see [Working with Geographic Ma
 
 1. Choose **Create**\.
 
-## Step 5: Create a String Match Condition<a name="classic-getting-started-wizard-create-string-condition"></a>
+## Step 5: Create a string match condition<a name="classic-getting-started-wizard-create-string-condition"></a>
 
 A string match condition identifies the strings that you want AWS WAF Classic to search for in a request, such as a specified value in a header or in a query string\. Usually, a string consists of printable ASCII characters, but you can specify any character from hexadecimal 0x00 to 0xFF \(decimal 0 to 255\)\. In this step, you create a string match condition\. In a later step, you specify whether you want to allow or block requests that contain the specified strings\.
 
 **Note**  
-For more information about string match conditions, see [Working with String Match Conditions](classic-web-acl-string-conditions.md)\.<a name="classic-getting-started-wizard-create-string-condition-procedure"></a>
+For more information about string match conditions, see [Working with string match conditions](classic-web-acl-string-conditions.md)\.<a name="classic-getting-started-wizard-create-string-condition-procedure"></a>
 
 **To create a string match condition**
 
@@ -117,7 +117,7 @@ Choose **String match**\.
 **Part of the request to filter on**  
 Choose the part of the web request that you want AWS WAF Classic to inspect for a specified string\.   
 For this example, choose **Header**\.  
-If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\) because CloudFront forwards only the first 8192 bytes for inspection\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with Size Constraint Conditions](classic-web-acl-size-conditions.md)\.  
+If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\) because CloudFront forwards only the first 8192 bytes for inspection\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with size constraint conditions](classic-web-acl-size-conditions.md)\.  
 **Header \(Required if "Part of the request to filter on" is "Header"\)**  
 Because you chose **Header** for **Part of the request to filter on**, you must specify which header you want AWS WAF Classic to inspect\. Enter **User\-Agent**\. \(This value is not case sensitive\.\)  
 **Match type**  
@@ -141,12 +141,12 @@ The maximum length of **Value to match** is 50 characters\. If you want to speci
 
    For this example, choose **Create**\.
 
-## Step 5A: Create a Regex Condition \(Optional\)<a name="classic-getting-started-wizard-create-regex-condition"></a>
+## Step 5A: Create a regex condition \(optional\)<a name="classic-getting-started-wizard-create-regex-condition"></a>
 
 A regular expression condition is a type of string match condition and similar in that it identifies the strings that you want AWS WAF Classic to search for in a request, such as a specified value in a header or in a query string\. The primary difference is that you use a regular expression \(regex\) to specify the string pattern that you want AWS WAF Classic to search for\. In this step, you create a regex match condition\. In a later step, you specify whether you want to allow or block requests that contain the specified strings\.
 
 **Note**  
-For more information about regex match conditions, see [Working with Regex Match Conditions](classic-web-acl-regex-conditions.md)\.<a name="classic-getting-started-wizard-create-regex-condition-procedure"></a>
+For more information about regex match conditions, see [Working with regex match conditions](classic-web-acl-regex-conditions.md)\.<a name="classic-getting-started-wizard-create-regex-condition-procedure"></a>
 
 **To create a regex match condition**
 
@@ -160,7 +160,7 @@ Choose **Regex match**\.
 **Part of the request to filter on**  
 Choose the part of the web request that you want AWS WAF Classic to inspect for a specified string\.   
 For this example, choose **Body**\.  
-If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\) because CloudFront forwards only the first 8192 bytes for inspection\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with Size Constraint Conditions](classic-web-acl-size-conditions.md)\.  
+If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\) because CloudFront forwards only the first 8192 bytes for inspection\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with size constraint conditions](classic-web-acl-size-conditions.md)\.  
 **Transformation**  
 In an effort to bypass AWS WAF Classic, attackers use unusual formatting in web requests, for example, by adding white space or by URL\-encoding some or all of the request\. Transformations convert the web request to a more standard format by removing white space, by URL\-decoding the request, or by performing other operations that eliminate much of the unusual formatting that attackers commonly use\.  
 You can only specify a single type of text transformation\.  
@@ -179,12 +179,12 @@ Next, enter the regular expression **I\[a@\]mAB\[a@\]dRequest**\. AWS WAF Classi
 
 1. Choose **Create**\.
 
-## Step 6: Create a SQL Injection Match Condition<a name="classic-getting-started-wizard-create-sql-condition"></a>
+## Step 6: Create a SQL injection match condition<a name="classic-getting-started-wizard-create-sql-condition"></a>
 
 A SQL injection match condition identifies the part of web requests, such as a header or a query string, that you want AWS WAF Classic to inspect for malicious SQL code\. Attackers use SQL queries to extract data from your database\. In this step, you create a SQL injection match condition\. In a later step, you specify whether you want to allow requests or block requests that appear to contain malicious SQL code\.
 
 **Note**  
-For more information about string match conditions, see [Working with SQL Injection Match Conditions](classic-web-acl-sql-conditions.md)\.<a name="classic-getting-started-wizard-create-sql-condition-procedure"></a>
+For more information about string match conditions, see [Working with SQL injection match conditions](classic-web-acl-sql-conditions.md)\.<a name="classic-getting-started-wizard-create-sql-condition-procedure"></a>
 
 **To create a SQL injection match condition**
 
@@ -196,7 +196,7 @@ Enter a name\.
 **Part of the request to filter on**  
 Choose the part of web requests that you want AWS WAF Classic to inspect for malicious SQL code\.   
 For this example, choose **Query string**\.  
-If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\) because CloudFront forwards only the first 8192 bytes for inspection\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with Size Constraint Conditions](classic-web-acl-size-conditions.md)\.  
+If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\) because CloudFront forwards only the first 8192 bytes for inspection\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with size constraint conditions](classic-web-acl-size-conditions.md)\.  
 **Transformation**  
 For this example, choose **URL decode**\.  
 Attackers use unusual formatting, such as URL encoding, in an effort to bypass AWS WAF Classic\. The **URL decode** option eliminates some of that formatting in the web request before AWS WAF Classic inspects the request\.  
@@ -206,20 +206,20 @@ You can only specify a single type of text transformation\.
 
 1. Choose **Next**\. 
 
-## Step 7: \(Optional\) Create Additional Conditions<a name="classic-getting-started-wizard-create-optional-conditions"></a>
+## Step 7: \(Optional\) create additional conditions<a name="classic-getting-started-wizard-create-optional-conditions"></a>
 
 AWS WAF Classic includes other conditions, including the following:
-+ **Size constraint conditions** – Identifies the part of web requests, such as a header or a query string, that you want AWS WAF Classic to check for length\. For more information, see [Working with Size Constraint Conditions](classic-web-acl-size-conditions.md)\.
-+ **Cross\-site scripting match conditions** – Identifies the part of web requests, such as a header or a query string, that you want AWS WAF to inspect for malicious scripts\. For more information, see [Working with Cross\-site Scripting Match Conditions](classic-web-acl-xss-conditions.md)\.
++ **Size constraint conditions** – Identifies the part of web requests, such as a header or a query string, that you want AWS WAF Classic to check for length\. For more information, see [Working with size constraint conditions](classic-web-acl-size-conditions.md)\.
++ **Cross\-site scripting match conditions** – Identifies the part of web requests, such as a header or a query string, that you want AWS WAF to inspect for malicious scripts\. For more information, see [Working with cross\-site scripting match conditions](classic-web-acl-xss-conditions.md)\.
 
-You can optionally create these conditions now, or you can skip to [Step 8: Create a Rule and Add Conditions](#classic-getting-started-wizard-create-rule)\.
+You can optionally create these conditions now, or you can skip to [Step 8: Create a rule and add conditions](#classic-getting-started-wizard-create-rule)\.
 
-## Step 8: Create a Rule and Add Conditions<a name="classic-getting-started-wizard-create-rule"></a>
+## Step 8: Create a rule and add conditions<a name="classic-getting-started-wizard-create-rule"></a>
 
 You create a rule to specify the conditions that you want AWS WAF Classic to search for in web requests\. If you add more than one condition to a rule, a web request must match all the conditions in the rule for AWS WAF Classic to allow or block requests based on that rule\.
 
 **Note**  
-For more information about rules, see [Working with Rules](classic-web-acl-rules.md)\.<a name="classic-getting-started-wizard-create-rule-procedure"></a>
+For more information about rules, see [Working with rules](classic-web-acl-rules.md)\.<a name="classic-getting-started-wizard-create-rule-procedure"></a>
 
 **To create a rule and add conditions**
 
@@ -231,7 +231,7 @@ Enter a name\.
 **CloudWatch metric name**  
 Enter a name for the CloudWatch metric that AWS WAF Classic will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\)\. It can't contain white space\.  
 **Rule type**  
-Choose either **Regular rule** or **Rate\-based rule**\. Rate\-based rules are identical to regular rules but also take into account how many requests arrive from the identified IP address in any five\-minute period\. For more information about the rule types, see [How AWS WAF Classic Works](classic-how-aws-waf-works.md)\. For this example, choose `Regular rule`\.  
+Choose either **Regular rule** or **Rate\-based rule**\. Rate\-based rules are identical to regular rules but also take into account how many requests arrive from the identified IP address in any five\-minute period\. For more information about the rule types, see [How AWS WAF Classic works](classic-how-aws-waf-works.md)\. For this example, choose `Regular rule`\.  
 **Rate limit**  
 For a rate\-based rule, enter the maximum number of requests to allow in any five\-minute period from an IP address that matches the rule's conditions\.
 
@@ -282,7 +282,7 @@ For a rate\-based rule, enter the maximum number of requests to allow in any fiv
 
 1. Choose **Review and create**\. 
 
-## Step 9: Add the Rule to a Web ACL<a name="classic-getting-started-wizard-add-rule"></a>
+## Step 9: Add the rule to a Web ACL<a name="classic-getting-started-wizard-add-rule"></a>
 
 When you add the rule to a web ACL, you specify the following settings:
 + The action that you want AWS WAF Classic to take on web requests that match all the conditions in the rule: allow, block, or count the requests\.
@@ -297,7 +297,7 @@ AWS WAF Classic starts blocking CloudFront web requests that match all the follo
 
 AWS WAF Classic allows CloudFront to respond to any requests that don't meet all three of these conditions\. 
 
-## Step 10: Clean Up Your Resources<a name="classic-getting-started-wizard-clean-up"></a>
+## Step 10: Clean up your resources<a name="classic-getting-started-wizard-clean-up"></a>
 
 You've now successfully completed the tutorial\. To prevent your account from accruing additional AWS WAF Classic charges, you should clean up the AWS WAF Classic objects that you created\. Alternatively, you can change the configuration to match the web requests that you really want to allow, block, and count\.
 

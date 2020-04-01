@@ -5,11 +5,11 @@ You can monitor web requests and web ACLs and rules using Amazon CloudWatch, whi
 **Note**  
 CloudWatch metrics and alarms are not enabled for Firewall Manager\.
 
-## Creating Amazon CloudWatch Alarms<a name="creating_alarms"></a>
+## Creating Amazon CloudWatch alarms<a name="creating_alarms"></a>
 
 You can create an Amazon CloudWatch alarm that sends an Amazon SNS message when the alarm changes state\. An alarm watches a single metric over a time period that you specify, and performs one or more actions based on the value of the metric relative to a specified threshold over a number of time periods\. The action is a notification sent to an Amazon SNS topic or Auto Scaling policy\. Alarms invoke actions for sustained state changes only\. CloudWatch alarms do not invoke actions simply because they are in a particular state; the state must have changed and been maintained for a specified number of periods\.
 
-## AWS WAF and AWS Shield Advanced Metrics and Dimensions<a name="metrics_dimensions"></a>
+## AWS WAF and AWS Shield Advanced metrics and dimensions<a name="metrics_dimensions"></a>
 
  You can use the following procedures to view the metrics for AWS WAF and AWS Shield Advanced\.
 
@@ -43,7 +43,7 @@ Metrics are grouped first by the service namespace, and then by the various dime
   1. aws cloudwatch list-metrics --namespace "DDoSProtection"
   ```
 
-## AWS WAF Metrics<a name="waf-metrics"></a>
+## AWS WAF metrics<a name="waf-metrics"></a>
 
 The `WAF` namespace includes the following metrics\.
 
@@ -55,14 +55,14 @@ The `WAF` namespace includes the following metrics\.
 | `CountedRequests` |  The number of counted web requests\. Reporting criteria: There is a nonzero value\. A counted web request is one that matches all the conditions in a particular rule\. Counted web requests are typically used for testing\. Valid statistics: Sum  | 
 | `PassedRequests` |  The number of passed requests for a rule group\.  Reporting criteria: There is a nonzero value\. Passed requests are requests that don't match any rule contained in the rule group\. Valid statistics: Sum  | 
 
-## AWS WAF Dimensions<a name="waf-metricdimensions"></a>
+## AWS WAF dimensions<a name="waf-metricdimensions"></a>
 
-AWS WAF for Amazon CloudWatch can use the following dimension combinations:
+AWS WAF for an Amazon CloudFront distribution can use the following dimension combinations:
 + `Rule`, `WebACL`
 + `RuleGroup`, `WebACL`
 + `Rule`, `RuleGroup`
 
-AWS WAF for an Application Load Balancer can use the following dimension combinations:
+AWS WAF for an Amazon API Gateway API or an Application Load Balancer can use the following dimension combinations:
 + `Region`, `Rule`, `WebACL`
 + `Region`, `RuleGroup`, `WebACL`
 + `Region`, `Rule`, `RuleGroup`
@@ -75,11 +75,11 @@ AWS WAF for an Application Load Balancer can use the following dimension combina
 | `WebACL` |  The metric name of the `WebACL`\.  | 
 | `Region` |  The Region of the Application Load Balancer\.  | 
 
-## AWS Shield Advanced Metrics and Alarms<a name="set-ddos-alarms"></a>
+## AWS Shield Advanced metrics and alarms<a name="set-ddos-alarms"></a>
 
 This section discusses the metrics and alarms available with AWS Shield Advanced\.
 
-### AWS Shield Advanced Metrics<a name="shield-metrics"></a>
+### AWS Shield Advanced metrics<a name="shield-metrics"></a>
 
 Shield Advanced reports metrics to Amazon CloudWatch on an AWS resource more frequently during DDoS attacks than while no attacks are underway\. Shield Advanced reports metrics once a minute during an attack, and then once right after the attack ends\. While no attacks are underway, Shield Advanced reports metrics once a day, at a time assigned to the resource\. This periodic report keeps the metrics active and available for use in custom CloudWatch alarms\. 
 
@@ -89,7 +89,7 @@ Shield Advanced provides the following metrics\.
 | Metric | Description | 
 | --- | --- | 
 | DDoSDetected | Indicates whether a DDoS event is underway for a particular Amazon Resource Name \(ARN\)\. This metric has a value of 1 during an attack and a value of 0 otherwise\.   | 
-| DDoSAttackBitsPerSecond | The number of bytes observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an attack and a value of 0 otherwise\.Units: Bits  | 
+| DDoSAttackBitsPerSecond | The number of bits observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an attack and a value of 0 otherwise\.Units: Bits  | 
 | DDoSAttackPacketsPerSecond | The number of packets observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an attack and a value of 0 otherwise\.Units: Packets  | 
 | DDoSAttackRequestsPerSecond | The number of requests observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 7 DDoS events\. The metric is reported only for the most significant layer 7 events\. This metric has a non\-zero value during an attack and a value of 0 otherwise\.Units: Requests  | 
 
@@ -114,7 +114,7 @@ Shield Advanced posts the `DDoSDetected` metric with no other dimensions\. The o
 + `UDPTraffic`
 + `UDSReflection`
 
-#### Creating AWS Shield Advanced Alarms<a name="shield-alarms"></a>
+#### Creating AWS Shield Advanced alarms<a name="shield-alarms"></a>
 
 You can use AWS Shield Advanced metrics for Amazon CloudWatch alarms\. CloudWatch alarms send notifications or automatically make changes to the resources that you are monitoring based on rules that you define\.
 
@@ -125,6 +125,6 @@ The **AWSDDOSProtectionMetrics** are available only to Shield Advanced customers
 
 For more information, see [What is CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html) in the *Amazon CloudWatch User Guide*\.
 
-## AWS Firewall Manager Notifications<a name="set-fms-alarms"></a>
+## AWS Firewall Manager notifications<a name="set-fms-alarms"></a>
 
 AWS Firewall Manager doesn't record metrics, so you can't create Amazon CloudWatch alarms specifically for Firewall Manager\. However, you can configure Amazon SNS notifications to alert you to potential attacks\. To create Amazon SNS notifications in Firewall Manager, see [To create an Amazon SNS topic in Firewall Manager \(console\)](get-started-fms-shield-cloudwatch.md#get-started-fms-shield-sns-procedure)\.

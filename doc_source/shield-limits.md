@@ -1,4 +1,4 @@
-# AWS Shield Advanced Quotas<a name="shield-limits"></a>
+# AWS Shield Advanced quotas<a name="shield-limits"></a>
 
 AWS Shield Advanced is subject to the quotas described here\. These were formerly referred to as limits\. 
 

@@ -1,41 +1,47 @@
-# Step 4: Create and Apply an AWS Firewall Manager AWS WAF Classic Policy<a name="get-started-fms-create-security-policy"></a>
+# Step 2: Create and apply an AWS Firewall Manager AWS WAF policy<a name="get-started-fms-create-security-policy"></a>
 
-After you create the rule group, you create an AWS Firewall Manager AWS WAF policy\. A Firewall Manager\-AWS WAF policy contains the rule group that you want to apply to your resources\.<a name="get-started-fms-create-security-policy-procedure"></a>
+A Firewall Manager AWS WAF policy contains the rule groups that you want to apply to your resources\. Firewall Manager creates a Firewall Manager web ACL in each account where you apply the policy\. The individual account managers can add rules and rule groups to the resulting web ACL, in addition to the rule groups that you define here\. For information about Firewall Manager AWS WAF policies, see [How AWS WAF policies work](waf-policies.md)\.
 
-**To create a Firewall Manager\-AWS WAF policy \(console\)**
+**To create a Firewall Manager AWS WAF policy \(console\)**
 
-1. After you create the rule group \(the last step in the preceding procedure, [Step 3: Create a Rule Group](get-started-fms-create-rule-group.md)\), the console displays the **Rule group summary** page\. Choose **Next**\.
-
-1. For **Name**, enter a friendly name\. 
-
-1. For **Policy type**, choose **WAF**\. 
-
-1. For **Region**, choose an AWS Region\. To protect Amazon CloudFront resources, choose **Global**\.
-
-   To protect resources in multiple regions \(other than CloudFront resources\), you must create separate Firewall Manager policies for each Region\.
-
-1. Select a rule group to add, and then choose **Add rule group**\. 
-
-1. A policy has two possible actions: **Action set by rule group** and **Count**\. If you want to test the policy and rule group, set the action to **Count**\. This action overrides any *block* action specified by the rule group contained in the policy\. That is, if the policy's action is set to **Count**, those requests are only counted and not blocked\. Conversely, if you set the policy's action to **Action set by rule group**, actions of the rule group in the policy are used\. For this tutorial, choose **Count**\.
-
-1. Choose **Next**\.
-
-1. If you want to include only specific accounts in the policy, or alternatively exclude specific accounts from the policy, select **Select accounts to include/exclude from this policy \(optional\)**\. Choose either **Include only these accounts in this policy** or **Exclude these accounts from this policy**\. You can choose only one option\. Choose **Add**\. Select the account numbers to include or exclude, and then choose **OK**\. 
+1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
 **Note**  
-If you don't select this option, Firewall Manager applies a policy to all accounts in your organization in AWS Organizations\. If you add a new account to the organization, Firewall Manager automatically applies the policy to that account\.
+For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\.
 
-1. Choose the types of resources that you want to protect\.
+1. In the navigation pane, choose **Security policies**\.
 
-1. If you want to protect only resources with specific tags, or alternatively exclude resources with specific tags, select **Use tags to include/exclude resources**, enter the tags, and then choose either **Include** or **Exclude**\. You can choose only one option\. 
+1. Choose **Create policy**\.
 
-   If you enter more than one tag \(separated by commas\), and if a resource has any of those tags, it is considered a match\.
+1. For **Policy type**, choose **AWS WAF**\. 
 
-   For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\.
+1. For **Region**, choose an AWS Region\. To protect Amazon CloudFront distributions, choose **Global**\.
 
-1. Choose **Create and apply this policy to existing and new resources**\.
-
-   This option creates a web ACL in each applicable account within an organization in AWS Organizations, and associates the web ACL with the specified resources in the accounts\. This option also applies the policy to all new resources that match the preceding criteria \(resource type and tags\)\. Alternatively, if you choose **Create but do not apply this policy to existing or new resources**, Firewall Manager creates a web ACL in each applicable account within the organization, but doesn't apply the web ACL to any resources\. You must apply the policy to resources later\.
+   To protect resources in multiple Regions \(other than CloudFront distributions\), you must create separate Firewall Manager policies for each Region\.
 
 1. Choose **Next**\.
 
-1. Review the new policy\. To make any changes, choose **Edit**\. When you are satisfied with the policy, choose **Create policy**\.
+1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the web ACLs that it creates\. The web ACL names will begin with `FMManagedWebACLV2` followed by the policy name that you enter here\. 
+
+1. Under **Policy rules**, for **First rule groups**, choose **Add rule groups**\. Expand the **AWS managed rule groups**\. For **Core rule set**, toggle **Add to web ACL**\. For **AWS Known bad inputs**, toggle **Add to web ACL**\. Choose **Add rules**\.
+
+   For **Last rule groups**, choose **Add rule groups**\. Expand the **AWS managed rule groups** and for the **Amazon IP reputation list**, toggle **Add to web ACL**\. Choose **Add rules**\.
+
+   Under **First rule groups**, select **Core rule set** and choose **Move down**\. AWS WAF will evaluate web requests against the **AWS Known bad inputs** rule group before it evaluates against the **Core rule set**\. 
+**Note**  
+You can also create your own AWS WAF rule groups if you wish, using the AWS WAF console\. Any rule groups that you create show up under **Your rule groups** in the **Describe policy : Add rule groups page**\. 
+
+1. Leave the default action for the web ACL at **Allow**\. 
+
+1. Leave the **Policy action** at the default, to not automatically remediate noncompliant resources\. You can change the option later\. 
+
+1. Choose **Next**\.
+
+1. For **Policy scope**, you provide the settings for the accounts, resource types, and tagging that identify the resources you want to apply the policy to\. For this tutorial, leave the **AWS accounts** and **Resources** settings alone, and choose one or more resource types\.
+
+1. Choose **Next**\.
+
+1. For **Policy tags**, you can add any identifying tags that you want for the Firewall Manager AWS WAF policy\. For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. For this tutorial, you can leave this alone\.
+
+1. Choose **Next**\.
+
+1. Review the new policy\. You can make changes by choosing **Edit** in the area you want to change\. This returns you to the corresponding step in the creation wizard\. When you are satisfied with the policy, choose **Create policy**\.

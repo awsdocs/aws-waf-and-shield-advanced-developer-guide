@@ -1,4 +1,4 @@
-# Step 3: Improve Performance and Absorb Attacks Using Amazon CloudFront<a name="classic-tutorials-ddos-cross-service-CF"></a>
+# Step 3: Improve performance and absorb attacks using Amazon CloudFront<a name="classic-tutorials-ddos-cross-service-CF"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -10,9 +10,9 @@ Highly scaled, diverse internet connections can significantly improve the respon
 You are responsible for the cost of the AWS services implemented in this tutorial\. For full details about CloudFront costs, see the [CloudFront pricing page](https://aws.amazon.com/cloudfront/pricing/)\. 
 
 **Topics**
-+ [Deliver Your Content Using Amazon CloudFront](#classic-tutorials-ddos-cross-service-CF-implement)
++ [Deliver Your Content using Amazon CloudFront](#classic-tutorials-ddos-cross-service-CF-implement)
 
-## Deliver Your Content Using Amazon CloudFront<a name="classic-tutorials-ddos-cross-service-CF-implement"></a>
+## Deliver Your Content using Amazon CloudFront<a name="classic-tutorials-ddos-cross-service-CF-implement"></a>
 
 Amazon CloudFront is a content delivery network \(CDN\) service that you can use to deliver your entire website, including static, dynamic, streaming, and interactive content\. You can use persistent TCP connections and variable time\-to\-live \(TTL\) to accelerate the delivery of your content, even if it can’t be cached at an edge location\. This allows you to use CloudFront to protect your web application, even if you are not serving static content\.
 
@@ -72,4 +72,4 @@ Enter any comments that you want to save with the distribution\.
 
 1. Open that domain name in a browser\. You should see your website\. It might take about 15 minutes or so for the distribution to be active\. If you get an error that indicates that your origin closed the connection, give it some more time and try again\. You might also have to refresh the page in your browser\.
 
-Next: [Step 4: Register Your Domain Name and Implement DNS Service Using Route 53](classic-tutorials-ddos-cross-service-R53.md)\.
+Next: [Step 4: Register your Domain name and implement DNS service using Route 53](classic-tutorials-ddos-cross-service-R53.md)\.

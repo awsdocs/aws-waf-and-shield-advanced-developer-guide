@@ -25,13 +25,13 @@ You can't change the name after you create the web ACL\.
 1. If you've already created the conditions that you want AWS WAF Classic to use to inspect your web requests, choose **Next**, and then continue to the next step\.
 
    If you haven't already created conditions, do so now\. For more information, see the following topics:
-   + [Working with Cross\-site Scripting Match Conditions](classic-web-acl-xss-conditions.md)
-   + [Working with IP Match Conditions](classic-web-acl-ip-conditions.md)
-   + [Working with Geographic Match Conditions](classic-web-acl-geo-conditions.md)
-   + [Working with Size Constraint Conditions](classic-web-acl-size-conditions.md)
-   + [Working with SQL Injection Match Conditions](classic-web-acl-sql-conditions.md)
-   + [Working with String Match Conditions](classic-web-acl-string-conditions.md)
-   + [Working with Regex Match Conditions](classic-web-acl-regex-conditions.md)
+   + [Working with cross\-site scripting match conditions](classic-web-acl-xss-conditions.md)
+   + [Working with IP match conditions](classic-web-acl-ip-conditions.md)
+   + [Working with geographic match conditions](classic-web-acl-geo-conditions.md)
+   + [Working with size constraint conditions](classic-web-acl-size-conditions.md)
+   + [Working with SQL injection match conditions](classic-web-acl-sql-conditions.md)
+   + [Working with string match conditions](classic-web-acl-string-conditions.md)
+   + [Working with regex match conditions](classic-web-acl-regex-conditions.md)
 
 1. If you've already created the rules or rule groups \(or subscribed to an AWS Marketplace rule group\) that you want to add to this web ACL, add the rules to the web ACL:
 
@@ -83,21 +83,21 @@ Choose the condition that you want to add to the rule\. The list displays only c
 1. For each rule or rule group in the web ACL, choose the kind of management you want AWS WAF Classic to provide, as follows: 
    + For each rule, choose whether you want AWS WAF Classic to allow, block, or count web requests based on the conditions in the rule:
      + **Allow** – API Gateway, CloudFront or an Application Load Balancer responds with the requested object\. In the case of CloudFront, if the object isn't in the edge cache, CloudFront forwards the request to the origin\.
-     + **Block** – API Gateway, CloudFront or an Application Load Balancer responds to the request with an HTTP 403 \(Forbidden\) status code\. CloudFront also can respond with a custom error page\. For more information, see [Using AWS WAF Classic with CloudFront Custom Error Pages](classic-cloudfront-features.md#classic-cloudfront-features-custom-error-pages)\.
+     + **Block** – API Gateway, CloudFront or an Application Load Balancer responds to the request with an HTTP 403 \(Forbidden\) status code\. CloudFront also can respond with a custom error page\. For more information, see [Using AWS WAF Classic with CloudFront custom error pages](classic-cloudfront-features.md#classic-cloudfront-features-custom-error-pages)\.
      + **Count** – AWS WAF Classic increments a counter of requests that match the conditions in the rule, and then continues to inspect the web request based on the remaining rules in the web ACL\. 
 
-       For information about using **Count** to test a web ACL before you start to use it to allow or block web requests, see [Counting the Web Requests That Match the Rules in a Web ACL](classic-web-acl-testing.md#classic-web-acl-testing-count)\. 
+       For information about using **Count** to test a web ACL before you start to use it to allow or block web requests, see [Counting the web requests that match the rules in a web ACL](classic-web-acl-testing.md#classic-web-acl-testing-count)\. 
    + For each rule group, set the override action for the rule group: 
      + **No override** – Causes the actions of the individual rules within the rule group to be used\.
      + **Override to count** – Overrides any block actions that are specifieid by individual rules in the group, so that all matching requests are only counted\. 
 
-     For more information, see [Rule Group Override](classic-waf-managed-rule-groups.md#classic-waf-managed-rule-group-override)\.
+     For more information, see [Rule group override](classic-waf-managed-rule-groups.md#classic-waf-managed-rule-group-override)\.
 
 1. If you want to change the order of the rules in the web ACL, use the arrows in the **Order** column\. AWS WAF Classic inspects web requests based on the order in which rules appear in the web ACL\. 
 
 1. If you want to remove a rule that you added to the web ACL, choose the **x** in the row for the rule\.
 
-1. Choose the default action for the web ACL\. This is the action that AWS WAF Classic takes when a web request doesn't match the conditions in any of the rules in this web ACL\. For more information, see [Deciding on the Default Action for a Web ACL](classic-web-acl-default-action.md)\.
+1. Choose the default action for the web ACL\. This is the action that AWS WAF Classic takes when a web request doesn't match the conditions in any of the rules in this web ACL\. For more information, see [Deciding on the default action for a Web ACL](classic-web-acl-default-action.md)\.
 
 1. Choose **Review and create**\.
 

@@ -1,6 +1,6 @@
-# Designating a Different Account as the AWS Firewall Manager Administrator Account<a name="fms-change-administrator"></a>
+# Designating a different account as the AWS Firewall Manager administrator account<a name="fms-change-administrator"></a>
 
-To use AWS Firewall Manager, you must log in to the console with a Firewall Manager administrator account\. You can designate only one account in an organization as a Firewall Manager administrator account\. It can be an AWS Organizations master account or a member account\. To set up an administrator account for the first time, see [Step 2: Set the AWS Firewall Manager Administrator Account](enable-integration.md)\. 
+To use AWS Firewall Manager, you must log in to the console with a Firewall Manager administrator account\. You can designate only one account in an organization as a Firewall Manager administrator account\. It can be an AWS Organizations master account or a member account\. To set up an administrator account for the first time, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\. 
 
 If you designate an account as an administrator account, and you later want to designate a different account as the administrator account, perform the following procedure\. 
 
@@ -27,11 +27,11 @@ When you revoke administrator privileges from the current administrator account,
 
 1. Type an account ID to associate with Firewall Manager\. This account will be the new Firewall Manager administrator account\. It can be the master account that you are signed in with or it can be a member account in your organization\. If the account ID that you type is a member account and not the master account, Firewall Manager sets the appropriate permissions for the member account\. 
 **Note**  
-The account is given permission to create and manage AWS WAF Classic rules across all accounts within the organization\.
+The account is given permission to create and manage AWS WAF rules and rule groups and AWS WAF Classic rules across all accounts within the organization\.
 
 1. Choose **Set administrator**\.
 
-## Closing the AWS Firewall Manager Administrator Account<a name="closed-admin-account"></a>
+## Closing the AWS Firewall Manager administrator account<a name="closed-admin-account"></a>
 
 If you close your AWS Firewall Manager Administrator account without first revoking that account \(as described in step three, immediately above\), then:
 + AWS will revoke the account’s administrator access from Firewall Manager\. After AWS revokes the account’s administrator access from Firewall Manager, all Firewall Manager policies applied to any account previously governed by the administrator account will be deactivated and such policy protection will no longer be applied to any of these accounts\.

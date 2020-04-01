@@ -1,4 +1,4 @@
-# Compliance Validation for Firewall Manager<a name="fms-security-compliance"></a>
+# Compliance validation for Firewall Manager<a name="fms-security-compliance"></a>
 
 Third\-party auditors assess the security and compliance of Firewall Manager as part of multiple AWS compliance programs, such as SOC, PCI, FedRAMP, HIPAA, and others\. 
 

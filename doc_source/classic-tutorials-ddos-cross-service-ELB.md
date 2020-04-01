@@ -1,4 +1,4 @@
-# Step 2: Scale Your Traffic Using Elastic Load Balancing<a name="classic-tutorials-ddos-cross-service-ELB"></a>
+# Step 2: Scale your traffic using Elastic Load Balancing<a name="classic-tutorials-ddos-cross-service-ELB"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -10,15 +10,15 @@ Elastic Load Balancing provides additional protection against application layer 
 You are responsible for the cost of the AWS services implemented in this tutorial\. For full details about Elastic Load Balancing costs, see the [Elastic Load Balancing pricing page](https://aws.amazon.com/elasticloadbalancing/pricing/)\. 
 
 **Topics**
-+ [Before You Begin](#classic-tutorials-ddos-cross-service-ELB-before)
-+ [Create Your Load Balancer](#classic-tutorials-ddos-cross-service-ELB-create)
-+ [Test Your Load Balancer](#classic-tutorials-ddos-cross-service-ELB-test)
++ [Before you begin](#classic-tutorials-ddos-cross-service-ELB-before)
++ [Create your load balancer](#classic-tutorials-ddos-cross-service-ELB-create)
++ [Test your load balancer](#classic-tutorials-ddos-cross-service-ELB-test)
 
-## Before You Begin<a name="classic-tutorials-ddos-cross-service-ELB-before"></a>
+## Before you begin<a name="classic-tutorials-ddos-cross-service-ELB-before"></a>
 
 Ensure that the Amazon EC2 instances that you launched earlier in this tutorial are in the **Active** state\. 
 
-## Create Your Load Balancer<a name="classic-tutorials-ddos-cross-service-ELB-create"></a>
+## Create your load balancer<a name="classic-tutorials-ddos-cross-service-ELB-create"></a>
 
 Next, you configure a load balancer that automatically routes traffic to your two Amazon EC2 instances\.
 
@@ -92,7 +92,7 @@ Next, you configure a load balancer that automatically routes traffic to your tw
 
 1. After you are notified that your load balancer was created successfully, choose **Close**\.
 
-## Test Your Load Balancer<a name="classic-tutorials-ddos-cross-service-ELB-test"></a>
+## Test your load balancer<a name="classic-tutorials-ddos-cross-service-ELB-test"></a>
 
 You should now be able to view your website using the DNS name of the load balancer\.
 
@@ -109,4 +109,4 @@ You should now be able to view your website using the DNS name of the load balan
 **Important**  
 If you make changes to the website, you must make the same changes to both EC2 instances\. The load balancer can serve content from either instance, so it is important that both instances are identical\.
 
-Next: [Step 3: Improve Performance and Absorb Attacks Using Amazon CloudFront](classic-tutorials-ddos-cross-service-CF.md)\.
+Next: [Step 3: Improve performance and absorb attacks using Amazon CloudFront](classic-tutorials-ddos-cross-service-CF.md)\.

@@ -1,4 +1,4 @@
-# Compliance Validation for Shield<a name="shd-security-compliance"></a>
+# Compliance validation for Shield<a name="shd-security-compliance"></a>
 
 Third\-party auditors assess the security and compliance of Shield as part of multiple AWS compliance programs, such as SOC, PCI, FedRAMP, HIPAA, and others\. 
 

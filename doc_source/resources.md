@@ -2,7 +2,7 @@
 
 The following related resources can help you as you work with this service\.
 
-## AWS Resources<a name="AWSResources"></a>
+## AWS resources<a name="AWSResources"></a>
 
 Several helpful guides, forums, and other resources are available from Amazon Web Services\.
 + **[AWS WAF Discussion Forum](https://forums.aws.amazon.com/forum.jspa?forumID=207)** – A community\-based forum for developers to discuss technical questions related to AWS WAF\.

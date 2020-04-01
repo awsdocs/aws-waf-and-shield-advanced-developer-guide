@@ -1,4 +1,4 @@
-# Reviewing DDoS Incidents<a name="using-ddos-reports"></a>
+# Reviewing DDoS incidents<a name="using-ddos-reports"></a>
 
 AWS Shield Advanced provides real\-time metrics and reports for extensive visibility into attacks on your AWS resources\.
 
@@ -13,7 +13,7 @@ You can view near real\-time metrics about attacks, including the following:
 
 Details are available for active and past incidents that have occurred in the last 12 months\.
 
-## Shield Advanced Details Report<a name="shield-details"></a>
+## Shield Advanced details report<a name="shield-details"></a>
 
 Additionally, AWS Shield Advanced gives you insight into your overall traffic at the time of the attack\. You can review details about the most prevalent:
 + IP addresses
@@ -43,7 +43,7 @@ Indicates a possible layer 3 or 4 attack has been identified and AWS is attempti
 Indicates a possible layer 3 or 4 attack was identified\. AWS responded to the attack and the incident appears to be over\.
 
 **Identified \(ongoing\)**  
-Indicates a possible layer 7 attack has been identified\. AWS cannot address layer 7 attacks, you must design your own layer mitigation processes\. For more information on responding to possible layer 7 attacks, see [Responding to DDoS Attacks](ddos-responding.md)\.
+Indicates a possible layer 7 attack has been identified\. AWS cannot address layer 7 attacks, you must design your own layer mitigation processes\. For more information on responding to possible layer 7 attacks, see [Responding to DDoS attacks](ddos-responding.md)\.
 
 **Identified \(subsided\)**  
 Indicates a possible layer 7 attack was identified and appears to be over\.
@@ -60,11 +60,11 @@ If you determine a possible attack is underway, you can contact the DRT through 
 
 1. Monitor those counts to determine if the source of the requests should be blocked\. If the volume of requests continues to be unusually high, change your web ACL to block those requests\.
 
-   For more information, see [Creating a Web ACL](web-acl-creating.md)\.
+   For more information, see [Creating a web ACL](web-acl-creating.md)\.
 
-AWS provides preconfigured templates to get you started quickly\. The templates include a set of AWS WAF rules that you can customize and use to block common web\-based attacks\. For more information, see [AWS WAF Security Automations](https://aws.amazon.com/answers/security/aws-waf-security-automations/)\.
+AWS provides preconfigured templates to get you started quickly\. The templates include a set of AWS WAF rules that you can customize and use to block common web\-based attacks\. For more information, see [AWS WAF Security Automations](https://aws.amazon.com/solutions/aws-waf-security-automations/)\.
 
-## Monitoring Threats Across AWS<a name="aws-shield-global-threats"></a>
+## Monitoring threats across AWS<a name="aws-shield-global-threats"></a>
 
 If you are a Shield Advanced customer, in addition to the information provided on the **Incidents** page about attacks on your own resources, you can find more information on the global threat environment dashboard\. On the dashboard, you can view trends and metrics about the DDoS threat landscape across Amazon EC2, Amazon CloudFront, Elastic Load Balancing, and Amazon Route 53\.
 

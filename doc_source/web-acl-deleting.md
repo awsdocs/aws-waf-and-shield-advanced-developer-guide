@@ -8,8 +8,10 @@ To delete a web ACL, you first disassociate all AWS resources from the web ACL\.
 
 1. In the navigation pane, choose **Web ACLs**\.
 
-1. Select the web ACL that you want to delete, and then choose **Edit**\.
+1. Select the name of the web ACL that you want to delete\. The console takes you to the web ACL's description, where you can edit it\.
 
-1. Disassociate the web ACL from all AWS resources\. On the **Associated AWS resources** tab, select all resources, and then choose **Remove**\. 
+1. On the **Associated AWS resources** tab, select all resources, and then choose **Remove** to disassociate the web ACL from all resources\. 
 
-1. On the **Web ACLs** page, select the web ACL that you want to delete, and then choose **Delete**\.
+1. In the navigation pane, choose **Web ACLs**\.
+
+1. Select the radio button next to the web ACL that you are deleting, and then choose **Delete**\.

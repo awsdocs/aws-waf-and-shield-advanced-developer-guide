@@ -9,9 +9,9 @@ Security is a shared responsibility between AWS and you\. The [shared responsibi
 This documentation helps you understand how to apply the shared responsibility model when using AWS WAF\. The following topics show you how to configure AWS WAF to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your AWS WAF resources\. 
 
 **Topics**
-+ [Data Protection in AWS WAF](data-protection.md)
-+ [Identity and Access Management in AWS WAF](waf-auth-and-access-control.md)
-+ [Logging and Monitoring in AWS WAF](waf-incident-response.md)
-+ [Compliance Validation for AWS WAF](waf-compliance.md)
++ [Data protection in AWS WAF](data-protection.md)
++ [Identity and access management in AWS WAF](waf-auth-and-access-control.md)
++ [Logging and monitoring in AWS WAF](waf-incident-response.md)
++ [Compliance validation for AWS WAF](waf-compliance.md)
 + [Resilience in AWS WAF](disaster-recovery-resiliency.md)
-+ [Infrastructure Security in AWS WAF](infrastructure-security.md)
++ [Infrastructure security in AWS WAF](infrastructure-security.md)

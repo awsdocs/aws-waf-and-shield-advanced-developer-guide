@@ -1,4 +1,4 @@
-# View Protection Changes of Your Resources Using AWS Config<a name="ddos-add-config"></a>
+# View protection changes of your resources using AWS Config<a name="ddos-add-config"></a>
 
 You can record changes to the AWS Shield Advanced protection of your resources using AWS Config\. You can then use this information to maintain a configuration change history for audit and troubleshooting purposes\.
 

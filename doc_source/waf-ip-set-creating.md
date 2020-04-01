@@ -1,4 +1,4 @@
-# Creating an IP Set<a name="waf-ip-set-creating"></a>
+# Creating an IP set<a name="waf-ip-set-creating"></a>
 
 Follow the procedure in this section to create a new IP set\.
 

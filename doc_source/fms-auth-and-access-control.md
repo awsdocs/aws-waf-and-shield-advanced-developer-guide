@@ -1,8 +1,8 @@
-# Identity and Access Management in AWS Firewall Manager<a name="fms-auth-and-access-control"></a>
+# Identity and access management in AWS Firewall Manager<a name="fms-auth-and-access-control"></a>
 
 Access to AWS Firewall Manager requires credentials\. Those credentials must have permissions to access AWS Firewall Manager resources, like policies\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and Firewall Manager to help secure access to your resources\.
 + [Authentication](#fms-authentication)
-+ [Access Control](#fms-access-control)
++ [Access control](#fms-access-control)
 
 ## Authentication<a name="fms-authentication"></a>
 
@@ -26,11 +26,11 @@ You can access AWS as any of the following types of identities:
       
   + **Applications running on Amazon EC2** –  You can use an IAM role to manage temporary credentials for applications that are running on an EC2 instance and making AWS CLI or AWS API requests\. This is preferable to storing access keys within the EC2 instance\. To assign an AWS role to an EC2 instance and make it available to all of its applications, you create an instance profile that is attached to the instance\. An instance profile contains the role and enables programs that are running on the EC2 instance to get temporary credentials\. For more information, see [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html) in the *IAM User Guide*\. 
 
-## Access Control<a name="fms-access-control"></a>
+## Access control<a name="fms-access-control"></a>
 
 You can have valid credentials to authenticate your requests, but unless you have permissions you can't create or access AWS Firewall Manager resources\. For example, you must have permissions to create a Firewall Manager *policy*\.
 
 The following sections describe how to manage permissions for AWS Firewall Manager\. We recommend that you read the overview first\.
-+ [Overview of Managing Access Permissions to Your AWS Firewall Manager Resources](fms-access-control-overview.md)
-+  [Using Identity\-based Policies \(IAM Policies\) for AWS Firewall Manager](fms-access-control-identity-based.md) 
-+  [Firewall Manager Required Permissions for API Actions](fms-api-permissions-ref.md) 
++ [Overview of managing access permissions to your AWS Firewall Manager resources](fms-access-control-overview.md)
++  [Using identity\-based policies \(IAM policies\) for AWS Firewall Manager](fms-access-control-identity-based.md) 
++  [Firewall Manager required permissions for API actions](fms-api-permissions-ref.md) 

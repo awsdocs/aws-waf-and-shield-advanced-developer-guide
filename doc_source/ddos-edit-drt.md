@@ -1,4 +1,4 @@
-# Editing AWS Shield Advanced Settings<a name="ddos-edit-drt"></a>
+# Editing AWS Shield Advanced settings<a name="ddos-edit-drt"></a>
 
 You can change AWS Shield Advanced settings, such as adding or removing DDoS response team \(DRT\) access to your account or adding or removing emergency contact information\.<a name="ddos-edit-drt-procedure"></a>
 

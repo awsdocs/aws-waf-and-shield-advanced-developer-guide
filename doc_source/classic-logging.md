@@ -1,4 +1,4 @@
-# Logging Web ACL Traffic Information<a name="classic-logging"></a>
+# Logging Web ACL traffic information<a name="classic-logging"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -13,7 +13,7 @@ You must have the following permissions to successfully enable logging:
 + `firehose:ListDeliveryStreams`
 + `waf:PutLoggingConfiguration`
 
-For more information about service\-linked roles and the `iam:CreateServiceLinkedRole` permission, see [Using Service\-Linked Roles for AWS WAF Classic](classic-using-service-linked-roles.md)\.<a name="classic-logging-procedure"></a>
+For more information about service\-linked roles and the `iam:CreateServiceLinkedRole` permission, see [Using service\-linked roles for AWS WAF Classic](classic-using-service-linked-roles.md)\.<a name="classic-logging-procedure"></a>
 
 **To enable logging for a web ACL**
 
@@ -36,7 +36,7 @@ One AWS WAF Classic log is equivalent to one Kinesis Data Firehose record\. If y
 
 1. Choose **Enable logging**\.
 **Note**  
-When you successfully enable logging, AWS WAF Classic will create a service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose\. For more information, see [Using Service\-Linked Roles for AWS WAF Classic](classic-using-service-linked-roles.md)\.<a name="classic-logging-disable-procedure"></a>
+When you successfully enable logging, AWS WAF Classic will create a service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose\. For more information, see [Using service\-linked roles for AWS WAF Classic](classic-using-service-linked-roles.md)\.<a name="classic-logging-disable-procedure"></a>
 
 **To disable logging for a web ACL**
 
@@ -48,7 +48,7 @@ When you successfully enable logging, AWS WAF Classic will create a service link
 
 1. In the dialog box, choose **Disable logging**\.
 
-**Example Example Log**  
+**Example Example log**  
 
 ```
 {

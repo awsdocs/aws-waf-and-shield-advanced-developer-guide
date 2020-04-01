@@ -1,4 +1,4 @@
-# AWS Marketplace Managed Rule Groups<a name="marketplace-managed-rule-groups"></a>
+# AWS Marketplace managed rule groups<a name="marketplace-managed-rule-groups"></a>
 
 AWS Marketplace managed rule groups are available by subscription through the AWS Marketplace console at [AWS Marketplace](https://aws.amazon.com/marketplace)\. After you subscribe to a AWS Marketplace managed rule group, you can use it in AWS WAF\.
 
@@ -8,7 +8,7 @@ To use an AWS Marketplace rule group in an AWS Firewall Manager policy, each acc
 **AWS Marketplace Rule Group Pricing**  
 AWS Marketplace rule groups are available with no long\-term contracts, and no minimum commitments\. When you subscribe to a rule group, you are charged a monthly fee \(prorated hourly\) and ongoing request fees based on volume\. For more information, see [AWS WAF Pricing](https://aws.amazon.com/waf/pricing/) and the description for each AWS Marketplace rule group at [AWS Marketplace](https://aws.amazon.com/marketplace)\.
 
-## Subscribing to AWS Marketplace Managed Rule Groups<a name="marketplace-managed-rule-groups-subscribing"></a>
+## Subscribing to AWS Marketplace managed rule groups<a name="marketplace-managed-rule-groups-subscribing"></a>
 
 You can subscribe to and unsubscribe from AWS Marketplace rule groups on the AWS WAF console\. If you need to, you can exclude specific rules in a managed rule group when you add it to a web ACL\.
 
@@ -29,9 +29,9 @@ If you don't want to subscribe to this rule group, simply close this page in you
 
 1. Choose **Set up your account**\.
 
-1. Add the rule group to a web ACL, similar to how you add an individual rule\. For more information, see [Creating a Web ACL](web-acl-creating.md) or [Editing a Web ACL](web-acl-editing.md)\.
+1. Add the rule group to a web ACL, similar to how you add an individual rule\. For more information, see [Creating a web ACL](web-acl-creating.md) or [Editing a Web ACL](web-acl-editing.md)\.
 **Note**  
-When adding a rule group to a web ACL, you can override the actions of all rules in the rule group to `COUNT` only\. For more information, see [Overriding Rule Actions for a Rule Group](waf-using-rule-groups.md#rule-group-override)\.
+When adding a rule group to a web ACL, you can override the actions of all rules in the rule group to `COUNT` only\. For more information, see [Overriding rule actions for a rule group](waf-using-rule-groups.md#rule-group-override)\.
 
 **To unsubscribe from an AWS Marketplace managed rule group**
 
@@ -47,9 +47,9 @@ When adding a rule group to a web ACL, you can override the actions of all rules
 
 1. Choose **Yes, cancel subscription**\.
 
-After you're subscribed to an AWS Marketplace rule group, you use it in your web ACLs as you do other managed rule groups\. For information, see [Creating a Web ACL](web-acl-creating.md)\.
+After you're subscribed to an AWS Marketplace rule group, you use it in your web ACLs as you do other managed rule groups\. For information, see [Creating a web ACL](web-acl-creating.md)\.
 
-## Troubleshooting AWS Marketplace Rule Groups<a name="waf-managed-rule-group-troubleshooting"></a>
+## Troubleshooting AWS Marketplace rule groups<a name="waf-managed-rule-group-troubleshooting"></a>
 
 If you find that an AWS Marketplace rule group is blocking legitimate traffic, you can troubleshoot the problem by performing the following steps\.<a name="waf-managed-rule-group-troubleshooting-procedure"></a>
 
@@ -61,6 +61,6 @@ If you find that an AWS Marketplace rule group is blocking legitimate traffic, y
 
 1. After setting the AWS Marketplace rule group action to **Override to count**, contact the rule group provider‘s customer support team to further troubleshoot the issue\. For contact information, see the rule group listing on the product listing pages on AWS Marketplace\.
 
-### Contacting AWS Support<a name="waf-managed-rule-group-troubleshooting-support"></a>
+### Contacting AWS support<a name="waf-managed-rule-group-troubleshooting-support"></a>
 
 For problems with AWS WAF or a rule group that is managed by AWS, contact AWS Support\. For problems with a rule group that is managed by an AWS AWS Marketplace seller, contact the vendor's customer support team\. To find vendor contact information, see the vendors’s listing on AWS Marketplace\.

@@ -1,6 +1,6 @@
-# Shield Required Permissions for API Actions<a name="shd-api-permissions-ref"></a>
+# Shield required permissions for API actions<a name="shd-api-permissions-ref"></a>
 
-When you set up [Access Control](shd-auth-and-access-control.md#shd-access-control) and writing permissions policies that you can attach to an IAM identity \(identity\-based policies\), use the information in this section as a guide\. For each AWS Shield API operation, you need to know the actions for which you can grant permissions to perform the action, and the AWS resource for which you can grant the permissions\. You specify the actions in the policy's `Action` field, and you specify the resource value in the policy's `Resource` field\.
+When you set up [Access control](shd-auth-and-access-control.md#shd-access-control) and writing permissions policies that you can attach to an IAM identity \(identity\-based policies\), use the information in this section as a guide\. For each AWS Shield API operation, you need to know the actions for which you can grant permissions to perform the action, and the AWS resource for which you can grant the permissions\. You specify the actions in the policy's `Action` field, and you specify the resource value in the policy's `Resource` field\.
 
 **Note**  
 To specify an action, use the `shield:` prefix followed by the API operation name \(for example, `shield:CreateProtection`\)\.  

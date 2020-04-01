@@ -7,13 +7,13 @@ This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, li
 The following tasks are not specifically related to DDoS protection, but are necessary to complete the tutorial\.
 
 **Topics**
-+ [Sign Up for AWS](#classic-tutorials-ddos-cross-service-prereq-aws)
-+ [Create an IAM User](#classic-tutorials-ddos-cross-service-prereq-iam)
-+ [Create a Key Pair](#classic-tutorials-ddos-cross-service-prereq-pair)
-+ [Create a Virtual Private Cloud \(VPC\) with Two Subnets](#classic-tutorials-ddos-cross-service-prereq-vpc)
-+ [Create a Security Group](#classic-tutorials-ddos-cross-service-prereq-security-group)
++ [Sign up for AWS](#classic-tutorials-ddos-cross-service-prereq-aws)
++ [Create an IAM user](#classic-tutorials-ddos-cross-service-prereq-iam)
++ [Create a key pair](#classic-tutorials-ddos-cross-service-prereq-pair)
++ [Create a virtual private cloud \(VPC\) with two subnets](#classic-tutorials-ddos-cross-service-prereq-vpc)
++ [Create a security group](#classic-tutorials-ddos-cross-service-prereq-security-group)
 
-## Sign Up for AWS<a name="classic-tutorials-ddos-cross-service-prereq-aws"></a>
+## Sign up for AWS<a name="classic-tutorials-ddos-cross-service-prereq-aws"></a>
 
 When you sign up for Amazon Web Services \(AWS\), your AWS account is automatically signed up for all services in AWS\. You are charged only for the services that you use\.
 
@@ -29,13 +29,13 @@ If you have an AWS account already, skip to the next task\. If you don't have an
 
 Note your AWS account number, because you'll need it for the next task\.
 
-## Create an IAM User<a name="classic-tutorials-ddos-cross-service-prereq-iam"></a>
+## Create an IAM user<a name="classic-tutorials-ddos-cross-service-prereq-iam"></a>
 
 To access AWS services and resources, you must provide credentials\. Although it’s possible to sign in with the user name and password that you created when you first opened your AWS account, for security purposes we strongly recommend that you create new credentials through the AWS Identity and Access Management \(IAM\) service, and that you use those credentials to sign in\. 
 
 If you signed up for AWS but have not created an IAM user for yourself, you can create one using the following procedure\.
 
-**To create an IAM user for yourself and add the user to an Administrators group**
+**To create an IAM user for yourself and add the user to an administrators group**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -73,7 +73,7 @@ To verify the sign\-in link for IAM users for your account, open the IAM console
 
 For more information about IAM, see the [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)\.
 
-## Create a Key Pair<a name="classic-tutorials-ddos-cross-service-prereq-pair"></a>
+## Create a key pair<a name="classic-tutorials-ddos-cross-service-prereq-pair"></a>
 
 A *key pair* is a set of security credentials that you use to prove your identity\. A key pair consists of a private key and a public key that you create\. You use your key pair to log in to your Amazon EC2 instance, which is a virtual server in the AWS Cloud\. You specify the name of the key pair when you initially launch the instance\.
 
@@ -99,9 +99,9 @@ The navigation pane is on the left side of the console\. If you do not see the p
 **Important**  
 This is the only chance for you to save the private key file\. You must provide the name of your key pair when you launch an instance and the corresponding private key each time you connect to the instance\.
 
-For more information, see [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide//ec2-key-pairs.html)\. 
+For more information, see [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html)\. 
 
-## Create a Virtual Private Cloud \(VPC\) with Two Subnets<a name="classic-tutorials-ddos-cross-service-prereq-vpc"></a>
+## Create a virtual private cloud \(VPC\) with two subnets<a name="classic-tutorials-ddos-cross-service-prereq-vpc"></a>
 
 Amazon VPC enables you to launch AWS resources into a virtual network that you've defined\. In this tutorial your VPC will contain the two Amazon EC2 instances that host your website along with two subnets connected to those instances\. 
 
@@ -125,7 +125,7 @@ For more information about Amazon VPC, see [What is Amazon VPC?](https://docs.aw
 
 1. Choose **Create VPC**\. On the confirmation page, choose **OK**\.
 
-### Add a Second Subnet to Your VPC<a name="classic-tutorials-ddos-cross-service-vpc-subnet"></a>
+### Add a second subnet to your VPC<a name="classic-tutorials-ddos-cross-service-vpc-subnet"></a>
 
 For increased availability, later in this tutorial you configure a load balancer to use different subnets in two different Availability Zones\. When you created your Amazon VPC in the previous step, you created the first subnet in an Availability Zone\. You now must add a second subnet in a different Availability Zone\. Both Availability Zones must be in the same AWS Region\.
 
@@ -155,7 +155,7 @@ For increased availability, later in this tutorial you configure a load balancer
 
 1. Choose **Save**\.
 
-## Create a Security Group<a name="classic-tutorials-ddos-cross-service-prereq-security-group"></a>
+## Create a security group<a name="classic-tutorials-ddos-cross-service-prereq-security-group"></a>
 
 Security groups act as a firewall for associated instances, controlling both inbound and outbound traffic at the instance level\. You must add rules to a security group that enable you to connect to your instance from your IP address using RDP\. You can also add rules that allow inbound and outbound HTTP and HTTPS access from anywhere\.
 
@@ -185,4 +185,4 @@ For security reasons, we don't recommend that you allow RDP access from all IPv4
 
 1. After you have added all of the rules, choose **Create**\.
 
-Next: [Step 1: Launch a Virtual Server Using Amazon EC2](classic-tutorials-ddos-cross-service-EC2.md)\.
+Next: [Step 1: Launch a virtual server using Amazon EC2](classic-tutorials-ddos-cross-service-EC2.md)\.

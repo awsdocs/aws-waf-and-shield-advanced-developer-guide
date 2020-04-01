@@ -1,4 +1,4 @@
-# Using Your Rule Group in a Web ACL<a name="waf-rule-group-using"></a>
+# Using your rule group in a Web ACL<a name="waf-rule-group-using"></a>
 
 To use a rule group in a web ACL, on the console, when you add or update the rules in your web ACL, on the **Add rules and rule groups** page, choose **Add rules**, and then choose **Add my own rules and rule groups**\. Then choose **Rule group** and select your rule group from the list\. 
 

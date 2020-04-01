@@ -1,4 +1,4 @@
-# Creating a Rule Group<a name="waf-rule-group-creating"></a>
+# Creating a rule group<a name="waf-rule-group-creating"></a>
 
 **To create a rule group**
 
@@ -16,8 +16,8 @@ You can't change the name after you create the rule group\.
 
 1. Add rules to the rule group using the **Rule builder** wizard, the same as you do in web ACL management\. The only difference is that you can't add a rule group to another rule group\. 
 
-1. For **Capacity**, set the maximum for the rule group's use of web ACL capacity units \(WCUs\)\. This is an immutable setting\. For information about WCUs, see [AWS WAF Web ACL Capacity Units \(WCU\)](how-aws-waf-works.md#aws-waf-capacity-units)\. 
+1. For **Capacity**, set the maximum for the rule group's use of web ACL capacity units \(WCUs\)\. This is an immutable setting\. For information about WCUs, see [AWS WAF Web ACL capacity units \(WCU\)](how-aws-waf-works.md#aws-waf-capacity-units)\. 
 
-   As you add rules to the rule group, the**Add rules and set capacity** pane displays the minimum required capacity, which is based on the rules that you've already added\. You can use this and your future plans for the rule group to help estimate the capacity that the rule group will require\. 
+   As you add rules to the rule group, the **Add rules and set capacity** pane displays the minimum required capacity, which is based on the rules that you've already added\. You can use this and your future plans for the rule group to help estimate the capacity that the rule group will require\. 
 
 1. Review the settings for the rule group, and choose **Create**\.

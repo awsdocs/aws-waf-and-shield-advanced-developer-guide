@@ -1,8 +1,8 @@
-# Identity and Access Management in AWS Shield<a name="shd-auth-and-access-control"></a>
+# Identity and access management in AWS Shield<a name="shd-auth-and-access-control"></a>
 
 Access to AWS Shield requires credentials\. Those credentials must have permissions to access AWS resources, such as an AWS Shield resource or an Amazon S3 bucket\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and Shield to help secure access to your resources\.
 + [Authentication](#shd-authentication)
-+ [Access Control](#shd-access-control)
++ [Access control](#shd-access-control)
 
 ## Authentication<a name="shd-authentication"></a>
 
@@ -26,11 +26,11 @@ You can access AWS as any of the following types of identities:
       
   + **Applications running on Amazon EC2** –  You can use an IAM role to manage temporary credentials for applications that are running on an EC2 instance and making AWS CLI or AWS API requests\. This is preferable to storing access keys within the EC2 instance\. To assign an AWS role to an EC2 instance and make it available to all of its applications, you create an instance profile that is attached to the instance\. An instance profile contains the role and enables programs that are running on the EC2 instance to get temporary credentials\. For more information, see [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html) in the *IAM User Guide*\. 
 
-## Access Control<a name="shd-access-control"></a>
+## Access control<a name="shd-access-control"></a>
 
 You can have valid credentials to authenticate your requests, but unless you have permissions you can't create or access AWS Shield resources\. For example, you must have permissions to create a Shield *protection* or list *attacks*\.
 
 The following sections describe how to manage permissions for AWS Shield\. We recommend that you read the overview first\.
-+ [Overview of Managing Access Permissions to Your AWS Shield Resources](shd-access-control-overview.md)
-+  [Using Identity\-based Policies \(IAM Policies\) for AWS Shield](shd-access-control-identity-based.md) 
-+  [Shield Required Permissions for API Actions](shd-api-permissions-ref.md) 
++ [Overview of managing access permissions to your AWS Shield resources](shd-access-control-overview.md)
++  [Using identity\-based policies \(IAM policies\) for AWS Shield](shd-access-control-identity-based.md) 
++  [Shield required permissions for API actions](shd-api-permissions-ref.md) 

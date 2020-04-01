@@ -1,4 +1,4 @@
-# Deleting an AWS Firewall Manager Policy<a name="policy-deleting"></a>
+# Deleting an AWS Firewall Manager policy<a name="policy-deleting"></a>
 
 You can delete a Firewall Manager policy by performing the following steps\.<a name="policy-deleting-procedure"></a>
 

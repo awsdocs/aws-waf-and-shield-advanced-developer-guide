@@ -1,4 +1,4 @@
-# AWS Shield Advanced Policy Scope Changes<a name="policy-scope-changes"></a>
+# AWS Shield Advanced policy scope changes<a name="policy-scope-changes"></a>
 
 If you modify a Firewall Manager\-Shield Advanced policy which causes an account or resource to go out of scope of the policy, Firewall Manager no longer monitors the account or resource\. However, the account continues to be subscribed to Shield Advanced\. The resources continue to be protected by Shield Advanced and will incur the Shield Advanced data transfer charges\.
 

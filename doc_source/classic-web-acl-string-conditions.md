@@ -1,4 +1,4 @@
-# Working with String Match Conditions<a name="classic-web-acl-string-conditions"></a>
+# Working with string match conditions<a name="classic-web-acl-string-conditions"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -7,12 +7,12 @@ This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, li
 If you want to allow or block web requests based on strings that appear in the requests, create one or more string match conditions\. A string match condition identifies the string that you want to search for and the part of web requests, such as a specified header or the query string, that you want AWS WAF Classic to inspect for the string\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that contain the string\.
 
 **Topics**
-+ [Creating a String Match Condition](#classic-web-acl-string-conditions-creating)
-+ [Values That You Specify When You Create or Edit String Match Conditions](#classic-web-acl-string-conditions-values)
-+ [Adding and Deleting Filters in a String Match Condition](#classic-web-acl-string-conditions-editing)
-+ [Deleting String Match Conditions](#classic-web-acl-string-conditions-deleting)
++ [Creating a string match condition](#classic-web-acl-string-conditions-creating)
++ [Values that you specify when you create or edit string match conditions](#classic-web-acl-string-conditions-values)
++ [Adding and deleting filters in a string match condition](#classic-web-acl-string-conditions-editing)
++ [Deleting string match conditions](#classic-web-acl-string-conditions-deleting)
 
-## Creating a String Match Condition<a name="classic-web-acl-string-conditions-creating"></a>
+## Creating a string match condition<a name="classic-web-acl-string-conditions-creating"></a>
 
 When you create string match conditions, you specify filters that identify the string that you want to search for and the part of web requests that you want AWS WAF Classic to inspect for that string, such as the URI or the query string\. You can add more than one filter to a string match condition, or you can create a separate string match condition for each filter\. Here's how each configuration affects AWS WAF Classic behavior:
 + **One filter per string match condition** – When you add the separate string match conditions to a rule and add the rule to a web ACL, web requests must match all the conditions for AWS WAF Classic to allow or block requests based on the conditions\. 
@@ -33,7 +33,7 @@ When you add a string match condition to a rule, you also can configure AWS WAF 
 
 1. Choose **Create condition**\.
 
-1. Specify the applicable filter settings\. For more information, see [Values That You Specify When You Create or Edit String Match Conditions](#classic-web-acl-string-conditions-values)\.
+1. Specify the applicable filter settings\. For more information, see [Values that you specify when you create or edit string match conditions](#classic-web-acl-string-conditions-values)\.
 
 1. Choose **Add filter**\.
 
@@ -41,7 +41,7 @@ When you add a string match condition to a rule, you also can configure AWS WAF 
 
 1. When you're finished adding filters, choose **Create**\.
 
-## Values That You Specify When You Create or Edit String Match Conditions<a name="classic-web-acl-string-conditions-values"></a>
+## Values that you specify when you create or edit string match conditions<a name="classic-web-acl-string-conditions-values"></a>
 
 When you create or update a string match condition, you specify the following values: 
 
@@ -63,7 +63,7 @@ The part of a URL that appears after a `?` character, if any\.
 The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\. Unless a **Transformation** is specified, a URI is not normalized and is inspected just as AWS receives it from the client as part of the request\. A **Transformation** will reformat the URI as specified\.  
 **Body**  
 The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form\.  
-If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\)\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with Size Constraint Conditions](classic-web-acl-size-conditions.md)\.  
+If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\)\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with size constraint conditions](classic-web-acl-size-conditions.md)\.  
 **Single query parameter \(value only\)**  
 Any parameter that you have defined as part of the query string\. For example, if the URL is "www\.xyz\.com?UserName=abc&SalesRegion=seattle" you can add a filter to either the *UserName* or *SalesRegion* parameter\.   
 If duplicate parameters appear in the query string, the values are evaluated as an "OR\." That is, either value will trigger a match\. For example, in the URL "www\.xyz\.com?SalesRegion=boston&SalesRegion=seattle", either "boston" or "seattle" in **Value to match** will trigger a match\.  
@@ -132,7 +132,7 @@ If the value in **Value to match** is base64\-encoded, select this check box\. U
 **Value to match**  
 Specify the value that you want AWS WAF Classic to search for in web requests\. The maximum length is 50 bytes\. If you're base64\-encoding the value, the 50\-byte maximum length applies to the value before you encode it\.
 
-## Adding and Deleting Filters in a String Match Condition<a name="classic-web-acl-string-conditions-editing"></a>
+## Adding and deleting filters in a string match condition<a name="classic-web-acl-string-conditions-editing"></a>
 
 You can add filters to a string match condition or delete filters\. To change a filter, add a new one and delete the old one\.<a name="classic-web-acl-string-conditions-editing-procedure"></a>
 
@@ -148,7 +148,7 @@ You can add filters to a string match condition or delete filters\. To change a 
 
    1. Choose **Add filter**\.
 
-   1. Specify the applicable filter settings\. For more information, see [Values That You Specify When You Create or Edit String Match Conditions](#classic-web-acl-string-conditions-values)\.
+   1. Specify the applicable filter settings\. For more information, see [Values that you specify when you create or edit string match conditions](#classic-web-acl-string-conditions-values)\.
 
    1. Choose **Add**\.
 
@@ -158,7 +158,7 @@ You can add filters to a string match condition or delete filters\. To change a 
 
    1. Choose **Delete Filter**\.
 
-## Deleting String Match Conditions<a name="classic-web-acl-string-conditions-deleting"></a>
+## Deleting string match conditions<a name="classic-web-acl-string-conditions-deleting"></a>
 
 If you want to delete a string match condition, you need to first delete all filters in the condition and remove the condition from all the rules that are using it, as described in the following procedure\.<a name="classic-web-acl-string-conditions-deleting-procedure"></a>
 

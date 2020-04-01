@@ -1,4 +1,4 @@
-# Example AWS Shield Advanced Use Cases<a name="aws-shield-use-case"></a>
+# Example AWS Shield Advanced use cases<a name="aws-shield-use-case"></a>
 
 You can use Shield Advanced to protect your resources in many types of scenarios\. However, in some cases you should use other services or combine other services with Shield Advanced to offer the best protection\. Following are examples of how to use Shield Advanced or other AWS services to help protect your resources\.
 

@@ -1,4 +1,4 @@
-# Compliance Validation for AWS WAF<a name="waf-compliance"></a>
+# Compliance validation for AWS WAF<a name="waf-compliance"></a>
 
 Third\-party auditors assess the security and compliance of AWS WAF as part of multiple AWS compliance programs, such as SOC, PCI, FedRAMP, HIPAA, and others\. 
 

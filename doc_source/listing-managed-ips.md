@@ -15,5 +15,5 @@ aws wafv2 get-rate-based-statement-managed-keys --scope=CLOUDFRONT --region=us-e
 The following shows the syntax for a regional application, an Amazon API Gateway API or an Application Load Balancer\. 
 
 ```
-aws wafv2 get-rate-based-statement-managed-keys --scope=REGIONAL --region==region --web-acl-name=WebACLName --web-acl-id=WebACLId --rule-name=RuleName
+aws wafv2 get-rate-based-statement-managed-keys --scope=REGIONAL --region=region --web-acl-name=WebACLName --web-acl-id=WebACLId --rule-name=RuleName
 ```

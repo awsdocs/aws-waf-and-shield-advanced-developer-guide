@@ -1,9 +1,9 @@
-# Removing AWS Shield Advanced from an AWS Resource<a name="remove-protection"></a>
+# Removing AWS Shield Advanced from an AWS resource<a name="remove-protection"></a>
 
-You can remove AWS Shield Advanced protection from any of your resources at any time\. 
+You can remove AWS Shield Advanced protection from any of your AWS resources at any time\. 
 
 **Important**  
-Deleting a resource will not remove the resource from AWS Shield Advanced\. You must also remove the resource from AWS Shield Advanced, as described in this procedure\.<a name="remove-protection-procedure"></a>
+Deleting an AWS resource doesn't remove the resource from AWS Shield Advanced\. You must also remove the protection on the resource from AWS Shield Advanced, as described in this procedure\.<a name="remove-protection-procedure"></a>
 
 **Remove AWS Shield Advanced protection from an AWS resource**
 
@@ -14,7 +14,9 @@ Deleting a resource will not remove the resource from AWS Shield Advanced\. You 
 1. Choose the radio button next to the resource\.
 
 1. Choose **Delete protection**\.
-**Note**  
-If you have an Amazon CloudWatch alarm configured for this protection, you will be give the option to delete this alarm along with the protection\. If you choose not to delete the alarm at this point, you can instead delete it later using the CloudWatch console\.
 
-These steps remove AWS Shield Advanced protection from a specific resource\. They do not cancel your AWS Shield Advanced subscription\. You will continue to be charged for the service\. For more information about your AWS Shield Advanced subscription, contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
+   1. If you have an Amazon CloudWatch alarm configured for this protection, you are given the option to delete the alarm along with the protection\. If you choose not to delete the alarm at this point, you can instead delete it later using the CloudWatch console\.
+**Note**  
+For protections that have an Amazon Route 53 health check configured, if you add the protection again later, the protection still includes the health check\. 
+
+The above steps remove AWS Shield Advanced protection from a specific AWS resource\. They don't cancel your AWS Shield Advanced subscription\. You will continue to be charged for the service\. For information about your AWS Shield Advanced subscription, contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.

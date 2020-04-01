@@ -1,18 +1,18 @@
-# Setting Up<a name="setting-up-waf"></a>
+# Setting up<a name="setting-up-waf"></a>
 
 This topic describes preliminary steps, such as creating an AWS account, to prepare you to use AWS WAF, AWS Firewall Manager, and AWS Shield Advanced\. You are not charged to set up this account and other preliminary items\. You are charged only for AWS services that you use\. 
 
-After you complete these steps, see [Getting Started with AWS WAF](getting-started.md) to continue getting started with AWS WAF\.
+After you complete these steps, see [Getting started with AWS WAF](getting-started.md) to continue getting started with AWS WAF\.
 
 **Note**  
-AWS Shield Standard is included with AWS WAF and does not require additional setup\. For more information, see [How AWS Shield Works](ddos-overview.md)\.
+AWS Shield Standard is included with AWS WAF and does not require additional setup\. For more information, see [How AWS Shield works](ddos-overview.md)\.
 
 Before you use AWS WAF or AWS Shield Advanced for the first time, complete the following tasks:
-+ [Step 1: Sign Up for an AWS Account](#setting-up-waf-aws-account)
-+ [Step 2: Create an IAM User](#setting-up-waf-iam)
-+ [Step 3: Download Tools](#setting-up-waf-tools)
++ [Step 1: Sign up for an AWS account](#setting-up-waf-aws-account)
++ [Step 2: Create an IAM user](#setting-up-waf-iam)
++ [Step 3: Download tools](#setting-up-waf-tools)
 
-## Step 1: Sign Up for an AWS Account<a name="setting-up-waf-aws-account"></a>
+## Step 1: Sign up for an AWS account<a name="setting-up-waf-aws-account"></a>
 
 When you sign up for Amazon Web Services \(AWS\), your AWS account is automatically signed up for all services in AWS, including AWS WAF\. You are charged only for the services that you use\.
 
@@ -28,7 +28,7 @@ If you have an AWS account already, skip to the next task\. If you don't have an
 
 Note your AWS account number, because you'll need it for the next task\.
 
-## Step 2: Create an IAM User<a name="setting-up-waf-iam"></a>
+## Step 2: Create an IAM user<a name="setting-up-waf-iam"></a>
 
 To use the AWS WAF console, you must sign in to confirm that you have permission to perform AWS WAF operations\. You can use the root credentials for your AWS account, but we don't recommend it\. For greater security and control of your account, we recommend that you use AWS Identity and Access Management \(IAM\) to do the following:
 + Create an IAM user account for yourself or your business\.
@@ -95,9 +95,9 @@ https://your_account_alias.signin.aws.amazon.com/console/
 
 To verify the sign\-in link for IAM users for your account, open the IAM console and check under the **IAM users sign\-in link** on the dashboard\. 
 
-After you complete these steps, you can stop here and go to [Getting Started with AWS WAF](getting-started.md) to continue getting started with AWS WAF using the console\. If you want to access AWS WAF programmatically using the AWS WAF API, continue on to the next step, [Step 3: Download Tools](#setting-up-waf-tools)\.
+After you complete these steps, you can stop here and go to [Getting started with AWS WAF](getting-started.md) to continue getting started with AWS WAF using the console\. If you want to access AWS WAF programmatically using the AWS WAF API, continue on to the next step, [Step 3: Download tools](#setting-up-waf-tools)\.
 
-## Step 3: Download Tools<a name="setting-up-waf-tools"></a>
+## Step 3: Download tools<a name="setting-up-waf-tools"></a>
 
 The AWS Management Console includes a console for AWS WAF, but if you want to access AWS WAF programmatically, the following documentation and tools will help you:
 + If you want to call the AWS WAF API without having to handle low\-level details like assembling raw HTTP requests, you can use an AWS SDK\. The AWS SDKs provide functions and data types that encapsulate the functionality of AWS WAF and other AWS services\. To download an AWS SDK, see the applicable page, which also includes prerequisites and installation instructions:

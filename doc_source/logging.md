@@ -1,15 +1,15 @@
-# Logging Web ACL Traffic Information<a name="logging"></a>
+# Logging Web ACL traffic information<a name="logging"></a>
 
 You can enable logging to get detailed information about traffic that is analyzed by your web ACL\. Information that is contained in the logs include the time that AWS WAF received the request from your AWS resource, detailed information about the request, and the action for the rule that each request matched\.
 
-To get started, you set up an Amazon Kinesis Data Firehose\. As part of that process, you choose a destination for storing your logs\. Next, you choose the web ACL that you want to enable logging for\. After you enable logging, AWS WAF delivers logs through the firehose to your storage destination\. For more information about how to create an Amazon Kinesis Data Firehose and review the stored logs, see [What Is Amazon Kinesis Data Firehose?](https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html)
+To get started, you set up an Amazon Kinesis Data Firehose\. As part of that process, you choose a destination for storing your logs\. Next, you choose the web ACL that you want to enable logging for\. After you enable logging, AWS WAF delivers logs to your storage destination through the HTTPS endpoint of Kinesis Data Firehose\. For more information about how to create an Amazon Kinesis Data Firehose and review the stored logs, see [What Is Amazon Kinesis Data Firehose?](https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html)
 
 You must have the following permissions to successfully enable logging:
 + `iam:CreateServiceLinkedRole`
 + `firehose:ListDeliveryStreams`
 + `wafv2:PutLoggingConfiguration`
 
-For more information about service\-linked roles and the `iam:CreateServiceLinkedRole` permission, see [Using Service\-Linked Roles for AWS WAF](using-service-linked-roles.md)\.<a name="logging-procedure"></a>
+For more information about service\-linked roles and the `iam:CreateServiceLinkedRole` permission, see [Using service\-linked roles for AWS WAF](using-service-linked-roles.md)\.<a name="logging-procedure"></a>
 
 **To enable logging for a web ACL**
 
@@ -32,7 +32,7 @@ One AWS WAF log is equivalent to one Kinesis Data Firehose record\. If you typic
 
 1. Choose **Enable logging**\.
 **Note**  
-When you successfully enable logging, AWS WAF will create a service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose\. For more information, see [Using Service\-Linked Roles for AWS WAF](using-service-linked-roles.md)\.<a name="logging-disable-procedure"></a>
+When you successfully enable logging, AWS WAF will create a service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose\. For more information, see [Using service\-linked roles for AWS WAF](using-service-linked-roles.md)\.<a name="logging-disable-procedure"></a>
 
 **To disable logging for a web ACL**
 
@@ -50,7 +50,7 @@ When you successfully enable logging, AWS WAF will create a service linked role 
 {
     "timestamp": 1576280412771,
     "formatVersion": 1,
-    "webaclId": "arn:aws:wafv2:ap-southeast-2:EXAMPLE12345:regional/webacl/STMTest/1EXAMPLE-2ARN-3ARN-4ARN-123456EXAMPLE,
+    "webaclId": "arn:aws:wafv2:ap-southeast-2:EXAMPLE12345:regional/webacl/STMTest/1EXAMPLE-2ARN-3ARN-4ARN-123456EXAMPLE",
     "terminatingRuleId": "STMTest_SQLi_XSS",
     "terminatingRuleType": "REGULAR",
     "action": "BLOCK",
@@ -115,7 +115,7 @@ The GUID of the web ACL\.
 The ID of the rule that terminated the request\. If nothing terminates the request, the value is `Default_Action`\.
 
 **terminatingRuleType**  
-The type of rule that terminated the request\. Possible values: RATE\_BASED, REGULAR, and GROUP\.
+The type of rule that terminated the request\. Possible values: RATE\_BASED, REGULAR, GROUP, and MANAGED\_RULE\_GROUP\.
 
 **action**  
 The action\. Possible values for a terminating rule: ALLOW and BLOCK\. COUNT is not a valid value for a terminating rule\.

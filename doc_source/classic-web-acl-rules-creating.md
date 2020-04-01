@@ -1,4 +1,4 @@
-# Creating a Rule and Adding Conditions<a name="classic-web-acl-rules-creating"></a>
+# Creating a rule and adding conditions<a name="classic-web-acl-rules-creating"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -20,7 +20,7 @@ Enter a name\.
 **CloudWatch metric name**  
 Enter a name for the CloudWatch metric that AWS WAF Classic will create and will associate with the rule\. The name can contain only alphanumeric characters \(A\-Z, a\-z, 0\-9\), with maximum length 128 and minimum length one\. It can't contain white space or metric names reserved for AWS WAF Classic, including "All" and "Default\_Action\.  
 **Rule type**  
-Choose either `Regular rule` or `Rate–based rule`\. Rate–based rules are identical to regular rules, but also take into account how many requests arrive from an IP address in a five\-minute period\. For more information about these rule types, see [How AWS WAF Classic Works](classic-how-aws-waf-works.md)\.  
+Choose either `Regular rule` or `Rate–based rule`\. Rate–based rules are identical to regular rules, but also take into account how many requests arrive from an IP address in a five\-minute period\. For more information about these rule types, see [How AWS WAF Classic works](classic-how-aws-waf-works.md)\.  
 **Rate limit**  
 For a rate\-based rule, enter the maximum number of requests to allow in any five\-minute period from an IP address that matches the rule's conditions\. The rate limit must be at least 100\.   
 You can specify a rate limit alone, or a rate limit and conditions\. If you specify only a rate limit, AWS WAF places the limit on all IP addresses\. If you specify a rate limit and conditions, AWS WAF places the limit on IP addresses that match the conditions\.   

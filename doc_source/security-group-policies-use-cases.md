@@ -1,4 +1,4 @@
-# Security Group Policy Use Cases<a name="security-group-policies-use-cases"></a>
+# Security group policy use cases<a name="security-group-policies-use-cases"></a>
 
 You can use AWS Firewall Manager common security group policies to automate the host firewall configuration for communication between Amazon VPC instances\. This section lists standard Amazon VPC architectures and describes how to secure each using Firewall Manager common security group policies\. These security group policies can help you apply a unified set of rules to select resources in different accounts and avoid per\-account configurations in Amazon Elastic Compute Cloud and Amazon VPC\. 
 

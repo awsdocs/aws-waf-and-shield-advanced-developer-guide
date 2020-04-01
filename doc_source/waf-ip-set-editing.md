@@ -1,4 +1,4 @@
-# Editing an IP Set<a name="waf-ip-set-editing"></a>
+# Editing an IP set<a name="waf-ip-set-editing"></a>
 
 To add or remove IP addresses or IP address ranges from an IP set or change its description, perform the following procedure\. <a name="web-acl-editing-procedure"></a>
 

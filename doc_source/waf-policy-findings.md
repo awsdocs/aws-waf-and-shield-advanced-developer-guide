@@ -1,6 +1,6 @@
-# AWS WAF Policy Findings<a name="waf-policy-findings"></a>
+# AWS WAF policy findings<a name="waf-policy-findings"></a>
 
-You can use Firewall Manager AWS WAF Classic policies to apply AWS WAF Classic rules to your resources in AWS Organizations\. For more information, see [Working with AWS Firewall Manager Policies](working-with-policies.md)\.
+You can use Firewall Manager AWS WAF policies to apply AWS WAF rule groups to your resources in AWS Organizations\. For more information, see [Working with AWS Firewall Manager policies](working-with-policies.md)\.
 
 **Resource is missing Firewall Manager managed web ACL\.**  
 An AWS resource doesn't have the AWS Firewall Manager managed web ACL association in accordance with the Firewall Manager policy\. You can enable Firewall Manager remediation on the policy to correct this\. 

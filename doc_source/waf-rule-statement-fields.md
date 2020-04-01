@@ -1,20 +1,23 @@
-# Request Component Settings<a name="waf-rule-statement-fields"></a>
+# Request component settings<a name="waf-rule-statement-fields"></a>
 
 This section describes the settings that you specify whenever you use a rule statement that inspects a component of the web request\. 
 
 **Topics**
-+ [Request Components](#waf-rule-statement-request-component)
-+ [Text Transformations](#waf-rule-statement-transformation)
++ [Request component](#waf-rule-statement-request-component)
++ [Text transformations](#waf-rule-statement-transformation)
 
-## Request Components<a name="waf-rule-statement-request-component"></a>
+## Request component<a name="waf-rule-statement-request-component"></a>
 
-Request components specify the parts of a web request for AWS WAF to inspect\. You specify this for standard rule statements like those that look for patterns inside the web request\. Examples of these statements include regex pattern match, SQL injection attack, and size constraint\. 
+The request component specifies the part of a web request for AWS WAF to inspect\. You specify this for standard rule statements that look for patterns inside the web request\. These include regex pattern match, SQL injection attack, and size constraint statements\. 
 
-The AWS WAF console and API documentation also provide guidance for these settings in the following locations: 
+**Note**  
+You specify a single request component for each rule statement that requires it\. To inspect more than one component of a request, create a rule statement for each component\. 
+
+The AWS WAF console and API documentation provide guidance for these settings in the following locations: 
 + **Rule builder** on the console – For **Request option**, choose **Request components**\.
 + **API statement contents** – `FieldToMatch`
 
-Here are the options for the part of the web request to inspect: Options for parts of the request to inspect
+Here are the options for the part of the web request to inspect: Options for the part of the request to inspect
 
 **Header**  
 A specific request header\. For this option, you also choose the name of the header in the **Header type** field, for example, `User-Agent` or `Referer`\. 
@@ -28,7 +31,7 @@ For cross\-site scripting match conditions, we recommend that you choose **All q
 
 **Single query parameter**  
 Any parameter that you have defined as part of the query string\. AWS WAF inspects the value of the parameter that you specify\.   
-For this option, you also specify a **Query parameter name**\. If the URL is `www.xyz.com?UserName=abc&SalesRegion=seattle`, for example, you can specify `UserName` or `SalesRegion` for the name\. The maximum length for the name is 30 characters\. The name is not case sensitive, so if you specify `UserName` as the name, AWS WAF matches all variations of `UserName`, including `username` and `UsERName`\.  
+For this option, you also specify a **Query parameter name**\. For example, if the URL is `www.xyz.com?UserName=abc&SalesRegion=seattle`, you can specify `UserName` or `SalesRegion` for the name\. The maximum length for the name is 30 characters\. The name is not case sensitive, so if you specify `UserName` as the name, AWS WAF matches all variations of `UserName`, including `username` and `UsERName`\.  
 If the query string contains more than one instance of the name that you've specified, AWS WAF inspects all the values for a match, using OR logic\. For example, in the URL `www.xyz.com?SalesRegion=boston&SalesRegion=seattle`, AWS WAF evaluates the name that you've specified against `boston` and `seattle`\. If either is a match, the inspection is a match\.
 
 **All query parameters**  
@@ -39,9 +42,9 @@ The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg
 
 **Body**  
 The part of the request that immediately follows the request headers\. This contains any additional data that is needed for the web request, for example, data from a form\.  
-Only the first 8 KB \(8,192 bytes\) of the request body are forwarded to AWS WAF for inspection\. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining your statement that inspects the body of the web request, such as a string match rule statement, with a size constraint rule statement that enforces an 8 KB max size on the body of the request\. For information about size constraint statements, see [Size Constraint Rule Statement](waf-rule-statement-type-size-constraint-match.md)\. AWS WAF doesn't support inspecting the entire contents of web requests whose bodies exceed 8 KB\. 
+Only the first 8 KB \(8,192 bytes\) of the request body are forwarded to AWS WAF for inspection\. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining your statement that inspects the body of the web request, such as a string match rule statement, with a size constraint rule statement that enforces an 8 KB max size on the body of the request\. For information about size constraint statements, see [Size constraint rule statement](waf-rule-statement-type-size-constraint-match.md)\. AWS WAF doesn't support inspecting the entire contents of web requests whose bodies exceed 8 KB\. 
 
-## Text Transformations<a name="waf-rule-statement-transformation"></a>
+## Text transformations<a name="waf-rule-statement-transformation"></a>
 
 In statements that look for patterns or set constraints, you can provide transformations for AWS WAF to apply before inspecting the request\. A transformation reformats a web request to eliminate some of the unusual formatting that attackers use in an effort to bypass AWS WAF\. 
 

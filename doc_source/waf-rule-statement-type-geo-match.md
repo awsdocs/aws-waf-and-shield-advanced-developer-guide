@@ -1,4 +1,4 @@
-# Geographic Match Rule Statement<a name="waf-rule-statement-type-geo-match"></a>
+# Geographic match rule statement<a name="waf-rule-statement-type-geo-match"></a>
 
 To allow or block web requests based on country of origin, create one or more geographical, or geo, match statements\. 
 

@@ -1,4 +1,4 @@
-# Testing Web ACLs<a name="classic-web-acl-testing"></a>
+# Testing web ACLs<a name="classic-web-acl-testing"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -7,10 +7,10 @@ This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, li
 To ensure that you don't accidentally configure AWS WAF Classic to block web requests that you want to allow or allow requests that you want to block, we recommend that you test your web ACL thoroughly before you start using it on your website or web application\. 
 
 **Topics**
-+ [Counting the Web Requests That Match the Rules in a Web ACL](#classic-web-acl-testing-count)
-+ [Viewing a Sample of the Web Requests That API Gateway CloudFront or an Application Load Balancer Has Forwarded to AWS WAF Classic](#classic-web-acl-testing-view-sample)
++ [Counting the web requests that match the rules in a web ACL](#classic-web-acl-testing-count)
++ [Viewing a sample of the web requests that API Gateway CloudFront or an Application Load Balancer has forwarded to AWS WAF Classic](#classic-web-acl-testing-view-sample)
 
-## Counting the Web Requests That Match the Rules in a Web ACL<a name="classic-web-acl-testing-count"></a>
+## Counting the web requests that match the rules in a web ACL<a name="classic-web-acl-testing-count"></a>
 
 When you add rules to a web ACL, you specify whether you want AWS WAF Classic to allow, block, or count the web requests that match all the conditions in that rule\. We recommend that you begin with the following configuration:
 + Configure all the rules in a web ACL to count web requests
@@ -50,13 +50,13 @@ Choose the rules for which you want to view data\.
    + You can hover the mouse cursor over a data point to get more information\.
    + The graph doesn't refresh itself automatically\. To update the display, choose the refresh \(![\[Icon to refresh the CloudWatch graph\]](http://docs.aws.amazon.com/waf/latest/developerguide/images/cloudwatch-refresh-icon.png)\) icon\.
 
-1. \(Optional\) View detailed information about individual requests that API Gateway CloudFront or an Application Load Balancer has forwarded to AWS WAF Classic\. For more information, see [Viewing a Sample of the Web Requests That API Gateway CloudFront or an Application Load Balancer Has Forwarded to AWS WAF Classic](#classic-web-acl-testing-view-sample)\.
+1. \(Optional\) View detailed information about individual requests that API Gateway CloudFront or an Application Load Balancer has forwarded to AWS WAF Classic\. For more information, see [Viewing a sample of the web requests that API Gateway CloudFront or an Application Load Balancer has forwarded to AWS WAF Classic](#classic-web-acl-testing-view-sample)\.
 
-1. If you determine that a rule is intercepting requests that you don't want it to intercept, change the applicable settings\. For more information, see [Creating and Configuring a Web Access Control List \(Web ACL\)](classic-web-acl.md)\.
+1. If you determine that a rule is intercepting requests that you don't want it to intercept, change the applicable settings\. For more information, see [Creating and configuring a Web Access Control List \(Web ACL\)](classic-web-acl.md)\.
 
    When you're satisfied that all of your rules are intercepting only the correct requests, change the action for each of your rules to **Allow** or **Block**\. For more information, see [Editing a Web ACL](classic-web-acl-editing.md)\.
 
-## Viewing a Sample of the Web Requests That API Gateway CloudFront or an Application Load Balancer Has Forwarded to AWS WAF Classic<a name="classic-web-acl-testing-view-sample"></a>
+## Viewing a sample of the web requests that API Gateway CloudFront or an Application Load Balancer has forwarded to AWS WAF Classic<a name="classic-web-acl-testing-view-sample"></a>
 
 In the AWS WAF Classic console, you can view a sample of the requests that API Gateway CloudFront or an Application Load Balancer has forwarded to AWS WAF Classic for inspection\. For each sampled request, you can view detailed data about the request, such as the originating IP address and the headers included in the request\. You also can view which rule the request matched, and whether the rule is configured to allow or block requests\.
 

@@ -1,4 +1,4 @@
-# Identity and Access Management in AWS WAF Classic<a name="classic-waf-auth-and-access-control"></a>
+# Identity and access management in AWS WAF Classic<a name="classic-waf-auth-and-access-control"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -6,7 +6,7 @@ This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, li
 
 Access to AWS WAF Classic requires credentials\. Those credentials must have permissions to access AWS resources, such as an AWS WAF Classic resource or an Amazon S3 bucket\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and AWS WAF Classic to help secure access to your resources\.
 + [Authentication](#classic-authentication)
-+ [Access Control](#classic-access-control)
++ [Access control](#classic-access-control)
 
 ## Authentication<a name="classic-authentication"></a>
 
@@ -30,11 +30,11 @@ You can access AWS as any of the following types of identities:
       
   + **Applications running on Amazon EC2** –  You can use an IAM role to manage temporary credentials for applications that are running on an EC2 instance and making AWS CLI or AWS API requests\. This is preferable to storing access keys within the EC2 instance\. To assign an AWS role to an EC2 instance and make it available to all of its applications, you create an instance profile that is attached to the instance\. An instance profile contains the role and enables programs that are running on the EC2 instance to get temporary credentials\. For more information, see [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html) in the *IAM User Guide*\. 
 
-## Access Control<a name="classic-access-control"></a>
+## Access control<a name="classic-access-control"></a>
 
 You can have valid credentials to authenticate your requests, but unless you have permissions you can't create or access AWS WAF Classic resources\. For example, you must have permissions to create an AWS WAF Classic *web ACL* or *rule*\.
 
 The following sections describe how to manage permissions for AWS WAF Classic\. We recommend that you read the overview first\.
-+ [Overview of Managing Access Permissions to Your AWS WAF Classic Resources](classic-access-control-overview.md)
-+  [Using Identity\-based Policies \(IAM Policies\) for AWS WAF Classic](classic-access-control-identity-based.md) 
-+  [AWS WAF Classic API Permissions: Actions, Resources, and Conditions Reference](classic-waf-api-permissions-ref.md) 
++ [Overview of managing access permissions to your AWS WAF Classic resources](classic-access-control-overview.md)
++  [Using identity\-based policies \(IAM policies\) for AWS WAF Classic](classic-access-control-identity-based.md) 
++  [AWS WAF Classic API permissions: Actions, resources, and conditions reference](classic-waf-api-permissions-ref.md) 

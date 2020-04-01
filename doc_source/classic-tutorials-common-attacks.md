@@ -1,4 +1,4 @@
-# Tutorial: Quickly Setting Up AWS WAF Classic Protection Against Common Attacks<a name="classic-tutorials-common-attacks"></a>
+# Tutorial: Quickly setting up AWS WAF Classic protection against common attacks<a name="classic-tutorials-common-attacks"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -13,15 +13,15 @@ This tutorial shows you how to use [AWS CloudFormation](https://aws.amazon.com/c
 This tutorial assumes that you have a CloudFront distribution that you use to deliver content for your web application\. If you don't have a CloudFront distribution, see [Creating or Updating a Web Distribution Using the CloudFront Console](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html) in the *Amazon CloudFront Developer Guide*\. 
 
 **Topics**
-+ [Solution Overview](#classic-tutorials-common-attacks-overview)
-+ [Step 1: Create an AWS CloudFormation Stack That Sets Up AWS WAF Classic Protection Against Common Attacks](#classic-tutorials-common-attacks-cloudformation)
-+ [Step 2: Associate a Web ACL with a CloudFront Distribution](#classic-tutorials-common-attacks-cloudfront)
-+ [Step 3: \(Optional\) Add IP Addresses to the IP Match Condition](#classic-tutorials-common-attacks-add-ips)
-+ [Step 4: \(Optional\) Update the Web ACL to Block Large Bodies](#classic-tutorials-common-attacks-block-large-bodies)
-+ [Step 5: \(Optional\) Delete Your AWS CloudFormation Stack](#classic-tutorials-common-attacks-delete-stack)
-+ [Related Resources](#classic-relatedresources)
++ [Solution overview](#classic-tutorials-common-attacks-overview)
++ [Step 1: Create an AWS CloudFormation stack that sets up AWS WAF Classic protection against common attacks](#classic-tutorials-common-attacks-cloudformation)
++ [Step 2: Associate a Web ACL with a CloudFront distribution](#classic-tutorials-common-attacks-cloudfront)
++ [Step 3: \(Optional\) add IP addresses to the IP Match Condition](#classic-tutorials-common-attacks-add-ips)
++ [Step 4: \(Optional\) update the Web ACL to block large bodies](#classic-tutorials-common-attacks-block-large-bodies)
++ [Step 5: \(Optional\) delete your AWS CloudFormation stack](#classic-tutorials-common-attacks-delete-stack)
++ [Related resources](#classic-relatedresources)
 
-## Solution Overview<a name="classic-tutorials-common-attacks-overview"></a>
+## Solution overview<a name="classic-tutorials-common-attacks-overview"></a>
 
 AWS CloudFormation uses a template to set up the following AWS WAF Classic conditions, rules, and a web ACL\.
 
@@ -30,12 +30,12 @@ AWS CloudFormation uses a template to set up the following AWS WAF Classic condi
 AWS CloudFormation creates the following conditions\.
 
 **IP Match Condition**  
-Filters requests that come from known bad IP addresses\. This lets you easily add IPs to a list to block access to your website\. You might want to do this if you're receiving a lot of bad requests from one or more IP addresses\. If you want to allow, block, or count requests based on the IP addresses that the requests come from, see [Step 3: \(Optional\) Add IP Addresses to the IP Match Condition](#classic-tutorials-common-attacks-add-ips) later in this tutorial\.  
+Filters requests that come from known bad IP addresses\. This lets you easily add IPs to a list to block access to your website\. You might want to do this if you're receiving a lot of bad requests from one or more IP addresses\. If you want to allow, block, or count requests based on the IP addresses that the requests come from, see [Step 3: \(Optional\) add IP addresses to the IP Match Condition](#classic-tutorials-common-attacks-add-ips) later in this tutorial\.  
 The name of the condition is *prefix***ManualBlockSet** where *prefix* is the name that you specify for the web ACL when you create the AWS CloudFormation stack\.
 
 **Size Constraint Condition**  
 Filters requests for which the body is longer than 8,192 bytes\. AWS WAF Classic evaluates only the first 8,192 bytes of the request part that you specify in a filter\. If valid request bodies never exceed 8,192 bytes, you can use a size constraint condition to catch malicious requests that might otherwise slip through\.  
-For this tutorial, AWS CloudFormation configures AWS WAF Classic only to count, not block, requests that have a body longer than 8,192 bytes\. If the body in your requests never exceeds that length, you can change the configuration to block requests that have longer bodies\. For information about how to view the count of requests that exceed 8,192 bytes and how to change the web ACL to block requests that contain bodies larger than 8,192 bytes, see [Step 4: \(Optional\) Update the Web ACL to Block Large Bodies](#classic-tutorials-common-attacks-block-large-bodies)\.  
+For this tutorial, AWS CloudFormation configures AWS WAF Classic only to count, not block, requests that have a body longer than 8,192 bytes\. If the body in your requests never exceeds that length, you can change the configuration to block requests that have longer bodies\. For information about how to view the count of requests that exceed 8,192 bytes and how to change the web ACL to block requests that contain bodies larger than 8,192 bytes, see [Step 4: \(Optional\) update the Web ACL to block large bodies](#classic-tutorials-common-attacks-block-large-bodies)\.  
 The name of the condition is *prefix***LargeBodyMatch** where *prefix* is the name that you specify for the web ACL when you create the AWS CloudFormation stack\.
 
 **SQL Injection Condition**  
@@ -75,7 +75,7 @@ AWS CloudFormation adds the *prefix***XssMatch** condition to this rule\.
 AWS CloudFormation creates a web ACL that has the name that you specify when you create the AWS CloudFormation stack\. The web ACL contains the following rules with the specified settings: 
 
 ***prefix*ManualIPBlockRule**  
-By default, the condition in this rule doesn't contain any IP addresses\. If you want to allow, block, or count requests based on the IP addresses that the requests come from, see [Step 3: \(Optional\) Add IP Addresses to the IP Match Condition](#classic-tutorials-common-attacks-add-ips) later in this tutorial\. 
+By default, the condition in this rule doesn't contain any IP addresses\. If you want to allow, block, or count requests based on the IP addresses that the requests come from, see [Step 3: \(Optional\) add IP addresses to the IP Match Condition](#classic-tutorials-common-attacks-add-ips) later in this tutorial\. 
 
 ***prefix*SizeMatchRule**  
 By default, AWS WAF Classic counts requests for which the body is longer than 8,192 bytes\.
@@ -90,7 +90,7 @@ AWS WAF Classic blocks requests based on the settings in this rule\.
 
 This tutorial assumes that you have a CloudFront distribution that you use to deliver content for your web application\. If you don't have a CloudFront distribution, see [Creating or Updating a Web Distribution Using the CloudFront Console](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html) in the *Amazon CloudFront Developer Guide*\. This tutorial also uses AWS CloudFormation to simplify the provisioning process\. For more information, see the [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)\.
 
-### Estimated Time<a name="classic-tutorials-common-attacks-overview-time"></a>
+### Estimated time<a name="classic-tutorials-common-attacks-overview-time"></a>
 
 The estimated time to complete this tutorial is 15 minutes if you already have a CloudFront distribution, or 30 minutes if you need to create a CloudFront distribution\.
 
@@ -98,12 +98,12 @@ The estimated time to complete this tutorial is 15 minutes if you already have a
 
 There is a cost associated with the resources that you create during this tutorial\. You can delete the resources after you finish the tutorial to stop incurring charges\. For more information, see [AWS WAF Classic Pricing](https://aws.amazon.com/waf/pricing/) and [Amazon CloudFront Pricing](http://aws.amazon.com/cloudfront/pricing/)\.
 
-## Step 1: Create an AWS CloudFormation Stack That Sets Up AWS WAF Classic Protection Against Common Attacks<a name="classic-tutorials-common-attacks-cloudformation"></a>
+## Step 1: Create an AWS CloudFormation stack that sets up AWS WAF Classic protection against common attacks<a name="classic-tutorials-common-attacks-cloudformation"></a>
 
 In the following procedure, you use an AWS CloudFormation template to create a stack that sets up AWS WAF Classic protection against common attacks\.
 
 **Important**  
-You begin to incur charges for the different services when you create the AWS CloudFormation stack that deploys this solution\. Charges continue to accrue until you delete the AWS CloudFormation stack\. For more information, see [Step 5: \(Optional\) Delete Your AWS CloudFormation Stack](#classic-tutorials-common-attacks-delete-stack)\. <a name="classic-tutorials-common-attacks-cloudformation-procedure"></a>
+You begin to incur charges for the different services when you create the AWS CloudFormation stack that deploys this solution\. Charges continue to accrue until you delete the AWS CloudFormation stack\. For more information, see [Step 5: \(Optional\) delete your AWS CloudFormation stack](#classic-tutorials-common-attacks-delete-stack)\. <a name="classic-tutorials-common-attacks-cloudformation-procedure"></a>
 
 **To create an AWS CloudFormation stack for blocking IP addresses that submit bad requests**
 
@@ -133,9 +133,9 @@ Specify a name for the web ACL that AWS CloudFormation will create\. The name th
 
 1. On the **Review** page, review the configuration, and then choose **Create stack**\.
 
-   After you choose **Create stack**, AWS CloudFormation creates the AWS WAF Classic resources that are identified in [Solution Overview](#classic-tutorials-common-attacks-overview)\.
+   After you choose **Create stack**, AWS CloudFormation creates the AWS WAF Classic resources that are identified in [Solution overview](#classic-tutorials-common-attacks-overview)\.
 
-## Step 2: Associate a Web ACL with a CloudFront Distribution<a name="classic-tutorials-common-attacks-cloudfront"></a>
+## Step 2: Associate a Web ACL with a CloudFront distribution<a name="classic-tutorials-common-attacks-cloudfront"></a>
 
 After AWS CloudFormation creates the stack, you must associate your CloudFront distribution to activate AWS WAF Classic\. 
 
@@ -160,7 +160,7 @@ You can associate a web ACL with as many distributions as you want, but you can 
 
 1. To associate this web ACL with additional CloudFront distributions, repeat steps 4 through 6\.
 
-## Step 3: \(Optional\) Add IP Addresses to the IP Match Condition<a name="classic-tutorials-common-attacks-add-ips"></a>
+## Step 3: \(Optional\) add IP addresses to the IP Match Condition<a name="classic-tutorials-common-attacks-add-ips"></a>
 
 When you created the AWS CloudFormation stack, AWS CloudFormation created an IP match condition for you, added it to a rule, added the rule to a web ACL, and configured the web ACL to block requests based on IP addresses\. The IP match condition doesn't include any IP addresses, though\. If you want to block requests based on IP addresses, perform the following procedure\. <a name="classic-tutorials-common-attacks-cloudformation-parameters-procedure"></a>
 
@@ -188,7 +188,7 @@ AWS WAF Classic supports both IPv4 and IPv6 IP addresses\.
 
    1. Choose **Add**\.
 
-## Step 4: \(Optional\) Update the Web ACL to Block Large Bodies<a name="classic-tutorials-common-attacks-block-large-bodies"></a>
+## Step 4: \(Optional\) update the Web ACL to block large bodies<a name="classic-tutorials-common-attacks-block-large-bodies"></a>
 
 When you created the AWS CloudFormation stack, AWS CloudFormation created a size constraint condition that filters requests that have request bodies longer than 8,192 bytes\. It also added the condition to a rule, and added the rule to the web ACL\. In this example, AWS CloudFormation configured the web ACL to count requests, not to block requests\. This is useful when you want to confirm you are not blocking valid requests inadvertently\. 
 
@@ -210,9 +210,9 @@ If you want to block requests that are longer than 8,192 bytes, perform the foll
 
 1. Choose **Save changes**\.
 
-## Step 5: \(Optional\) Delete Your AWS CloudFormation Stack<a name="classic-tutorials-common-attacks-delete-stack"></a>
+## Step 5: \(Optional\) delete your AWS CloudFormation stack<a name="classic-tutorials-common-attacks-delete-stack"></a>
 
-If you want to stop protecting from common attacks as described in [Solution Overview](#classic-tutorials-common-attacks-overview), delete the AWS CloudFormation stack that you created in [Step 1: Create an AWS CloudFormation Stack That Sets Up AWS WAF Classic Protection Against Common Attacks](#classic-tutorials-common-attacks-cloudformation)\. This deletes the AWS WAF Classic resources that AWS CloudFormation created and stops the AWS charges for those resources\. 
+If you want to stop protecting from common attacks as described in [Solution overview](#classic-tutorials-common-attacks-overview), delete the AWS CloudFormation stack that you created in [Step 1: Create an AWS CloudFormation stack that sets up AWS WAF Classic protection against common attacks](#classic-tutorials-common-attacks-cloudformation)\. This deletes the AWS WAF Classic resources that AWS CloudFormation created and stops the AWS charges for those resources\. 
 
 **To delete an AWS CloudFormation stack**
 
@@ -226,6 +226,6 @@ If you want to stop protecting from common attacks as described in [Solution Ove
 
 1. To track the progress of the stack deletion, select the check box for the stack, and choose the **Events** tab in the bottom pane\.
 
-## Related Resources<a name="classic-relatedresources"></a>
+## Related resources<a name="classic-relatedresources"></a>
 
 For AWS WAF Classic samples, including Lambda functions, AWS CloudFormation templates, and SDK usage examples, go to GitHub at [https://github.com/awslabs/aws-waf-sample](https://github.com/awslabs/aws-waf-sample)\. 

@@ -1,4 +1,4 @@
-# HTTP Responses<a name="waf-api-making-requests-response"></a>
+# HTTP responses<a name="waf-api-making-requests-response"></a>
 
 All AWS WAF and Shield Advanced API actions include JSON\-formatted data in the response\.
 
@@ -20,7 +20,7 @@ Type: String
 The date and time that AWS WAF or Shield Advanced responded, for example, Wed, 07 Oct 2015 12:00:00 GMT\.  
 Type: String
 
-## Error Responses<a name="waf-api-making-requests-error-response"></a>
+## Error responses<a name="waf-api-making-requests-error-response"></a>
 
 If a request results in an error, the HTTP response contains the following values:
 + A JSON error document as the response body

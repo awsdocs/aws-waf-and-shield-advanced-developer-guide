@@ -1,4 +1,4 @@
-# Deciding on the Default Action for a Web ACL<a name="classic-web-acl-default-action"></a>
+# Deciding on the default action for a Web ACL<a name="classic-web-acl-default-action"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  

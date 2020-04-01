@@ -1,4 +1,4 @@
-# OR Rule Statement<a name="waf-rule-statement-type-or"></a>
+# OR rule statement<a name="waf-rule-statement-type-or"></a>
 
 The OR rule statement combines nested statements with OR logic, so one of the nested statements must match for the OR statement to match\. This requires at least one nested statement\. 
 

@@ -1,4 +1,4 @@
-# AWS Shield Advanced: Requesting a Credit<a name="request-refund"></a>
+# AWS Shield Advanced: Requesting a credit<a name="request-refund"></a>
 
 If you are subscribed to AWS Shield Advanced and a DDoS attack results in additional charges for your Amazon CloudFront, Elastic Load Balancing, Route 53 or Amazon EC2 services, you can apply for a credit for the charges by submitting a billing case through the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
 

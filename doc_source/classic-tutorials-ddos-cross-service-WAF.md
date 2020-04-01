@@ -1,4 +1,4 @@
-# Step 5: Detect and Filter Malicious Web Requests Using AWS WAF Classic<a name="classic-tutorials-ddos-cross-service-WAF"></a>
+# Step 5: Detect and filter malicious web requests using AWS WAF Classic<a name="classic-tutorials-ddos-cross-service-WAF"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -18,11 +18,11 @@ The template uses some AWS features, such as AWS Lambda and Amazon API Gateway, 
 You are responsible for the cost of all the AWS services that are deployed as part of this template, including Amazon S3, AWS Lambda, Amazon API Gateway, AWS WAF Classic, and others\. For full details, see the pricing page for each AWS service\.
 
 **Topics**
-+ [Launch the Stack \(Template\)](#classic-tutorials-ddos-cross-service-waf-launch)
-+ [Associate the Web ACL with Your Web Application](#classic-tutorials-ddos-cross-service-waf-associate)
-+ [Configure Web Access Logging](#classic-tutorials-ddos-cross-service-waf-store)
++ [Launch the stack \(template\)](#classic-tutorials-ddos-cross-service-waf-launch)
++ [Associate the Web ACL with your web application](#classic-tutorials-ddos-cross-service-waf-associate)
++ [Configure web access logging](#classic-tutorials-ddos-cross-service-waf-store)
 
-## Launch the Stack \(Template\)<a name="classic-tutorials-ddos-cross-service-waf-launch"></a>
+## Launch the stack \(template\)<a name="classic-tutorials-ddos-cross-service-waf-launch"></a>
 
 This automated AWS CloudFormation template deploys the AWS WAF Classic Security Automations solution on the AWS Cloud\. 
 
@@ -73,7 +73,7 @@ Choose **yes** to send anonymous data to AWS to help us understand solution usag
 
 You can view the status of the stack in the AWS CloudFormation console in the **Status** column\. You should see a status of **CREATE\_COMPLETE** in about fifteen \(15\) minutes\. 
 
-## Associate the Web ACL with Your Web Application<a name="classic-tutorials-ddos-cross-service-waf-associate"></a>
+## Associate the Web ACL with your web application<a name="classic-tutorials-ddos-cross-service-waf-associate"></a>
 
 Now associate your Amazon CloudFront web distribution with the web ACL\. 
 
@@ -93,7 +93,7 @@ Now associate your Amazon CloudFront web distribution with the web ACL\.
 
 1. Choose **Add** to save your changes\.
 
-## Configure Web Access Logging<a name="classic-tutorials-ddos-cross-service-waf-store"></a>
+## Configure web access logging<a name="classic-tutorials-ddos-cross-service-waf-store"></a>
 
 As the last step of this tutorial, you configure Amazon CloudFront to send web access logs to the appropriate Amazon S3 bucket so that this data is available for the Log Parser AWS Lambda function\. 
 
@@ -109,8 +109,8 @@ As the last step of this tutorial, you configure Amazon CloudFront to send web a
 
 1. For **Logging**, choose **On**\. 
 
-1. For **Bucket for Logs**, choose the Amazon S3 bucket that you want use to store web access logs \(that you defined in [Launch the Stack \(Template\)](#classic-tutorials-ddos-cross-service-waf-launch)\)\.
+1. For **Bucket for Logs**, choose the Amazon S3 bucket that you want use to store web access logs \(that you defined in [Launch the stack \(template\)](#classic-tutorials-ddos-cross-service-waf-launch)\)\.
 
 1. Choose **Yes, edit** to save your changes\.
 
-Next: [Additional Best Practices](classic-tutorials-ddos-cross-service-best-practices.md)\.
+Next: [Additional best practices](classic-tutorials-ddos-cross-service-best-practices.md)\.

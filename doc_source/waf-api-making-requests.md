@@ -1,4 +1,4 @@
-# Making HTTPS Requests to AWS WAF or Shield Advanced<a name="waf-api-making-requests"></a>
+# Making HTTPS requests to AWS WAF or Shield Advanced<a name="waf-api-making-requests"></a>
 
 AWS WAF and Shield Advanced requests are HTTPS requests, as defined by [RFC 2616](http://tools.ietf.org/html/rfc2616)\. Like any HTTP request, a request to AWS WAF or Shield Advanced contains a request method, a URI, request headers, and a request body\. The response contains an HTTP status code, response headers, and sometimes a response body\.
 
@@ -6,7 +6,7 @@ AWS WAF and Shield Advanced requests are HTTPS requests, as defined by [RFC 2616
 
 The request URI is always a single forward slash, `/`\.
 
-## HTTP Headers<a name="waf-api-making-requests-header"></a>
+## HTTP headers<a name="waf-api-making-requests-header"></a>
 
 AWS WAF and Shield Advanced require the following information in the header of an HTTP request:
 
@@ -23,7 +23,7 @@ You must include either `x-amz-date` or `Date`\. \(Some HTTP client libraries do
 The time stamp must be within 15 minutes of the AWS system time when the request is received\. If it isn't, the request fails with the `RequestExpired` error code to prevent someone else from replaying your requests\.
 
 **Authorization \(Required\)**  
-The information required for request authentication\. For more information about constructing this header, see [Authenticating Requests](authenticating-requests.md)\.
+The information required for request authentication\. For more information about constructing this header, see [Authenticating requests](authenticating-requests.md)\.
 
 **X\-Amz\-Target \(Required\)**  
 A concatenation of `AWSWAF_` or `AWSShield_`, the API version without punctuation, a period \(`.`\), and the name of the operation, for example:  
@@ -58,7 +58,7 @@ Content-Length: 231
 Connection: Keep-Alive
 ```
 
-## HTTP Request Body<a name="waf-api-making-requests-body"></a>
+## HTTP request body<a name="waf-api-making-requests-body"></a>
 
 Many AWS WAF and Shield Advanced API actions require you to include JSON\-formatted data in the body of the request\.
 

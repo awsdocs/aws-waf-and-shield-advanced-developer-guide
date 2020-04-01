@@ -1,4 +1,4 @@
-# Deleting a Rule<a name="classic-web-acl-rules-deleting"></a>
+# Deleting a rule<a name="classic-web-acl-rules-deleting"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  

@@ -13,9 +13,9 @@ Security is a shared responsibility between AWS and you\. The [shared responsibi
 This documentation helps you understand how to apply the shared responsibility model when using AWS WAF Classic\. The following topics show you how to configure AWS WAF Classic to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your AWS WAF Classic resources\. 
 
 **Topics**
-+ [Data Protection in AWS WAF Classic](classic-data-protection.md)
-+ [Identity and Access Management in AWS WAF Classic](classic-waf-auth-and-access-control.md)
-+ [Logging and Monitoring in AWS WAF Classic](classic-waf-incident-response.md)
-+ [Compliance Validation for AWS WAF Classic](classic-waf-compliance.md)
++ [Data protection in AWS WAF Classic](classic-data-protection.md)
++ [Identity and access management in AWS WAF Classic](classic-waf-auth-and-access-control.md)
++ [Logging and monitoring in AWS WAF Classic](classic-waf-incident-response.md)
++ [Compliance validation for AWS WAF Classic](classic-waf-compliance.md)
 + [Resilience in AWS WAF Classic](classic-disaster-recovery-resiliency.md)
-+ [Infrastructure Security in AWS WAF Classic](classic-infrastructure-security.md)
++ [Infrastructure security in AWS WAF Classic](classic-infrastructure-security.md)

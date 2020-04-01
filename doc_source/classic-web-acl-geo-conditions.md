@@ -1,4 +1,4 @@
-# Working with Geographic Match Conditions<a name="classic-web-acl-geo-conditions"></a>
+# Working with geographic match conditions<a name="classic-web-acl-geo-conditions"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -12,11 +12,11 @@ You can use geo match conditions with other AWS WAF Classic conditions or rules 
 If you are using the CloudFront geo restriction feature to block a country from accessing your content, any request from that country is blocked and is not forwarded to AWS WAF Classic\. So if you want to allow or block requests based on geography plus other AWS WAF Classic conditions, you should *not* use the CloudFront geo restriction feature\. Instead, you should use an AWS WAF Classic geo match condition\.
 
 **Topics**
-+ [Creating a Geo Match Condition](#classic-web-acl-geo-conditions-creating)
-+ [Editing Geo Match Conditions](#classic-web-acl-geo-conditions-editing)
-+ [Deleting Geo Match Conditions](#classic-web-acl-geo-conditions-deleting)
++ [Creating a geo match condition](#classic-web-acl-geo-conditions-creating)
++ [Editing geo match conditions](#classic-web-acl-geo-conditions-editing)
++ [Deleting geo match conditions](#classic-web-acl-geo-conditions-deleting)
 
-## Creating a Geo Match Condition<a name="classic-web-acl-geo-conditions-creating"></a>
+## Creating a geo match condition<a name="classic-web-acl-geo-conditions-creating"></a>
 
 If you want to allow some web requests and block others based on the countries that the requests originate from, create a geo match condition for the countries that you want to allow and another geo match condition for the countries that you want to block\.
 
@@ -43,7 +43,7 @@ When you add a geo match condition to a rule, you also can configure AWS WAF Cla
 
 1. Choose **Create**\.
 
-## Editing Geo Match Conditions<a name="classic-web-acl-geo-conditions-editing"></a>
+## Editing geo match conditions<a name="classic-web-acl-geo-conditions-editing"></a>
 
 You can add countries to or delete countries from your geo match condition\.<a name="classic-web-acl-geo-conditions-editing-procedure"></a>
 
@@ -69,7 +69,7 @@ You can add countries to or delete countries from your geo match condition\.<a n
 
    1. Choose **Delete filter**\.
 
-## Deleting Geo Match Conditions<a name="classic-web-acl-geo-conditions-deleting"></a>
+## Deleting geo match conditions<a name="classic-web-acl-geo-conditions-deleting"></a>
 
 If you want to delete a geo match condition, you must first remove all countries in the condition and remove the condition from all the rules that are using it, as described in the following procedure\.<a name="classic-web-acl-geo-conditions-deleting-procedure"></a>
 

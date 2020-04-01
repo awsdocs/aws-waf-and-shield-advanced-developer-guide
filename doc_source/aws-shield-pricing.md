@@ -1,6 +1,4 @@
-# AWS Shield Advanced Pricing<a name="aws-shield-pricing"></a>
-
-## AWS Shield Advanced and AWS Shield Standard Pricing<a name="ddos-pricing"></a>
+# AWS Shield pricing<a name="aws-shield-pricing"></a>
 
 AWS Shield Standard is included with your AWS services at no additional cost\.
 

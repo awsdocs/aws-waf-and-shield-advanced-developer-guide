@@ -1,4 +1,4 @@
-# Overview of Managing Access Permissions to Your AWS Firewall Manager Resources<a name="fms-access-control-overview"></a>
+# Overview of managing access permissions to your AWS Firewall Manager resources<a name="fms-access-control-overview"></a>
 
 Every AWS resource is owned by an AWS account, and permissions to create or access a resource are governed by permissions policies\. An account administrator can attach permissions policies to IAM identities \(that is, users, groups, and roles\)\. Some services also support attaching permissions policies to resources\.
 
@@ -8,13 +8,13 @@ An *account administrator* \(or administrator user\) is a user with administrato
 When granting permissions, you decide who is getting the permissions, the resources they get permissions for, and the specific operations that you want to allow on those resources\.
 
 ## Topics<a name="fms-topics1"></a>
-+ [AWS Firewall Manager Resources and Operations](#fms-access-control-resources)
-+ [Understanding Resource Ownership](#fms-access-control-resource-ownership)
-+  [Managing Access to Resources ](#fms-access-control-manage-access-intro)
-+ [Specifying Policy Elements: Actions, Effects, Resources, and Principals](#fms-access-control-specify-actions)
-+ [Specifying Conditions in a Policy](#fms-specifying-conditions)
++ [AWS Firewall Manager resources and operations](#fms-access-control-resources)
++ [Understanding resource ownership](#fms-access-control-resource-ownership)
++  [Managing access to resources ](#fms-access-control-manage-access-intro)
++ [Specifying policy elements: Actions, effects, resources, and principals](#fms-access-control-specify-actions)
++ [Specifying conditions in a policy](#fms-specifying-conditions)
 
-## AWS Firewall Manager Resources and Operations<a name="fms-access-control-resources"></a>
+## AWS Firewall Manager resources and operations<a name="fms-access-control-resources"></a>
 
 AWS Firewall Manager has the single resource *policy*\. This resource has a unique Amazon Resource Name \(ARN\) associated with it, as shown in the following table\. 
 
@@ -46,14 +46,14 @@ For more information, see [Resources](https://docs.aws.amazon.com/IAM/latest/Use
 
 AWS Firewall Manager provides a set of operations to work with Firewall Manager resources\. For a list of available operations, see [Actions](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Operations.html)\.
 
-## Understanding Resource Ownership<a name="fms-access-control-resource-ownership"></a>
+## Understanding resource ownership<a name="fms-access-control-resource-ownership"></a>
 
 A *resource owner* is the AWS account that creates the resource\. That is, the resource owner is the AWS account of the *principal entity* \(the root account, an IAM user, or an IAM role\) that authenticates the request that creates the resource\. The following examples illustrate how this works:
 + If you use the root account credentials of your AWS account to create a Firewall Manager resource, your AWS account is the owner of the resource\.
 + If you create an IAM user in your AWS account and grant permissions to create a Firewall Manager resource to that user, the user can create a Firewall Manager resource\. However, your AWS account, to which the user belongs, owns the Firewall Manager resource\.
 + If you create an IAM role in your AWS account with permissions to create a Firewall Manager resource, anyone who can assume the role can create a Firewall Manager resource\. Your AWS account, to which the role belongs, owns the Firewall Manager resource\. 
 
-## Managing Access to Resources<a name="fms-access-control-manage-access-intro"></a>
+## Managing access to resources<a name="fms-access-control-manage-access-intro"></a>
 
 A *permissions policy* describes who has access to what\. The following sections explain the available options for creating permissions policies\.
 
@@ -63,10 +63,10 @@ These sections discuss using IAM in the context of AWS Firewall Manager\. It doe
 Policies that are attached to an IAM identity are known as *identity\-based* policies, and policies that are attached to a resource are known as *resource\-based* policies\. AWS Firewall Manager supports only identity\-based policies\.
 
 ### Topics<a name="fms-topics2"></a>
-+ [Identity\-based Policies \(IAM Policies\)](#fms-access-control-manage-access-identity-based)
-+ [Resource\-based Policies](#fms-access-control-manage-access-resource-based)
++ [Identity\-based policies \(IAM policies\)](#fms-access-control-manage-access-identity-based)
++ [Resource\-based policies](#fms-access-control-manage-access-resource-based)
 
-### Identity\-based Policies \(IAM Policies\)<a name="fms-access-control-manage-access-identity-based"></a>
+### Identity\-based policies \(IAM policies\)<a name="fms-access-control-manage-access-identity-based"></a>
 
 You can attach policies to IAM identities\. For example, you can do the following: 
 + **Attach a permissions policy to a user or a group in your account** – An account administrator can use a permissions policy that is associated with a particular user to grant permissions for that user to create a Firewall Manager resource\. 
@@ -104,27 +104,27 @@ The following is an example policy that grants permissions for the `fms:GetPolic
 }
 ```
 
-For more information about using identity\-based policies with Firewall Manager, see [Using Identity\-based Policies \(IAM Policies\) for AWS Firewall Manager](fms-access-control-identity-based.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
+For more information about using identity\-based policies with Firewall Manager, see [Using identity\-based policies \(IAM policies\) for AWS Firewall Manager](fms-access-control-identity-based.md)\. For more information about users, groups, roles, and permissions, see [Identities \(Users, Groups, and Roles\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) in the *IAM User Guide*\. 
 
-### Resource\-based Policies<a name="fms-access-control-manage-access-resource-based"></a>
+### Resource\-based policies<a name="fms-access-control-manage-access-resource-based"></a>
 
 Other services, such as Amazon S3, also support resource\-based permissions policies\. For example, you can attach a policy to an S3 bucket to manage access permissions to that bucket\. AWS Firewall Manager doesn't support resource\-based policies\. 
 
-## Specifying Policy Elements: Actions, Effects, Resources, and Principals<a name="fms-access-control-specify-actions"></a>
+## Specifying policy elements: Actions, effects, resources, and principals<a name="fms-access-control-specify-actions"></a>
 
-For each AWS Firewall Manager resource \(see [AWS Firewall Manager Resources and Operations](#fms-access-control-resources)\), the service defines a set of API operations \(see [Firewall Manager Required Permissions for API Actions](fms-api-permissions-ref.md)\)\. To grant permissions for these API operations, Firewall Manager defines a set of actions that you can specify in a policy\. Note that performing an API operation can require permissions for more than one action\. When granting permissions for specific actions, you also identify the resource on which the actions are allowed or denied\.
+For each AWS Firewall Manager resource \(see [AWS Firewall Manager resources and operations](#fms-access-control-resources)\), the service defines a set of API operations \(see [Firewall Manager required permissions for API actions](fms-api-permissions-ref.md)\)\. To grant permissions for these API operations, Firewall Manager defines a set of actions that you can specify in a policy\. Note that performing an API operation can require permissions for more than one action\. When granting permissions for specific actions, you also identify the resource on which the actions are allowed or denied\.
 
 The following are the most basic policy elements:
-+ **Resource** – In a policy, you use an Amazon Resource Name \(ARN\) to identify the resource to which the policy applies\. For more information, see [AWS Firewall Manager Resources and Operations](#fms-access-control-resources)\. 
++ **Resource** – In a policy, you use an Amazon Resource Name \(ARN\) to identify the resource to which the policy applies\. For more information, see [AWS Firewall Manager resources and operations](#fms-access-control-resources)\. 
 + **Action** – You use action keywords to identify resource operations that you want to allow or deny\. For example, the `fms:CreatePolicy` permission, coupled with the `waf:ListRuleGroups` permission, allows the user permissions to perform the AWS Firewall Manager `CreatePolicy` operation\. 
 + **Effect** – You specify the effect when the user requests the specific action\. This can be either allow or deny\. If you don't explicitly grant access to a resource, access is implicitly denied\. You also can explicitly deny access to a resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
 + **Principal** – In identity\-based policies \(IAM policies\), the user that the policy is attached to is the implicit principal\. AWS Firewall Manager doesn't support resource\-based policies\.
 
 To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
-For a table that shows all the AWS Firewall Manager API actions and the resources that they apply to, see [Firewall Manager Required Permissions for API Actions](fms-api-permissions-ref.md)\. 
+For a table that shows all the AWS Firewall Manager API actions and the resources that they apply to, see [Firewall Manager required permissions for API actions](fms-api-permissions-ref.md)\. 
 
-## Specifying Conditions in a Policy<a name="fms-specifying-conditions"></a>
+## Specifying conditions in a policy<a name="fms-specifying-conditions"></a>
 
 When you grant permissions, you can use the IAM policy language to specify the conditions when a policy should take effect\. For example, you might want a policy to be applied only after a specific date\. For more information about specifying conditions in a policy language, see [Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Condition) in the *IAM User Guide*\.
 

@@ -1,4 +1,4 @@
-# Deleting a Rule Group<a name="waf-rule-group-deleting"></a>
+# Deleting a rule group<a name="waf-rule-group-deleting"></a>
 
 Follow the guidance in this section to delete a rule group\.
 

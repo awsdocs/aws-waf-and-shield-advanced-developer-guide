@@ -1,4 +1,4 @@
-# Which Should I Choose?<a name="waf-which-to-choose"></a>
+# Which should i choose?<a name="waf-which-to-choose"></a>
 
 ## <a name="waf-choosing"></a>
 

@@ -1,4 +1,4 @@
-# AND Rule Statement<a name="waf-rule-statement-type-and"></a>
+# AND rule statement<a name="waf-rule-statement-type-and"></a>
 
 The AND rule statement combines nested statements with a logical AND operation, so all nested statements must match for the AND statement to match\. This requires at least one nested statement\. 
 

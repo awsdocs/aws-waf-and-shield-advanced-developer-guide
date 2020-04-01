@@ -9,9 +9,9 @@ Security is a shared responsibility between AWS and you\. The [shared responsibi
 This documentation helps you understand how to apply the shared responsibility model when using Firewall Manager\. The following topics show you how to configure Firewall Manager to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your Firewall Manager resources\. 
 
 **Topics**
-+ [Data Protection in Firewall Manager](fms-data-protection.md)
-+ [Identity and Access Management in AWS Firewall Manager](fms-auth-and-access-control.md)
-+ [Logging and Monitoring in Firewall Manager](fms-incident-response.md)
-+ [Compliance Validation for Firewall Manager](fms-security-compliance.md)
++ [Data protection in Firewall Manager](fms-data-protection.md)
++ [Identity and access management in AWS Firewall Manager](fms-auth-and-access-control.md)
++ [Logging and monitoring in Firewall Manager](fms-incident-response.md)
++ [Compliance validation for Firewall Manager](fms-security-compliance.md)
 + [Resilience in Firewall Manager](fms-disaster-recovery-resiliency.md)
-+ [Infrastructure Security in AWS Firewall Manager](fms-infrastructure-security.md)
++ [Infrastructure security in AWS Firewall Manager](fms-infrastructure-security.md)

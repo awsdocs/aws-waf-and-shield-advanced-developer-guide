@@ -1,4 +1,4 @@
-# Step 1: Launch a Virtual Server Using Amazon EC2<a name="classic-tutorials-ddos-cross-service-EC2"></a>
+# Step 1: Launch a virtual server using Amazon EC2<a name="classic-tutorials-ddos-cross-service-EC2"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -10,13 +10,13 @@ You can mitigate infrastructure \(layer 3 and layer 4\) DDoS attacks by using te
 You are responsible for the cost of the AWS services implemented in this tutorial\. For full details about EC2 costs, see the [Amazon EC2 pricing page](https://aws.amazon.com/ec2/pricing)\. 
 
 **Topics**
-+ [Create an Amazon EC2 Instance](#classic-tutorials-ddos-cross-service-EC2-launch)
-+ [Connect to Your Instance](#classic-tutorials-ddos-cross-service-EC2-connect)
-+ [Install a Web Server and Host Your Site](#classic-tutorials-ddos-cross-service-EC2-install-web-server)
-+ [Launch a Second EC2 Instance](#classic-tutorials-ddos-cross-service-EC2-second)
-+ [Test Your Website](#classic-tutorials-ddos-cross-service-EC2-test)
++ [Create an Amazon EC2 instance](#classic-tutorials-ddos-cross-service-EC2-launch)
++ [Connect to your instance](#classic-tutorials-ddos-cross-service-EC2-connect)
++ [Install a web server and host your site](#classic-tutorials-ddos-cross-service-EC2-install-web-server)
++ [Launch a second EC2 instance](#classic-tutorials-ddos-cross-service-EC2-second)
++ [Test your website](#classic-tutorials-ddos-cross-service-EC2-test)
 
-## Create an Amazon EC2 Instance<a name="classic-tutorials-ddos-cross-service-EC2-launch"></a>
+## Create an Amazon EC2 instance<a name="classic-tutorials-ddos-cross-service-EC2-launch"></a>
 
 The Amazon EC2 instances you create here will host your website\.
 
@@ -36,7 +36,7 @@ The Amazon EC2 instances you create here will host your website\.
 
 1. Choose **Edit Instance Details**\.
 
-1. For **Network**, choose the VPC that you created in the prerequisites step, [Create a Virtual Private Cloud \(VPC\) with Two Subnets](classic-tutorials-ddos-cross-service-prereq.md#classic-tutorials-ddos-cross-service-prereq-vpc)\.
+1. For **Network**, choose the VPC that you created in the prerequisites step, [Create a virtual private cloud \(VPC\) with two subnets](classic-tutorials-ddos-cross-service-prereq.md#classic-tutorials-ddos-cross-service-prereq-vpc)\.
 
 1. For **Subnet**, choose **subnet\-1**, which you created and named when creating the VPC\.
 
@@ -44,7 +44,7 @@ The Amazon EC2 instances you create here will host your website\.
 
 1. Choose **Review and Launch**\.
 
-1. On the **Review Instance Launch** page, under **Security Groups**, use the following steps to choose the security group that you created in the prerequisites step, [Create a Security Group](classic-tutorials-ddos-cross-service-prereq.md#classic-tutorials-ddos-cross-service-prereq-security-group)\.
+1. On the **Review Instance Launch** page, under **Security Groups**, use the following steps to choose the security group that you created in the prerequisites step, [Create a security group](classic-tutorials-ddos-cross-service-prereq.md#classic-tutorials-ddos-cross-service-prereq-security-group)\.
 
    1. Choose **Edit security groups**\.
 
@@ -54,7 +54,7 @@ The Amazon EC2 instances you create here will host your website\.
 
 1. On the **Review Instance Launch** page, choose **Launch**\.
 
-1. When prompted for a key pair, select **Choose an existing key pair**, and then select the key pair that you created in the prerequisites step, [Create a Key Pair](classic-tutorials-ddos-cross-service-prereq.md#classic-tutorials-ddos-cross-service-prereq-pair)\.
+1. When prompted for a key pair, select **Choose an existing key pair**, and then select the key pair that you created in the prerequisites step, [Create a key pair](classic-tutorials-ddos-cross-service-prereq.md#classic-tutorials-ddos-cross-service-prereq-pair)\.
 **Warning**  
 Don't select the **Proceed without a key pair** option\. If you launch your instance without a key pair, you can't connect to it\.
 
@@ -66,7 +66,7 @@ Don't select the **Proceed without a key pair** option\. If you launch your inst
 
 1. It can take a few minutes for the instance to be ready so that you can connect to it\. Check that your instance has passed its status checks; you can view this information in the **Status Checks** column\.
 
-## Connect to Your Instance<a name="classic-tutorials-ddos-cross-service-EC2-connect"></a>
+## Connect to your instance<a name="classic-tutorials-ddos-cross-service-EC2-connect"></a>
 
 You will use Microsoft Remote Desktop to connect to your instances\. If you are connecting from a Microsoft Windows computer, Remote Desktop is already installed\. If you are using another operating system, you might need to install Remote Desktop before performing the following procedure\. 
 
@@ -110,7 +110,7 @@ Sometimes copying and pasting content can corrupt data\. If you encounter a "Pas
 
    1. If you receive an error while attempting to connect to your instance, see [Remote Desktop can't connect to the remote computer](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/troubleshooting-windows-instances.html#rdp-issues)\.
 
-## Install a Web Server and Host Your Site<a name="classic-tutorials-ddos-cross-service-EC2-install-web-server"></a>
+## Install a web server and host your site<a name="classic-tutorials-ddos-cross-service-EC2-install-web-server"></a>
 
 The next step is to install a web hosting service on your Amazon EC2 instance and build your website\. You have several options for a web server, such as Microsoft Internet Information Server \(IIS\), which is already part of your instance, Apache HTTP Server for Windows, and others\.
 
@@ -121,7 +121,7 @@ Installing a web server and configuring your website is outside the scope of thi
 + Choose **Web Server \(IIS\)** and begin the installation process\.
 + After the installation is complete, build your website\.
 
-## Launch a Second EC2 Instance<a name="classic-tutorials-ddos-cross-service-EC2-second"></a>
+## Launch a second EC2 instance<a name="classic-tutorials-ddos-cross-service-EC2-second"></a>
 
 You now must repeat this process \(launch another EC2 instance and build your website\) to create a duplicate of your first EC2 instance\. This is necessary to enable load balancing later in the tutorial\.
 
@@ -132,7 +132,7 @@ Follow all the same steps just described to launch an instance\. Be sure to edit
 
 After launching your second Amazon EC2 instance, install the same web hosting service and files as your first EC2 instance\.
 
-## Test Your Website<a name="classic-tutorials-ddos-cross-service-EC2-test"></a>
+## Test your website<a name="classic-tutorials-ddos-cross-service-EC2-test"></a>
 
 You should now be able to view your website using the public address of each instance\.
 
@@ -146,4 +146,4 @@ You should now be able to view your website using the public address of each ins
 
 1. Repeat these steps for the second instance\.
 
-Next: [Step 2: Scale Your Traffic Using Elastic Load Balancing](classic-tutorials-ddos-cross-service-ELB.md)\.
+Next: [Step 2: Scale your traffic using Elastic Load Balancing](classic-tutorials-ddos-cross-service-ELB.md)\.

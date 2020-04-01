@@ -1,4 +1,4 @@
-# Security Group Policy Limitations<a name="security-groups-limitations"></a>
+# Security group policy limitations<a name="security-groups-limitations"></a>
 
  This section lists the limitations for using AWS Firewall Manager policies:
 + Updating security groups for Amazon EC2 elastic network interfaces that were created using the Fargate service type is not supported\. You can, however, update security groups for Amazon ECS elastic network interfaces with the Amazon EC2 service type\. 

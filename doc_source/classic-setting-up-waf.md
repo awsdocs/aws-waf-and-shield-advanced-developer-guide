@@ -1,4 +1,4 @@
-# Setting Up AWS WAF Classic<a name="classic-setting-up-waf"></a>
+# Setting up AWS WAF Classic<a name="classic-setting-up-waf"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -7,19 +7,19 @@ This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, li
 This topic describes preliminary steps, such as creating an AWS account, to prepare you to use AWS WAF Classic\. You are not charged to set up this account and other preliminary items\. You are charged only for AWS services that you use\. 
 
 **Note**  
-If you are a new user, don't follow these setup steps for AWS WAF Classic\. Instead, follow the steps for the latest version of AWS WAF, at [Setting Up](setting-up-waf.md)\. 
+If you are a new user, don't follow these setup steps for AWS WAF Classic\. Instead, follow the steps for the latest version of AWS WAF, at [Setting up](setting-up-waf.md)\. 
 
-After you complete these steps, see [Getting Started with AWS WAF Classic](classic-getting-started.md) to continue getting started with AWS WAF Classic\.
+After you complete these steps, see [Getting started with AWS WAF Classic](classic-getting-started.md) to continue getting started with AWS WAF Classic\.
 
 **Note**  
-AWS Shield Standard is included with AWS WAF Classic and does not require additional setup\. For more information, see [How AWS Shield Works](ddos-overview.md)\.
+AWS Shield Standard is included with AWS WAF Classic and does not require additional setup\. For more information, see [How AWS Shield works](ddos-overview.md)\.
 
 Before you use AWS WAF Classic or AWS Shield Advanced for the first time, complete the following tasks:
-+ [Step 1: Sign Up for an AWS Account](#classic-setting-up-waf-aws-account)
-+ [Step 2: Create an IAM User](#classic-setting-up-waf-iam)
-+ [Step 3: Download Tools](#classic-setting-up-waf-tools)
++ [Step 1: Sign up for an AWS account](#classic-setting-up-waf-aws-account)
++ [Step 2: Create an IAM user](#classic-setting-up-waf-iam)
++ [Step 3: Download tools](#classic-setting-up-waf-tools)
 
-## Step 1: Sign Up for an AWS Account<a name="classic-setting-up-waf-aws-account"></a>
+## Step 1: Sign up for an AWS account<a name="classic-setting-up-waf-aws-account"></a>
 
 When you sign up for Amazon Web Services \(AWS\), your AWS account is automatically signed up for all services in AWS, including AWS WAF Classic\. You are charged only for the services that you use\.
 
@@ -35,7 +35,7 @@ If you have an AWS account already, skip to the next task\. If you don't have an
 
 Note your AWS account number, because you'll need it for the next task\.
 
-## Step 2: Create an IAM User<a name="classic-setting-up-waf-iam"></a>
+## Step 2: Create an IAM user<a name="classic-setting-up-waf-iam"></a>
 
 To use the AWS WAF Classic console, you must sign in to confirm that you have permission to perform AWS WAF Classic operations\. You can use the root credentials for your AWS account, but we don't recommend it\. For greater security and control of your account, we recommend that you use AWS Identity and Access Management \(IAM\) to do the following:
 + Create an IAM user account for yourself or your business\.
@@ -102,9 +102,9 @@ https://your_account_alias.signin.aws.amazon.com/console/
 
 To verify the sign\-in link for IAM users for your account, open the IAM console and check under the **IAM users sign\-in link** on the dashboard\. 
 
-After you complete these steps, you can stop here and go to [Getting Started with AWS WAF Classic](classic-getting-started.md) to continue getting started with AWS WAF Classic using the console\. If you want to access AWS WAF Classic programmatically using the AWS WAF Classic API, continue on to the next step, [Step 3: Download Tools](#classic-setting-up-waf-tools)\.
+After you complete these steps, you can stop here and go to [Getting started with AWS WAF Classic](classic-getting-started.md) to continue getting started with AWS WAF Classic using the console\. If you want to access AWS WAF Classic programmatically using the AWS WAF Classic API, continue on to the next step, [Step 3: Download tools](#classic-setting-up-waf-tools)\.
 
-## Step 3: Download Tools<a name="classic-setting-up-waf-tools"></a>
+## Step 3: Download tools<a name="classic-setting-up-waf-tools"></a>
 
 The AWS Management Console includes a console for AWS WAF Classic, but if you want to access AWS WAF Classic programmatically, the following documentation and tools will help you:
 + If you want to call the AWS WAF Classic API without having to handle low\-level details like assembling raw HTTP requests, you can use an AWS SDK\. The AWS SDKs provide functions and data types that encapsulate the functionality of AWS WAF Classic and other AWS services\. To download an AWS SDK, see the applicable page, which also includes prerequisites and installation instructions:

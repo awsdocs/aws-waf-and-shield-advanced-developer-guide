@@ -1,4 +1,4 @@
-# Working with IP Match Conditions<a name="classic-web-acl-ip-conditions"></a>
+# Working with IP match conditions<a name="classic-web-acl-ip-conditions"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -8,8 +8,8 @@ If you want to allow or block web requests based on the IP addresses that the re
 
 **Topics**
 + [Creating an IP Match Condition](#classic-web-acl-ip-conditions-creating)
-+ [Editing IP Match Conditions](#classic-web-acl-ip-conditions-editing)
-+ [Deleting IP Match Conditions](#classic-web-acl-ip-conditions-deleting)
++ [Editing IP match conditions](#classic-web-acl-ip-conditions-editing)
++ [Deleting IP match conditions](#classic-web-acl-ip-conditions-deleting)
 
 ## Creating an IP Match Condition<a name="classic-web-acl-ip-conditions-creating"></a>
 
@@ -44,7 +44,7 @@ When you add an IP match condition to a rule, you also can configure AWS WAF Cla
 
 1. When you're finished adding values, choose **Create IP match condition**\.
 
-## Editing IP Match Conditions<a name="classic-web-acl-ip-conditions-editing"></a>
+## Editing IP match conditions<a name="classic-web-acl-ip-conditions-editing"></a>
 
 You can add an IP address range to an IP match condition or delete a range\. To change a range, add a new one and delete the old one\.<a name="classic-web-acl-ip-conditions-editing-procedure"></a>
 
@@ -78,7 +78,7 @@ You can add an IP address range to an IP match condition or delete a range\. To 
 
    1. Choose **Delete IP address or range**\.
 
-## Deleting IP Match Conditions<a name="classic-web-acl-ip-conditions-deleting"></a>
+## Deleting IP match conditions<a name="classic-web-acl-ip-conditions-deleting"></a>
 
 If you want to delete an IP match condition, you must first delete all IP addresses and ranges in the condition and remove the condition from all the rules that are using it, as described in the following procedure\.<a name="classic-web-acl-ip-conditions-deleting-procedure"></a>
 

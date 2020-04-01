@@ -1,4 +1,4 @@
-# Working with Regex Match Conditions<a name="classic-web-acl-regex-conditions"></a>
+# Working with regex match conditions<a name="classic-web-acl-regex-conditions"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -7,11 +7,11 @@ This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, li
 If you want to allow or block web requests based on strings that match a regular expression \(regex\) pattern that appears in the requests, create one or more regex match conditions\. A regex match condition is a type of string match condition that identifies the pattern that you want to search for and the part of web requests, such as a specified header or the query string, that you want AWS WAF Classic to inspect for the pattern\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that contain the pattern\.
 
 **Topics**
-+ [Creating a Regex Match Condition](#classic-web-acl-regex-conditions-creating)
-+ [Values That You Specify When You Create or Edit RegEx Match Conditions](#classic-web-acl-regex-conditions-values)
-+ [Editing a Regex Match Condition](#classic-web-acl-regex-conditions-editing)
++ [Creating a regex match condition](#classic-web-acl-regex-conditions-creating)
++ [Values that you specify when you create or edit RegEx match conditions](#classic-web-acl-regex-conditions-values)
++ [Editing a regex match condition](#classic-web-acl-regex-conditions-editing)
 
-## Creating a Regex Match Condition<a name="classic-web-acl-regex-conditions-creating"></a>
+## Creating a regex match condition<a name="classic-web-acl-regex-conditions-creating"></a>
 
 When you create regex match conditions, you specify pattern sets that identify the string \(using a regular expression\) that you want to search for\. You then add those pattern sets to filters that specify the part of web requests that you want AWS WAF Classic to inspect for that pattern set, such as the URI or the query string\.
 
@@ -39,13 +39,13 @@ AWS WAF Classic supports most [standard Perl Compatible Regular Expressions \(PC
 
 1. Choose **Create condition**\.
 
-1. Specify the applicable filter settings\. For more information, see [Values That You Specify When You Create or Edit RegEx Match Conditions](#classic-web-acl-regex-conditions-values)\.
+1. Specify the applicable filter settings\. For more information, see [Values that you specify when you create or edit RegEx match conditions](#classic-web-acl-regex-conditions-values)\.
 
 1. Choose **Create pattern set and add filter** \(if you created a new pattern set\) or **Add filter** if you used an existing pattern set\.
 
 1. Choose **Create**\.
 
-## Values That You Specify When You Create or Edit RegEx Match Conditions<a name="classic-web-acl-regex-conditions-values"></a>
+## Values that you specify when you create or edit RegEx match conditions<a name="classic-web-acl-regex-conditions-values"></a>
 
 When you create or update a regex match condition, you specify the following values: 
 
@@ -67,7 +67,7 @@ The part of a URL that appears after a `?` character, if any\.
 The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\. Unless a **Transformation** is specified, a URI is not normalized and is inspected just as AWS receives it from the client as part of the request\. A **Transformation** will reformat the URI as specified\.  
 **Body**  
 The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form\.  
-If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\)\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with Size Constraint Conditions](classic-web-acl-size-conditions.md)\.  
+If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\)\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with size constraint conditions](classic-web-acl-size-conditions.md)\.  
 **Single query parameter \(value only\)**  
 Any parameter that you have defined as part of the query string\. For example, if the URL is "www\.xyz\.com?UserName=abc&SalesRegion=seattle" you can add a filter to either the *UserName* or *SalesRegion* parameter\.   
 If duplicate parameters appear in the query string, the values are evaluated as an "OR\." That is, either value will trigger a match\. For example, in the URL "www\.xyz\.com?SalesRegion=boston&SalesRegion=seattle", a pattern that matches either "boston" or "seattle" in **Value to match** will trigger a match\.  
@@ -120,7 +120,7 @@ Enter a name and then specify the regex pattern that you want AWS WAF Classic to
 If you add multiple regular expressions to a pattern set, those expressions are combined with an *OR*\. That is, a web request will match the pattern set if the appropriate part of the request matches any of the expressions listed\.  
 The maximum length of **Value to match** is 70 characters\. 
 
-## Editing a Regex Match Condition<a name="classic-web-acl-regex-conditions-editing"></a>
+## Editing a regex match condition<a name="classic-web-acl-regex-conditions-editing"></a>
 
 You can make the following changes to an existing regex match condition:
 + Delete a pattern from an existing pattern set

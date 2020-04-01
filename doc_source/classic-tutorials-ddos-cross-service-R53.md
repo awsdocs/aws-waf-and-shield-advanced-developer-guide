@@ -1,4 +1,4 @@
-# Step 4: Register Your Domain Name and Implement DNS Service Using Route 53<a name="classic-tutorials-ddos-cross-service-R53"></a>
+# Step 4: Register your Domain name and implement DNS service using Route 53<a name="classic-tutorials-ddos-cross-service-R53"></a>
 
 **Note**  
 This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
@@ -10,10 +10,10 @@ You can use Route 53 to register the domain name for your website, route intern
 You are responsible for the cost of the AWS services implemented in this tutorial\. For full details about Route 53 costs, see the [Route 53 pricing page](https://aws.amazon.com/route53/pricing/)\. 
 
 **Topics**
-+ [Register Your Domain with Route 53](#classic-tutorials-ddos-cross-service-r53-register)
-+ [Create Records](#classic-tutorials-ddos-cross-service-r53-records)
++ [Register your Domain with Route 53](#classic-tutorials-ddos-cross-service-r53-register)
++ [Create records](#classic-tutorials-ddos-cross-service-r53-records)
 
-## Register Your Domain with Route 53<a name="classic-tutorials-ddos-cross-service-r53-register"></a>
+## Register your Domain with Route 53<a name="classic-tutorials-ddos-cross-service-r53-register"></a>
 
 If you are new to hosting a website, your next step in this tutorial is to register a domain using Route 53\. Following are the steps to do this\.
 
@@ -67,7 +67,7 @@ The registrant contact must follow the instructions in the email to verify that 
 
    For all TLDs, you receive an email when your domain registration has been approved\. To determine the current status of your request, see [Viewing the Status of a Domain Registration](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-view-status.html)\.
 
-## Create Records<a name="classic-tutorials-ddos-cross-service-r53-records"></a>
+## Create records<a name="classic-tutorials-ddos-cross-service-r53-records"></a>
 
 Your next step is to create records that tell Route 53 how you want to route traffic for the domain and subdomain\.
 
@@ -98,4 +98,4 @@ Your new record takes time to propagate to the Route 53 DNS servers\. Changes g
 
 1. You should see your website\.
 
-Next: [Step 5: Detect and Filter Malicious Web Requests Using AWS WAF Classic](classic-tutorials-ddos-cross-service-WAF.md)\.
+Next: [Step 5: Detect and filter malicious web requests using AWS WAF Classic](classic-tutorials-ddos-cross-service-WAF.md)\.
