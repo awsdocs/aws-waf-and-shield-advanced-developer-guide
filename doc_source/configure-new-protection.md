@@ -18,7 +18,7 @@ Before you perform the following procedure, you must complete the procedure in [
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
-1. Choose **Protected resources**\. 
+1. In the navigation pane, under AWS Shield choose **Protected resources**\. 
 
 1. Choose **Add protected resources**\.
 
@@ -31,14 +31,9 @@ Before you perform the following procedure, you must complete the procedure in [
    If you want to protect an Amazon EC2 instance, you must first associate an Elastic IP address with the instance, and then choose the Elastic IP address as the resource to protect\.
 **Note**  
 Shield Advanced does not support EC2\-Classic\.
+**Note**  
+If you choose an Elastic IP address as the resource to protect, Shield Advanced protects whatever resource is associated with that Elastic IP address, either an Amazon EC2 instance or an Elastic Load Balancing load balancer\. Shield Advanced automatically identifies the type of resource associated with the Elastic IP address and applies the appropriate mitigations for that resource, including configuring network ACLs specific to that Elastic IP address\. For more information about using Elastic IP addresses with your AWS resources, see the appropriate guide: [Amazon Elastic Compute Cloud Documentation](https://aws.amazon.com/documentation/ec2/) or [Elastic Load Balancing Documentation](https://aws.amazon.com/documentation/elastic-load-balancing/)\. Shield Advanced does not support EC2\-Classic\.
 
 1. Choose **Protect selected resources**\.
 
-1. \(Optional\) For **Add web ACLs and rules**, add a web ACL and rate\-based rule as described in [Step 3: Add rate\-based rules](ddos-get-started-rate-based-rules.md) in the *Getting Started* section\. If you use Shield Advanced within an AWS Firewall Manager Shield Advanced policy, you can't add a rate\-based rule\.
-
-1. \(Optional\) For **Configure enhanced DDos detection**, select an Amazon Route 53 health check to add to the protection and choose **Associate Health Check**\. 
-
-1. \(Optional\) For **Create Amazon CloudWatch alarms and notifications**, configure a CloudWatch alarm as described in [Step 5: Configure Amazon CloudWatch alarms](ddos-get-started-cloudwatch.md) in the *Getting Started* section\.
-
-**Note**  
-If you choose an Elastic IP address as the resource to protect, Shield Advanced protects whatever resource is associated with that Elastic IP address, either an Amazon EC2 instance or an Elastic Load Balancing load balancer\. Shield Advanced automatically identifies the type of resource associated with the Elastic IP address and applies the appropriate mitigations for that resource, including configuring network ACLs specific to that Elastic IP address\. For more information about using Elastic IP addresses with your AWS resources, see the appropriate guide: [Amazon Elastic Compute Cloud Documentation](https://aws.amazon.com/documentation/ec2/) or [Elastic Load Balancing Documentation](https://aws.amazon.com/documentation/elastic-load-balancing/)\. Shield Advanced does not support EC2\-Classic\.
+1. Walk through the options and provide the protection settings that you want to apply to the resource\. The options for adding protection to a resource are the same as for managing existing protections\. See [Managing AWS Shield Advanced protections](manage-protection.md)\.

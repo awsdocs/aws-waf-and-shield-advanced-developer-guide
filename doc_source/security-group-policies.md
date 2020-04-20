@@ -80,7 +80,11 @@ Replica security groups are not customer\-created and so aren't eligible to be d
 
 ## Usage audit security group policies<a name="security-group-policies-usage"></a>
 
-Use AWS Firewall Manager usage audit security group policies to monitor your organization for unused and redundant security groups and optionally perform cleanup\. When you enable automatic remediation for this policy, Firewall Manager first consolidates redundant security groups, if you've chosen that option, then removes unused security groups, if you've chosen that option\. 
+Use AWS Firewall Manager usage audit security group policies to monitor your organization for unused and redundant security groups and optionally perform cleanup\. When you enable automatic remediation for this policy, Firewall Manager does the following:
+
+1. Consolidates redundant security groups, if you've chosen that option\.
+
+1. Removes unused security groups, if you've chosen that option\. 
 
 **How Firewall Manager remediates redundant security groups**  
 For security groups to be considered redundant, they must have exactly the same rules set and be in the same Amazon VPC instance\. To remediate a redundant security group set, Firewall Manager selects one of the security groups in the set to keep, and then associates it to all resources that are associated with the other security groups in the set\. Firewall Manager then disassociates the other security groups from the resources they were associated with, which renders them unused\. 
@@ -89,7 +93,7 @@ For security groups to be considered redundant, they must have exactly the same 
 If you have also chosen to remove unused security groups, Firewall Manager does that next\. This can result in the removal of the security groups that are in the redundant set\.
 
 **How Firewall Manager remediates unused security groups**  
-For security groups to be considered unused, they must remain unused by any resource for the minumum number of minutes specified in the policy rule\. By default, this number is zero\. You can give this a higher setting, in order to allow yourself time to associate new security groups with resources\. Firewall Manager remediates unused security groups by deleting them from your account, according to your rules settings\. 
+For security groups to be considered unused, they must remain unused by any resource for the minimum number of minutes specified in the policy rule\. By default, this number is zero\. You can give this a higher setting, in order to allow yourself time to associate new security groups with resources\. Firewall Manager remediates unused security groups by deleting them from your account, according to your rules settings\. 
 
 **Default account specification**  
 When you create a usage audit security group policy through the console, Firewall Manager automatically chooses **Exclude the specified accounts and include all others**\. The service then puts the Firewall Manager administrator account in the list to exclude\. This is the recommended approach, and allows you to manually manage the security groups that belong to the Firewall Manager administrator account\. 

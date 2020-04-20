@@ -30,7 +30,7 @@ AWS Shield Advanced also offers some cost protection against spikes in your AWS 
 AWS WAF is included with AWS Shield Advanced at no extra cost\. For more information about AWS Shield Advanced pricing, see [AWS Shield Advanced Pricing](http://aws.amazon.com/shield/pricing/)\.
 
 When you add an AWS Shield Advanced protection to a resource, you can optionally include one or more additions to the protection\. The protection additions vary by resource type and can include the following:
-+ A custom AWS WAF web ACL or rate\-based rule, as described in [Step 3: Add rate\-based rules](ddos-get-started-rate-based-rules.md)\.
++ A custom AWS WAF web ACL or rate\-based rule, as described in [Step 3: Add web ACLs and rate\-based rules](ddos-get-started-rate-based-rules.md)\.
 + An Amazon CloudWatch alarm, as described in [Step 5: Configure Amazon CloudWatch alarms](ddos-get-started-cloudwatch.md)\.
 + An Amazon Route 53 health check for health\-based detection, as described in the following section\.
 

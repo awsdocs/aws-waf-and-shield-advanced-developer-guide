@@ -1,7 +1,7 @@
 # Working with AWS Firewall Manager policies<a name="working-with-policies"></a>
 
 AWS Firewall Manager provides the following types of policies: 
-+ **AWS WAF** **policy** – Firewall Manager supports AWS WAF and AWS WAF Classic policies\. For both versions, you define which resources will be protected by the policy\.
++ **AWS WAF** **policy** – Firewall Manager supports AWS WAF and AWS WAF Classic policies\. For both versions, you define which resources are protected by the policy\.
   + For the AWS WAF policy, you can define a set of rule groups to run first in the web ACL and a set of rule groups to run last\. In the accounts where you apply the web ACL, the account owner can add rules and rule groups to run in between the two Firewall Manager rule group sets\. 
   + For AWS WAF Classic, you create a policy that defines a single rule group\.
 + **Shield Advanced policy** – This policy applies AWS Shield Advanced protection to specified accounts and resources\. 

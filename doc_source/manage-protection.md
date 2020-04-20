@@ -1,26 +1,30 @@
 # Managing AWS Shield Advanced protections<a name="manage-protection"></a>
 
-You can change the settings for your AWS Shield Advanced protections at any time\. 
+You can change the settings for your AWS Shield Advanced protections at any time\. To do this, you walk through the options for all of your protections, making changes to the settings that you need to change\.
 
-## Adding a Web ACL and rate\-based rule to your Shield Advanced protections<a name="add-rule-ddos"></a>
-
-For protection against attacks on Amazon CloudFront and Application Load Balancer resources, you can add AWS WAF web ACLs and rate\-based rules\. For information about how AWS WAF works, see [AWS WAF](waf-chapter.md)\. 
-
-The following procedure shows how to add a web ACL and rate\-based rule to a protection\.<a name="add-rule-procedure"></a>
-
-**To add a web ACL and rate\-based rule to a protection**
+**To manage protections**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
-1. Choose **Protected resources**\.
-
-1. Choose the radio button next to the resource that you want to edit\.
+1. In the navigation pane, choose **Protected resources**\.
 
 1. Choose **Manage existing protections**\.
 
-1. Choose the check box next to the resource that you want to edit\.
+1. Walk through each of the options, making changes as needed and saving them as you go, or skipping the pages that you don't want to change\. The topics that follow cover each of the options\. 
 
-1. Choose an existing web ACL and an existing rate\-based rule\. Alternatively, you can create a different web ACL and rate\-based rule by following these steps:
+## Add web ACLs and rules<a name="add-rule-ddos"></a>
+
+For protection against attacks on Amazon CloudFront and Application Load Balancer resources, you can add AWS WAF web ACLs and rate\-based rules\. For information about how AWS WAF works, see [AWS WAF](waf-chapter.md)\. 
+
+If you use Shield Advanced within an AWS Firewall Manager Shield Advanced policy, you can't add a web ACL or rate\-based rule\.
+
+**To add web ACLs and rules**
+
+1. In the protections page **Add web ACLs and rules**, you can choose an existing web ACL or create your own\. 
+**Note**  
+If a resource is already associated with a web ACL, you can't change to a different web ACL\. You must first remove the associated web ACLs from the resource\. For more information about removing a web ACL association, see [Associating or disassociating a Web ACL with an AWS resource](web-acl-associating-aws-resource.md)\.
+
+   To create your own web ACL, follow these steps:
 
    1. Choose **Create new web ACL** from the dropdown list\.
 
@@ -28,21 +32,19 @@ The following procedure shows how to add a web ACL and rate\-based rule to a pro
 
    1. Choose **Create web ACL**\.
 
-   1. From the dropdown list, choose **Create new rule**\.
+1. For each resource that is listed in the table that doesn't have a rate\-based rule defined, you can add one by selecting the action **Add one** and then performing the following steps:
 
    1. Enter a name\.
 
-   1. Enter a rate limit\. This is the maximum number of requests from a single IP address that are allowed in a five\-minute period\. 
+   1. Enter a rate limit\. This is the maximum number of requests allowed in a five\-minute period from any single IP address\. 
+
+   1. Choose the action to take if the rule is triggered\. **Block** will block requests\. **Count** will allow requests but increment a counter tracking how many times this rule was triggered\.
 
    1. Choose **Create rule**\.
 
-1. Choose the action to take if the rule is triggered\. **Block** will block the request\. **Count** will allow the request but increment a counter tracking how many times this rule was triggered\.
+1. Choose **Apply web ACLS and rules**\. 
 
-1. Choose **Apply web protections**\. 
-
-1. To skip the Amazon CloudWatch alarms page, uncheck all the check boxes and choose **Create alarms**\. 
-
-## Adding health\-based detection to your Shield Advanced protections<a name="associate-health-check"></a>
+## Configure health based DDoS detection<a name="associate-health-check"></a>
 
 You can use your Amazon Route 53 health checks to improve how AWS Shield Advanced detects and mitigates network\-layer, transport\-layer, and application layer attacks\. For information about how this works, see [Shield Advanced health\-based detection](ddos-overview.md#ddos-advanced-health-check-option)\.
 
@@ -53,27 +55,13 @@ You are responsible for ensuring that the health check you use is relevant to th
 
 The following procedure shows how to associate an Amazon Route 53 health check with a protection\. 
 
-**To associate a health check with a Shield Advanced protection**
+**To configure health based DDoS detection**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
-
-1. Choose **Protected resources**\.
-
-1. Choose the resource that you want to edit\.
-
-1. Choose **Manage existing protections**\.
-
-1. If you need to skip the **Add web ACLs and rules** page, choose **Skip and go to next step**\. 
-
-1. For **Configure enhanced DDoS detection**, choose the resource that you want to edit\. 
-
-1. Under **Associated Health Check**, choose the ID of the health check that you want to associate with the protection\. 
+1. In the protections page **Configure health based DDoS detection**, for the resource that you want to manage, under **Associated Health Check**, choose the ID of the health check that you want to associate with the protection\. 
 **Note**  
 If you don't see the health check you need, go to the Route 53 console and verify the health check and its ID\. For information, see [Creating and Updating Health Checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating.html)\.
 
-1. Choose **Associate Health Check**\. 
-
-1. To skip the Amazon CloudWatch alarms page, either clear all the check boxes and choose **Finish** or choose **Cancel**\. Canceling only skips the CloudWatch settings and doesn't cancel your changes to the health check settings\. 
+1. Choose **Associate health checks**\. 
 
 **Shield Advanced health check status settings**  
 The status of the health check that you associate with a protection can have the following values in the Shield console: 
@@ -81,26 +69,18 @@ The status of the health check that you associate with a protection can have the
 + **Unhealthy** — The health check is available and is reporting unhealthy\.
 + **Unavailable** — The health check is not available for use by Shield Advanced\. To resolve this, first disassociate the health check from the protection in Shield Advanced\. Then, in Route 53, create a new health check for the protection and note its ID\. Finally, associate the new health check with the protection following the procedure in this topic\. Don't try to reassociate a health check that has been unavailable\.
 
-## Adding a CloudWatch alarm to your Shield Advanced protections<a name="add-alarm-ddos"></a>
+## Create Amazon CloudWatch alarms and notifications<a name="add-alarm-ddos"></a>
 
-The following procedure shows how to add a CloudWatch alarm to a protected resource\. 
+The following procedure shows how to manage CloudWatch alarms for protected resources\. 
 
 **Note**  
 CloudWatch incurs additional costs\. For CloudWatch pricing, see [Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/)\.<a name="add-cw-procedure"></a>
 
-**To add a CloudWatch alarm to a protected resource**
+**To create Amazon CloudWatch alarms and notifications**
 
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+1. In the protections page **Create Amazon CloudWatch alarms and notifications**, configure the SNS topics for the alarms and notifications that you want to receive\. For resources that you don't want notifications for, choose **No topic**\. You can add an Amazon SNS topic or create a different topic\. 
 
-1. Choose **Protected resources**\.
-
-1. Choose the radio button next to the resource\.
-
-1. Choose **Manage existing protections**\.
-
-1. To skip the rate\-based rule page, choose **Continue**\.
-
-1. For each Region that is listed in the table, choose an existing Amazon SNS topic or create a different topic\. To create an Amazon SNS topic, follow these steps:
+1. To create an Amazon SNS topic, follow these steps:
 
    1. Choose **Create new topic** from the dropdown list\.
 
@@ -113,9 +93,3 @@ CloudWatch incurs additional costs\. For CloudWatch pricing, see [Amazon CloudWa
    1. Repeat as necessary for each protection and each rate\-based rule\.
 
 1. Choose **Create alarms**\.
-
-## Removing a CloudWatch alarm from your Shield Advanced protections<a name="remove-cloudwatch-ddos"></a>
-
-To remove a CloudWatch alarm from your Shield Advanced protections, you have two options:
-+ Delete the protection as described in [Removing AWS Shield Advanced from an AWS resource](remove-protection.md)\. Be sure to select the check box next to **Also delete related DDoSDetection alarm**\.
-+ Delete the alarm using the CloudWatch console\. The name of the alarm to delete will start with **DDoSDetectedAlarmForProtection**\.

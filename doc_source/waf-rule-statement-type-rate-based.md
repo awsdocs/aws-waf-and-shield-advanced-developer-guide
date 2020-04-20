@@ -4,9 +4,10 @@ A rate\-based rule tracks the rate of requests for each originating IP address, 
 
 When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate falls below the limit\.
 
-You can optionally nest another statement inside the rate\-based statement, to narrow the scope so that AWS WAF only counts requests that match the nested statement\. For example, based on recent requests that you've seen from an attacker in the United States, you might create a rate\-based rule with a nested AND rule statement that contains the following, second level of nested statements: 
-+ A geo\-match match statement that specifies requests originating in the United States\.
-+ A string match statement that searches in the `User-Agent` header for the string `BadBot`\.
+You can narrow the scope of the requests that AWS WAF counts\. To do this, you nest another statement inside the rate\-based statement\. Then, AWS WAF only counts requests that match the nested statement\. For example, based on recent requests that you've seen from an attacker in the United States, you might create a rate\-based rule with the following nested statement: 
++ AND rule statement that contains the following, second level of nested statements: 
+  + A geo\-match match statement that specifies requests originating in the United States\.
+  + A string match statement that searches in the `User-Agent` header for the string `BadBot`\.
 
 Let's say that you also set a rate limit of 1,000\. For each IP address, AWS WAF counts requests that meet both of the conditions\. Requests that don't meet both conditions aren't counted\. If the count for an IP address exceeds 1,000 requests in any 5\-minute time span, the rule's action triggers against that IP address\. 
 
@@ -22,5 +23,5 @@ By adding this rate\-based rule to a web ACL, you could limit requests to your l
 **WCUs** – Depends on the nested statement\.
 
 **Where to find this**
-+ **Rule builder** on the console – For **Request option**, choose **Rate**\.
++ **Rule builder** on the console – Under **Rule**, for **Type**, choose **Rate\-based rule**\.
 + **API statement** – `RateBasedStatement`

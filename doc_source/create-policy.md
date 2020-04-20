@@ -15,9 +15,9 @@ AWS Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator\
 
 ## Creating an AWS Firewall Manager policy for AWS WAF<a name="creating-firewall-manager-policy-for-waf"></a>
 
-In an Firewall Manager AWS WAF policy, you can use managed rule groups, which AWS and AWS Marketplace sellers create and maintain for you\. You can also create and use your own rule groups\. For more information about rule groups, see [Rule groups](waf-rule-groups.md)\.
+In a Firewall Manager AWS WAF policy, you can use managed rule groups, which AWS and AWS Marketplace sellers create and maintain for you\. You can also create and use your own rule groups\. For more information about rule groups, see [Rule groups](waf-rule-groups.md)\.
 
-If you want to use your own rule groups, create those before you create your Firewall Manager AWS WAF policy\. For guidance, see [Managing your own rule groups](waf-user-created-rule-groups.md)\. To use an individual custom rule, you must define your own rule group and define your rule within that, then use the rule group in your policy\.
+If you want to use your own rule groups, create those before you create your Firewall Manager AWS WAF policy\. For guidance, see [Managing your own rule groups](waf-user-created-rule-groups.md)\. To use an individual custom rule, you must define your own rule group, define your rule within that, and then use the rule group in your policy\.
 
 For information about Firewall Manager AWS WAF policies, see [How AWS WAF policies work](waf-policies.md)\.
 
@@ -39,9 +39,9 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Next**\.
 
-1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the web ACLs that it creates\. The web ACL names will begin with `FMManagedWebACLV2` followed by the policy name that you enter here\. 
+1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the web ACLs that it creates\. The web ACL names begin with `FMManagedWebACLV2` followed by the policy name that you enter here\. 
 
-1. Under **Policy rules**, add the rule groups that you want AWS WAF to evaluate first and last in the web ACL\. The individual account managers will be able to add rules and rule groups in between your first rule groups and your last rule groups\. For more information, see [How AWS WAF policies work](waf-policies.md)\.
+1. Under **Policy rules**, add the rule groups that you want AWS WAF to evaluate first and last in the web ACL\. The individual account managers can add rules and rule groups in between your first rule groups and your last rule groups\. For more information, see [How AWS WAF policies work](waf-policies.md)\.
 
 1. Set the default action for the web ACL\. This is the action that AWS WAF takes when a web request doesn't match any of the rules in the web ACL\. For more information, see [Deciding on the default action for a Web ACL](web-acl-processing.md#web-acl-default-action)\.
 
@@ -57,11 +57,11 @@ For information about setting up a Firewall Manager administrator account, see [
 
    You can only choose one of the options\. 
 **Note**  
-After you apply the policy, whenever you add a new account to the organization, Firewall Manager automatically evaluates the new account against your policy rules and, if the account is within scope of the policy, Firewall Manager applies the policy to that account\. For example, if you specify a list of accounts to exclude, Firewall Manager automatically applies the policy to new accounts when they're added, because they aren't in your exclusion list\.
+After you apply the policy, whenever you add a new account to the organization, Firewall Manager automatically evaluates the new account against your policy rules\. If the account is within scope of the policy, Firewall Manager applies the policy to that account\. For example, if you specify a list of accounts to exclude, Firewall Manager automatically applies the policy to new accounts when they're added, because they aren't in your exclusion list\.
 
 1. For **Resource type**, choose the types of resources that you want to protect\.
 
-1. For **Resources**, if you want to protect only resources that have specific tags, or alternatively exclude resources that have specific tags, select the appropriate option, then enter the tags to include or exclude\. You can choose only one option\. For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. 
+1. For **Resources**, if you want to protect \(or exclude\) only resources that have specific tags, select the appropriate option, then enter the tags to include or exclude\. You can choose only one option\. For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. 
 
    If you enter more than one tag, a resource must have all of the tags to be included or excluded\.
 
@@ -71,7 +71,7 @@ After you apply the policy, whenever you add a new account to the organization, 
 
 1. Choose **Next**\.
 
-1. Review the new policy\. To make any changes, choose **Edit** in the area you want to change\. This returns you to the corresponding step in the creation wizard\. When you are satisfied with the policy, choose **Create policy**\.
+1. Review the new policy\. To make any changes, choose **Edit** in the area that you want to change\. This returns you to the corresponding step in the creation wizard\. When you are satisfied with the policy, choose **Create policy**\.
 
 ## Creating an AWS Firewall Manager policy for AWS WAF Classic<a name="creating-firewall-manager-policy-for-classic-waf"></a>
 

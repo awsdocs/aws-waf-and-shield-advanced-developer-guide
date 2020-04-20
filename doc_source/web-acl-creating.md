@@ -18,7 +18,9 @@ You can't change the CloudWatch metric name after you create the web ACL\.
 
 1. For **Resource type**, choose the category of AWS resource that you want to associate with this web ACL\. For more information, see [Associating or disassociating a Web ACL with an AWS resource](web-acl-associating-aws-resource.md)\.
 
-1. For **Region**, choose the Region where you want AWS WAF to store the web ACL\.
+1. For **Region**, if you've chosen a regional resource type, choose the Region where you want AWS WAF to store the web ACL\. 
+
+   You only need to choose this option for regional resource types\. For CloudFront distributions, the region is hard coded to the US East \(N\. Virginia\) Region, `us-east-1`, for Global \(CloudFront\) applications\.
 
 1. \(Optional\) For **Associated AWS resources \- optional**, choose **Add AWS resources**\. In the dialog box, choose the resources that you want to associate, and then choose **Add**\. AWS WAF returns you to the **Describe web ACL and associated AWS resources** page\. 
 

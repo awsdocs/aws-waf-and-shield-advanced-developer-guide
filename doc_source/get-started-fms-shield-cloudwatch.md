@@ -20,4 +20,4 @@ For information about setting up a Firewall Manager administrator account, see [
 
 You can continue from this step without configuring Amazon SNS notifications or CloudWatch alarms\. However, doing so significantly reduces your visibility of possible DDoS events\.
 
-After you configure the Amazon SNS notifications and CloudWatch alarms, we recommend that you follow the instructions in [Step 5: Deploy AWS WAF Classic rules](get-started-fms-shield-deploy-waf-automations.md)\.
+As a final step for getting started with Firewall Manager and Shield Advanced, review the global threat environment dashboard, as described in [Step 5: Monitor the global threat environment dashboard ](get-started-fms-shield-monitor-global-dashboard.md)\.

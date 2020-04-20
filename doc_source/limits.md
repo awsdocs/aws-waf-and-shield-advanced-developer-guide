@@ -1,5 +1,8 @@
 # AWS WAF quotas<a name="limits"></a>
 
+**Note**  
+This is the latest version of AWS WAF\. For AWS WAF Classic, see [AWS WAF Classic](classic-waf-chapter.md)\.
+
 AWS WAF is subject to the following quotas \(formerly referred to as limits\)\. 
 
 AWS WAF has default quotas on the maximum number of entities you can have per account\. You can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-waf) in these quotas\.

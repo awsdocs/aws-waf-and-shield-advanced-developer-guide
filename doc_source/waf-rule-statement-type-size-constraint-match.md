@@ -3,9 +3,6 @@
 A size constraint statement compares a number of bytes against the size of a request component, using a comparison operator, such as greater than \(>\) or less than \(<\)\. For example, you can use a size constraint condition to look for query strings that are longer than 100 bytes\. 
 
 **Note**  
-If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8,192 bytes \(8 KB\)\. If the request body for your web requests never exceeds 8,192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8,192 bytes\. 
-
-**Note**  
 If you choose **URI** for the value of **Part of the request to filter on**, the **/** in the URI counts as one character\. For example, the URI `/logo.jpg` is nine characters long\.
 
 **Nestable** – You can nest this statement type inside logical rule statements and rate\-based statements\. 

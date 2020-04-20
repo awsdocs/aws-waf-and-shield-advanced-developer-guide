@@ -20,15 +20,15 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Next**\.
 
-1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the web ACLs that it creates\. The web ACL names will begin with `FMManagedWebACLV2` followed by the policy name that you enter here\. 
+1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the web ACLs that it creates\. The web ACL names begin with `FMManagedWebACLV2` followed by the policy name that you enter here\. 
 
 1. Under **Policy rules**, for **First rule groups**, choose **Add rule groups**\. Expand the **AWS managed rule groups**\. For **Core rule set**, toggle **Add to web ACL**\. For **AWS Known bad inputs**, toggle **Add to web ACL**\. Choose **Add rules**\.
 
    For **Last rule groups**, choose **Add rule groups**\. Expand the **AWS managed rule groups** and for the **Amazon IP reputation list**, toggle **Add to web ACL**\. Choose **Add rules**\.
 
-   Under **First rule groups**, select **Core rule set** and choose **Move down**\. AWS WAF will evaluate web requests against the **AWS Known bad inputs** rule group before it evaluates against the **Core rule set**\. 
+   Under **First rule groups**, select **Core rule set** and choose **Move down**\. AWS WAF evaluates web requests against the **AWS Known bad inputs** rule group before it evaluates against the **Core rule set**\. 
 **Note**  
-You can also create your own AWS WAF rule groups if you wish, using the AWS WAF console\. Any rule groups that you create show up under **Your rule groups** in the **Describe policy : Add rule groups page**\. 
+You can also create your own AWS WAF rule groups if you want, using the AWS WAF console\. Any rule groups that you create show up under **Your rule groups** in the **Describe policy : Add rule groups page**\. 
 
 1. Leave the default action for the web ACL at **Allow**\. 
 
@@ -36,7 +36,7 @@ You can also create your own AWS WAF rule groups if you wish, using the AWS WAF 
 
 1. Choose **Next**\.
 
-1. For **Policy scope**, you provide the settings for the accounts, resource types, and tagging that identify the resources you want to apply the policy to\. For this tutorial, leave the **AWS accounts** and **Resources** settings alone, and choose one or more resource types\.
+1. For **Policy scope**, you provide the settings for the accounts, resource types, and tagging that identify the resources you want to apply the policy to\. For this tutorial, leave the **AWS accounts** and **Resources** settings, and choose one or more resource types\.
 
 1. Choose **Next**\.
 
@@ -44,4 +44,4 @@ You can also create your own AWS WAF rule groups if you wish, using the AWS WAF 
 
 1. Choose **Next**\.
 
-1. Review the new policy\. You can make changes by choosing **Edit** in the area you want to change\. This returns you to the corresponding step in the creation wizard\. When you are satisfied with the policy, choose **Create policy**\.
+1. Review the new policy\. You can make changes by choosing **Edit** in the area that you want to change\. This returns you to the corresponding step in the creation wizard\. When you are satisfied with the policy, choose **Create policy**\.

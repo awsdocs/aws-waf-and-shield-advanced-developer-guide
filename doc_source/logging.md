@@ -193,4 +193,4 @@ The HTTP version\.
 The HTTP method in the request\.
 
 **requestId**  
-The ID of the request\.
+The ID of the request\. This is `null` for Application Load Balancer\.

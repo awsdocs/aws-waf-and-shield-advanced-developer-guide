@@ -112,7 +112,7 @@ Shield Advanced posts the `DDoSDetected` metric with no other dimensions\. The o
 + `SYNFlood`
 + `UDPFragment`
 + `UDPTraffic`
-+ `UDSReflection`
++ `UDPReflection`
 
 #### Creating AWS Shield Advanced alarms<a name="shield-alarms"></a>
 
