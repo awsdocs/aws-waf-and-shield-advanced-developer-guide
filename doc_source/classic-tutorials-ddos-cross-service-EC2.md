@@ -1,7 +1,7 @@
 # Step 1: Launch a virtual server using Amazon EC2<a name="classic-tutorials-ddos-cross-service-EC2"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 You can mitigate infrastructure \(layer 3 and layer 4\) DDoS attacks by using techniques like overprovisioning capacity\. That is, you can scale your website to absorb larger volumes of traffic without capital\-intensive investments or unnecessary complexity\. You can use Amazon EC2 to launch virtual servers \(known as *instances*\) and quickly scale up or down as your requirements change\. You can scale horizontally by adding instances to your website as needed\. You can also choose to scale vertically by using larger instances\. In this step of the tutorial, you create a `c4.8xlarge` Amazon EC2 Windows instance, which includes a 10 GB network interface and enhanced networking, in the US West \(Oregon\) Region\. 

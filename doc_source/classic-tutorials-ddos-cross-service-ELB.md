@@ -1,7 +1,7 @@
 # Step 2: Scale your traffic using Elastic Load Balancing<a name="classic-tutorials-ddos-cross-service-ELB"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 Elastic Load Balancing provides additional protection against application layer attacks\. Elastic Load Balancing distributes traffic to multiple Amazon EC2 instances\. Using Elastic Load Balancing, along with CloudFront \(discussed later in this tutorial\), SSL negotiation is handled by the load balancer and CloudFront edge servers, which helps to protect your Amazon EC2 instances from SSL\-based attacks\. 

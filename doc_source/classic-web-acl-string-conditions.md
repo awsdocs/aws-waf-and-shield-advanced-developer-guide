@@ -1,7 +1,7 @@
 # Working with string match conditions<a name="classic-web-acl-string-conditions"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 If you want to allow or block web requests based on strings that appear in the requests, create one or more string match conditions\. A string match condition identifies the string that you want to search for and the part of web requests, such as a specified header or the query string, that you want AWS WAF Classic to inspect for the string\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that contain the string\.

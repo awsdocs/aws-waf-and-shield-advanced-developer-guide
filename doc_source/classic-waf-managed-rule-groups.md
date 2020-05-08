@@ -1,7 +1,7 @@
 # AWS marketplace rule groups<a name="classic-waf-managed-rule-groups"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 AWS WAF Classic provides *AWS Marketplace rule groups* to help you protect your resources\. AWS Marketplace rule groups are collections of predefined, ready\-to\-use rules that are written and updated by AWS and AWS partner companies\.

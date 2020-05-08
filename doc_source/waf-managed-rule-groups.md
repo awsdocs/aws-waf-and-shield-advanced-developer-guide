@@ -4,7 +4,7 @@ Managed rule groups are collections of predefined, ready\-to\-use rules that AWS
 + *AWS Managed Rules rule groups* are available for free to AWS WAF customers\. 
 + *AWS Marketplace managed rule groups* are available by subscription through AWS Marketplace\.
 
-Some managed rule groups are designed to help protect specific types of web applications like WordPress, Joomla, or PHP\. Others offer broad protection against known threats or common web application vulnerabilities, such as those listed in the [OWASP Top 10](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)\. If you're subject to regulatory compliance like PCI or HIPAA, you might be able to use managed rule groups to satisfy web application firewall requirements\.
+Some managed rule groups are designed to help protect specific types of web applications like WordPress, Joomla, or PHP\. Others offer broad protection against known threats or common web application vulnerabilities, such as those listed in the [OWASP Top 10](https://owasp.org/www-project-top-ten/)\. If you're subject to regulatory compliance like PCI or HIPAA, you might be able to use managed rule groups to satisfy web application firewall requirements\.
 
 **Automatic Updates**  
 Keeping up to date on the constantly changing threat landscape can be time consuming and expensive\. Managed rule groups can save you time when you implement and use AWS WAF\. AWS and AWS Marketplace sellers automatically update managed rule groups when new vulnerabilities and threats emerge\.

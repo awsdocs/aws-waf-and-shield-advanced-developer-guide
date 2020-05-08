@@ -47,17 +47,20 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. For **Policy action**, if you want to create a web ACL in each applicable account within the organization, but not apply the web ACL to any resources yet, choose **Identify resources that don't comply with the policy rules, but don't auto remediate**\. You can change the option later\. 
 
-   If instead you want to automatically apply the policy to existing in\-scope resources, choose **Auto remediate any noncompliant resources**\. This option creates a web ACL in each applicable account within the AWS organization and associates the web ACL with the resources in the accounts\. With this choice, you can also choose to remove any previously associated web ACLs from in\-scope resources\. If you do this, Firewall Manager removes those associations after associating the policy's web ACL with the resources\.
+   If instead you want to automatically apply the policy to existing in\-scope resources, choose **Auto remediate any noncompliant resources**\. This option creates a web ACL in each applicable account within the AWS organization and associates the web ACL with the resources in the accounts\.
+
+   With this choice, you can also choose to remove existing web ACL associations with in\-scope resources, for web ACLs that aren't managed by another active Firewall Manager policy\. If you choose this, Firewall Manager first associates the policy's web ACL with the resources, and then removes the prior associations\. If a resource has an association with another web ACL that's managed by a different active Firewall Manager policy, this choice doesn't affect that association\. 
 
 1. Choose **Next**\.
 
-1. For **AWS accounts this policy applies to**, if you don't want to apply the policy to all accounts in your organization, choose one of the other options as follows: 
-   + If you want to include specific accounts in the policy scope, choose **Include only the specified accounts**, then choose **Add**, choose from your list of available accounts, and choose **Add AWS account ID**\.
-   + If you want to exclude specific accounts from the policy scope, choose **Exclude the specified accounts and include all others**, then choose **Add**, choose the accounts to exclude from your list of available accounts, and choose **Add AWS account ID**\.
+1. For **AWS accounts this policy applies to**, choose the option as follows: 
+   + If you want to apply the policy to all accounts in your organization, leave the default selection, **Include all accounts under my AWS organization**\. 
+   + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+   + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
 
-   You can only choose one of the options\. 
-**Note**  
-After you apply the policy, whenever you add a new account to the organization, Firewall Manager automatically evaluates the new account against your policy rules\. If the account is within scope of the policy, Firewall Manager applies the policy to that account\. For example, if you specify a list of accounts to exclude, Firewall Manager automatically applies the policy to new accounts when they're added, because they aren't in your exclusion list\.
+   You can only choose only one of the options\. 
+
+   After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 
 1. For **Resource type**, choose the types of resources that you want to protect\.
 
@@ -105,9 +108,14 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Next**\.
 
-1. If you want to include only specific accounts in the policy, or alternatively exclude specific accounts from the policy, select **Select accounts to include/exclude from this policy \(optional\)**\. Choose either **Include only these accounts in this policy** or **Exclude these accounts from this policy**\. You can choose only one option\. Choose **Add**\. Select the account numbers to include or exclude, and then choose **OK**\. 
-**Note**  
-If you don't select this option, Firewall Manager applies a policy to all accounts in your AWS organization\. If you add a new account to the organization, Firewall Manager automatically applies the policy to that account\.
+1. For **AWS accounts this policy applies to**, choose the option as follows: 
+   + If you want to apply the policy to all accounts in your organization, leave the default selection, **Include all accounts under my AWS organization**\. 
+   + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+   + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+
+   You can only choose only one of the options\. 
+
+   After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 
 1. Choose the type of resource that you want to protect\.
 
@@ -151,9 +159,14 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Next**\.
 
-1. If you want to include only specific accounts in the policy, or alternatively exclude specific accounts from the policy, select **Select accounts to include/exclude from this policy \(optional\)**\. Choose either **Include only these accounts in this policy** or **Exclude these accounts from this policy**\. You can choose only one option\. Choose **Add**\. Select the account numbers to include or exclude, and then choose **OK**\. 
-**Note**  
-If you don't select this option, Firewall Manager applies a policy to all accounts in your AWS organization\. If you add a new account to the organization, Firewall Manager automatically applies the policy to that account\.
+1. For **AWS accounts this policy applies to**, choose the option as follows: 
+   + If you want to apply the policy to all accounts in your organization, leave the default selection, **Include all accounts under my AWS organization**\. 
+   + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+   + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+
+   You can only choose only one of the options\. 
+
+   After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 
 1. Choose the type of resource that you want to protect\.
 
@@ -209,9 +222,14 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Next**\.
 
-1. For **AWS accounts affected by this policy**, if you want to apply the policy to all accounts in your organization, choose **Include all accounts under my organization**\. If you want to include only specific accounts in the policy, or alternatively exclude specific accounts from the policy, choose one of those options, and then use the **AWS accounts** dialog box to add account numbers to include or exclude\. You can choose only one option\. 
-**Note**  
-For the choices **Include all accounts under my organization** and **Exclude the specified accounts and include all others**, when you add a new account to your organization, Firewall Manager automatically applies the policy to that account\.
+1. For **AWS accounts this policy applies to**, choose the option as follows: 
+   + If you want to apply the policy to all accounts in your organization, leave the default selection, **Include all accounts under my AWS organization**\. 
+   + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+   + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+
+   You can only choose only one of the options\. 
+
+   After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 
 1. For **Resource type**, choose the types of resources that you want to protect\. 
 
@@ -263,9 +281,14 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Next**\.
 
-1. For **AWS accounts affected by this policy**, if you want to apply the policy to all accounts in your organization, choose **Include all accounts under my organization**\. If you want to include only specific accounts in the policy, or alternatively exclude specific accounts from the policy, choose one of those options, and then use the **AWS accounts** dialog box to add account numbers to include or exclude\. You can choose only one option\. 
-**Note**  
-For the choices **Include all accounts under my organization** and **Exclude the specified accounts and include all others**, when you add a new account to your organization, Firewall Manager automatically applies the policy to that account\.
+1. For **AWS accounts this policy applies to**, choose the option as follows: 
+   + If you want to apply the policy to all accounts in your organization, leave the default selection, **Include all accounts under my AWS organization**\. 
+   + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+   + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+
+   You can only choose only one of the options\. 
+
+   After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 
 1. For **Resource type**, choose the types of resource that you want to protect\.
 
@@ -311,9 +334,14 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Next**\.
 
-1. For **AWS accounts affected by this policy**, if you want to apply the policy to all accounts in your organization, choose **Include all accounts under my organization**\. If you want to include only specific accounts in the policy, or alternatively exclude specific accounts from the policy, choose one of those options, and then use the **AWS accounts** dialog box to add account numbers to include or exclude\. You can choose only one option\. 
-**Note**  
-For the choices **Include all accounts under my organization** and **Exclude the specified accounts and include all others**, when you add a new account to your organization, Firewall Manager automatically applies the policy to that account\.
+1. For **AWS accounts this policy applies to**, choose the option as follows: 
+   + If you want to apply the policy to all accounts in your organization, leave the default selection, **Include all accounts under my AWS organization**\. 
+   + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+   + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+
+   You can only choose only one of the options\. 
+
+   After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 
 1. For **Resources**, if you want to apply the policy to all resources within the AWS accounts and resource type parameters, choose **Include all resources that match the selected resource type**\. If you want to include or exclude specific resources, use tagging to specify the resources, and then choose the appropriate option and add the tags to the list\. You can apply the policy either to all resources except those that have all the tags that you specify, or you can apply it to only those that have all the tags that you specify\. For more information about tagging your resources, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. 
 **Note**  

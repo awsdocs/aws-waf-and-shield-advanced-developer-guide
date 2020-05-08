@@ -1,7 +1,7 @@
 # Associating or disassociating a Web ACL with an Amazon API Gateway API, a CloudFront distribution or an Application Load Balancer<a name="classic-web-acl-associating-cloudfront-distribution"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 To associate or disassociate a web ACL, perform the applicable procedure\. Note that you also can associate a web ACL with a CloudFront distribution when you create or update the distribution\. For more information, see [Using AWS WAF Classic to Control Access to Your Content](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-awswaf.html) in the *Amazon CloudFront Developer Guide*\.

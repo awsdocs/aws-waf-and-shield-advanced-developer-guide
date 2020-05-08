@@ -1,7 +1,7 @@
 # AWS WAF Classic quotas<a name="classic-limits"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 AWS WAF Classic is subject to the following quotas \(formerly referred to as limits\)\. 
@@ -15,7 +15,7 @@ AWS WAF Classic has default quotas on the number of entities per account\. You c
 | Rules per AWS account per Region | 100 | 
 | Rate\-based\-rules per AWS account per Region | 5 | 
 | Conditions per AWS account per Region | 100 of each condition type \(For example: 100 size constraint conditions, 100 IP match conditions, and so on\. The exception is regex match conditions\. You can have a maximum of 10 regex match conditions per account per Region\. This quota cannot be increased\.\) | 
-| Requests per Second | 10,000 per web ACL\* | 
+| Requests per Second | 25,000 per web ACL\* | 
 
 \*This quota applies only to AWS WAF Classic on an Application Load Balancer\. Requests per Second \(RPS\) quotas for AWS WAF Classic on CloudFront are the same as the RPS quotas support by CloudFront that is described in the [CloudFront Developer Guide](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html)\.
 
@@ -42,3 +42,18 @@ The following quotas on AWS WAF Classic entities can't be changed\.
 | The number of pattern sets per AWS account per Region | 5 | 
 | GeoMatchSets per AWS account per Region | 50 | 
 | Locations per GeoMatchSet | 50 | 
+
+AWS WAF Classic has the following fixed quotas on calls per account per Region\. These quotas apply to the total calls to the service through any available means, including the console, CLI, AWS CloudFormation, the REST API, and the SDKs\. These quotas can't be changed\.
+
+
+| Call type | Quota | 
+| --- | --- | 
+| Maximum number of calls to AssociateWebACL |  1 request every 2 seconds   | 
+| Maximum number of calls to DisassociateWebACL |  1 request every 2 seconds   | 
+| Maximum number of calls to GetWebACLForResource  |  1 request per second  | 
+| Maximum number of calls to ListResourcesForWebACL |  1 request per second  | 
+| Maximum number of calls to CreateWebACLMigrationStack |  1 request per second  | 
+| Maximum number of calls to GetChangeToken |  10 requests per second  | 
+| Maximum number of calls to GetChangeTokenStatus |  1 request per second  | 
+| Maximum number of calls to any individual List action, if no other quota is defined for it  |  5 requests per second  | 
+| Maximum number of calls to any individual Create, Put, Get, or Update action, if no other quota is defined for it  |  1 request per second  | 

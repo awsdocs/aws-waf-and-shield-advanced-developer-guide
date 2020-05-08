@@ -1,0 +1,15 @@
+# Migration caveats and limitations<a name="waf-migrating-caveats"></a>
+
+****  
+The migration doesn't carry over all of your settings, exactly as you have them in AWS WAF Classic\. A few things, like managed rules, don't map exactly between the two versions\. Other settings, like the web ACL's associations with protected AWS resources, are disabled initially in the new version so you can add them when you're ready\. 
+
+The following list describes the caveats of the migration and describes any steps you might want to take in response\. Use this overview to plan your migration\. The detailed migration steps, later on, walk you through the recommended mitigation steps\. 
++ **Single account** – You can only migrate AWS WAF Classic resources for any account to AWS WAF resources for the same account\. 
++ **Rate\-based rules** – For rate\-based rules, the migration doesn't bring over any associated conditions\. If you have a rate\-based rule with added conditions, recreate the conditions in the migrated web ACL\. In AWS WAF, you do this by adding a nested statement in the rate\-based rule to narrow the scope of the rule\. For more information about rate\-based rules in AWS WAF, see [Rate\-based rule statement](waf-rule-statement-type-rate-based.md)\.
++ **Managed rules** – The migration doesn't bring over any managed rules from AWS Marketplace sellers\. Some AWS Marketplace sellers have equivalent managed rules for AWS WAF that you can subscribe to again\. Before you do this, review the AWS Managed Rules that are provided for free with the latest version of AWS WAF\. For information about managed rules, see [Managed rule groups](waf-managed-rule-groups.md)\. 
++ **Web ACL associations** – The migration doesn't bring over any associations between the web ACL and protected resources\. This is by design, to avoid affecting your production workload\. After you verify that everything is migrated correctly, associate the new web ACL with your resources\.
++ **Logging** – Logging for the migrated web ACL is disabled by default\. This is by design\. Enable logging when you are ready to switch over from AWS WAF Classic to AWS WAF\.
++ **AWS Firewall Manager rule groups** – The migration doesn't handle rule groups that are managed by Firewall Manager\. You can migrate a web ACL that's managed by Firewall Manager, but the migration doesn't bring over the rule group\. Instead of using the migration tool for these web ACLs, recreate the policy for the new AWS WAF in Firewall Manager\. 
+**Note**  
+The rule groups that Firewall Manager managed for AWS WAF Classic were Firewall Manager rule groups\. With the new version of AWS WAF, the rule groups are AWS WAF rule groups\. Functionally, they are the same\. 
++ **AWS WAF Security Automations** – Don't try to migrate any [AWS WAF Security Automations](https://aws.amazon.com/solutions/aws-waf-security-automations/)\. The migration doesn't convert Lambda functions, which might be in use by the automations\. When a new AWS WAF Security Automations solution is available that's compatible with the latest AWS WAF, redeploy that solution\.

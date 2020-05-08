@@ -1,7 +1,7 @@
 # Step 4: Register your Domain name and implement DNS service using Route 53<a name="classic-tutorials-ddos-cross-service-R53"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 You can use Route 53 to register the domain name for your website, route internet traffic to the resources for your domain, and check the health of your web server to verify that it's reachable, available, and functional\. Route 53 helps to protect against DDoS attacks by providing redundancy and load balancing across multiple DNS servers\. Route 53 can also detect anomalies in DNS queries and prioritize requests from users that are known to be reliable and, by extension, deprioritize requests that are from potentially less reliable sources\.

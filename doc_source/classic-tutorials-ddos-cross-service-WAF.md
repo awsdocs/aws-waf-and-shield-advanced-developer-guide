@@ -1,7 +1,7 @@
 # Step 5: Detect and filter malicious web requests using AWS WAF Classic<a name="classic-tutorials-ddos-cross-service-WAF"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 You can use a web application firewall \(WAF\) to protect your web applications against attacks that attempt to exploit a vulnerability in your website\. Common examples include SQL injection or cross\-site request forgery\. You can also use a firewall to detect and mitigate web application layer DDoS attacks\. 

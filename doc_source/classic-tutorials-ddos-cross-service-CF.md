@@ -1,7 +1,7 @@
 # Step 3: Improve performance and absorb attacks using Amazon CloudFront<a name="classic-tutorials-ddos-cross-service-CF"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 Highly scaled, diverse internet connections can significantly improve the response time of your website, better absorb DDoS attacks, and isolate faults\. Amazon CloudFront edge servers along with Route 53 provide the additional layer of network infrastructure that you need to achieve these benefits\. Your content is served and DNS queries are resolved from locations that typically are closer to your users than your EC2 origin servers\. This reduces the load on your origin EC2 servers\.

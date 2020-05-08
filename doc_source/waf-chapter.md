@@ -10,7 +10,7 @@ You can also use AWS WAF to protect your applications that are hosted in Amazon 
 **Topics**
 + [How AWS WAF works](how-aws-waf-works.md)
 + [Getting started with AWS WAF](getting-started.md)
-+ [Tips for migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)
++ [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)
 + [Managing and using a Web Access Control List \(Web ACL\)](web-acl.md)
 + [Rule groups](waf-rule-groups.md)
 + [AWS WAF rules](waf-rules.md)

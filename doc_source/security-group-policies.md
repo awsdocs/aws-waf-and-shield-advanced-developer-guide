@@ -18,8 +18,8 @@ Security group policies in AWS Firewall Manager are similar to other Firewall Ma
 **AWS accounts in scope**  
 The settings that you provide for the AWS accounts affected by the policy determine which of the accounts in your AWS organization to apply the security group policy to\. You can choose to apply the policy in one of the following ways: 
 + To all accounts in your organization
-+ To all except a specific list of excluded account numbers
-+ To only a specific list of included account numbers
++ To only a specific list of included account numbers and AWS Organizations organizational units \(OUs\)
++ To all except a specific list of excluded account numbers and AWS Organizations organizational units \(OUs\)
 
 Whichever option you choose, when you add a new account to your organization, Firewall Manager automatically assesses it against these settings in each security group policy and applies the policy as indicated\. For example, if you choose to apply the policy to all accounts except the account numbers in the list, when you add a new account, Firewall Manager applies the policy if the new account number isn't in the exclude list\.
 

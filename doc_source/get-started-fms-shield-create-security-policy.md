@@ -29,9 +29,7 @@ You don't need to manually subscribe each member account to Shield Advanced\. Fi
 
 1. For **Name**, enter a friendly name\. 
 
-1. If you want to include only specific accounts in the policy, or alternatively exclude specific accounts from the policy, select **Select accounts to include/exclude from this policy \(optional\)**\. Choose either **Include only these accounts in this policy** or **Exclude these accounts from this policy**\. You can choose only one option\. Choose **Add**\. Select the account numbers to include or exclude, and then choose **OK**\. 
-**Note**  
-If you don't select this option, Firewall Manager applies a policy to all accounts in your organization in AWS Organizations\. If you add a new account to the organization, Firewall Manager automatically applies the policy to that account\.
+1. **AWS accounts affected by this policy** allows you to narrow the scope of your policy by specifying accounts to include or exclude\. For this tutorial, choose **Include all accounts under my organization\.** 
 
 1. Choose the types of resources that you want to protect\.
 

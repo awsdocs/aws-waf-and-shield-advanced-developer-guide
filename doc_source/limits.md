@@ -3,7 +3,7 @@
 **Note**  
 This is the latest version of AWS WAF\. For AWS WAF Classic, see [AWS WAF Classic](classic-waf-chapter.md)\.
 
-AWS WAF is subject to the following quotas \(formerly referred to as limits\)\. 
+AWS WAF is subject to the following quotas \(formerly referred to as limits\)\. These quotas are the same for all Regions in which AWS WAF is available\. Each Region is subject to these quotas individually\. The quotas are not cumulative across Regions\.
 
 AWS WAF has default quotas on the maximum number of entities you can have per account\. You can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-waf) in these quotas\.
 
@@ -15,11 +15,11 @@ AWS WAF has default quotas on the maximum number of entities you can have per ac
 | Web ACL capacity units \(WCUs\) per web ACL | 1,500 | 
 | WCUs per rule group | 1,500 | 
 | IP sets per Region | 100 | 
-| Requests per second per web ACL \(applies only to Application Load Balancers\) | 10,000 | 
+| Requests per second per web ACL \(applies only to Application Load Balancers\) | 25,000 | 
 
 The maximum requests per second \(RPS\) allowed for AWS WAF on CloudFront is set by CloudFront and described in the [CloudFront Developer Guide](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html)\.
 
-The following quotas on AWS WAF entities can't be changed\.
+AWS WAF has fixed quotas on the following entity settings per account\. These quotas can't be changed\.
 
 
 | Resource | Quota | 
@@ -35,3 +35,15 @@ The following quotas on AWS WAF entities can't be changed\.
 | Maximum size of a web request body that can be inspected |  8 KB  | 
 | Maximum number of rate\-based rules per account | 10 | 
 | Minimum request rate that can be defined for a rate\-based rule |  100  | 
+
+AWS WAF has the following fixed quotas on calls per account per Region\. These quotas apply to the total calls to the service through any available means, including the console, CLI, AWS CloudFormation, the REST API, and the SDKs\. These quotas can't be changed\.
+
+
+| Call type | Quota | 
+| --- | --- | 
+| Maximum number of calls to AssociateWebACL |  1 request every 2 seconds   | 
+| Maximum number of calls to DisassociateWebACL |  1 request every 2 seconds   | 
+| Maximum number of calls to GetWebACLForResource  |  1 request per second  | 
+| Maximum number of calls to ListResourcesForWebACL |  1 request per second  | 
+| Maximum number of calls to any individual Get or List action, if no other quota is defined for it  |  5 requests per second  | 
+| Maximum number of calls to any individual Create, Put, or Update action, if no other quota is defined for it  |  1 request per second  | 

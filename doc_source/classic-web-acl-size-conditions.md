@@ -1,7 +1,7 @@
 # Working with size constraint conditions<a name="classic-web-acl-size-conditions"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 If you want to allow or block web requests based on the length of specified parts of requests, create one or more size constraint conditions\. A size constraint condition identifies the part of web requests that you want AWS WAF Classic to look at, the number of bytes that you want AWS WAF Classic to look for, and an operator, such as greater than \(>\) or less than \(<\)\. For example, you can use a size constraint condition to look for query strings that are longer than 100 bytes\. Later in the process, when you create a web ACL, you specify whether to allow or block requests based on those settings\.

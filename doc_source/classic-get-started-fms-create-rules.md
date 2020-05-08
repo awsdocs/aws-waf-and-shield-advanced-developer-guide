@@ -1,7 +1,7 @@
 # Step 2: Create rules<a name="classic-get-started-fms-create-rules"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 In this step, you create rules using AWS WAF Classic\. If you already have AWS WAF Classic rules that you want to use with AWS Firewall Manager, skip this step and go to [Step 3: Create a rule group](classic-get-started-fms-create-rule-group.md)\. 

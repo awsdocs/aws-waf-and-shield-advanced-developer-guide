@@ -1,7 +1,7 @@
 # Working with IP match conditions<a name="classic-web-acl-ip-conditions"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 If you want to allow or block web requests based on the IP addresses that the requests originate from, create one or more IP match conditions\. An IP match condition lists up to 10,000 IP addresses or IP address ranges that your requests originate from\. Later in the process, when you create a web ACL, you specify whether to allow or block requests from those IP addresses\.

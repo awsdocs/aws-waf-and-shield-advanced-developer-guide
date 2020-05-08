@@ -1,7 +1,7 @@
 # How AWS WAF Classic works with Amazon CloudFront features<a name="classic-cloudfront-features"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. If you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November, 2019, and you have not migrated your web ACLs over yet, you need to use AWS WAF Classic to access those resources\. Otherwise, do not use this version\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 When you create a web ACL, you can specify one or more CloudFront distributions that you want AWS WAF Classic to inspect\. AWS WAF Classic starts to allow, block, or count web requests for those distributions based on the conditions that you identify in the web ACL\. CloudFront provides some features that enhance the AWS WAF Classic functionality\. This chapter describes a few ways that you can configure CloudFront to make CloudFront and AWS WAF Classic work better together\.
