@@ -24,7 +24,7 @@ For this tutorial, you create a common security group policy and set its action 
 
 1. For **Policy name**, enter a friendly name\. 
 
-1. **Policy rules** allow you to choose how the security groups in this policy are applied and maintained\. For this tutorial, choose **Apply the primary security groups to every resource within the policy scope\.** and leave the other options unchecked\. 
+1. **Policy rules** allow you to choose how the security groups in this policy are applied and maintained\. For this tutorial, choose **Disassociate any other security groups from AWS resources within the policy scope\.** and leave the other options unchecked\. 
 
 1. Choose **Add primary security group**, select the security group that you created for this tutorial, and choose **Add security group**\.
 
@@ -32,11 +32,11 @@ For this tutorial, you create a common security group policy and set its action 
 
 1. Choose **Next**\.
 
-1. **AWS accounts affected by this policy** allows you to narrow the scope of your policy by specifying accounts to include or exclude\. For this tutorial, choose **Include all accounts under my organization\.** 
+1. **AWS accounts this policy applies to** allows you to narrow the scope of your policy by specifying accounts to include or exclude\. For this tutorial, choose **Include all accounts under my organization\.** 
 
 1. For **Resource type**, choose one or more types, according to the resources you have defined for your AWS organization\. 
 
-1. **Resources** allows you to narrow the scope of your policy by specifying resource tags for inclusion or exclusion\. To use tagging, you need to first tag your resources\. For more information about tagging your resources, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. For this tutorial, choose **Include all resources that match the selected resource type**\. 
+   **Resources** allows you to narrow the scope of your policy by specifying resource tags for inclusion or exclusion\. To use tagging, you need to first tag your resources\. For more information about tagging your resources, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. For this tutorial, choose **Include all resources that match the selected resource type**\. 
 
 1. Choose **Next**\.
 
