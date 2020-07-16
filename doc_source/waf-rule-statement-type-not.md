@@ -2,7 +2,7 @@
 
 The NOT rule statement logically negates the results of a single nested statement, so the nested statements must not match for the NOT statement to match, and vice versa\. This requires one nested statement\. 
 
-For example, if you want to block requests that don't originate in a specific country, create a NOT statement with action set to block, and nest a geographical match statement that specifies the country\. 
+For example, if you want to block requests that don't originate in a specific country, create a NOT statement with action set to block, and nest a geographic match statement that specifies the country\. 
 
 **Nestable** – You can nest this statement type\. 
 

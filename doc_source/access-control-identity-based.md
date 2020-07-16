@@ -55,9 +55,11 @@ The AWS WAF console provides an integrated environment for you to create and man
 
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
-The following AWS managed policies, which you can attach to users in your account, are specific to AWS WAF and are grouped by use case scenario:
+The following AWS managed policies, which you can attach to users in your account, are specific to AWS WAF:
 + `AWSWAFReadOnlyAccess` – Grants read\-only access to AWS WAF resources\. 
 + `AWSWAFFullAccess` – Grants full access to AWS WAF resources\.
++ `AWSWAFConsoleReadOnlyAccess` – Grants read\-only access to the AWS WAF console, which includes resources for AWS WAF and integrated services, such as Amazon CloudFront, Amazon API Gateway, Application Load Balancer, and Amazon CloudWatch\. 
++ `AWSWAFConsoleFullAccess` – Grants full access to the AWS WAF console, which includes resources for AWS WAF and integrated services, such as Amazon CloudFront, Amazon API Gateway, Application Load Balancer, and Amazon CloudWatch\. 
 
 **Note**  
 You can review these permissions policies by signing in to the IAM console and searching for specific policies there\.
@@ -196,7 +198,7 @@ This policy grants the following permissions to the `webacl` ID 112233d7c\-86b2\
             "wafv2:*"
          ],
          "Resource": [
-            "arn:aws:wafv2:us-east-1:444455556666:webacl/112233d7c-86b2-458b-af83-51c51example"
+        "arn:aws:wafv2:us-east-1:444455556666:regional/webacl/test123/112233d7c-86b2-458b-af83-51c51example"
          ]
       }
    ]

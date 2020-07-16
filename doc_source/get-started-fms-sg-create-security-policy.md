@@ -44,7 +44,7 @@ For this tutorial, you create a common security group policy and set its action 
 
 1. Choose **Create policy**\.
 
-   In the **AWS Firewall Manager policies** pane, your policy should be listed\. It will probably indicate **Pending** under the accounts headings and it will indicate that **Automatic remediation** is disabled\. The creation of a policy can take several minutes\. After the **Pending** status is replaced with account counts, you can choose the policy name to explore the compliance status of the accounts and resources\. For information, see [Viewing resource compliance with a policy](fms-compliance.md)
+   In the **AWS Firewall Manager policies** pane, your policy should be listed\. It will probably indicate **Pending** under the accounts headings and it will indicate that **Automatic remediation** is disabled\. The creation of a policy can take several minutes\. After the **Pending** status is replaced with account counts, you can choose the policy name to explore the compliance status of the accounts and resources\. For information, see [Viewing resource compliance for a policy](fms-compliance.md)
 
 1. When you are finished exploring, if you don't want to keep the policy you created for this tutorial, choose the policy name, choose **Delete**, choose **Clean up resources created by this policy\.**, and finally choose **Delete**\. 
 

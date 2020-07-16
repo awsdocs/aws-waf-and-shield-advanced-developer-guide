@@ -40,6 +40,7 @@ Note your AWS account number, because you'll need it for the next task\.
 To use the AWS WAF Classic console, you must sign in to confirm that you have permission to perform AWS WAF Classic operations\. You can use the root credentials for your AWS account, but we don't recommend it\. For greater security and control of your account, we recommend that you use AWS Identity and Access Management \(IAM\) to do the following:
 + Create an IAM user account for yourself or your business\.
 + Either add the IAM user account to an IAM group that has administrative permissions, or grant administrative permissions directly to the IAM user account\.
++ Verify that the account has full access to AWS WAF Classic and related services, for general use and for console access\. For information, see [AWS managed \(predefined\) policies for AWS WAF Classic](classic-access-control-identity-based.md#classic-access-policy-examples-aws-managed)\.
 
 You then can sign in to the AWS WAF Classic console \(and other service consoles\) by using a special URL and the credentials for the IAM user\. You also can add other users to the IAM user account, and control their level of access to AWS services and to your resources\.
 
@@ -50,7 +51,7 @@ If you signed up for AWS but have not created an IAM user for yourself, you can 
 
 **To create an administrator user for yourself and add the user to an administrators group \(console\)**
 
-1. Use your AWS account email address and password to sign in as the *[AWS account root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)* to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+1. Sign in to the [IAM console](https://console.aws.amazon.com/iam/) as the account owner by choosing **Root user** and entering your AWS account email address\. On the next page, enter your password\.
 **Note**  
 We strongly recommend that you adhere to the best practice of using the **Administrator** IAM user below and securely lock away the root user credentials\. Sign in as the root user only to perform a few [account and service management tasks](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 

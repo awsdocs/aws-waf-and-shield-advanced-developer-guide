@@ -28,6 +28,6 @@ After the automated migration is complete, review the newly created web ACL and 
 
    1. Choose **Add rules**, then choose **Add managed rule groups**\.
 
-   1. Expand the listing for the vendor of your choice and select the rule groups that you want to add\. For AWS Marketplace sellers, you might need to subscribe to the rule groups\. For more information about using managed rule groups in your web ACL, see [Managed rule groups](waf-managed-rule-groups.md) and [How AWS WAF processes a Web ACL](web-acl-processing.md)\.
+   1. Expand the listing for the vendor of your choice and select the rule groups that you want to add\. For AWS Marketplace sellers, you might need to subscribe to the rule groups\. For more information about using managed rule groups in your web ACL, see [Managed rule groups](waf-managed-rule-groups.md) and [How AWS WAF processes a web ACL](web-acl-processing.md)\.
 
 After you finish the basic migration process, we recommend that you review your needs and consider additional options, to be sure that the new configuration is as efficient as possible and that it's using the latest available security options\. See [Migrating a web ACL: additional considerations](waf-migrating-procedure-additional.md)\.

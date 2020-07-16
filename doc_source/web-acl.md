@@ -1,6 +1,6 @@
 # Managing and using a Web Access Control List \(Web ACL\)<a name="web-acl"></a>
 
-A web access control list \(web ACL\) gives you fine\-grained control over the web requests that your Amazon CloudFront distribution, Amazon API Gateway API, or Application Load Balancer responds to\. 
+A web access control list \(web ACL\) gives you fine\-grained control over the web requests that your Amazon CloudFront distribution, Amazon API Gateway REST API, or Application Load Balancer responds to\. 
 
 You can use criteria like the following to allow or block requests: 
 + IP address origin of the request
@@ -21,10 +21,10 @@ To choose the requests that you want to allow to have access to your content or 
 
 1. Specify additional conditions under which you want to allow or block requests in one or more rules\. To add more than one, start with AND or OR rule statements and nest the rules that you want to combine under those\. If you want to negate a rule option, nest the rule in a NOT statement\. You can optionally use a rate\-based rule instead of a regular rule to limit the number of requests from any single IP address that meets the conditions\. For information about rules, see [AWS WAF rules](waf-rules.md)\.
 
-If you add more than one rule to a web ACL, AWS WAF evaluates the rules in the order that they're listed for the web ACL\. For more information, see [How AWS WAF processes a Web ACL](web-acl-processing.md)\.
+If you add more than one rule to a web ACL, AWS WAF evaluates the rules in the order that they're listed for the web ACL\. For more information, see [How AWS WAF processes a web ACL](web-acl-processing.md)\.
 
 When you create a web ACL, you specify the types of resources that you want to use it with\. For information, see [Creating a web ACL](web-acl-creating.md)\. After you define a web ACL, you can associate it with your resources to begin providing protection for them\. For more information, see [Associating or disassociating a Web ACL with an AWS resource](web-acl-associating-aws-resource.md)\. 
 
 **Topics**
-+ [How AWS WAF processes a Web ACL](web-acl-processing.md)
++ [How AWS WAF processes a web ACL](web-acl-processing.md)
 + [Working with web ACLs](web-acl-working-with.md)

@@ -1,15 +1,15 @@
 # How AWS WAF works<a name="how-aws-waf-works"></a>
 
-You use AWS WAF to control how an Amazon CloudFront distribution, an Amazon API Gateway API, or an Application Load Balancer responds to web requests\. 
+You use AWS WAF to control how an Amazon CloudFront distribution, an Amazon API Gateway REST API, or an Application Load Balancer responds to web requests\. 
 + **Web ACLs** – You use a web access control list \(ACL\) to protect a set of AWS resources\. You create a web ACL and define its protection strategy by adding rules\. Rules define criteria for inspecting web requests and specify how to handle requests that match the criteria\. You set a default action for the web ACL that indicates whether to block or allow through those requests that pass the rules inspections\. 
 + **Rules** – Each rule contains a statement that defines the inspection criteria, and an action to take if a web request meets the criteria\. When a web request meets the criteria, that's a match\. You can use rules to block matching requests or to allow matching requests through\. You can also use rules just to count matching requests\. 
 + **Rules groups** – You can use rules individually or in reusable rule groups\. AWS Managed Rules and AWS Marketplace sellers provide managed rule groups for your use\. You can also define your own rule groups\.
 
-After you create your web ACL, you can associate it with one or more AWS resources\. The resource types that you can protect using AWS WAF web ACLs are Amazon CloudFront distributions, Amazon API Gateway APIs, and Application Load Balancers\. 
+After you create your web ACL, you can associate it with one or more AWS resources\. The resource types that you can protect using AWS WAF web ACLs are Amazon CloudFront distributions, Amazon API Gateway REST APIs, and Application Load Balancers\. 
 
 AWS WAF is available in the Regions listed at [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region)\.
 + For an API Gateway API or an Application Load Balancer, you can use any of the Regions in the list\. 
-+ For a CloudFront distribution, AWS WAF is available globally, but when you create AWS resources for use with CloudFront, you must choose the Region US East \(N\. Virginia\)\. AWS WAF resources are web ACLs, rule groups, IP sets, and regex pattern sets\.
++ For a CloudFront distribution, AWS WAF is available globally, but you must use the Region US East \(N\. Virginia\) for all of your work\. You must create your web ACL using the Region US East \(N\. Virginia\)\. You must also use this Region to create any other resources that you use in your web ACL, like rule groups, IP sets, and regex pattern sets\. 
 
 ## AWS WAF Web ACL capacity units \(WCU\)<a name="aws-waf-capacity-units"></a>
 

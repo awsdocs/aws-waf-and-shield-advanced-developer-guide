@@ -6,7 +6,9 @@
 
 1. Choose **Switch to AWS WAF Classic** and review your configuration settings for the web ACL\. Make note of the settings, considering the caveats and limitations described in the preceding section, [Migration caveats and limitations](waf-migrating-caveats.md)\.
 
-1. In the dialogue at the top, choose **Migrate web ACLs to new AWS WAF**\. This launches the migration wizard\.
+1. In the informational dialogue at the top, locate the sentence that starts with **Migrate web ACLs** and choose the link to the **migration wizard**\. This launches the migration wizard\.
+
+   If you don't see the informational dialogue, you might have closed it since you launched the AWS WAF Classic console\. In the navigation bar, choose **Switch to new AWS WAF** then choose **Switch to AWS WAF Classic**, and the informational dialogue should reappear\.
 
 1. Select the web ACL that you want to migrate\. 
 
@@ -32,7 +34,7 @@
          ]
      }
      ```
-   + For regional Amazon API Gateway API or Application Load Balancer applications \(`waf-regional`\):
+   + For regional Amazon API Gateway REST API or Application Load Balancer applications \(`waf-regional`\):
 
      ```
      {

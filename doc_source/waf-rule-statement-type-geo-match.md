@@ -15,14 +15,17 @@ You can use geo match statements with other AWS WAF statements to build sophisti
 
 As another example, if you want to prioritize resources for users in a particular country, you could create a different rate\-based rules statement for each geo match condition\. Set a higher rate limit for users in the preferred country and set a lower rate limit for all other users\.
 
+AWS WAF determines the country of origin by resolving the IP address of the web request's origin\. If you want to instead use an IP address from an alternate header, like `X-Forwarded-For`, enable forwarded IP configuration\.
+
 **Nestable** – You can nest this statement type inside logical rule statements and rate\-based statements\. 
 
 **WCUs ** – 1 WCU\.
 
-This statement requires the following settings: 
+This statement uses the following settings: 
 + **Geo match ** – An array of country codes to compare for a geo match\. These must be two\-character country codes, for example, `[ "US", "CN" ]`, from the alpha\-2 country ISO codes of the ISO 3166 international standard\. 
 
   Each code must be one or two characters long\. 
++ **\(Optional\) Forwarded IP configuration** – By default, AWS WAF uses the IP address in the web request origin to determine country of origin\. Alternatively, you can configure the rule to use a forwarded IP in an HTTP header like `X-Forwarded-For` instead\. AWS WAF uses the first IP address in the header\. With this configuration, you also specify a fallback behavior to apply to a web request with a malformed IP address in the specified header\. The fallback behavior sets the matching result for the request, to match or no match\. For more information, see [Forwarded IP address](waf-rule-statement-forwarded-ip-address.md)\. 
 
 **Where to find this**
 + **Rule builder** on the console – For **Request option**, choose **Originates from a country in**\.

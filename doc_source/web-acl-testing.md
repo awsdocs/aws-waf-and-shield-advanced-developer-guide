@@ -14,7 +14,7 @@ When you add rules to a web ACL, you specify whether you want AWS WAF to allow, 
 
 In this configuration, AWS WAF inspects each web request based on the conditions in the first rule\. If the web request matches all the conditions in that rule, AWS WAF increments a counter for that rule\. Then AWS WAF inspects the web request based on the conditions in the next rule\. If the request matches all the conditions in that rule, AWS WAF increments a counter for the rule\. This continues until AWS WAF has inspected the request based on the conditions in all of your rules\. 
 
-After you've configured all the rules in a web ACL to count requests and associated the web ACL with one or more AWS resources \(Amazon API Gateway API, CloudFront distribution, or Application Load Balancer\) you can view the resulting counts in an Amazon CloudWatch graph\. For each rule in a web ACL and for all the requests that an associated resource forwards to AWS WAF for a web ACL, CloudWatch lets you do the following:
+After you've configured all the rules in a web ACL to count requests and associated the web ACL with one or more AWS resources \(Amazon API Gateway REST API, CloudFront distribution, or Application Load Balancer\) you can view the resulting counts in an Amazon CloudWatch graph\. For each rule in a web ACL and for all the requests that an associated resource forwards to AWS WAF for a web ACL, CloudWatch lets you do the following:
 + View data for the preceding hour or preceding three hours,
 + Change the interval between data points
 + Change the calculation that CloudWatch performs on the data, such as maximum, minimum, average, or sum

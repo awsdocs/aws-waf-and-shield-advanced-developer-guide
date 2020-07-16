@@ -39,4 +39,4 @@ We recommend that at a minimum you attach a web ACL to each resource, even if th
 
 1. For this tutorial, in the **Create Amazon CloudWatch alarms and notifications** page, for any **SNS topic** dropdown, choose **No topic**\. Then choose **Create alarms**\.
 
-You can now go to [Step 4: \(Optional\) authorize the DDoS response team](authorize-DRT.md)\.
+You can now go to [Step 4: \(Optional\) Prepare for response team engagement](authorize-DRT.md)\.

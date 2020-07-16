@@ -3,7 +3,7 @@
 This tutorial shows how to use AWS WAF to perform the following tasks:
 + Set up AWS WAF\.
 + Create a web access control list \(web ACL\) using the wizard in the AWS WAF console\. 
-+ Choose the AWS resources that you want AWS WAF to inspect web requests for\. This tutorial covers the steps for Amazon CloudFront\. The process is essentially the same for an Application Load Balancer or Amazon API Gateway API\. 
++ Choose the AWS resources that you want AWS WAF to inspect web requests for\. This tutorial covers the steps for Amazon CloudFront\. The process is essentially the same for an Application Load Balancer or Amazon API Gateway REST API\. 
 + Add the rules and rule groups that you want to use to filter web requests\. For example, you can specify the IP addresses that the requests originate from and values in the request that are used only by attackers\. For each rule, you specify whether you want to block matching web requests or allow them\. The rules that are defined inside a rule group have their actions defined inside the rule group\.
 + Specify a default action for the web ACL, either block or allow\. This is the action that AWS WAF takes when a web request doesn't match any of the rules\.
 
@@ -32,7 +32,7 @@ The AWS WAF console guides you through the process of configuring AWS WAF to blo
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
-1. If this is your first time using AWS WAF, choose **Go to AWS WAF**, and then choose **Configure web ACL**\. 
+1. If this is your first time using AWS WAF, choose **Go to AWS WAF**, and then choose **Create web ACL**\. 
 
    If you've used AWS WAF before, choose **Web ACLs** in the navigation pane, and then choose **Create web ACL**\.
 
@@ -92,7 +92,7 @@ If you choose to inspect the web request **Body**, AWS WAF inspects only the fir
 
    In an effort to bypass AWS WAF, attackers use unusual formatting in web requests, for example, by adding white space or by URL\-encoding some or all of the request\. Transformations convert the web request to a more standard format by removing white space, by URL\-decoding the request, or by performing other operations that eliminate much of the unusual formatting that attackers commonly use\. You can specify multiple transformations\. AWS WAF processes them all in order before inspecting the web request component\. 
 
-1. For **Action**, select the action you want the rule to take when it matches a web request\. For this example, choose **Count**\. This creates metrics for web requests that match the rule, but doesn't affect whether the rule is allowed or blocked\. For information on your choices, see [AWS WAF rule action](waf-rule-action.md) and [How AWS WAF processes a Web ACL](web-acl-processing.md)\.
+1. For **Action**, select the action you want the rule to take when it matches a web request\. For this example, choose **Count**\. This creates metrics for web requests that match the rule, but doesn't affect whether the rule is allowed or blocked\. For information on your choices, see [AWS WAF rule action](waf-rule-action.md) and [How AWS WAF processes a web ACL](web-acl-processing.md)\.
 
 1. Choose **Add rule**\.
 

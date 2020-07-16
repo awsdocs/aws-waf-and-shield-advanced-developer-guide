@@ -23,7 +23,7 @@ For more information about CloudFront custom error pages, see [Customizing Error
 
 ## Using AWS WAF with CloudFront geo restriction<a name="cloudfront-features-geo-restriction"></a>
 
-You can use the Amazon CloudFront *geo restriction* feature, also known as *geoblocking*, to prevent users in specific geographic locations from accessing content that you distribute through a CloudFront web distribution\. If you want to block web requests from specific countries and also block requests based on other conditions, you can use CloudFront geo restriction in conjunction with AWS WAF\. CloudFront returns the same HTTP status code to viewers—HTTP 403 \(Forbidden\)—whether they try to access your content from a country on a CloudFront geo restriction blacklist or whether the request is blocked by AWS WAF\. 
+You can use the Amazon CloudFront *geo restriction* feature, also known as *geoblocking*, to prevent users in specific geographic locations from accessing content that you distribute through a CloudFront web distribution\. If you want to block web requests from specific countries and also block requests based on other conditions, you can use CloudFront geo restriction in conjunction with AWS WAF\. CloudFront returns the same HTTP status code to viewers—HTTP 403 \(Forbidden\)—whether they try to access your content from a country on a CloudFront geo restriction deny list or whether the request is blocked by AWS WAF\. 
 
 **Note**  
 You can see the two\-letter country code of the country that requests originate from in the sample of web requests for a web ACL\. For more information, see [Viewing a sample of web requests](web-acl-testing.md#web-acl-testing-view-sample)\.
