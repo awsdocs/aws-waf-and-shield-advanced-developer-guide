@@ -1,6 +1,6 @@
 # Rate\-based rule statement<a name="waf-rule-statement-type-rate-based"></a>
 
-A rate\-based rule tracks the rate of requests for each originating IP address, and triggers the rule action on IPs with rates that go over a limit\. You set the limit as the number of requests per 5\-minutes time span\. You can use this type of rule to put a temporary block on requests from an IP address that's sending excessive requests\. 
+A rate\-based rule tracks the rate of requests for each originating IP address, and triggers the rule action on IPs with rates that go over a limit\. You set the limit as the number of requests per 5\-minute time span\. You can use this type of rule to put a temporary block on requests from an IP address that's sending excessive requests\. By default, AWS WAF aggregates requests based on the IP address from the web request origin, but you can configure the rule to use an IP address from an HTTP header, like `X-Forwarded-For`, instead\. 
 
 When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate falls below the limit\.
 
@@ -20,7 +20,10 @@ By adding this rate\-based rule to a web ACL, you could limit requests to your l
 
 **Not nestable** – You can't nest this statement type inside other statements\. You can include it directly in a web ACL\. You cannot include it in a rule group\. 
 
-**WCUs** – Depends on the nested statement\.
+**WCUs** – 2 plus any additional WCUs for a nested statement\.
+
+This statement uses the following optional setting: 
++ **\(Optional\) Forwarded IP configuration** – By default, AWS WAF aggregates on the IP address in the web request origin, but you can configure the rule to use a forwarded IP in an HTTP header like `X-Forwarded-For` instead\. AWS WAF uses the first IP address in the header\. With this configuration, you also specify a fallback behavior to apply to a web request with a malformed IP address in the specified header\. The fallback behavior sets the matching result for the request, to match or no match\. For more information, see [Forwarded IP address](waf-rule-statement-forwarded-ip-address.md)\. 
 
 **Where to find this**
 + **Rule builder** on the console – Under **Rule**, for **Type**, choose **Rate\-based rule**\.

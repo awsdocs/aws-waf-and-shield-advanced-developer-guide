@@ -16,33 +16,35 @@ When granting permissions, you decide who is getting the permissions, the resour
 
 ## AWS WAF resources and operations<a name="access-control-resources"></a>
 
-In AWS WAF, the resources are *web ACLs*, *rulegroups*, *IP sets*, and *regex pattern sets*\. These resources have unique Amazon Resource Names \(ARNs\) associated with them, as shown in the following table\. 
+In AWS WAF, the resources are *web ACLs*, *rule groups*, *IP sets*, and *regex pattern sets*\. To allow or deny access to a subset of AWS WAF resources, include the ARN of the resource in the `resource` element of your policy\. The ARNs for AWS WAF resources have the following format:
+
+```
+arn:aws:wafv2:region:account:scope/resource/resource-name/resource-ID
+```
+
+The following table lists the format for each resource\. 
 
 
 ****  
 
 | Name in AWS WAF Console | Name in AWS WAF SDK/CLI | ARN Format  | 
 | --- | --- | --- | 
-| Web ACL | WebACL |  `arn:aws:wafv2:region:account:webacl/ID`  | 
-| Rule group | RuleGroup |  `arn:aws:wafv2:region:account:rulegroup/ID `  | 
-| IP set | IPSet | arn:aws:wafv2:region:account:ipset/ID | 
-| Regex pattern set | RegexPatternSet |  `arn:aws:wafv2:region:account:regexpatternset/ID`  | 
+| Web ACL | WebACL |  `arn:aws:wafv2:region:account:scope/webacl/name/ID`  | 
+| Rule group | RuleGroup |  `arn:aws:wafv2:region:account:scope/rulegroup/name/ID `  | 
+| IP set | IPSet | arn:aws:wafv2:region:account:scope/ipset/name/ID | 
+| Regex pattern set | RegexPatternSet |  `arn:aws:wafv2:region:account:scope/regexpatternset/name/ID`  | 
 
-To allow or deny access to a subset of AWS WAF resources, include the ARN of the resource in the `resource` element of your policy\. The ARNs for AWS WAF have the following format:
+To specify an AWS WAF resource ARN, replace the variables in the ARN formats with valid values as follows: 
++ *region*: The AWS Region you're using\. For Amazon CloudFront, set this to `us-east-1`\. For Application Load Balancer or Amazon API Gateway, set this to the region you're interested in\. 
++ *account*: The ID of your AWS account\. 
++ *scope*: The scope of the resource, which can be either `regional`, for use with Application Load Balancer or Amazon API Gateway, or `global`, for use with Amazon CloudFront\. 
++ *name*: The name that you gave the AWS WAF resource, or a wildcard \(`*`\) to indicate all resources of the specified type that are associated with the specified AWS account\. If you use the wildcard for the name, you must also use it for the ID\.
++ *ID*: The ID of the AWS WAF resource, or a wildcard \(`*`\) to indicate all resources of the specified type that are associated with the specified AWS account\. If you use the wildcard for the ID, you must also use it for the name\.
 
-```
-arn:aws:wafv2:region:account:resource/ID
-```
-
-Replace the *account*, *resource*, and *ID* variables with valid values\. Valid values can be the following:
-+ *account*: The ID of your AWS account\. You must specify a value\.
-+ *resource*: The type of AWS WAF resource\. 
-+ *ID*: The ID of the AWS WAF resource, or a wildcard \(`*`\) to indicate all resources of the specified type that are associated with the specified AWS account\.
-
-For example, the following ARN specifies all web ACLs for the account `111122223333` in Region `us-east-1`:
+For example, the following ARN specifies all web ACLs with regional scope for the account `111122223333` in Region `us-east-1`:
 
 ```
-arn:aws:wafv2:us-east-1:111122223333:webacl/*
+arn:aws:wafv2:us-east-1:111122223333:regional/webacl/*/*
 ```
 
 For more information, see [Resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Resource) in the *IAM User Guide*\.

@@ -20,7 +20,7 @@ Firewall Manager is particularly useful when you want to protect your entire org
 + [Getting started with AWS Firewall Manager AWS Shield Advanced policies](getting-started-fms-shield.md)
 + [Getting started with AWS Firewall Manager Amazon VPC security group policies](getting-started-fms-security-group.md)
 + [Working with AWS Firewall Manager policies](working-with-policies.md)
-+ [Viewing resource compliance with a policy](fms-compliance.md)
++ [Viewing resource compliance for a policy](fms-compliance.md)
 + [AWS Firewall Manager findings](fms-findings.md)
 + [Designating a different account as the AWS Firewall Manager administrator account](fms-change-administrator.md)
 + [Security in AWS Firewall Manager](fms-security.md)

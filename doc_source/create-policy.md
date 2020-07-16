@@ -49,7 +49,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
    If instead you want to automatically apply the policy to existing in\-scope resources, choose **Auto remediate any noncompliant resources**\. This option creates a web ACL in each applicable account within the AWS organization and associates the web ACL with the resources in the accounts\.
 
-   With this choice, you can also choose to remove existing web ACL associations with in\-scope resources, for web ACLs that aren't managed by another active Firewall Manager policy\. If you choose this, Firewall Manager first associates the policy's web ACL with the resources, and then removes the prior associations\. If a resource has an association with another web ACL that's managed by a different active Firewall Manager policy, this choice doesn't affect that association\. 
+   When you choose **Auto remediate any noncompliant resources**, you can also choose to remove existing web ACL associations from in\-scope resources, for the web ACLs that aren't managed by another active Firewall Manager policy\. If you choose this option, Firewall Manager first associates the policy's web ACL with the resources, and then removes the prior associations\. If a resource has an association with another web ACL that's managed by a different active Firewall Manager policy, this choice doesn't affect that association\. 
 
 1. Choose **Next**\.
 
@@ -58,7 +58,7 @@ For information about setting up a Firewall Manager administrator account, see [
    + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
    + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
 
-   You can only choose only one of the options\. 
+   You can only choose one of the options\. 
 
    After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 
@@ -113,7 +113,7 @@ For information about setting up a Firewall Manager administrator account, see [
    + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
    + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
 
-   You can only choose only one of the options\. 
+   You can only choose one of the options\. 
 
    After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 
@@ -164,7 +164,7 @@ For information about setting up a Firewall Manager administrator account, see [
    + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
    + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
 
-   You can only choose only one of the options\. 
+   You can only choose one of the options\. 
 
    After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 
@@ -188,9 +188,9 @@ For information about setting up a Firewall Manager administrator account, see [
 
 ## Creating an AWS Firewall Manager common security group policy<a name="creating-firewall-manager-policy-common-security-group"></a>
 
-To create a common security group policy, you must have a security group already created in your Firewall Manager administrator account that you want to use as the primary for your policy\. You can manage security groups through Amazon Virtual Private Cloud \(Amazon VPC\) or Amazon Elastic Compute Cloud \(Amazon EC2\)\. For information, see [Working with Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#WorkingWithSecurityGroups) in the [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)\. 
-
 For information about how common security group policies work, see [Common security group policies](security-group-policies.md#security-group-policies-common)\.
+
+To create a common security group policy, you must have a security group already created in your Firewall Manager administrator account that you want to use as the primary for your policy\. You can manage security groups through Amazon Virtual Private Cloud \(Amazon VPC\) or Amazon Elastic Compute Cloud \(Amazon EC2\)\. For information, see [Working with Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#WorkingWithSecurityGroups) in the [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)\. 
 
 **To create a common security group policy \(console\)**
 
@@ -216,7 +216,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
    1. From the rules options, choose the restrictions that you want to apply to the security group rules and the resources that are within policy scope\. 
 
-   1. For **Primary security groups**, choose **Add primary security group**, and then choose the security group that you want to use\. Firewall Manager populates the list of primary security groups from all Amazon VPC instances in the Firewall Manager administrator account\. The default maximum number of primary security groups for a policy is one\. For information on increasing the maximum, see [AWS Firewall Manager quotas](fms-limits.md)\.
+   1. For **Primary security groups**, choose **Add primary security group**, and then choose the security group that you want to use\. Firewall Manager populates the list of primary security groups from all Amazon VPC instances in the Firewall Manager administrator account\. The default maximum number of primary security groups for a policy is one\. For information about increasing the maximum, see [AWS Firewall Manager quotas](fms-limits.md)\.
 
    1. For **Policy action**, we recommend creating the policy with the option that doesn't automatically remediate\. This allows you to assess the effects of your new policy before you apply it\. When you are satisfied that the changes are what you want, then edit the policy and change the policy action to enable automatic remediation of noncompliant resources\. 
 
@@ -227,7 +227,7 @@ For information about setting up a Firewall Manager administrator account, see [
    + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
    + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
 
-   You can only choose only one of the options\. 
+   You can only choose one of the options\. 
 
    After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 
@@ -239,6 +239,8 @@ For information about setting up a Firewall Manager administrator account, see [
 **Note**  
 If you enter more than one tag, a resource must have all the tags to be a match\.
 
+1. For **Shared VPC resources**, if you want to apply the policy to resources in shared VPCs, in addition to the VPCs that the accounts own, select **Include resources from shared VPCs**\. 
+
 1. Choose **Next**\.
 
 1. Review the policy settings to be sure they're what you want, and then choose **Create policy**\.
@@ -247,9 +249,9 @@ Firewall Manager creates a replica of the primary security group in every Amazon
 
 ## Creating an AWS Firewall Manager content audit security group policy<a name="creating-firewall-manager-policy-audit-security-group"></a>
 
-To create a content audit security group policy, you must have a security group already created in your Firewall Manager administrator account that you want to use as the audit security group for your policy\. You can manage security groups through Amazon Virtual Private Cloud \(Amazon VPC\) or Amazon Elastic Compute Cloud \(Amazon EC2\)\. For information, see [Working with Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#WorkingWithSecurityGroups) in the [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)\. 
+For information about how content audit security group policies work, see [Content audit security group policies](security-group-policies.md#security-group-policies-audit)\. 
 
-You can use the audit security group rules as a template for what rules are allowed by the policy or a template for what rules are denied by the policy\. For information about how content audit security group policies work, see [Content audit security group policies](security-group-policies.md#security-group-policies-audit)\. 
+For some content audit policy settings, you must provide an audit security group for Firewall Manager to use as a template\. For example, you might have an audit security group that contains all of the rules that you don't allow in any security group\. You must create these audit security groups using your Firewall Manager administrator account, before you can use them in your policy\. You can manage security groups through Amazon Virtual Private Cloud \(Amazon VPC\) or Amazon Elastic Compute Cloud \(Amazon EC2\)\. For information, see [Working with Security Groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#WorkingWithSecurityGroups) in the [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)\. 
 
 **To create a content audit security group policy \(console\)**
 
@@ -271,13 +273,33 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. For **Policy name**, enter a friendly name\. 
 
-1. For **Policy rules**, do the following: 
+1. For **Policy rules**, choose the managed or custom policy rules option that you want to use\. 
 
-   1. From the rules options, choose whether to allow only the rules defined in the audit security groups or deny all the rules\. For information on this choice, see [Content audit security group policies](security-group-policies.md#security-group-policies-audit)\. 
+   1. For **Configure managed audit policy rules**, do the following: 
 
-   1. For **Audit security groups**, choose **Add audit security groups**, and then choose the security group that you want to use\. Firewall Manager populates the list of audit security groups from all Amazon VPC instances in the Firewall Manager administrator account\. The default maximum quota for the number of audit security groups for a policy is one\. For information on increasing the quota, see [AWS Firewall Manager quotas](fms-limits.md)\.
+      1. For **Configure security group rules to audit**, select the type of security group rules that you want your audit policy to apply to\. 
 
-   1. For **Policy action**, you must create the policy with the option that doesn't automatically remediate\. This allows you to assess the effects of your new policy before you apply it\. When you are satisfied that the changes are what you want, edit the policy and change the policy action to enable automatic remediation of noncompliant resources\. 
+      1. If you want to do things like restrict the protocols, ports, and CIDR range settings that you allow in your security groups, choose **Audit overly permissive security group rules** and select the options that you want\. 
+
+         For selections that use protocol lists, you can use existing lists and you can create new lists\. For information about protocol lists and how to use them in your policy, see [Working with managed lists](working-with-managed-lists.md) and [Using managed lists](working-with-managed-lists.md#using-managed-lists)\.
+
+      1. If you want to enforce restrictions on what specific applications can do, choose **Audit high risk applications** and select the options that you want\. 
+
+         The following selections are mutually exclusive: **Applications that can access local CIDR ranges only** and **Applications that can use public CIDR ranges**\. You can select at most one of them in any policy\.
+
+         For selections that use application lists, you can use existing lists and you can create new lists\. For information about application lists and how to use them in your policy, see [Working with managed lists](working-with-managed-lists.md) and [Using managed lists](working-with-managed-lists.md#using-managed-lists)\.
+
+      1. Use the **Overrides** settings to explicitly override other settings in the policy\. You can choose to always allow or always deny specific security group rules, regardless of whether they comply with the other options that you've set for the policy\. 
+
+         For this option, you provide an audit security group as your allowed rules or denied rules template\. For **Audit security groups**, choose **Add audit security groups**, and then choose the security group that you want to use\. Firewall Manager populates the list of audit security groups from all Amazon VPC instances in the Firewall Manager administrator account\. The default maximum quota for the number of audit security groups for a policy is one\. For information about increasing the quota, see [AWS Firewall Manager quotas](fms-limits.md)\.
+
+   1. For **Configure custom policy rules**, do the following: 
+
+      1. From the rules options, choose whether to allow only the rules defined in the audit security groups or deny all the rules\. For information about this choice, see [Content audit security group policies](security-group-policies.md#security-group-policies-audit)\. 
+
+      1. For **Audit security groups**, choose **Add audit security groups**, and then choose the security group that you want to use\. Firewall Manager populates the list of audit security groups from all Amazon VPC instances in the Firewall Manager administrator account\. The default maximum quota for the number of audit security groups for a policy is one\. For information about increasing the quota, see [AWS Firewall Manager quotas](fms-limits.md)\.
+
+      1. For **Policy action**, you must create the policy with the option that doesn't automatically remediate\. This allows you to assess the effects of your new policy before you apply it\. When you are satisfied that the changes are what you want, edit the policy and change the policy action to enable automatic remediation of noncompliant resources\. 
 
 1. Choose **Next**\.
 
@@ -286,7 +308,7 @@ For information about setting up a Firewall Manager administrator account, see [
    + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
    + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
 
-   You can only choose only one of the options\. 
+   You can only choose one of the options\. 
 
    After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 
@@ -304,7 +326,7 @@ Firewall Manager compares the audit security group against the in\-scope securit
 
 ## Creating an AWS Firewall Manager usage audit security group policy<a name="creating-firewall-manager-policy-usage-security-group"></a>
 
-AWS Firewall Manager usage audit security group policies allow you to monitor your organization for unused and redundant security groups and optionally perform cleanup\. For information about how usage audit security group policies work, see [Usage audit security group policies](security-group-policies.md#security-group-policies-usage)\.
+For information about how usage audit security group policies work, see [Usage audit security group policies](security-group-policies.md#security-group-policies-usage)\.
 
 **To create a usage audit security group policy \(console\)**
 
@@ -339,7 +361,7 @@ For information about setting up a Firewall Manager administrator account, see [
    + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
    + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
 
-   You can only choose only one of the options\. 
+   You can only choose one of the options\. 
 
    After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
 

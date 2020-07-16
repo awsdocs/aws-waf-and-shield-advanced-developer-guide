@@ -1,4 +1,4 @@
-# How AWS WAF processes a Web ACL<a name="web-acl-processing"></a>
+# How AWS WAF processes a web ACL<a name="web-acl-processing"></a>
 
 The way a web ACL handles a web request depends on the following: 
 + The action settings on the rules and web ACL

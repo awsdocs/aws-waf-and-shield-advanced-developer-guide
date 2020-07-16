@@ -52,8 +52,8 @@ The `WAF` namespace includes the following metrics\.
 | --- | --- | 
 | `AllowedRequests` |  The number of allowed web requests\. Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 | `BlockedRequests` |  The number of blocked web requests\. Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
-| `CountedRequests` |  The number of counted web requests\. Reporting criteria: There is a nonzero value\. A counted web request is one that matches all the conditions in a particular rule\. Counted web requests are typically used for testing\. Valid statistics: Sum  | 
-| `PassedRequests` |  The number of passed requests for a rule group\.  Reporting criteria: There is a nonzero value\. Passed requests are requests that don't match any rule contained in the rule group\. Valid statistics: Sum  | 
+| `CountedRequests` |  The number of counted web requests\. Reporting criteria: There is a nonzero value\. A counted web request is one that matches at least one of the rules\. Request counting is typically used for testing\. Valid statistics: Sum  | 
+| `PassedRequests` |  The number of passed requests for a rule group\.  Reporting criteria: There is a nonzero value\. Passed requests are requests that don't match any of the rules\.  Valid statistics: Sum  | 
 
 ## AWS WAF dimensions<a name="waf-metricdimensions"></a>
 
@@ -62,7 +62,7 @@ AWS WAF for an Amazon CloudFront distribution can use the following dimension co
 + `RuleGroup`, `WebACL`
 + `Rule`, `RuleGroup`
 
-AWS WAF for an Amazon API Gateway API or an Application Load Balancer can use the following dimension combinations:
+AWS WAF for an Amazon API Gateway REST API or an Application Load Balancer can use the following dimension combinations:
 + `Region`, `Rule`, `WebACL`
 + `Region`, `RuleGroup`, `WebACL`
 + `Region`, `Rule`, `RuleGroup`

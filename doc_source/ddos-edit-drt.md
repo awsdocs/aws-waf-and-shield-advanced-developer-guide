@@ -8,9 +8,7 @@ You can change AWS Shield Advanced settings, such as adding or removing DDoS res
 
 1. Choose **Summary** under **AWS Shield** in the navigation pane\.
 
-1. Choose **Edit** under either **DDoS response team \(DRT\) support** or **Emergency contacts**\.
-
-1. Make the necessary changes and choose **Save**\.
+1. Change the settings as needed\. 
 
 **Note**  
 To use the services of the DRT, you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.

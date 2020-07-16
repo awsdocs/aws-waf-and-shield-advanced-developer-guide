@@ -11,7 +11,7 @@ Match statements compare the web request or its origin against conditions that y
 | Match Statement | Description | WCUs | Nestable? | 
 | --- | --- | --- | --- | 
 | [Geographic match](waf-rule-statement-type-geo-match.md) | Inspects the request's country of origin\.  | 1 | Yes | 
-| [IP set match](waf-rule-statement-type-ipset-match.md) | Compares the request origin against a set of IP addresses and address ranges\.  | 1 | Yes | 
+| [IP set match](waf-rule-statement-type-ipset-match.md) | Inspects the request against a set of IP addresses and address ranges\.  | 1 for most cases\. If you configure the statement to use a header with forwarded IP addresses and specify a position in the header of Any, then the WCUs are 5\. | Yes | 
 | [Regex pattern set](waf-rule-statement-type-regex-pattern-set-match.md) | Compares regex patterns against a specified request component\.  | 25 per pattern set | Yes | 
 | [Size constraint](waf-rule-statement-type-size-constraint-match.md) | Checks size constraints against a specified request component\.  | 1 | Yes | 
 | [SQLi attack](waf-rule-statement-type-sqli-match.md) | Inspects for malicious SQL code in a specified request component\.  | 20 | Yes | 
@@ -34,6 +34,6 @@ AWS WAF supports the following complex statements\.
 
 | Statement | Description | WCUs | Nestable? | 
 | --- | --- | --- | --- | 
-| [Rate\-based](waf-rule-statement-type-rate-based.md) | Tracks the rate of requests from individual IP addresses\. You can narrow the scope with a nested statement\. | Equal to the WCUs of any nested scoping statement\.  | No | 
+| [Rate\-based](waf-rule-statement-type-rate-based.md) | Tracks the rate of requests from individual IP addresses\. You can narrow the scope with a nested statement\. | 2 plus any additional WCUs for a nested statement | No | 
 | [Managed rule group](waf-rule-statement-type-managed-rule-group.md) | Runs the rules that are defined in the specified managed rule group\.  | Defined by rule group\. | No | 
 | [Rule group](waf-rule-statement-type-rule-group.md) | Runs the rules that are defined in a rule group that you manage\.  | You define this for the rule group when you create it\. | No | 

@@ -13,6 +13,6 @@ In the policy's first and last rule groups sets, you can only add rule groups\. 
 
 If you want to use your own rule groups, you create those before you create your Firewall Manager AWS WAF policy\. For guidance, see [Managing your own rule groups](waf-user-created-rule-groups.md)\. To use an individual custom rule, you must define your own rule group, define your rule within that, and then use the rule group in your policy\.
 
-For information about how AWS WAF evaluates web requests, see [How AWS WAF processes a Web ACL](web-acl-processing.md)\.
+For information about how AWS WAF evaluates web requests, see [How AWS WAF processes a web ACL](web-acl-processing.md)\.
 
 For the procedure to create a Firewall Manager AWS WAF policy, see [Creating an AWS Firewall Manager policy for AWS WAF](create-policy.md#creating-firewall-manager-policy-for-waf)\.

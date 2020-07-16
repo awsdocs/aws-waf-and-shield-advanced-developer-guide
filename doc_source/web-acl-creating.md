@@ -51,7 +51,7 @@ This procedure covers the **Rule visual editor**\.
 
    1. Enter your rule definition, according to your needs\. You can combine rules inside logical AND and OR rule statements\. The wizard guides you through the options for each rule, according to context\. For information about your rules options, see [AWS WAF rules](waf-rules.md)\. 
 
-   1. For **Action**, select the action you want the rule to take when it matches a web request\. For information on your choices, see [AWS WAF rule action](waf-rule-action.md) and [How AWS WAF processes a Web ACL](web-acl-processing.md)\.
+   1. For **Action**, select the action you want the rule to take when it matches a web request\. For information on your choices, see [AWS WAF rule action](waf-rule-action.md) and [How AWS WAF processes a web ACL](web-acl-processing.md)\.
 
    1. Choose **Add rule**\.
 
@@ -59,7 +59,7 @@ This procedure covers the **Rule visual editor**\.
 
 1. Choose **Next**\.
 
-1. In the **Set rule priority** page, select and move your rules and rule groups to the order that you want AWS WAF to process them\. For more information, see [How AWS WAF processes a Web ACL](web-acl-processing.md)\. 
+1. In the **Set rule priority** page, select and move your rules and rule groups to the order that you want AWS WAF to process them\. For more information, see [How AWS WAF processes a web ACL](web-acl-processing.md)\. 
 
 1. Choose **Next**\.
 

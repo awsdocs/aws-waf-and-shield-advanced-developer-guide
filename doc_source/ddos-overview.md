@@ -10,12 +10,17 @@ All AWS customers benefit from the automatic protections of AWS Shield Standard,
 
 ## AWS Shield Advanced<a name="ddos-advanced"></a>
 
-For higher levels of protection against attacks, you can subscribe to AWS Shield Advanced\. AWS Shield Advanced provides expanded DDoS attack protection for web applications running on the following resources:
-+ Amazon Elastic Compute Cloud
-+ Elastic Load Balancing \(ELB\)
-+ Amazon CloudFront
-+ Amazon Route 53
-+ AWS Global Accelerator
+For higher levels of protection against attacks, you can subscribe to AWS Shield Advanced\. When you subscribe to AWS Shield Advanced and add specific resources to be protected, AWS Shield Advanced provides expanded DDoS attack protection for web applications running on the resources\. 
+
+**Note**  
+AWS Shield Advanced only protects resources that you have specified in Shield Advanced or through a AWS Firewall Manager Shield Advanced policy\. It doesn't automatically protect your resources\. 
+
+You can add protection for any of the following resources:
++ Elastic Load Balancing \(ELB\) load balancers
++ Amazon Elastic Compute Cloud \(Amazon EC2\) Elastic IP addresses
++ Amazon CloudFront distributions
++ Amazon Route 53 hosted zones
++ AWS Global Accelerator accelerators
 
 For example, if you use Shield Advanced to protect an Elastic IP address, Shield Advanced automatically deploys your network ACLs to the border of the AWS network during an attack\. When your network ACLs are at the border of the network, Shield Advanced can provide protection against larger DDoS events\. Typically, network ACLs are applied near your Amazon EC2 instances within your Amazon VPC\. The network ACL can mitigate attacks only as large as your Amazon VPC and instance can handle\. If the network interface attached to your Amazon EC2 instance can process up to 10 Gbps, volumes over 10 Gbps slow down and possibly block traffic to that instance\. During an attack, Shield Advanced promotes your network ACL to the AWS border, which can process multiple terabytes of traffic\. Your network ACL is able to provide protection for your resource well beyond your network's typical capacity\. For more information about network ACLs, see [Network ACLs](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html)\. 
 
@@ -25,7 +30,7 @@ As an AWS Shield Advanced customer, you can contact a 24x7 DDoS response team \(
 
 To use the services of the DRT, you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
 
-AWS Shield Advanced also offers some cost protection against spikes in your AWS bill that could result from a DDoS attack\. This cost protection is provided for your Elastic Load Balancing load balancers, Amazon CloudFront distributions, Amazon Route 53 hosted zones, Amazon Elastic Compute Cloud instances, and your AWS Global Accelerator accelerators\.
+AWS Shield Advanced also offers some cost protection against spikes in your AWS bill that could result from a DDoS attack against your protected resources\. 
 
 AWS WAF is included with AWS Shield Advanced at no extra cost\. For more information about AWS Shield Advanced pricing, see [AWS Shield Advanced Pricing](http://aws.amazon.com/shield/pricing/)\.
 
@@ -53,6 +58,17 @@ Health\-based detection improves the accuracy of web request flood detection\.
 When you protect a CloudFront distribution or Application Load Balancer with Shield Advanced, you receive web request flood detection alerts when there is a statistically significant deviation in traffic volume combined with significant changes in traffic self\-similarity\. Self\-similarity is determined based on attributes like user agent, referrer, and URI\. 
 
 When you add health\-based detection, you increase the likelihood that the alerts you receive are timely and actionable\. With health\-based detection, during periods when the associated Route 53 health check is unhealthy, Shield Advanced requires smaller deviations to alert and it reports events more quickly\. When the associated Route 53 health check is healthy, Shield Advanced requires larger deviations to alert\. 
+
+### Shield Advanced proactive engagement<a name="ddos-advanced-proactive-engagement"></a>
+
+With proactive engagement, the DDoS response team \(DRT\) engages with you directly if the Amazon Route 53 health check associated with your protected resource becomes unhealthy during an event that's detected by Shield Advanced\. This allows you to engage with experts more quickly when the availability of your application might be affected by a suspected attack\. 
+
+Proactive engagement is available for network\-layer and transport\-layer events on Elastic IP addresses and AWS Global Accelerator accelerators, and for web request floods on Amazon CloudFront distributions and Application Load Balancers\.
+
+To use proactive engagement, you configure Shield Advanced health\-based detection for a resource that you want the DRT to monitor\. You then specify 1\-10 contacts for proactive engagement\. The DRT uses the information to contact you during a detected event that correlates with an unhealthy protected resource\. After you provide your contact information, you can enable proactive engagement\. 
+
+**Note**  
+To use proactive engagement, you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
 
 ## Types of DDoS attacks<a name="types-of-ddos-attacks"></a>
 
@@ -91,7 +107,7 @@ AWS Shield Advanced customers have two options to mitigate layer 7 attacks:
 When AWS Shield Advanced detects a large layer 7 attack against one of your applications, the DRT might proactively contact you\. The DRT triages the DDoS incident and creates AWS WAF mitigations\. The DRT then contacts you for consent to apply the AWS WAF rules\. 
 
 **Important**  
-The DRT can help you to analyze suspicious activity and assist you to mitigate the issue\. This mitigation often requires the DRT to create or update web access control lists \(web ACLs\) in your account\. However, they need your permission to do so\. We recommend that as part of enabling AWS Shield Advanced, you follow the steps in [Step 4: \(Optional\) authorize the DDoS response team](authorize-DRT.md) to proactively provide the DRT with the needed permissions\. Providing permission ahead of time helps prevent any delays in the event of an actual attack\.  
+The DRT can help you to analyze suspicious activity and assist you to mitigate the issue\. This mitigation often requires the DRT to create or update web access control lists \(web ACLs\) in your account\. However, they need your permission to do so\. We recommend that as part of enabling AWS Shield Advanced, you follow the steps in [Step 4: \(Optional\) Prepare for response team engagement](authorize-DRT.md) to proactively provide the DRT with the needed permissions\. Providing permission ahead of time helps prevent any delays in the event of an actual attack\.  
 To use the services of the DRT, you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
 
 ## Help me choose a protection plan<a name="ddos-help-me-choose"></a>
@@ -125,15 +141,16 @@ The following table shows a comparison of AWS Shield Standard and AWS Shield Adv
 | Layer 7 attack notification | Yes, through AWS WAF\. Incurs standard AWS WAF charges\. | Yes | 
 | Layer 7 attack forensics reports \(Top talkers report, sampled requests, and more\) | Yes, through AWS WAF\. Incurs standard AWS WAF charges\. | Yes | 
 | Layer 3/4/7 attack historical report |  | Yes | 
-| DDoS Response Team Support \(Must be subscribed to the Business Support plan or the Enterprise Support plan\. | 
+| DDoS Response Team Support \(Must be subscribed to the Business Support plan or the Enterprise Support plan\.\) | 
 | Incident management during high severity events |  | Yes | 
 | Custom mitigations during attacks |  | Yes | 
 | Post\-attack analysis |  | Yes | 
 | Cost Protection \(Service credits for DDoS scaling charges\) | 
-| Route 53 |  | Yes | 
-| CloudFront |  | Yes | 
-| Elastic Load Balancing \(ELB\) |  | Yes | 
-| Amazon EC2 |  | Yes | 
+| Elastic Load Balancing \(ELB\) load balancers |  | Yes | 
+| Amazon EC2 Elastic IP addresses |  | Yes | 
+| Amazon CloudFront distributions |  | Yes | 
+| Amazon Route 53 hosted zones |  | Yes | 
+| AWS Global Accelerator accelerators |  | Yes | 
 
 AWS Shield Advanced benefits, including DDoS cost protection, are subject to your fulfillment of the 1\-year subscription commitment\.
 

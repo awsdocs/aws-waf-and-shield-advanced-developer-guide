@@ -1,15 +1,20 @@
 # Adding AWS Shield Advanced protection to AWS resources<a name="configure-new-protection"></a>
 
-As part of enabling Shield Advanced for an account, you optionally choose initial resources to protect\. You can add protection to more resources at any time\. Shield Advanced offers advanced monitoring and protection for the following:
-+ Elastic IP addresses
+As part of enabling Shield Advanced for an account, you optionally choose initial resources to protect\. You can add protection to more resources at any time\.
+
+**Note**  
+Shield Advanced only protects resources that you have specified in Shield Advanced or through an AWS Firewall Manager Shield Advanced policy\. It doesn't automatically protect your resources\.
+
+Shield Advanced offers advanced monitoring and protection for the following:
++ Elastic Load Balancing \(ELB\) load balancers
++ Amazon EC2 Elastic IP addresses
 + Amazon CloudFront distributions
 + Amazon Route 53 hosted zones
-+ Elastic Load Balancing load balancers
 + AWS Global Accelerator accelerators
 
 You can monitor and protect up to 1,000 resources for each of these resource types per AWS account\. For example, you could protect 1,000 IP addresses, 1,000 distributions, and 1,000 load balancers in a single account\. If you want to increase the number of resources that you can protect, contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
 
-If you are using an AWS Firewall Manager Shield Advanced policy, you don't need to add resources using the procedure in this section\. If the resource is within the Firewall Manager policy scope, that is, the resource is of the correct type and has the correct tags as defined by the policy, Firewall Manager automatically includes it within its protection\. 
+If you add additional resources after your initial setup, you typically must add Shield Advanced protection for each resource\. However, if you're using an AWS Firewall Manager Shield Advanced policy, you might not need to add resources yourself\. If a new resource is within the Firewall Manager policy scope, Firewall Manager automatically includes it within the Shield Advanced policy protection\.
 
 **Important**  
 Before you perform the following procedure, you must complete the procedure in [Step 1: Activate AWS Shield Advanced](enable-ddos-prem.md)\.<a name="configure-new-protection-procedure"></a>

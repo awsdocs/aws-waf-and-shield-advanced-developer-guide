@@ -1,10 +1,6 @@
 # Request component settings<a name="waf-rule-statement-fields"></a>
 
-This section describes the settings that you specify whenever you use a rule statement that inspects a component of the web request\. 
-
-**Topics**
-+ [Request component](#waf-rule-statement-request-component)
-+ [Text transformations](#waf-rule-statement-transformation)
+This section describes the settings that you can specify for rule statements that inspect a component of the web request\. For information on usage, see the individual rule statements\. 
 
 ## Request component<a name="waf-rule-statement-request-component"></a>
 

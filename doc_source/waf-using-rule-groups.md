@@ -4,13 +4,13 @@ This section describes your options for modifying how you use a rule group in yo
 
 ## Overriding rule actions for a rule group<a name="rule-group-override"></a>
 
-For each rule group in a web ACL, you can override the contained rule's actions by setting the override action for the rule group to **Override to count**\. If any of the rule actions in the group is set to block or allow, this override changes the behavior to only count\. For more information about this option, see [How AWS WAF processes a Web ACL](web-acl-processing.md)\. 
+For each rule group in a web ACL, you can override the contained rule's actions by setting the override action for the rule group to **Override to count**\. If any of the rule actions in the group is set to block or allow, this override changes the behavior to only count\. For more information about this option, see [How AWS WAF processes a web ACL](web-acl-processing.md)\. 
 
 To override the rule actions in a rule group, when you add the rule group to the web ACL, turn on the **Set rules action to count** toggle\. For more information on web ACL management, see [Managing and using a Web Access Control List \(Web ACL\)](web-acl.md)\. 
 
 ## Excluding a rule in a rule group<a name="rule-group-rule-exclusion"></a>
 
-Excluding a single rule can help you troubleshoot false positives, which is when a rule group blocks traffic that you aren't expecting it to block\. You can identify the rule within the rule group that's doing the unexpected blocking, and then disable it by excluding it\. Excluding a rule overrides the action that's set on the rule to count\. If you have metrics enabled, you'll receive COUNT metrics for each excluded rule\. For more information about this option, see [How AWS WAF processes a Web ACL](web-acl-processing.md)\. <a name="waf-managed-rule-group-exclude-rule-procedure"></a>
+Excluding a single rule can help you troubleshoot false positives, which is when a rule group blocks traffic that you aren't expecting it to block\. You can identify the rule within the rule group that's doing the unexpected blocking, and then disable it by excluding it\. Excluding a rule overrides the action that's set on the rule to count\. If you have metrics enabled, you'll receive COUNT metrics for each excluded rule\. For more information about this option, see [How AWS WAF processes a web ACL](web-acl-processing.md)\. <a name="waf-managed-rule-group-exclude-rule-procedure"></a>
 
 **To exclude a rule in a rule group**
 
