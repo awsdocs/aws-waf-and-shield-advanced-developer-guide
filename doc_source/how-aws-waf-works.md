@@ -7,13 +7,15 @@ You use AWS WAF to control how an Amazon CloudFront distribution, an Amazon API 
 
 After you create your web ACL, you can associate it with one or more AWS resources\. The resource types that you can protect using AWS WAF web ACLs are Amazon CloudFront distributions, Amazon API Gateway REST APIs, and Application Load Balancers\. 
 
-AWS WAF is available in the Regions listed at [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region)\.
+AWS WAF is available in the Regions listed at [AWS service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html)\. 
 + For an API Gateway API or an Application Load Balancer, you can use any of the Regions in the list\. 
 + For a CloudFront distribution, AWS WAF is available globally, but you must use the Region US East \(N\. Virginia\) for all of your work\. You must create your web ACL using the Region US East \(N\. Virginia\)\. You must also use this Region to create any other resources that you use in your web ACL, like rule groups, IP sets, and regex pattern sets\. 
 
 ## AWS WAF Web ACL capacity units \(WCU\)<a name="aws-waf-capacity-units"></a>
 
-AWS WAF uses web ACL capacity units \(WCU\) to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs\. AWS WAF calculates capacity differently for each rule type, to reflect each rule's relative cost\. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power\. 
+AWS WAF uses web ACL capacity units \(WCU\) to calculate and control the operating resources that are required to run your rules, rule groups, and web ACLs\. AWS WAF enforces WCU limits when you configure your rule groups and web ACLs\. WCUs don't affect how AWS WAF inspects web traffic\. 
+
+AWS WAF calculates capacity differently for each rule type, to reflect each rule's relative cost\. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power\. For example, a size constraint rule statement uses fewer WCUs than a statement that inspects against a regex pattern set\. 
 
 AWS WAF manages capacity for rules, rule groups, and web ACLs:
 + **Rule capacity** – AWS WAF calculates rule capacity when you create or update a rule\. For some basic guidelines for rule capacity requirements, see the listings for the various rule statements at [AWS WAF rule statements](waf-rule-statements.md)\. You can also get an idea of the capacity required for the various rule types in the AWS WAF console by creating a web ACL or rule group and adding individual rules to it\. The console displays the capacity units used as you add the rules\. 

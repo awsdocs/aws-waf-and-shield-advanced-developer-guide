@@ -23,7 +23,7 @@ In AWS Shield, the resources are *protections* and *attacks*\. These resources h
 
 | Name in AWS Shield Console | Name in AWS Shield SDK/CLI | ARN Format  | 
 | --- | --- | --- | 
-| Incident or attack | AttackDetail |  `arn:aws:shield::account:attack/ID`  | 
+| Event or attack | AttackDetail |  `arn:aws:shield::account:attack/ID`  | 
 | Protection | Protection |  `arn:aws:shield::account:protection/ID`  | 
 
 To allow or deny access to a subset of Shield resources, include the ARN of the resource in the `resource` element of your policy\. The ARNs for Shield have the following format:

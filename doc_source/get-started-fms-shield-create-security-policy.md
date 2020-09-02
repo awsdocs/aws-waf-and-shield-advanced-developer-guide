@@ -5,7 +5,7 @@ After completing the prerequisites, you create an AWS Firewall Manager Shield Ad
 **Important**  
 Firewall Manager does not support Amazon Route 53 or AWS Global Accelerator\. If you need to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)\. <a name="get-started-fms-shield-create-security-policy-procedure"></a>
 
-**To create a Firewall Manager\-Shield Advanced policy \(console\)**
+**To create a Firewall Manager Shield Advanced policy \(console\)**
 
 1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at [https://console\.aws\.amazon\.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
 **Note**  
@@ -51,4 +51,4 @@ Shield Advanced protects up to 1,000 resources per account\.
 
 1. Review the new policy\. To make any changes, choose **Previous**\. When you are satisfied with the policy, choose **Create policy**\.
 
-Continue to [Step 3: \(Optional\) authorize the DDoS response team](get-started-fms-shield-authorize-DRT.md)\.
+Continue to [Step 3: \(Optional\) authorize the DDoS Response Team \(DRT\)](get-started-fms-shield-authorize-DRT.md)\.

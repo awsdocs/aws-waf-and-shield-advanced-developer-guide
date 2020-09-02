@@ -3,7 +3,7 @@
 AWS Firewall Manager must be associated with the master account of your AWS organization or associated with a member account that has permissions equivalent to those of the master account\. The account that you associate with Firewall Manager is called the Firewall Manager administrator account\. For more information about AWS Organizations and master accounts, see [Managing the AWS Accounts in Your Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html)\.
 
 **Note**  
-To use Firewall Manager in a Region that's disabled by default, you must enable the Region for both the master account of your AWS organization and the Firewall Manager administrator account\. You can use the AWS Management Console to do this\. For more information, see [Managing AWS Regions](https://docs.aws.amazon.com/gr/rande-manage.html)\.<a name="enable-integration-procedure-console"></a>
+To use Firewall Manager in a Region that's disabled by default, you must enable the Region for both the master account of your AWS organization and the Firewall Manager administrator account\. You can use the AWS Management Console to do this\. For more information, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html)\. <a name="enable-integration-procedure-console"></a>
 
 **To set the Firewall Manager administrator account \(console\)**
 

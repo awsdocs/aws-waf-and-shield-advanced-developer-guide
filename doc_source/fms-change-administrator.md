@@ -33,7 +33,7 @@ The account is given permission to create and manage AWS WAF rules and rule grou
 
 ## Closing the AWS Firewall Manager administrator account<a name="closed-admin-account"></a>
 
-If you close your AWS Firewall Manager Administrator account without first revoking that account \(as described in step three, immediately above\), then:
-+ AWS will revoke the account’s administrator access from Firewall Manager\. After AWS revokes the account’s administrator access from Firewall Manager, all Firewall Manager policies applied to any account previously governed by the administrator account will be deactivated and such policy protection will no longer be applied to any of these accounts\.
+If you close your AWS Firewall Manager Administrator account without first revoking that account \(as described in the preceding step\), then:
++ AWS revokes the account’s administrator access from Firewall Manager\. After AWS revokes the account’s administrator access from Firewall Manager, all Firewall Manager policies applied to any account previously governed by the administrator account will be deactivated and such policy protection will no longer be applied to any of these accounts\.
 + AWS retains the Firewall Manager policy data for the account for 90 days from the effective date of your Administrator account closure\. If you elect to reopen the previously closed account during this 90\-day window, AWS reassigns the account as the Firewall Manager administrator and recovers the account’s previous Firewall Manager policy data\.
 + After the 90\-day window expires, if the closed account has not been reopened, AWS permanently deletes all Firewall Manager policy data for that account\.

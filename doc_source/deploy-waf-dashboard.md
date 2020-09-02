@@ -4,4 +4,4 @@ You can monitor potential DDoS activity using CloudWatch, which collects and pro
 
 For instructions for creating a CloudWatch dashboard, see [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)\. For information about specific Shield Advanced metrics that you can add to your dashboard, see [AWS Shield Advanced metrics and alarms](monitoring-cloudwatch.md#set-ddos-alarms)\. 
 
-As a final step for getting started with Shield Advanced, review the global threat environment dashboard, as described in [Step 7: Monitor the global threat environment dashboard ](monitor-global-dashboard.md)\.
+As a final step for getting started with Shield Advanced, review the global threat dashboard, as described in [Step 7: Monitor the global threat dashboard ](monitor-global-dashboard.md)\.

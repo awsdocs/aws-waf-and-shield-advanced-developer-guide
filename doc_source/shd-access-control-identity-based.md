@@ -55,7 +55,7 @@ The AWS Shield console provides an integrated environment for you to create and 
 
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
-AWS Shield uses the AWS managed policy `AWSShieldDRTAccessPolicy` that you can use to grant the AWS Shield DDoS Response Team \(DRT\) access to your account\. This allows the DRT to perform actions on your account, to manage your AWS WAF rules and Shield protections\. To use this, you create a role and pass it to the Shield API operation, associate DRT role\. In the API, this is `AssociateDRTRole`\. In the CLI, it's `associate-drt-role`\. For more information about this policy, see [Step 4: \(Optional\) Prepare for response team engagement](authorize-DRT.md)\. 
+AWS Shield uses the AWS managed policy `AWSShieldDRTAccessPolicy` that you can use to grant the AWS Shield DDoS Response Team \(DRT\) access to your account\. This allows the DRT to perform actions on your account, to manage your AWS WAF rules and Shield protections\. To use this, you create a role and pass it to the Shield API operation, associate DRT role\. In the API, this is `AssociateDRTRole`\. In the CLI, it's `associate-drt-role`\. For more information about this policy, see [Step 5: Configure AWS DRT support](authorize-DRT.md)\. 
 
 **Note**  
 You can review AWS managed permissions policies by signing in to the IAM console and searching for the policies\.

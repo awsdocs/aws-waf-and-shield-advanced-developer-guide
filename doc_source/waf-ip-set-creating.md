@@ -19,7 +19,7 @@ You can't change the name after you create the IP set\.
 
 1. For **IP version**, select the version you want to use\.
 
-1. In the **IP addresses** text box, enter one IP address or IP address range per line, in CIDR notation\. AWS WAF supports all IPv4 and IPv6 CIDR ranges\. For more information about CIDR notation, see the Wikipedia article [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\.
+1. In the **IP addresses** text box, enter one IP address or IP address range per line, in CIDR notation\. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for `/0`\. For more information about CIDR notation, see the Wikipedia article [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\.
 
    Here are some examples:
    + To specify the IPv4 address 192\.0\.2\.44, type **192\.0\.2\.44/32**\.

@@ -2,7 +2,7 @@
 
 A rate\-based rule tracks the rate of requests for each originating IP address, and triggers the rule action on IPs with rates that go over a limit\. You set the limit as the number of requests per 5\-minute time span\. You can use this type of rule to put a temporary block on requests from an IP address that's sending excessive requests\. By default, AWS WAF aggregates requests based on the IP address from the web request origin, but you can configure the rule to use an IP address from an HTTP header, like `X-Forwarded-For`, instead\. 
 
-When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate falls below the limit\.
+When the rule action triggers, AWS WAF applies the action to additional requests from the IP address until the request rate falls below the limit\. It can take a minute or two for the change to go into effect\. 
 
 You can narrow the scope of the requests that AWS WAF counts\. To do this, you nest another statement inside the rate\-based statement\. Then, AWS WAF only counts requests that match the nested statement\. For example, based on recent requests that you've seen from an attacker in the United States, you might create a rate\-based rule with the following nested statement: 
 + AND rule statement that contains the following, second level of nested statements: 

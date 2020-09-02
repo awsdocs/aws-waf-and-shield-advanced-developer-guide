@@ -1,6 +1,6 @@
 # Step 3: Create and apply an AWS Firewall Manager common security group policy<a name="get-started-fms-sg-create-security-policy"></a>
 
-After completing the prerequisites, you create an AWS Firewall Manager common security group policy\. A common security group policy provides a centrally controlled security group for your entire AWS organization\. It also defines the AWS accounts and resources that the security group applies to\. In addition to common security group policies, Firewall Manager supports content audit security group policies, to manage the security group rules in use in your organization, and usage audit security group policies, to manage unused and redundant security groups\. For more information, see [How security group policies work in AWS Firewall Manager](security-group-policies.md)\.
+After completing the prerequisites, you create an AWS Firewall Manager common security group policy\. A common security group policy provides a centrally controlled security group for your entire AWS organization\. It also defines the AWS accounts and resources that the security group applies to\. In addition to common security group policies, Firewall Manager supports content audit security group policies, to manage the security group rules in use in your organization, and usage audit security group policies, to manage unused and redundant security groups\. For more information, see [Security group policies](security-group-policies.md)\.
 
 For this tutorial, you create a common security group policy and set its action to not automatically remediate\. This allows you to see what effect the policy would have without making changes to your AWS organization\.<a name="get-started-fms-sg-create-security-policy-procedure"></a>
 
@@ -48,4 +48,4 @@ For this tutorial, you create a common security group policy and set its action 
 
 1. When you are finished exploring, if you don't want to keep the policy you created for this tutorial, choose the policy name, choose **Delete**, choose **Clean up resources created by this policy\.**, and finally choose **Delete**\. 
 
-For more information about Firewall Manager security group policies, see [How security group policies work in AWS Firewall Manager](security-group-policies.md)\.
+For more information about Firewall Manager security group policies, see [Security group policies](security-group-policies.md)\.

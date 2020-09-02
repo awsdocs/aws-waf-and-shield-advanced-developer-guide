@@ -19,7 +19,7 @@ When granting permissions, you decide who is getting the permissions, the resour
 In AWS WAF, the resources are *web ACLs*, *rule groups*, *IP sets*, and *regex pattern sets*\. To allow or deny access to a subset of AWS WAF resources, include the ARN of the resource in the `resource` element of your policy\. The ARNs for AWS WAF resources have the following format:
 
 ```
-arn:aws:wafv2:region:account:scope/resource/resource-name/resource-ID
+arn:aws:wafv2:region:account:scope/resource/resource/ID
 ```
 
 The following table lists the format for each resource\. 

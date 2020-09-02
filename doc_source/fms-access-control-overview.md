@@ -16,7 +16,13 @@ When granting permissions, you decide who is getting the permissions, the resour
 
 ## AWS Firewall Manager resources and operations<a name="fms-access-control-resources"></a>
 
-AWS Firewall Manager has the single resource *policy*\. This resource has a unique Amazon Resource Name \(ARN\) associated with it, as shown in the following table\. 
+In AWS Firewall Manager, the resources are *policy*, *applications list*, and *protocols list*\. The Amazon Resource Name \(ARN\) for Firewall Manager resources has the following format: 
+
+```
+arn:aws:fms:region:account:resource/ID
+```
+
+The following table lists the format for each resource\. 
 
 
 ****  
@@ -24,14 +30,10 @@ AWS Firewall Manager has the single resource *policy*\. This resource has a uniq
 | Name in AWS Firewall Manager Console | Name in AWS Firewall Manager SDK/CLI | ARN Format  | 
 | --- | --- | --- | 
 | Policy | Policy |  `arn:aws:fms:region:account:policy/ID`  | 
+| Applications list | AppsList |  `arn:aws:fms:region:account:applications-list/ID`  | 
+| Protocols list | ProtocolsList |  `arn:aws:fms:region:account:protocols-list/ID`  | 
 
-To allow or deny access to a subset of Firewall Manager resources, include the ARN of the resource in the `resource` element of your policy\. The ARNs for Firewall Manager have the following format:
-
-```
-arn:aws:wafv2:region:account:resource/ID
-```
-
-Replace the *account*, *resource*, and *ID* variables with valid values\. Valid values can be the following:
+To allow or deny access to a subset of Firewall Manager resources, include the ARNs of the resources in the `resource` element of your policy\. Replace the *account*, *resource*, and *ID* variables with valid values\. Valid values can be the following:
 + *account*: The ID of your AWS account\. You must specify a value\.
 + *resource*: The type of Firewall Manager resource\. 
 + *ID*: The ID of the Firewall Manager resource, or a wildcard \(`*`\) to indicate all resources of the specified type that are associated with the specified AWS account\.
@@ -39,7 +41,7 @@ Replace the *account*, *resource*, and *ID* variables with valid values\. Valid 
 For example, the following ARN specifies all policies for the account `111122223333` in Region `us-east-1`:
 
 ```
-arn:aws:wafv2:us-east-1:111122223333:policy/*
+arn:aws:fms:us-east-1:111122223333:policy/*
 ```
 
 For more information, see [Resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Resource) in the *IAM User Guide*\.
@@ -116,7 +118,7 @@ For each AWS Firewall Manager resource \(see [AWS Firewall Manager resources and
 
 The following are the most basic policy elements:
 + **Resource** – In a policy, you use an Amazon Resource Name \(ARN\) to identify the resource to which the policy applies\. For more information, see [AWS Firewall Manager resources and operations](#fms-access-control-resources)\. 
-+ **Action** – You use action keywords to identify resource operations that you want to allow or deny\. For example, the `fms:CreatePolicy` permission, coupled with the `waf:ListRuleGroups` permission, allows the user permissions to perform the AWS Firewall Manager `CreatePolicy` operation\. 
++ **Action** – You use action keywords to identify resource operations that you want to allow or deny\. For example, the `fms:CreatePolicy` permission, coupled with the `wafv2:ListRuleGroups` permission, allows the user permissions to perform the AWS Firewall Manager `CreatePolicy` operation\. 
 + **Effect** – You specify the effect when the user requests the specific action\. This can be either allow or deny\. If you don't explicitly grant access to a resource, access is implicitly denied\. You also can explicitly deny access to a resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
 + **Principal** – In identity\-based policies \(IAM policies\), the user that the policy is attached to is the implicit principal\. AWS Firewall Manager doesn't support resource\-based policies\.
 

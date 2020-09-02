@@ -19,7 +19,7 @@ In a Firewall Manager AWS WAF policy, you can use managed rule groups, which AWS
 
 If you want to use your own rule groups, create those before you create your Firewall Manager AWS WAF policy\. For guidance, see [Managing your own rule groups](waf-user-created-rule-groups.md)\. To use an individual custom rule, you must define your own rule group, define your rule within that, and then use the rule group in your policy\.
 
-For information about Firewall Manager AWS WAF policies, see [How AWS WAF policies work](waf-policies.md)\.
+For information about Firewall Manager AWS WAF policies, see [AWS WAF policies](waf-policies.md)\.
 
 **To create a Firewall Manager policy for AWS WAF \(console\)**
 
@@ -41,7 +41,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the web ACLs that it creates\. The web ACL names begin with `FMManagedWebACLV2` followed by the policy name that you enter here\. 
 
-1. Under **Policy rules**, add the rule groups that you want AWS WAF to evaluate first and last in the web ACL\. The individual account managers can add rules and rule groups in between your first rule groups and your last rule groups\. For more information, see [How AWS WAF policies work](waf-policies.md)\.
+1. Under **Policy rules**, add the rule groups that you want AWS WAF to evaluate first and last in the web ACL\. The individual account managers can add rules and rule groups in between your first rule groups and your last rule groups\. For more information, see [AWS WAF policies](waf-policies.md)\.
 
 1. Set the default action for the web ACL\. This is the action that AWS WAF takes when a web request doesn't match any of the rules in the web ACL\. For more information, see [Deciding on the default action for a Web ACL](web-acl-processing.md#web-acl-default-action)\.
 
@@ -281,13 +281,13 @@ For information about setting up a Firewall Manager administrator account, see [
 
       1. If you want to do things like restrict the protocols, ports, and CIDR range settings that you allow in your security groups, choose **Audit overly permissive security group rules** and select the options that you want\. 
 
-         For selections that use protocol lists, you can use existing lists and you can create new lists\. For information about protocol lists and how to use them in your policy, see [Working with managed lists](working-with-managed-lists.md) and [Using managed lists](working-with-managed-lists.md#using-managed-lists)\.
+         For selections that use protocol lists, you can use existing lists and you can create new lists\. For information about protocol lists and how to use them in your policy, see [Managed lists](working-with-managed-lists.md) and [Using managed lists](working-with-managed-lists.md#using-managed-lists)\.
 
       1. If you want to enforce restrictions on what specific applications can do, choose **Audit high risk applications** and select the options that you want\. 
 
          The following selections are mutually exclusive: **Applications that can access local CIDR ranges only** and **Applications that can use public CIDR ranges**\. You can select at most one of them in any policy\.
 
-         For selections that use application lists, you can use existing lists and you can create new lists\. For information about application lists and how to use them in your policy, see [Working with managed lists](working-with-managed-lists.md) and [Using managed lists](working-with-managed-lists.md#using-managed-lists)\.
+         For selections that use application lists, you can use existing lists and you can create new lists\. For information about application lists and how to use them in your policy, see [Managed lists](working-with-managed-lists.md) and [Using managed lists](working-with-managed-lists.md#using-managed-lists)\.
 
       1. Use the **Overrides** settings to explicitly override other settings in the policy\. You can choose to always allow or always deny specific security group rules, regardless of whether they comply with the other options that you've set for the policy\. 
 

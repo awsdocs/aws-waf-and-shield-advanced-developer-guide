@@ -11,7 +11,7 @@ The request URI is always a single forward slash, `/`\.
 AWS WAF and Shield Advanced require the following information in the header of an HTTP request:
 
 **Host \(Required\)**  
-The endpoint that specifies where your resources are created\. The various endpoints can be found in [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)\. For example, the value of the `Host` header for AWS WAF for a CloudFront distribution is `waf.amazonaws.com:443`\.
+The endpoint that specifies where your resources are created\. For information about endpoints, see [AWS service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html)\. For example, the value of the `Host` header for AWS WAF for a CloudFront distribution is `waf.amazonaws.com:443`\.
 
 **x\-amz\-date or Date \(Required\)**  
 The date used to create the signature that is contained in the `Authorization` header\. Specify the date in ISO 8601 standard format, in UTC time, as shown in the following example:  

@@ -48,7 +48,7 @@ When you successfully enable logging, AWS WAF Classic will create a service link
 
 1. In the dialog box, choose **Disable logging**\.
 
-**Example Example log**  
+**Example log**  
 
 ```
 {
@@ -139,6 +139,9 @@ The type of rule that terminated the request\. Possible values: RATE\_BASED, REG
 
 **action**  
 The action\. Possible values for a terminating rule: ALLOW and BLOCK\. COUNT is not a valid value for a terminating rule\.
+
+**terminatingRuleMatchDetails**  
+Detailed information about the terminating rule that matched the request\. A terminating rule has an action that ends the inspection process against a web request\. Possible actions for a terminating rule are ALLOW and BLOCK\. This is only populated for SQL injection and cross\-site scripting \(XSS\) match rule statements\. As with all rule statements that inspect for more than one thing, AWS WAF applies the action on the first match and stops inspecting the web request\. A web request with a terminating action could contain other threats, in addition to the one reported in the log\.
 
 **httpSourceName**  
 The source of the request\. Possible values: CF \(if the source is Amazon CloudFront\), APIGW \(if the source is Amazon API Gateway\), and ALB \(if the source is an Application Load Balancer\)\.

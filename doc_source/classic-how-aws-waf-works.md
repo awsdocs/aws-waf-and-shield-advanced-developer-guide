@@ -29,7 +29,7 @@ Regular rules use only conditions to target specific requests\. For example, bas
 When a rule includes multiple conditions, as in this example, AWS WAF Classic looks for requests that match all conditions—that is, it `AND`s the conditions together\.   
 Add at least one condition to a regular rule\. A regular rule without conditions can't match any requests, so the rule's action \(allow, count, or block\) is never triggered\.   
 Rate\-based rule  
-Rate\-based rules are like regular rules with an added rate limit\. A rate\-based rule counts the requests that arrive from IP addresses that satisfy the rule's conditions\. If the requests from an IP address exceed the rate limit in a five\-minute period, the rule can trigger an action\.   
+Rate\-based rules are like regular rules with an added rate limit\. A rate\-based rule counts the requests that arrive from IP addresses that satisfy the rule's conditions\. If the requests from an IP address exceed the rate limit in a five\-minute period, the rule can trigger an action\. It can take a minute or two for the action to trigger\.   
 Conditions are optional for rate\-based rules\. If you don't add any conditions in a rate\-based rule, the rate limit applies to all IP addresses\. If you combine conditions with the rate limit, the rate limit applies to IP addresses that match the conditions\.   
 For example, based on recent requests that you've seen from an attacker, you might create a rate\-based rule that includes the following conditions:   
 + The requests come from 192\.0\.2\.44\.

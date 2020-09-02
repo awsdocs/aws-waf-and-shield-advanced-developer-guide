@@ -36,5 +36,5 @@ You should consider configuring CloudFront to prevent users from bypassing Cloud
 The best practices outlined in this tutorial can help you to build a DDoS\-resilient architecture that can protect the availability of your website against many common infrastructure and application layer DDoS attacks\. The degree to which you are able to architect your application according to these best practices influences the type and volume of DDoS attacks that you can mitigate\. 
 
 For more information, see the following:
-+ [AWS Best Practices for DDoS Resiliency](https://d0.awsstatic.com/whitepapers/Security/DDoS_White_Paper.pdf)
++ [AWS Best Practices for DDoS Resiliency](https://d1.awsstatic.com/whitepapers/Security/DDoS_White_Paper.pdf)
 + [AWS Documentation](https://docs.aws.amazon.com)

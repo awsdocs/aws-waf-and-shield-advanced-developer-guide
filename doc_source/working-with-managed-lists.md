@@ -1,4 +1,4 @@
-# Working with managed lists<a name="working-with-managed-lists"></a>
+# Managed lists<a name="working-with-managed-lists"></a>
 
 Managed application and protocol lists streamline your configuration and management of AWS Firewall Manager content audit security group policies\. You use managed lists to define the protocols and applications that your policy allows and disallows\. For information about content audit security group policies, see [Content audit security group policies](security-group-policies.md#security-group-policies-audit)\. 
 

@@ -20,4 +20,4 @@ For information about setting up a Firewall Manager administrator account, see [
 
 You can continue from this step without configuring Amazon SNS notifications or CloudWatch alarms\. However, doing so significantly reduces your visibility of possible DDoS events\.
 
-As a final step for getting started with Firewall Manager and Shield Advanced, review the global threat environment dashboard, as described in [Step 5: Monitor the global threat environment dashboard ](get-started-fms-shield-monitor-global-dashboard.md)\.
+As a final step for getting started with Firewall Manager and Shield Advanced, review the global threat dashboard, as described in [Step 5: Monitor the global threat dashboard ](get-started-fms-shield-monitor-global-dashboard.md)\.

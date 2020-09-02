@@ -1,6 +1,6 @@
 # Step 2: Create and apply an AWS Firewall Manager AWS WAF policy<a name="get-started-fms-create-security-policy"></a>
 
-A Firewall Manager AWS WAF policy contains the rule groups that you want to apply to your resources\. Firewall Manager creates a Firewall Manager web ACL in each account where you apply the policy\. The individual account managers can add rules and rule groups to the resulting web ACL, in addition to the rule groups that you define here\. For information about Firewall Manager AWS WAF policies, see [How AWS WAF policies work](waf-policies.md)\.
+A Firewall Manager AWS WAF policy contains the rule groups that you want to apply to your resources\. Firewall Manager creates a Firewall Manager web ACL in each account where you apply the policy\. The individual account managers can add rules and rule groups to the resulting web ACL, in addition to the rule groups that you define here\. For information about Firewall Manager AWS WAF policies, see [AWS WAF policies](waf-policies.md)\.
 
 **To create a Firewall Manager AWS WAF policy \(console\)**
 

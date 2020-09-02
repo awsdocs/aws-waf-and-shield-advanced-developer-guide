@@ -1,9 +1,9 @@
 # Security group common policy findings<a name="security-group-common-policy-findings"></a>
 
-For information about security group common policies, see [How security group policies work in AWS Firewall Manager](security-group-policies.md)\.
+For information about security group common policies, see [Security group policies](security-group-policies.md)\.
 
 **Resource has misconfigured security group\.**  
-Firewall Manager has idenfitied a resource that is missing the Firewall Manager managed security group associations that it should have, according to the Firewall Manager policy\. You can enable Firewall Manager remediation on the policy, which creates the associations according to the policy settings\. 
+Firewall Manager has identified a resource that is missing the Firewall Manager managed security group associations that it should have, according to the Firewall Manager policy\. You can enable Firewall Manager remediation on the policy, which creates the associations according to the policy settings\. 
 + Severity – 70
 + Status settings – PASSED/FAILED
 + Updates – Firewall Manager updates this finding\.

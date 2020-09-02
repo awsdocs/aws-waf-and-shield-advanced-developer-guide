@@ -1,4 +1,4 @@
-# How security group policies work in AWS Firewall Manager<a name="security-group-policies"></a>
+# Security group policies<a name="security-group-policies"></a>
 
 You can use AWS Firewall Manager security group policies to manage Amazon Virtual Private Cloud security groups for your organization in AWS Organizations\. You can apply centrally controlled security group policies to your entire organization or to a select subset of your accounts and resources\. You can also monitor and manage the security group policies that are in use in your organization, with auditing and usage security group policies\.
 
@@ -42,10 +42,9 @@ For guidance on creating a common security group policy using the console, see [
 **Shared VPCs**  
 In the policy scope settings for a common security group policy, you can choose to include shared VPCs\. This choice includes VPCs that are owned by another account and shared with an in\-scope account\. VPCs that in\-scope accounts own are always included\. For information about shared VPCs, see [Working with shared VPCs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html) in the [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)\. 
 
-The following caveats apply to including shared VPCs:
+The following caveats apply to including shared VPCs\. These are in addition to the general caveats for security group policies at [Security group policy limitations](#security-groups-limitations)\.
 + Firewall Manager replicates the primary security group into the VPCs for each in\-scope account\. For a shared VPC, Firewall Manager replicates the primary security group once for each in\-scope account that the VPC is shared with\. This can result in multiple replicas in a single shared VPC\. 
 + When you create a new shared VPC, you won’t see it represented in the Firewall Manager security group policy details until after you create at least one resource in the VPC that's within the scope of the policy\. 
-+ Firewall Manager doesn’t support security group references in common security group policies\. 
 + When you disable shared VPCs in a policy that had shared VPCs enabled, in the shared VPCs, Firewall Manager deletes the replica security groups that aren’t associated with any resources\. Firewall Manager leaves the remaining replica security groups in place, but stops managing them\. Removal of these remaining security groups requires manual management in each shared VPC instance\.
 
 **Primary security groups**  
@@ -78,7 +77,7 @@ For the resource type of a content audit security group policy, you can choose t
 
 **Policy rule options**  
 You can use either managed policy rules or custom policy rules for each content audit policy, but not both\.
-+ **Managed policy rules** – In a policy with managed rules, you can use application and protocol lists to specify what's allowed and what's denied by the policy\. You can use lists that are managed by Firewall Manager\. You can also create and use your own application and protocol lists\. For information about these types of lists and your management options for custom lists, see [Working with managed lists](working-with-managed-lists.md)\.
++ **Managed policy rules** – In a policy with managed rules, you can use application and protocol lists to specify what's allowed and what's denied by the policy\. You can use lists that are managed by Firewall Manager\. You can also create and use your own application and protocol lists\. For information about these types of lists and your management options for custom lists, see [Managed lists](working-with-managed-lists.md)\.
 + **Custom policy rules** – In a policy with custom policy rules, you specify an existing security group as the audit security group for your policy\. You can use the audit security group rules as a template that defines the rules that are allowed or denied by the policy\. 
 
 **Audit security groups**  
@@ -149,16 +148,20 @@ Similarly, in your outside tool or service, exclude the security groups that Fir
 
 ## Security group policy limitations<a name="security-groups-limitations"></a>
 
- This section lists the limitations for using AWS Firewall Manager policies:
+ This section lists the limitations for using AWS Firewall Manager security group policies:
 + Updating security groups for Amazon EC2 elastic network interfaces that were created using the Fargate service type is not supported\. You can, however, update security groups for Amazon ECS elastic network interfaces with the Amazon EC2 service type\. 
 + Updating Amazon ECS elastic network interfaces is possible only for Amazon ECS services that use the rolling update \(Amazon ECS\) deployment controller\. For other Amazon ECS deployment controllers such as CODE\_DEPLOY or external controllers, Firewall Manager currently can't update the elastic network interfaces\. 
-+ Firewall Manager doesn't currently support updating security groups in elastic network interfaces for an Elastic Load Balancing load balancer, an Application Load Balancer, or a Network Load Balancer\. 
++ Firewall Manager doesn't support updating security groups in elastic network interfaces for Network Load Balancers\. 
++ Firewall Manager doesn’t support security group references in common security group policies\. 
 
 ## Security group policy use cases<a name="security-group-policies-use-cases"></a>
 
 You can use AWS Firewall Manager common security group policies to automate the host firewall configuration for communication between Amazon VPC instances\. This section lists standard Amazon VPC architectures and describes how to secure each using Firewall Manager common security group policies\. These security group policies can help you apply a unified set of rules to select resources in different accounts and avoid per\-account configurations in Amazon Elastic Compute Cloud and Amazon VPC\. 
 
 With Firewall Manager common security group policies, you can tag just the EC2 elastic network interfaces that you need for communication with instances in another Amazon VPC\. The other instances in the same Amazon VPC are then more secure and isolated\. 
+
+**Use case: Monitoring and controlling requests to Application Load Balancers and Classic Load Balancers**  
+You can use a Firewall Manager common security group policy to define which requests your in\-scope load balancers should serve\. You can configure this through the Firewall Manager console\. Only requests that comply with the security group's inbound rules can reach your load balancers, and the load balancers will only distribute requests that meet the outbound rules\. 
 
 **Use case: Internet\-accessible, public Amazon VPC**  
 You can use a Firewall Manager common security group policy to secure a public Amazon VPC, for example, to allow only inbound port 443\. This is the same as only allowing inbound HTTPS traffic for a public VPC\. You can tag public resources within the VPC \(for example, as "PublicVPC"\), and then set the Firewall Manager policy scope to only resources with that tag\. Firewall Manager automatically applies the policy to those resources\.

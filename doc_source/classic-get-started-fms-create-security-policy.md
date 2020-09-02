@@ -4,9 +4,9 @@
 This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
-After you create the rule group, you create an AWS Firewall Manager AWS WAF policy\. A Firewall Manager\-AWS WAF policy contains the rule group that you want to apply to your resources\.<a name="classic-get-started-fms-create-security-policy-procedure"></a>
+After you create the rule group, you create an AWS Firewall Manager AWS WAF policy\. A Firewall Manager AWS WAF policy contains the rule group that you want to apply to your resources\.<a name="classic-get-started-fms-create-security-policy-procedure"></a>
 
-**To create a Firewall Manager\-AWS WAF policy \(console\)**
+**To create a Firewall Manager AWS WAF policy \(console\)**
 
 1. After you create the rule group \(the last step in the preceding procedure, [Step 3: Create a rule group](classic-get-started-fms-create-rule-group.md)\), the console displays the **Rule group summary** page\. Choose **Next**\.
 

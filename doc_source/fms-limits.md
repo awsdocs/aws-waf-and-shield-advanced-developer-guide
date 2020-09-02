@@ -9,6 +9,8 @@ AWS Firewall Manager has default quotas on the number of entities per account\. 
 | --- | --- | 
 | Accounts per organization in AWS Organizations | Varies\. An invitation sent to an account counts against this quota\. The count is returned if the invited account declines, the master account cancels the invitation, or the invitation expires\. | 
 | Firewall Manager policies per organization in AWS Organizations per Region | 20\. The Region specifications `Global` and `US East (N. Virginia)` refer to the same Region, so this limit applies to the total combined policies for the two of them\.  | 
+| Organizations in scope per Firewall Manager policy per Region | 20  | 
+| Accounts in scope per Firewall Manager policy per Region | 200  | 
 |  Tags that include or exclude resources per Firewall Manager policy  | 8 | 
 | AWS WAF rule groups per Firewall Manager administrator account | 100 | 
 | AWS WAF Classic rule groups per Firewall Manager administrator account | 10 | 

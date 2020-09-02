@@ -13,6 +13,6 @@ Firewall Manager does not support Amazon Route 53 or AWS Global Accelerator\. I
 **Topics**
 + [Step 1: Complete the prerequisites](complete-prereq-fms-shield.md)
 + [Step 2: Create and apply an AWS Firewall Manager Shield Advanced policy](get-started-fms-shield-create-security-policy.md)
-+ [Step 3: \(Optional\) authorize the DDoS response team](get-started-fms-shield-authorize-DRT.md)
++ [Step 3: \(Optional\) authorize the DDoS Response Team \(DRT\)](get-started-fms-shield-authorize-DRT.md)
 + [Step 4: Configure Amazon SNS notifications and Amazon CloudWatch alarms](get-started-fms-shield-cloudwatch.md)
-+ [Step 5: Monitor the global threat environment dashboard](get-started-fms-shield-monitor-global-dashboard.md)
++ [Step 5: Monitor the global threat dashboard](get-started-fms-shield-monitor-global-dashboard.md)

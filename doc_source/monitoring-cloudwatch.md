@@ -22,7 +22,7 @@ Metrics are grouped first by the service namespace, and then by the various dime
 
 1. Open the CloudWatch console at [https://console\.aws\.amazon\.com/cloudwatch/](https://console.aws.amazon.com/cloudwatch/)\.
 
-1. If necessary, change the Region\. From the navigation bar, choose the Region where your AWS resources are located\. For more information, see [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html)\.
+1. If necessary, change the Region\. From the navigation bar, choose the Region where your AWS resources are located\. For more information, see [AWS service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html)\. 
 
    To view AWS WAF metrics for CloudFront, you must choose the US East \(N\. Virginia\) Region\.
 
@@ -34,7 +34,7 @@ Metrics are grouped first by the service namespace, and then by the various dime
 + For AWS WAF, at a command prompt use the following command:
 
   ```
-  1. aws cloudwatch list-metrics --namespace "WAF"
+  1. aws cloudwatch list-metrics --namespace "AWS/WAFV2"
   ```
 
   For Shield Advanced, at a command prompt use the following command:

@@ -1,9 +1,6 @@
 # AWS Marketplace managed rule groups<a name="marketplace-managed-rule-groups"></a>
 
-AWS Marketplace managed rule groups are available by subscription through the AWS Marketplace console at [AWS Marketplace](https://aws.amazon.com/marketplace)\. After you subscribe to a AWS Marketplace managed rule group, you can use it in AWS WAF\.
-
-**Important**  
-To use an AWS Marketplace rule group in an AWS Firewall Manager policy, each account in your organization must first subscribe to that rule group\. After all accounts have subscribed, you can then add the rule group to a policy\. 
+AWS Marketplace managed rule groups are available by subscription through the AWS Marketplace console at [AWS Marketplace](https://aws.amazon.com/marketplace)\. After you subscribe to a AWS Marketplace managed rule group, you can use it in AWS WAF\. To use an AWS Marketplace rule group in an AWS Firewall Manager AWS WAF policy, each account in your organization must subscribe to it\. 
 
 **AWS Marketplace Rule Group Pricing**  
 AWS Marketplace rule groups are available with no long\-term contracts, and no minimum commitments\. When you subscribe to a rule group, you are charged a monthly fee \(prorated hourly\) and ongoing request fees based on volume\. For more information, see [AWS WAF Pricing](https://aws.amazon.com/waf/pricing/) and the description for each AWS Marketplace rule group at [AWS Marketplace](https://aws.amazon.com/marketplace)\.
@@ -13,7 +10,7 @@ AWS Marketplace rule groups are available with no long\-term contracts, and no m
 You can subscribe to and unsubscribe from AWS Marketplace rule groups on the AWS WAF console\. If you need to, you can exclude specific rules in a managed rule group when you add it to a web ACL\.
 
 **Important**  
-To use an AWS Marketplace rule group in an AWS Firewall Manager policy, each account in your organization must first subscribe to that rule group\. After all accounts have subscribed, you can then add the rule group to a policy\. 
+To use an AWS Marketplace rule group in an AWS Firewall Manager policy, each account in your organization must first subscribe to that rule group\. 
 
 **To subscribe to an AWS Marketplace managed rule group**
 
@@ -33,6 +30,15 @@ If you don't want to subscribe to this rule group, simply close this page in you
 **Note**  
 When adding a rule group to a web ACL, you can override the actions of all rules in the rule group to `COUNT` only\. For more information, see [Overriding rule actions for a rule group](waf-using-rule-groups.md#rule-group-override)\.
 
+After you're subscribed to an AWS Marketplace rule group, you use it in your web ACLs as you do other managed rule groups\. For information, see [Creating a web ACL](web-acl-creating.md)\.
+
+## Unsubscribing from AWS Marketplace managed rule groups<a name="marketplace-managed-rule-groups-unsubscribing"></a>
+
+You can unsubscribe from AWS Marketplace rule groups on the AWS WAF console\. 
+
+**Important**  
+To stop the subscription charges for an AWS Marketplace managed rule group, you must remove it from all web ACLs in AWS WAF and in any Firewall Manager AWS WAF policies, in addition to unsubscribing from it\. If you unsubscribe from an AWS Marketplace managed rule group but don't remove it from your web ACLs, you will continue to be charged for the subscription\. 
+
 **To unsubscribe from an AWS Marketplace managed rule group**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
@@ -46,8 +52,6 @@ When adding a rule group to a web ACL, you can override the actions of all rules
 1. Choose **Cancel subscription** next to the name of the rule group that you want to unsubscribe from\.
 
 1. Choose **Yes, cancel subscription**\.
-
-After you're subscribed to an AWS Marketplace rule group, you use it in your web ACLs as you do other managed rule groups\. For information, see [Creating a web ACL](web-acl-creating.md)\.
 
 ## Troubleshooting AWS Marketplace rule groups<a name="waf-managed-rule-group-troubleshooting"></a>
 
