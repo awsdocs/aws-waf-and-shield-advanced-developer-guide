@@ -1,8 +1,6 @@
 # Associating or disassociating a Web ACL with an AWS resource<a name="web-acl-associating-aws-resource"></a>
 
-You can use AWS WAF to associate a web ACL with the following AWS regional resource types:
-+ Application Load Balancer
-+ Amazon API Gateway REST API
+You can use AWS WAF to associate a web ACL with an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API\.
 
 You can associate a web ACL with a CloudFront distribution when you create or update the distribution itself\. For information, see [Using AWS WAF to Control Access to Your Content](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-awswaf.html) in the *Amazon CloudFront Developer Guide*\.
 
@@ -13,7 +11,7 @@ You can associate a single web ACL with one or more AWS resources, according to 
 + You can associate each AWS resource with only one web ACL\. The relationship between web ACL and AWS resources is one\-to\-many\. 
 + You can associate a web ACL with one or more CloudFront distributions\. You can't associate a web ACL that you've associated with a CloudFront distribution with any other AWS resource type\.
 
-**To associate a web ACL with an Amazon CloudFront distribution, an Amazon API Gateway REST API, or an Application Load Balancer**
+**To associate a web ACL with an AWS resource**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
@@ -23,11 +21,11 @@ You can associate a single web ACL with one or more AWS resources, according to 
 
 1. On the **Associated AWS resources** tab, choose **Add AWS resources**\.
 
-1. When prompted, choose your resource that you want to associate this web ACL with\. If you choose an Amazon API Gateway REST API or an Application Load Balancer, specify a Region\.
+1. When prompted, choose your resource that you want to associate this web ACL with\. If you choose an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API, specify a Region\.
 
 1. Choose **Add**\.<a name="web-acl-disassociating-aws-resource-procedure"></a>
 
-**To disassociate a web ACL from an Amazon CloudFront distribution, an Amazon API Gateway REST API, or an Application Load Balancer**
+**To disassociate a web ACL from an AWS resource**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 

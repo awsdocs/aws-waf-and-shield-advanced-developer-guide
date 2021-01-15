@@ -58,8 +58,8 @@ AWS addresses many common use cases by providing standalone IAM policies that ar
 The following AWS managed policies, which you can attach to users in your account, are specific to AWS WAF:
 + `AWSWAFReadOnlyAccess` – Grants read\-only access to AWS WAF resources\. 
 + `AWSWAFFullAccess` – Grants full access to AWS WAF resources\.
-+ `AWSWAFConsoleReadOnlyAccess` – Grants read\-only access to the AWS WAF console, which includes resources for AWS WAF and integrated services, such as Amazon CloudFront, Amazon API Gateway, Application Load Balancer, and Amazon CloudWatch\. 
-+ `AWSWAFConsoleFullAccess` – Grants full access to the AWS WAF console, which includes resources for AWS WAF and integrated services, such as Amazon CloudFront, Amazon API Gateway, Application Load Balancer, and Amazon CloudWatch\. 
++ `AWSWAFConsoleReadOnlyAccess` – Grants read\-only access to the AWS WAF console, which includes resources for AWS WAF and integrated services, such as Amazon CloudFront, Amazon API Gateway, Application Load Balancer, and AWS AppSync\. 
++ `AWSWAFConsoleFullAccess` – Grants full access to the AWS WAF console, which includes resources for AWS WAF and integrated services, such as Amazon CloudFront, Amazon API Gateway, Application Load Balancer, and AWS AppSync\. 
 
 **Note**  
 You can review these permissions policies by signing in to the IAM console and searching for specific policies there\.
@@ -105,7 +105,8 @@ The following policy grants users read\-only access to AWS WAF resources, to Ama
             "cloudfront:ListDistributions",
             "cloudfront:ListDistributionsByWebACLId",
             "cloudwatch:ListMetrics",
-            "cloudwatch:GetMetricStatistics"
+            "cloudwatch:GetMetricStatistics",
+            "ec2:DescribeRegions"
          ],
          "Effect": "Allow",
          "Resource": "*"
@@ -133,7 +134,8 @@ The following policy lets users perform any AWS WAF operation, perform any opera
             "cloudfront:ListDistributionsByWebACLId",
             "cloudfront:DeleteDistribution",
             "cloudwatch:ListMetrics",
-            "cloudwatch:GetMetricStatistics"
+            "cloudwatch:GetMetricStatistics",
+            "ec2:DescribeRegions"
          ],
          "Effect": "Allow",
          "Resource": "*"
@@ -173,7 +175,8 @@ This policy grants the following permissions to the account 444455556666:
             "cloudfront:ListDistributionsByWebACLId",
             "cloudfront:UpdateDistribution",
             "cloudwatch:ListMetrics",
-            "cloudwatch:GetMetricStatistics"
+            "cloudwatch:GetMetricStatistics",
+            "ec2:DescribeRegions"
          ],
          "Resource": [
             "*"

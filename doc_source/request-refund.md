@@ -1,13 +1,19 @@
-# AWS Shield Advanced: Requesting a credit<a name="request-refund"></a>
+# Requesting a credit in AWS Shield Advanced<a name="request-refund"></a>
 
-If you're subscribed to AWS Shield Advanced and you think that a DDoS attack has resulted in additional charges for your protected resources or related services, you can apply for a credit for the charges by submitting a billing case through the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
+If you're subscribed to AWS Shield Advanced and you experience a DDoS attack that increases utilization of an Shield Advanced protected resource, you can request a credit for charges related to the increased utilization to the extent that it is not mitigated by Shield Advanced\. Credits are available only for the following charges: Amazon CloudFront HTTP/HTTPS requests, CloudFront data transfer out, Amazon Route 53 queries, AWS Global Accelerator data transfer, and load balancer capacity units for Application Load Balancer\.
 
-If the AWS Shield Advanced team determines that the event is a valid DDoS attack and that the underlying services scaled to absorb the attack, AWS provides account credit for charges incurred due to the attack\. For example, if your legitimate CloudFront data transfer usage during the attack period was 20 GB, but due to the attack you incurred charges for 200 GB of incremental data transfer, AWS provides credit to offset the incremental data transfer charges\. AWS automatically applies all credits toward your future monthly bills\. Credits are applied towards AWS Shield and cannot be used for payment for other AWS services\. Credits are valid for 12 months\. 
+To be eligible to receive a credit, before the attack began, you must have done the following for the resources for which you want a credit: 
++ Added Shield Advanced protection to the resources\. Protected resources added during an attack are not eligible for cost protection\. Enabling Shield Advanced on your AWS account does not automatically enable Shield Advanced protection for individual resources\. For more information about how to protect AWS resources using Shield Advanced, see [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)\.
++ Associated an AWS WAF web ACL with applicable CloudFront and Application Load Balancer protected resources\. For more information about how to associate WebACLs with AWS resources, see [Managing and using a Web Access Control List \(Web ACL\)](web-acl.md)\. 
++ Defined an AWS WAF rate\-based rule in block mode for applicable CloudFront and Application Load Balancer protected resources\. For more information about how to create AWS WAF rate\-based rules, see [Rate\-based rule statement](waf-rule-statement-type-rate-based.md)\.
++ Implemented applicable best practices, according to the guidance at [AWS Best Practices for DDoS Resiliency](https://d1.awsstatic.com/whitepapers/Security/DDoS_White_Paper.pdf), to configure your application in a way that minimizes cost during a DDoS attack\. 
+
+To apply for a credit, submit a billing case through the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\. Be sure to include the following in your request: 
++ The words "DDoS Concession" in the subject line
++ The dates and times of each event interruption for which you're requesting a credit
++ The AWS services and specific resources that were affected 
 
 **Important**  
-To be eligible for a credit, AWS must receive your credit request by the end of the second billing cycle after the event occurred\. 
+To be eligible for a credit, you must submit your credit request within 15 days of the end of the billing month in which the attack occurred\.
 
-To request your credit, submit a billing query to the [AWS Support Center](https://console.aws.amazon.com/support/home#/) and provide the following in the query:
-+ The words "DDoS Concession" in the subject line
-+ The dates and times of each event interruption that you're claiming
-+ The AWS services and specific resources that were affected by the DDoS activity
+After you submit a request, the AWS DDoS Response Team \(DRT\) will validate whether a DDoS attack occurred and, if so, whether any protected resources scaled to absorb the attack\. If AWS determines that protected resources scaled to absorb the DDoS attack, AWS will issue a credit for that portion of traffic that AWS determines was caused by the attack\. Credits are valid for 12 months\.

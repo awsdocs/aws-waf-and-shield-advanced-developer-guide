@@ -38,4 +38,4 @@ Shield Advanced does not support EC2\-Classic\.
 
 1. Select the resources that you want to protect, then choose **Protect with Shield Advanced**\.
 
-1. Walk through the options and provide the protection settings that you want to apply to the resource\. The options for adding protection to a resource are the same as for managing existing protections\. See [Managing AWS Shield Advanced protections](manage-protection.md)\.
+1. Walk through the options and provide the protection settings that you want to apply to the resource\. The options for adding protection to a resource are the same as for managing existing protections\. See [Configuring AWS Shield Advanced protections](manage-protection.md)\.

@@ -12,11 +12,11 @@ Match statements compare the web request or its origin against conditions that y
 | --- | --- | --- | --- | 
 | [Geographic match](waf-rule-statement-type-geo-match.md) | Inspects the request's country of origin\.  | 1 | Yes | 
 | [IP set match](waf-rule-statement-type-ipset-match.md) | Inspects the request against a set of IP addresses and address ranges\.  | 1 for most cases\. If you configure the statement to use a header with forwarded IP addresses and specify a position in the header of Any, then the WCUs are 5\. | Yes | 
-| [Regex pattern set](waf-rule-statement-type-regex-pattern-set-match.md) | Compares regex patterns against a specified request component\.  | 25 per pattern set | Yes | 
-| [Size constraint](waf-rule-statement-type-size-constraint-match.md) | Checks size constraints against a specified request component\.  | 1 | Yes | 
-| [SQLi attack](waf-rule-statement-type-sqli-match.md) | Inspects for malicious SQL code in a specified request component\.  | 20 | Yes | 
-| [String match](waf-rule-statement-type-string-match.md) | Compares a string to a specified request component\.  |  Depends on the type of match  | Yes | 
-| [XSS scripting attack](waf-rule-statement-type-xss-match.md) | Inspects for cross\-site scripting attacks in a specified request component\.  | 40 | Yes | 
+| [Regex pattern set](waf-rule-statement-type-regex-pattern-set-match.md) | Compares regex patterns against a specified request component\.  | 25 per pattern set\. If you use the request component All query parameters, add 10 WCUs\.  | Yes | 
+| [Size constraint](waf-rule-statement-type-size-constraint-match.md) | Checks size constraints against a specified request component\.  | 1\. If you use the request component All query parameters, add 10 WCUs\.  | Yes | 
+| [SQLi attack](waf-rule-statement-type-sqli-match.md) | Inspects for malicious SQL code in a specified request component\.  | 20\. If you use the request component All query parameters, add 10 WCUs\.  | Yes | 
+| [String match](waf-rule-statement-type-string-match.md) | Compares a string to a specified request component\.  |  Depends on the type of match and the request components that you inspect\.  | Yes | 
+| [XSS scripting attack](waf-rule-statement-type-xss-match.md) | Inspects for cross\-site scripting attacks in a specified request component\.  | 40\. If you use the request component All query parameters, add 10 WCUs\.  | Yes | 
 
 **Logical rules statements**  
 Logical rules statements allow you to combine other statements or negate their results\. Every logical rule statement takes at least one nested statement\.

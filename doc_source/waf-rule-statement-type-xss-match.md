@@ -6,7 +6,7 @@ When you create cross\-site scripting match conditions, you specify filters\. Th
 
 **Nestable** – You can nest this statement type inside logical rule statements and rate\-based statements\. 
 
-**WCUs** – 40 WCUs\. 
+**WCUs** – 40 WCUs\. If you use the request component **All query parameters**, add 10 WCUs\. 
 
 This statement operates on a web request component, and requires the following request component settings: 
 + **Request components** – The part of the web request to inspect, for example, a query string or the body\. For more information, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.

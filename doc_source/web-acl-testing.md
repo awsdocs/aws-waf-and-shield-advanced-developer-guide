@@ -14,7 +14,7 @@ When you add rules to a web ACL, you specify whether you want AWS WAF to allow, 
 
 In this configuration, AWS WAF inspects each web request based on the conditions in the first rule\. If the web request matches all the conditions in that rule, AWS WAF increments a counter for that rule\. Then AWS WAF inspects the web request based on the conditions in the next rule\. If the request matches all the conditions in that rule, AWS WAF increments a counter for the rule\. This continues until AWS WAF has inspected the request based on the conditions in all of your rules\. 
 
-After you've configured all the rules in a web ACL to count requests and associated the web ACL with one or more AWS resources \(Amazon API Gateway REST API, CloudFront distribution, or Application Load Balancer\) you can view the resulting counts in an Amazon CloudWatch graph\. For each rule in a web ACL and for all the requests that an associated resource forwards to AWS WAF for a web ACL, CloudWatch lets you do the following:
+After you've configured all the rules in a web ACL to count requests and associated the web ACL with one or more AWS resources \(an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API\) you can view the resulting counts in an Amazon CloudWatch graph\. For each rule in a web ACL and for all the requests that an associated resource forwards to AWS WAF for a web ACL, CloudWatch lets you do the following:
 + View data for the preceding hour or preceding three hours,
 + Change the interval between data points
 + Change the calculation that CloudWatch performs on the data, such as maximum, minimum, average, or sum
@@ -56,7 +56,7 @@ Choose the rules for which you want to view data\.
 
 In the AWS WAF console, if you have request sampling enabled, you can view a sample of the requests that an associated resource has forwarded to AWS WAF for inspection\. For each sampled request, you can view detailed data about the request, such as the originating IP address and the headers included in the request\. You also can view which rule the request matched, and whether the rule is configured to allow or block requests\.
 
-The sample of requests contains up to 100 requests that matched all the conditions in each rule and another 100 requests for the default action, which applies to requests that didn't match all the conditions in any rule\. The requests in the sample come from all the API Gateway APIs, CloudFront edge locations or Application Load Balancers that have received requests for your content in the previous 15 minutes\.<a name="web-acl-testing-view-sample-procedure"></a>
+The sample of requests contains up to 100 requests that matched all the conditions in each rule and another 100 requests for the default action, which applies to requests that didn't match all the conditions in any rule\. The requests in the sample come from all the protected resources that have received requests for your content in the previous 15 minutes\.<a name="web-acl-testing-view-sample-procedure"></a>
 
 **To view a sample of the web requests that an associated resource has forwarded to AWS WAF**
 
@@ -77,7 +77,7 @@ Note that when a web request matches all the conditions in a rule and the action
 **Action**  
 Indicates whether the action for the corresponding rule is **Allow**, **Block**, or **Count**\.  
 **Time**  
-The time that AWS WAF received the request from API Gateway, CloudFront or your Application Load Balancer\.
+The time that AWS WAF received the request from Amazon CloudFront, Amazon API Gateway, Application Load Balancer, or AWS AppSync\.
 
 1. To display additional information about the request, choose the arrow on the left side of the IP address for that request\. AWS WAF displays the following information:  
 **Source IP**  

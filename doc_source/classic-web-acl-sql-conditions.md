@@ -4,7 +4,7 @@
 This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
-Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database\. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions\. A SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want AWS WAF Classic to inspect\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code\.
+Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database\. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions\. A SQL injection match condition identifies the part of web requests, such as the URI path or the query string, that you want AWS WAF Classic to inspect\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code\.
 
 **Topics**
 + [Creating SQL injection match conditions](#classic-web-acl-sql-conditions-creating)
@@ -59,7 +59,8 @@ The HTTP method, which indicates the type of operation that the request is askin
 The part of a URL that appears after a `?` character, if any\.  
 For SQL injection match conditions, we recommend that you choose **All query parameters \(values only\)** instead of **Query string** for **Part of the request to filter on**\.  
 **URI**  
-The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\. Unless a **Transformation** is specified, a URI is not normalized and is inspected just as AWS receives it from the client as part of the request\. A **Transformation** will reformat the URI as specified\.  
+The URI path of the request, which identifies the resource, for example, `/images/daily-ad.jpg`\. This doesn't include the query string or fragment components of the URI\. For information, see [Uniform Resource Identifier \(URI\): Generic Syntax](https://tools.ietf.org/html/rfc3986#section-3.3)\.   
+Unless a **Transformation** is specified, a URI is not normalized and is inspected just as AWS receives it from the client as part of the request\. A **Transformation** will reformat the URI as specified\.  
 **Body**  
 The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form\.  
 If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\)\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with size constraint conditions](classic-web-acl-size-conditions.md)\.  

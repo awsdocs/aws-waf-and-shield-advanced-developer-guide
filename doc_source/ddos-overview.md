@@ -6,7 +6,7 @@ AWS provides two levels of protection against DDoS attacks: AWS Shield Standard 
 
 ## AWS Shield Standard<a name="ddos-standard"></a>
 
-All AWS customers benefit from the automatic protections of AWS Shield Standard, at no additional charge\. AWS Shield Standard defends against most common, frequently occurring network and transport layer DDoS attacks that target your website or applications\. While AWS Shield Standard helps protect all AWS customers, you get particular benefit if you are using Amazon CloudFront and Amazon Route 53\. These services receive comprehensive availability protection against all known infrastructure \(Layer 3 and 4\) attacks\.
+All AWS customers benefit from the automatic protections of AWS Shield Standard, at no additional charge\. AWS Shield Standard defends against the most common, frequently occurring network and transport layer DDoS attacks that target your website or applications\. While AWS Shield Standard helps protect all AWS customers, you get particular benefit if you are using Amazon CloudFront and Amazon Route 53\. These services receive comprehensive availability protection against all known infrastructure \(Layer 3 and 4\) attacks\.
 
 ## AWS Shield Advanced<a name="ddos-advanced"></a>
 
@@ -25,7 +25,7 @@ You can add protection for any of the following resource types:
 
 For example, if you use Shield Advanced to protect an Elastic IP address, Shield Advanced automatically deploys your network ACLs to the border of the AWS network during an attack\. When your network ACLs are at the border of the network, Shield Advanced can provide protection against larger DDoS events\. Typically, network ACLs are applied near your Amazon EC2 instances within your Amazon VPC\. The network ACL can mitigate attacks only as large as your Amazon VPC and instance can handle\. If the network interface attached to your Amazon EC2 instance can process up to 10 Gbps, volumes over 10 Gbps slow down and possibly block traffic to that instance\. During an attack, Shield Advanced promotes your network ACL to the AWS border, which can process multiple terabytes of traffic\. Your network ACL is able to provide protection for your resource well beyond your network's typical capacity\. For more information about network ACLs, see [Network ACLs](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html)\. 
 
-The point at which Shield Advanced detects attacks and places mitigations depends on the architecture you use for your web applications\. It varies based on characteristics like the type of instance you use, your instance size, and whether you use enhanced networking\. 
+The point at which Shield Advanced detects attacks and places mitigations depends on the architecture you use for your web applications\. It varies based on characteristics like the type of instance you use, your instance size, and whether the instance type supports enhanced networking\. 
 
 As an AWS Shield Advanced customer, you can contact the 24x7 AWS DDoS Response Team \(DRT\) for assistance during a DDoS attack\. You also have exclusive access to advanced, real\-time metrics and reports for extensive visibility into attacks on your AWS resources\. With the assistance of the DRT, AWS Shield Advanced includes intelligent DDoS attack detection and mitigation for not only for network layer \(layer 3\) and transport layer \(layer 4\) attacks, but also for application layer \(layer 7\) attacks\. 
 
@@ -62,16 +62,38 @@ You can enable health\-based detection for the following resource types:
 
 With proactive engagement, the DDoS Response Team \(DRT\) engages with you directly if the Amazon Route 53 health check associated with your protected resource becomes unhealthy during an event that's detected by Shield Advanced\. This allows you to engage with experts more quickly when the availability of your application might be affected by a suspected attack\. 
 
+**Note**  
+To use proactive engagement for a protected resource, you must associate an Amazon Route 53 health check with the resource\.
+
 Proactive engagement is available for network\-layer and transport\-layer events on Elastic IP addresses and AWS Global Accelerator accelerators, and for web request floods on Amazon CloudFront distributions and Application Load Balancers\.
 
 To use proactive engagement, you configure Shield Advanced health\-based detection for a resource that you want the DRT to monitor\. You then specify 1\-10 contacts for proactive engagement\. The DRT uses the information to contact you during a detected event that correlates with an unhealthy protected resource\. After you provide your contact information, you can enable proactive engagement\. 
 
+When you enable proactive engagement for the first time, a DRT engineer contacts \- you to review your application architecture and complete activation of the feature\. \- This process can take a number of days\. 
+
 **Note**  
 To use proactive engagement, you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
+
+## Shield Advanced protection groups<a name="ddos-advanced-protection-groups"></a>
+
+AWS Shield Advanced protection groups give you a self\-service way to customize the scope of detection and mitigation by treating multiple protected resources as a single unit\. Resource grouping can provide a number of benefits\. 
++ Improve accuracy of detection\. 
++ Reduce unactionable event notifications\. 
++ Increase coverage of mitigation actions to include protected resources that also might be affected during an event\. 
++ Accelerate time to mitigation of attacks with multiple similar targets\. 
++ Facilitate automatic protection of newly created protected resources\. 
+
+Protection groups can help reduce false positives in situations such as blue/green swap, where resources alternate between being near zero load and fully loaded\. Another example is when you create and delete resources frequently while maintaining a load level that's shared among the members of the group\. For situations such as these, monitoring individual resources can lead to false positives, while monitoring the health of the group of resources does not\. 
+
+You can define protection groups by various criteria on the protected resources\. Newly protected resources that fit the grouping criteria are automatically included in your protection group\. To group by resource type, you can define a protection group for that type, and Shield Advanced automatically includes all protected resources of that type that are in your account or subscription\. To group by tag, you define a protection group for the tag key and value, then apply that tag to any protected resource that you want to have in the group\. A protected resource can belong to multiple protection groups\. 
+
+For information about your options and how to manage protection groups, see [Managing AWS Shield Advanced protection groups](manage-protection-group.md)\.
 
 ## Types of DDoS attacks<a name="types-of-ddos-attacks"></a>
 
 AWS Shield Advanced provides expanded protection against many types of attacks\. For example:
+
+
 
 **User Datagram Protocol \(UDP\) reflection attacks**  
 An attacker can spoof the source of a request and use UDP to elicit a large response from the server\. The extra network traffic directed towards the spoofed, attacked IP address can slow the targeted server and prevent legitimate users from accessing needed resources\.

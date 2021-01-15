@@ -1,6 +1,6 @@
 # Managing and using a Web Access Control List \(Web ACL\)<a name="web-acl"></a>
 
-A web access control list \(web ACL\) gives you fine\-grained control over the web requests that your Amazon CloudFront distribution, Amazon API Gateway REST API, or Application Load Balancer responds to\. 
+A web access control list \(web ACL\) gives you fine\-grained control over the web requests that your protected resource responds to\. You can protect Amazon CloudFront, Amazon API Gateway, Application Load Balancer, and AWS AppSync resources\. 
 
 You can use criteria like the following to allow or block requests: 
 + IP address origin of the request

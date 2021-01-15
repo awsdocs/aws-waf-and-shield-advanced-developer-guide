@@ -1,6 +1,8 @@
-# Viewing resource compliance for a policy<a name="fms-compliance"></a>
+# Viewing compliance information for an AWS Firewall Manager policy<a name="fms-compliance"></a>
 
-For all policies, you can view the compliance status for in\-scope accounts and resources\. For content audit security group policies, you can also view detailed violation information for in scope resources\. This information can help you to better understand and manage your security risk\.<a name="fms-compliance-procedure"></a>
+For all AWS Firewall Manager policies, you can view the compliance status for accounts and resources that are in scope of the policy\. An account or resource is in compliance with a Firewall Manager policy if the settings in the policy are reflected in the settings for the account or resource\. Each policy type has its own compliance requirements, which you can tune when you define the policy\. For some policies, you can also view detailed violation information for in scope resources, to help you to better understand and manage your security risk\.
+
+<a name="fms-compliance-procedure"></a>
 
 **To view the compliance information for a policy**
 
@@ -32,3 +34,12 @@ Resources that Firewall Manager found to be noncompliant before the addition of 
      + **Referenced rule** – The audit security group rule that the noncompliant security group rule violates, with its details\. 
      + **Violation reasons** – Explanation of the noncompliance finding\.
      + **Remediation action** – Suggested action to take\. If Firewall Manager can't determine a safe remediation action, this field is blank\. 
+   + **`AWS::EC2::Subnet`** – This is used for Network Firewall policies\. Firewall Manager displays the subnet ID, VPC ID, and Availability Zone\. If applicable, Firewall Manager includes additional information about the violation, for example the reason the violation occured, or the ID of the route table a subnet should be associated with\. The violation description component contains a description of the expected state of the resource, the current, noncompliant state, and if available, a description of what caused the discrepancy\. 
+
+     For example, the expected state of a subnet might be “Subnet should contain a Network Firewall subnet in its availability zone”, the current state might be “subnet with id subnet\-1234 is missing a Network Firewall subnet in availability zone us\-east\-1e”, and the description might be “Firewall Manager was unable to create a subnet in this AZ because there are no available CIDR blocks\.”
+   + **`AWS::NetworkFirewall::FirewallPolicy`** – This is used for Network Firewall policies\. Firewall Manager displays information about a Network Firewall firewall policy that's been modified in a way that makes it noncompliant\. The information provides the expected firewall policy and the policy that it found in the customer account, so you can compare stateless and stateful rule groups names and priority settings, custom action names, and default stateless actions settings\. The violation description component contains a description of the expected state of the resource, the current, noncompliant state, and if available, a description of what caused the discrepancy\. 
+
+ – 
+
+ 
+

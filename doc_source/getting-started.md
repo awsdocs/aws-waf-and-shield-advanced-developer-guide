@@ -3,7 +3,7 @@
 This tutorial shows how to use AWS WAF to perform the following tasks:
 + Set up AWS WAF\.
 + Create a web access control list \(web ACL\) using the wizard in the AWS WAF console\. 
-+ Choose the AWS resources that you want AWS WAF to inspect web requests for\. This tutorial covers the steps for Amazon CloudFront\. The process is essentially the same for an Application Load Balancer or Amazon API Gateway REST API\. 
++ Choose the AWS resources that you want AWS WAF to inspect web requests for\. This tutorial covers the steps for Amazon CloudFront\. The process is essentially the same for an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API\. 
 + Add the rules and rule groups that you want to use to filter web requests\. For example, you can specify the IP addresses that the requests originate from and values in the request that are used only by attackers\. For each rule, you specify whether you want to block matching web requests or allow them\. The rules that are defined inside a rule group have their actions defined inside the rule group\.
 + Specify a default action for the web ACL, either block or allow\. This is the action that AWS WAF takes when a web request doesn't match any of the rules\.
 

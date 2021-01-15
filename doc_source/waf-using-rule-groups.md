@@ -16,7 +16,7 @@ Excluding a single rule can help you troubleshoot false positives, which is when
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
-1. If not already enabled, enable AWS WAF logging\. For more information, see [Logging Web ACL traffic information](logging.md)\. Use the AWS WAF logs to identify the IDs of the rules that you want to exclude\. These are typically rules that are blocking legitimate requests\.
+1. If not already enabled, enable AWS WAF logging\. For more information, see [Logging web ACL traffic information](logging.md)\. Use the AWS WAF logs to identify the IDs of the rules that you want to exclude\. These are typically rules that are blocking legitimate requests\.
 
 1. In the navigation pane, choose **Web ACLs**\.
 

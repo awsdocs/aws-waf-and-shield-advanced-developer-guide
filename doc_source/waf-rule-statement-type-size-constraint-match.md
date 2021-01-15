@@ -7,7 +7,7 @@ If you choose **URI** for the value of **Part of the request to filter on**, the
 
 **Nestable** – You can nest this statement type inside logical rule statements and rate\-based statements\. 
 
-**WCUs** – 1 WCU\. 
+**WCUs** – 1 WCU\. If you use the request component **All query parameters**, add 10 WCUs\. 
 
 This statement operates on a web request component, and requires the following request component settings: 
 + **Request components** – The part of the web request to inspect, for example, a query string or the body\. For more information, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.

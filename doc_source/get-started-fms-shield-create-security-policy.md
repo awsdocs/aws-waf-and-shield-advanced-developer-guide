@@ -27,7 +27,7 @@ You don't need to manually subscribe each member account to Shield Advanced\. Fi
 
 1. Choose **Next**\.
 
-1. For **Name**, enter a friendly name\. 
+1. For **Name**, enter a descriptive name\. 
 
 1. **AWS accounts affected by this policy** allows you to narrow the scope of your policy by specifying accounts to include or exclude\. For this tutorial, choose **Include all accounts under my organization\.** 
 

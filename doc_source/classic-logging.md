@@ -6,7 +6,9 @@ This is **AWS WAF Classic** documentation\. You should only use this version if 
 
 You can enable logging to get detailed information about traffic that is analyzed by your web ACL\. Information that is contained in the logs include the time that AWS WAF Classic received the request from your AWS resource, detailed information about the request, and the action for the rule that each request matched\.
 
-To get started, you set up an Amazon Kinesis Data Firehose\. As part of that process, you choose a destination for storing your logs\. Next, you choose the web ACL that you want to enable logging for\. After you enable logging, AWS WAF delivers logs through the firehose to your storage destination\. For more information about how to create an Amazon Kinesis Data Firehose and review the stored logs, see [What Is Amazon Kinesis Data Firehose?](https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html)
+To get started, you set up an Amazon Kinesis Data Firehose\. As part of that process, you choose a destination for storing your logs\. Next, you choose the web ACL that you want to enable logging for\. After you enable logging, AWS WAF delivers logs through the firehose to your storage destination\. 
+
+For information about how to create an Amazon Kinesis Data Firehose and review your stored logs, see [What Is Amazon Kinesis Data Firehose?](https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html) To understand the permissions required for your Kinesis Data Firehose configuration, see [Controlling Access with Amazon Kinesis Data Firehose](https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html)\.
 
 You must have the following permissions to successfully enable logging:
 + `iam:CreateServiceLinkedRole`
@@ -195,7 +197,7 @@ The metadata about the request\.
 The IP address of the client sending the request\.
 
 **country**  
-The source country of the request\.
+The source country of the request\. If AWS WAF is unable to determine the country of origin, it sets this field to `-`\. 
 
 **headers**  
 The list of headers\.

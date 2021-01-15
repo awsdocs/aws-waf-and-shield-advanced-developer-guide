@@ -23,7 +23,7 @@ The HTTP method, which indicates the type of operation that the web request is a
 
 **Query string**  
 The part of a URL that appears after a `?` character, if any\.  
-For cross\-site scripting match conditions, we recommend that you choose **All query parameters** instead of **Query string**\.
+For cross\-site scripting match conditions, we recommend that you choose **All query parameters** instead of **Query string**\. Choosing **All query parameters** adds 10 WCUs to the rule cost\.
 
 **Single query parameter**  
 Any parameter that you have defined as part of the query string\. AWS WAF inspects the value of the parameter that you specify\.   
@@ -31,7 +31,8 @@ For this option, you also specify a **Query parameter name**\. For example, if t
 If the query string contains more than one instance of the name that you've specified, AWS WAF inspects all the values for a match, using OR logic\. For example, in the URL `www.xyz.com?SalesRegion=boston&SalesRegion=seattle`, AWS WAF evaluates the name that you've specified against `boston` and `seattle`\. If either is a match, the inspection is a match\.
 
 **All query parameters**  
-Similar to **Single query parameter**, but AWS WAF inspects the values of all parameters within the query string\. For example, if the URL is `www.xyz.com?UserName=abc&SalesRegion=seattle`, AWS WAF triggers a match if either the value of `UserName` or `SalesRegion` match the inspection criteria\. 
+Similar to **Single query parameter**, but AWS WAF inspects the values of all parameters within the query string\. For example, if the URL is `www.xyz.com?UserName=abc&SalesRegion=seattle`, AWS WAF triggers a match if either the value of `UserName` or `SalesRegion` match the inspection criteria\.   
+Choosing this option adds 10 WCUs to the rule cost\.
 
 **URI**  
 The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\. If you don't use a text transformation with this option, AWS WAF doesn't normalize the URI and inspects it just as it receives it from the client in the request\. 

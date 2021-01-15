@@ -24,20 +24,23 @@ AWS Shield Advanced automatically mitigates DDoS attacks against your resources\
 **Note**  
 Shield Advanced detects web application layer events when you protect Amazon CloudFront distributions and Application Load Balancers\. These events indicate a statistically significant deviation in traffic, compared to your application’s historical baseline\. You can choose to take no action if a deviation is expected or has not affected the health of your resource\.
 
-The DRT can assist you with web application layer events if you grant limited access to your Shield Advanced and AWS WAF APIs, and access to the Amazon S3 bucket that contains your AWS WAF logs\. You can revoke access at any time\. The DRT engineers only access your APIs and AWS WAF logs with your authorization, limited to the scope of your support engagement\. 
+The DRT can assist you with web application layer events if you grant limited access to your Shield Advanced and AWS WAF APIs, and access to the storage destination that contains your AWS WAF logs\. You can revoke access at any time\. The DRT engineers only access your APIs and AWS WAF logs with your authorization, limited to the scope of your support engagement\. 
 
 **To authorize the DRT to assist with web application layer events on your behalf**
 
 1. In the AWS WAF console, enable AWS WAF logging for each web ACL that is attached to a Shield Advanced protected resource\. 
 
    For the DRT to view or process your AWS WAF logs, the logs must be in Amazon S3 buckets that satisfy the following requirements: 
-   + The buckets must be in the same AWS account as the web ACL\. 
+   + The buckets must be managed in one of the following ways:
+     + \(Option\) The buckets are in the same AWS account as the web ACL\. 
+     + \(Option\) The buckets are located in a separate account, and you have ensured that the DRT can access them\. If you have multiple accounts in your organization, you can use a central Amazon S3 bucket in any of your Shield Advanced accounts within the organization\. Alternately, you can use an Amazon S3 bucket in an account that does not have Shield Advanced providing it stores logs for an AWS WAF web ACL that is associated with a Shield Advanced protected resource\. 
+     + \(Option\) The buckets are the storage destination for logging that is managed by AWS Firewall Manager for an AWS WAF policy\. 
    + The buckets can be either plaintext  or SSE\-S3 encrypted\. For more information about Amazon S3 SSE\-S3 encryption, see [Protecting Data Using Server\-Side Encryption with Amazon S3\-Managed Encryption Keys \(SSE\-S3\)](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html) in the [Amazon Simple Storage Service Amazon Simple Storage Service Developer Guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/Welcome.html)\.
 
      The DRT cannot view or process logs that are stored in buckets that are encrypted with keys stored in AWS Key Management Service \(AWS KMS\)\. 
-   + You can give the DRT permission to access a maximum of 10 buckets\. 
+   + Shield Advanced allows you to give the DRT permission to access up to 10 buckets\. If you want to give permission to more than 10, you need to edit the bucket policies manually\.
 
-   For information about AWS WAF logging, see [Logging Web ACL traffic information](logging.md)\. 
+   For information about AWS WAF logging, see [Logging web ACL traffic information](logging.md)\. 
 
 1. In the AWS Shield console **Overview** page, under **Configure AWS DRT support**, choose **Edit DRT access**\.
 
@@ -50,6 +53,8 @@ The DRT can assist you with web application layer events if you grant limited ac
 1. For each Amazon S3 bucket where your AWS WAF logs are stored, enter the name of the bucket and choose **Add Bucket**\. You can add up to 10 buckets\.
 
    This grants the DRT the following permissions on the bucket: `s3:GetBucketLocation`, `s3:GetObject`, and `s3:ListBucket`\.
+
+   If you want to give the DRT permission to access more than 10 buckets, you can do this by editing the additional bucket policies manually\.
 
 1. Choose **Save**\.
 
@@ -69,4 +74,4 @@ If you provide more than one contact, in the **Notes**, indicate the circumstanc
 
 1. Choose **Edit proactive engagement feature**, choose **Enable**, and then choose **Save**\.
 
-   When you first enable proactive engagement, the request goes to manual review\. During this time, the proactive engagement status indicates that your request is pending review\. The DRT will contact you to schedule an architecture review, which includes a review of your Route 53 health check configurations\. When the review is complete, the DRT completes your request to enable proactive engagement\. 
+   When you first enable proactive engagement, the request goes to manual review\. \- During this time, the proactive engagement status indicates that your request \- is pending review\. The DRT will contact you to \- schedule an architecture review, which includes a review of your Route 53 health \- check configurations\. When the review is complete, the DRT completes your request \- to enable proactive engagement\. 

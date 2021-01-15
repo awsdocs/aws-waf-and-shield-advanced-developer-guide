@@ -10,12 +10,12 @@ AWS WAF has default quotas on the maximum number of entities you can have per ac
 
 | Resource | Default quota per account per Region | 
 | --- | --- | 
-|  Web ACLs  |  100  | 
-|  Rule groups   |  100  | 
-|  Web ACL capacity units \(WCUs\) per web ACL  |  1,500  | 
-| WCUs per rule group |  1,500  | 
-| IP sets  |  100  | 
-| Requests per second per web ACL \(applies only to Application Load Balancers\) |  25,000  | 
+|  Maximum number of web ACLs  |  100  | 
+|  Maximum number of rule groups   |  100  | 
+|  Maximum web ACL capacity units \(WCUs\) per web ACL  |  1,500  | 
+| Maximum WCUs per rule group |  1,500  | 
+| Maximum number of IP sets  |  100  | 
+| Maximum number of requests per second per web ACL \(applies only to Application Load Balancers\) |  25,000  | 
 
 The maximum requests per second \(RPS\) allowed for AWS WAF on CloudFront is set by CloudFront and described in the [CloudFront Developer Guide](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html)\.
 
@@ -24,14 +24,15 @@ AWS WAF has fixed quotas on the following entity settings per account per Region
 
 | Resource | Quota per account per Region | 
 | --- | --- | 
-| Maximum number of references \(to IP sets and regex pattern sets\) per rule group |  50  | 
-| Maximum number of references \(to IP sets, regex pattern sets, and rule groups\) per web ACL |  50  | 
-| IP addresses in CIDR notation per IP set |  10,000  | 
-| Unique IP addresses that can be blocked per rate\-based rule |  10,000  | 
-| Maximum characters allowed for a string match statement |  200  | 
-| Maximum characters allowed for each regex pattern |  200  | 
-| Unique regex patterns per regex set |  10  | 
-| Regex sets  |  10  | 
+| Maximum number of references per rule group to IP sets and regex pattern sets |  50  | 
+| Maximum number of references per web ACL to IP sets, regex pattern sets, and rule groups |  50  | 
+| Maximum number of IP addresses in CIDR notation per IP set |  10,000  | 
+| Maximum number of rate\-based rules per web ACL  |  10  | 
+| Maximum number of unique IP addresses that can be blocked per rate\-based rule |  10,000  | 
+| Maximum number of characters in a string match statement |  200  | 
+| Maximum number of characters in each regex pattern |  200  | 
+| Maximum number of unique regex patterns per regex set |  10  | 
+| Maximum number of regex sets  |  10  | 
 | Maximum size of a web request body that can be inspected |  8 KB  | 
 | Minimum request rate that can be defined for a rate\-based rule |  100  | 
 

@@ -34,7 +34,7 @@
          ]
      }
      ```
-   + For regional Amazon API Gateway REST API or Application Load Balancer applications \(`waf-regional`\):
+   + For regional Amazon API Gateway or Application Load Balancer applications \(`waf-regional`\):
 
      ```
      {

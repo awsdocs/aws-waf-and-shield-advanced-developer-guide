@@ -1,6 +1,6 @@
 # Monitoring with Amazon CloudWatch<a name="monitoring-cloudwatch"></a>
 
-You can monitor web requests and web ACLs and rules using Amazon CloudWatch, which collects and processes raw data from AWS WAF and AWS Shield Advanced into readable, near real\-time metrics\. These statistics are recorded for a period of two weeks, so that you can access historical information and gain a better perspective on how your web application or service is performing\.  For more information, see [What is CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html) in the *Amazon CloudWatch User Guide*\.
+You can monitor web requests and web ACLs and rules using Amazon CloudWatch, which collects and processes raw data from AWS WAF and AWS Shield Advanced into readable, near real\-time metrics\. You can use statistics in Amazon CloudWatch to gain a perspective on how your web application or service is performing\.  For more information, see [What is CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html) in the *Amazon CloudWatch User Guide*\.
 
 **Note**  
 CloudWatch metrics and alarms are not enabled for Firewall Manager\.
@@ -40,7 +40,7 @@ Metrics are grouped first by the service namespace, and then by the various dime
   For Shield Advanced, at a command prompt use the following command:
 
   ```
-  1. aws cloudwatch list-metrics --namespace "DDoSProtection"
+  1. aws cloudwatch list-metrics --namespace "AWS/DDoSProtection"
   ```
 
 ## AWS WAF metrics<a name="waf-metrics"></a>
@@ -62,7 +62,7 @@ AWS WAF for an Amazon CloudFront distribution can use the following dimension co
 + `RuleGroup`, `WebACL`
 + `Rule`, `RuleGroup`
 
-AWS WAF for an Amazon API Gateway REST API or an Application Load Balancer can use the following dimension combinations:
+AWS WAF for an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API can use the following dimension combinations:
 + `Region`, `Rule`, `WebACL`
 + `Region`, `RuleGroup`, `WebACL`
 + `Region`, `Rule`, `RuleGroup`
@@ -73,7 +73,7 @@ AWS WAF for an Amazon API Gateway REST API or an Application Load Balancer can u
 | `Rule` |  One of the following: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html)  | 
 | `RuleGroup` |  The metric name of the `RuleGroup`\.  | 
 | `WebACL` |  The metric name of the `WebACL`\.  | 
-| `Region` |  The Region of the Application Load Balancer\.  | 
+| `Region` |  The Region of the protected resource\.  | 
 
 ## AWS Shield Advanced metrics and alarms<a name="set-ddos-alarms"></a>
 

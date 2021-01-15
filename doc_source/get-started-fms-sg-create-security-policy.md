@@ -22,9 +22,9 @@ For this tutorial, you create a common security group policy and set its action 
 
 1. Choose **Next**\.
 
-1. For **Policy name**, enter a friendly name\. 
+1. For **Policy name**, enter a descriptive name\. 
 
-1. **Policy rules** allow you to choose how the security groups in this policy are applied and maintained\. For this tutorial, choose **Disassociate any other security groups from AWS resources within the policy scope\.** and leave the other options unchecked\. 
+1. **Policy rules** allow you to choose how the security groups in this policy are applied and maintained\. For this tutorial, leave the options unchecked\. 
 
 1. Choose **Add primary security group**, select the security group that you created for this tutorial, and choose **Add security group**\.
 
@@ -32,11 +32,11 @@ For this tutorial, you create a common security group policy and set its action 
 
 1. Choose **Next**\.
 
-1. **AWS accounts this policy applies to** allows you to narrow the scope of your policy by specifying accounts to include or exclude\. For this tutorial, choose **Include all accounts under my organization\.** 
+1. **AWS accounts affected by this policy** allows you to narrow the scope of your policy by specifying accounts to include or exclude\. For this tutorial, choose **Include all accounts under my organization\.** 
 
 1. For **Resource type**, choose one or more types, according to the resources you have defined for your AWS organization\. 
 
-   **Resources** allows you to narrow the scope of your policy by specifying resource tags for inclusion or exclusion\. To use tagging, you need to first tag your resources\. For more information about tagging your resources, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. For this tutorial, choose **Include all resources that match the selected resource type**\. 
+1. **Resources** allows you to narrow the scope of your policy by specifying resource tags for inclusion or exclusion\. To use tagging, you need to first tag your resources\. For more information about tagging your resources, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. For this tutorial, choose **Include all resources that match the selected resource type**\. 
 
 1. Choose **Next**\.
 
@@ -44,7 +44,7 @@ For this tutorial, you create a common security group policy and set its action 
 
 1. Choose **Create policy**\.
 
-   In the **AWS Firewall Manager policies** pane, your policy should be listed\. It will probably indicate **Pending** under the accounts headings and it will indicate that **Automatic remediation** is disabled\. The creation of a policy can take several minutes\. After the **Pending** status is replaced with account counts, you can choose the policy name to explore the compliance status of the accounts and resources\. For information, see [Viewing resource compliance for a policy](fms-compliance.md)
+   In the **AWS Firewall Manager policies** pane, your policy should be listed\. It will probably indicate **Pending** under the accounts headings and it will indicate that **Automatic remediation** is disabled\. The creation of a policy can take several minutes\. After the **Pending** status is replaced with account counts, you can choose the policy name to explore the compliance status of the accounts and resources\. For information, see [Viewing compliance information for an AWS Firewall Manager policy](fms-compliance.md)
 
 1. When you are finished exploring, if you don't want to keep the policy you created for this tutorial, choose the policy name, choose **Delete**, choose **Clean up resources created by this policy\.**, and finally choose **Delete**\. 
 

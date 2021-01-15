@@ -10,7 +10,7 @@ A regex pattern set match statement instructs AWS WAF to search for any of the p
 
 **Nestable** – You can nest this statement type inside logical rule statements and rate\-based statements\. 
 
-**WCUs** – 25 WCUs per regex pattern set\. 
+**WCUs** – 25 WCUs per regex pattern set\. If you use the request component **All query parameters**, add 10 WCUs\. 
 
 This statement operates on a web request component, and requires the following request component settings: 
 + **Request components** – The part of the web request to inspect, for example, a query string or the body\. For more information, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.

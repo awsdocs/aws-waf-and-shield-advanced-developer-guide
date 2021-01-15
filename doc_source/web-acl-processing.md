@@ -43,4 +43,4 @@ Excluding a single rule can help you troubleshoot false positives, which is when
 
 ## How AWS resources handle response delays from AWS WAF<a name="web-acl-processing-resource-default"></a>
 
-On some occasions, AWS WAF might encounter an internal error that delays the response to associated AWS resources about whether to allow or block a request\. On those occasions, CloudFront typically allows the request or serves the content, while Amazon API Gateway and Application Load Balancer typically deny the request and don't serve the content\.
+On some occasions, AWS WAF might encounter an internal error that delays the response to associated AWS resources about whether to allow or block a request\. On those occasions, CloudFront typically allows the request or serves the content, while the regional services typically deny the request and don't serve the content\.

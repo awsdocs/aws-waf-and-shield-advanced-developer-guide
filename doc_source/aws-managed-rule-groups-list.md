@@ -21,10 +21,10 @@ The Core rule set \(CRS\) rule group contains rules that are generally applicabl
 | --- | --- | 
 | NoUserAgent\_HEADER | Blocks requests with no HTTP User\-Agent header\. | 
 | UserAgent\_BadBots\_HEADER | Inspects for the presence of common User\-Agent header values indicating the request to be a bad bot\. Example patterns include nessus, and nmap\. | 
-| SizeRestrictions\_QUERYSTRING | Verifies that the URI query string length is within the standard boundary for applications\.  | 
-| SizeRestrictions\_Cookie\_HEADER | Verifies that the cookie header length is within the bounds common for many applications\.  | 
-| SizeRestrictions\_BODY | Verifies that the request body size is within the bounds common for many applications\.  | 
-| SizeRestrictions\_URIPATH | Verifies that the URI path length is within specification\. | 
+| SizeRestrictions\_QUERYSTRING | Verifies that the URI query string length is at most 2,048 bytes\.  | 
+| SizeRestrictions\_Cookie\_HEADER | Verifies that the cookie header length is at most 10,240 bytes\. | 
+| SizeRestrictions\_BODY | Verifies that the request body size is at most 10,240 bytes\.  | 
+| SizeRestrictions\_URIPATH | Verifies that the URI path length is at most 1,024 bytes\.  | 
 | EC2MetaDataSSRF\_BODY | Inspects for attempts to exfiltrate Amazon EC2 metadata from the request body\. | 
 | EC2MetaDataSSRF\_COOKIE | Inspects for attempts to exfiltrate Amazon EC2 metadata from the request cookie\. | 
 | EC2MetaDataSSRF\_URIPATH | Inspects for attempts to exfiltrate Amazon EC2 metadata from the request URI path\. | 

@@ -11,28 +11,6 @@ You can use Firewall Manager security group policies to do the following across 
 
 This section covers how Firewall Manager security groups policies work and provides guidance for using them\. For procedures to create security group policies, see [Creating an AWS Firewall Manager policy](create-policy.md)\.  
 
-## General settings for security group policies<a name="security-group-policies-general"></a>
-
-Security group policies in AWS Firewall Manager are similar to other Firewall Manager managed policies\. You pick a name and define the scope of the policy\. You can use resource tagging to control policy scope\. You can choose to view the accounts and resources that are out of compliance without taking corrective action or to automatically remediate noncompliant resources\. Once in place, Firewall Manager runs your security group policies continuously, and applies them to new AWS accounts and resources as they are added, according to the policy scope\. 
-
-**AWS accounts in scope**  
-The settings that you provide for the AWS accounts affected by the policy determine which of the accounts in your AWS organization to apply the security group policy to\. You can choose to apply the policy in one of the following ways: 
-+ To all accounts in your organization
-+ To only a specific list of included account numbers and AWS Organizations organizational units \(OUs\)
-+ To all except a specific list of excluded account numbers and AWS Organizations organizational units \(OUs\)
-
-Whichever option you choose, when you add a new account to your organization, Firewall Manager automatically assesses it against these settings in each security group policy and applies the policy as indicated\. For example, if you choose to apply the policy to all accounts except the account numbers in the list, when you add a new account, Firewall Manager applies the policy if the new account number isn't in the exclude list\.
-
-**Resources in scope**  
-The settings that you provide for resources determine which resources in the in\-scope accounts and resource types to apply the policy to\. You can choose one of the following: 
-+ All resources 
-+ All resources except those that have all the tags that you specify
-+ Resources that have all the tags that you specify
-
-For more information about tagging your resources, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. 
-
-Whichever option you choose, when you add a new resource to your organization, Firewall Manager automatically assesses the resources against these settings in each security group policy and applies the policy as indicated\. For example, if you choose to apply the policy only to resources that have all the tags in the list, when you add or update a resource within your policy's account and resource type parameters, Firewall Manager compares the resource's tags to the list and applies the policy if the resource has all the tags\. 
-
 ## Common security group policies<a name="security-group-policies-common"></a>
 
 With a common security group policy, Firewall Manager provides a centrally controlled association of security groups to accounts and resources across your organization\. You specify where and how to apply the policy in your organization\. 
@@ -151,6 +129,7 @@ Similarly, in your outside tool or service, exclude the security groups that Fir
  This section lists the limitations for using AWS Firewall Manager security group policies:
 + Updating security groups for Amazon EC2 elastic network interfaces that were created using the Fargate service type is not supported\. You can, however, update security groups for Amazon ECS elastic network interfaces with the Amazon EC2 service type\. 
 + Updating Amazon ECS elastic network interfaces is possible only for Amazon ECS services that use the rolling update \(Amazon ECS\) deployment controller\. For other Amazon ECS deployment controllers such as CODE\_DEPLOY or external controllers, Firewall Manager currently can't update the elastic network interfaces\. 
++ With security groups for Amazon EC2 elastic network interfaces, changes to a security group aren't immediately visible to Firewall Manager\. Firewall Manager usually detects changes within several hours, but detection can be delayed as much as six hours\. 
 + Firewall Manager doesn't support updating security groups in elastic network interfaces for Network Load Balancers\. 
 + Firewall Manager doesn’t support security group references in common security group policies\. 
 

@@ -8,10 +8,11 @@ AWS Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator\
 **Topics**
 + [Creating an AWS Firewall Manager policy for AWS WAF](#creating-firewall-manager-policy-for-waf)
 + [Creating an AWS Firewall Manager policy for AWS WAF Classic](#creating-firewall-manager-policy-for-classic-waf)
-+ [Creating an AWS Firewall Manager policy for shield advanced](#creating-firewall-manager-policy-for-shield-advanced)
++ [Creating an AWS Firewall Manager policy for Shield Advanced](#creating-firewall-manager-policy-for-shield-advanced)
 + [Creating an AWS Firewall Manager common security group policy](#creating-firewall-manager-policy-common-security-group)
 + [Creating an AWS Firewall Manager content audit security group policy](#creating-firewall-manager-policy-audit-security-group)
 + [Creating an AWS Firewall Manager usage audit security group policy](#creating-firewall-manager-policy-usage-security-group)
++ [Creating an AWS Firewall Manager policy for AWS Network Firewall](#creating-firewall-manager-policy-for-network-firewall)
 
 ## Creating an AWS Firewall Manager policy for AWS WAF<a name="creating-firewall-manager-policy-for-waf"></a>
 
@@ -135,7 +136,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Review the new policy\. To make any changes, choose **Edit**\. When you are satisfied with the policy, choose **Create and apply policy**\.
 
-## Creating an AWS Firewall Manager policy for shield advanced<a name="creating-firewall-manager-policy-for-shield-advanced"></a><a name="get-started-fms-shield-create-security-policy-procedure"></a>
+## Creating an AWS Firewall Manager policy for Shield Advanced<a name="creating-firewall-manager-policy-for-shield-advanced"></a><a name="get-started-fms-shield-create-security-policy-procedure"></a>
 
 **To create a Firewall Manager policy for Shield Advanced \(console\)**
 
@@ -234,6 +235,8 @@ For information about setting up a Firewall Manager administrator account, see [
 1. For **Resource type**, choose the types of resources that you want to protect\. 
 
    If you choose **EC2 instance**, you can choose to include all elastic network interfaces in each Amazon EC2 instance or just the default interface in each instance\. If you have more than one elastic network interface in any in\-scope Amazon EC2 instance, choosing the option to include all interfaces allows Firewall Manager to apply the policy to all of them\. When you enable automatic remediation, if Firewall Manager can't apply the policy to all elastic network interfaces in an Amazon EC2 instance, it marks the instance as noncompliant\.
+
+   
 
 1. For **Resources**, if you want to apply the policy to all resources within the AWS accounts and resource type parameters, choose **Include all resources that match the selected resource type**\. If you want to include or exclude specific resources, use tagging to specify the resources, and then choose the appropriate option and add the tags to the list\. You can apply the policy either to all resources except those that have all the tags that you specify, or you can apply it to only those that have all the tags that you specify\. For more information about tagging your resources, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. 
 **Note**  
@@ -376,3 +379,60 @@ If you enter more than one tag, a resource must have all the tags to be a match\
 1. Review the policy settings to be sure they're what you want, and then choose **Create policy**\.
 
 If you chose to require unique security groups, Firewall Manager scans for redundant security groups in each in\-scope Amazon VPC instance\. Then, if you chose to require that each security group be used by at least one resource, Firewall Manager scans for security groups that have remained unused for the minutes specified in the rule\. You can review the policy status in the AWS Firewall Manager policy console\. For more information about how this policy works, see [Usage audit security group policies](security-group-policies.md#security-group-policies-usage)\.
+
+## Creating an AWS Firewall Manager policy for AWS Network Firewall<a name="creating-firewall-manager-policy-for-network-firewall"></a>
+
+In a Firewall Manager Network Firewall policy, you use rule groups that you manage in AWS Network Firewall\. For information about managing your rule groups, see [AWS Network Firewall rule groups](https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups.html) in the *Network Firewall Developer Guide*\.
+
+For information about Firewall Manager Network Firewall policies, see [AWS Network Firewall policies](network-firewall-policies.md)\.
+
+**To create a Firewall Manager policy for AWS Network Firewall \(console\)**
+
+1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites \([AWS Firewall Manager prerequisites](fms-prereq.md)\), and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
+**Note**  
+For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\.
+
+1. In the navigation pane, choose **Security policies**\.
+
+1. Choose **Create policy**\.
+
+1. For **Policy type**, choose **Network Firewall firewall**\. 
+
+1. For **Region**, choose an AWS Region\. To protect resources in multiple Regions, you must create separate policies for each Region\. 
+
+1. Choose **Next**\.
+
+1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the Network Firewall firewalls and firewall policies that it creates\. 
+
+1. In the policy configuration, configure the firewall policy as you would in Network Firewall\. Add your stateless and stateful rule groups and specify the policy's default actions\. For information about Network Firewall firewall policy management, see [AWS Network Firewall firewall policies](https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-policies.html) in the *AWS Network Firewall Developer Guide*\.
+
+   When you create the Firewall Manager Network Firewall policy, Firewall Manager creates firewall policies for the accounts that are within scope\. Individual account managers can add rule groups to the firewall policies, but they can't change the configuration that you provide here\.
+
+1. For the **Firewall endpoints** configuration, specify how you want the firewall endpoints to be managed by Firewall Manager\. We recommend using multiple endpoints for high availability\. 
+
+1. If you want to provide the CIDR blocks for Firewall Manager to use for firewall subnets in your VPCs, enter those, one CIDR block per line\. If you omit these, Firewall Manager chooses IP addresses for you from those that are available in the VPCs\.
+
+1. Choose **Next**\.
+
+1. For **AWS accounts this policy applies to**, choose the option as follows: 
+   + If you want to apply the policy to all accounts in your organization, leave the default selection, **Include all accounts under my AWS organization**\. 
+   + If you want to apply the policy only to specific accounts or accounts that are in specific AWS Organizations organizational units \(OUs\), choose **Include only the specified accounts and organizational units**, and then add the accounts and OUs that you want to include\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+   + If you want to apply the policy to all but a specific set of accounts or AWS Organizations organizational units \(OUs\), choose **Exclude the specified accounts and organizational units, and include all others**, and then add the accounts and OUs that you want to exclude\. Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time\. 
+
+   You can only choose one of the options\. 
+
+   After you apply the policy, Firewall Manager automatically evaluates any new accounts against your settings\. For example, if you include only specific accounts, Firewall Manager doesn't apply the policy to any new accounts\. As another example, if you include an OU, when you add an account to the OU or to any of its child OUs, Firewall Manager automatically applies the policy to the new account\.
+
+1. The **Resource type** for Network Firewall policies is **VPC**\. 
+
+1. For **Resources**, if you want to protect \(or exclude\) only resources that have specific tags, select the appropriate option, then enter the tags to include or exclude\. You can choose only one option\. For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. 
+
+   If you enter more than one tag, a resource must have all of the tags to be included or excluded\.
+
+1. Choose **Next**\.
+
+1. For **Policy tags**, add any identifying tags that you want for the Firewall Manager Network Firewall policy\. For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\.
+
+1. Choose **Next**\.
+
+1. Review the new policy\. To make any changes, choose **Edit** in the area that you want to change\. This returns you to the corresponding step in the creation wizard\. When you are satisfied with the policy, choose **Create policy**\.

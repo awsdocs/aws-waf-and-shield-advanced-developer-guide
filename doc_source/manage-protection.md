@@ -1,17 +1,17 @@
-# Managing AWS Shield Advanced protections<a name="manage-protection"></a>
+# Configuring AWS Shield Advanced protections<a name="manage-protection"></a>
 
-You can change the settings for your AWS Shield Advanced protections at any time\. To do this, walk through the options for all of your protections and modify the settings that you need to change\.
+You can change the settings for your AWS Shield Advanced protections at any time\. To do this, walk through the options for your selected protections and modify the settings that you need to change\. 
 
 **Note**  
 The console guidance provided here is for the latest version of the AWS Shield console, released in 2020\. In the console, you can switch between versions\. 
 
-**To manage protections**
+**To manage protected resources**
 
 1. Sign in to the AWS Management Console and open the AWS WAF & Shield console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
 1. In the AWS Shield navigation pane, choose **Protected resources**\.
 
-1. If you want to manage specific resources, select them\. 
+1. In the **Protected resources** tab, select the resources that you want to protect\. 
 
 1. Choose **Configure protections** and the resource specification option that you want\.
 

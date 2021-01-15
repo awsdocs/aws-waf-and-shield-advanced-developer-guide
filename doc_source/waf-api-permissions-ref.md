@@ -10,7 +10,7 @@ You can use AWS\-wide condition keys in your AWS WAF policies to express conditi
 **Global and regional settings**  
 In the resource settings in this section, use the following `scope` and `region` settings: 
 + For CloudFront distributions, set *scope* to `global` and set *region* to `us-east-1`\.
-+ For API Gateway APIs and Application Load Balancers, set *scope* to `regional` and set the *region* to the region you're interested in\.
++ For an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API, set *scope* to `regional` and set the *region* to the region you're interested in\.
 
 ## AWS WAF API permissions for references to resources<a name="waf-api-permissions-for-refs"></a>
 
@@ -63,11 +63,12 @@ The following operations don't follow the standard CRUD and list pattern and req
 For each operation, we list the required policy actions and their associated policy resources\. <a name="actions-related-to-objects-table_pdf"></a>
 
 [AssociateWebACL ](https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html)  
-**API Actions** – `wafv2:AssociateWebACL`, `elasticloadbalancing:SetWebACL`, `apigateway:SetWebACL`  
+**API Actions** – `wafv2:AssociateWebACL`, `elasticloadbalancing:SetWebACL`, `apigateway:SetWebACL`, `appsync:SetWebACL`  
 **Resources** –  
 `arn:aws:wafv2:region:account-id:scope/webacl/entity-name/entity-ID`  
 `arn:aws:elasticloadbalancing:region:account-id:loadbalancer/app/ApplicationLoadBalancerName/ApplicationLoadBalancerID`  
-`arn:aws:apigateway:region::/restapis/api-ID/stages/stage-name`
+`arn:aws:apigateway:region::/restapis/api-ID/stages/stage-name`  
+`arn:aws:appsync:region:account-id:apis/GraphQLApiId`
 
 [CheckCapacity](https://docs.aws.amazon.com/waf/latest/APIReference/API_CheckCapacity.html)  
 **API Action** – `wafv2:CheckCapacity`  
@@ -78,11 +79,12 @@ For each operation, we list the required policy actions and their associated pol
 **Resource** – `arn:aws:wafv2:region:account-id:scope/managedruleset/*`
 
 [DisassociateWebACL](https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateWebACL.html)  
-**API Actions** – `wafv2:DisassociateWebACL`, `elasticloadbalancing:SetWebACL`, `apigateway:SetWebACL`  
+**API Actions** – `wafv2:DisassociateWebACL`, `elasticloadbalancing:SetWebACL`, `apigateway:SetWebACL`, `appsync:SetWebACL`  
 **Resources** –  
 `arn:aws:wafv2:region:account-id:scope/webacl/entity-name/entity-ID`  
  `arn:aws:elasticloadbalancing:region:account-id:loadbalancer/app/ApplicationLoadBalancerName/ApplicationLoadBalancerID`  
-`arn:aws:apigateway:region::/restapis/api-ID/stages/stage-name`
+`arn:aws:apigateway:region::/restapis/api-ID/stages/stage-name`  
+`arn:aws:appsync:region:account-id:apis/GraphQLApiId`
 
 [GetRateBasedStatementManagedKeys](https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedStatementManagedKeys.html)  
 **API Action** – `wafv2:GetRateBasedStatementManagedKeys`  

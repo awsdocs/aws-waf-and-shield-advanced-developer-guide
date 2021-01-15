@@ -59,7 +59,8 @@ The HTTP method, which indicates the type of operation that the request is askin
 The part of a URL that appears after a `?` character, if any\.  
 For cross\-site scripting match conditions, we recommend that you choose **All query parameters \(values only\)** instead of **Query string** for **Part of the request to filter on**\.  
 **URI**  
-The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\. Unless a **Transformation** is specified, a URI is not normalized and is inspected just as AWS receives it from the client as part of the request\. A **Transformation** will reformat the URI as specified\.  
+The URI path of the request, which identifies the resource, for example, `/images/daily-ad.jpg`\. This doesn't include the query string or fragment components of the URI\. For information, see [Uniform Resource Identifier \(URI\): Generic Syntax](https://tools.ietf.org/html/rfc3986#section-3.3)\.   
+Unless a **Transformation** is specified, a URI is not normalized and is inspected just as AWS receives it from the client as part of the request\. A **Transformation** will reformat the URI as specified\.  
 **Body**  
 The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form\.  
 If you choose **Body** for the value of **Part of the request to filter on**, AWS WAF Classic inspects only the first 8192 bytes \(8 KB\)\. To allow or block requests for which the body is longer than 8192 bytes, you can create a size constraint condition\. \(AWS WAF Classic gets the length of the body from the request headers\.\) For more information, see [Working with size constraint conditions](classic-web-acl-size-conditions.md)\.  

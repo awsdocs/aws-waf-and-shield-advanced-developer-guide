@@ -1,6 +1,11 @@
 # Monitoring AWS WAF, AWS Firewall Manager, and AWS Shield Advanced<a name="monitoring_overview"></a>
 
-Monitoring is an important part of maintaining the reliability, availability, and performance of AWS WAF, AWS Firewall Manager, and AWS Shield Advanced and for identifying possible DDoS attacks using Shield Advanced\. As you start monitoring these services, you should create a monitoring plan that includes answers to the following questions:
+Monitoring is an important part of maintaining the reliability, availability, and performance of your services\. 
+
+**Note**  
+For information about monitoring your Shield Advanced resources and identifying possible DDoS attacks using Shield Advanced, see [AWS Shield](shield-chapter.md)\. 
+
+As you start monitoring these services, you should create a monitoring plan that includes answers to the following questions:
 + What are your monitoring goals?
 + What resources will you monitor?
 + How often will you monitor these resources?

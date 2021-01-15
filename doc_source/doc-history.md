@@ -2,9 +2,14 @@
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Firewall Manager supports AWS Network Firewall policies](network-firewall-policies.md) | AWS Firewall Manager supports central management of AWS Network Firewall network traffic filtering for your VPCs\.  | November 17, 2020 | 
+| [Add support for AWS Shield Advanced protection groups](ddos-overview.md#ddos-advanced-protection-groups) | You can now group your protected resources into logical groups and manage their protections collectively\.  | November 13, 2020 | 
+| [Added support for AWS AppSync to AWS WAF](waf-chapter.md) | You can now associate a AWS WAF web ACL with your AWS AppSync GraphQL API\. This change is only available in the latest version of AWS WAF and not in AWS WAF Classic\. | October 1, 2020 | 
+| [Updated AWS Managed Rules for AWS WAF](aws-managed-rule-groups-changelog.md) | AWS Managed Rules for AWS WAF updated the Windows operating system rule set\.  | September 23, 2020 | 
+| [Updated AWS Managed Rules for AWS WAF](aws-managed-rule-groups-changelog.md) | AWS Managed Rules for AWS WAF updated the rule sets PHP application and POSIX operating system\.  | September 16, 2020 | 
 | [Updated AWS Shield console ](getting-started-ddos.md) | AWS Shield offers a new console option, with an improved user experience\. The console guidance in the documentation is for the new console\.  | September 1, 2020 | 
 | [Firewall Manager updates to common security group policies](security-group-policies.md#security-group-policies-use-cases) | AWS Firewall Manager common security group policies now support Application Load Balancers and Classic Load Balancers resource types through the console implementation\. The new options are available in the common policy's **Policy scope** settings\. | August 11, 2020 | 
-| [Updated AWS Managed Rules for AWS WAF](aws-managed-rule-groups-changelog.md) | AWS Managed Rules for AWS WAF updated the core rule set AWSManagedRulesCommonRuleSet\.  | August 7, 2020 | 
+| [Updated AWS Managed Rules for AWS WAF](aws-managed-rule-groups-changelog.md) | AWS Managed Rules for AWS WAF updated the core rule set\.  | August 7, 2020 | 
 | [Firewall Manager supports AWS WAF logging configuration](waf-policies.md#waf-policies-logging-config) | AWS Firewall Manager now supports centralized logging configuration for AWS WAF policies\.  | July 30, 2020 | 
 | [Specify IP address location in web request](waf-rule-statement-forwarded-ip-address.md) | Added the option to use IP addresses from an HTTP header that you specify, instead of using the web request origin\. The alternate header is commonly `X-Forwarded-For` \(XFF\), but you can specify any header name\. You can use this option for IP set matching, geo matching, and rate\-based rule count aggregation\. | July 9, 2020 | 
 | [Firewall Manager updates to content audit security group policies](security-group-policies.md#security-group-policies-audit) | AWS Firewall Manager has expanded functionality for content audit security group policies including a managed rules option, that uses managed application and protocol lists, and details for resource violations\.  | July 7, 2020 | 
@@ -32,10 +37,10 @@
 | [Tutorial: Creating hierarchical policies](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | Added tutorial on creating hierarchical policies in AWS Firewall Manager\. | February 11, 2019 | 
 | [Rule\-level control in rule groups](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | You can now exclude individual rules from AWS Marketplace rule groups, as well as your own rule groups\. | December 12, 2018 | 
 | [AWS Shield Advanced support for AWS Global Accelerator](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | Shield Advanced can now protect AWS Global Accelerator\. | November 26, 2018 | 
-| [AWS WAF support for Amazon API Gateway REST API](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | AWS WAF now protects Amazon API Gateway REST APIs\. | October 25, 2018 | 
+| [AWS WAF support for ](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | AWS WAF now protects s\. | October 25, 2018 | 
 | [Expanded AWS shield advanced getting started wizard](https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html) | New wizard provides opportunity to create rate\-based rules and Amazon CloudWatch Events\. | August 31, 2018 | 
 | [AWS WAF logging](https://docs.aws.amazon.com/waf/latest/developerguide/logging.html) | Enable logging to get detailed information about traffic that is analyzed by your web ACL\. | August 31, 2018 | 
-| [Support for query parameters in conditions](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-request-component.html) | When creating a condition, you can now search the requests for specific parameters\. | June 5, 2018 | 
+| [Support for query parameters in conditions](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-fields.html) | When creating a condition, you can now search the requests for specific parameters\. | June 5, 2018 | 
 | [Shield advanced getting started wizard](https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html) | Introduces a new streamlined process for subscribing to AWS Shield Advanced\. | June 5, 2018 | 
 | [Expanded allowed CIDR ranges](https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-ipset-match.html) | When creating an IP match condition, AWS WAF now supports IPv4 address ranges: /8 and any range between /16 through /32\.  | June 5, 2018 | 
 

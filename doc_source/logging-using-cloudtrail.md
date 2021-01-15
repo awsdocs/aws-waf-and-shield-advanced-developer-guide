@@ -474,7 +474,7 @@ The following example shows a CloudTrail log entry that demonstrates the `Delete
     "eventTime": "2018-01-10T21:31:14Z",
     "eventSource": "shield.amazonaws.com",
     "eventName": "DeleteProtection",
-    "awsRegion": "us-west-2",
+    "awsRegion": "us-east-1",
     "sourceIPAddress": "AWS Internal",
     "userAgent": "aws-cli/1.14.10 Python/3.6.4 Darwin/16.7.0 botocore/1.8.14",
     "requestParameters": {
@@ -500,7 +500,7 @@ The following example shows a CloudTrail log entry that demonstrates the `Delete
     "eventTime": "2018-01-10T21:30:03Z",
     "eventSource": "shield.amazonaws.com",
     "eventName": "ListProtections",
-    "awsRegion": "us-west-2",
+    "awsRegion": "us-east-1",
     "sourceIPAddress": "AWS Internal",
     "userAgent": "aws-cli/1.14.10 Python/3.6.4 Darwin/16.7.0 botocore/1.8.14",
     "requestParameters": null,

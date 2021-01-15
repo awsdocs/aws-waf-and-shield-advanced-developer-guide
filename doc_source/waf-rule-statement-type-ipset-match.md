@@ -2,6 +2,8 @@
 
 The IP set match statement inspects the IP address of a web request against a set of IP addresses and address ranges\. Use this to allow or block web requests based on the IP addresses that the requests originate from\. By default, AWS WAF uses the IP address from the web request origin, but you can configure the rule to use an HTTP header like `X-Forwarded-For` instead\. 
 
+
+
 AWS WAF supports all IPv4 and IPv6 CIDR ranges except for `/0`\. For more information about CIDR notation, see the Wikipedia entry [Classless Inter\-Domain Routing](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)\. An IP set can hold up to 10,000 IP addresses or IP address ranges to check\.
 
 **Note**  

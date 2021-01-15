@@ -6,5 +6,6 @@ This topic shows you how to prepare your account to use AWS Firewall Manager\. B
 + [Step 1: Join AWS Organizations](join-aws-orgs.md)
 + [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)
 + [Step 3: Enable AWS Config](enable-config.md)
++ [Step 4: For Network Firewall policies, enable resource sharing](enable-ram.md)
 
 You can now configure Firewall Manager to begin protecting your resources\. For more information, see [Getting started with AWS Firewall Manager AWS WAF policies](getting-started-fms.md)\.

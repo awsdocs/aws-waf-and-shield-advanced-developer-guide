@@ -8,7 +8,10 @@ This changelog reports changes to the rules and rule groups in AWS Managed Rules
 
 | Rule group | Rules affected | Description | Date | 
 | --- | --- | --- | --- | 
-| Core rule set AWSManagedRulesCommonRuleSet |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-changelog.html)  | Changed the text transformation from HTML decode to URL decode, to improve blocking\.  | Aug 07, 2020 | 
+| Windows operating system | All | Improved the configuration of the rules\.  | Sep 23, 2020 | 
+| PHP application |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-changelog.html)  | Changed the text transformation from HTML decode to URL decode, to improve blocking\.  | Sep 16, 2020 | 
+| POSIX operating system |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-changelog.html)  | Changed the text transformation from HTML decode to URL decode, to improve blocking\.  | Sep 16, 2020 | 
+| Core rule set |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-changelog.html)  | Changed the text transformation from HTML decode to URL decode, to improve blocking\.  | Aug 07, 2020 | 
 | Linux operating system |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-changelog.html)  | Changed the text transformation from HTML entity decode to URL decode, to improve detection and blocking\.  | May 19, 2020 | 
 | Anonymous IP List | All | New rule group in [IP reputation rule groups](aws-managed-rule-groups-list.md#aws-managed-rule-groups-ip-rep) to block requests from services that allow the obfuscation of viewer identity, to help mitigate bots and evasion of geographic restrictions\.  | March 06, 2020 | 
 | Wordpress application | [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-changelog.html) | New rule that checks for exploitable commands in the query string\. | March 03, 2020 | 

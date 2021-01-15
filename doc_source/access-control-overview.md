@@ -35,9 +35,9 @@ The following table lists the format for each resource\.
 | Regex pattern set | RegexPatternSet |  `arn:aws:wafv2:region:account:scope/regexpatternset/name/ID`  | 
 
 To specify an AWS WAF resource ARN, replace the variables in the ARN formats with valid values as follows: 
-+ *region*: The AWS Region you're using\. For Amazon CloudFront, set this to `us-east-1`\. For Application Load Balancer or Amazon API Gateway, set this to the region you're interested in\. 
++ *region*: The AWS Region you're using\. For Amazon CloudFront, set this to `us-east-1`\. For regional resources, set this to the Region you're interested in\. 
 + *account*: The ID of your AWS account\. 
-+ *scope*: The scope of the resource, which can be either `regional`, for use with Application Load Balancer or Amazon API Gateway, or `global`, for use with Amazon CloudFront\. 
++ *scope*: The scope of the resource, which can be either `regional`, for use with an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API or `global`, for use with an Amazon CloudFront distribution\. 
 + *name*: The name that you gave the AWS WAF resource, or a wildcard \(`*`\) to indicate all resources of the specified type that are associated with the specified AWS account\. If you use the wildcard for the name, you must also use it for the ID\.
 + *ID*: The ID of the AWS WAF resource, or a wildcard \(`*`\) to indicate all resources of the specified type that are associated with the specified AWS account\. If you use the wildcard for the ID, you must also use it for the name\.
 

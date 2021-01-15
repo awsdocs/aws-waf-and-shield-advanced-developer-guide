@@ -60,7 +60,8 @@ The HTTP method, which indicates the type of operation that the request is askin
 **Query string**  
 The part of a URL that appears after a `?` character, if any\.  
 **URI**  
-The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\. Unless a **Transformation** is specified, a URI is not normalized and is inspected just as AWS receives it from the client as part of the request\. A **Transformation** will reformat the URI as specified\.  
+The URI path of the request, which identifies the resource, for example, `/images/daily-ad.jpg`\. This doesn't include the query string or fragment components of the URI\. For information, see [Uniform Resource Identifier \(URI\): Generic Syntax](https://tools.ietf.org/html/rfc3986#section-3.3)\.   
+Unless a **Transformation** is specified, a URI is not normalized and is inspected just as AWS receives it from the client as part of the request\. A **Transformation** will reformat the URI as specified\.  
 **Body**  
 The part of a request that contains any additional data that you want to send to your web server as the HTTP request body, such as data from a form\.  
 **Single query parameter \(value only\)**  
@@ -78,7 +79,7 @@ For example, if you choose **Is greater than** for **Comparison operator** and t
 
 **Size**  
 Enter the length, in bytes, that you want AWS WAF Classic to watch for in query strings\.  
-If you choose **URI** for the value of **Part of the request to filter on**, the **/** in the URI counts as one character\. For example, the URI `/logo.jpg` is nine characters long\.
+If you choose **URI** for the value of **Part of the request to filter on**, the **/** in the URI counts as one character\. For example, the URI path `/logo.jpg` is nine characters long\.
 
 **Transformation**  
 A transformation reformats a web request before AWS WAF Classic evaluates the length of the specified part of the request\. This eliminates some of the unusual formatting that attackers use in web requests in an effort to bypass AWS WAF Classic\.   
