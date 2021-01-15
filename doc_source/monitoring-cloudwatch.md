@@ -40,7 +40,7 @@ Metrics are grouped first by the service namespace, and then by the various dime
   For Shield Advanced, at a command prompt use the following command:
 
   ```
-  1. aws cloudwatch list-metrics --namespace "DDoSProtection"
+  1. aws cloudwatch list-metrics --namespace "AWS/DDoSProtection"
   ```
 
 ## AWS WAF metrics<a name="waf-metrics"></a>
