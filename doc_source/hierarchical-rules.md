@@ -20,7 +20,7 @@ The following tutorial describes how to create a hierarchical set of protection 
 
 ## Step 1: Designate a Firewall Manager administrator account<a name="hierarchical-rules-set-firewall-administrator"></a>
 
-To use AWS Firewall Manager, you must designate an account in your organization as the Firewall Manager administrator account\. This account can be either the master account or a member account in the organization\. 
+To use AWS Firewall Manager, you must designate an account in your organization as the Firewall Manager administrator account\. This account can be either the management account or a member account in the organization\. 
 
 You can use the Firewall Manager administrator account to create a set of common rules that you apply to other accounts in the organization\. Other accounts in the organization can't change these centrally applied rules\.
 
@@ -53,7 +53,7 @@ In this tutorial, we refer to this web ACL as **Administrator\-Created\-ACL**\. 
 
 Each member account in the organization can now add their own account\-specific rules to the **Administrator\-Created\-ACL** that exists in their account\. The common rules already in **Administrator\-Created\-ACL** continue to apply, along with the new, account\-specific rules\. AWS WAF inspects web requests based on the order in which rules appear in the web ACL\. This applies to both **Administrator\-Created\-ACL** and account\-specific rules\.
 
-To add rules to **Administrator\-Created\-ACL**, see [Editing a Web ACL](web-acl-editing.md)\.
+To add rules to **Administrator\-Created\-ACL**, see [Editing a web ACL](web-acl-editing.md)\.
 
 ## Conclusion<a name="hierarchical-rules-conclusion"></a>
 

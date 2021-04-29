@@ -1,4 +1,4 @@
-# Rule statements that reference a set or a rule group<a name="waf-rule-statement-reusable-entities"></a>
+# Statements that reference a set or a rule group<a name="waf-rule-statement-reusable-entities"></a>
 
 Some rules use entities that are reusable and that are managed outside of your web ACLs, either by you, AWS, or an AWS Marketplace seller\. When the reusable entity is updated, AWS WAF propagates the update to your rule\. For example, if you use an AWS Managed Rules rule group in a web ACL, when AWS updates the rule group, AWS propagates the change to your web ACL, to update its behavior\. If you use an IP set statement in a rule, when you update the set, AWS WAF propagates the change to all rules that reference it, so any web ACLs that use those rules are kept up\-to\-date with your changes\. 
 

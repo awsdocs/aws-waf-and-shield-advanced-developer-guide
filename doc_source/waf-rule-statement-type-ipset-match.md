@@ -12,7 +12,7 @@ For information about creating and managing an IP set, see [Creating and managin
 
 When you add or update the rules in your rule group or web ACL, choose the option **IP set** and select the name of the IP set that you want to use\. 
 
-**Nestable** – You can nest this statement type inside logical rule statements and rate\-based statements\. 
+**Nestable** – You can nest this statement type\. 
 
 **WCUs** – 1 WCU for most\. If you configure the statement to use forwarded IP addresses and specify a position of `ANY`, the WCU usage is 5\.
 

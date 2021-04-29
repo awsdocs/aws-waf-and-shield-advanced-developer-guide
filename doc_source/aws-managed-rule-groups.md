@@ -11,6 +11,6 @@ If you are encountering false\-positive scenarios with AWS Managed Rules rule gr
 
 1. Use either AWS WAF sampled requests or AWS WAF logs to identify which AWS Managed Rules rule group is triggering the false positive\. You can identify the AWS Managed Rules rule group by looking at the `ruleGroupId` field in the log or the `RuleWithinRuleGroup` in the sampled request\. The rule name follows this pattern: `AWS#<AMR RuleGroup Name>#<AMR Rule Name>`\. 
 
-1. On the AWS WAF console, edit the web ACL, locate the AWS Managed Rules rule group that you've identified, and disable the rule that is causing the false positive\. 
+1. On the AWS WAF console, edit the web ACL, locate the AWS Managed Rules rule group that you've identified, remove your count override for the rules that aren't causing the false positive, and leave the rule that is causing the false positive in count mode\. 
 
 For more information about a rule in an AWS Managed Rules rule group, contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\. 

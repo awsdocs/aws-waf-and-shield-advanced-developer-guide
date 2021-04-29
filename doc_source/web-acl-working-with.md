@@ -4,7 +4,8 @@ When you make changes to web ACLs or web ACL components, like rules and rule gro
 
 **Topics**
 + [Creating a web ACL](web-acl-creating.md)
-+ [Associating or disassociating a Web ACL with an AWS resource](web-acl-associating-aws-resource.md)
-+ [Editing a Web ACL](web-acl-editing.md)
-+ [Deleting a Web ACL](web-acl-deleting.md)
++ [Editing a web ACL](web-acl-editing.md)
++ [Managing rule group behavior in a web ACL](web-acl-rule-group-settings.md)
++ [Associating or disassociating a web ACL with an AWS resource](web-acl-associating-aws-resource.md)
++ [Deleting a web ACL](web-acl-deleting.md)
 + [Testing web ACLs](web-acl-testing.md)

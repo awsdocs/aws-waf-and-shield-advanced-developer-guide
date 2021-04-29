@@ -2,16 +2,16 @@
 
 A string match statement indicates the string that you want AWS WAF to search for in a request, where in the request to search, and how\. For example, you can look for a specific string at the start of any query string in the request or as an exact match for the request's `User-agent` header\. Usually, the string consists of printable ASCII characters, but you can use any character from hexadecimal 0x00 to 0xFF \(decimal 0 to 255\)\. 
 
-**Nestable** – You can nest this statement type inside logical rule statements and rate\-based statements\. 
+**Nestable** – You can nest this statement type\. 
 
-**WCUs** – Depends on the type of match that you use\.
+**WCUs** – The base cost depends on the type of match that you use\.
 + **Exactly matches string** – 2 
 + **Starts with string** – 2 
 + **Ends with string** – 2 
 + **Contains string** – 10 
 + **Contains word** – 10 
 
-If you use the request component **All query parameters**, add 10 WCUs\. 
+If you use the request component **All query parameters**, add 10 WCUs\. If you use the request component **JSON body**, double the statement's base cost WCUs\. For each **Text transformation** that you apply, add 10 WCUs\.
 
 This statement operates on a web request component, and requires the following request component settings: 
 + **Request components** – The part of the web request to inspect, for example, a query string or the body\. For more information, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.

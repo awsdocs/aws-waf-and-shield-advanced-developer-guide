@@ -9,10 +9,10 @@ To ensure that you don't accidentally configure AWS WAF to block web requests th
 ## Counting the web requests that match the rules in a web ACL<a name="web-acl-testing-count"></a>
 
 When you add rules to a web ACL, you specify whether you want AWS WAF to allow, block, or count the web requests that match all the conditions in that rule\. We recommend that you begin with the following configuration:
-+ Configure all the rules in a web ACL to count web requests
-+ Set the default action for the web ACL to allow requests
++ Configure all the rules in a web ACL to count web requests\. For information about how to do this for a rule group in a web ACL, see [Setting rule actions to count in a rule group](web-acl-rule-group-settings.md#web-acl-rule-group-rule-to-count)\.
++ Set the default action for the web ACL to allow requests\.
 
-In this configuration, AWS WAF inspects each web request based on the conditions in the first rule\. If the web request matches all the conditions in that rule, AWS WAF increments a counter for that rule\. Then AWS WAF inspects the web request based on the conditions in the next rule\. If the request matches all the conditions in that rule, AWS WAF increments a counter for the rule\. This continues until AWS WAF has inspected the request based on the conditions in all of your rules\. 
+In this configuration, AWS WAF inspects each web request based on the match statement in the first rule\. If the web request matches a rule, AWS WAF increments a counter for that rule\. Then AWS WAF inspects the web request based on the match statement in the next rule\. If the web request matches the rule, AWS WAF increments a counter for the rule\. This continues until AWS WAF has inspected the request against the match statements in all of your rules\. 
 
 After you've configured all the rules in a web ACL to count requests and associated the web ACL with one or more AWS resources \(an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API\) you can view the resulting counts in an Amazon CloudWatch graph\. For each rule in a web ACL and for all the requests that an associated resource forwards to AWS WAF for a web ACL, CloudWatch lets you do the following:
 + View data for the preceding hour or preceding three hours,
@@ -48,9 +48,9 @@ Choose the rules for which you want to view data\.
 
 1. \(Optional\) View detailed information about individual requests that an associated AWS resource has forwarded to AWS WAF\. For more information, see [Viewing a sample of web requests](#web-acl-testing-view-sample)\.
 
-1. If you determine that a rule is intercepting requests that you don't want it to intercept, change the applicable settings\. For more information, see [Managing and using a Web Access Control List \(Web ACL\)](web-acl.md)\.
+1. If you determine that a rule is intercepting requests that you don't want it to intercept, change the applicable settings\. For more information, see [Managing and using a web access control list \(web ACL\)](web-acl.md)\.
 
-   When you're satisfied that all of your rules are intercepting only the correct requests, change the action for each of your rules to **Allow** or **Block**\. For more information, see [Editing a Web ACL](web-acl-editing.md)\.
+   When you're satisfied that all of your rules are intercepting only the correct requests, change the action for each of your rules to **Allow** or **Block**\. For more information, see [Editing a web ACL](web-acl-editing.md)\.
 
 ## Viewing a sample of web requests<a name="web-acl-testing-view-sample"></a>
 

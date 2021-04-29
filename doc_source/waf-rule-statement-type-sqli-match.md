@@ -2,9 +2,9 @@
 
 Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database\. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions\. An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want AWS WAF to inspect\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code\.
 
-**Nestable** – You can nest this statement type inside logical rule statements and rate\-based statements\. 
+**Nestable** – You can nest this statement type\. 
 
-**WCUs** – 20 WCUs\. If you use the request component **All query parameters**, add 10 WCUs\. 
+**WCUs** – 20 WCUs, as a base cost\. If you use the request component **All query parameters**, add 10 WCUs\. If you use the request component **JSON body**, double the statement's base cost WCUs\. For each **Text transformation** that you apply, add 10 WCUs\.
 
 This statement operates on a web request component, and requires the following request component settings: 
 + **Request components** – The part of the web request to inspect, for example, a query string or the body\. For more information, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.

@@ -7,7 +7,7 @@ You might encounter a brief disruption as you change the resource association to
 
 **To begin using your new AWS WAF web ACL**
 
-1. Associate the AWS WAF web ACL with the resources that you want to protect, following the guidance at [Associating or disassociating a Web ACL with an AWS resource](web-acl-associating-aws-resource.md)\. This automatically disassociates the resources from the old web ACL\. 
+1. Associate the AWS WAF web ACL with the resources that you want to protect, following the guidance at [Associating or disassociating a web ACL with an AWS resource](web-acl-associating-aws-resource.md)\. This automatically disassociates the resources from the old web ACL\. 
 
 1. Configure logging for the new web ACL, following the guidance at [Logging web ACL traffic information](logging.md)\. 
 

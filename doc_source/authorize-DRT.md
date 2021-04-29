@@ -20,7 +20,7 @@ The DRT can assist you with web application layer events if you grant limited ac
 
 **To authorize the DRT to assist with web application layer events on your behalf**
 
-1. In the AWS WAF console, enable AWS WAF logging for each web ACL that is attached to a Shield Advanced protected resource\. 
+1. In the AWS WAF console, enable AWS WAF logging for each web ACL that is attached to a Shield Advanced protected resource\. For information about AWS WAF logging, see [Logging web ACL traffic information](logging.md)\. 
 
    For the DRT to view or process your AWS WAF logs, the logs must be in Amazon S3 buckets that satisfy the following requirements: 
    + The buckets must be managed in one of the following ways:
@@ -31,8 +31,6 @@ The DRT can assist you with web application layer events if you grant limited ac
 
      The DRT cannot view or process logs that are stored in buckets that are encrypted with keys stored in AWS Key Management Service \(AWS KMS\)\. 
    + Shield Advanced allows you to give the DRT permission to access up to 10 buckets\. If you want to give permission to more than 10, you need to edit the bucket policies manually\.
-
-   For information about AWS WAF logging, see [Logging web ACL traffic information](logging.md)\. 
 
 1. In the AWS Shield console **Overview** page, under **Configure AWS DRT support**, choose **Edit DRT access**\.
 
@@ -66,7 +64,7 @@ If you provide more than one contact, in the **Notes**, indicate the circumstanc
 
 1. Choose **Edit proactive engagement feature**, choose **Enable**, and then choose **Save**\.
 
-   When you first enable proactive engagement, the request goes to manual review\. \- During this time, the proactive engagement status indicates that your request \- is pending review\. The DRT will contact you to \- schedule an architecture review, which includes a review of your Route 53 health \- check configurations\. When the review is complete, the DRT completes your request \- to enable proactive engagement\. 
+   When you first enable proactive engagement, the request goes to manual review\. During this time, the proactive engagement status indicates that your request is pending review\. The DRT will contact you to schedule an architecture review, which includes a review of your Route 53 health check configurations\. When the review is complete, the DRT completes your request to enable proactive engagement\. 
 
 You can change DRT access and permissions at any time in the **Overview** page\.
 

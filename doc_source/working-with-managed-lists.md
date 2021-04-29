@@ -2,8 +2,10 @@
 
 Managed application and protocol lists streamline your configuration and management of AWS Firewall Manager content audit security group policies\. You use managed lists to define the protocols and applications that your policy allows and disallows\. For information about content audit security group policies, see [Content audit security group policies](security-group-policies.md#security-group-policies-audit)\. 
 
-You can use the following types of managed lists in a security group content audit policy:
-+ **Firewall Manager application lists and protocol lists** – Firewall Manager manages these lists\. The application lists include `FMS-Default-Public-Access-Apps-Allowed` and `FMS-Default-Public-Access-Apps-Denied`, which describe commonly used applications that should be allowed or denied to the general public\. The protocol lists include `FMS-Default-Protocols-Allowed`, a list of commonly used protocols that should be allowed to the general public\. You can use any list that Firewall Manager manages, but you can't edit or delete it\.
+You can use the following types of managed lists in a content audit security group policy:
++ **Firewall Manager application lists and protocol lists** – Firewall Manager manages these lists\. 
+  + The application lists include `FMS-Default-Public-Access-Apps-Allowed` and `FMS-Default-Public-Access-Apps-Denied`, which describe commonly used applications that should be allowed or denied to the general public\. 
+  + The protocol lists include `FMS-Default-Protocols-Allowed`, a list of commonly used protocols that should be allowed to the general public\. You can use any list that Firewall Manager manages, but you can't edit or delete it\.
 + **Custom application lists and protocol lists** – You manage these lists\. You can create lists of either type with the settings that you need\. You have full control over your own custom managed lists, and you can create, edit, and delete them as needed\.
 **Note**  
 Currently, Firewall Manager doesn’t check references to a custom managed list when you delete it\. This means that you can delete a custom managed application list or protocol list even when it is in use by an active policy\. This can cause the policy to stop functioning\. Delete an application list or protocol list only after you have verified that it isn't referenced by any active polices\.
@@ -36,9 +38,9 @@ For information about creating a content audit security group policy through the
 
 **To create a custom managed application list**
 
-1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites \([AWS Firewall Manager prerequisites](fms-prereq.md)\), and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
 **Note**  
-For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\.
+For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
 1. In the navigation pane, choose **Application lists**\.
 
@@ -58,9 +60,9 @@ For information about setting up a Firewall Manager administrator account, see [
 
 **To create a custom managed protocol list**
 
-1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites \([AWS Firewall Manager prerequisites](fms-prereq.md)\), and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
 **Note**  
-For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\.
+For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
 1. In the navigation pane, choose **Protocol lists**\.
 
@@ -80,9 +82,9 @@ For information about setting up a Firewall Manager administrator account, see [
 
 **To view an application list or protocol list**
 
-1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites \([AWS Firewall Manager prerequisites](fms-prereq.md)\), and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
 **Note**  
-For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\.
+For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
 1. In the navigation pane, choose **Application lists** or **Protocol lists**\.
 
@@ -101,9 +103,9 @@ Currently, Firewall Manager doesn’t check references to a custom managed list 
 
 **To delete a custom managed application or protocol list**
 
-1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites \([AWS Firewall Manager prerequisites](fms-prereq.md)\), and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
 **Note**  
-For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\.
+For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
 1. Make sure that the list that you want to delete isn't in use in any of your audit security group policies by doing the following: 
 

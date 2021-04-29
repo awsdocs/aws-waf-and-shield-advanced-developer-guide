@@ -6,9 +6,9 @@ For all AWS Firewall Manager policies, you can view the compliance status for ac
 
 **To view the compliance information for a policy**
 
-1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the Firewall Manager prerequisites, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
 **Note**  
-For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\.
+For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
 1. In the navigation pane, choose **Security policies**\.
 
@@ -38,8 +38,4 @@ Resources that Firewall Manager found to be noncompliant before the addition of 
 
      For example, the expected state of a subnet might be “Subnet should contain a Network Firewall subnet in its availability zone”, the current state might be “subnet with id subnet\-1234 is missing a Network Firewall subnet in availability zone us\-east\-1e”, and the description might be “Firewall Manager was unable to create a subnet in this AZ because there are no available CIDR blocks\.”
    + **`AWS::NetworkFirewall::FirewallPolicy`** – This is used for Network Firewall policies\. Firewall Manager displays information about a Network Firewall firewall policy that's been modified in a way that makes it noncompliant\. The information provides the expected firewall policy and the policy that it found in the customer account, so you can compare stateless and stateful rule groups names and priority settings, custom action names, and default stateless actions settings\. The violation description component contains a description of the expected state of the resource, the current, noncompliant state, and if available, a description of what caused the discrepancy\. 
-
- – 
-
- 
-
+   + **`AWS::EC2::VPC`** – This is used for DNS Firewall policies\. Firewall Manager displays information about a VPC that's in scope of a Firewall Manager DNS Firewall policy, and that is noncompliant with the policy\. The information provided includes the expected rule groups that are expected to be associated with the VPC and the actual rule groups\. The violation description component contains a description of the expected state of the resource, the current, noncompliant state, and if available, a description of what caused the discrepancy\.

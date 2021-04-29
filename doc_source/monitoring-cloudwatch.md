@@ -43,37 +43,66 @@ Metrics are grouped first by the service namespace, and then by the various dime
   1. aws cloudwatch list-metrics --namespace "AWS/DDoSProtection"
   ```
 
-## AWS WAF metrics<a name="waf-metrics"></a>
+## AWS WAF metrics and dimensions<a name="waf-metrics"></a>
 
-The `WAF` namespace includes the following metrics\.
+The `WAF` namespace includes the following metrics and dimensions\.
 
+
+**Web ACL, rule group, and rule metrics**  
 
 | Metric | Description | 
 | --- | --- | 
 | `AllowedRequests` |  The number of allowed web requests\. Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 | `BlockedRequests` |  The number of blocked web requests\. Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 | `CountedRequests` |  The number of counted web requests\. Reporting criteria: There is a nonzero value\. A counted web request is one that matches at least one of the rules\. Request counting is typically used for testing\. Valid statistics: Sum  | 
-| `PassedRequests` |  The number of passed requests for a rule group\.  Reporting criteria: There is a nonzero value\. Passed requests are requests that don't match any of the rules\.  Valid statistics: Sum  | 
+| `PassedRequests` |  The number of passed requests\. This is only used for requests that go through a rule group evaluation without matching any of the rule group rules\.  Reporting criteria: There is a nonzero value\. Passed requests are requests that don't match any of the rules in the rule group\.  Valid statistics: Sum  | 
 
-## AWS WAF dimensions<a name="waf-metricdimensions"></a>
 
-AWS WAF for an Amazon CloudFront distribution can use the following dimension combinations:
-+ `Rule`, `WebACL`
-+ `RuleGroup`, `WebACL`
-+ `Rule`, `RuleGroup`
-
-AWS WAF for an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API can use the following dimension combinations:
-+ `Region`, `Rule`, `WebACL`
-+ `Region`, `RuleGroup`, `WebACL`
-+ `Region`, `Rule`, `RuleGroup`
-
+**Web ACL, rule group, and rule dimensions**  
 
 | Dimension | Description | 
 | --- | --- | 
-| `Rule` |  One of the following: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html)  | 
-| `RuleGroup` |  The metric name of the `RuleGroup`\.  | 
-| `WebACL` |  The metric name of the `WebACL`\.  | 
-| `Region` |  The Region of the protected resource\.  | 
+|  `Region`  | Required for all protected resource types except for Amazon CloudFront distributions\. | 
+|  `Rule`  |  One of the following: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html)  | 
+|  `RuleGroup`  |  The metric name of the `RuleGroup`\.  | 
+|  `WebACL`  |  The metric name of the `WebACL`\.  | 
+
+
+**Label and AWS WAF Bot Control metrics**  
+
+| Metric | Description | 
+| --- | --- | 
+|  `AllowedRequests`  |  The number of labels applied to web requests by rules that had an allow action setting\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `BlockedRequests`  |  The number of labels applied to web requests by rules that had a block action setting\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `CountedRequests`  |  The number of labels applied to web requests by rules that had a count action setting\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+
+
+**Label and AWS WAF Bot Control dimensions**  
+
+| Dimension | Description | 
+| --- | --- | 
+|  `Region`  | Required for all protected resource types except for Amazon CloudFront distributions\. | 
+|  `WebACL`  |  The metric name of the `WebACL`\.  | 
+|  `RuleGroup`  |  The metric name of the `RuleGroup`\. Used for the metric `CountedRequests`\.  | 
+|  `LabelNamespace`  | The namespace prefix of the web ACL or rule group where the matching rule is specified\. Used for the metrics AllowedRequests and BlockedRequests\. | 
+|  `Label`  | The label applied to the web request by the matching rule\. Used for the metrics AllowedRequests and BlockedRequests\. | 
+
+
+**Free bot visibility metrics**  
+
+| Metric | Description | 
+| --- | --- | 
+|  `SampleAllowedRequests`  |  The percentage of sampled requests that have allow action\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `SampleBlockedRequests`  |  The percentage of sampled requests that have block action\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+
+
+**Free bot visibility dimensions**  
+
+| Dimension | Description | 
+| --- | --- | 
+|  `Region`  | Required for all protected resource types except for Amazon CloudFront distributions\. | 
+|  `WebACL`  |  The metric name of the `WebACL`\.  | 
+|  `BotCategory`  |  The metric name of the of the detected bot category, based on the web request labels\.   | 
 
 ## AWS Shield Advanced metrics and alarms<a name="set-ddos-alarms"></a>
 
@@ -81,17 +110,17 @@ This section discusses the metrics and alarms available with AWS Shield Advanced
 
 ### AWS Shield Advanced metrics<a name="shield-metrics"></a>
 
-Shield Advanced reports metrics to Amazon CloudWatch on an AWS resource more frequently during DDoS attacks than while no attacks are underway\. Shield Advanced reports metrics once a minute during an attack, and then once right after the attack ends\. While no attacks are underway, Shield Advanced reports metrics once a day, at a time assigned to the resource\. This periodic report keeps the metrics active and available for use in custom CloudWatch alarms\. 
+Shield Advanced reports metrics to Amazon CloudWatch on an AWS resource more frequently during DDoS events than while no events are underway\. Shield Advanced reports metrics once a minute during an event, and then once right after the event ends\. While no events are underway, Shield Advanced reports metrics once a day, at a time assigned to the resource\. This periodic report keeps the metrics active and available for use in custom CloudWatch alarms\. 
 
 Shield Advanced provides the following metrics\. 
 
 
 | Metric | Description | 
 | --- | --- | 
-| DDoSDetected | Indicates whether a DDoS event is underway for a particular Amazon Resource Name \(ARN\)\. This metric has a value of 1 during an attack and a value of 0 otherwise\.   | 
-| DDoSAttackBitsPerSecond | The number of bits observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an attack and a value of 0 otherwise\.Units: Bits  | 
-| DDoSAttackPacketsPerSecond | The number of packets observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an attack and a value of 0 otherwise\.Units: Packets  | 
-| DDoSAttackRequestsPerSecond | The number of requests observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 7 DDoS events\. The metric is reported only for the most significant layer 7 events\. This metric has a non\-zero value during an attack and a value of 0 otherwise\.Units: Requests  | 
+| DDoSDetected | Indicates whether a DDoS event is underway for a particular Amazon Resource Name \(ARN\)\. This metric has a value of 1 during an event and a value of 0 otherwise\.   | 
+| DDoSAttackBitsPerSecond | The number of bits observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an event and a value of 0 otherwise\.Units: Bits  | 
+| DDoSAttackPacketsPerSecond | The number of packets observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an event and a value of 0 otherwise\.Units: Packets  | 
+| DDoSAttackRequestsPerSecond | The number of requests observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 7 DDoS events\. The metric is reported only for the most significant layer 7 events\. This metric has a non\-zero value during an event and a value of 0 otherwise\.Units: Requests  | 
 
 For the global services Amazon CloudFront and Amazon Route 53, metrics are reported in the US East \(N\. Virginia\) Region\.
 

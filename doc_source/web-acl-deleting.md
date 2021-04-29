@@ -1,4 +1,4 @@
-# Deleting a Web ACL<a name="web-acl-deleting"></a>
+# Deleting a web ACL<a name="web-acl-deleting"></a>
 
 To delete a web ACL, you first disassociate all AWS resources from the web ACL\. Perform the following procedure\.<a name="web-acl-deleting-procedure"></a>
 

@@ -16,3 +16,4 @@ You incur charges for your AWS Config settings, according to AWS Config pricing\
    + **Shield policy** – Enable Config for the resource types Shield Protection, ShieldRegional Protection, Application Load Balancer, EC2 EIP, WAF WebACL, WAF Regional WebACL, and WAFv2 WebACL\. 
    + **Security group policy** – Enable Config for the resource types EC2 SecurityGroup, EC2 Instance, and EC2 NetworkInterface\.
    + **Network Firewall policy** – Enable Config for the resource types NetworkFirewall FirewallPolicy, NetworkFirewall RuleGroup, EC2 VPC, EC2 InternetGateway, EC2 RouteTable, and EC2 Subnet\. 
+   + **DNS Firewall policy** – Enable Config for the resource types DNSFirewall RuleGroup and EC2 VPC\. 

@@ -1,4 +1,4 @@
-# Responding to DDoS attacks<a name="ddos-responding"></a>
+# Responding to DDoS events<a name="ddos-responding"></a>
 
 AWS automatically addresses layer 3 and layer 4 DDoS attacks\. If you use Shield Advanced to protect your Amazon EC2 instances, during an attack Shield Advanced automatically deploys your Amazon VPC network ACLs to the border of the AWS network\. This allows Shield Advanced to provide protection against larger DDoS events\. For more information about network ACLs, see [Network ACLs](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html)\.
 

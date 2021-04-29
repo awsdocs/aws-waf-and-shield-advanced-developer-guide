@@ -1,6 +1,6 @@
 # Rule groups<a name="waf-rule-groups"></a>
 
-A *rule group* is a reusable set of rules that you can add to a web ACL\. For more information about web ACLs, see [Managing and using a Web Access Control List \(Web ACL\)](web-acl.md)\.
+A *rule group* is a reusable set of rules that you can add to a web ACL\. For more information about web ACLs, see [Managing and using a web access control list \(web ACL\)](web-acl.md)\.
 
 Rule groups fall into two main categories: 
 + Managed rule groups, which AWS Managed Rules and AWS Marketplace sellers create and maintain for you
@@ -23,4 +23,3 @@ This section describes the types of managed rule groups that are available to yo
 **Topics**
 + [Managed rule groups](waf-managed-rule-groups.md)
 + [Managing your own rule groups](waf-user-created-rule-groups.md)
-+ [Managing rule group behavior in a web ACL](waf-using-rule-groups.md)

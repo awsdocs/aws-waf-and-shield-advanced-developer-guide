@@ -2,11 +2,6 @@
 
 This section describes the AWS Managed Rules rule groups that are currently available\. You see these on the console when you add a managed rule group to your web ACL\. Through the API, you can retrieve this list along with the AWS Marketplace managed rule groups that you're subscribed to by calling `ListAvailableManagedRuleGroups`\. 
 
-**Topics**
-+ [Baseline rule groups](#aws-managed-rule-groups-baseline)
-+ [Use\-case specific rule groups](#aws-managed-rule-groups-use-case)
-+ [IP reputation rule groups](#aws-managed-rule-groups-ip-rep)
-
 ## Baseline rule groups<a name="aws-managed-rule-groups-baseline"></a>
 
 Baseline managed rule groups provide general protection against a wide variety of common threats\. Choose one or more of these rule groups to establish baseline protection for your resources\.
@@ -14,13 +9,13 @@ Baseline managed rule groups provide general protection against a wide variety o
 **Core rule set \(CRS\)**  
 VendorName: `AWS`, Name: `AWSManagedRulesCommonRuleSet`, WCU: 700
 
-The Core rule set \(CRS\) rule group contains rules that are generally applicable to web applications\. This provides protection against exploitation of a wide range of vulnerabilities, including high risk and commonly occurring vulnerabilities described in OWASP publications\. Consider using this rule group for any AWS WAF use case\.
+The Core rule set \(CRS\) rule group contains rules that are generally applicable to web applications\. This provides protection against exploitation of a wide range of vulnerabilities, including high risk and commonly occurring vulnerabilities described in OWASP publications such as [OWASP Top 10](https://owasp.org/www-project-top-ten/)\. Consider using this rule group for any AWS WAF use case\.
 
 
 | Rule name | Description | 
 | --- | --- | 
 | NoUserAgent\_HEADER | Blocks requests with no HTTP User\-Agent header\. | 
-| UserAgent\_BadBots\_HEADER | Inspects for the presence of common User\-Agent header values indicating the request to be a bad bot\. Example patterns include nessus, and nmap\. | 
+| UserAgent\_BadBots\_HEADER | Inspects for the presence of common User\-Agent header values indicating the request to be a bad bot\. Example patterns include nessus, and nmap\. For bot management, see also [AWS WAF Bot Control rule group](#aws-managed-rule-groups-bot)\. | 
 | SizeRestrictions\_QUERYSTRING | Verifies that the URI query string length is at most 2,048 bytes\.  | 
 | SizeRestrictions\_Cookie\_HEADER | Verifies that the cookie header length is at most 10,240 bytes\. | 
 | SizeRestrictions\_BODY | Verifies that the request body size is at most 10,240 bytes\.  | 
@@ -86,7 +81,7 @@ The SQL database rule group contains rules to block request patterns associated 
 **Linux operating system**  
 VendorName: `AWS`, Name: `AWSManagedRulesLinuxRuleSet`, WCU: 200
 
-The Linux operating system rule group contains rules that block request patterns associated with the exploitation of vulnerabilities specific to Linux, including Linux\-specific Local File Inclusion \(LFI\) attacks\. This can help prevent attacks that expose file contents or run code for which the attacker should not have had access\. You should evaluate this rule group if any part of your application runs on Linux\. You should use this rule group in conjunction with the [POSIX operating system](#posix_os) rule group\. 
+The Linux operating system rule group contains rules that block request patterns associated with the exploitation of vulnerabilities specific to Linux, including Linux\-specific Local File Inclusion \(LFI\) attacks\. This can help prevent attacks that expose file contents or run code for which the attacker should not have had access\. You should evaluate this rule group if any part of your application runs on Linux\. You should use this rule group in conjunction with the [](#posix_os) rule group\. 
 
 
 | Rule name | Description | 
@@ -114,10 +109,10 @@ The Windows operating system rule group contains rules that block request patter
 
 | Rule name | Description | 
 | --- | --- | 
-| PowerShellCommands\_Set1\_QUERYARGUMENTS | Inspects the values of all query parameters and blocks PowerShell command injection attempts in web applications\. Example patterns include functions like Invoke\-Expression\. | 
-| PowerShellCommands\_Set2\_QUERYARGUMENTS | Inspects the values of all query parameters and blocks PowerShell command injection attempts in web applications\. Example patterns include functions like Invoke\-Expression\. | 
-| PowerShellCommands\_Set1\_BODY | Inspects the request body and blocks PowerShell command injection attempts in web applications\. Example patterns include functions like Invoke\-Expression\. | 
-| PowerShellCommands\_Set2\_BODY | Inspects the request body and blocks PowerShell command injection attempts in web applications\. Example patterns include functions like Invoke\-Expression\. | 
+| PowerShellCommands\_Set1\_QUERYARGUMENTS | Inspects the values of all query parameters and blocks PowerShell command injection attempts in web applications\. This inspection requires two rules, to accommodate the size of the pattern matching set\. The match patterns represent PowerShell commands, for example, Invoke\-Expression\. | 
+| PowerShellCommands\_Set2\_QUERYARGUMENTS | Inspects the values of all query parameters and blocks PowerShell command injection attempts in web applications\. This inspection requires two rules, to accommodate the size of the pattern matching set\. The match patterns represent PowerShell commands, for example, Invoke\-Expression\. | 
+| PowerShellCommands\_Set1\_BODY | Inspects the values of the request body and blocks PowerShell command injection attempts in web applications\. This inspection requires two rules, to accommodate the size of the pattern matching set\. The match patterns represent PowerShell commands, for example, Invoke\-Expression\. | 
+| PowerShellCommands\_Set2\_BODY | Inspects the values of the request body and blocks PowerShell command injection attempts in web applications\. This inspection requires two rules, to accommodate the size of the pattern matching set\. The match patterns represent PowerShell commands, for example, Invoke\-Expression\. | 
 
 **PHP application**  
 VendorName: `AWS`, Name: `AWSManagedRulesPHPRuleSet`, WCU: 100
@@ -133,7 +128,7 @@ The PHP application rule group contains rules that block request patterns associ
 **WordPress application**  
 VendorName: `AWS`, Name: `AWSManagedRulesWordPressRuleSet`, WCU: 100
 
-The WordPress application rule group contains rules that block request patterns associated with the exploitation of vulnerabilities specific to WordPress sites\. You should evaluate this rule group if you are running WordPress\. This rule group should be used in conjunction with the [SQL database](#sql_db) and [PHP application](#php_app) rule groups\.
+The WordPress application rule group contains rules that block request patterns associated with the exploitation of vulnerabilities specific to WordPress sites\. You should evaluate this rule group if you are running WordPress\. This rule group should be used in conjunction with the [](#sql_db) and [](#php_app) rule groups\.
 
 
 | Rule name | Description | 
@@ -143,7 +138,7 @@ The WordPress application rule group contains rules that block request patterns 
 
 ## IP reputation rule groups<a name="aws-managed-rule-groups-ip-rep"></a>
 
-IP reputation rule groups allow you to block requests based on their source\. Choose one or more of these rule groups if you want to reduce your exposure to bot traffic or exploitation attempts, or if you are enforcing geographic restrictions on your content\. 
+IP reputation rule groups allow you to block requests based on their source\. Choose one or more of these rule groups if you want to reduce your exposure to bot traffic or exploitation attempts, or if you are enforcing geographic restrictions on your content\. For bot management, see also [AWS WAF Bot Control rule group](#aws-managed-rule-groups-bot)\.
 
 **Amazon IP reputation list**  
 VendorName: `AWS`, Name: `AWSManagedRulesAmazonIpReputationList`, WCU: 25
@@ -165,3 +160,45 @@ The Anonymous IP list rule group contains rules to block requests from services 
 | --- | --- | 
 | AnonymousIPList | Inspects for a list of IP addresses of sources known to anonymize client information, like TOR nodes, temporary proxies, and other masking services\.  | 
 | HostingProviderIPList | Inspects for a list of IP addresses from hosting and cloud providers, which are less likely to source end\-user traffic\. Examples include cloud providers like AWS\. | 
+
+## AWS WAF Bot Control rule group<a name="aws-managed-rule-groups-bot"></a>
+
+The Bot Control managed rule group available from AWS Managed Rules\.
+
+**AWS WAF Bot Control**  
+VendorName: `AWS`, Name: `AWSManagedRulesBotControlRuleSet`, WCU: 50
+
+The Bot Control managed rule group contains rules to block and manage requests from bots\. You are charged additional fees when you use this rule group\. For more information, see [AWS WAF Pricing](http://aws.amazon.com/waf/pricing/)\.
+
+In order to keep your costs down and to be sure you're managing your bot traffic as you want, use this rule group in accordance with the guidance at [AWS WAF Bot Control](waf-bot-control.md)\.
+
+The Bot Control managed rule group generates labels for each rule\. You can retrieve the labels through the API by calling `DescribeManagedRuleGroup`\. The labels are listed in the `AvailableLabels` property in the response\. 
+
+The Bot Control labels are generated in the following namespaces, depending on the rule: 
++ `bot:category:` – The category of bot, as defined by AWS WAF, for example `bot:category:search_engine:` and `bot:category:content_fetcher:`\. 
++ `bot:name:` – The bot name, if one is available, for example `bot:name:slurp`, `bot:name:googlebot`, and `bot:name:pocket_parser`\. 
++ `bot:` – Used to indicate a verified bot with the label `bot:verified`\. This is used for common desirable bots, like `googlebot` and `bingbot`\. 
+
+  Bot Control uses the IP addresses from AWS WAF to verify bots\. If you have verified bots that route through a proxy or load balancer, you might need to explicitly allow them\. For information, see [Forwarded IP address](waf-rule-statement-forwarded-ip-address.md)\.
++ `signal:` – Used for attributes of the request that are indicative of bots that are not more commonly used or verified\. 
+
+The Bot Control managed rule group applies labels to a set of verifiable bots that are commonly allowed\. The rule group doesn't block this category of bots and doesn't apply any `signal:` labels\. If you want, you can block them, or a subset of them, by writing a custom rule that uses the labels applied by the Bot Control managed rule group\. For more information about this and examples, see [AWS WAF Bot Control](waf-bot-control.md)\.
+
+
+| Rule name | Description | 
+| --- | --- | 
+| CategoryAdvertising | Inspects for bots that are used for advertising purposes\. | 
+| CategoryArchiver | Inspects for bots that are used for archiving purposes\. | 
+| CategoryContentFetcher | Inspects for bots that are fetching content on behalf of an end user\. | 
+| CategoryHttpLibrary | Inspects for HTTP libraries that are often used by bots\. | 
+| CategoryLinkChecker | Inspects for bots that check for broken links\. | 
+| CategoryMiscellaneous | Inspects for miscellaneous bots\. | 
+| CategoryMonitoring | Inspects for bots that are used for monitoring purposes\. | 
+| CategoryScrapingFramework | Inspects for web scraping frameworks\. | 
+| CategorySecurity | Inspects for security\-related bots\. | 
+| CategorySeo | Inspects for bots that are used for search engine optimization\. | 
+| CategorySocialMedia | Inspects for bots that are used by social media platforms to provide content summaries\. Verified social media bots are not blocked\.  | 
+| CategorySearchEngine | Inspects for search engine bots\. Verified search engines are not blocked\.  | 
+| SignalAutomatedBrowser | Inspects for indications of an automated web browser\. | 
+| SignalKnownBotDataCenter | Inspects for data centers that are typically used by bots\. | 
+| SignalNonBrowserUserAgent | Inspects for user agent strings that don't seem to be from a web browser\. | 

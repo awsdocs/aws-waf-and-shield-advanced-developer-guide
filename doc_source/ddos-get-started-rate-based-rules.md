@@ -19,7 +19,7 @@ Shield Advanced gives you the option to configure layer 7 DDoS mitigation for ea
 
    1. Choose **Create**\.
 **Note**  
-If a resource is already associated with a web ACL, you can't change to a different web ACL\. If you want to change the web ACL, you must first remove the associated web ACLs from the resource\. For more information, see [Associating or disassociating a Web ACL with an AWS resource](web-acl-associating-aws-resource.md)\.
+If a resource is already associated with a web ACL, you can't change to a different web ACL\. If you want to change the web ACL, you must first remove the associated web ACLs from the resource\. For more information, see [Associating or disassociating a web ACL with an AWS resource](web-acl-associating-aws-resource.md)\.
 
 1. For each associated web ACL that doesn't have a rate\-based rule defined, you can add one by choosing **Add rate limit rule** and then performing the following steps:
 

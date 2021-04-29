@@ -13,9 +13,12 @@ Within each of these sets of rules, AWS WAF evaluates rules and rule groups as u
 
 In the policy's first and last rule groups sets, you can only add rule groups\. You can use managed rule groups, which AWS Managed Rules and AWS Marketplace sellers create and maintain for you\. You can also manage and use your own rule groups\. For more information about all of these options, see [Rule groups](waf-rule-groups.md)\.
 
+**Note**  
+Firewall Manager supports the new AWS WAF Bot Control managed rule group\. For information about Bot Control in AWS WAF, see [AWS WAF Bot Control](waf-bot-control.md)\.
+
 If you want to use your own rule groups, you create those before you create your Firewall Manager AWS WAF policy\. For guidance, see [Managing your own rule groups](waf-user-created-rule-groups.md)\. To use an individual custom rule, you must define your own rule group, define your rule within that, and then use the rule group in your policy\.
 
-For information about how AWS WAF evaluates web requests, see [How AWS WAF processes a web ACL](web-acl-processing.md)\.
+For information about how AWS WAF evaluates web requests, see [Web ACL rule and rule group evaluation](web-acl-processing.md)\.
 
 For the procedure to create a Firewall Manager AWS WAF policy, see [Creating an AWS Firewall Manager policy for AWS WAF](create-policy.md#creating-firewall-manager-policy-for-waf)\.
 
@@ -45,7 +48,9 @@ For information about service\-linked roles and the `iam:CreateServiceLinkedRole
 
 1. Create an Amazon Kinesis Data Firehose using your Firewall Manager administrator account\. Use a name starting with the prefix `aws-waf-logs-`\. For example, `aws-waf-logs-firewall-manager-central`\. Create the data firehose with a `PUT` source and in the region that you are operating\. If you are capturing logs for Amazon CloudFront, create the firehose in US East \(N\. Virginia\)\. Before you use it, test your delivery stream to be sure that it has enough throughput to accommodate your organization's logs\. For more information, see [Creating an Amazon Kinesis Data Firehose delivery stream](https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html)\.
 
-1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites \([AWS Firewall Manager prerequisites](fms-prereq.md)\), and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+**Note**  
+For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
 1. In the navigation pane, choose **Security Policies**\.
 
@@ -65,7 +70,9 @@ For information about service\-linked roles and the `iam:CreateServiceLinkedRole
 
 **To disable logging for an AWS WAF policy**
 
-1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites \([AWS Firewall Manager prerequisites](fms-prereq.md)\), and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+**Note**  
+For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
 1. In the navigation pane, choose **Security Policies**\.
 

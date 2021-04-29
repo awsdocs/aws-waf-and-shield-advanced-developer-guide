@@ -7,3 +7,4 @@ You can use AWS Firewall Manager to enable a number of different types of securi
 + [Getting started with AWS Firewall Manager AWS Shield Advanced policies](getting-started-fms-shield.md)
 + [Getting started with AWS Firewall Manager Amazon VPC security group policies](getting-started-fms-security-group.md)
 + [Getting started with AWS Firewall Manager Network Firewall policies](getting-started-fms-network-firewall.md)
++ [Getting started with AWS Firewall Manager DNS Firewall policies](getting-started-fms-dns-firewall.md)

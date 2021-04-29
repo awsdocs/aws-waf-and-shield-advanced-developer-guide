@@ -22,12 +22,12 @@ After the automated migration is complete, review the newly created web ACL and 
 
    1. For **Criteria to count request towards rate limit**, select **Only consider requests that match the criteria in a rule statement**, then provide your additional criteria\. You can add the criteria using any rule statement that can be nested, including logical statements\. For information about your choices, see [Rule statements list](waf-rule-statements-list.md)\. 
 
-1. If your AWS WAF Classic web ACL had a managed rule group, the rule group inclusion wasn't brought over in the migration\. You can add managed rule groups to the new web ACL\. Review the information about managed rule groups, including the list of free AWS Managed Rules that are available with the new version of AWS WAF, at [Managed rule groups](waf-managed-rule-groups.md)\. To add a managed rule group, do the following:
+1. If your AWS WAF Classic web ACL had a managed rule group, the rule group inclusion wasn't brought over in the migration\. You can add managed rule groups to the new web ACL\. Review the information about managed rule groups, including the list of AWS Managed Rules that are available with the new version of AWS WAF, at [Managed rule groups](waf-managed-rule-groups.md)\. To add a managed rule group, do the following:
 
    1. In your web ACL settings page, choose the web ACL **Rules** tab\. 
 
    1. Choose **Add rules**, then choose **Add managed rule groups**\.
 
-   1. Expand the listing for the vendor of your choice and select the rule groups that you want to add\. For AWS Marketplace sellers, you might need to subscribe to the rule groups\. For more information about using managed rule groups in your web ACL, see [Managed rule groups](waf-managed-rule-groups.md) and [How AWS WAF processes a web ACL](web-acl-processing.md)\.
+   1. Expand the listing for the vendor of your choice and select the rule groups that you want to add\. For AWS Marketplace sellers, you might need to subscribe to the rule groups\. For more information about using managed rule groups in your web ACL, see [Managed rule groups](waf-managed-rule-groups.md) and [Web ACL rule and rule group evaluation](web-acl-processing.md)\.
 
 After you finish the basic migration process, we recommend that you review your needs and consider additional options, to be sure that the new configuration is as efficient as possible and that it's using the latest available security options\. See [Migrating a web ACL: additional considerations](waf-migrating-procedure-additional.md)\.

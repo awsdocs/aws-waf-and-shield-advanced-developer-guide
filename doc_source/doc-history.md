@@ -2,6 +2,17 @@
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Updated AWS Managed Rules for AWS WAF](aws-managed-rule-groups-changelog.md) | AWS Managed Rules for AWS WAF added the AWS WAF Bot Control rule set\.  | April 1, 2021 | 
+| [Set individual rule actions to count in a rule group](web-acl-rule-group-override-options.md) | You can now set the individual rule actions in a rule group to count\. The information for the existing override, which is at the rule group level, has been corrected\. | April 1, 2021 | 
+| [Scope\-down statement for managed rule groups](waf-rule-scope-down-statements.md) | You can now use a scope\-down statement with managed rule groups in the same way as you can with a rate\-based statement\.  | April 1, 2021 | 
+| [Log filtering](logging.md) | You can now filter the web ACL traffic that you log based on rule action and label\. | April 1, 2021 | 
+| [AWS WAF labels on web requests](waf-rule-labels.md) | You can configure rules to add labels to matching web requests and to match on labels that are added by other rules\.  | April 1, 2021 | 
+| [AWS WAF Bot Control ](waf-bot-control.md) | You can monitor and control bot traffic with the new AWS WAF Bot Control feature, which combines a new Bot Control managed rule group with web request labeling, scope\-down statements, and log filtering\. | April 1, 2021 | 
+| [Firewall Manager supports Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md) | AWS Firewall Manager supports central management of Route 53 Resolver DNS Firewall outbound DNS traffic filtering for your VPCs\.  | March 31, 2021 | 
+| [Custom request and response handling](waf-custom-request-response.md) | You can include custom headers in web requests that AWS WAF allows or counts and you can send custom responses for web requests that AWS WAF blocks\. Available for web ACL default action and rule action settings\.  | March 29, 2021 | 
+| [Updated AWS Managed Rules for AWS WAF](aws-managed-rule-groups-changelog.md) | AWS Managed Rules for AWS WAF updated the following rule groups: core rule set \(CRS\), admin protection, known bad inputs, and Linux operating system\.  | March 3, 2021 | 
+| [Inspect a web request body as parsed JSON](waf-rule-statement-fields.md#waf-rule-statement-request-component-json-body) | Added the option to inspect the web request body as parsed and filtered JSON\. This is in addition to the existing option to inspect the web request body as plain text\.  | February 12, 2021 | 
+| [Expanded AWS Shield Advanced event details in console](using-ddos-reports.md#shield-details) | Shield Advanced customers can access additional metrics and reports for events in the Shield console **Events** page\.  | January 22, 2021 | 
 | [Firewall Manager supports AWS Network Firewall policies](network-firewall-policies.md) | AWS Firewall Manager supports central management of AWS Network Firewall network traffic filtering for your VPCs\.  | November 17, 2020 | 
 | [Add support for AWS Shield Advanced protection groups](ddos-overview.md#ddos-advanced-protection-groups) | You can now group your protected resources into logical groups and manage their protections collectively\.  | November 13, 2020 | 
 | [Added support for AWS AppSync to AWS WAF](waf-chapter.md) | You can now associate a AWS WAF web ACL with your AWS AppSync GraphQL API\. This change is only available in the latest version of AWS WAF and not in AWS WAF Classic\. | October 1, 2020 | 

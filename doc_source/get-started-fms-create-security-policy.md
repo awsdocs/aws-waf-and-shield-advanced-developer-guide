@@ -4,9 +4,9 @@ A Firewall Manager AWS WAF policy contains the rule groups that you want to appl
 
 **To create a Firewall Manager AWS WAF policy \(console\)**
 
-1. Sign in to the AWS Management Console using the Firewall Manager administrator account that you set up in the prerequisites, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fms](https://console.aws.amazon.com/wafv2/fms)\. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
 **Note**  
-For information about setting up a Firewall Manager administrator account, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\.
+For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
 1. In the navigation pane, choose **Security policies**\.
 
@@ -22,11 +22,11 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the web ACLs that it creates\. The web ACL names begin with `FMManagedWebACLV2` followed by the policy name that you enter here\. 
 
-1. Under **Policy rules**, for **First rule groups**, choose **Add rule groups**\. Expand the **AWS managed rule groups**\. For **Core rule set**, toggle **Add to web ACL**\. For **AWS Known bad inputs**, toggle **Add to web ACL**\. Choose **Add rules**\.
+1. Under **Policy rules**, for **First rule groups**, choose **Add rule groups**\. Expand the **AWS managed rule groups**\. For **Core rule set**, toggle **Add to web ACL**\. For **AWS known bad inputs**, toggle **Add to web ACL**\. Choose **Add rules**\.
 
    For **Last rule groups**, choose **Add rule groups**\. Expand the **AWS managed rule groups** and for the **Amazon IP reputation list**, toggle **Add to web ACL**\. Choose **Add rules**\.
 
-   Under **First rule groups**, select **Core rule set** and choose **Move down**\. AWS WAF evaluates web requests against the **AWS Known bad inputs** rule group before it evaluates against the **Core rule set**\. 
+   Under **First rule groups**, select **Core rule set** and choose **Move down**\. AWS WAF evaluates web requests against the **AWS known bad inputs** rule group before it evaluates against the **Core rule set**\. 
 **Note**  
 You can also create your own AWS WAF rule groups if you want, using the AWS WAF console\. Any rule groups that you create show up under **Your rule groups** in the **Describe policy : Add rule groups page**\. 
 

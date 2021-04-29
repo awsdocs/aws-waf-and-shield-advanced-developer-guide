@@ -73,7 +73,7 @@ AWS WAF Classic supports using service\-linked roles in the following AWS Region
 | US West \(N\. California\) | us\-west\-1 | Yes | 
 | US West \(Oregon\) | us\-west\-2 | Yes | 
 | Asia Pacific \(Mumbai\) | ap\-south\-1 | Yes | 
-| Asia Pacific \(Osaka\-Local\) | ap\-northeast\-3 | Yes | 
+| Asia Pacific \(Osaka\) | ap\-northeast\-3 | Yes | 
 | Asia Pacific \(Seoul\) | ap\-northeast\-2 | Yes | 
 | Asia Pacific \(Singapore\) | ap\-southeast\-1 | Yes | 
 | Asia Pacific \(Sydney\) | ap\-southeast\-2 | Yes | 

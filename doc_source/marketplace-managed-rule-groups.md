@@ -26,9 +26,9 @@ If you don't want to subscribe to this rule group, simply close this page in you
 
 1. Choose **Set up your account**\.
 
-1. Add the rule group to a web ACL, similar to how you add an individual rule\. For more information, see [Creating a web ACL](web-acl-creating.md) or [Editing a Web ACL](web-acl-editing.md)\.
+1. Add the rule group to a web ACL, similar to how you add an individual rule\. For more information, see [Creating a web ACL](web-acl-creating.md) or [Editing a web ACL](web-acl-editing.md)\.
 **Note**  
-When adding a rule group to a web ACL, you can override the actions of all rules in the rule group to `COUNT` only\. For more information, see [Overriding rule actions for a rule group](waf-using-rule-groups.md#rule-group-override)\.
+When adding a rule group to a web ACL, you can override the actions of rules in the rule group and of the rule group result\. For more information, see [Overriding the actions of a rule group or its rules](web-acl-rule-group-override-options.md)\.
 
 After you're subscribed to an AWS Marketplace rule group, you use it in your web ACLs as you do other managed rule groups\. For information, see [Creating a web ACL](web-acl-creating.md)\.
 
@@ -43,7 +43,7 @@ To stop the subscription charges for an AWS Marketplace managed rule group, you 
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
-1. Remove the rule group from all web ACLs\. For more information, see [Editing a Web ACL](web-acl-editing.md)\.
+1. Remove the rule group from all web ACLs\. For more information, see [Editing a web ACL](web-acl-editing.md)\.
 
 1. In the navigation pane, choose **AWS Marketplace**\.
 

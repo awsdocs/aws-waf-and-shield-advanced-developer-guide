@@ -4,9 +4,9 @@ Attackers sometimes insert scripts into web requests in an effort to exploit vul
 
 When you create cross\-site scripting match conditions, you specify filters\. The filters indicate the part of web requests that you want AWS WAF to inspect for malicious scripts, such as the URI or the query string\. You can add more than one filter to a cross\-site scripting match condition, or you can create a separate condition for each filter\. 
 
-**Nestable** – You can nest this statement type inside logical rule statements and rate\-based statements\. 
+**Nestable** – You can nest this statement type\. 
 
-**WCUs** – 40 WCUs\. If you use the request component **All query parameters**, add 10 WCUs\. 
+**WCUs** – 40 WCUs, as a base cost\. If you use the request component **All query parameters**, add 10 WCUs\. If you use the request component **JSON body**, double the statement's base cost WCUs\. For each **Text transformation** that you apply, add 10 WCUs\.
 
 This statement operates on a web request component, and requires the following request component settings: 
 + **Request components** – The part of the web request to inspect, for example, a query string or the body\. For more information, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.

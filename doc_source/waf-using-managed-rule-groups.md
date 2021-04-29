@@ -11,18 +11,12 @@ The API and CLI calls return a list of all managed rules that you can reference 
 
 **To retrieve the list of rules in a managed rule group**
 + **Console** 
-
-  1. Add the managed rule group into your web ACL and finish creating your web ACL\. For guidance, see [Creating a web ACL](web-acl-creating.md)\. 
-
-  1. From the **Web ACLs** page, choose the web ACL you just created\. This takes you to the web ACL edit page\. 
-
-  1. Choose **Rules**\. 
-
-  1. Select the rule group you want to see a rules list for, then choose **Edit**\. AWS WAF shows the list of rules in the rule group\. 
-
-     In this page, you can optionally put individual rules into count mode by selecting **Override rules action**\. 
+  + \(Option\) When you add the managed rules group to your web ACL, you can choose **Edit** to view the rules\. 
+  + \(Option\) After you've added the managed rule group into your web ACL, from the **Web ACLs** page, choose the web ACL you just created\. This takes you to the web ACL edit page\. 
+    + Choose **Rules**\. 
+    + Select the rule group you want to see a rules list for, then choose **Edit**\. AWS WAF shows the list of rules in the rule group\. 
 + **API** – `DescribeManagedRuleGroup`
-+ **CLI** – `aws wafv2 describe-managed-rule-group --scope=REGIONAL --vendor-name=<vendor> --name=<managedrule_name>`
++ **CLI** – `aws wafv2 describe-managed-rule-group --scope REGIONAL --vendor-name <vendor> --name <managedrule_name>`
 
 The API and CLI calls return a list of all rules in the managed rule group that you can reference in the JSON model or through AWS CloudFormation\.
 

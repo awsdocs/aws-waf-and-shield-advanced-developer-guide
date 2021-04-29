@@ -16,6 +16,9 @@ AWS WAF has default quotas on the maximum number of entities you can have per ac
 | Maximum WCUs per rule group |  1,500  | 
 | Maximum number of IP sets  |  100  | 
 | Maximum number of requests per second per web ACL \(applies only to Application Load Balancers\) |  25,000  | 
+| Maximum number of custom request headers per web ACL or rule group | 100 | 
+| Maximum number of custom response headers per web ACL or rule group | 100 | 
+| Maximum number of custom response bodies per web ACL or rule group | 50 | 
 
 The maximum requests per second \(RPS\) allowed for AWS WAF on CloudFront is set by CloudFront and described in the [CloudFront Developer Guide](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html)\.
 
@@ -35,6 +38,11 @@ AWS WAF has fixed quotas on the following entity settings per account per Region
 | Maximum number of regex sets  |  10  | 
 | Maximum size of a web request body that can be inspected |  8 KB  | 
 | Minimum request rate that can be defined for a rate\-based rule |  100  | 
+| Maximum number of text transformations per rule statement |  3  | 
+| Maximum size of the custom response body content for a single custom response definition |  4 KB  | 
+| Maximum number of custom headers for a single custom response definition |  10  | 
+| Maximum number of custom headers for a single custom request definition |  10  | 
+| Maximum combined size of all response body content for a single rule group or a single web ACL |  50 KB  | 
 
 AWS WAF has the following fixed quotas on calls per account per Region\. These quotas apply to the total calls to the service through any available means, including the console, CLI, AWS CloudFormation, the REST API, and the SDKs\. These quotas can't be changed\.
 

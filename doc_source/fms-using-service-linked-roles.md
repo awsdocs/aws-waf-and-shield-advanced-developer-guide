@@ -10,11 +10,11 @@ For information about other services that support service\-linked roles, see [AW
 
 ## Service\-linked role permissions for Firewall Manager<a name="fms-slr-permissions"></a>
 
-Firewall Manager uses the service\-linked role FMSServiceRolePolicy\.
+Firewall Manager uses the service\-linked role AWSServiceRoleForFMS\.
 
 AWS Firewall Manager uses this service\-linked role to write logs to Amazon Kinesis Data Firehose\. This role is used only if you enable logging in AWS Firewall Manager\. For more information, see [Logging web ACL traffic information](logging.md)\.
 
-The FMSServiceRolePolicy service\-linked role trusts the service to assume the role `fms.amazonaws.com`\. 
+The AWSServiceRoleForFMS service\-linked role trusts the service to assume the role `fms.amazonaws.com`\. 
 
 The permissions policies of the role allows Firewall Manager to complete the following actions on the specified resources:
 + Action: `firehose:PutRecord` and `firehose:PutRecordBatch` on Amazon Kinesis Data Firehose data stream resources with a name that starts with "aws\-fms\-logs\-\." For example, `aws-fms-logs-us-east-2-analytics`\.
@@ -31,7 +31,7 @@ If you delete this service\-linked role, and then need to create it again, you c
 
 ## Editing a service\-linked role for Firewall Manager<a name="fms-edit-slr"></a>
 
-Firewall Manager doesn't allow you to edit the FMSServiceRolePolicy service\-linked role\. After you create a service\-linked role, you can't change the name of the role because various entities might reference the role\. However, you can edit the description of the role using IAM\. For more information, see [Editing a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
+Firewall Manager doesn't allow you to edit the AWSServiceRoleForFMS service\-linked role\. After you create a service\-linked role, you can't change the name of the role because various entities might reference the role\. However, you can edit the description of the role using IAM\. For more information, see [Editing a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
 
 ## Deleting a service\-linked role for Firewall Manager<a name="fms-delete-slr"></a>
 
@@ -42,7 +42,7 @@ If the Firewall Manager service is using the role when you try to delete the res
 
 **To delete the service\-linked role using IAM**
 
-Use the IAM console, the IAM CLI, or the IAM API to delete the FMSServiceRolePolicy service\-linked role\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
+Use the IAM console, the IAM CLI, or the IAM API to delete the AWSServiceRoleForFMS service\-linked role\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
 
 ## Supported Regions for Firewall Manager service\-linked roles<a name="fms-slr-regions"></a>
 
@@ -58,7 +58,7 @@ Firewall Manager supports using service\-linked roles in the following AWS Regio
 | US West \(N\. California\) | us\-west\-1 | Yes | 
 | US West \(Oregon\) | us\-west\-2 | Yes | 
 | Asia Pacific \(Mumbai\) | ap\-south\-1 | Yes | 
-| Asia Pacific \(Osaka\-Local\) | ap\-northeast\-3 | Yes | 
+| Asia Pacific \(Osaka\) | ap\-northeast\-3 | Yes | 
 | Asia Pacific \(Seoul\) | ap\-northeast\-2 | Yes | 
 | Asia Pacific \(Singapore\) | ap\-southeast\-1 | Yes | 
 | Asia Pacific \(Sydney\) | ap\-southeast\-2 | Yes | 

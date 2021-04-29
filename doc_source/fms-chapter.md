@@ -1,6 +1,6 @@
 # AWS Firewall Manager<a name="fms-chapter"></a>
 
-AWS Firewall Manager simplifies your administration and maintenance tasks across multiple accounts and resources for AWS WAF, AWS Shield Advanced, Amazon VPC security groups, and AWS Network Firewall\. With Firewall Manager, you set up your AWS WAF firewall rules, Shield Advanced protections, Amazon VPC security groups, and Network Firewall firewalls just once\. The service automatically applies the rules and protections across your accounts and resources, even as you add new resources\. 
+AWS Firewall Manager simplifies your administration and maintenance tasks across multiple accounts and resources for AWS WAF, AWS Shield Advanced, Amazon VPC security groups, AWS Network Firewall, and Route 53 Resolver DNS Firewall\. With Firewall Manager, you set up your AWS WAF firewall rules, Shield Advanced protections, Amazon VPC security groups, Network Firewall firewalls, and DNS Firewall rule group associations just once\. The service automatically applies the rules and protections across your accounts and resources, even as you add new resources\. 
 
 Firewall Manager provides these benefits:
 + Helps to protect resources across accounts
@@ -16,10 +16,10 @@ Firewall Manager is particularly useful when you want to protect your entire org
 **Topics**
 + [AWS Firewall Manager pricing](aws-fms-pricing.md)
 + [AWS Firewall Manager prerequisites](fms-prereq.md)
++ [Managing the AWS Firewall Manager administrator](fms-administrator.md)
 + [Getting started with AWS Firewall Manager policies](getting-started-fms-intro.md)
 + [Working with AWS Firewall Manager policies](working-with-policies.md)
 + [Viewing compliance information for an AWS Firewall Manager policy](fms-compliance.md)
 + [AWS Firewall Manager findings](fms-findings.md)
-+ [Designating a different account as the AWS Firewall Manager administrator account](fms-change-administrator.md)
 + [Security in AWS Firewall Manager](fms-security.md)
 + [AWS Firewall Manager quotas](fms-limits.md)

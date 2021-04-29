@@ -4,7 +4,7 @@
 
 Use the AWS Shield global threat dashboard to view trends and metrics about the DDoS threat landscape across Amazon EC2, Amazon CloudFront, Elastic Load Balancing, and Amazon Route 53\.
 
-The global threat dashboard provides a near real\-time summary of the global AWS threat landscape, including the largest attack, the top attack vectors, and the relative number of significant attacks\. You can customize the dashboard view for different time durations to see the history of significant DDoS attacks\.
+The global threat dashboard provides a near real\-time summary of the global AWS threat landscape, including the largest event, the top event vectors, and the relative number of significant events\. You can customize the dashboard view for different time durations to see the history of significant DDoS events\.
 
 **Note**  
 The console guidance provided here is for the latest version of the AWS Shield console, released in 2020\. In the console, you can switch between versions\. <a name="review-ddos-threat-dashboard"></a>
@@ -26,15 +26,19 @@ AWS Shield Advanced provides real\-time metrics and reports for extensive visibi
 These metrics and reports are available only for AWS Shield Advanced customers\. To activate AWS Shield Advanced, see [To subscribe to AWS Shield Advanced](enable-ddos-prem.md#enable-ddos-prem-procedure)\.
 
 You can view near real\-time metrics about events, including the following:
-+ Attack type
++ Event type
 + Start time
 + Duration
-+ Blocked packet per second
-+ HTTP request samples
++ Blocked bits or packets per second
++ Passed bits or packets per second
++ Source and destination IP addresses
++ Protocol
++ Resource ASN
++ TCP flag
 
-Details are available for active and past events that have occurred in the last 12 months\.
+Details are available for active events and for past events that have occurred in the last 12 months\.
 
-Additionally, AWS Shield Advanced gives you insight into your overall traffic at the time of the attack\. You can review details about the most prevalent:
+Additionally, AWS Shield Advanced gives you insight into your overall traffic at the time of an event\. You can review details about the most prevalent:
 + IP addresses
 + URLs
 + Referrers
@@ -43,6 +47,8 @@ Additionally, AWS Shield Advanced gives you insight into your overall traffic at
 + User Agents
 
 Use this information to create AWS WAF rules to help prevent future attacks\. For example, if you see that you have a lot of requests coming from a country that you don't typically do business in, you can create an AWS WAF rule to block requests from that country\. 
+
+In addition to the metrics and reports described here, you can see a year's summary of events for all of your resources, regardless of their protection status, in the **Overview** page under **Events summary in past year**\. 
 
 **Note**  
 The console guidance provided here is for the latest version of the AWS Shield console, released in 2020\. In the console, you can switch between versions\. <a name="review-ddos-reports-procedure"></a>
@@ -56,18 +62,36 @@ The console guidance provided here is for the latest version of the AWS Shield c
 The **Events** page provides the following possible current status for events:
 
 **Mitigation in progress**  
-Indicates a possible layer 3 or 4 attack has been identified and AWS is attempting to address the issue\.
+Indicates a possible layer 3 or 4 event has been identified and AWS is attempting to address the issue\.
 
 **Mitigated**  
-Indicates a possible layer 3 or 4 attack was identified\. AWS responded to the attack and the event appears to be over\.
+Indicates a possible layer 3 or 4 event was identified\. AWS responded to the event and it appears to be over\.
 
 **Identified \(ongoing\)**  
-Indicates a possible layer 7 attack has been identified\. AWS cannot address layer 7 attacks, so you must design your own layer mitigation processes\. For more information on responding to possible layer 7 attacks, see [Responding to DDoS attacks](ddos-responding.md)\.
+Indicates a possible layer 7 event has been identified\. AWS cannot address layer 7 events, so you must design your own layer mitigation processes\. For more information on responding to possible layer 7 events, see [Responding to DDoS events](ddos-responding.md)\.
 
 **Identified \(subsided\)**  
-Indicates a possible layer 7 attack was identified and appears to be over\.
+Indicates a possible layer 7 event was identified and appears to be over\.
 
-If you determine a possible attack is underway, you can contact the DDoS Response Team \(DRT\) through the [AWS Support Center](https://console.aws.amazon.com/support/home#/), or attempt to mitigate the attack on your own by creating a new web access control list \(web ACL\)\. <a name="mitigating-ddos-attack-procedure"></a>
+If you determine a possible event is underway, you can contact the DDoS Response Team \(DRT\) through the [AWS Support Center](https://console.aws.amazon.com/support/home#/), or attempt to mitigate the event on your own by creating a new web access control list \(web ACL\)\. 
+
+The **Events** page also contains tabs with additional details for detection and mitigation of events and for top contributors during an event\. 
+
+**Detection and mitigation**  
+The **Detection and mitigation** tab displays graphs that show the traffic that AWS Shield evaluated prior to reporting this event and the effect of any mitigation that was placed\. It also provides metrics for infrastructure\-layer Distributed Denial of Service \(DDoS\) events for resources in your own Amazon Virtual Private Cloud VPC and AWS Global Accelerator accelerators\. Detection and mitigation metrics are not included for Amazon CloudFront or Amazon Route 53 resources\.
+
+AWS Shield evaluates traffic to your protected resource along multiple dimensions\. When an anomaly is detected, Shield creates an event and reports the traffic dimension where the anomaly was observed\. If the protected resource is an Elastic IP address, Classic Load Balancer \(CLB\), Application Load Balancer, or Global Accelerator accelerator, Shield automatically creates a mitigation for the protected resource\. This protects your resource from receiving excess traffic and from receiving traffic that matches a known DDoS event signature\. 
+
+You might notice a difference between the traffic volume shown in the detection graphs and the pass and drop metrics reported on the mitigation graphs\. If the traffic that resulted in an event subsides before a mitigation is created, this traffic doesn’t appear in mitigation metrics\. The time difference between the first data point in detection metrics and the first data point in mitigation metrics is the latency between detection and mitigation of an event\. Detection metrics are based on sampled network flows while mitigation metrics are based on traffic that's observed by the mitigation systems\. Mitigation metrics are a more precise measurement of the traffic into your resource\. The DRT might leave a mitigation in place after the excess traffic has subsided\. Shield might maintain long\-running mitigations on resources that are frequently targeted\.
+
+**Top contributors**  
+The **Top contributors** tab provides insight into where traffic is coming from during a detected event\. You can view the highest volume contributors, sorted by aspects such as protocol, source port, and TCP flags\. You can download the information and you can adjust the units used and the number of contributors to display\.
+
+Top contributors provide additional metric dimensions that you can use to understand the network traffic that’s sent to your resource during an event\. These metrics are based on sampled network flows for both legitimate and potentially unwanted traffic\. Some or all of the traffic that you see in the metrics might have been passed to your resource or blocked by Shield\. 
+
+Top contributor data might be unavailable for a metric if no significant contributors can be identified\. Events that are more likely to have metrics with top contributors are large volume events and events where the traffic sources aren't highly distributed\. 
+
+Keep in mind that source attributes like source IP address and source ASN might be spoofed or reflected\. Spoofed packets are common in DDoS events where an attacker wants to obfuscate the real source of the traffic\. Reflected packets are common in DDoS events where an attacker wants to generate a larger, amplified flood of traffic to a target by reflecting the attack of services on the Internet that are usually legitimate\. In these cases, the source IP address or source ASN are valid, but they are not the actual source of the attack\.<a name="mitigating-ddos-attack-procedure"></a>
 
 **To mitigate a potential DDoS attack**
 

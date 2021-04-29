@@ -17,7 +17,7 @@ You can add protection for any of the following resource types:
 + [Getting started with AWS Shield Advanced](getting-started-ddos.md)
 + [Configuring AWS Shield Advanced setup](ddos-edit-drt.md)
 + [Managing resource protections in AWS Shield Advanced](ddos-manage-protected-resources.md)
-+ [Responding to DDoS attacks](ddos-responding.md)
++ [Responding to DDoS events](ddos-responding.md)
 + [Requesting a credit in AWS Shield Advanced](request-refund.md)
 + [Security in AWS Shield](shd-security.md)
 + [AWS Shield Advanced quotas](shield-limits.md)

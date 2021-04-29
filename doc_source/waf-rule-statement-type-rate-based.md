@@ -4,7 +4,9 @@ A rate\-based rule tracks the rate of requests for each originating IP address, 
 
 When the rule action triggers, AWS WAF applies the action to additional requests from the IP address until the request rate falls below the limit\. It can take a minute or two for the action change to go into effect\. 
 
-You can narrow the scope of the requests that AWS WAF counts\. To do this, you nest another statement inside the rate\-based statement\. Then, AWS WAF only counts requests that match the nested statement\. For example, based on recent requests that you've seen from an attacker in the United States, you might create a rate\-based rule with the following nested statement: 
+You can narrow the scope of the requests that AWS WAF counts\. To do this, you nest another, scope\-down statement inside the rate\-based statement\. Then, AWS WAF only counts requests that match the scope\-down statement\. For information about scope\-down statements, see [Scope\-down statements](waf-rule-scope-down-statements.md)\.
+
+For example, based on recent requests that you've seen from an attacker in the United States, you might create a rate\-based rule with the following scope\-down statement: 
 + AND rule statement that contains the following, second level of nested statements: 
   + A geo\-match match statement that specifies requests originating in the United States\.
   + A string match statement that searches in the `User-Agent` header for the string `BadBot`\.
@@ -19,6 +21,8 @@ As another example, you might want to limit requests to the login page on your w
 By adding this rate\-based rule to a web ACL, you could limit requests to your login page without affecting the rest of your site\.
 
 **Not nestable** – You can't nest this statement type inside other statements\. You can include it directly in a web ACL\. You cannot include it in a rule group\. 
+
+**\(Optional\) Scope\-down statement** – This rule type takes an optional scope\-down statement, to narrow the scope of the requests that the rate\-based statement tracks\. For more information, see [Scope\-down statements](waf-rule-scope-down-statements.md)\.
 
 **WCUs** – 2 plus any additional WCUs for a nested statement\.
 

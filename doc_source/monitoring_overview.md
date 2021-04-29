@@ -3,7 +3,7 @@
 Monitoring is an important part of maintaining the reliability, availability, and performance of your services\. 
 
 **Note**  
-For information about monitoring your Shield Advanced resources and identifying possible DDoS attacks using Shield Advanced, see [AWS Shield](shield-chapter.md)\. 
+For information about monitoring your Shield Advanced resources and identifying possible DDoS events using Shield Advanced, see [AWS Shield](shield-chapter.md)\. 
 
 As you start monitoring these services, you should create a monitoring plan that includes answers to the following questions:
 + What are your monitoring goals?

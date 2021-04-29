@@ -5,9 +5,9 @@ A size constraint statement compares a number of bytes against the size of a req
 **Note**  
 If you choose **URI** for the value of **Part of the request to filter on**, the **/** in the URI counts as one character\. For example, the URI `/logo.jpg` is nine characters long\.
 
-**Nestable** – You can nest this statement type inside logical rule statements and rate\-based statements\. 
+**Nestable** – You can nest this statement type\. 
 
-**WCUs** – 1 WCU\. If you use the request component **All query parameters**, add 10 WCUs\. 
+**WCUs** – 1 WCU, as a base cost\. If you use the request component **All query parameters**, add 10 WCUs\. If you use the request component **JSON body**, double the statement's base cost WCUs\. For each **Text transformation** that you apply, add 10 WCUs\.
 
 This statement operates on a web request component, and requires the following request component settings: 
 + **Request components** – The part of the web request to inspect, for example, a query string or the body\. For more information, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.

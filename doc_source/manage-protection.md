@@ -35,7 +35,7 @@ If you use Shield Advanced within an AWS Firewall Manager Shield Advanced policy
 
    1. Choose **Create**\.
 **Note**  
-If a resource is already associated with a web ACL, you can't change to a different web ACL\. If you want to change the web ACL, you must first remove the associated web ACLs from the resource\. For more information, see [Associating or disassociating a Web ACL with an AWS resource](web-acl-associating-aws-resource.md)\.
+If a resource is already associated with a web ACL, you can't change to a different web ACL\. If you want to change the web ACL, you must first remove the associated web ACLs from the resource\. For more information, see [Associating or disassociating a web ACL with an AWS resource](web-acl-associating-aws-resource.md)\.
 
    To create your own web ACL, follow these steps:
 

@@ -36,7 +36,7 @@ AWS Shield Advanced also offers some cost protection against spikes in your AWS 
 AWS WAF is included with AWS Shield Advanced at no extra cost\. For more information about AWS Shield Advanced pricing, see [AWS Shield Advanced Pricing](http://aws.amazon.com/shield/pricing/)\.
 
 When you add an AWS Shield Advanced protection to a resource, you can optionally include one or more additions to the protection\. The protection additions vary by resource type and can include the following:
-+ A custom AWS WAF web ACL or rate\-based rule, as described in [Step 3: Configure layer 7 DDoS mitigation](ddos-get-started-rate-based-rules.md)\.
++ A custom AWS WAF web ACL or rate\-based rule, as described in the previous section, [Step 3: Configure layer 7 DDoS mitigation](ddos-get-started-rate-based-rules.md)\.
 + An Amazon Route 53 health check for health\-based detection, as described in the following section\.
 
 ## Shield Advanced health\-based detection<a name="ddos-advanced-health-check-option"></a>
@@ -63,13 +63,13 @@ You can enable health\-based detection for the following resource types:
 With proactive engagement, the DDoS Response Team \(DRT\) engages with you directly if the Amazon Route 53 health check associated with your protected resource becomes unhealthy during an event that's detected by Shield Advanced\. This allows you to engage with experts more quickly when the availability of your application might be affected by a suspected attack\. 
 
 **Note**  
-To use proactive engagement for a protected resource, you must associate an Amazon Route 53 health check with the resource\.
+To use proactive engagement for a protected resource, you must associate an Amazon Route 53 health check with the resource, as described in [Shield Advanced health\-based detection](#ddos-advanced-health-check-option)\. 
 
 Proactive engagement is available for network\-layer and transport\-layer events on Elastic IP addresses and AWS Global Accelerator accelerators, and for web request floods on Amazon CloudFront distributions and Application Load Balancers\.
 
 To use proactive engagement, you configure Shield Advanced health\-based detection for a resource that you want the DRT to monitor\. You then specify 1\-10 contacts for proactive engagement\. The DRT uses the information to contact you during a detected event that correlates with an unhealthy protected resource\. After you provide your contact information, you can enable proactive engagement\. 
 
-When you enable proactive engagement for the first time, a DRT engineer contacts \- you to review your application architecture and complete activation of the feature\. \- This process can take a number of days\. 
+When you enable proactive engagement for the first time, a DRT engineer contacts you to review your application architecture and complete activation of the feature\. This process can take a number of days\. 
 
 **Note**  
 To use proactive engagement, you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.

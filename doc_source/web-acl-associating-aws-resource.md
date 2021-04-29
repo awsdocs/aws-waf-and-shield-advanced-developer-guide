@@ -1,4 +1,4 @@
-# Associating or disassociating a Web ACL with an AWS resource<a name="web-acl-associating-aws-resource"></a>
+# Associating or disassociating a web ACL with an AWS resource<a name="web-acl-associating-aws-resource"></a>
 
 You can use AWS WAF to associate a web ACL with an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API\.
 
