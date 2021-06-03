@@ -26,7 +26,7 @@ Depending on how you configure the policy, Firewall Manager creates a single fir
 **How Firewall Manager manages your firewall subnets**  
 Firewall subnets are the VPC subnets that Firewall Manager creates for the firewall endpoints that filter your network traffic\. Each firewall endpoint must be deployed in a dedicated VPC subnet\. Firewall Manager creates at least one firewall subnet in each VPC that's within scope of the policy\. 
 
-Firewall Manager only creates firewall subnets in Availability Zones that have public subnets\. A pubic subnet is a subnet attached to an internet gateway\. For more information, see [VPCs and subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-subnet-basics) in the [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)\. 
+Firewall Manager only creates firewall subnets in Availability Zones that have public subnets\. A public subnet is a subnet attached to an internet gateway\. For more information, see [VPCs and subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#vpc-subnet-basics) in the [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)\. 
 
 When you first define a Network Firewall policy, you choose one of the following ways for Firewall Manager to manage the firewall subnets in each of the VPCs that are in scope\. You cannot change this choice later\.
 + Deploy a firewall subnet for every Availability Zone that has public subnets\. This is the default behavior\. This provides high availability of your traffic filtering protections\. 
