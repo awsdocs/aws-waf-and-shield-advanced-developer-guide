@@ -15,3 +15,8 @@ This statement operates on a web request component, and requires the following r
 **Where to find this**
 + **Rule builder** on the console – For **Match type**, choose **Attack match conditions** > **Contains XSS injection attacks**\.
 + **API statement** – `XssMatchStatement`
+
+
+**Known issues**
++ Query string starts with `?on` will be [blocked](https://forums.aws.amazon.com/thread.jspa?threadID=251989) by this rule
+
