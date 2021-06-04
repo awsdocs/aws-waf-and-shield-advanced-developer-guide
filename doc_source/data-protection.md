@@ -13,3 +13,11 @@ For data protection purposes, we recommend that you protect AWS account credenti
 We strongly recommend that you never put sensitive identifying information, such as your customers' account numbers, into free\-form fields such as a **Name** field\. This includes when you work with AWS WAF or other AWS services using the console, API, AWS CLI, or AWS SDKs\. Any data that you enter into AWS WAF or other services might get picked up for inclusion in diagnostic logs\. When you provide a URL to an external server, don't include credentials information in the URL to validate your request to that server\.
 
 AWS WAF entities—such as web ACLs, rule groups, and IP sets—are encrypted at rest, except in certain Regions where encryption is not available, including China \(Beijing\) and China \(Ningxia\)\. Unique encryption keys are used for each Region\. 
+
+## Deleting AWS WAF resources<a name="deleting-resources"></a>
+
+You can delete the resources that you create in AWS WAF\. See the guidance for each resource type in following sections\.
++ [Deleting a web ACL](web-acl-deleting.md)
++ [Deleting a rule group](waf-rule-group-deleting.md)
++ [Deleting an IP set](waf-ip-set-deleting.md)
++ [Deleting a regex pattern set](waf-regex-pattern-set-deleting.md)

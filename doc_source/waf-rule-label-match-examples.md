@@ -7,7 +7,7 @@ These JSON listings were created in the console by adding a rule to a web ACL wi
 
 **Topics**
 + [Match against a local label](#waf-rule-label-match-examples-local-label)
-+ [Match against a label from anther context](#waf-rule-label-match-examples-label)
++ [Match against a label from another context](#waf-rule-label-match-examples-label)
 + [Match against a managed rule group label](#waf-rule-label-match-examples-mgd-rg-label)
 + [Match against a local namespace](#waf-rule-label-match-examples-local-namespace)
 + [Match against a managed rule group namespace](#waf-rule-label-match-examples-mgd-rg-namespace)
@@ -54,7 +54,7 @@ It wouldn't match the following label, because the context isn't the same, so th
 awswaf:111122223333:rulegroup:productionRules:header:encoding:utf8
 ```
 
-## Match against a label from anther context<a name="waf-rule-label-match-examples-label"></a>
+## Match against a label from another context<a name="waf-rule-label-match-examples-label"></a>
 
 The following JSON listing shows a label match rule that matches against a label from a rule inside a user\-created rule group\. The prefix is required in the specification for all rules running in the web ACL that aren't part of the named rule group\. This example label specification matches only the exact label\. 
 

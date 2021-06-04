@@ -21,14 +21,57 @@ The AWS Firewall Manager console provides an integrated environment for you to c
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
 The following AWS managed policies, which you can attach to users in your account, are specific to AWS Firewall Manager and are grouped by use case scenario:
-+ `AWSFMAdminFullAccess` – Grants full access to AWS Firewall Manager resources\.
-+ `AWSFMAdminReadOnlyAccess` – Grants read\-only access to all AWS Firewall Manager resources\. 
-+ `AWSFMMemberReadOnlyAccess` – Grants read\-only access to AWS Firewall Manager member resources\. 
++ `AWSFMAdminFullAccess` – Grants full access to Firewall Manager resources for most situations\. If you run in to difficulty creating or managing your Firewall Manager policies with this managed policy, see the following section, [Granting full access to AWS Firewall Manager resources](#fms-access-manually-grant-full-access)\.
++ `AWSFMAdminReadOnlyAccess` – Grants read\-only access to all Firewall Manager resources\. 
++ `AWSFMMemberReadOnlyAccess` – Grants read\-only access to Firewall Manager member resources\. 
 
 **Note**  
 You can review these permissions policies by signing in to the IAM console and searching for specific policies there\.
 
-You also can create your own custom IAM policies to allow permissions for AWS Firewall Manager API operations and resources\. You can attach these custom policies to the IAM users or groups that require those permissions or to custom execution roles \(IAM roles\) that you create for your Firewall Manager resources\. 
+You also can create your own custom IAM policies to allow permissions for Firewall Manager API operations and resources\. You can attach these custom policies to the IAM users or groups that require those permissions or to custom execution roles \(IAM roles\) that you create for your Firewall Manager resources\. 
+
+## Granting full access to AWS Firewall Manager resources<a name="fms-access-manually-grant-full-access"></a>
+
+Follow this guidance if you have difficulty creating or managing your Firewall Manager policies with the managed policy, `AWSFMAdminFullAccess`\. The managed policy is described in the previous section\.
+
+Use the following policy to grant full administrative access to your account:
+
+```
+{
+            "Version": "2012-10-17",
+            "Statement": [
+                  {
+                          "Sid": "VisualEditor0",
+                          "Effect": "Allow",
+                          "Action": [
+                                  "ec2:DescribeRegions",
+                                  "ec2:DescribeSecurityGroups",
+                                  "elasticloadbalancing:*",
+                                  "firehose:ListDeliveryStreams",
+                                  "fms:*",
+                                "network-firewall:ListRuleGroups",
+                                "network-firewall:DescribeRuleGroup",
+                                "organizations:DescribeOrganization",
+                                "organizations:DescribeOrganizationalUnit",
+                                "organizations:ListRoots",
+                                "organizations:ListChildren",
+                                "organizations:ListOrganizationalUnitsForParent",
+                                "sns:SetTopicAttributes",
+                                "sns:GetTopicAttributes",
+                                "sns:CreateTopic",
+                                "sns:ListTopics",
+                                "sns:Subscribe",
+                                "route53resolver:ListFirewallRuleGroups",
+                                "route53resolver:GetFirewallRuleGroup",
+                                "waf:ListRuleGroups",
+                                "waf-regional:ListRuleGroups",
+                                "wafv2:ListRuleGroups"
+                          ],
+                           "Resource": "*"
+                    }
+                ]
+             }
+```
 
 ## Customer managed policy examples<a name="fms-access-policy-examples-for-sdk-cli"></a>
 

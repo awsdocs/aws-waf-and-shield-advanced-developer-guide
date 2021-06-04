@@ -10,4 +10,4 @@ Rules let you precisely target the web requests that you want AWS WAF Classic to
 + [Creating a rule and adding conditions](classic-web-acl-rules-creating.md)
 + [Adding and removing conditions in a rule](classic-web-acl-rules-editing.md)
 + [Deleting a rule](classic-web-acl-rules-deleting.md)
-+ [AWS marketplace rule groups](classic-waf-managed-rule-groups.md)
++ [AWS Marketplace rule groups](classic-waf-managed-rule-groups.md)

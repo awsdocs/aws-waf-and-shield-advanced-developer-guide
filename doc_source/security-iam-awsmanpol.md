@@ -33,5 +33,5 @@ View details about updates to AWS managed policies for Firewall Manager since th
 
 | Change | Description | Date | 
 | --- | --- | --- | 
-|  `FMSServiceRolePolicy` – Update to the existing policy  |  Added new permissions to allow AWS Firewall Manager to manage Amazon Route 53 Resolver DNS Firewall\. This change allows Firewall Manager to configure Amazon Route 53 Resolver DNS Firewall associations\. This permits you to use Firewall Manager to provide DNS Firewall protections for your VPCs throughout your organization in AWS Organizations\.  | March 17, 2021 | 
+|  `FMSServiceRolePolicy` – Update to the existing policy  |  Added new permissions to allow AWS Firewall Manager to manage Amazon Route 53 Resolver DNS Firewall\. This change allows Firewall Manager to configure Amazon Route 53 Resolver DNS Firewall associations\. This permits you to use Firewall Manager to provide DNS Firewall protections for your VPCs throughout your organization in AWS Organizations\.  | March 17, 2021 | 
 |  Firewall Manager started tracking changes  |  Firewall Manager started tracking changes for its AWS managed policies\.  | March 03, 2021 | 

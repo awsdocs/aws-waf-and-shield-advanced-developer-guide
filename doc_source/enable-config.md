@@ -5,7 +5,7 @@ To use Firewall Manager, you must enable AWS Config\.
 **Note**  
 You incur charges for your AWS Config settings, according to AWS Config pricing\. For more information, see [Getting Started with AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/getting-started.html)\.
 
-**To enable AWS Config for Firewall Manager \(console\)**
+**To enable AWS Config for Firewall Manager**
 
 1. Enable AWS Config for each of your AWS Organizations member accounts\. For more information, see [Getting Started with AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/getting-started.html)\.
 

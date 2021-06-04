@@ -1,6 +1,6 @@
 # Changing the AWS Firewall Manager administrator account<a name="fms-change-administrator"></a>
 
-To use AWS Firewall Manager, you must log in to the console with a Firewall Manager administrator account\. You can designate only one account in an organization as a Firewall Manager administrator account\. It can be an AWS Organizations management account or a member account\. To set up an administrator account for the first time, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\. 
+To use AWS Firewall Manager, you must log in to the console with a Firewall Manager administrator account\. You can designate only one account in an organization as a Firewall Manager administrator account\. It must be a member account that's not the AWS Organizations management account\. To set up an administrator account for the first time, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\. 
 
 If you designate an account as an administrator account, and you later want to designate a different account as the administrator account, perform the following procedure\. 
 

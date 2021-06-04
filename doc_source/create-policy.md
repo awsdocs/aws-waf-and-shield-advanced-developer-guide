@@ -8,7 +8,7 @@ AWS Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator\
 **Topics**
 + [Creating an AWS Firewall Manager policy for AWS WAF](#creating-firewall-manager-policy-for-waf)
 + [Creating an AWS Firewall Manager policy for AWS WAF Classic](#creating-firewall-manager-policy-for-classic-waf)
-+ [Creating an AWS Firewall Manager policy for Shield Advanced](#creating-firewall-manager-policy-for-shield-advanced)
++ [Creating an AWS Firewall Manager policy for AWS Shield Advanced](#creating-firewall-manager-policy-for-shield-advanced)
 + [Creating an AWS Firewall Manager common security group policy](#creating-firewall-manager-policy-common-security-group)
 + [Creating an AWS Firewall Manager content audit security group policy](#creating-firewall-manager-policy-audit-security-group)
 + [Creating an AWS Firewall Manager usage audit security group policy](#creating-firewall-manager-policy-usage-security-group)
@@ -44,7 +44,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Next**\.
 
-1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the web ACLs that it creates\. The web ACL names begin with `FMManagedWebACLV2` followed by the policy name that you enter here\. 
+1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the web ACLs that it manages\. The web ACL names have `FMManagedWebACLV2-` followed by the policy name that you enter here, `-`, and the web ACL creation timestamp, in UTC milliseconds\. For example, `FMManagedWebACLV2-MyWAFPolicyName-1621880374078`\.
 
 1. Under **Policy rules**, add the rule groups that you want AWS WAF to evaluate first and last in the web ACL\. The individual account managers can add rules and rule groups in between your first rule groups and your last rule groups\. For more information, see [AWS WAF policies](waf-policies.md)\.
 
@@ -140,7 +140,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Review the new policy\. To make any changes, choose **Edit**\. When you are satisfied with the policy, choose **Create and apply policy**\.
 
-## Creating an AWS Firewall Manager policy for Shield Advanced<a name="creating-firewall-manager-policy-for-shield-advanced"></a><a name="get-started-fms-shield-create-security-policy-procedure"></a>
+## Creating an AWS Firewall Manager policy for AWS Shield Advanced<a name="creating-firewall-manager-policy-for-shield-advanced"></a><a name="get-started-fms-shield-create-security-policy-procedure"></a>
 
 **To create a Firewall Manager policy for Shield Advanced \(console\)**
 
@@ -415,6 +415,8 @@ For information about setting up a Firewall Manager administrator account, see [
 1. For the **Firewall endpoints** configuration, specify how you want the firewall endpoints to be managed by Firewall Manager\. We recommend using multiple endpoints for high availability\. 
 
 1. If you want to provide the CIDR blocks for Firewall Manager to use for firewall subnets in your VPCs, they must all be /28 CIDR blocks\. Enter one block per line\. If you omit these, Firewall Manager chooses IP addresses for you from those that are available in the VPCs\.
+**Note**  
+Auto remediation happens automatically for AWS Firewall Manager Network Firewall policies, so you won't see an option to choose not to auto remediate here\.
 
 1. Choose **Next**\.
 
@@ -457,7 +459,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Create policy**\.
 
-1. For **Policy type**, choose **Amazon Route 53 Resolver DNS Firewall**\. 
+1. For **Policy type**, choose **Amazon Route 53 Resolver DNS Firewall**\. 
 
 1. For **Region**, choose an AWS Region\. To protect resources in multiple Regions, you must create separate policies for each Region\. 
 

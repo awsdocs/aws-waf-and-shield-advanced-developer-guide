@@ -6,7 +6,7 @@ When you set up [Access control](shd-auth-and-access-control.md#shd-access-contr
 To specify an action, use the `shield:` prefix followed by the API operation name \(for example, `shield:CreateProtection`\)\.  
 The following list only includes actions that require explicit resource permissions\.
 
-You can use AWS\-wide condition keys in your AWS Shield policies to express conditions\. For a complete list of AWS\-wide keys, see [Available Keys for Conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\. 
+You can use AWS condition keys in your AWS Shield policies to express conditions\. For a complete list of AWS keys, see [Available Keys for Conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\. 
 
 For each action, we list the actions and the associated policy resource specifications\. 
 

@@ -58,7 +58,7 @@ If a request doesn't meet all three conditions in the rule and if the default ac
 If you add two or more rules to a web ACL, AWS WAF Classic performs the default action only if a request doesn't satisfy all the conditions in any of the rules\. For example, suppose you add a second rule that contains one condition:  
 + Requests that contain the value `BIGBadBot` in the `User-Agent` header\.
 AWS WAF Classic performs the default action only when a request doesn't meet all three conditions in the first rule and doesn't meet the one condition in the second rule\.
-On some occasions, AWS WAF might encounter an internal error that delays the response to API Gateway, CloudFront or an Application Load Balancer about whether to allow or block a request\. On those occasions CloudFront will typically allow the request or serve the content\. API Gateway and an Application Load Balancer typically will deny the request and not serve the content\.  
+On some occasions, AWS WAF might encounter an internal error that delays the response to Amazon API Gateway, Amazon CloudFront or an Application Load Balancer about whether to allow or block a request\. On those occasions CloudFront will typically allow the request or serve the content\. API Gateway and an Application Load Balancer typically will deny the request and not serve the content\.  
 The following illustration shows how AWS WAF Classic checks the rules and performs the actions based on those rules\.
 
 ![\[Web ACL\]](http://docs.aws.amazon.com/waf/latest/developerguide/images/web-acl-3a.png)

@@ -20,7 +20,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Next**\.
 
-1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the web ACLs that it creates\. The web ACL names begin with `FMManagedWebACLV2` followed by the policy name that you enter here\. 
+1. For **Policy name**, enter a descriptive name\. Firewall Manager includes the policy name in the names of the web ACLs that it manages\. The web ACL names have `FMManagedWebACLV2-` followed by the policy name that you enter here, `-`, and the web ACL creation timestamp, in UTC milliseconds\. For example, `FMManagedWebACLV2-MyWAFPolicyName-1621880374078`\.
 
 1. Under **Policy rules**, for **First rule groups**, choose **Add rule groups**\. Expand the **AWS managed rule groups**\. For **Core rule set**, toggle **Add to web ACL**\. For **AWS known bad inputs**, toggle **Add to web ACL**\. Choose **Add rules**\.
 
@@ -29,6 +29,8 @@ For information about setting up a Firewall Manager administrator account, see [
    Under **First rule groups**, select **Core rule set** and choose **Move down**\. AWS WAF evaluates web requests against the **AWS known bad inputs** rule group before it evaluates against the **Core rule set**\. 
 **Note**  
 You can also create your own AWS WAF rule groups if you want, using the AWS WAF console\. Any rule groups that you create show up under **Your rule groups** in the **Describe policy : Add rule groups page**\. 
+
+   The first and last AWS WAF rule groups that you manage through Firewall Manager have names that begin with `PREFMManaged-` or `POSTFMManaged-`, respectively, followed by the Firewall Manager policy name, and the rule group creation timestamp, in UTC milliseconds\. For example, `PREFMManaged-MyWAFPolicyName-1621880555123`\.
 
 1. Leave the default action for the web ACL at **Allow**\. 
 

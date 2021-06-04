@@ -17,3 +17,10 @@ For data protection purposes, we recommend that you protect AWS account credenti
 We strongly recommend that you never put sensitive identifying information, such as your customers' account numbers, into free\-form fields such as a **Name** field\. This includes when you work with AWS WAF Classic or other AWS services using the console, API, AWS CLI, or AWS SDKs\. Any data that you enter into AWS WAF Classic or other services might get picked up for inclusion in diagnostic logs\. When you provide a URL to an external server, don't include credentials information in the URL to validate your request to that server\.
 
 AWS WAF Classic entities—such as web ACLs, rules, and conditions—are encrypted at rest, except in certain Regions where encryption is not available, including China \(Beijing\) and China \(Ningxia\)\. Unique encryption keys are used for each Region\. 
+
+## Deleting AWS WAF Classic resources<a name="classic-deleting-resources"></a>
+
+You can delete the resources that you create in AWS WAF Classic\. See the guidance for each resource type in following sections\.
++ [Deleting a Web ACL](classic-web-acl-deleting.md)
++ [Adding and deleting rules from an AWS WAF Classic rule group](classic-rule-group-editing.md)
++ [Deleting a rule](classic-web-acl-rules-deleting.md)

@@ -1,7 +1,7 @@
 # AWS WAF, AWS Firewall Manager, and AWS Shield Advanced Developer Guide
 
 -----
-*****Copyright &copy;  Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -133,14 +133,6 @@ Amazon's trademarks and trade dress may not be used in
    + [Getting started with AWS WAF Classic](classic-getting-started.md)
    + [Tutorials for AWS WAF Classic](classic-tutorials.md)
       + [Tutorial: Quickly setting up AWS WAF Classic protection against common attacks](classic-tutorials-common-attacks.md)
-      + [Tutorial: Implementing a DDoS-resistant website using AWS services](classic-tutorials-ddos-cross-service.md)
-         + [Prerequisites](classic-tutorials-ddos-cross-service-prereq.md)
-         + [Step 1: Launch a virtual server using Amazon EC2](classic-tutorials-ddos-cross-service-EC2.md)
-         + [Step 2: Scale your traffic using Elastic Load Balancing](classic-tutorials-ddos-cross-service-ELB.md)
-         + [Step 3: Improve performance and absorb attacks using Amazon CloudFront](classic-tutorials-ddos-cross-service-CF.md)
-         + [Step 4: Register your Domain name and implement DNS service using Route 53](classic-tutorials-ddos-cross-service-R53.md)
-         + [Step 5: Detect and filter malicious web requests using AWS WAF Classic](classic-tutorials-ddos-cross-service-WAF.md)
-         + [Additional best practices](classic-tutorials-ddos-cross-service-best-practices.md)
       + [Blog tutorials](classic-blog_tutorials.md)
    + [Creating and configuring a Web Access Control List (Web ACL)](classic-web-acl.md)
       + [Working with conditions](classic-web-acl-create-condition.md)
@@ -155,7 +147,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Creating a rule and adding conditions](classic-web-acl-rules-creating.md)
          + [Adding and removing conditions in a rule](classic-web-acl-rules-editing.md)
          + [Deleting a rule](classic-web-acl-rules-deleting.md)
-         + [AWS marketplace rule groups](classic-waf-managed-rule-groups.md)
+         + [AWS Marketplace rule groups](classic-waf-managed-rule-groups.md)
       + [Working with web ACLs](classic-web-acl-working-with.md)
          + [Deciding on the default action for a Web ACL](classic-web-acl-default-action.md)
          + [Creating a Web ACL](classic-web-acl-creating.md)
@@ -191,7 +183,7 @@ Amazon's trademarks and trade dress may not be used in
 + [AWS Firewall Manager](fms-chapter.md)
    + [AWS Firewall Manager pricing](aws-fms-pricing.md)
    + [AWS Firewall Manager prerequisites](fms-prereq.md)
-      + [Step 1: Join AWS Organizations](join-aws-orgs.md)
+      + [Step 1: Join and configure AWS Organizations](join-aws-orgs.md)
       + [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)
       + [Step 3: Enable AWS Config](enable-config.md)
       + [Step 4: For Network Firewall and DNS Firewall policies, enable resource sharing](enable-ram.md)
@@ -226,6 +218,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Working with AWS Firewall Manager policies](working-with-policies.md)
       + [Creating an AWS Firewall Manager policy](create-policy.md)
       + [Deleting an AWS Firewall Manager policy](policy-deleting.md)
+      + [AWS Firewall Manager policy scope](policy-scope.md)
       + [Managed lists](working-with-managed-lists.md)
       + [AWS WAF policies](waf-policies.md)
       + [AWS Shield Advanced policies](policy-scope-changes.md)

@@ -1,8 +1,10 @@
 # Step 2: Set the AWS Firewall Manager administrator account<a name="enable-integration"></a>
 
-AWS Firewall Manager must be associated with the management account of your AWS organization or associated with a member account that has permissions equivalent to those of the management account\. The account that you associate with Firewall Manager is called the Firewall Manager administrator account\. For more information about AWS Organizations and management accounts, see [Managing the AWS Accounts in Your Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html)\.<a name="enable-integration-procedure-console"></a>
+This procedure uses the account and organization that you chose and configured in the preceding step\.
 
-**To set the Firewall Manager administrator account \(console\)**
+When you set the Firewall Manager administrator account, Firewall Manager automatically sets it as the AWS Organizations Delegated Administrator for Firewall Manager\. This allows Firewall Manager to access information about the organizational units \(OUs\)\. You can use OUs to specify the scope of your Firewall Manager policies\. For more information about setting policy scope, see the guidance for the individual policy types under [Creating an AWS Firewall Manager policy](create-policy.md)\. For more information about Organizations and management accounts, see [Managing the AWS Accounts in Your Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html)\.<a name="enable-integration-procedure-console"></a>
+
+**To set the Firewall Manager administrator account**
 
 1. Sign in to the AWS Management Console using an existing AWS Organizations management account\. You can sign in using the account's root user \(not recommended\) or another IAM user or IAM role within the account that has equivalent permissions\.
 
@@ -10,12 +12,10 @@ AWS Firewall Manager must be associated with the management account of your AWS 
 
 1. Choose **Get started**\.
 
-1. Type the account ID for the account that you want to use as the Firewall Manager administrator\. The account ID can be for the account that you are signed in with, or a different account\. If the account ID that you type is not an AWS Organizations management account, Firewall Manager sets the appropriate permissions for the member account that you specify\.
+1. Type the ID of the account that you've chosen to use as the Firewall Manager administrator\. 
 **Note**  
-The account that you enter in this step is given permission to create and manage AWS WAF rules across all accounts within your organization\.
+The account that you enter in this step is given permission to create and manage Firewall Manager policies across all accounts within your organization\.
 
 1. Choose **Set administrator**\.
 
 For more information about managing the Firewall Manager administrator account, see [Managing the AWS Firewall Manager administrator](fms-administrator.md)\.
-
-After you set the Firewall Manager administrator account, go to [Step 3: Enable AWS Config](enable-config.md)\.

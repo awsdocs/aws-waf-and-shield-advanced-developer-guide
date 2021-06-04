@@ -5,7 +5,7 @@ When you set up [Access control](waf-auth-and-access-control.md#access-control) 
 **Note**  
 To specify an action, use the `wafv2:` prefix followed by the API operation name \(for example, `wafv2:CreateIPSet`\)\.
 
-You can use AWS\-wide condition keys in your AWS WAF policies to express conditions\. For a complete list of AWS\-wide keys, see [Available Keys for Conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\. 
+You can use general AWS condition keys in your AWS WAF policies to express conditions\. For a complete list of AWS keys, see [Available Keys for Conditions](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#AvailableKeys) in the *IAM User Guide*\. 
 
 **Global and regional settings**  
 In the resource settings in this section, use the following `scope` and `region` settings: 

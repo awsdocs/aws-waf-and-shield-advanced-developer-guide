@@ -6,6 +6,8 @@ This section describes the settings that you can specify for rule statements tha
 
 The request component specifies the part of a web request for AWS WAF to inspect\. You specify this for standard rule statements that look for patterns inside the web request\. These include regex pattern match, SQL injection attack, and size constraint statements\. 
 
+Unless otherwise noted, if a web request doesn't have the request component that's specified in the rule statement, the request results as not matching the rule\.
+
 **Note**  
 You specify a single request component for each rule statement that requires it\. To inspect more than one component of a request, create a rule statement for each component\. 
 

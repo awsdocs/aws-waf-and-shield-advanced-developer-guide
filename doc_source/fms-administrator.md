@@ -1,6 +1,6 @@
 # Managing the AWS Firewall Manager administrator<a name="fms-administrator"></a>
 
-You use your Firewall Manager administrator account to manage your Firewall Manager policies\. 
+You use your Firewall Manager administrator account to manage your Firewall Manager policies\. When you set the Firewall Manager administrator account, Firewall Manager automatically sets it as the AWS Organizations Delegated Administrator for Firewall Manager\. This allows Firewall Manager to access information about the organizational units \(OUs\) that you use to specify the scope of your Firewall Manager policies\. For more information about Organizations and management accounts, see [Managing the AWS Accounts in Your Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html)\.
 
 To begin using Firewall Manager, you set up your Firewall Manager administrator account and perform other required steps\. To do this, follow the guidance under [AWS Firewall Manager prerequisites](fms-prereq.md)\. 
 

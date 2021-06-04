@@ -20,7 +20,7 @@ After you've configured all the rules in a web ACL to count requests and associa
 + Change the calculation that CloudWatch performs on the data, such as maximum, minimum, average, or sum
 
 **Note**  
-AWS WAF with CloudFront is a global service and metrics are available only when you choose the **US East \(N\. Virginia\)** Region in the AWS console\. If you choose another region, no AWS WAF metrics will appear in the CloudWatch console\.<a name="web-acl-testing-count-procedure"></a>
+AWS WAF with CloudFront is a global service and metrics are available only when you choose the **US East \(N\. Virginia\)** Region in the AWS Console\. If you choose another region, no AWS WAF metrics will appear in the CloudWatch console\.<a name="web-acl-testing-count-procedure"></a>
 
 **To view data for the rules in a web ACL**
 

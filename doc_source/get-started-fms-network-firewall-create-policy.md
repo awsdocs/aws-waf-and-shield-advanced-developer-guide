@@ -25,6 +25,8 @@ For information about setting up a Firewall Manager administrator account, see [
 1. For **Policy name**, enter a descriptive name\. 
 
 1. The policy configuration allows you to define the firewall policy\. This is the same process as the one you use in the AWS Network Firewall console\. You add the rule groups that you want to use in your policy and provide the default stateless actions\. For this tutorial, configure this policy as you would a firewall policy in Network Firewall\. 
+**Note**  
+Auto remediation happens automatically for AWS Firewall Manager Network Firewall policies, so you won't see an option to choose not to auto remediate here\.
 
 1. Choose **Next**\.
 

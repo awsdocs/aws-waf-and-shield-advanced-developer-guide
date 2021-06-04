@@ -7,7 +7,7 @@ This is **AWS WAF Classic** documentation\. You should only use this version if 
 An AWS WAF Classic *rule group* is a set of rules that you add to an AWS WAF Classic AWS Firewall Manager policy\. You can create your own rule group, or you can purchase a managed rule group from AWS Marketplace\. 
 
 **Important**  
-If you want to add an AWS Marketplace rule group to your Firewall Manager policy, each account in your organization must first subscribe to that rule group\. After all accounts have subscribed, you can then add the rule group to a policy\. For more information, see [AWS marketplace rule groups](classic-waf-managed-rule-groups.md)\.
+If you want to add an AWS Marketplace rule group to your Firewall Manager policy, each account in your organization must first subscribe to that rule group\. After all accounts have subscribed, you can then add the rule group to a policy\. For more information, see [AWS Marketplace rule groups](classic-waf-managed-rule-groups.md)\.
 
 **Topics**
 + [Creating an AWS WAF Classic rule group](classic-create-rule-group.md)

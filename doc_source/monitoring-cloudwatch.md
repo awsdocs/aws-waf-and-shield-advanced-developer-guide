@@ -31,7 +31,7 @@ Metrics are grouped first by the service namespace, and then by the various dime
 1. On the **All metrics** tab, choose the appropriate service\.
 
 **To view metrics using the AWS CLI**
-+ For AWS WAF, at a command prompt use the following command:
++ For AWS/WAFV2, at a command prompt use the following command:
 
   ```
   1. aws cloudwatch list-metrics --namespace "AWS/WAFV2"

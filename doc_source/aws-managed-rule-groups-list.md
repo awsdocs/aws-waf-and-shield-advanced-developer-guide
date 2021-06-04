@@ -145,21 +145,25 @@ VendorName: `AWS`, Name: `AWSManagedRulesAmazonIpReputationList`, WCU: 25
 
 The Amazon IP reputation list rule group contains rules that are based on Amazon internal threat intelligence\. This is useful if you would like to block IP addresses typically associated with bots or other threats\. Blocking these IP addresses can help mitigate bots and reduce the risk of a malicious actor discovering a vulnerable application\.
 
+The rules in this rule group add labels to matching requests\. For information about labeling, see [AWS WAF labels on web requests](waf-rule-labels.md)\.
+
 
 | Rule name | Description | 
 | --- | --- | 
-| AWSManagedIPReputationList\_xxxx | Inspects for a list of IP addresses that have been identified as malicious actors and bots by Amazon threat intelligence\. | 
+| AWSManagedIPReputationList | Inspects for a list of IP addresses that have been identified as bots by Amazon threat intelligence\.Label: `awswaf:managed:aws:amazon-ip-list:AWSManagedIPReputationList`\.  | 
 
 **Anonymous IP list**  
 VendorName: `AWS`, Name: `AWSManagedRulesAnonymousIpList`, WCU: 50
 
 The Anonymous IP list rule group contains rules to block requests from services that allow the obfuscation of viewer identity\. These include requests from VPNs, proxies, Tor nodes, and hosting providers \(including AWS\)\. This rule group is useful if you want to filter out viewers that might be trying to hide their identity from your application\. Blocking the IP addresses of these services can help mitigate bots and evasion of geographic restrictions\.
 
+The rules in this rule group add labels to matching requests\. For information about labeling, see [AWS WAF labels on web requests](waf-rule-labels.md)\.
+
 
 | Rule name | Description | 
 | --- | --- | 
-| AnonymousIPList | Inspects for a list of IP addresses of sources known to anonymize client information, like TOR nodes, temporary proxies, and other masking services\.  | 
-| HostingProviderIPList | Inspects for a list of IP addresses from hosting and cloud providers, which are less likely to source end\-user traffic\. Examples include cloud providers like AWS\. | 
+| AnonymousIPList | Inspects for a list of IP addresses of sources known to anonymize client information, like TOR nodes, temporary proxies, and other masking services\. Label: `awswaf:managed:aws:anonymous-ip-list:AnonymousIPList`\.  | 
+| HostingProviderIPList | Inspects for a list of IP addresses from hosting and cloud providers, which are less likely to source end\-user traffic\. Examples include cloud providers like AWS\. Label: `awswaf:managed:aws:anonymous-ip-list:HostingProviderIPList`\.  | 
 
 ## AWS WAF Bot Control rule group<a name="aws-managed-rule-groups-bot"></a>
 
