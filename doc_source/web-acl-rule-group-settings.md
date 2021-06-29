@@ -24,26 +24,27 @@ The following example JSON listing shows a rule group declaration inside a web A
 
 ```
 {
-    "Name": "AWS-AWSBotControl-Example",
-   "Priority": 5, 
-   "Statement": {
+  "Name": "AWS-AWSBotControl-Example",
+  "Priority": 5,
+  "Statement": {
     "ManagedRuleGroupStatement": {
-        "VendorName": "AWS",
-        "Name": "AWSManagedRulesBotControlRuleSet",
-        "ExcludedRules": [
-            {
-                "Name": "CategoryVerifiedSearchEngine"
-            },
-            {
-                "Name": "CategoryVerifiedSocialMedia"
-            }
-        ]
+      "VendorName": "AWS",
+      "Name": "AWSManagedRulesBotControlRuleSet",
+      "ExcludedRules": [
+        {
+          "Name": "CategoryVerifiedSearchEngine"
+        },
+        {
+          "Name": "CategoryVerifiedSocialMedia"
+        }
+      ]
     },
-   "VisibilityConfig": {
-       "SampledRequestsEnabled": true,
-       "CloudWatchMetricsEnabled": true,
-       "MetricName": "AWS-AWSBotControl-Example"
-   }
+    "VisibilityConfig": {
+      "SampledRequestsEnabled": true,
+      "CloudWatchMetricsEnabled": true,
+      "MetricName": "AWS-AWSBotControl-Example"
+    }
+  }
 }
 ```
 
@@ -65,21 +66,21 @@ The following example JSON listing shows a rule group declaration inside a web A
 
 ```
 {
-   "Name": "AWS-AWSBotControl-Example",
-   "Priority": 5,  
-   "Statement": {
+  "Name": "AWS-AWSBotControl-Example",
+  "Priority": 5,
+  "Statement": {
     "ManagedRuleGroupStatement": {
-     "VendorName": "AWS",
-     "Name": "AWSManagedRulesBotControlRuleSet"
-     }
-   },
-    "OverrideAction": {
-       "Count": {}
-    },
-   "VisibilityConfig": {
-        "SampledRequestsEnabled": true,
-        "CloudWatchMetricsEnabled": true,
-        "MetricName": "AWS-AWSBotControl-Example"
-   }
+      "VendorName": "AWS",
+      "Name": "AWSManagedRulesBotControlRuleSet"
+    }
+  },
+  "OverrideAction": {
+    "Count": {}
+  },
+  "VisibilityConfig": {
+    "SampledRequestsEnabled": true,
+    "CloudWatchMetricsEnabled": true,
+    "MetricName": "AWS-AWSBotControl-Example"
+  }
 }
 ```
