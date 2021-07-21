@@ -2,7 +2,7 @@
 
 ## Monitoring threats across AWS<a name="aws-shield-global-threats"></a>
 
-Use the AWS Shield global threat dashboard to view trends and metrics about the DDoS threat landscape across Amazon EC2, Amazon CloudFront, Elastic Load Balancing, and Amazon Route 53\.
+Use the AWS Shield global threat dashboard to view trends and metrics about the DDoS threat landscape across Amazon EC2, Amazon CloudFront, Elastic Load Balancing, and Amazon Route 53 \.
 
 The global threat dashboard provides a near real\-time summary of the global AWS threat landscape, including the largest event, the top event vectors, and the relative number of significant events\. You can customize the dashboard view for different time durations to see the history of significant DDoS events\.
 
@@ -73,16 +73,16 @@ Indicates a possible layer 7 event has been identified\. AWS cannot address laye
 **Identified \(subsided\)**  
 Indicates a possible layer 7 event was identified and appears to be over\.
 
-If you determine a possible event is underway, you can contact the DDoS Response Team \(DRT\) through the [AWS Support Center](https://console.aws.amazon.com/support/home#/), or attempt to mitigate the event on your own by creating a new web access control list \(web ACL\)\. 
+If you determine a possible event is underway, you can contact the Shield Response Team \(SRT\) through the [AWS Support Center](https://console.aws.amazon.com/support/home#/), or attempt to mitigate the event on your own by creating a new web access control list \(web ACL\)\. 
 
 The **Events** page also contains tabs with additional details for detection and mitigation of events and for top contributors during an event\. 
 
 **Detection and mitigation**  
-The **Detection and mitigation** tab displays graphs that show the traffic that AWS Shield evaluated prior to reporting this event and the effect of any mitigation that was placed\. It also provides metrics for infrastructure\-layer Distributed Denial of Service \(DDoS\) events for resources in your own Amazon Virtual Private Cloud VPC and AWS Global Accelerator accelerators\. Detection and mitigation metrics are not included for Amazon CloudFront or Amazon Route 53 resources\.
+The **Detection and mitigation** tab displays graphs that show the traffic that AWS Shield evaluated prior to reporting this event and the effect of any mitigation that was placed\. It also provides metrics for infrastructure\-layer Distributed Denial of Service \(DDoS\) events for resources in your own Amazon Virtual Private Cloud VPC and AWS Global Accelerator accelerators\. Detection and mitigation metrics are not included for Amazon CloudFront or Amazon Route 53 resources\.
 
 AWS Shield evaluates traffic to your protected resource along multiple dimensions\. When an anomaly is detected, Shield creates an event and reports the traffic dimension where the anomaly was observed\. If the protected resource is an Elastic IP address, Classic Load Balancer \(CLB\), Application Load Balancer, or Global Accelerator accelerator, Shield automatically creates a mitigation for the protected resource\. This protects your resource from receiving excess traffic and from receiving traffic that matches a known DDoS event signature\. 
 
-You might notice a difference between the traffic volume shown in the detection graphs and the pass and drop metrics reported on the mitigation graphs\. If the traffic that resulted in an event subsides before a mitigation is created, this traffic doesn’t appear in mitigation metrics\. The time difference between the first data point in detection metrics and the first data point in mitigation metrics is the latency between detection and mitigation of an event\. Detection metrics are based on sampled network flows while mitigation metrics are based on traffic that's observed by the mitigation systems\. Mitigation metrics are a more precise measurement of the traffic into your resource\. The DRT might leave a mitigation in place after the excess traffic has subsided\. Shield might maintain long\-running mitigations on resources that are frequently targeted\.
+You might notice a difference between the traffic volume shown in the detection graphs and the pass and drop metrics reported on the mitigation graphs\. If the traffic that resulted in an event subsides before a mitigation is created, this traffic doesn’t appear in mitigation metrics\. The time difference between the first data point in detection metrics and the first data point in mitigation metrics is the latency between detection and mitigation of an event\. Detection metrics are based on sampled network flows while mitigation metrics are based on traffic that's observed by the mitigation systems\. Mitigation metrics are a more precise measurement of the traffic into your resource\. The SRT might leave a mitigation in place after the excess traffic has subsided\. Shield might maintain long\-running mitigations on resources that are frequently targeted\.
 
 **Top contributors**  
 The **Top contributors** tab provides insight into where traffic is coming from during a detected event\. You can view the highest volume contributors, sorted by aspects such as protocol, source port, and TCP flags\. You can download the information and you can adjust the units used and the number of contributors to display\.

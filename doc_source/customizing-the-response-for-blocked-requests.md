@@ -33,7 +33,7 @@ You define the body of a custom response within the context of the web ACL or ru
 When you create a custom response in the console, you can choose from response bodies that you've already defined or you can create a new body\. Outside of the console, you define your custom response bodies at the web ACL or rule group level, and then reference them from the action settings within the web ACL or rule group\. This is shown in the example JSON in the following section\. 
 
 **Custom response example**  
-The following example lists the JSON for a rule group with the custom response settings in **bold**\. The custom response body is defined for the rule group, then referenced by key in the rule action\.
+The following example lists the JSON for a rule group with custom response settings\. The custom response body is defined for the entire rule group, then referenced by key in the rule action\.
 
 ```
 {

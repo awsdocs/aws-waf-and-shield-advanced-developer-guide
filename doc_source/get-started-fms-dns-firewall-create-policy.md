@@ -2,7 +2,7 @@
 
 After completing the prerequisites, you create an AWS Firewall Manager DNS Firewall policy\. A DNS Firewall policy provides a set of centrally controlled DNS Firewall rule group associations for your entire AWS organization\. It also defines the AWS accounts and resources that the firewall applies to\. 
 
-For more information about how Firewall Manager manages your DNS Firewall rule group associations, see [Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.<a name="get-started-fms-dns-firewall-create-policy-procedure"></a>
+For more information about how Firewall Manager manages your DNS Firewall rule group associations, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.<a name="get-started-fms-dns-firewall-create-policy-procedure"></a>
 
 **To create a Firewall Manager DNS Firewall policy \(console\)**
 
@@ -14,7 +14,7 @@ For more information about how Firewall Manager manages your DNS Firewall rule g
 
 1. Choose **Create security policy**\.
 
-1. For **Policy type**, choose **Route 53 Resolver DNS Firewall**\. 
+1. For **Policy type**, choose **Amazon Route 53 Resolver DNS Firewall**\. 
 
 1. For **Region**, choose an AWS Region\. 
 
@@ -40,4 +40,4 @@ For more information about how Firewall Manager manages your DNS Firewall rule g
 
 1. When you are finished exploring, if you don't want to keep the policy that you created for this tutorial, choose the policy name, choose **Delete**, choose **Clean up resources created by this policy\.**, and finally choose **Delete**\. 
 
-For more information about Firewall Manager DNS Firewall policies, see [Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.
+For more information about Firewall Manager DNS Firewall policies, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.

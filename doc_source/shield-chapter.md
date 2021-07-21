@@ -4,9 +4,9 @@ AWS provides AWS Shield Standard and AWS Shield Advanced for protection against 
 
 You can add protection for any of the following resource types:
 + Amazon CloudFront distributions
-+ Amazon Route 53 hosted zones
++ Amazon Route 53 hosted zones
 + AWS Global Accelerator accelerators
-+ Application load balancers
++ Application Load Balancers
 + Elastic Load Balancing \(ELB\) load balancers
 + Amazon Elastic Compute Cloud \(Amazon EC2\) Elastic IP addresses
 

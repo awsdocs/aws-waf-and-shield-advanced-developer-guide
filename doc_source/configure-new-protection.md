@@ -9,7 +9,7 @@ Shield Advanced offers advanced monitoring and protection for the following:
 + Elastic Load Balancing \(ELB\) load balancers
 + Amazon EC2 Elastic IP addresses
 + Amazon CloudFront distributions
-+ Amazon Route 53 hosted zones
++ Amazon Route 53 hosted zones
 + AWS Global Accelerator accelerators
 
 You can monitor and protect up to 1,000 resources for each of these resource types per AWS account\. For example, you could protect 1,000 IP addresses, 1,000 distributions, and 1,000 load balancers in a single account\. If you want to increase the number of resources that you can protect, contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.

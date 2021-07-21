@@ -53,20 +53,20 @@ If a resource is already associated with a web ACL, you can't change to a differ
 
 ## Configure health check based DDoS detection<a name="associate-health-check"></a>
 
-You can use your Amazon Route 53 health checks to improve how AWS Shield Advanced detects and mitigates network\-layer, transport\-layer, and application layer attacks\. For information about how this works, see [Shield Advanced health\-based detection](ddos-overview.md#ddos-advanced-health-check-option)\.
+You can use your Amazon Route 53 health checks to improve how AWS Shield Advanced detects and mitigates network\-layer, transport\-layer, and application layer attacks\. For information about how this works, see [Shield Advanced health\-based detection](ddos-overview.md#ddos-advanced-health-check-option)\.
 
-To get started with health\-based detection, create a Route 53 health check for the AWS resource that you want to protect with Shield Advanced\. For information about Route 53 health checks, see [How Amazon Route 53 Checks the Health of Your Resources](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) and [Creating and Updating Health Checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating.html)\. After you create your health check, associate it with your protection using the following procedure\. 
+To get started with health\-based detection, create a Route 53 health check for the AWS resource that you want to protect with Shield Advanced\. For information about Route 53 health checks, see [How Amazon Route 53 Checks the Health of Your Resources](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) and [Creating and Updating Health Checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating.html)\. After you create your health check, associate it with your protection using the following procedure\. 
 
 **Note**  
 You are responsible for ensuring that the health check you use is relevant to the health of the protected resource and that it remains available for use by the protection\. Shield Advanced doesn't manage the health check in any way\. 
 
-The following procedure shows how to associate an Amazon Route 53 health check with a protection\. 
+The following procedure shows how to associate an Amazon Route 53 health check with a protection\. 
 
 **To configure health\-based DDoS detection**
 
 1. In the protections page **Configure health check based DDoS detection \- *optional***, for the resource that you want to manage, under **Associated Health Check**, choose the ID of the health check that you want to associate with the protection\. 
 **Note**  
-If you don't see the health check you need, go to the Route 53 console and verify the health check and its ID\. For information, see [Creating and Updating Health Checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating.html)\.
+If you don't see the health check you need, go to the Route 53 console and verify the health check and its ID\. For information, see [Creating and Updating Health Checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating.html)\.
 
 1. Choose **Next**\. 
 
@@ -74,7 +74,7 @@ If you don't see the health check you need, go to the Route 53 console and veri
 The status of the health check that you associate with a protection can have the following values in the Shield console: 
 + **Healthy** — The health check is available and is reporting healthy\.
 + **Unhealthy** — The health check is available and is reporting unhealthy\.
-+ **Unavailable** — The health check is not available for use by Shield Advanced\. To resolve this, first disassociate the health check from the protection in Shield Advanced\. Then, in Route 53, create a new health check for the protection and note its ID\. Finally, associate the new health check with the protection following the procedure in this topic\. Don't try to reassociate a health check that has been unavailable\.
++ **Unavailable** — The health check is not available for use by Shield Advanced\. To resolve this, first disassociate the health check from the protection in Shield Advanced\. Then, in Route 53, create a new health check for the protection and note its ID\. Finally, associate the new health check with the protection following the procedure in this topic\. Don't try to reassociate a health check that has been unavailable\.
 
 ## Create alarms and notifications<a name="add-alarm-ddos"></a>
 

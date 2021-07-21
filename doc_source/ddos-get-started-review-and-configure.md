@@ -20,4 +20,4 @@
 
 The **Protected resources** page lists your newly protected resources\.
 
-You can now go to [Step 5: Configure AWS DRT support](authorize-DRT.md)\.
+You can now go to [Step 5: Configure AWS SRT support](authorize-DRT.md)\.

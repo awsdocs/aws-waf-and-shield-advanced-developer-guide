@@ -9,4 +9,5 @@ This topic provides information and guidance for managing your existing administ
 **Required settings for the Firewall Manager administrator**  
 The Firewall Manager administrator account must have the following settings: 
 + It must be a member of the organization in AWS Organizations where you want to apply your Firewall Manager policies\. 
++ It cannot be the organization's management account\.
 + It must be designated as the Firewall Manager administrator by the Organizations management account for the organization\.

@@ -19,4 +19,4 @@ You can disable the integration of AWS Firewall Manager findings with Security H
 + [Security group common policy findings](security-group-common-policy-findings.md)
 + [Security group content audit policy findings](security-group-content-audit-policy-findings.md)
 + [Security group usage audit policy findings](security-group-usage-audit-policy-findings.md)
-+ [Route 53 Resolver DNS Firewall policy findings](dns-firewall-policy-findings.md)
++ [Amazon Route 53 Resolver DNS Firewall policy findings](dns-firewall-policy-findings.md)

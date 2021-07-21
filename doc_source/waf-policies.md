@@ -1,8 +1,10 @@
 # AWS WAF policies<a name="waf-policies"></a>
 
-A Firewall Manager AWS WAF policy contains the rule groups that you want to apply to your resources\. When you apply the policy, Firewall Manager creates a Firewall Manager web ACL in each account that's within policy scope\. Then, the individual account managers can add rules and rule groups to the resulting web ACL, in addition to the rule groups that you have defined\. 
+In a Firewall Manager AWS WAF policy, you specify the AWS WAF rule groups that you want to use across your resources\. When you apply the policy, in each account that's within policy scope, Firewall Manager creates a web ACL that's managed by Firewall Manager\. In the resulting web ACLs, individual account managers can add rules and rule groups, in addition to the rule groups that you defined through Firewall Manager\. 
 
 When Firewall Manager creates a web ACL for the policy, it names the web ACL `FMManagedWebACLV2-policy name-timestamp`\. The timestamp is in UTC milliseconds\. For example, `FMManagedWebACLV2-MyWAFPolicyName-1621880374078`\.
+
+AWS Firewall Manager enables sampling and Amazon CloudWatch metrics for the web ACLs and rule groups that it creates for an AWS WAF policy\. 
 
 ## Rule groups in AWS Firewall Manager AWS WAF policies<a name="waf-policies-rule-groups"></a>
 
@@ -26,6 +28,10 @@ For information about how AWS WAF evaluates web requests, see [Web ACL rule and 
 
 For the procedure to create a Firewall Manager AWS WAF policy, see [Creating an AWS Firewall Manager policy for AWS WAF](create-policy.md#creating-firewall-manager-policy-for-waf)\.
 
+Firewall Manager enables sampling and Amazon CloudWatch metrics for the rule groups that you define for the AWS WAF policy\. These settings are fixed and cannot be modified by the individual account owners\. You can restrict user access to the sampled requests by denying access to sampled requests for AWS WAF web ACLs\. To do this, in the user's IAM permissions settings, deny access to the `wafv2:GetSampleRequest` API\. 
+
+Individual account owners have complete control over the metrics and sampling configuration for any rule or rule group that they add to the policy's managed web ACLs\. 
+
 ## Configuring logging for an AWS Firewall Manager AWS WAF policy<a name="waf-policies-logging-config"></a>
 
 You can enable centralized logging for your AWS WAF policies, to get detailed information about traffic within your organization\. Information in the logs includes the time that AWS WAF received the request from your AWS resource, detailed information about the request, and the action for the rule that each request matched from all in\-scope accounts\. For more information about AWS WAF logging, see [Logging web ACL traffic information](logging.md)\.
@@ -38,6 +44,9 @@ When you enable centralized logging on an AWS WAF policy, Firewall Manager creat
 + The web ACL has logging enabled, with a log name `FMManagedWebACLV2-Loggingpolicy name-timestamp`, where the timestamp is the UTC time that the log was enabled for the web ACL, in milliseconds\. For example, `FMManagedWebACLV2-LoggingMyWAFPolicyName-1621880565180`\. The web ACL has no rule groups and no associated resources\. 
 + You are charged for the web ACL according to the AWS WAF pricing guidelines\. For more information, see [AWS WAF Pricing](http://aws.amazon.com/waf/pricing/)\. 
 + Firewall Manager deletes the web ACL when you delete the policy\. 
+
+**Note**  
+Firewall Manager doesn't modify any existing logging configurations in your organization's member accounts\. 
 
 You send logs from your policy's web ACLs to an Amazon Kinesis Data Firehose where you've configured a storage destination\. After you enable logging, AWS WAF delivers logs for each configured web ACL, through the HTTPS endpoint of Kinesis Data Firehose to the configured storage destination\. Before you use it, test your delivery stream to be sure that it has enough throughput to accommodate your organization's logs\. For more information about how to create an Amazon Kinesis Data Firehose and review the stored logs, see [What Is Amazon Kinesis Data Firehose?](https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html)
 

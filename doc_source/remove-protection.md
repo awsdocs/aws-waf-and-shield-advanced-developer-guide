@@ -20,7 +20,7 @@ The console guidance provided here is for the latest version of the AWS Shield c
 
    1. If you have an Amazon CloudWatch alarm configured for a protection, you are given the option to delete the alarm along with the protection\. If you choose not to delete the alarm at this point, you can instead delete it later using the CloudWatch console\.
 **Note**  
-For protections that have an Amazon Route 53 health check configured, if you add the protection again later, the protection still includes the health check\. 
+For protections that have an Amazon Route 53 health check configured, if you add the protection again later, the protection still includes the health check\. 
 
 The preceding steps remove AWS Shield Advanced protection from specific AWS resources\. They don't cancel your AWS Shield Advanced subscription\. You will continue to be charged for the service\. For information about your AWS Shield Advanced subscription, contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
 

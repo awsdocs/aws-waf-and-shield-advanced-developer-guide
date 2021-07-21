@@ -112,8 +112,14 @@ This section discusses the metrics and alarms available with AWS Shield Advanced
 
 Shield Advanced reports metrics to Amazon CloudWatch on an AWS resource more frequently during DDoS events than while no events are underway\. Shield Advanced reports metrics once a minute during an event, and then once right after the event ends\. While no events are underway, Shield Advanced reports metrics once a day, at a time assigned to the resource\. This periodic report keeps the metrics active and available for use in custom CloudWatch alarms\. 
 
-Shield Advanced provides the following metrics\. 
+For the global services Amazon CloudFront and Amazon Route 53 , metrics are reported in the US East \(N\. Virginia\) Region\.
 
+#### Detection metrics<a name="ddos-metrics-detection"></a>
+
+Shield Advanced provides the following detection metrics and dimensions\. 
+
+
+**Detection metrics**  
 
 | Metric | Description | 
 | --- | --- | 
@@ -122,9 +128,7 @@ Shield Advanced provides the following metrics\.
 | DDoSAttackPacketsPerSecond | The number of packets observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an event and a value of 0 otherwise\.Units: Packets  | 
 | DDoSAttackRequestsPerSecond | The number of requests observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 7 DDoS events\. The metric is reported only for the most significant layer 7 events\. This metric has a non\-zero value during an event and a value of 0 otherwise\.Units: Requests  | 
 
-For the global services Amazon CloudFront and Amazon Route 53, metrics are reported in the US East \(N\. Virginia\) Region\.
-
-Shield Advanced posts the `DDoSDetected` metric with no other dimensions\. The other metrics include the appropriate `AttackVector` dimensions:
+Shield Advanced posts the `DDoSDetected` metric with no other dimensions\. The remaining detection metrics include the `AttackVector` dimensions that correspond to the type of attack, from the following list:
 + `ACKFlood`
 + `ChargenReflection`
 + `DNSReflection`
@@ -143,11 +147,63 @@ Shield Advanced posts the `DDoSDetected` metric with no other dimensions\. The o
 + `UDPTraffic`
 + `UDPReflection`
 
-#### Creating AWS Shield Advanced alarms<a name="shield-alarms"></a>
+#### Mitigation metrics<a name="ddos-metrics-mitigation"></a>
 
-You can use AWS Shield Advanced metrics for Amazon CloudWatch alarms\. CloudWatch alarms send notifications or automatically make changes to the resources that you are monitoring based on rules that you define\.
+Shield Advanced provides the following mitigation metrics and dimensions\. 
 
-For detailed instructions on creating a CloudWatch alarm, see the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html)\. When creating the alarm on the CloudWatch console, after choosing **Create an alarm**, choose **AWSDDOSProtectionMetrics** to use the Shield Advanced metrics\. You can then create an alarm based on a specific volume of traffic, or you can trigger an alarm whenever a metric is non\-zero\. The second option triggers an alarm for any potential attack observed by Shield Advanced\.
+
+**Mitigation metrics**  
+
+| Metric | Description | 
+| --- | --- | 
+| VolumePacketsPerSecond | The number of packets per second that were dropped or passed by a mitigation that was deployed in response to a detected event\.Units: packets  | 
+
+
+**Mitigation dimensions**  
+
+| Dimension | Description | 
+| --- | --- | 
+|  `ResourceArn`  |  Amazon Resource Name \(ARN\)  | 
+|  `MitigationAction`  |  The outcome of an applied mitigation\. Possible values are `Pass` or `Drop`\.   | 
+
+#### Top contributors metrics<a name="ddos-metrics-top-contributors"></a>
+
+Shield Advanced provides the following top contributors metrics and dimensions\. 
+
+
+**Top contributors metrics**  
+
+| Metric | Description | 
+| --- | --- | 
+| VolumePacketsPerSecond | The number of packets per second for a top contributor\.Units: packets  | 
+| VolumeBitsPerSecond | The number of bits per second for a top contributor\. Units: bits  | 
+
+Shield Advanced posts top contributors metrics by dimension combinations that characterize the event contributors\. You can use any of the following combinations of dimensions for any of the top contributors metrics:
++ `ResourceArn`, `Protocol` 
++ `ResourceArn`, `Protocol`, `SourcePort` 
++ `ResourceArn`, `Protocol`, `DestinationPort` 
++ `ResourceArn`, `Protocol`, `SourceIp` 
++ `ResourceArn`, `Protocol`, `SourceAsn` 
++ `ResourceArn`, `TcpFlags` 
+
+
+**Top contributors dimensions**  
+
+| Dimension | Description | 
+| --- | --- | 
+|  `ResourceArn`  |   Amazon Resource Name \(ARN\)\.  | 
+|  `Protocol`  |  IP protocol name, either `TCP` or `UDP`\.  | 
+|  `SourcePort`  |  Source TCP or UDP port\.  | 
+|  `DestinationPort`  |  Destination TCP or UDP port\.  | 
+|  `SourceIp`  |  Source IP address\.  | 
+|  `SourceAsn`  |  Source autonomous system number \(ASN\)\.  | 
+|  `TcpFlags `  |  A combination of flags present in a TCP packet, separated by a dash \(`-`\)\. Monitored flags are `ACK`, `FIN`, `RST`, `SYN`\. This dimension value always appears sorted alphabetically\. For example, `ACK-FIN-RST-SYN`, `ACK-SYN`, and `FIN-RST`\.  | 
+
+### Creating AWS Shield Advanced alarms<a name="shield-alarms"></a>
+
+You can use AWS Shield Advanced metrics for Amazon CloudWatch alarms\. CloudWatch sends notifications or automatically make changes to the resources that you are monitoring based on rules that you define\.
+
+For detailed instructions on creating a CloudWatch alarm, see the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/AlarmThatSendsEmail.html)\. When creating the alarm on the CloudWatch console, to use the Shield Advanced metrics, after choosing **Create an alarm**, choose **AWSDDOSProtectionMetrics** \. You can then create an alarm based on a specific volume of traffic, or you can trigger an alarm whenever a metric is non\-zero\. The second option triggers an alarm for any potential attack that Shield Advanced observes\.
 
 **Note**  
 The **AWSDDOSProtectionMetrics** are available only to Shield Advanced customers\.

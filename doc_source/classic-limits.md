@@ -14,7 +14,7 @@ AWS WAF Classic has default quotas on the number of entities per account per Reg
 | Web ACLs  | 50 | 
 | Rules  | 100 | 
 | Rate\-based\-rules  | 5 | 
-| Conditions  | 100 of each condition type \(For example: 100 size constraint conditions, 100 IP match conditions, and so on\. The exception is regex match conditions\. You can have a maximum of 10 regex match conditions per account per Region\. This quota cannot be increased\.\) | 
+| Conditions per account per Region | For all conditions except for regex match and geo match, 100 of each condition type\. For example, 100 size constraint conditions and 100 IP match conditions\. For regex and geo match conditions, see the following table\.  | 
 | Requests per Second | 25,000 per web ACL\* | 
 
 \*This quota applies only to AWS WAF Classic on an Application Load Balancer\. Requests per Second \(RPS\) quotas for AWS WAF Classic on CloudFront are the same as the RPS quotas support by CloudFront that is described in the [CloudFront Developer Guide](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html)\.
@@ -36,12 +36,13 @@ The following quotas on AWS WAF Classic entities can't be changed\.
 | Filters per string match condition | 10 | 
 | In string match conditions, the number of characters in HTTP header names, when you've configured AWS WAF Classic to inspect the headers in web requests for a specified value | 40 | 
 | In string match conditions, the number of characters in the value that you want AWS WAF Classic to search for | 50 | 
+| Regex match conditions  | 10  | 
 | In regex match conditions, the number of characters in the pattern that you want AWS WAF Classic to search for | 70 | 
 | In regex match conditions, the number of patterns per pattern set | 10 | 
 | In regex match conditions, the number of pattern sets per regex condition | 1 | 
-| The number of pattern sets  | 5 | 
-| GeoMatchSets  | 50 | 
-| Locations per GeoMatchSet | 50 | 
+| Pattern sets  | 5 | 
+| Geo match conditions  | 50  | 
+| Locations per geo match condition | 50 | 
 
 AWS WAF Classic has the following fixed quotas on calls per account per Region\. These quotas apply to the total calls to the service through any available means, including the console, CLI, AWS CloudFormation, the REST API, and the SDKs\. These quotas can't be changed\.
 

@@ -3,7 +3,7 @@
 You can add and configure AWS Shield Advanced protections for your resources\. You can manage protections for a single resource and you can group your protected resources into logical collections for better event management\. You can also track changes to your Shield Advanced protections using AWS Config\. 
 
 **Note**  
-To use the services of the DDoS Response Team \(DRT\), you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
+To use the services of the Shield Response Team \(SRT\), you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
 
 **Note**  
 The console guidance provided here is for the latest version of the AWS Shield console, released in 2020\. In the console, you can switch between versions\. 

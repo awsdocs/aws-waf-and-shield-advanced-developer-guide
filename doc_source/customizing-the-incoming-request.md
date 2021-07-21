@@ -24,7 +24,7 @@ If a request matches both RuleA and RuleB, AWS WAF inserts the headers `x-amzn-w
 AWS WAF inserts custom headers into a web request when it finishes inspecting the request\. So if you use custom request handling with a rule that has the action set to count, the custom headers that you add are not inspected by subsequent rules\. 
 
 **Example custom request handling**  
-You define custom request handling for a rule's action or for a web ACL's default action\. The following listing shows the JSON for custom handling added to the default action for a web ACL\. The custom settings are in bold: 
+You define custom request handling for a rule's action or for a web ACL's default action\. The following listing shows the JSON for custom handling added to the default action for a web ACL\. 
 
 ```
 {

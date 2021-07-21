@@ -100,7 +100,7 @@ You can use this same procedure to exclude rules from custom rule groups that yo
 
 AWS Marketplace rule groups have two possible actions: **No override** and **Override to count**\. If you want to test the rule group, set the action to **Override to count**\. This rule group action overrides any *block* action that is specified by individual rules contained within the group\. That is, if the rule group's action is set to **Override to count**, instead of potentially blocking matching requests based on the action of individual rules within the group, those requests will be counted\. Conversely, if you set the rule group's action to **No override**, actions of the individual rules within the group will be used\.
 
-## Troubleshooting AWS marketplace rule groups<a name="classic-waf-managed-rule-group-troubleshooting"></a>
+## Troubleshooting AWS Marketplace rule groups<a name="classic-waf-managed-rule-group-troubleshooting"></a>
 
 If you find that an AWS Marketplace rule group is blocking legitimate traffic, perform the following steps\.<a name="classic-waf-managed-rule-group-troubleshooting-procedure"></a>
 

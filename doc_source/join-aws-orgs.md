@@ -7,7 +7,9 @@ For information about Organizations, see [AWS Organizations User Guide](https://
 
 **To establish the required AWS Organizations membership and configuration**
 
-1. Choose an account to use as the Firewall Manager administrator for the organization in Organizations\. The account cannot be the organization's management account\.
+1. Choose an account to use as the Firewall Manager administrator for the organization in Organizations\. 
+**Note**  
+The Firewall Manager administrator account cannot be the organization's management account\.
 
 1. If your chosen account isn't already a member of the organization, have it join\. Follow the guidance at [Inviting an AWS account to join your organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html)\.
 

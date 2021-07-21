@@ -13,6 +13,7 @@
 1. Select the web ACL that you want to migrate\. 
 
 1. For **Migration configuration**, provide an Amazon S3 bucket to use for the template\. You need an Amazon S3 bucket that's configured properly for the migration API, to store the AWS CloudFormation template that it generates\. 
+   + If the bucket is encrypted, the encryption must use Amazon S3 \(SSE\-S3\) keys\. The migration doesn't support encryption with AWS Key Management Service \(SSE\-KMS\) keys\.
    + The bucket name must start with `aws-waf-migration-`\. For example, `aws-waf-migration-my-web-acl`\.
    + The bucket must be in the Region where you are deploying the template\. For example, for a web ACL in `us-west-2`, you must use an Amazon S3 bucket in `us-west-2` and you must deploy the template stack to `us-west-2`\. 
 
@@ -56,8 +57,8 @@
 
 1. Choose **Next**\. 
 
-1. For **Create CloudFormation template**, verify your settings, then choose **Start creating CloudFormation template** to begin the migration process\. This can take a few minutes, depending on the complexity of your web ACL\.
+1. For **Create AWS CloudFormation template**, verify your settings, then choose **Start creating AWS CloudFormation template** to begin the migration process\. This can take a few minutes, depending on the complexity of your web ACL\.
 
-1. In **Create and run CloudFormation stack to complete migration**, you can choose to go to the AWS CloudFormation console to create a stack from the template, to create the new web ACL and its resources\. To do this, choose **Create CloudFormation stack**\. 
+1. In **Create and run AWS CloudFormation stack to complete migration**, you can choose to go to the AWS CloudFormation console to create a stack from the template, to create the new web ACL and its resources\. To do this, choose **Create AWS CloudFormation stack**\. 
 
 After the automatic migration process completes, you're ready to proceed to the manual follow\-up steps\. See [Migrating a web ACL: manual follow\-up](waf-migrating-procedure-manual-finish.md)\.

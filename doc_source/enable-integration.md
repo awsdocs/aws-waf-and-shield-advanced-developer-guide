@@ -14,7 +14,8 @@ When you set the Firewall Manager administrator account, Firewall Manager automa
 
 1. Type the ID of the account that you've chosen to use as the Firewall Manager administrator\. 
 **Note**  
-The account that you enter in this step is given permission to create and manage Firewall Manager policies across all accounts within your organization\.
+This account cannot be the organization's management account\.   
+This account is given permission to create and manage Firewall Manager policies across all accounts within your organization\.
 
 1. Choose **Set administrator**\.
 

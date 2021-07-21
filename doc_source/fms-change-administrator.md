@@ -1,6 +1,11 @@
 # Changing the AWS Firewall Manager administrator account<a name="fms-change-administrator"></a>
 
-To use AWS Firewall Manager, you must log in to the console with a Firewall Manager administrator account\. You can designate only one account in an organization as a Firewall Manager administrator account\. It must be a member account that's not the AWS Organizations management account\. To set up an administrator account for the first time, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\. 
+To use AWS Firewall Manager, you must log in to the console with a Firewall Manager administrator account\. You can designate only one account in an organization as a Firewall Manager administrator account\. It must be a member account that's not the AWS Organizations management account\. 
+
+**Note**  
+The Firewall Manager administrator account cannot be the organization's management account\.
+
+To set up an administrator account for the first time, see [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)\. 
 
 If you designate an account as an administrator account, and you later want to designate a different account as the administrator account, perform the following procedure\. 
 
@@ -25,7 +30,11 @@ When you revoke administrator privileges from the current administrator account,
 
 1. Choose **Get started**\.
 
-1. Type an account ID to associate with Firewall Manager\. This account will be the new Firewall Manager administrator account\. It can be the management account that you are signed in with or it can be a member account in your organization\. If the account ID that you type is a member account and not the management account, Firewall Manager sets the appropriate permissions for the member account\. 
+1. Type an account ID to associate with Firewall Manager\. This account will be the new Firewall Manager administrator account\. 
+**Note**  
+The Firewall Manager administrator account cannot be the organization's management account\.
+
+   Firewall Manager sets the appropriate permissions for the member account that you provide\. 
 **Note**  
 The account is given permission to create and manage AWS WAF rules and rule groups and AWS WAF Classic rules across all accounts within the organization\.
 

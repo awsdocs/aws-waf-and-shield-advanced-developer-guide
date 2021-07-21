@@ -1,6 +1,6 @@
 # Getting started with AWS Firewall Manager DNS Firewall policies<a name="getting-started-fms-dns-firewall"></a>
 
-To use AWS Firewall Manager to enable Route 53 Resolver DNS Firewall across your organization, perform the following steps in sequence\. For information about Firewall Manager DNS Firewall policies, see [Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.
+To use AWS Firewall Manager to enable Amazon Route 53 Resolver DNS Firewall across your organization, perform the following steps in sequence\. For information about Firewall Manager DNS Firewall policies, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.
 
 **Topics**
 + [Step 1: Complete the general prerequisites](complete-prereq-dns-firewall.md)

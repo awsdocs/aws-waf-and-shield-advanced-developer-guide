@@ -81,7 +81,7 @@ The SQL database rule group contains rules to block request patterns associated 
 **Linux operating system**  
 VendorName: `AWS`, Name: `AWSManagedRulesLinuxRuleSet`, WCU: 200
 
-The Linux operating system rule group contains rules that block request patterns associated with the exploitation of vulnerabilities specific to Linux, including Linux\-specific Local File Inclusion \(LFI\) attacks\. This can help prevent attacks that expose file contents or run code for which the attacker should not have had access\. You should evaluate this rule group if any part of your application runs on Linux\. You should use this rule group in conjunction with the [](#posix_os) rule group\. 
+The Linux operating system rule group contains rules that block request patterns associated with the exploitation of vulnerabilities specific to Linux, including Linux\-specific Local File Inclusion \(LFI\) attacks\. This can help prevent attacks that expose file contents or run code for which the attacker should not have had access\. You should evaluate this rule group if any part of your application runs on Linux\. You should use this rule group in conjunction with the [POSIX operating system](#posix_os) rule group\.
 
 
 | Rule name | Description | 

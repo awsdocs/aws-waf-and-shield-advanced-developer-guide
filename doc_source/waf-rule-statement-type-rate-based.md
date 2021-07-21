@@ -30,5 +30,5 @@ This statement uses the following optional setting:
 + **\(Optional\) Forwarded IP configuration** – By default, AWS WAF aggregates on the IP address in the web request origin, but you can configure the rule to use a forwarded IP in an HTTP header like `X-Forwarded-For` instead\. AWS WAF uses the first IP address in the header\. With this configuration, you also specify a fallback behavior to apply to a web request with a malformed IP address in the specified header\. The fallback behavior sets the matching result for the request, to match or no match\. For more information, see [Forwarded IP address](waf-rule-statement-forwarded-ip-address.md)\. 
 
 **Where to find this**
-+ **Rule builder** on the console – Under **Rule**, for **Type**, choose **Rate\-based rule**\.
++ **Rule builder** in your web ACL, on the console – Under **Rule**, for **Type**, choose **Rate\-based rule**\.
 + **API statement** – `RateBasedStatement`

@@ -32,6 +32,14 @@ Auto remediation happens automatically for AWS Firewall Manager Network Firewall
 
 1. For **Firewall endpoints**, choose **Multiple firewall endpoints**\. This option provides high availability for your firewall\. When you create the policy, Firewall Manager creates a firewall subnet in each Availability Zone where you have public subnets to protect\. 
 
+1. For **AWS Network Firewall route configuration**, choose **Monitor** to have Firewall Manager monitor your VPCs for route configuration violations and alert you with remediation suggestions to help you to bring the routes into compliance\. Optionally, if you don't want to have your route configurations monitored by Firewall Manager and receive these alerts, choose **Off**\.
+**Note**  
+Monitoring provides you with details about non\-compliant resources due to faulty route configuration, and suggests remediation actions from the Firewall Manager `GetViolationDetails` API\. For example, Network Firewall alerts you if traffic is not routed through the firewall endpoints that are created by your policy\.
+**Warning**  
+If you choose **Monitor**, you can't change it to **Off** in the future for the same policy\. You must create a new policy\.
+
+1. For **Traffic type**, select **Add to firewall policy** to route traffic through the internet gateway\.
+
 1. **AWS accounts affected by this policy** allows you to narrow the scope of your policy by specifying accounts to include or exclude\. For this tutorial, choose **Include all accounts under my organization**\. 
 
 1. The **Resource type** for a Network Firewall policy is always **VPC**\. 

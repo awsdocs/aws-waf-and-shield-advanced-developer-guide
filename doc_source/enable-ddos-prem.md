@@ -3,7 +3,7 @@
 AWS Shield Advanced provides advanced DDoS detection and mitigation protection for network layer \(layer 3\), transport layer \(layer 4\), and application layer \(layer 7\) attacks\.
 
 **Important**  
-Activate Shield Advanced for each AWS account that you want to protect\. If you want to activate Shield Advanced for multiple accounts, we recommend that you use AWS Firewall Manager if you can\. Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator, but it supports the other resource types\. For more information, see [Getting started with AWS Firewall Manager AWS Shield Advanced policies](getting-started-fms-shield.md)\. 
+Activate Shield Advanced for each AWS account that you want to protect\. If you want to activate Shield Advanced for multiple accounts, we recommend that you use AWS Firewall Manager if you can\. Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator, but it supports the other resource types\. For more information, see [Getting started with AWS Firewall Manager AWS Shield Advanced policies](getting-started-fms-shield.md)\. 
 
 **Note**  
 The console guidance provided here is for the latest version of the AWS Shield console, released in 2020\. In the console, you can switch between versions\. <a name="enable-ddos-prem-procedure"></a>
@@ -22,7 +22,7 @@ By choosing **Subscribe to Shield Advanced**, you subscribe to Shield Advanced a
 
 ## Using AWS Shield Advanced with multiple accounts<a name="enable-ddos-prem-multi-account-procedure"></a>
 
-You must activate Shield Advanced for each AWS account that you want to protect\. To activate Shield Advanced for multiple accounts, we recommend that you use AWS Firewall Manager if you can\. Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator, but it supports the other resource types\. For more information, see [Getting started with AWS Firewall Manager AWS Shield Advanced policies](getting-started-fms-shield.md)\. Alternatively, for each account, log into the console and follow the procedure [To subscribe to AWS Shield Advanced](#enable-ddos-prem-procedure)\. 
+You must activate Shield Advanced for each AWS account that you want to protect\. To activate Shield Advanced for multiple accounts, we recommend that you use AWS Firewall Manager if you can\. Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator, but it supports the other resource types\. For more information, see [Getting started with AWS Firewall Manager AWS Shield Advanced policies](getting-started-fms-shield.md)\. Alternatively, for each account, log into the console and follow the procedure [To subscribe to AWS Shield Advanced](#enable-ddos-prem-procedure)\. 
 
 If you activate Shield Advanced for multiple accounts that are in the same [consolidated billing account family](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html), the monthly subscription fee covers all those accounts\. You don't pay extra subscription fees for individual accounts\. You must own all the AWS accounts and resources in the account\. 
 

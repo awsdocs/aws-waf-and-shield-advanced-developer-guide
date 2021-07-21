@@ -62,8 +62,8 @@ AWS WAF Classic provides a set of operations to work with AWS WAF Classic resour
 
 A *resource owner* is the AWS account that creates the resource\. That is, the resource owner is the AWS account of the *principal entity* \(the root account, an IAM user, or an IAM role\) that authenticates the request that creates the resource\. The following examples illustrate how this works:
 + If you use the root account credentials of your AWS account to create an AWS WAF Classic resource, your AWS account is the owner of the resource\.
-+ If you create an IAM user in your AWS account and grant permissions to create an AWS WAF Classic resource to that user, the user can create an AWS WAF Classic resource\. However, your AWS account, to which the user belongs, owns the AWS WAF Classic resource\.
-+ If you create an IAM role in your AWS account with permissions to create an AWS WAF Classic resource, anyone who can assume the role can create an AWS WAF Classic resource\. Your AWS account, to which the role belongs, owns the AWS WAF Classic resource\. 
++ If you create an IAM user in your AWS account and grant permissions to create an AWS WAF Classic resource to that user, the user can create an AWS WAF Classic resource\. However, your account, to which the user belongs, owns the AWS WAF Classic resource\.
++ If you create an IAM role in your AWS account with permissions to create an AWS WAF Classic resource, anyone who can assume the role can create an AWS WAF Classic resource\. Your account, to which the role belongs, owns the AWS WAF Classic resource\. 
 
 ## Managing access to resources<a name="classic-access-control-manage-access-intro"></a>
 

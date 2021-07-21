@@ -15,6 +15,12 @@ This section covers how Firewall Manager security groups policies work and provi
 
 With a common security group policy, Firewall Manager provides a centrally controlled association of security groups to accounts and resources across your organization\. You specify where and how to apply the policy in your organization\. 
 
+You can apply common security group policies to the following resource types: 
++ Amazon Elastic Compute Cloud \(Amazon EC2\) instance
++ Elastic Network Interface
++ Application Load Balancer
++ Classic Load Balancer
+
 For guidance on creating a common security group policy using the console, see [Creating a common security group policy](create-policy.md#creating-firewall-manager-policy-common-security-group)\.
 
 **Shared VPCs**  
@@ -46,12 +52,17 @@ The replica security groups in the Amazon VPC instances are managed like other A
 
 ## Content audit security group policies<a name="security-group-policies-audit"></a>
 
-Use AWS Firewall Manager content audit security group policies to check and manage the rules that are in use in your organization's security groups\. You can apply a content audit security group policy to the same resource types as common security group policies, and you can also apply them to security groups themselves\. Content audit security group policies apply to all customer\-created security groups in use in your AWS organization, according to the scope that you define in the policy\.
+Use AWS Firewall Manager content audit security group policies to check and manage the rules that are in use in your organization's security groups\. Content audit security group policies apply to all customer\-created security groups in use in your AWS organization, according to the scope that you define in the policy\.
 
 For guidance on creating a content audit security group policy using the console, see [Creating a content audit security group policy](create-policy.md#creating-firewall-manager-policy-audit-security-group)\.
 
 **Policy scope resource type**  
-For the resource type of a content audit security group policy, you can choose the same types that are available to the common security group policy\. You can also choose security groups as a resource type\. Security groups are considered in scope of the policy if they explicitly are in scope or if they're associated with resources that are in scope\.
+You can apply content audit security group policies to the following resource types: 
++ Amazon Elastic Compute Cloud \(Amazon EC2\) instance
++ Elastic Network Interface
++ Amazon VPC security group
+
+Security groups are considered in scope of the policy if they explicitly are in scope or if they're associated with resources that are in scope\.
 
 **Policy rule options**  
 You can use either managed policy rules or custom policy rules for each content audit policy, but not both\.
@@ -86,6 +97,9 @@ Use AWS Firewall Manager usage audit security group policies to monitor your org
 1. Consolidates redundant security groups, if you've chosen that option\.
 
 1. Removes unused security groups, if you've chosen that option\. 
+
+You can apply usage audit security group policies to the following resource type: 
++ Amazon VPC security group
 
 For guidance on creating a usage audit security group policy using the console, see [Creating a usage audit security group policy](create-policy.md#creating-firewall-manager-policy-usage-security-group)\.
 
@@ -128,6 +142,7 @@ Similarly, in your outside tool or service, exclude the security groups that Fir
 
  This section lists the limitations for using AWS Firewall Manager security group policies:
 + Updating security groups for Amazon EC2 elastic network interfaces that were created using the Fargate service type is not supported\. You can, however, update security groups for Amazon ECS elastic network interfaces with the Amazon EC2 service type\. 
++ Firewall Manager doesn't support security groups for Amazon EC2 elastic network interfaces that were created by the Amazon Relational Database Service\. 
 + Updating Amazon ECS elastic network interfaces is possible only for Amazon ECS services that use the rolling update \(Amazon ECS\) deployment controller\. For other Amazon ECS deployment controllers such as CODE\_DEPLOY or external controllers, Firewall Manager currently can't update the elastic network interfaces\. 
 + With security groups for Amazon EC2 elastic network interfaces, changes to a security group aren't immediately visible to Firewall Manager\. Firewall Manager usually detects changes within several hours, but detection can be delayed as much as six hours\. 
 + Firewall Manager doesn't support updating security groups in elastic network interfaces for Network Load Balancers\. 
