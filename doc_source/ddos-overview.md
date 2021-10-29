@@ -15,13 +15,16 @@ For higher levels of protection against attacks, you can subscribe to AWS Shield
 **Note**  
 AWS Shield Advanced only protects resources that you have specified either in Shield Advanced or through a AWS Firewall Manager Shield Advanced policy\. It doesn't automatically protect your resources\. 
 
-You can add protection for any of the following resource types:
+You can add Shield Advanced protection for any of the following resource types:
 + Amazon CloudFront distributions
-+ Amazon Route 53 hosted zones
++ Amazon Route 53 hosted zones
 + AWS Global Accelerator accelerators
 + Application Load Balancers
 + Elastic Load Balancing \(ELB\) load balancers
 + Amazon Elastic Compute Cloud \(Amazon EC2\) Elastic IP addresses
+
+**Protecting Network Load Balancers**  
+You can't directly attach a Shield Advanced protection to a Network Load Balancer \(NLB\), but you can protect a Network Load Balancer by first associating an Amazon EC2 Elastic IP address to it and then adding the Elastic IP as a Shield Advanced protected resource\. Some scaling tools, like AWS Elastic Beanstalk, don't let you automatically attach an Elastic IP to a Network Load Balancer\. For those cases, you need to first associate the Elastic IP to the Network Load Balancer and then manually add the Shield Advanced protections to the Elastic IP\.
 
 For example, if you use Shield Advanced to protect an Elastic IP address, Shield Advanced automatically deploys your network ACLs to the border of the AWS network during an attack\. When your network ACLs are at the border of the network, Shield Advanced can provide protection against larger DDoS events\. Typically, network ACLs are applied near your Amazon EC2 instances within your Amazon VPC\. The network ACL can mitigate attacks only as large as your Amazon VPC and instance can handle\. If the network interface attached to your Amazon EC2 instance can process up to 10 Gbps, volumes over 10 Gbps slow down and possibly block traffic to that instance\. During an attack, Shield Advanced promotes your network ACL to the AWS border, which can process multiple terabytes of traffic\. Your network ACL is able to provide protection for your resource well beyond your network's typical capacity\. For more information about network ACLs, see [Network ACLs](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html)\. 
 
@@ -31,45 +34,43 @@ As an AWS Shield Advanced customer, you can contact the 24x7 AWS Shield Response
 
 To use the services of the SRT, you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
 
-AWS Shield Advanced also offers some cost protection against spikes in your AWS bill that could result from a DDoS attack against your protected resources\. 
+AWS Shield Advanced also offers some cost protection against spikes in your AWS bill that could result from a DDoS attack against your protected resources\. For information, see [Requesting a credit in AWS Shield Advanced](request-refund.md)\. 
 
 AWS WAF is included with AWS Shield Advanced at no extra cost\. For more information about AWS Shield Advanced pricing, see [AWS Shield Advanced Pricing](http://aws.amazon.com/shield/pricing/)\.
 
 When you add an AWS Shield Advanced protection to a resource, you can optionally include one or more additions to the protection\. The protection additions vary by resource type and can include the following:
-+ A custom AWS WAF web ACL or rate\-based rule, as described in the previous section, [Step 3: Configure layer 7 DDoS mitigation](ddos-get-started-rate-based-rules.md)\.
-+ An Amazon Route 53 health check for health\-based detection, as described in the following section\.
++ A custom AWS WAF web ACL or rate\-based rule, as described in [Step 3: Configure layer 7 DDoS mitigation](ddos-get-started-rate-based-rules.md)\.
++ An Amazon Route 53 health check for health\-based detection, as described in [Shield Advanced health\-based detection](#ddos-advanced-health-check-option)\.
 
 ## Shield Advanced health\-based detection<a name="ddos-advanced-health-check-option"></a>
 
-Shield Advanced health\-based detection uses the health of your AWS resource to improve responsiveness and accuracy in attack detection and mitigation\. To use health\-based detection, you define the health check for your resource in Route 53 and then associate it with your Shield Advanced protection\. For information about Route 53 health checks, see [How Amazon Route 53 Checks the Health of Your Resources](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) and [Creating and Updating Health Checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating.html)\. 
+Shield Advanced health\-based detection uses the health of your AWS resource to improve responsiveness and accuracy in attack detection and mitigation\. To use health\-based detection, you define the health check for your resource in Route 53 and then associate it with your Shield Advanced protection\. For information about Route 53 health checks, see [How Amazon Route 53 Checks the Health of Your Resources](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) and [Creating and Updating Health Checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-creating.html)\. 
 
 **Note**  
-Do not use health checks with Route 53 hosted zones\.
+Do not use health checks with Route 53 hosted zones\.
 
 You can enable health\-based detection for the following resource types:
 + **Elastic IP addresses and Global Accelerator accelerators** – Health\-based detection improves the accuracy of network\-layer and transport\-layer event detection and mitigation\. 
 
   When you protect an Elastic IP address or Global Accelerator accelerator with Shield Advanced, you reduce the threshold required to place a mitigation\. Shield Advanced helps to provide quicker mitigation for attacks and mitigations for smaller attacks, even when traffic is within the application’s capacity\.
 
-  When you add health\-based detection, during periods when the associated Route 53 health check is unhealthy, Shield Advanced can place mitigations even more quickly and at lower thresholds\. 
+  When you add health\-based detection, during periods when the associated Route 53 health check is unhealthy, Shield Advanced can place mitigations even more quickly and at lower thresholds\. 
 + **CloudFront distributions and Application Load Balancers** – Health\-based detection improves the accuracy of web request flood detection\. 
 
   When you protect a CloudFront distribution or Application Load Balancer with Shield Advanced, you receive web request flood detection alerts when there is a statistically significant deviation in traffic volume combined with significant changes in traffic self\-similarity\. Self\-similarity is determined based on attributes like user agent, referrer, and URI\. 
 
-  When you add health\-based detection, you increase the likelihood that the alerts you receive are timely and actionable\. With health\-based detection, during periods when the associated Route 53 health check is unhealthy, Shield Advanced requires smaller deviations to alert and it reports events more quickly\. When the associated Route 53 health check is healthy, Shield Advanced requires larger deviations to alert\. 
+  When you add health\-based detection, you increase the likelihood that the alerts you receive are timely and actionable\. With health\-based detection, during periods when the associated Route 53 health check is unhealthy, Shield Advanced requires smaller deviations to alert and it reports events more quickly\. When the associated Route 53 health check is healthy, Shield Advanced requires larger deviations to alert\. 
 
 ## Shield Advanced proactive engagement<a name="ddos-advanced-proactive-engagement"></a>
 
-With proactive engagement, the Shield Response Team \(SRT\) engages with you directly if the Amazon Route 53 health check associated with your protected resource becomes unhealthy during an event that's detected by Shield Advanced\. This allows you to engage with experts more quickly when the availability of your application might be affected by a suspected attack\. 
+With proactive engagement, the Shield Response Team \(SRT\) engages with you directly if the Amazon Route 53 health check associated with your protected resource becomes unhealthy during an event that's detected by Shield Advanced\. This allows you to engage with experts more quickly when the availability of your application might be affected by a suspected attack\. 
 
 **Note**  
-To use proactive engagement for a protected resource, you must associate an Amazon Route 53 health check with the resource, as described in [Shield Advanced health\-based detection](#ddos-advanced-health-check-option)\. 
+To use proactive engagement for a protected resource, you must associate an Amazon Route 53 health check with the resource, as described in [Shield Advanced health\-based detection](#ddos-advanced-health-check-option)\. 
 
 Proactive engagement is available for network\-layer and transport\-layer events on Elastic IP addresses and AWS Global Accelerator accelerators, and for web request floods on Amazon CloudFront distributions and Application Load Balancers\.
 
 To use proactive engagement, you configure Shield Advanced health\-based detection for a resource that you want the SRT to monitor\. You then specify 1\-10 contacts for proactive engagement\. The SRT uses the information to contact you during a detected event that correlates with an unhealthy protected resource\. After you provide your contact information, you can enable proactive engagement\. 
-
-When you enable proactive engagement for the first time, a SRT engineer contacts you to review your application architecture and complete activation of the feature\. This process can take a number of days\. 
 
 **Note**  
 To use proactive engagement, you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
@@ -85,7 +86,7 @@ AWS Shield Advanced protection groups give you a self\-service way to customize 
 
 Protection groups can help reduce false positives in situations such as blue/green swap, where resources alternate between being near zero load and fully loaded\. Another example is when you create and delete resources frequently while maintaining a load level that's shared among the members of the group\. For situations such as these, monitoring individual resources can lead to false positives, while monitoring the health of the group of resources does not\. 
 
-You can define protection groups by various criteria on the protected resources\. Newly protected resources that fit the grouping criteria are automatically included in your protection group\. To group by resource type, you can define a protection group for that type, and Shield Advanced automatically includes all protected resources of that type that are in your account or subscription\. To group by tag, you define a protection group for the tag key and value, then apply that tag to any protected resource that you want to have in the group\. A protected resource can belong to multiple protection groups\. 
+You can configure protection groups to include all protected resources, all resources of specific resource types, or individually specified resources\. Newly protected resources that satisfy your protection group criteria are automatically included in your protection group\. A protected resource can belong to multiple protection groups\. 
 
 For information about your options and how to manage protection groups, see [Managing AWS Shield Advanced protection groups](manage-protection-group.md)\.
 
@@ -102,10 +103,10 @@ An attacker can spoof the source of a request and use UDP to elicit a large resp
 The intent of an SYN flood attack is to exhaust the available resources of a system by leaving connections in a half\-open state\. When a user connects to a TCP service like a web server, the client sends a SYN packet\. The server returns an acknowledgment, and the client returns its own acknowledgement, completing the three\-way handshake\. In an SYN flood, the third acknowledgment is never returned, and the server is left waiting for a response\. This can prevent other users from connecting to the server\. 
 
 **DNS query flood**  
-In a DNS query flood, an attacker uses multiple DNS queries to exhaust the resources of a DNS server\. AWS Shield Advanced can help provide protection against DNS query flood attacks on Route 53 DNS servers\.
+In a DNS query flood, an attacker uses multiple DNS queries to exhaust the resources of a DNS server\. AWS Shield Advanced can help provide protection against DNS query flood attacks on Route 53 DNS servers\.
 
 **HTTP flood/cache\-busting \(layer 7\) attacks**  
-With an HTTP flood, including GET and POST floods, an attacker sends multiple HTTP requests that appear to be from a real user of the web application\. Cache\-busting attacks are a type of HTTP flood that uses variations in the HTTP request's query string that prevent use of edge\-located cached content and forces the content to be served from the origin web server, causing additional and potentially damaging strain on the origin web server\. 
+With an HTTP flood, including `GET` and `POST` floods, an attacker sends multiple HTTP requests that appear to be from a real user of the web application\. Cache\-busting attacks are a type of HTTP flood that uses variations in the HTTP request's query string that prevent use of edge\-located cached content and forces the content to be served from the origin web server, causing additional and potentially damaging strain on the origin web server\. 
 
 ## The AWS Shield Response Team \(SRT\)<a name="ddos-drt"></a>
 
@@ -170,7 +171,7 @@ The following table shows a comparison of AWS Shield Standard and AWS Shield Adv
 | Elastic Load Balancing \(ELB\) load balancers |  | Yes | 
 | Amazon EC2 Elastic IP addresses |  | Yes | 
 | Amazon CloudFront distributions |  | Yes | 
-| Amazon Route 53 hosted zones |  | Yes | 
+| Amazon Route 53 hosted zones |  | Yes | 
 | AWS Global Accelerator accelerators |  | Yes | 
 
 AWS Shield Advanced benefits, including DDoS cost protection, are subject to your fulfillment of the 1\-year subscription commitment\.

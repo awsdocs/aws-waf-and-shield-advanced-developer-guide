@@ -30,7 +30,7 @@ AWS Firewall Manager has default quotas on the number of entities per Region\. Y
 | Resource | Default quota per Region | 
 | --- | --- | 
 | Primary security groups per policy | 1 | 
-| Amazon VPC instances in scope per policy per account, including shared VPCs | 10 | 
+| Amazon VPC instances in scope per policy per account, including shared VPCs | 100 | 
 
 
 **Content audit security group policies**  

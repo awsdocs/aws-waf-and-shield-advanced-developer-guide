@@ -52,7 +52,17 @@ You can't change the CloudWatch metric name after you create the web ACL\.
 
 ## Step 3: Add a string match rule<a name="getting-started-wizard-create-string-condition"></a>
 
-A string match rule statement identifies strings that you want AWS WAF to search for in a request, such as a specified value in a header or in a query string\. Usually, a string consists of printable ASCII characters, but you can specify any character from hexadecimal 0x00 to 0xFF \(decimal 0 to 255\)\. In this step, you create a rule with a string match statement and indicate what to do with matching requests\. For information about AWS WAF rules, see [AWS WAF rules](waf-rules.md)\. <a name="getting-started-wizard-create-string-condition-procedure"></a>
+In this step, you create a rule with a string match statement and indicate what to do with matching requests\. A string match rule statement identifies strings that you want AWS WAF to search for in a request\. Usually, a string consists of printable ASCII characters, but you can specify any character from hexadecimal 0x00 to 0xFF \(decimal 0 to 255\)\. In addition to specifying the string to search for, you specify the web request component that you want to search, such as a header, a query string, or the request body\. 
+
+This statement type operates on a web request component, and requires the following request component settings: 
++ **Request components** – The part of the web request to inspect, for example, a query string or the body\.
+**Warning**  
+If you use the request component **Body** or **JSON body**, AWS WAF only inspects the first 8 KB\. For information, see [Web request body inspection](web-request-body-inspection.md)\.
+
+  For information about web request components, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.
++ **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For information, see [Text transformations](waf-rule-statement-fields.md#waf-rule-statement-transformation)\.
+
+For additional information about AWS WAF rules, see [AWS WAF rules](waf-rules.md)\. <a name="getting-started-wizard-create-string-condition-procedure"></a>
 
 **To create a string match rule statement**
 

@@ -1,9 +1,9 @@
 # Step 3: Configure layer 7 DDoS mitigation<a name="ddos-get-started-rate-based-rules"></a>
 
-We recommend that you add web ACLs with rate\-based rules as part of your AWS Shield Advanced protections\. These rules can alert you to sudden spikes in traffic that might indicate a potential DDoS event\. A rate\-based rule counts the requests that arrive from any individual address in any five\-minute period\. If the number of requests exceeds the limit that you define, the rule can trigger an action such as sending you a notification\. For more information about rate\-base rules, see [How AWS WAF works](how-aws-waf-works.md)\. 
+We recommend that you add web ACLs with rate\-based rules as part of your AWS Shield Advanced protections\. These rules can alert you to sudden spikes in traffic that might indicate a potential DDoS event\. A rate\-based rule counts the requests that arrive from any individual address in any five\-minute period\. If the number of requests exceeds the limit that you define, the rule can trigger an action such as sending you a notification\. For more information about rate\-base rules in AWS WAF, see [Rate\-based rule statement](waf-rule-statement-type-rate-based.md)\. 
 
 **Note**  
-If you used AWS Firewall Manager to create a Firewall Manager Shield Advanced policy, do not do this step\. Firewall Manager doesn't support rate\-based rules\.<a name="ddos-get-started-rate-based-rules-procedure"></a>
+A resource can only be associated with one web ACL at a time\. If you want to change web ACLs for a resource, remove the current web ACL association, and then associate the new web ACL\. For more information, see [Associating or disassociating a web ACL with an AWS resource](web-acl-associating-aws-resource.md)\.<a name="ddos-get-started-rate-based-rules-procedure"></a>
 
 **To configure layer 7 DDoS mitigation for a Region**
 
@@ -18,8 +18,6 @@ Shield Advanced gives you the option to configure layer 7 DDoS mitigation for ea
    1. Enter a name\. You can't change the name after you create the web ACL\.
 
    1. Choose **Create**\.
-**Note**  
-If a resource is already associated with a web ACL, you can't change to a different web ACL\. If you want to change the web ACL, you must first remove the associated web ACLs from the resource\. For more information, see [Associating or disassociating a web ACL with an AWS resource](web-acl-associating-aws-resource.md)\.
 
 1. For each associated web ACL that doesn't have a rate\-based rule defined, you can add one by choosing **Add rate limit rule** and then performing the following steps:
 

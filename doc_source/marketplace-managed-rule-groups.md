@@ -67,4 +67,4 @@ If you find that an AWS Marketplace rule group is blocking legitimate traffic, y
 
 ### Contacting AWS support<a name="waf-managed-rule-group-troubleshooting-support"></a>
 
-For problems with AWS WAF or a rule group that is managed by AWS, contact AWS Support\. For problems with a rule group that is managed by an AWS AWS Marketplace seller, contact the vendor's customer support team\. To find vendor contact information, see the vendors’s listing on AWS Marketplace\.
+For problems with AWS WAF or a rule group that is managed by AWS, contact AWS Support\. For problems with a rule group that is managed by an AWS AWS Marketplace seller, contact the provider's customer support team\. To find contact information, see the providers’s listing on AWS Marketplace\.

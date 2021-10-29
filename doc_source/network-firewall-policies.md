@@ -37,7 +37,7 @@ When you first define a Network Firewall policy, you choose one of the following
 
 You can provide VPC CIDR blocks for Firewall Manager to use for the firewall subnets or you can leave the choice of firewall endpoint addresses up to Firewall Manager to determine\. 
 + If you don't provide CIDR blocks, Firewall Manager queries your VPCs for available IP addresses to use\. 
-+ If you provide a list of CIDR blocks, Firewall Manager searches for new subets only in the CIDR blocks that you provide\. You must use /28 CIDR blocks\. For each firewall subnet that Firewall Manager creates, it walks your CIDR block list and uses the first one that it finds that is applicable to the Availability Zone and VPC and has available addresses\. 
++ If you provide a list of CIDR blocks, Firewall Manager searches for new subnets only in the CIDR blocks that you provide\. You must use /28 CIDR blocks\. For each firewall subnet that Firewall Manager creates, it walks your CIDR block list and uses the first one that it finds that is applicable to the Availability Zone and VPC and has available addresses\. 
 
 If Firewall Manager can't create a required firewall subnet in an Availability Zone, it marks the subnet as noncompliant with the policy\. While the zone is in this state, traffic for the zone must cross zone boundaries in order to be filtered by an endpoint in another zone\. This is similar to the single firewall subnet scenario\. 
 
@@ -76,7 +76,7 @@ When you enable monitoring for a policy, Firewall Manager continuously monitors 
 + Inbound routes from the internet gateway to the Network Firewall endpoint\. 
 + Routes back to the subnet\. 
 
-If a subnet has a Network Firewall route but there's asymmetric routing in Network Firewall and your internet gateway route table, Firewall Manager reports the subnet as noncompliant\. Firewall Manager also detects blackhole routes to the internet gateway in the firewall route table that Firewall Manager created, as well as the route table for your subnet, and reports them as noncompliant\. Additional routes in the Network Firewall subnet route table and your internet gateway route table are also reported as noncompliant\. Depending on the violation type, Firewall Manager suggests remediation actions to bring the route configuration into compliance\. Firewall Manager doesn't offer suggestions in all cases\. For example, if your customer subnet has a firewall endpoint that was created outside of Firewall Manager, Firewall Manager doesn't suggest remediation actions\. 
+If a subnet has a Network Firewall route but there's asymmetric routing in Network Firewall and your internet gateway route table, Firewall Manager reports the subnet as noncompliant\. Firewall Manager also detects routes to the internet gateway in the firewall route table that Firewall Manager created, as well as the route table for your subnet, and reports them as noncompliant\. Additional routes in the Network Firewall subnet route table and your internet gateway route table are also reported as noncompliant\. Depending on the violation type, Firewall Manager suggests remediation actions to bring the route configuration into compliance\. Firewall Manager doesn't offer suggestions in all cases\. For example, if your customer subnet has a firewall endpoint that was created outside of Firewall Manager, Firewall Manager doesn't suggest remediation actions\. 
 
 **Note**  
 Firewall Manager does not suggest remediation actions for non\-IPv4 routes, such as IPv6 and prefix list routes\.
@@ -87,3 +87,68 @@ When you configure your Firewall Manager policy, if you choose **Monitor** mode,
 
 **Warning**  
 If you choose **Monitor** under** AWS Network Firewall route configuration** when creating your policy, you can't turn it off for that policy\. However, if you choose **Off**, you can enable it later\.
+
+## Configuring logging for an AWS Firewall Manager AWS Network Firewall policy<a name="nwfw-policies-logging-config"></a>
+
+You can enable centralized logging for your Network Firewall policies to get detailed information about traffic within your organization\. You can select flow logging to capture network traffic flow, or alert logging to report traffic that matches a rule with the rule action set to `DROP` or `ALERT`\. For more information about AWS Network Firewall logging, see [ Logging network traffic from AWS Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-logging.html) in the *AWS Network Firewall Developer Guide*\. 
+
+You send logs from your policy's Network Firewall firewalls to an Amazon S3 bucket\. After you enable logging, AWS Network Firewall delivers logs for each configured Network Firewall by updating the firewall settings to deliver logs to your selected Amazon S3 buckets with the reserved AWS Firewall Manager prefix, `<policy-name>-<policy-id>`\. 
+
+**Note**  
+This prefix is used by Firewall Manager to determine whether a logging configuration was added by Firewall Manager, or whether it was added by the account owner\. If the account owner attempts to use the reserved prefix for their own custom logging, it is overwritten by the logging configuration in the Firewall Manager policy\. 
+
+For more information about how to create an Amazon S3 bucket and review the stored logs, see [ What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) in the *Amazon Simple Storage Service User Guide*\. 
+
+You must have the following permissions to successfully enable logging: 
++ `s3:GetBucketPolicy`
++ `s3:PutBucketPolicy`
+
+Note that only buckets in the Firewall Manager administrator account may be used for AWS Network Firewall central logging\. 
+
+When you enable centralized logging on a Network Firewall policy, Firewall Manager takes these actions on your account: 
++ Firewall Manager updates the permissions on selected S3 buckets to allow for log delivery\. 
++ Firewall Manager creates directories in the S3 bucket for each member account in the scope of the policy\. The logs for each account can be found at `<bucket-name>/<policy-name>-<policy-id>/AWSLogs/<account-id>`\. 
+
+**To enable logging for a Network Firewall policy**
+
+1. Create an Amazon S3 bucket using your Firewall Manager administrator account\. For more information, see [ Creating a bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/create-bucket-overview.html) in the *Amazon Simple Storage Service User Guide*\.
+
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
+**Note**  
+For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
+
+1. In the navigation pane, choose **Security Policies**\.
+
+1. Choose the Network Firewall policy that you want to enable logging for\. For more information about AWS Network Firewall logging, see [ Logging network traffic from AWS Network Firewall](https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-logging.html) in the *AWS Network Firewall Developer Guide*\.
+
+1. On the **Policy details** tab, in the **Policy rules** section, choose **Edit**\.
+
+1. To enable and aggregate logs, choose one or more options under **Logging configuration**:
+   + **Enable and aggregate flow logs**
+   + **Enable and aggregate alert logs**
+
+1. Choose the Amazon S3 bucket where you want your logs to be delivered\. You must choose a bucket for each log type that you enable\. You can use the same bucket for both log types\.
+
+1. \(Optional\) If you want custom member account\-created logging to be replaced with the policy’s logging configuration, choose **Override existing logging configuration**\.
+
+1. Choose **Next**\.
+
+1. Review your settings, then choose **Save** to save your changes to the policy\.
+
+**To disable logging for a Network Firewall policy**
+
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
+**Note**  
+For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
+
+1. In the navigation pane, choose **Security Policies**\.
+
+1. Choose the Network Firewall policy that you want to disable logging for\.
+
+1. On the **Policy details** tab, in the **Policy rules** section, choose **Edit**\.
+
+1. Under **Logging configuration status**, deselect **Enable and aggregate flow logs** and **Enable and aggregate alert logs** if they are selected\.
+
+1. Choose **Next**\.
+
+1. Review your settings, then choose **Save** to save your changes to the policy\.

@@ -11,11 +11,15 @@ A string match statement indicates the string that you want AWS WAF to search fo
 + **Contains string** – 10 
 + **Contains word** – 10 
 
-If you use the request component **All query parameters**, add 10 WCUs\. If you use the request component **JSON body**, double the statement's base cost WCUs\. For each **Text transformation** that you apply, add 10 WCUs\.
+If you use the request component **All query parameters**, add 10 WCUs\. If you use the request component **JSON body**, double the base cost WCUs\. For each **Text transformation** that you apply, add 10 WCUs\.
 
-This statement operates on a web request component, and requires the following request component settings: 
-+ **Request components** – The part of the web request to inspect, for example, a query string or the body\. For more information, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.
-+ **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For more information, see [Text transformations](waf-rule-statement-fields.md#waf-rule-statement-transformation)\.
+This statement type operates on a web request component, and requires the following request component settings: 
++ **Request components** – The part of the web request to inspect, for example, a query string or the body\.
+**Warning**  
+If you use the request component **Body** or **JSON body**, AWS WAF only inspects the first 8 KB\. For information, see [Web request body inspection](web-request-body-inspection.md)\.
+
+  For information about web request components, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.
++ **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For information, see [Text transformations](waf-rule-statement-fields.md#waf-rule-statement-transformation)\.
 
 Additionally, this statement requires the following settings: 
 + **String to match** – This is the string that you want AWS WAF to compare to the specified request component\. Usually, the string consists of printable ASCII characters, but you can use any character from hexadecimal 0x00 to 0xFF \(decimal 0 to 255\)\.

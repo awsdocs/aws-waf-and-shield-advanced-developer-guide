@@ -1,6 +1,6 @@
 # How AWS WAF works<a name="how-aws-waf-works"></a>
 
-You use AWS WAF to control how an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API responds to web requests\. 
+You use AWS WAF to control how an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API responds to HTTP\(S\) web requests\. 
 + **Web ACLs** – You use a web access control list \(ACL\) to protect a set of AWS resources\. You create a web ACL and define its protection strategy by adding rules\. Rules define criteria for inspecting web requests and specify how to handle requests that match the criteria\. You set a default action for the web ACL that indicates whether to block or allow through those requests that pass the rules inspections\. 
 + **Rules** – Each rule contains a statement that defines the inspection criteria, and an action to take if a web request meets the criteria\. When a web request meets the criteria, that's a match\. You can use rules to block matching requests or to allow matching requests through\. You can also use rules just to count matching requests\. 
 + **Rules groups** – You can use rules individually or in reusable rule groups\. AWS Managed Rules and AWS Marketplace sellers provide managed rule groups for your use\. You can also define your own rule groups\.

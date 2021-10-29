@@ -1,6 +1,6 @@
 # Step 1: Join and configure AWS Organizations<a name="join-aws-orgs"></a>
 
-To use Firewall Manager, your account must be a member of the organization in the AWS Organizations service where you want to use your Firewall Manager policies and it cannot be the organization's management account\. 
+To use Firewall Manager, your account must be a member of the organization in the AWS Organizations service where you want to use your Firewall Manager policies\. 
 
 **Note**  
 For information about Organizations, see [AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html)\. 
@@ -8,8 +8,6 @@ For information about Organizations, see [AWS Organizations User Guide](https://
 **To establish the required AWS Organizations membership and configuration**
 
 1. Choose an account to use as the Firewall Manager administrator for the organization in Organizations\. 
-**Note**  
-The Firewall Manager administrator account cannot be the organization's management account\.
 
 1. If your chosen account isn't already a member of the organization, have it join\. Follow the guidance at [Inviting an AWS account to join your organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html)\.
 

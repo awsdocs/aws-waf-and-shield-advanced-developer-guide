@@ -31,6 +31,7 @@ AWS WAF has fixed quotas on the following entity settings per account per Region
 | Maximum number of references per web ACL to IP sets, regex pattern sets, and rule groups |  50  | 
 | Maximum number of IP addresses in CIDR notation per IP set |  10,000  | 
 | Maximum number of rate\-based rules per web ACL  |  10  | 
+| Maximum number of rate\-based rules per rule group |  4  | 
 | Maximum number of unique IP addresses that can be blocked per rate\-based rule |  10,000  | 
 | Maximum number of characters in a string match statement |  200  | 
 | Maximum number of characters in each regex pattern |  200  | 

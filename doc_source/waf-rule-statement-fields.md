@@ -43,19 +43,22 @@ The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg
 The part of the request that immediately follows the request headers, evaluated as plain text\. This contains any additional data that is needed for the web request, for example, data from a form\.   
 + In the console, you select this under the **Request option** choice **Body**, by selecting the **Content type** choice **Plain text**\. 
 + In the API, in the rule's `FieldToMatch` specification, you specify `Body` to inspect the request body as plain text\.
-Only the first 8 KB \(8,192 bytes\) of the request body are forwarded to AWS WAF for inspection\. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining your statement that inspects the body of the web request with a size constraint rule statement that enforces an 8 KB max size on the body of the request\. For information about size constraint statements, see [Size constraint rule statement](waf-rule-statement-type-size-constraint-match.md)\. AWS WAF doesn't support inspecting the entire contents of web requests whose bodies exceed 8 KB\. 
+Only the first 8 KB \(8,192 bytes\) of the request body are forwarded to AWS WAF for inspection\. For information about how to manage this, see [Web request body inspection](web-request-body-inspection.md)\. 
 You can also evaluate the body as parsed JSON\. For information about this, see the sections that follow\. 
 
 **JSON body**  
 The part of the request that immediately follows the request headers, evaluated as parsed JSON\. The body contains any additional data that is needed for the web request, for example, data from a form\. You can also evaluate the body as plain text\. For information about this, see the preceding section\.   
 + In the console, you select this under the **Request option** choice **Body**, by selecting the **Content type** choice **JSON**\. 
 + In the API, in the rule's `FieldToMatch` specification, you specify `JsonBody`\.
-Only the first 8 KB \(8,192 bytes\) of the request body are forwarded to AWS WAF for inspection\. If you don't need to inspect more than 8 KB, you can guarantee that you don't allow additional bytes in by combining your statement that inspects the body of the web request with a size constraint rule statement that enforces an 8 KB max size on the body of the request\. For information about size constraint statements, see [Size constraint rule statement](waf-rule-statement-type-size-constraint-match.md)\. AWS WAF doesn't support inspecting the entire contents of web requests whose bodies exceed 8 KB\. 
+Only the first 8 KB \(8,192 bytes\) of the request body are forwarded to AWS WAF for inspection\. For information about how to manage this, see [Web request body inspection](web-request-body-inspection.md)\. 
 For details about JSON body inspection, see the following section\. Choosing the JSON body option doubles the match statement's base cost WCUs\. For example, if the match statement base cost is 5 WCUs without JSON parsing, using JSON parsing doubles the cost to 10 WCUs\. 
 
 ## JSON body request component<a name="waf-rule-statement-request-component-json-body"></a>
 
 JSON body inspection provides a specialized inspection of a web request body\. For general information about web request body inspection, see the prior section\. 
+
+**Warning**  
+Only the first 8 KB \(8,192 bytes\) of the request body are forwarded to AWS WAF for inspection\. For information about how to manage this, see [Web request body inspection](web-request-body-inspection.md)\. 
 
 When AWS WAF inspects the web request body as parsed JSON, it parses and extracts the elements from the JSON and inspects the parts that you indicate using the rule's match statement criteria\. 
 

@@ -7,7 +7,7 @@ You incur charges for your AWS Config settings, according to AWS Config pricing\
 
 **To enable AWS Config for Firewall Manager**
 
-1. Enable AWS Config for each of your AWS Organizations member accounts\. For more information, see [Getting Started with AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/getting-started.html)\.
+1. Enable AWS Config for each of your AWS Organizations member accounts, including the Firewall Manager administrator account\. For more information, see [Getting Started with AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/getting-started.html)\.
 
 1. Enable AWS Config for each AWS Region that contains the resources that you want to protect\. You can enable AWS Config manually, or you can use the AWS CloudFormation template "Enable AWS Config" at [AWS CloudFormation StackSets Sample Templates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-sampletemplates.html)\. 
 

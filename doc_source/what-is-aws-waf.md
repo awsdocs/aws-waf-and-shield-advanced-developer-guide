@@ -24,7 +24,7 @@ Using AWS WAF has several benefits:
 
 ## AWS Shield<a name="ddos-intro"></a>
 
-You can use AWS WAF web access control lists \(web ACLs\) to help minimize the effects of a distributed denial of service \(DDoS\) attack\. For additional protection against DDoS attacks, AWS also provides AWS Shield Standard and AWS Shield Advanced\. AWS Shield Standard is automatically included at no extra cost beyond what you already pay for AWS WAF and your other AWS services\. AWS Shield Advanced provides expanded DDoS attack protection for your Amazon EC2 instances, Elastic Load Balancing load balancers, CloudFront distributions, Route 53 hosted zones, and AWS Global Accelerator accelerators\. AWS Shield Advanced incurs additional charges\. 
+You can use AWS WAF web access control lists \(web ACLs\) to help minimize the effects of a distributed denial of service \(DDoS\) attack\. For additional protection against DDoS attacks, AWS also provides AWS Shield Standard and AWS Shield Advanced\. AWS Shield Standard is automatically included at no extra cost beyond what you already pay for AWS WAF and your other AWS services\. AWS Shield Advanced provides expanded DDoS attack protection for your Amazon EC2 instances, Elastic Load Balancing load balancers, CloudFront distributions, Route 53 hosted zones, and AWS Global Accelerator accelerators\. AWS Shield Advanced incurs additional charges\. 
 
 For more information about AWS Shield Standard and AWS Shield Advanced, see [AWS Shield](shield-chapter.md)\.
 

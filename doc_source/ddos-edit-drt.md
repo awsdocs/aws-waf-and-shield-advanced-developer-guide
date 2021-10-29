@@ -15,7 +15,7 @@ To contact the SRT, you must be subscribed to the [Business Support plan](https:
 
 You can contact the Shield Response Team \(SRT\) in one of the following ways: 
 + **Support case** – You can open a case under **AWS Shield** in the [AWS Support Center](https://docs.aws.amazon.com/awssupport/latest/user/case-management.html)\. If your application is unhealthy, open a case using the highest severity available for your support plan and select either the **Phone** or **Chat** contact options\. In the description for your case, provide as much detail as possible\. Be sure to provide information about any protected resources that you think might be affected, and the current state of your end\-user experience\. For example, if your user experience is degraded or parts of your application are currently unavailable, provide that information\. 
-+ **Proactive engagement** – With AWS Shield Advanced proactive engagement, the SRT contacts you directly if the Amazon Route 53 health check associated with your protected resource becomes unhealthy during an event that is detected by Shield Advanced\. For more information about this option, see [Shield Advanced proactive engagement](ddos-overview.md#ddos-advanced-proactive-engagement)\.
++ **Proactive engagement** – With AWS Shield Advanced proactive engagement, the SRT contacts you directly if the Amazon Route 53 health check associated with your protected resource becomes unhealthy during an event that is detected by Shield Advanced\. For more information about this option, see [Shield Advanced proactive engagement](ddos-overview.md#ddos-advanced-proactive-engagement)\.
 
 **Grant the SRT limited access to certain APIs and Amazon S3 buckets that you designate**
 
@@ -60,7 +60,7 @@ To mitigate application layer events you can share additional log data, such as 
 
 **To enable SRT proactive engagement**
 
-Shield Advanced proactive engagement allows you to engage with the SRT more quickly when the availability of your application is affected, because of a possible attack\. When you have proactive engagement enabled, the SRT contacts you when a Shield Advanced event correlates to an unhealthy Route 53 health check on one or more of your protected resources\.
+Shield Advanced proactive engagement allows you to engage with the SRT more quickly when the availability of your application is affected, because of a possible attack\. When you have proactive engagement enabled, the SRT contacts you when a Shield Advanced event correlates to an unhealthy Route 53 health check on one or more of your protected resources\.
 
 1. In the AWS Shield console **Overview** page, under **Proactive engagement and contacts**, in the contacts area, choose **Edit**\.
 
@@ -73,5 +73,3 @@ If you provide more than one contact, in the **Notes**, indicate the circumstanc
    The **Overview** page reflects the updated contact information\.
 
 1. Choose **Edit proactive engagement feature**, choose **Enable**, and then choose **Save**\.
-
-   When you first enable proactive engagement, the request goes to manual review\. During this time, the proactive engagement status indicates that your request is pending review\. The SRT will contact you to schedule an architecture review, which includes a review of your Route 53 health check configurations\. When the review is complete, the SRT completes your request to enable proactive engagement\. 

@@ -4,7 +4,7 @@ When you add a rule group to your web ACL, you can alter how it manages your web
 
 ## Setting the rule actions to count<a name="web-acl-rule-group-override-options-rules"></a>
 
-You can override the actions of the rules inside a managed rule group, setting them to count for some or all of the rules\. If a rule's action is configured inside the rule group to block or allow matching requests, this override changes that behavior so that matching requests are only counted\. This override setting causes the rule to act exactly as if its action were set to count in its definition, with the following exceptions: 
+You can override the actions of the rules inside a managed rule group, setting them to count for some or all of the rules\. If a rule's action is configured inside the rule group to block or allow matching requests, this override changes that behavior so that matching requests are only counted\.  
 
 This allows all of the rules in the rule group to run and generate logs and metrics without affecting how the web request is handled and without terminating the evaluation of the web request\. 
 

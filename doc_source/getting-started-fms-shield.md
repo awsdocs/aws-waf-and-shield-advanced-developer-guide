@@ -3,7 +3,7 @@
 You can use AWS Firewall Manager to enable AWS Shield Advanced protections across your organization\. 
 
 **Important**  
-Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator\. If you need to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)\.
+Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator\. If you need to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)\.
 
 To use Firewall Manager to enable Shield Advanced protection, perform the following steps in sequence\. 
 

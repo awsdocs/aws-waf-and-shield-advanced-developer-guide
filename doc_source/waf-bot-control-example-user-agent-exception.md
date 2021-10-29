@@ -71,6 +71,11 @@ The following rule must run after the preceding Bot Control managed rule group i
     "RuleLabels": [],
     "Action": {
       "Block": {}
+    },
+    "VisibilityConfig": {
+      "SampledRequestsEnabled": true,
+      "CloudWatchMetricsEnabled": true,
+      "MetricName": "match_rule"
     }
   }
 }

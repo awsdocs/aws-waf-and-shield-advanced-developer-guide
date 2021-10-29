@@ -2,7 +2,7 @@
 
 ## Monitoring threats across AWS<a name="aws-shield-global-threats"></a>
 
-Use the AWS Shield global threat dashboard to view trends and metrics about the DDoS threat landscape across Amazon EC2, Amazon CloudFront, Elastic Load Balancing, and Amazon Route 53 \.
+Use the AWS Shield global threat dashboard to view trends and metrics about the DDoS threat landscape across Amazon EC2, Amazon CloudFront, Elastic Load Balancing, and Amazon Route 53\.
 
 The global threat dashboard provides a near real\-time summary of the global AWS threat landscape, including the largest event, the top event vectors, and the relative number of significant events\. You can customize the dashboard view for different time durations to see the history of significant DDoS events\.
 
@@ -78,7 +78,7 @@ If you determine a possible event is underway, you can contact the Shield Respon
 The **Events** page also contains tabs with additional details for detection and mitigation of events and for top contributors during an event\. 
 
 **Detection and mitigation**  
-The **Detection and mitigation** tab displays graphs that show the traffic that AWS Shield evaluated prior to reporting this event and the effect of any mitigation that was placed\. It also provides metrics for infrastructure\-layer Distributed Denial of Service \(DDoS\) events for resources in your own Amazon Virtual Private Cloud VPC and AWS Global Accelerator accelerators\. Detection and mitigation metrics are not included for Amazon CloudFront or Amazon Route 53 resources\.
+The **Detection and mitigation** tab displays graphs that show the traffic that AWS Shield evaluated prior to reporting this event and the effect of any mitigation that was placed\. It also provides metrics for infrastructure\-layer Distributed Denial of Service \(DDoS\) events for resources in your own Amazon Virtual Private Cloud VPC and AWS Global Accelerator accelerators\. Detection and mitigation metrics are not included for Amazon CloudFront or Amazon Route 53 resources\.
 
 AWS Shield evaluates traffic to your protected resource along multiple dimensions\. When an anomaly is detected, Shield creates an event and reports the traffic dimension where the anomaly was observed\. If the protected resource is an Elastic IP address, Classic Load Balancer \(CLB\), Application Load Balancer, or Global Accelerator accelerator, Shield automatically creates a mitigation for the protected resource\. This protects your resource from receiving excess traffic and from receiving traffic that matches a known DDoS event signature\. 
 

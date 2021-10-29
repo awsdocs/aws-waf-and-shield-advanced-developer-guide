@@ -2,11 +2,11 @@
 
 After completing the prerequisites, you create an AWS Firewall Manager DNS Firewall policy\. A DNS Firewall policy provides a set of centrally controlled DNS Firewall rule group associations for your entire AWS organization\. It also defines the AWS accounts and resources that the firewall applies to\. 
 
-For more information about how Firewall Manager manages your DNS Firewall rule group associations, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.<a name="get-started-fms-dns-firewall-create-policy-procedure"></a>
+For more information about how Firewall Manager manages your DNS Firewall rule group associations, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.<a name="get-started-fms-dns-firewall-create-policy-procedure"></a>
 
 **To create a Firewall Manager DNS Firewall policy \(console\)**
 
-1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 
 1. In the navigation pane, choose **Security policies**\. 
 
@@ -14,7 +14,7 @@ For more information about how Firewall Manager manages your DNS Firewall rule g
 
 1. Choose **Create security policy**\.
 
-1. For **Policy type**, choose **Amazon Route 53 Resolver DNS Firewall**\. 
+1. For **Policy type**, choose **Amazon Route 53 Resolver DNS Firewall**\. 
 
 1. For **Region**, choose an AWS Region\. 
 
@@ -22,7 +22,7 @@ For more information about how Firewall Manager manages your DNS Firewall rule g
 
 1. For **Policy name**, enter a descriptive name\. 
 
-1. The policy configuration allows you to define the DNS Firewall rule group associations that you want to manage from Firewall Manager\. You add the rule groups that you want to use in your policy\. You can an define association to evaluate first for your VPCs and one to evaluate last\. For this tutorial, add one or two rule group associations, depending on your needs\. 
+1. The policy configuration allows you to define the DNS Firewall rule group associations that you want to manage from Firewall Manager\. You add the rule groups that you want to use in your policy\. You can define an association to evaluate first for your VPCs and one to evaluate last\. For this tutorial, add one or two rule group associations, depending on your needs\. 
 
 1. Choose **Next**\.
 
@@ -40,4 +40,4 @@ For more information about how Firewall Manager manages your DNS Firewall rule g
 
 1. When you are finished exploring, if you don't want to keep the policy that you created for this tutorial, choose the policy name, choose **Delete**, choose **Clean up resources created by this policy\.**, and finally choose **Delete**\. 
 
-For more information about Firewall Manager DNS Firewall policies, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.
+For more information about Firewall Manager DNS Firewall policies, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.

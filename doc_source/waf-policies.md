@@ -28,7 +28,7 @@ For information about how AWS WAF evaluates web requests, see [Web ACL rule and 
 
 For the procedure to create a Firewall Manager AWS WAF policy, see [Creating an AWS Firewall Manager policy for AWS WAF](create-policy.md#creating-firewall-manager-policy-for-waf)\.
 
-Firewall Manager enables sampling and Amazon CloudWatch metrics for the rule groups that you define for the AWS WAF policy\. These settings are fixed and cannot be modified by the individual account owners\. You can restrict user access to the sampled requests by denying access to sampled requests for AWS WAF web ACLs\. To do this, in the user's IAM permissions settings, deny access to the `wafv2:GetSampleRequest` API\. 
+Firewall Manager enables sampling and Amazon CloudWatch metrics for the rule groups that you define for the AWS WAF policy\. 
 
 Individual account owners have complete control over the metrics and sampling configuration for any rule or rule group that they add to the policy's managed web ACLs\. 
 
@@ -61,13 +61,13 @@ For information about service\-linked roles and the `iam:CreateServiceLinkedRole
 
 1. Create an Amazon Kinesis Data Firehose using your Firewall Manager administrator account\. Use a name starting with the prefix `aws-waf-logs-`\. For example, `aws-waf-logs-firewall-manager-central`\. Create the data firehose with a `PUT` source and in the region that you are operating\. If you are capturing logs for Amazon CloudFront, create the firehose in US East \(N\. Virginia\)\. Before you use it, test your delivery stream to be sure that it has enough throughput to accommodate your organization's logs\. For more information, see [Creating an Amazon Kinesis Data Firehose delivery stream](https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html)\.
 
-1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
 1. In the navigation pane, choose **Security Policies**\.
 
-1. Choose the AWS WAF policy that you want to enable logging for\.
+1. Choose the AWS WAF policy that you want to enable logging for\. For more information about AWS WAF logging, see [Logging web ACL traffic information](logging.md)\.
 
 1. On the **Policy details** tab, in the **Policy rules** section, choose **Edit**\. 
 
@@ -77,13 +77,15 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. \(Optional\) If you don't want certain fields and their values included in the logs, redact those fields\. Choose the field to redact, and then choose **Add**\. Repeat as necessary to redact additional fields\. The redacted fields appear as `XXX` in the logs\. For example, if you redact the **URI** field, the **URI** field in the logs will be `XXX`\. 
 
+1. \(Optional\) If you don't want to send all requests to the logs, add your filtering criteria and behavior\. Under **Filter logs**, for each filter that you want to apply, choose **Add filter**, then choose your filtering criteria and specify whether you want to keep or drop requests that match the criteria\. When you finish adding filters, if needed, modify the **Default logging behavior**\. 
+
 1. Choose **Next**\.
 
 1. Review your settings, then choose **Save** to save your changes to the policy\.
 
 **To disable logging for an AWS WAF policy**
 
-1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 

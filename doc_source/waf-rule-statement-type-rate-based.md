@@ -2,6 +2,8 @@
 
 A rate\-based rule tracks the rate of requests for each originating IP address, and triggers the rule action on IPs with rates that go over a limit\. You set the limit as the number of requests per 5\-minute time span\. You can use this type of rule to put a temporary block on requests from an IP address that's sending excessive requests\. By default, AWS WAF aggregates requests based on the IP address from the web request origin, but you can configure the rule to use an IP address from an HTTP header, like `X-Forwarded-For`, instead\. 
 
+AWS WAF tracks and manages web requests separately for each instance of a rate\-based rule that you use\. For example, if you provide the same rate\-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate\-based rule and gets its own tracking and management by AWS WAF\. If you define a rate\-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate\-based rule that gets its own tracking and management by AWS WAF\.
+
 When the rule action triggers, AWS WAF applies the action to additional requests from the IP address until the request rate falls below the limit\. It can take a minute or two for the action change to go into effect\. 
 
 You can narrow the scope of the requests that AWS WAF counts\. To do this, you nest another, scope\-down statement inside the rate\-based statement\. Then, AWS WAF only counts requests that match the scope\-down statement\. For information about scope\-down statements, see [Scope\-down statements](waf-rule-scope-down-statements.md)\.
@@ -20,14 +22,14 @@ As another example, you might want to limit requests to the login page on your w
 
 By adding this rate\-based rule to a web ACL, you could limit requests to your login page without affecting the rest of your site\.
 
-**Not nestable** – You can't nest this statement type inside other statements\. You can include it directly in a web ACL\. You cannot include it in a rule group\. 
+**Not nestable** – You can't nest this statement type inside other statements\. You can include it directly in a web ACL and in a rule group\. 
 
 **\(Optional\) Scope\-down statement** – This rule type takes an optional scope\-down statement, to narrow the scope of the requests that the rate\-based statement tracks\. For more information, see [Scope\-down statements](waf-rule-scope-down-statements.md)\.
 
 **WCUs** – 2 plus any additional WCUs for a nested statement\.
 
 This statement uses the following optional setting: 
-+ **\(Optional\) Forwarded IP configuration** – By default, AWS WAF aggregates on the IP address in the web request origin, but you can configure the rule to use a forwarded IP in an HTTP header like `X-Forwarded-For` instead\. AWS WAF uses the first IP address in the header\. With this configuration, you also specify a fallback behavior to apply to a web request with a malformed IP address in the specified header\. The fallback behavior sets the matching result for the request, to match or no match\. For more information, see [Forwarded IP address](waf-rule-statement-forwarded-ip-address.md)\. 
++ **\(Optional\) Forwarded IP configuration** – By default, AWS WAF aggregates on the IP address in the web request origin, but you can instead configure the rule to use a forwarded IP address in an HTTP header like `X-Forwarded-For`\. AWS WAF uses the first IP address in the header\. With this configuration, you also specify a fallback behavior to apply to a web request with a malformed IP address in the specified header\. The fallback behavior sets the matching result for the request, to match or no match\. For more information, see [Forwarded IP address](waf-rule-statement-forwarded-ip-address.md)\. 
 
 **Where to find this**
 + **Rule builder** in your web ACL, on the console – Under **Rule**, for **Type**, choose **Rate\-based rule**\.

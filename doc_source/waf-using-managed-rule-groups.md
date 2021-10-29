@@ -1,88 +1,21 @@
 # Working with managed rule groups<a name="waf-using-managed-rule-groups"></a>
 
-This section provides guidance for accessing and managing managed rule groups\. 
+This section provides guidance for accessing and managing your managed rule groups\. 
 
-**To retrieve a list of managed rule groups**
-+ **Console** – During the process of creating a web ACL, on the **Add rules and rule groups** page, choose **Add managed rule groups**\. At the top level, the vendor names are listed\. Expand each vendor listing to see the list of managed rule groups\. When you add a managed rule group to your web ACL, the console lists it based on the naming scheme `<Vendor Name>-<Managed Rule Group Name>`\.
-+ **API** – `ListAvailableManagedRuleGroups`
-+ **CLI** – `aws wafv2 list-available-managed-rule-groups`
+When you add a managed rule group to your web ACL, you can choose the same configuration options as you can your own rule groups, plus additional settings\. 
 
-The API and CLI calls return a list of all managed rules that you can reference in the JSON model or through AWS CloudFormation\.
+Through the console, you access managed rule group information during the process of adding and editing the rules in your web ACLs\. Through the APIs and the command line interface \(CLI\), you can directly request managed rule group information\.
 
-**To retrieve the list of rules in a managed rule group**
+When you use a managed rule group in your web ACL, you can edit the following settings: 
++ **Version** – This is available only if the rule group is versioned\. For more information, see [Version management with managed rule groups](waf-managed-rule-groups-versioning.md)\.
++ **Set rule actions to Count** – You can set the actions for rules in the rule group to Count\. This is useful for testing a rule group before using it to manage your web requests\. For more information, see [Setting the rule actions to count](web-acl-rule-group-override-options.md#web-acl-rule-group-override-options-rules)\.
++ **Scope\-down statement** – You can add a scope\-down statement, to filter out web requests that you don't want to evaluate with the rule group\. For more information, see [Scope\-down statements](waf-rule-scope-down-statements.md)\.
++ **Override rule group action** – You can override the action that results from the rule group evaluation, and set it to Count only\. This option isn't commonly used\. It doesn't alter how AWS WAF evaluates the rules in the rule group\. For more information, see [Overriding the resulting rule group's action to count](web-acl-rule-group-override-options.md#web-acl-rule-group-override-options-rule-group)\.
+
+**To edit the managed rule group settings in your web ACL**
 + **Console** 
-  + \(Option\) When you add the managed rules group to your web ACL, you can choose **Edit** to view the rules\. 
+  + \(Option\) When you add the managed rules group to your web ACL, you can choose **Edit** to view and edit the settings\. 
   + \(Option\) After you've added the managed rule group into your web ACL, from the **Web ACLs** page, choose the web ACL you just created\. This takes you to the web ACL edit page\. 
     + Choose **Rules**\. 
-    + Select the rule group you want to see a rules list for, then choose **Edit**\. AWS WAF shows the list of rules in the rule group\. 
-+ **API** – `DescribeManagedRuleGroup`
-+ **CLI** – `aws wafv2 describe-managed-rule-group --scope REGIONAL --vendor-name <vendor> --name <managedrule_name>`
-
-The API and CLI calls return a list of all rules in the managed rule group that you can reference in the JSON model or through AWS CloudFormation\.
-
-**To add or modify managed rule groups using JSON**  
-You can reference and modify managed rule groups within a rule statement using JSON\. The following listing shows the AWS Managed Rules rule group, `AWSManagedRulesCommonRuleSet`, in JSON format\. The `ExcludedRules` specification lists rules whose actions are overridden to count only\.
-
-```
-{
-    "Name": "AWS-AWSManagedRulesCommonRuleSet",
-    "Priority": 0,
-    "Statement": {
-      "ManagedRuleGroupStatement": {
-        "VendorName": "AWS",
-        "Name": "AWSManagedRulesCommonRuleSet",
-        "ExcludedRules": [
-          {
-            "Name": "NoUserAgent_HEADER"
-          }
-        ]
-      }
-    },
-    "OverrideAction": {
-      "None": {}
-    },
-    "VisibilityConfig": {
-      "SampledRequestsEnabled": true,
-      "CloudWatchMetricsEnabled": true,
-      "MetricName": "AWS-AWSManagedRulesCommonRuleSet"
-    }
-}
-```
-
-**To add or modify managed rule groups using AWS CloudFormation**  
-You can reference and modify managed rule groups within a rule statement using the AWS CloudFormation template\. The following listing shows the AWS Managed Rules rule group, `AWSManagedRulesCommonRuleSet`, in AWS CloudFormation template\. The `ExcludedRules` specification lists rules whose actions are overridden to count only\.
-
-```
-Description: WebACL With AMR
-Resources:
-  WebACLWithAMR:
-    Type: AWS::WAFv2::WebACL
-    Properties:
-      Name: WebACLWithAMR
-      Scope: REGIONAL
-      Description: This is a demo
-      DefaultAction: 
-        Block: {}
-      VisibilityConfig:
-        SampledRequestsEnabled: true
-        CloudWatchMetricsEnabled: true
-        MetricName: MetricForWebACLWithAMR
-      Tags:
-        - Key: sampleapple
-          Value: sampleorange
-      Rules: 
-        - Name: AWS-AWSManagedRulesCommonRuleSet
-          Priority: 0
-          OverrideAction:
-            None: {}
-          VisibilityConfig:
-            SampledRequestsEnabled: true
-            CloudWatchMetricsEnabled: true
-            MetricName: MetricForAMRCRS
-          Statement:
-            ManagedRuleGroupStatement:
-              VendorName: AWS
-              Name: AWSManagedRulesCommonRuleSet
-              ExcludedRules:
-                - Name: NoUserAgent_HEADER
-```
+    + Select the rule group, then choose **Edit** to view and edit the settings\. 
++ **APIs and CLI** – Outside of the console, you can manage the managed rule group settings when you create and update the web ACL\. 

@@ -8,6 +8,9 @@ A label's prefix defines the context of the rule group or web ACL where the labe
 
 For information about this, see label syntax under [Label syntax and naming requirements](waf-rule-label-requirements.md)\. 
 
+**Note**  
+Some managed rule groups add labels\. You can retrieve these through the API by calling `DescribeManagedRuleGroup`\. The labels are listed in the `AvailableLabels` property in the response\.
+
 If you want to match against a rule that's in a different context than the context of your rule, you must provide the prefix in your match string\. For example, if you want to match against labels that are added by rules in a managed rule group, you could add a rule in your web ACL with a label match statement whose match string specifies the rule group's prefix followed by your additional match criteria\. 
 
 In the match string for the label match statement, you specify either a label or a namespace: 

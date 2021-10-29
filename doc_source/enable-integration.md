@@ -8,13 +8,12 @@ When you set the Firewall Manager administrator account, Firewall Manager automa
 
 1. Sign in to the AWS Management Console using an existing AWS Organizations management account\. You can sign in using the account's root user \(not recommended\) or another IAM user or IAM role within the account that has equivalent permissions\.
 
-1. Open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 
 1. Choose **Get started**\.
 
 1. Type the ID of the account that you've chosen to use as the Firewall Manager administrator\. 
 **Note**  
-This account cannot be the organization's management account\.   
 This account is given permission to create and manage Firewall Manager policies across all accounts within your organization\.
 
 1. Choose **Set administrator**\.

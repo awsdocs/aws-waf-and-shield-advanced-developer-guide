@@ -35,7 +35,7 @@ Specifies that the content type is JSON as well as the version of JSON, as shown
 ```
 Content-Type: application/x-amz-json-1.1
 ```
-Condition: Required for POST requests\.
+Condition: Required for `POST` requests\.
 
 **Content\-Length \(Conditional\)**  
 Length of the message \(without the headers\) according to RFC 2616\.  

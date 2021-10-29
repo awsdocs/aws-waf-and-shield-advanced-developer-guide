@@ -26,7 +26,7 @@ The label prefix varies between the labels that you define in your rules and the
   + Label namespace prefix: `awswaf:managed:<vendor>:<rule group name>:`
   + Custom namespace additions: `<custom namespace>:…:`
 
-  Some managed rule groups add labels to requests, but not all\. The AWS WAF Bot Control managed rule group adds labels\. For information about Bot Control, see [AWS WAF Bot Control](waf-bot-control.md)\. For general information about managed rule groups, see [Managed rule groups](waf-managed-rule-groups.md)\. 
+  All AWS Managed Rules rule groups add labels\. For information about managed rule groups, see [Managed rule groups](waf-managed-rule-groups.md)\. 
 
 **Label examples**  
 The following example labels are defined by rules in a rule group named `testRules` that belongs to the account, 111122223333\. 

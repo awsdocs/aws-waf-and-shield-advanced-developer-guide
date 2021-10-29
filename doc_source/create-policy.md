@@ -3,7 +3,7 @@
 The steps for creating a policy vary between the different policy types\. Make sure to use the procedure for the type of policy that you need\.
 
 **Important**  
-AWS Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator\. If you want to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)\. 
+AWS Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator\. If you want to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)\. 
 
 **Topics**
 + [Creating an AWS Firewall Manager policy for AWS WAF](#creating-firewall-manager-policy-for-waf)
@@ -13,7 +13,7 @@ AWS Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator\.
 + [Creating an AWS Firewall Manager content audit security group policy](#creating-firewall-manager-policy-audit-security-group)
 + [Creating an AWS Firewall Manager usage audit security group policy](#creating-firewall-manager-policy-usage-security-group)
 + [Creating an AWS Firewall Manager policy for AWS Network Firewall](#creating-firewall-manager-policy-for-network-firewall)
-+ [Creating an AWS Firewall Manager policy for Amazon Route 53 Resolver DNS Firewall](#creating-firewall-manager-policy-for-dns-firewall)
++ [Creating an AWS Firewall Manager policy for Amazon Route 53 Resolver DNS Firewall](#creating-firewall-manager-policy-for-dns-firewall)
 
 ## Creating an AWS Firewall Manager policy for AWS WAF<a name="creating-firewall-manager-policy-for-waf"></a>
 
@@ -28,7 +28,7 @@ For information about Firewall Manager AWS WAF policies, see [AWS WAF policies](
 
 **To create a Firewall Manager policy for AWS WAF \(console\)**
 
-1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
@@ -85,7 +85,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 **To create a Firewall Manager policy for AWS WAF Classic \(console\)**
 
-1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
@@ -144,7 +144,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 **To create a Firewall Manager policy for Shield Advanced \(console\)**
 
-1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
@@ -175,7 +175,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose the type of resource that you want to protect\.
 
-   Firewall Manager does not support Amazon Route 53 or AWS Global Accelerator\. If you need to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)\.
+   Firewall Manager does not support Amazon Route 53 or AWS Global Accelerator\. If you need to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)\.
 
 1. If you want to protect only resources with specific tags, or alternatively exclude resources with specific tags, select **Use tags to include/exclude resources**, enter the tags, and then choose either **Include** or **Exclude**\. You can choose only one option\. 
 
@@ -199,7 +199,7 @@ To create a common security group policy, you must have a security group already
 
 **To create a common security group policy \(console\)**
 
-1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
@@ -262,7 +262,7 @@ For some content audit policy settings, you must provide an audit security group
 
 **To create a content audit security group policy \(console\)**
 
-1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
@@ -337,7 +337,7 @@ For information about how usage audit security group policies work, see [Usage a
 
 **To create a usage audit security group policy \(console\)**
 
-1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
@@ -392,7 +392,7 @@ For information about Firewall Manager Network Firewall policies, see [AWS Netwo
 
 **To create a Firewall Manager policy for AWS Network Firewall \(console\)**
 
-1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
@@ -443,15 +443,15 @@ Auto remediation happens automatically for AWS Firewall Manager Network Firewall
 
 1. Review the new policy\. To make any changes, choose **Edit** in the area that you want to change\. This returns you to the corresponding step in the creation wizard\. When you are satisfied with the policy, choose **Create policy**\.
 
-## Creating an AWS Firewall Manager policy for Amazon Route 53 Resolver DNS Firewall<a name="creating-firewall-manager-policy-for-dns-firewall"></a>
+## Creating an AWS Firewall Manager policy for Amazon Route 53 Resolver DNS Firewall<a name="creating-firewall-manager-policy-for-dns-firewall"></a>
 
-In a Firewall Manager DNS Firewall policy, you use rule groups that you manage in Amazon Route 53 Resolver DNS Firewall\. For information about managing your rule groups, see [Managing rule groups and rules in DNS Firewall](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall-rule-group-managing.html) in the *Amazon Route 53 Developer Guide*\.
+In a Firewall Manager DNS Firewall policy, you use rule groups that you manage in Amazon Route 53 Resolver DNS Firewall\. For information about managing your rule groups, see [Managing rule groups and rules in DNS Firewall](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-dns-firewall-rule-group-managing.html) in the *Amazon Route 53 Developer Guide*\.
 
-For information about Firewall Manager DNS Firewall policies, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.
+For information about Firewall Manager DNS Firewall policies, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.
 
-**To create a Firewall Manager policy for Amazon Route 53 Resolver DNS Firewall \(console\)**
+**To create a Firewall Manager policy for Amazon Route 53 Resolver DNS Firewall \(console\)**
 
-1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2) \. 
+1. Sign in to the AWS Management Console using your Firewall Manager administrator account, and then open the Firewall Manager console at [https://console.aws.amazon.com/wafv2/fmsv2](https://console.aws.amazon.com/wafv2/fmsv2)\. 
 **Note**  
 For information about setting up a Firewall Manager administrator account, see [AWS Firewall Manager prerequisites](fms-prereq.md)\.
 
@@ -459,7 +459,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. Choose **Create policy**\.
 
-1. For **Policy type**, choose **Amazon Route 53 Resolver DNS Firewall**\. 
+1. For **Policy type**, choose **Amazon Route 53 Resolver DNS Firewall**\. 
 
 1. For **Region**, choose an AWS Region\. To protect resources in multiple Regions, you must create separate policies for each Region\. 
 
@@ -469,7 +469,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. In the policy configuration, add the rule groups that you want DNS Firewall to evaluate first and last among your VPCs' rule group associations\. You can add up to two rule groups to the policy\.
 
-   When you create the Firewall Manager DNS Firewall policy, Firewall Manager creates the rule group associations, with the association priorities that you've provided, for the VPCs and accounts that are within scope\. The individual account managers can add rule group associations in between your first and last associations, but they can't change the associations that you define here\. For more information, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.
+   When you create the Firewall Manager DNS Firewall policy, Firewall Manager creates the rule group associations, with the association priorities that you've provided, for the VPCs and accounts that are within scope\. The individual account managers can add rule group associations in between your first and last associations, but they can't change the associations that you define here\. For more information, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.
 
 1. Choose **Next**\.
 

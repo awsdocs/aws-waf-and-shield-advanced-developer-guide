@@ -8,13 +8,19 @@ For information about creating and managing a regex pattern set, see [Creating a
 
 A regex pattern set match statement instructs AWS WAF to search for any of the patterns in the set inside the request component that you choose\. A web request will match the pattern set rule statement if the request component matches any of the patterns in the set\. 
 
+If you want to combine your regex pattern matches using logic, for example to match against some regular expressions and not match against others, consider using [Regex match rule statement](waf-rule-statement-type-regex-match.md)\. 
+
 **Nestable** – You can nest this statement type\. 
 
-**WCUs** – 25 WCUs per regex pattern set, as a base cost\. If you use the request component **All query parameters**, add 10 WCUs\. If you use the request component **JSON body**, double the statement's base cost WCUs\. For each **Text transformation** that you apply, add 10 WCUs\.
+**WCUs** – 25 WCUs per regex pattern set, as a base cost\. If you use the request component **All query parameters**, add 10 WCUs\. If you use the request component **JSON body**, double the base cost WCUs\. For each **Text transformation** that you apply, add 10 WCUs\.
 
-This statement operates on a web request component, and requires the following request component settings: 
-+ **Request components** – The part of the web request to inspect, for example, a query string or the body\. For more information, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.
-+ **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For more information, see [Text transformations](waf-rule-statement-fields.md#waf-rule-statement-transformation)\.
+This statement type operates on a web request component, and requires the following request component settings: 
++ **Request components** – The part of the web request to inspect, for example, a query string or the body\.
+**Warning**  
+If you use the request component **Body** or **JSON body**, AWS WAF only inspects the first 8 KB\. For information, see [Web request body inspection](web-request-body-inspection.md)\.
+
+  For information about web request components, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.
++ **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For information, see [Text transformations](waf-rule-statement-fields.md#waf-rule-statement-transformation)\.
 
 This statement requires the following settings: 
 + Regex pattern set specification – Choose the regex pattern set that you want to use from the list or create a new one\. 

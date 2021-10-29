@@ -14,6 +14,7 @@ You can also use AWS WAF to protect your applications that are hosted in Amazon 
 + [Managing and using a web access control list \(web ACL\)](web-acl.md)
 + [Rule groups](waf-rule-groups.md)
 + [AWS WAF rules](waf-rules.md)
++ [Web request body inspection](web-request-body-inspection.md)
 + [IP sets and regex pattern sets](waf-referenced-set-managing.md)
 + [Customizing web requests and responses in AWS WAF](waf-custom-request-response.md)
 + [AWS WAF Bot Control](waf-bot-control.md)

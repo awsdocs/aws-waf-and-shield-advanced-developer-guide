@@ -112,7 +112,7 @@ This section discusses the metrics and alarms available with AWS Shield Advanced
 
 Shield Advanced reports metrics to Amazon CloudWatch on an AWS resource more frequently during DDoS events than while no events are underway\. Shield Advanced reports metrics once a minute during an event, and then once right after the event ends\. While no events are underway, Shield Advanced reports metrics once a day, at a time assigned to the resource\. This periodic report keeps the metrics active and available for use in custom CloudWatch alarms\. 
 
-For the global services Amazon CloudFront and Amazon Route 53 , metrics are reported in the US East \(N\. Virginia\) Region\.
+For the global services Amazon CloudFront and Amazon Route 53, metrics are reported in the US East \(N\. Virginia\) Region\.
 
 #### Detection metrics<a name="ddos-metrics-detection"></a>
 

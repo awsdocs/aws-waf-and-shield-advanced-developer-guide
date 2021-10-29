@@ -8,6 +8,11 @@ This changelog reports changes to the rules and rule groups in AWS Managed Rules
 
 | Rule group | Rules affected | Description | Date | 
 | --- | --- | --- | --- | 
+| Core rule set \(CRS\) |  `SizeRestrictions_BODY`  | Reduced the size limit to block web requests with body payloads larger than 8 KB\. Previously, the limit was 10 KB\.  | 2021\-10\-27 | 
+| Core rule set \(CRS\) |  `EC2MetaDataSSRF_BODY` `EC2MetaDataSSRF_COOKIE` `EC2MetaDataSSRF_URIPATH` `EC2MetaDataSSRF_QUERYARGUMENTS`  | Added more detection signatures\. Added double unicode URL decode to improve blocking\.  | 2021\-10\-27 | 
+| Core rule set \(CRS\) |  `GenericLFI_QUERYARGUMENTS` `GenericLFI_URIPATH` `RestrictedExtensions_URIPATH` `RestrictedExtensions_QUERYARGUMENTS`  | Added double unicode URL decode to improve blocking\.  | 2021\-10\-27 | 
+| Core rule set \(CRS\) |  `GenericRFI_QUERYARGUMENTS` `GenericRFI_BODY` `GenericRFI_URIPATH`  | Updated the rule signatures to reduce false positives, based on customer feedback\. Added double unicode URL decode to improve blocking\.  | 2021\-10\-27 | 
+| All | All rules | Added support for AWS WAF labels to all rules that didn't already support labeling\.  | 2021\-10\-25 | 
 | Amazon IP reputation list | `AWSManagedIPReputationList_xxxx` | Restructured the IP reputation list, removed suffixes from rule name, and added support for AWS WAF labels\.  | 2021\-05\-04 | 
 | Anonymous IP list | `AnonymousIPList` `HostingProviderList` | Added support for AWS WAF labels\.  | 2021\-05\-04 | 
 | AWS WAF Bot Control | All | Added the Bot Control rule set\.  | 2021\-04\-01 | 

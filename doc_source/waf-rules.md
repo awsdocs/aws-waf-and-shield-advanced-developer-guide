@@ -4,7 +4,7 @@ In every rule group and every web ACL, rules define how to inspect web requests 
 
 The inspection instructions are included in the JSON format as rule statements and the action in rule actions\. 
 
-You use the rules in a web ACL to block or allow web requests based on criteria like the following: 
+You use the rules in a web ACL to define how to inspect and handle HTTP\(S\) web requests based on criteria like the following: 
 + Scripts that are likely to be malicious\. Attackers embed scripts that can exploit vulnerabilities in web applications\. This is known as cross\-site scripting \(XSS\)\.
 + IP addresses or address ranges that requests originate from\.
 + Country or geographical location that requests originate from\.

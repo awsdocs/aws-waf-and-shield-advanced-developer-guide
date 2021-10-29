@@ -7,7 +7,7 @@ AWS Firewall Manager provides the following types of policies:
 + **Shield Advanced policy** – This policy applies AWS Shield Advanced protection to specified accounts and resources\. 
 + **Amazon VPC security group policy** – This type of policy gives you control over security groups that are in use throughout your organization in AWS Organizations and lets you enforce a baseline set of rules across your organization\. 
 + **Network Firewall policy** – This policy applies AWS Network Firewall protection to your organization's VPCs\. 
-+ **Amazon Route 53 Resolver DNS Firewall policy** – This policy applies DNS Firewall protections to your organization's VPCs\. 
++ **Amazon Route 53 Resolver DNS Firewall policy** – This policy applies DNS Firewall protections to your organization's VPCs\. 
 
 A Firewall Manager policy is specific to the individual policy type\. If you want to enforce multiple policy types across accounts, you can create multiple policies\. You can create more than one policy for each type\. 
 
