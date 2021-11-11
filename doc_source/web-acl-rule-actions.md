@@ -1,9 +1,10 @@
 # Basic handling of the rule and rule group actions in a web ACL<a name="web-acl-rule-actions"></a>
 
-When you configure your rules and rule groups, you choose between counting, allowing, or blocking matching web requests: 
+When you configure your rules and rule groups, you choose how you want AWS WAF to handle matching web requests: 
 + **Allow and block are terminating actions** – Allow and block actions stop all other processing of the web ACL on the matching web request\. If a rule in a web ACL finds a match for a request and the rule action is allow or block, that match determines the final disposition of the web request for the web ACL\. AWS WAF doesn't process any other rules in the web ACL that come after the matching one\. This is true for rules that you add directly to the web ACL and rules that are inside an added rule group\. With the block action, the protected resource doesn't receive or process the web request\.
 + **Count is a non\-terminating action** – When a rule with a count action matches a request, AWS WAF counts the request, then continues processing the rules that follow in the web ACL rule set\. If the only rules that match have count action set, AWS WAF applies the web ACL default action setting\. 
++ **Captcha can be a non\-terminating or a terminating action** – When a rule with a Captcha action matches a request, AWS WAF checks its Captcha status\. If the request has a valid Captcha token, AWS WAF continues processing the rules that follow in the web ACL rule set\. If the rule doesn't have a valid token, AWS WAF terminates the evaluation and runs a CAPTCHA challenge puzzle that the caller must solve\. 
 
 The actions that AWS WAF applies to a web request are affected by the relative position of rules in the web ACL\. For example, say that a web request matches a rule that allows requests and matches another rule that counts requests\. If the rule that allows requests is listed first, then AWS WAF won't count the request because the request evaluation terminates with the allow action\. 
 
-In your web ACL, you can override the action settings for rule groups and their rules\. For information, see [Overriding the actions of a rule group or its rules](web-acl-rule-group-override-options.md)\. 
+In your web ACL, you can override the action settings for rules inside a rule group and you can override the action that's returned by a rule group\. For information, see [Overriding the actions of a rule group or its rules](web-acl-rule-group-override-options.md)\. 

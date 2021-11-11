@@ -61,10 +61,13 @@ When you successfully enable logging, AWS WAF will create a service linked role 
 The following list describes the possible log fields\. 
 
 **action**  
-The action\. Possible values for a terminating rule: `ALLOW` and `BLOCK`\. `COUNT` is a non terminating rule action\. 
+The action\. `ALLOW` and `BLOCK` are terminating rule actions\. `COUNT` is a non\-terminating rule action\. `CAPTCHA` is non\-terminating if the request includes a valid CAPTCHA token and terminating if it doesn't\. 
 
 **args**  
 The query string\.
+
+**captchaResponse**  
+The CAPTCHA response to the request, populated when the CAPTCHA action results in the termination of web request inspection\. The CAPTCHA action terminates web request inspection when the request either doesn't include a CAPTCHA token or the token is invalid or expired\. This field includes a response code and a failure reason\. When a CAPTCHA action results in the web request being allowed, the information is captured in the field `nonTerminatingMatchingRules`\.
 
 **clientIp**  
 The IP address of the client sending the request\.
@@ -113,11 +116,11 @@ The IP address used by a rate\-based rule to aggregate requests for rate limitin
 The maximum number of requests, which have an identical value in the field that is specified by `limitKey`, allowed in a five\-minute period\. If the number of requests exceeds the `maxRateAllowed` and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule\.
 
 **nonTerminatingMatchingRules**  
-The list of non\-terminating rules in the rule group that match the request\. These are always COUNT rules \(non\-terminating rules that match\)\.    
+The list of non\-terminating rules in the rule group that match the request\.     
 action  
-This is always COUNT \(non\-terminating rules that match\)\.  
+This is either `COUNT` or `CAPTCHA`\. The CAPTCHA action is non\-terminating when the web request contains a valid CAPTCHA token\.  
 ruleId  
-The ID of the rule within the rule group that matches the request and was non\-terminating\. That is, COUNT rules\.  
+The ID of the rule within the rule group that matches the request and was non\-terminating\.   
 ruleMatchDetails  
 Detailed information about the rule that matched the request\. This field is only populated for SQL injection and cross\-site scripting \(XSS\) match rule statements\. 
 
@@ -149,7 +152,7 @@ The rule within the rule group that terminated the request\. If this is a non\-n
 The ID of the rule that terminated the request\. If nothing terminates the request, the value is `Default_Action`\.
 
 **terminatingRuleMatchDetails**  
-Detailed information about the terminating rule that matched the request\. A terminating rule has an action that ends the inspection process against a web request\. Possible actions for a terminating rule are `ALLOW` and `BLOCK`\. This is only populated for SQL injection and cross\-site scripting \(XSS\) match rule statements\. As with all rule statements that inspect for more than one thing, AWS WAF applies the action on the first match and stops inspecting the web request\. A web request with a terminating action could contain other threats, in addition to the one reported in the log\.
+Detailed information about the terminating rule that matched the request\. A terminating rule has an action that ends the inspection process against a web request\. Possible actions for a terminating rule are `ALLOW`, `BLOCK`, and `CAPTCHA`\. The matching rule might have more than one inspection criteria that must be met, so the details for the terminating rule are provided as an array of match criteria\. This is only populated for SQL injection and cross\-site scripting \(XSS\) match rule statements\. As with all rule statements that inspect for more than one thing, AWS WAF applies the action on the first match and stops inspecting the web request\. A web request with a terminating action could contain other threats, in addition to the one reported in the log\.
 
 **terminatingRuleType**  
 The type of rule that terminated the request\. Possible values: RATE\_BASED, REGULAR, GROUP, and MANAGED\_RULE\_GROUP\.
@@ -171,7 +174,7 @@ The GUID of the web ACL\.
 {
     "timestamp": 1576280412771,
     "formatVersion": 1,
-    "webaclId": "arn:aws:wafv2:ap-southeast-2:EXAMPLE12345:regional/webacl/STMTest/1EXAMPLE-2ARN-3ARN-4ARN-123456EXAMPLE",
+    "webaclId": "arn:aws:wafv2:ap-southeast-2:111122223333:regional/webacl/STMTest/1EXAMPLE-2ARN-3ARN-4ARN-123456EXAMPLE",
     "terminatingRuleId": "STMTest_SQLi_XSS",
     "terminatingRuleType": "REGULAR",
     "action": "BLOCK",
@@ -353,7 +356,7 @@ AWS WAF currently reports the location for JSON body inspection as `UNKNOWN`\.
 {
     "timestamp": 1576280412771,
     "formatVersion": 1,
-    "webaclId": "arn:aws:wafv2:ap-southeast-2:12345:regional/webacl/test/111",
+    "webaclId": "arn:aws:wafv2:ap-southeast-2:123456789012:regional/webacl/test/111",
     "terminatingRuleId": "STMTest_SQLi_XSS",
     "terminatingRuleType": "REGULAR",
     "action": "BLOCK",
@@ -390,5 +393,239 @@ AWS WAF currently reports the location for JSON body inspection as `UNKNOWN`\.
             "name": "value"
         }
     ]
+}
+```
+
+**Example Log output for a CAPTCHA rule against a web request with a valid, unexpired CAPTCHA token**  
+The following log listing is for a web request that matched a rule with CAPTCHA action\. The web request has a valid and unexpired CAPTCHA token, and is only noted as a CAPTCHA match by AWS WAF, similar to a Count action\. This CAPTCHA match is noted under `nonTerminatingMatchingRules`\.  
+
+```
+{
+  "timestamp": 1632420429309,
+  "formatVersion": 1,
+  "webaclId": "arn:aws:wafv2:us-east-1:123456789012:regional/webacl/captcha-web-acl/585e38b5-afce-4d2a-b417-14fb08b66c67",
+  "terminatingRuleId": "Default_Action",
+  "terminatingRuleType": "REGULAR",
+  "action": "ALLOW",
+  "terminatingRuleMatchDetails": [],
+  "httpSourceName": "APIGW",
+  "httpSourceId": "123456789012:b34myvfw0b:pen-test",
+  "ruleGroupList": [],
+  "rateBasedRuleList": [],
+  "nonTerminatingMatchingRules": [
+    {
+      "ruleId": "captcha-rule",
+      "action": "CAPTCHA",
+      "ruleMatchDetails": [],
+      "captchaResponse": {
+        "responseCode": 0,
+        "solveTimestamp": 1632420429
+      }
+    }
+  ],
+  "requestHeadersInserted": [
+    {
+      "name": "x-amzn-waf-test-header-name",
+      "value": "test-header-value"
+    }
+  ],
+  "responseCodeSent": null,
+  "httpRequest": {
+    "clientIp": "72.21.198.65",
+    "country": "US",
+    "headers": [
+      {
+        "name": "X-Forwarded-For",
+        "value": "72.21.198.65"
+      },
+      {
+        "name": "X-Forwarded-Proto",
+        "value": "https"
+      },
+      {
+        "name": "X-Forwarded-Port",
+        "value": "443"
+      },
+      {
+        "name": "Host",
+        "value": "b34myvfw0b.gamma.execute-api.us-east-1.amazonaws.com"
+      },
+      {
+        "name": "X-Amzn-Trace-Id",
+        "value": "Root=1-614cc24d-5ad89a09181910c43917a888"
+      },
+      {
+        "name": "cache-control",
+        "value": "max-age=0"
+      },
+      {
+        "name": "sec-ch-ua",
+        "value": "\"Chromium\";v=\"94\", \"Google Chrome\";v=\"94\", \";Not A Brand\";v=\"99\""
+      },
+      {
+        "name": "sec-ch-ua-mobile",
+        "value": "?0"
+      },
+      {
+        "name": "sec-ch-ua-platform",
+        "value": "\"Windows\""
+      },
+      {
+        "name": "upgrade-insecure-requests",
+        "value": "1"
+      },
+      {
+        "name": "user-agent",
+        "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.54 Safari/537.36"
+      },
+      {
+        "name": "accept",
+        "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+      },
+      {
+        "name": "sec-fetch-site",
+        "value": "same-origin"
+      },
+      {
+        "name": "sec-fetch-mode",
+        "value": "navigate"
+      },
+      {
+        "name": "sec-fetch-user",
+        "value": "?1"
+      },
+      {
+        "name": "sec-fetch-dest",
+        "value": "document"
+      },
+      {
+        "name": "referer",
+        "value": "https://b34myvfw0b.gamma.execute-api.us-east-1.amazonaws.com/pen-test/pets"
+      },
+      {
+        "name": "accept-encoding",
+        "value": "gzip, deflate, br"
+      },
+      {
+        "name": "accept-language",
+        "value": "en-US,en;q=0.9"
+      },
+      {
+        "name": "cookie",
+        "value": "aws-waf-token=51c71352-41f5-4f6d-b676-c24907bdf819:EQoAZ/J+AAQAAAAA:t9wvxbw042wva7E2Y6lgud/bS6YG0CJKVAJqaRqDZ140ythKW0Zj9wKB2O8lSkYDRqf1yONcVBFo5u0eYi0tvT4rtQCXsu+KanAardW8go4QSLw4yoED59lgV7oAhGyCalAzE7ra29j+RvvZPsQyoQuDCrtoY/TvQyMTXIXzGPDC/rKBbg=="
+      }
+    ],
+    "uri": "/pen-test/pets",
+    "args": "",
+    "httpVersion": "HTTP/1.1",
+    "httpMethod": "GET",
+    "requestId": "GINMHHUgoAMFxug="
+  }
+}
+```
+
+**Example Log output for a CAPTCHA rule against a web request that doesn't have a CAPTCHA token**  
+The following log listing is for a web request that matched a rule with CAPTCHA action\. The web request didn't have a CAPTCHA token, and was blocked by AWS WAF\.  
+
+```
+{
+  "timestamp": 1632420416512,
+  "formatVersion": 1,
+  "webaclId": "arn:aws:wafv2:us-east-1:123456789012:regional/webacl/captcha-web-acl/585e38b5-afce-4d2a-b417-14fb08b66c67",
+  "terminatingRuleId": "captcha-rule",
+  "terminatingRuleType": "REGULAR",
+  "action": "CAPTCHA",
+  "terminatingRuleMatchDetails": [],
+  "httpSourceName": "APIGW",
+  "httpSourceId": "123456789012:b34myvfw0b:pen-test",
+  "ruleGroupList": [],
+  "rateBasedRuleList": [],
+  "nonTerminatingMatchingRules": [],
+  "requestHeadersInserted": null,
+  "responseCodeSent": 405,
+  "httpRequest": {
+    "clientIp": "72.21.198.65",
+    "country": "US",
+    "headers": [
+      {
+        "name": "X-Forwarded-For",
+        "value": "72.21.198.65"
+      },
+      {
+        "name": "X-Forwarded-Proto",
+        "value": "https"
+      },
+      {
+        "name": "X-Forwarded-Port",
+        "value": "443"
+      },
+      {
+        "name": "Host",
+        "value": "b34myvfw0b.gamma.execute-api.us-east-1.amazonaws.com"
+      },
+      {
+        "name": "X-Amzn-Trace-Id",
+        "value": "Root=1-614cc240-18b57ff33c10e5c016b508c5"
+      },
+      {
+        "name": "sec-ch-ua",
+        "value": "\"Chromium\";v=\"94\", \"Google Chrome\";v=\"94\", \";Not A Brand\";v=\"99\""
+      },
+      {
+        "name": "sec-ch-ua-mobile",
+        "value": "?0"
+      },
+      {
+        "name": "sec-ch-ua-platform",
+        "value": "\"Windows\""
+      },
+      {
+        "name": "upgrade-insecure-requests",
+        "value": "1"
+      },
+      {
+        "name": "user-agent",
+        "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.54 Safari/537.36"
+      },
+      {
+        "name": "accept",
+        "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+      },
+      {
+        "name": "sec-fetch-site",
+        "value": "cross-site"
+      },
+      {
+        "name": "sec-fetch-mode",
+        "value": "navigate"
+      },
+      {
+        "name": "sec-fetch-user",
+        "value": "?1"
+      },
+      {
+        "name": "sec-fetch-dest",
+        "value": "document"
+      },
+      {
+        "name": "accept-encoding",
+        "value": "gzip, deflate, br"
+      },
+      {
+        "name": "accept-language",
+        "value": "en-US,en;q=0.9"
+      }
+    ],
+    "uri": "/pen-test/pets",
+    "args": "",
+    "httpVersion": "HTTP/1.1",
+    "httpMethod": "GET",
+    "requestId": "GINKHEssoAMFsrg="
+  },
+  "captchaResponse": {
+    "responseCode": 405,
+    "solveTimestamp": 0,
+    "failureReason": "TOKEN_MISSING"
+  }
 }
 ```

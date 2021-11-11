@@ -9,7 +9,7 @@ A string match statement indicates the string that you want AWS WAF to search fo
 + **Starts with string** – 2 
 + **Ends with string** – 2 
 + **Contains string** – 10 
-+ **Contains word** – 10 
++ **Contains words** – 10 
 
 If you use the request component **All query parameters**, add 10 WCUs\. If you use the request component **JSON body**, double the base cost WCUs\. For each **Text transformation** that you apply, add 10 WCUs\.
 

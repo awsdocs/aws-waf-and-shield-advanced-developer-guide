@@ -25,6 +25,7 @@ The following AWS managed policies, which you can attach to users in your accoun
 + `AWSWAFFullAccess` – Grants full access to AWS WAF resources\.
 + `AWSWAFConsoleReadOnlyAccess` – Grants read\-only access to the AWS WAF console, which includes resources for AWS WAF and integrated services, such as Amazon CloudFront, Amazon API Gateway, Application Load Balancer, and AWS AppSync\. 
 + `AWSWAFConsoleFullAccess` – Grants full access to the AWS WAF console, which includes resources for AWS WAF and integrated services, such as Amazon CloudFront, Amazon API Gateway, Application Load Balancer, and AWS AppSync\. 
++ `WAFV2LoggingServiceRolePolicy` – Grants access write logs to AWS WAF logging destinations\. 
 
 **Note**  
 You can review these permissions policies by signing in to the IAM console and searching for specific policies there\.

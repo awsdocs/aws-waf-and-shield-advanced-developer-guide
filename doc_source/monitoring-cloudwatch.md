@@ -55,6 +55,8 @@ The `WAF` namespace includes the following metrics and dimensions\.
 | `AllowedRequests` |  The number of allowed web requests\. Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 | `BlockedRequests` |  The number of blocked web requests\. Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 | `CountedRequests` |  The number of counted web requests\. Reporting criteria: There is a nonzero value\. A counted web request is one that matches at least one of the rules\. Request counting is typically used for testing\. Valid statistics: Sum  | 
+| `CaptchaRequests` |  The number of web requests that had CAPTCHA controls applied\. Reporting criteria: There is a nonzero value\. A CAPTCHA web request is one that matches a rule that has a CAPTCHA action setting\. This metric records all requests that match, regardless of whether they have a valid CAPTCHA token\. Valid statistics: Sum  | 
+|  `RequestsWithValidCaptchaToken`  |  The number of web requests that had CAPTCHA controls applied and that had a valid CAPTCHA token\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 | `PassedRequests` |  The number of passed requests\. This is only used for requests that go through a rule group evaluation without matching any of the rule group rules\.  Reporting criteria: There is a nonzero value\. Passed requests are requests that don't match any of the rules in the rule group\.  Valid statistics: Sum  | 
 
 
@@ -75,6 +77,7 @@ The `WAF` namespace includes the following metrics and dimensions\.
 |  `AllowedRequests`  |  The number of labels applied to web requests by rules that had an allow action setting\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 |  `BlockedRequests`  |  The number of labels applied to web requests by rules that had a block action setting\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 |  `CountedRequests`  |  The number of labels applied to web requests by rules that had a count action setting\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `CaptchaRequests`  |  The number of labels applied to web requests by rules that had a CAPTCHA action setting\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 
 
 **Label and AWS WAF Bot Control dimensions**  
@@ -112,7 +115,9 @@ This section discusses the metrics and alarms available with AWS Shield Advanced
 
 Shield Advanced reports metrics to Amazon CloudWatch on an AWS resource more frequently during DDoS events than while no events are underway\. Shield Advanced reports metrics once a minute during an event, and then once right after the event ends\. While no events are underway, Shield Advanced reports metrics once a day, at a time assigned to the resource\. This periodic report keeps the metrics active and available for use in custom CloudWatch alarms\. 
 
-For the global services Amazon CloudFront and Amazon Route 53, metrics are reported in the US East \(N\. Virginia\) Region\.
+Shield Advanced reports metrics in the US East \(N\. Virginia\) Region, `us-east-1` for the following:
++ The global services Amazon CloudFront and Amazon Route 53\.
++ Protection groups\. For information about protection groups, see [Shield Advanced protection groups](ddos-overview.md#ddos-advanced-protection-groups)\.
 
 #### Detection metrics<a name="ddos-metrics-detection"></a>
 

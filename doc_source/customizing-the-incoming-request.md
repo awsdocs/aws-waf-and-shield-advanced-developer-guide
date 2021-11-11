@@ -1,6 +1,8 @@
-# Custom request header insertions for allow and count actions<a name="customizing-the-incoming-request"></a>
+# Custom request header insertions for allow, count, and CAPTCHA actions<a name="customizing-the-incoming-request"></a>
 
-You can instruct AWS WAF to insert custom headers into the original HTTP request for rule actions or web ACL default actions that are set to allow or count\. You can only add to the request\. You can't modify or replace any part of the original request\. For more information about rule actions, see [AWS WAF rule action](waf-rule-action.md)\. For more information about default web ACL actions, see [Deciding on the default action for a web ACL](web-acl-default-action.md)\.
+You can instruct AWS WAF to insert custom headers into the original HTTP request when it permits the request to go through\. You can only add to the request\. You can't modify or replace any part of the original request\. 
+
+This option applies to rule actions that are set to allow, count, or CAPTCHA and to web ACL default actions that are set to allow\. For more information about rule actions, see [AWS WAF rule action](waf-rule-action.md)\. For more information about default web ACL actions, see [Deciding on the default action for a web ACL](web-acl-default-action.md)\.
 
 Use cases for custom header insertion include signaling a downstream application to process the request differently based on the inserted headers, and flagging the request for analysis\.
 
@@ -10,8 +12,8 @@ AWS WAF prefixes all request headers that it inserts with `x-amzn-waf-`, to avoi
 **Headers with the same name**  
 If the request already has a header with the same name that AWS WAF is inserting, AWS WAF overwrites the header\. So, if you define headers in multiple rules with identical names, the last rule to inspect the request and find a match would have its header added, and any previous rules would not\. 
 
-**Custom headers with the count action**  
-The count rule action doesn't stop the processing of the web request\. If you insert custom headers with a rule that uses the count action, subsequent rules might also insert custom headers\. For information about the count rule action behavior, see [AWS WAF rule action](waf-rule-action.md)\.
+**Custom headers with the count or CAPTCHA action**  
+The count and CAPTCHA rule actions don't stop AWS WAF from processing the web request\. If you insert custom headers with a rule that uses these actions, subsequent rules might also insert custom headers\. For information about rule action behavior, see [AWS WAF rule action](waf-rule-action.md)\.
 
 For example, suppose you have the following rules, prioritized in the order shown: 
 

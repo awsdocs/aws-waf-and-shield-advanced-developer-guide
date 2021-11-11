@@ -15,5 +15,5 @@ If you use the request component **Body** or **JSON body**, AWS WAF only inspect
 + **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For information, see [Text transformations](waf-rule-statement-fields.md#waf-rule-statement-transformation)\.
 
 **Where to find this**
-+ **Rule builder** on the console – For **Match type**, choose **Attack match conditions** > **Contains SQL injection attacks**\.
++ **Rule builder** on the console – For **Match type**, choose **Attack match condition** > **Contains SQL injection attacks**\.
 + **API statement** – `SqliMatchStatement`

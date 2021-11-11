@@ -4,7 +4,7 @@ This tutorial shows how to use AWS WAF to perform the following tasks:
 + Set up AWS WAF\.
 + Create a web access control list \(web ACL\) using the wizard in the AWS WAF console\. 
 + Choose the AWS resources that you want AWS WAF to inspect web requests for\. This tutorial covers the steps for Amazon CloudFront\. The process is essentially the same for an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API\. 
-+ Add the rules and rule groups that you want to use to filter web requests\. For example, you can specify the IP addresses that the requests originate from and values in the request that are used only by attackers\. For each rule, you specify whether you want to block matching web requests or allow them\. The rules that are defined inside a rule group have their actions defined inside the rule group\.
++ Add the rules and rule groups that you want to use to filter web requests\. For example, you can specify the IP addresses that the requests originate from and values in the request that are used only by attackers\. For each rule, you specify how to handle matching web requests\. You can block them, allow them, count them, or insert a CAPTCHA check against them\. You define an action for each rule that you define inside a web ACL and for each rule that you define inside a rule group\. 
 + Specify a default action for the web ACL, either `Block` or `Allow`\. This is the action that AWS WAF takes when a web request doesn't match any of the rules\.
 
 **Note**  
@@ -77,7 +77,7 @@ This procedure uses the **Rule visual editor**\.
 
 1. For **If a request** choose **matches the statement**\. 
 
-   The other options use the logical statement types for rules, which allow you to combine or negate rule statement results\. 
+   The other options are for the logical rule statement types\. You can use them to combine or negate the results of other rule statements\. 
 
 1. On **Statement**, for **Inspect**, open the dropdown and choose the web request component that you want AWS WAF to look for your string in\. For this example, choose **Header**\.
 
@@ -139,7 +139,7 @@ The wizard returns you to the **Web ACL** page, where your new web ACL is listed
 
 ## Step 6: Clean up your resources<a name="getting-started-wizard-clean-up"></a>
 
-You've now successfully completed the tutorial\. To prevent your account from accruing additional AWS WAF charges, clean up the AWS WAF objects that you created\. Alternatively, you can change the configuration to match the web requests that you really want to allow, block, and count\.
+You've now successfully completed the tutorial\. To prevent your account from accruing additional AWS WAF charges, clean up the AWS WAF objects that you created\. Alternatively, you can change the configuration to match the web requests that you really want to manage using AWS WAF\.
 
 **Note**  
 AWS typically bills you less than US $0\.25 per day for the resources that you create during this tutorial\. When you're finished, we recommend that you delete the resources to prevent incurring unnecessary charges\. <a name="getting-started-wizard-clean-up-procedure"></a>

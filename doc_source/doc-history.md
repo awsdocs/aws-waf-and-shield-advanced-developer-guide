@@ -2,13 +2,16 @@
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [AWS WAF new CAPTCHA rule action option](waf-captcha.md) | You can configure rules to run a CAPTCHA check against web requests and, as needed, send a CAPTCHA challenge to the client\.  | November 8, 2021 | 
 | [Updated AWS Managed Rules for AWS WAF](aws-managed-rule-groups-changelog.md) | AWS Managed Rules for AWS WAF updated the Core rule set \(CRS\) rule group\.  | October 27, 2021 | 
 | [Updated AWS Managed Rules for AWS WAF](aws-managed-rule-groups-list.md) | All AWS Managed Rules rule groups now support labeling\. The rule descriptions include the label specifications\. | October 25, 2021 | 
 | [Firewall Manager supports Network Firewall log filtering](network-firewall-policies.md#nwfw-policies-logging-config) | AWS Firewall Manager now supports log filtering for Network Firewall policies\. | October 4, 2021 | 
+| [AWS Firewall Manager managed policy change](security-iam-awsmanpol.md#security-iam-awsmanpol-updates) | Update to `FMSServiceRolePolicy`\.  | September 29, 2021 | 
 | [Added regex match statement](waf-rule-statement-type-regex-match.md) | You can now match web requests against a single regular expression\.  | September 22, 2021 | 
 | [Rate\-based rules inside AWS WAF rule groups](waf-rule-statement-type-rate-based.md) | You can now define rate\-based rules inside AWS WAF rule groups\. In AWS Firewall Manager, this capability is fully supported for AWS WAF policies\. | September 13, 2021 | 
 | [Firewall Manager supports AWS WAF log filtering](waf-policies.md#waf-policies-logging-config) | AWS Firewall Manager now supports log filtering for AWS WAF policies\. | August 31, 2021 | 
 | [Automatically remove out\-of\-scope resource protections in AWS Firewall Manager](policy-scope.md#when-out-of-scope) | AWS Firewall Manager allows you to automatically remove protections from resources that leave policy scope\. | August 25, 2021 | 
+| [AWS Firewall Manager managed policy change](security-iam-awsmanpol.md#security-iam-awsmanpol-updates) | Update to `FMSServiceRolePolicy`\.  | August 12, 2021 | 
 | [Added versioning to managed rule groups](waf-managed-rule-groups.md) | Managed rule group providers can now version their rule groups\.  | August 9, 2021 | 
 | [Modify AWS Firewall Manager administrator requirements](fms-prereq.md) | You can use the organization's management account as the Firewall Manager administrator account\. This had been disallowed\.  | August 2, 2021 | 
 | [Firewall Manager quota increase](fms-limits.md#fms-limits-mutable) | Increased the number of Amazon VPC instances that you can have in scope of a Firewall Manager policy from 10 to 100\. | July 28, 2021 | 
@@ -25,7 +28,10 @@
 | [AWS WAF Bot Control ](waf-bot-control.md) | You can monitor and control bot traffic with the new AWS WAF Bot Control feature, which combines a new Bot Control managed rule group with web request labeling, scope\-down statements, and log filtering\. | April 1, 2021 | 
 | [Firewall Manager supports Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md) | AWS Firewall Manager supports central management of Amazon Route 53 Resolver DNS Firewall outbound DNS traffic filtering for your VPCs\.  | March 31, 2021 | 
 | [Custom request and response handling](waf-custom-request-response.md) | You can include custom headers in web requests that AWS WAF allows or counts and you can send custom responses for web requests that AWS WAF blocks\. Available for web ACL default action and rule action settings\.  | March 29, 2021 | 
+| [AWS Firewall Manager managed policy change](security-iam-awsmanpol.md#security-iam-awsmanpol-updates) | Update to `FMSServiceRolePolicy`\.  | March 17, 2021 | 
 | [Updated AWS Managed Rules for AWS WAF](aws-managed-rule-groups-changelog.md) | AWS Managed Rules for AWS WAF updated the following rule groups: core rule set \(CRS\), admin protection, known bad inputs, and Linux operating system\.  | March 3, 2021 | 
+| [AWS WAF managed policy change tracking](waf-security-iam-awsmanpol.md#waf-security-iam-awsmanpol-updates) | AWS WAF started tracking changes for its AWS managed policies\.  | March 1, 2021 | 
+| [AWS Firewall Manager managed policy change tracking](security-iam-awsmanpol.md#security-iam-awsmanpol-updates) | Firewall Manager started tracking changes for its AWS managed policies\.  | March 1, 2021 | 
 | [Inspect a web request body as parsed JSON](waf-rule-statement-fields.md#waf-rule-statement-request-component-json-body) | Added the option to inspect the web request body as parsed and filtered JSON\. This is in addition to the existing option to inspect the web request body as plain text\.  | February 12, 2021 | 
 | [Expanded AWS Shield Advanced event details in console](using-ddos-reports.md#shield-details) | Shield Advanced customers can access additional metrics and reports for events in the Shield console **Events** page\.  | January 22, 2021 | 
 | [Firewall Manager supports AWS Network Firewall policies](network-firewall-policies.md) | AWS Firewall Manager supports central management of AWS Network Firewall network traffic filtering for your VPCs\.  | November 17, 2020 | 

@@ -6,7 +6,7 @@ AWS WAF tracks and manages web requests separately for each instance of a rate\-
 
 When the rule action triggers, AWS WAF applies the action to additional requests from the IP address until the request rate falls below the limit\. It can take a minute or two for the action change to go into effect\. 
 
-You can narrow the scope of the requests that AWS WAF counts\. To do this, you nest another, scope\-down statement inside the rate\-based statement\. Then, AWS WAF only counts requests that match the scope\-down statement\. For information about scope\-down statements, see [Scope\-down statements](waf-rule-scope-down-statements.md)\.
+You can narrow the scope of the requests that AWS WAF tracks and counts\. To do this, you nest another, scope\-down statement inside the rate\-based statement\. Then, AWS WAF only counts requests that match the scope\-down statement\. For information about scope\-down statements, see [Scope\-down statements](waf-rule-scope-down-statements.md)\.
 
 For example, based on recent requests that you've seen from an attacker in the United States, you might create a rate\-based rule with the following scope\-down statement: 
 + AND rule statement that contains the following, second level of nested statements: 
@@ -16,9 +16,9 @@ For example, based on recent requests that you've seen from an attacker in the U
 Let's say that you also set a rate limit of 1,000\. For each IP address, AWS WAF counts requests that meet both of the conditions\. Requests that don't meet both conditions aren't counted\. If the count for an IP address exceeds 1,000 requests in any 5\-minute time span, the rule's action triggers against that IP address\. 
 
 As another example, you might want to limit requests to the login page on your website\. To do this, you could create a rate\-based rule with the following nested string match statement: 
-+ The **Request option** is `URI`\.
-+ The **Match Type** is `Starts with`\. 
-+ A **Strings to match** is `login`\. 
++ The **Inspect** **Request component** is `URI path`\.
++ The **Match type** is `Starts with string`\. 
++ The **String to match** is `login`\. 
 
 By adding this rate\-based rule to a web ACL, you could limit requests to your login page without affecting the rest of your site\.
 

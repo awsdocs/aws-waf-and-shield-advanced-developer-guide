@@ -9,17 +9,17 @@ You can use criteria like the following to allow or block requests:
 + Size of a particular part of the request
 + Detection of malicious SQL code or scripting 
 
-You can also test for any combination of these conditions\. You can block or count web requests that not only meet the specified conditions, but also exceed a specified number of requests in any 5\-minute period\. You can combine conditions using logical operators\. 
+You can also test for any combination of these conditions\. You can block or count web requests that not only meet the specified conditions, but also exceed a specified number of requests in any 5\-minute period\. You can combine conditions using logical operators\. You can also run CAPTCHA controls against requests\. 
 
-This criteria is provided inside the rules that you include in your web ACL and in rule groups that you use in the web ACL\. It's specified in the rule statement\. For a full list of the options, see [AWS WAF rule statements](waf-rule-statements.md)\.
+You provide your matching criteria and the action to take on matches in AWS WAF rule statements\. You can define rule statements directly inside your web ACL and in reusable rule groups that you use in your web ACL\. For a full list of the options, see [AWS WAF rule statements](waf-rule-statements.md) and [AWS WAF rule action](waf-rule-action.md)\.
 
-To choose the requests that you want to allow to have access to your content or that you want to block, perform the following tasks:
+To specify your web request inspection and handling criteria, perform the following tasks:
 
 1. Choose the default action, either allow or block, for web requests that don't match any of the rules that you specify\. For more information, see [Deciding on the default action for a web ACL](web-acl-default-action.md)\.
 
 1. Add any rule groups that you want to use in your web ACL\. Managed rule groups usually contain rules that block web requests\. For information about rule groups, see [Rule groups](waf-rule-groups.md)\. 
 
-1. Specify additional conditions under which you want to allow or block requests in one or more rules\. To add more than one, start with `AND` or `OR` rule statements and nest the rules that you want to combine under those\. If you want to negate a rule option, nest the rule in a NOT statement\. You can optionally use a rate\-based rule instead of a regular rule to limit the number of requests from any single IP address that meets the conditions\. For information about rules, see [AWS WAF rules](waf-rules.md)\.
+1. Specify additional matching criteria and handling instructions in one or more rules\. To add more than one rule, start with `AND` or `OR` rule statements and nest the rules that you want to combine under those\. If you want to negate a rule option, nest the rule in a NOT statement\. You can optionally use a rate\-based rule instead of a regular rule to limit the number of requests from any single IP address that meets the conditions\. For information about rules, see [AWS WAF rules](waf-rules.md)\.
 
 If you add more than one rule to a web ACL, AWS WAF evaluates the rules in the order that they're listed for the web ACL\. For more information, see [Web ACL rule and rule group evaluation](web-acl-processing.md)\.
 

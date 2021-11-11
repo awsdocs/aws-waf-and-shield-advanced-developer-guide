@@ -1,6 +1,6 @@
 # Custom responses for block actions<a name="customizing-the-response-for-blocked-requests"></a>
 
-You can instruct AWS WAF to send a custom HTTP response back to the client for rule actions or web ACL default actions that are set to block the request\. For more information about rule actions, see [AWS WAF rule action](waf-rule-action.md)\. For more information about default web ACL actions, see [Deciding on the default action for a web ACL](web-acl-default-action.md)\.
+You can instruct AWS WAF to send a custom HTTP response back to the client for rule actions or web ACL default actions that are set to `Block`\. For more information about rule actions, see [AWS WAF rule action](waf-rule-action.md)\. For more information about default web ACL actions, see [Deciding on the default action for a web ACL](web-acl-default-action.md)\.
 
 
 
@@ -25,7 +25,7 @@ It's not possible to combine AWS WAF custom responses with any response settings
 
 1. If AWS WAF blocks a web request, AWS WAF determines the response that the protected resource sends back to the client\. For the default block action, the response is `403 (Forbidden)`\. If you customize the block action, then you provide the response entirely in your custom settings\. These block action responses take precedence over any response settings that you might have defined in the protected resource itself\. 
 
-1. If AWS WAF allows a web request to go through, then your configuration of the protected resource determines the response that it sends back to the client\. For allowed requests, the only customization that you can configure in AWS WAF is the insertion of custom headers into the original request, before forwarding to the protected resource\. This option is described in the preceding section, [Custom request header insertions for allow and count actions](customizing-the-incoming-request.md)\. 
+1. If AWS WAF allows a web request to go through, then your configuration of the protected resource determines the response that it sends back to the client\. For allowed requests, the only customization that you can configure in AWS WAF is the insertion of custom headers into the original request, before forwarding to the protected resource\. This option is described in the preceding section, [Custom request header insertions for allow, count, and CAPTCHA actions](customizing-the-incoming-request.md)\. 
 
 **Custom response bodies**  
 You define the body of a custom response within the context of the web ACL or rule group where you want to use it\. After you've defined a custom response body, you can use it by reference anywhere else in the web ACL or rule group where you created it\. In the individual block action settings, you reference the custom body that you want to use and you define the status code and header of the custom response\. 

@@ -46,26 +46,4 @@ Use the IAM console, the IAM CLI, or the IAM API to delete the AWSServiceRoleFor
 
 ## Supported Regions for Firewall Manager service\-linked roles<a name="fms-slr-regions"></a>
 
-Firewall Manager supports using service\-linked roles in the following AWS Regions\.
-
-
-****  
-
-| Region Name | Region Identity | Support in Firewall Manager | 
-| --- | --- | --- | 
-| US East \(N\. Virginia\) | us\-east\-1 | Yes | 
-| US East \(Ohio\) | us\-east\-2 | Yes | 
-| US West \(N\. California\) | us\-west\-1 | Yes | 
-| US West \(Oregon\) | us\-west\-2 | Yes | 
-| Asia Pacific \(Mumbai\) | ap\-south\-1 | Yes | 
-| Asia Pacific \(Osaka\) | ap\-northeast\-3 | Yes | 
-| Asia Pacific \(Seoul\) | ap\-northeast\-2 | Yes | 
-| Asia Pacific \(Singapore\) | ap\-southeast\-1 | Yes | 
-| Asia Pacific \(Sydney\) | ap\-southeast\-2 | Yes | 
-| Asia Pacific \(Tokyo\) | ap\-northeast\-1 | Yes | 
-| Canada \(Central\) | ca\-central\-1 | Yes | 
-| Europe \(Frankfurt\) | eu\-central\-1 | Yes | 
-| Europe \(Ireland\) | eu\-west\-1 | Yes | 
-| Europe \(London\) | eu\-west\-2 | Yes | 
-| Europe \(Paris\) | eu\-west\-3 | Yes | 
-| South America \(São Paulo\) | sa\-east\-1 | Yes | 
+Firewall Manager supports using service\-linked roles in all of the regions where the service is available\. For more information, see [Firewall Manager endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/firewallmanager.html)\.

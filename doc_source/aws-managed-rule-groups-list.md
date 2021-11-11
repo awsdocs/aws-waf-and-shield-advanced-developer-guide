@@ -130,7 +130,7 @@ The PHP application rule group contains rules that block request patterns associ
 **WordPress application**  
 VendorName: `AWS`, Name: `AWSManagedRulesWordPressRuleSet`, WCU: 100
 
-The WordPress application rule group contains rules that block request patterns associated with the exploitation of vulnerabilities specific to WordPress sites\. You should evaluate this rule group if you are running WordPress\. This rule group should be used in conjunction with the [](#sql_db) and [](#php_app) rule groups\.
+The WordPress application rule group contains rules that block request patterns associated with the exploitation of vulnerabilities specific to WordPress sites\. You should evaluate this rule group if you are running WordPress\. This rule group should be used in conjunction with the [SQL database](#sql_db) and [PHP application](#php_app) rule groups\.
 
 
 | Rule name | Description and label | 

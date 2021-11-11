@@ -4,12 +4,12 @@ You can use AWS WAF to associate a web ACL with an Amazon API Gateway REST API, 
 
 You can associate a web ACL with a CloudFront distribution when you create or update the distribution itself\. For information, see [Using AWS WAF to Control Access to Your Content](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-awswaf.html) in the *Amazon CloudFront Developer Guide*\.
 
-You can only associate a web ACL to an Application Load Balancer within AWS Regions\. For example, you can't associate a web ACL to an Application Load Balancer that is on AWS Outposts\.
+You can only associate a web ACL to an Application Load Balancer within AWS Regions\. For example, you cannot associate a web ACL to an Application Load Balancer that is on AWS Outposts\.
 
 **Restrictions on multiple associations**  
 You can associate a single web ACL with one or more AWS resources, according to the following restrictions:
 + You can associate each AWS resource with only one web ACL\. The relationship between web ACL and AWS resources is one\-to\-many\. 
-+ You can associate a web ACL with one or more CloudFront distributions\. You can't associate a web ACL that you've associated with a CloudFront distribution with any other AWS resource type\.
++ You can associate a web ACL with one or more CloudFront distributions\. You cannot associate a web ACL that you have associated with a CloudFront distribution with any other AWS resource type\.
 
 **To associate a web ACL with an AWS resource**
 

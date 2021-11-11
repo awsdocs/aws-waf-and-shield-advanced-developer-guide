@@ -32,13 +32,15 @@ You can't change the CloudWatch metric name after you create the web ACL\.
 
    1. For the rule group that you want to add, turn on the **Add to web ACL** toggle in the **Action** column\. 
 
-      If you want to set the actions for all rules in the rule group to count only, choose **Edit**, then turn on the **Set all rules actions to count** toggle, and choose **Save rule**\. For information about this option, see [Overriding the actions of a rule group or its rules](web-acl-rule-group-override-options.md)\. 
+      If you want to set the actions for any rules in the rule group to count only, choose **Edit**, then either turn on the **Count** toggle for individual rules or turn on the **Set all rules actions to count** toggle\. Choose **Save rule**\. For information about this option, see [Overriding the actions of a rule group or its rules](web-acl-rule-group-override-options.md)\. 
 
    Choose **Add rules** to finish adding managed rules and return to the **Add rules and rule groups** page\.
 
 1. \(Optional\) If you want to add your own rule group, on the **Add rules and rule groups** page, choose **Add rules**, and then choose **Add my own rules and rule groups**\. Do the following for each rule group that you want to add:
 
    1. On the **Add my own rules and rule groups** page, choose **Rule group**\.
+
+   1. For **Name**, enter the name that you want to use for the rule group rule in this web ACL\. 
 
    1. Choose your rule group from the list, and then choose **Add rule**\.
 
@@ -52,6 +54,8 @@ This procedure covers the **Rule visual editor**\.
    1. Enter your rule definition, according to your needs\. You can combine rules inside logical `AND` and `OR` rule statements\. The wizard guides you through the options for each rule, according to context\. For information about your rules options, see [AWS WAF rules](waf-rules.md)\. 
 
    1. For **Action**, select the action you want the rule to take when it matches a web request\. For information on your choices, see [AWS WAF rule action](waf-rule-action.md) and [Web ACL rule and rule group evaluation](web-acl-processing.md)\.
+
+      If you are using the **CAPTCHA** action, adjust the **Immunity time** configuration as needed for this rule\. For more information, see [CAPTCHA tokens and token expiration](waf-captcha-how-it-works.md#waf-captcha-tokens)\.
 
       If you want to customize the request or response, choose the options for that and fill in the details of your customization\. For more information, see [Customizing web requests and responses in AWS WAF](waf-custom-request-response.md)\.
 
@@ -69,7 +73,7 @@ This procedure covers the **Rule visual editor**\.
 
 1. Choose **Next**\.
 
-1. In the **Configure metrics** page, update your metrics and sampling options as needed\. You can combine metrics from multiple sources by providing the same **CloudWatch metric name** for them\.
+1. In the **Configure metrics** page, review the options and apply any updates that you need\. You can combine metrics from multiple sources by providing the same **CloudWatch metric name** for them\. 
 
 1. Choose **Next**\.
 

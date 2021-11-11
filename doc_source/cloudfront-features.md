@@ -1,6 +1,6 @@
 # How AWS WAF works with Amazon CloudFront features<a name="cloudfront-features"></a>
 
-When you create a web ACL, you can specify one or more CloudFront distributions that you want AWS WAF to inspect\. AWS WAF starts to allow, block, or count web requests for those distributions based on the conditions that you identify in the web ACL\. CloudFront provides some features that enhance the AWS WAF functionality\. This chapter describes a few ways that you can configure CloudFront to make CloudFront and AWS WAF work better together\.
+When you create a web ACL, you can specify one or more CloudFront distributions that you want AWS WAF to inspect\. AWS WAF starts to inspect and manage web requests for those distributions based on the conditions that you identify in the web ACL\. CloudFront provides some features that enhance the AWS WAF functionality\. This chapter describes a few ways that you can configure CloudFront to make CloudFront and AWS WAF work better together\.
 
 **Topics**
 + [Using AWS WAF with CloudFront custom error pages](#cloudfront-features-custom-error-pages)
