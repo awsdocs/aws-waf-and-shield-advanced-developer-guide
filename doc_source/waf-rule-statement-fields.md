@@ -35,7 +35,8 @@ Similar to **Single query parameter**, but AWS WAF inspects the values of all pa
 Choosing this option adds 10 WCUs to the base cost\.
 
 **URI path**  
-The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\. If you don't use a text transformation with this option, AWS WAF doesn't normalize the URI and inspects it just as it receives it from the client in the request\. 
+The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\. This doesn't include the query string or fragment components of the URI\. For information, see [Uniform Resource Identifier \(URI\): Generic Syntax](https://tools.ietf.org/html/rfc3986#section-3.3)\.
+If you don't use a text transformation with this option, AWS WAF doesn't normalize the URI and inspects it just as it receives it from the client in the request\. 
 
 **Body**  
 The part of the request that immediately follows the request headers, evaluated as plain text\. This contains any additional data that is needed for the web request, for example, data from a form\.   
