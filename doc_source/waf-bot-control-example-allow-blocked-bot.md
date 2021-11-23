@@ -2,7 +2,7 @@
 
 If AWS WAF Bot Control is blocking a bot that you do not want to block, do the following:
 
-1. Identify the Bot Control rule that's blocking the bot by checking the logs\. For information about the web ACL logs, see [Logging web ACL traffic information](logging.md)\. Note any identifying features like labels and user agent\. 
+1. Identify the Bot Control rule that's blocking the bot by checking the logs\. For information about the web ACL logs, see [Logging and monitoring web ACL traffic](logging.md)\. Note any identifying features like labels and user agent\. 
 
 1. In your web ACL, exclude the rule that's blocking the bot from the rule group\. To do this in the console, you edit the rule group inside the web ACL and set the blocking rule to count\. This ensures that the bot is not blocked, while still allowing the rule to apply its label to matching requests\. 
 

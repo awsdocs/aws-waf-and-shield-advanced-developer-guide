@@ -12,7 +12,7 @@ For information about other services that support service\-linked roles, see [AW
 
 Firewall Manager uses the service\-linked role AWSServiceRoleForFMS\.
 
-AWS Firewall Manager uses this service\-linked role to write logs to Amazon Kinesis Data Firehose\. This role is used only if you enable logging in AWS Firewall Manager\. For more information, see [Logging web ACL traffic information](logging.md)\.
+AWS Firewall Manager uses this service\-linked role to write logs to Amazon Kinesis Data Firehose\. This role is used only if you enable logging in AWS Firewall Manager\. For more information, see [Logging and monitoring web ACL traffic](logging.md)\.
 
 The AWSServiceRoleForFMS service\-linked role trusts the service to assume the role `fms.amazonaws.com`\. 
 

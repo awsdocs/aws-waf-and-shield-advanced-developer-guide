@@ -34,7 +34,7 @@ Individual account owners have complete control over the metrics and sampling co
 
 ## Configuring logging for an AWS Firewall Manager AWS WAF policy<a name="waf-policies-logging-config"></a>
 
-You can enable centralized logging for your AWS WAF policies, to get detailed information about traffic within your organization\. Information in the logs includes the time that AWS WAF received the request from your AWS resource, detailed information about the request, and the action for the rule that each request matched from all in\-scope accounts\. For more information about AWS WAF logging, see [Logging web ACL traffic information](logging.md)\.
+You can enable centralized logging for your AWS WAF policies, to get detailed information about traffic within your organization\. Information in the logs includes the time that AWS WAF received the request from your AWS resource, detailed information about the request, and the action for the rule that each request matched from all in\-scope accounts\. For more information about AWS WAF logging, see [Logging and monitoring web ACL traffic](logging.md)\.
 
 **Note**  
 AWS Firewall Manager supports this option for the latest version of AWS WAF, and not for AWS WAF Classic\.
@@ -67,7 +67,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. In the navigation pane, choose **Security Policies**\.
 
-1. Choose the AWS WAF policy that you want to enable logging for\. For more information about AWS WAF logging, see [Logging web ACL traffic information](logging.md)\.
+1. Choose the AWS WAF policy that you want to enable logging for\. For more information about AWS WAF logging, see [Logging and monitoring web ACL traffic](logging.md)\.
 
 1. On the **Policy details** tab, in the **Policy rules** section, choose **Edit**\. 
 

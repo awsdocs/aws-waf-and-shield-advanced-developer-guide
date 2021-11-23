@@ -31,7 +31,7 @@ Perform these steps first in a test environment, then in production\.
 **Enable sampling, logging, and metrics for the web ACL**
 
    As needed, configure logging for the web ACL, and enable sampling and Amazon CloudWatch metrics\. This allows you to monitor the interaction of the Bot Control managed rule group with your traffic\. 
-   + For information about configuring and using logging, see [Logging web ACL traffic information](logging.md)\. 
+   + For information about configuring and using logging, see [Logging and monitoring web ACL traffic](logging.md)\. 
    + For information about Amazon CloudWatch metrics, see [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)\. 
    + For information about web request sampling, see [Viewing a sample of web requests](web-acl-testing.md#web-acl-testing-view-sample)\. 
 

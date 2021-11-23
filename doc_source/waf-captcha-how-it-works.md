@@ -78,7 +78,7 @@ The CAPTCHA action can be a non\-terminating action, like Count, or a terminatin
         }
     ```
 
-For information about the AWS WAF logs, see [Logging web ACL traffic information](logging.md)\.
+For information about the AWS WAF logs, see [Logging and monitoring web ACL traffic](logging.md)\.
 
 For information about AWS WAF metrics, see [AWS WAF metrics and dimensions](monitoring-cloudwatch.md#waf-metrics)\.
 

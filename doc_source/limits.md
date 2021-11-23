@@ -19,6 +19,7 @@ AWS WAF has default quotas on the maximum number of entities you can have per ac
 | Maximum number of custom request headers per web ACL or rule group | 100 | 
 | Maximum number of custom response headers per web ACL or rule group | 100 | 
 | Maximum number of custom response bodies per web ACL or rule group | 50 | 
+| Maximum number of Amazon CloudWatch Logs log streams per web ACL, for logging web ACL traffic to an CloudWatch Logs log group | 35 | 
 
 The maximum requests per second \(RPS\) allowed for AWS WAF on CloudFront is set by CloudFront and described in the [CloudFront Developer Guide](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html)\.
 

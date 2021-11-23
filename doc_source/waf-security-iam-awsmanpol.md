@@ -31,6 +31,8 @@ View details about updates to AWS managed policies for AWS WAF since this servic
 
 
 
-| Change | Description | Date | 
+| Policy | Description of change | Date | 
 | --- | --- | --- | 
+| `AWSWAFFullAccess` This policy allows AWS WAF to manage AWS resources on your behalf in AWS WAF and in integrated services\. Details in IAM console: [AWSWAFFullAccess](https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AWSWAFFullAccess$serviceLevelSummary) |  Added new permissions for expanded logging options\. This change gives AWS WAF access to the additional logging destinations Amazon Simple Storage Service \(Amazon S3\) and Amazon CloudWatch Logs\. For information about logging your web ACL traffic, see [Logging and monitoring web ACL traffic](logging.md)\.  | November 15, 2021 | 
+|  `AWSWAFConsoleFullAccess` This policy allows AWS WAF to manage AWS console resources and other AWS resources on your behalf in AWS WAF and in integrated services\. Details in IAM console: [AWSWAFConsoleFullAccess](https://console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AWSWAFConsoleFullAccess$serviceLevelSummary)  |  Added new permissions for expanded logging options\. This change gives AWS WAF access to the additional logging destinations Amazon Simple Storage Service \(Amazon S3\) and Amazon CloudWatch Logs\. For information about logging your web ACL traffic, see [Logging and monitoring web ACL traffic](logging.md)\.  | November 15, 2021 | 
 |  AWS WAF started tracking changes  |  AWS WAF started tracking changes for its AWS managed policies\.  | March 1, 2021 | 

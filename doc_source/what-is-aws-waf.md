@@ -31,6 +31,6 @@ For more information about AWS Shield Standard and AWS Shield Advanced, see [AWS
 
 ## AWS Firewall Manager<a name="fms-intro"></a>
 
-AWS Firewall Manager simplifies your administration and maintenance tasks across multiple accounts and resources for AWS WAF rules, AWS Shield Advanced protections, and Amazon VPC security groups\. The Firewall Manager service automatically applies your rules and other security protections across your accounts and resources, even as you add new accounts and resources\. 
+AWS Firewall Manager simplifies your administration and maintenance tasks across multiple accounts and resources for a variety of protections, including AWS WAF, AWS Shield Advanced, Amazon VPC security groups, AWS Network Firewall, and Amazon Route 53 Resolver DNS Firewall\. With Firewall Manager, you set up your protections just once and the service automatically applies them across your accounts and resources, even as you add new accounts and resources\. 
 
 For more information about Firewall Manager, see [AWS Firewall Manager](fms-chapter.md)\.

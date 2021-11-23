@@ -2,6 +2,8 @@
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Expanded logging options for AWS WAF](logging.md) | You can now log web ACL traffic to an Amazon CloudWatch Logs log group or an Amazon Simple Storage Service \(Amazon S3\) bucket\. These options are in addition to the existing option of logging to an Amazon Kinesis Data Firehose\. | November 15, 2021 | 
+| [AWS WAF managed policy changes](waf-security-iam-awsmanpol.md#waf-security-iam-awsmanpol-updates) | Updated `AWSWAFFullAccessPolicy` and `AWSWAFConsoleFullAccess` to support additional logging destinations\.  | November 15, 2021 | 
 | [AWS WAF new CAPTCHA rule action option](waf-captcha.md) | You can configure rules to run a CAPTCHA check against web requests and, as needed, send a CAPTCHA challenge to the client\.  | November 8, 2021 | 
 | [Updated AWS Managed Rules for AWS WAF](aws-managed-rule-groups-changelog.md) | AWS Managed Rules for AWS WAF updated the Core rule set \(CRS\) rule group\.  | October 27, 2021 | 
 | [Updated AWS Managed Rules for AWS WAF](aws-managed-rule-groups-list.md) | All AWS Managed Rules rule groups now support labeling\. The rule descriptions include the label specifications\. | October 25, 2021 | 
