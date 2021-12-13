@@ -1,9 +1,9 @@
 # Managing AWS Shield Advanced protection groups<a name="manage-protection-group"></a>
 
-Use protection groups to create logical collections of your protected resources and manage their protections as a group\. For information about managing resource protections, see [Configuring AWS Shield Advanced protections](manage-protection.md)\. For information about protection groups, see [Shield Advanced protection groups](ddos-overview.md#ddos-advanced-protection-groups)\.
+Use protection groups to create logical collections of your protected resources and manage their protections as a group\. For information about managing resource protections, see [Configuring AWS Shield Advanced protections](manage-protection.md)\. For information about protection groups, see [Shield Advanced protection groups](ddos-advanced-protection-groups.md)\.
 
 **Note**  
-The console guidance provided here is for the latest version of the AWS Shield console, released in 2020\. In the console, you can switch between versions\. 
+Automatic application layer DDoS mitigation does not interact with protection groups\. You can enable automatic mitigation for resources that are in protection groups, but Shield Advanced does not automatically apply attack mitigations based on protection group findings\. Shield Advanced applies automatic attack mitigations for individual resources\.
 
 ## Creating a Shield Advanced protection group<a name="protection-group-creating"></a>
 

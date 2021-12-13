@@ -26,7 +26,7 @@ AWS WAF with CloudFront is a global service and metrics are available only when 
 
 1. Sign in to the AWS Management Console and open the CloudWatch console at [https://console\.aws\.amazon\.com/cloudwatch/](https://console.aws.amazon.com/cloudwatch/)\.
 
-1. In the navigation pane, under **Metrics**, choose **AWS/WAFV2**\.
+1. In the navigation pane, under **Metrics**, choose **All metrics** and then search under the **Browse** tab for `WAFV2` metrics\. 
 
 1. Select the check box for the web ACL that you want to view data for\.
 

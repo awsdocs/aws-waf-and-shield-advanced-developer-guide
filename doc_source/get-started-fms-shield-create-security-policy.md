@@ -17,7 +17,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. For **Policy type**, choose **Shield Advanced**\. 
 
-   To create a Shield Advanced policy, your Firewall Manager administrator account must be subscribed to Shield Advanced\. If you are not subscribed, you are prompted to do so\. For more information, see [AWS Shield pricing](aws-shield-pricing.md)\.
+   To create a Shield Advanced policy, your Firewall Manager administrator account must be subscribed to Shield Advanced\. If you are not subscribed, you are prompted to do so\. For information about the cost for subscribing, see [AWS Shield Advanced Pricing](http://aws.amazon.com/shield/pricing/)\.
 **Note**  
 You don't need to manually subscribe each member account to Shield Advanced\. Firewall Manager does this for you as part of creating the policy\.
 
@@ -45,7 +45,7 @@ You don't need to manually subscribe each member account to Shield Advanced\. Fi
 
    This option applies Shield Advanced protection to each applicable account within an organization in AWS Organizations, and associates the protection with the specified resources in the accounts\. This option also applies the policy to all new resources that match the preceding criteria \(resource type and tags\)\. 
 
-   When you create a Shield policy with auto remediation enabled, for each in scope resource that's not already associated with an AWS WAF web ACL, Firewall Manager associates an empty AWS WAF Classic web ACL\. The empty web ACL is used only for Shield monitoring purposes\. If you then associate any other web ACL to the resource, Firewall Manager removes the empty web ACL association\.
+   When you create a Shield policy with auto remediation enabled, for each in scope resource that's not already associated with an AWS WAF web ACL, Firewall Manager associates an empty AWS WAF web ACL\. The empty web ACL is used only for Shield monitoring purposes\. If you then associate any other web ACL to the resource, Firewall Manager removes the empty web ACL association\.
 **Note**  
 Shield Advanced protects up to 1,000 resources per account\.
 

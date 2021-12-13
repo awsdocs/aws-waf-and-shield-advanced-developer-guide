@@ -9,7 +9,7 @@ Some managed rule groups are designed to help protect specific types of web appl
 **Automatic updates**  
 Keeping up to date on the constantly changing threat landscape can be time consuming and expensive\. Managed rule groups can save you time when you implement and use AWS WAF\. AWS and AWS Marketplace sellers automatically update managed rule groups and provide new versions of rule groups when new vulnerabilities and threats emerge\. 
 
-AWS and many of the AWS Marketplace sellers are notified of new vulnerabilities before public disclosure\. AWS WAF can update their rule groups and deploy them to you even before a new threat is widely known\. Many also have threat research teams to investigate and analyze the most recent threats in order to write the most relevant rules\.
+In some cases, AWS is notified of new vulnerabilities before public disclosure, due to its participation in a number of private disclosure communities\. In those cases, AWS can update the AWS Managed Rules rule groups and deploy them for you even before a new threat is widely known\. 
 
 **Restricted access to rules in a managed rule group**  
 Each managed rule group provides a comprehensive description of the types of attacks and vulnerabilities that it's designed to protect against\. To protect the intellectual property of the rule group providers, you can't view details for the individual rules within a rule group\. This restriction also helps to keep malicious users from designing threats that specifically circumvent published rules\.

@@ -1,6 +1,9 @@
 # AWS Managed Rules rule groups list<a name="aws-managed-rule-groups-list"></a>
 
-This section describes the AWS Managed Rules rule groups that are currently available\. You see these on the console when you add a managed rule group to your web ACL\. Through the API, you can retrieve this list along with the AWS Marketplace managed rule groups that you're subscribed to by calling `ListAvailableManagedRuleGroups`\. 
+This section describes the most recent versions of the AWS Managed Rules rule groups\. You see these on the console when you add a managed rule group to your web ACL\. Through the API, you can retrieve this list along with the AWS Marketplace managed rule groups that you're subscribed to by calling `ListAvailableManagedRuleGroups`\. 
+
+**Note**  
+For information about retrieving an AWS Managed Rules rule group's versions, see [Retrieving the available versions for a managed rule group](waf-using-managed-rule-groups-versions.md)\. 
 
 All AWS Managed Rules rule groups support labeling, and the rule listings in this section include label specifications\. You can retrieve the labels for a managed rule group through the API by calling `DescribeManagedRuleGroup`\. The labels are listed in the `AvailableLabels` property in the response\. For information about labeling, see [AWS WAF labels on web requests](waf-rule-labels.md)\.
 
@@ -34,10 +37,10 @@ The Core rule set \(CRS\) rule group contains rules that are generally applicabl
 | GenericRFI\_QUERYARGUMENTS | Inspects the values of all query parameters and blocks requests that attempt to exploit RFI \(Remote File Inclusion\) in web applications by embedding URLs that contain IPv4 addresses\. Examples include patterns like http://, https://, ftp://, ftps://, and file://, with an IPv4 host header in the exploit attempt\. `awswaf:managed:aws:core-rule-set:GenericRFI_QueryArguments`  | 
 | GenericRFI\_BODY | Inspects the request body and blocks requests that attempt to exploit RFI \(Remote File Inclusion\) in web applications by embedding URLs that contain IPv4 addresses\. Examples include patterns like http://, https://, ftp://, ftps://, and file://, with an IPv4 host header in the exploit attempt\. This rule only inspects the first 8 KB of the request body\. For information, see [Web request body inspection](web-request-body-inspection.md)\.  `awswaf:managed:aws:core-rule-set:GenericRFI_Body`  | 
 | GenericRFI\_URIPATH | Inspects the URI path and blocks requests that attempt to exploit RFI \(Remote File Inclusion\) in web applications by embedding URLs that contain IPv4 addresses\. Examples include patterns like http://, https://, ftp://, ftps://, and file://, with an IPv4 host header in the exploit attempt\. `awswaf:managed:aws:core-rule-set:GenericRFI_URIPath`  | 
-| CrossSiteScripting\_COOKIE | Inspects the value of cookie headers and blocks common cross\-site scripting \(XSS\) patterns using the built\-in XSS detection rule in AWS WAF\. Example patterns include scripts like <script>alert\("hello"\)</script>\. `awswaf:managed:aws:core-rule-set:CrossSiteScripting_Cookie`  | 
-| CrossSiteScripting\_QUERYARGUMENTS | Inspects the value of query arguments and blocks common cross\-site scripting \(XSS\) patterns using the built\-in XSS detection rule in AWS WAF\. Example patterns include scripts like <script>alert\("hello"\)</script>\. `awswaf:managed:aws:core-rule-set:CrossSiteScripting_QueryArguments`  | 
-| CrossSiteScripting\_BODY | Inspects the value of the request body and blocks common cross\-site scripting \(XSS\) patterns using the built\-in XSS detection rule in AWS WAF\. Example patterns include scripts like <script>alert\("hello"\)</script>\. This rule only inspects the first 8 KB of the request body\. For information, see [Web request body inspection](web-request-body-inspection.md)\.  `awswaf:managed:aws:core-rule-set:CrossSiteScripting_Body`  | 
-| CrossSiteScripting\_URIPATH | Inspects the value of the URI path and blocks common cross\-site scripting \(XSS\) patterns using the built\-in XSS detection rule in AWS WAF\. Example patterns include scripts like <script>alert\("hello"\)</script>\. `awswaf:managed:aws:core-rule-set:CrossSiteScripting_URIPath`  | 
+| CrossSiteScripting\_COOKIE | Inspects the value of cookie headers and blocks common cross\-site scripting \(XSS\) patterns using the built\-in XSS detection rule in AWS WAF\. Example patterns include scripts like <script>alert\("hello"\)</script>\. The **Matched data** field in AWS WAF logs is not populated\. `awswaf:managed:aws:core-rule-set:CrossSiteScripting_Cookie`  | 
+| CrossSiteScripting\_QUERYARGUMENTS | Inspects the value of query arguments and blocks common cross\-site scripting \(XSS\) patterns using the built\-in XSS detection rule in AWS WAF\. Example patterns include scripts like <script>alert\("hello"\)</script>\. The **Matched data** field in AWS WAF logs is not populated\. `awswaf:managed:aws:core-rule-set:CrossSiteScripting_QueryArguments`  | 
+| CrossSiteScripting\_BODY | Inspects the value of the request body and blocks common cross\-site scripting \(XSS\) patterns using the built\-in XSS detection rule in AWS WAF\. Example patterns include scripts like <script>alert\("hello"\)</script>\. The **Matched data** field in AWS WAF logs is not populated\. This rule only inspects the first 8 KB of the request body\. For information, see [Web request body inspection](web-request-body-inspection.md)\.  `awswaf:managed:aws:core-rule-set:CrossSiteScripting_Body`  | 
+| CrossSiteScripting\_URIPATH | Inspects the value of the URI path and blocks common cross\-site scripting \(XSS\) patterns using the built\-in XSS detection rule in AWS WAF\. Example patterns include scripts like <script>alert\("hello"\)</script>\. The **Matched data** field in AWS WAF logs is not populated\. `awswaf:managed:aws:core-rule-set:CrossSiteScripting_URIPath`  | 
 
 **Admin protection**  
 VendorName: `AWS`, Name: `AWSManagedRulesAdminProtectionRuleSet`, WCU: 100
@@ -89,8 +92,8 @@ The Linux operating system rule group contains rules that block request patterns
 | Rule name | Description and label | 
 | --- | --- | 
 | LFI\_URIPATH | Inspects the request path for attempts to exploit Local File Inclusion \(LFI\) vulnerabilities in web applications\. Example patterns include files like /proc/version, which could provide operating system information to attackers\. `awswaf:managed:aws:linux-os:LFI_URIPath`  | 
-| LFI\_QUERYARGUMENTS | Inspects the values of all query parameters for attempts to exploit Local File Inclusion \(LFI\) vulnerabilities in web applications\. Example patterns include files like /proc/version, which could provide operating system information to attackers\. `awswaf:managed:aws:linux-os:LFI_QueryArguments`  | 
-| LFI\_BODY | Inspects the request body for attempts to exploit Local File Inclusion \(LFI\) vulnerabilities in web applications\. Example patterns include files like /proc/version, which could provide operating system information to attackers\. This rule only inspects the first 8 KB of the request body\. For information, see [Web request body inspection](web-request-body-inspection.md)\.  `awswaf:managed:aws:linux-os:LFI_Body`  | 
+| LFI\_QUERYSTRING | Inspects the values of querystring for attempts to exploit Local File Inclusion \(LFI\) vulnerabilities in web applications\. Example patterns include files like /proc/version, which could provide operating system information to attackers\. `awswaf:managed:aws:linux-os:LFI_QueryString`  | 
+| LFI\_COOKIE | Inspects the request cookie header for attempts to exploit Local File Inclusion \(LFI\) vulnerabilities in web applications\. Example patterns include files like /proc/version, which could provide operating system information to attackers\. `awswaf:managed:aws:linux-os:LFI_Cookie`  | 
 
 **POSIX operating system**  
 VendorName: `AWS`, Name: `AWSManagedRulesUnixRuleSet`, WCU: 100
@@ -111,10 +114,12 @@ The Windows operating system rule group contains rules that block request patter
 
 | Rule name | Description and label | 
 | --- | --- | 
-| PowerShellCommands\_Set1\_QUERYARGUMENTS | Inspects the values of all query parameters and blocks PowerShell command injection attempts in web applications\. This inspection requires two rules, to accommodate the size of the pattern matching set\. The match patterns represent PowerShell commands, for example, Invoke\-Expression\. `awswaf:managed:aws:windows-os:PowerShellCommands_Set1_QueryArguments`  | 
-| PowerShellCommands\_Set2\_QUERYARGUMENTS | Inspects the values of all query parameters and blocks PowerShell command injection attempts in web applications\. This inspection requires two rules, to accommodate the size of the pattern matching set\. The match patterns represent PowerShell commands, for example, Invoke\-Expression\. `awswaf:managed:aws:windows-os:PowerShellCommands_Set2_QueryArguments`  | 
-| PowerShellCommands\_Set1\_BODY | Inspects the values of the request body and blocks PowerShell command injection attempts in web applications\. This inspection requires two rules, to accommodate the size of the pattern matching set\. The match patterns represent PowerShell commands, for example, Invoke\-Expression\. This rule only inspects the first 8 KB of the request body\. For information, see [Web request body inspection](web-request-body-inspection.md)\.  `awswaf:managed:aws:windows-os:PowerShellCommands_Set1_Body`  | 
-| PowerShellCommands\_Set2\_BODY | Inspects the values of the request body and blocks PowerShell command injection attempts in web applications\. This inspection requires two rules, to accommodate the size of the pattern matching set\. The match patterns represent PowerShell commands, for example, Invoke\-Expression\. This rule only inspects the first 8 KB of the request body\. For information, see [Web request body inspection](web-request-body-inspection.md)\.  `awswaf:managed:aws:windows-os:PowerShellCommands_Set2_Body`  | 
+| WindowsShellCommands\_COOKIE | Inspects the request cookie header and blocks WindowsShell command injection attempts in web applications\. The match patterns represent WindowsShell commands\. For example, patterns such as \|\|nslookup or ;cmd are blocked\. `awswaf:managed:aws:windows-os:WindowsShellCommands_Cookie`  | 
+| WindowsShellCommands\_QUERYARGUMENTS | Inspects the values of all query parameters and blocks WindowsShell command injection attempts in web applications\. The match patterns represent WindowsShell commands\. For example, patterns such as \|\|nslookup or ;cmd are blocked\. `awswaf:managed:aws:windows-os:WindowsShellCommands_QueryArguments`  | 
+| WindowsShellCommands\_BODY | Inspects the values of the request body and blocks WindowsShell command injection attempts in web applications\. The match patterns represent WindowsShell commands\. For example, patterns such as \|\|nslookup or ;cmd are blocked\. This rule only inspects the first 8 KB of the request body\. For information, see [Web request body inspection](web-request-body-inspection.md)\.  awswaf:managed:aws:windows\-os:WindowsShellCommands\_Body  | 
+| PowerShellCommands\_COOKIE | Inspects the request header and blocks PowerShell command injection attempts in web applications\. The match patterns represent PowerShell commands\. For example, Invoke\-Expression\. `awswaf:managed:aws:windows-os:PowerShellCommands_Cookie`  | 
+| PowerShellCommands\_QUERYARGUMENTS | Inspects the values of all query parameters and blocks PowerShell command injection attempts in web applications\. The match patterns represent PowerShell commands\. For example, Invoke\-Expression\. `awswaf:managed:aws:windows-os:PowerShellCommands_QueryArguments`  | 
+| PowerShellCommands\_BODY | Inspects the values of the request body and blocks PowerShell command injection attempts in web applications\. The match patterns represent PowerShell commands\. For example, Invoke\-Expression\. This rule only inspects the first 8 KB of the request body\. For information, see [Web request body inspection](web-request-body-inspection.md)\.  awswaf:managed:aws:windows\-os:PowerShellCommands\_Body  | 
 
 **PHP application**  
 VendorName: `AWS`, Name: `AWSManagedRulesPHPRuleSet`, WCU: 100
@@ -130,7 +135,7 @@ The PHP application rule group contains rules that block request patterns associ
 **WordPress application**  
 VendorName: `AWS`, Name: `AWSManagedRulesWordPressRuleSet`, WCU: 100
 
-The WordPress application rule group contains rules that block request patterns associated with the exploitation of vulnerabilities specific to WordPress sites\. You should evaluate this rule group if you are running WordPress\. This rule group should be used in conjunction with the [SQL database](#sql_db) and [PHP application](#php_app) rule groups\.
+The WordPress application rule group contains rules that block request patterns associated with the exploitation of vulnerabilities specific to WordPress sites\. You should evaluate this rule group if you are running WordPress\. This rule group should be used in conjunction with the [](#sql_db) and [](#php_app) rule groups\.
 
 
 | Rule name | Description and label | 
@@ -150,7 +155,8 @@ The Amazon IP reputation list rule group contains rules that are based on Amazon
 
 | Rule name | Description and label | 
 | --- | --- | 
-| AWSManagedIPReputationList | Inspects for a list of IP addresses that have been identified as bots by Amazon threat intelligence\.`awswaf:managed:aws:amazon-ip-list:AWSManagedIPReputationList`  | 
+| AWSManagedIPReputationList | Inspects for a list of IP addresses that have been identified as bots by Amazon threat intelligence\. `awswaf:managed:aws:amazon-ip-list:AWSManagedIPReputationList:AWSManagedIPReputationList`  | 
+| AWSManagedReconnaissanceList | Inspects connections from IP addresses that are performing reconnaissance against AWS resources\. This rule is currently in monitoring/count mode\. `awswaf:managed:aws:amazon-ip-list:AWSManagedIPReputationList:AWSManagedReconnaissanceList`  | 
 
 **Anonymous IP list**  
 VendorName: `AWS`, Name: `AWSManagedRulesAnonymousIpList`, WCU: 50

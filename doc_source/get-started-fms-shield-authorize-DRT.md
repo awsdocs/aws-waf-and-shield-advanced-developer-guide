@@ -7,6 +7,6 @@ You authorize and contact the SRT at the account level\. That is, the account ow
 **Note**  
 To use the services of the SRT, you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
 
-To authorize the SRT to mitigate potential attacks on your behalf, follow the instructions in [Configuring AWS Shield Advanced setup](ddos-edit-drt.md)\. You can change SRT access and permissions at any time by using the same steps\.
+To authorize the SRT to mitigate potential attacks on your behalf, follow the instructions in [Configuring Shield Response Team \(SRT\) support](ddos-edit-drt.md)\. You can change SRT access and permissions at any time by using the same steps\.
 
 Continue to [Step 4: Configure Amazon SNS notifications and Amazon CloudWatch alarms](get-started-fms-shield-cloudwatch.md)\.

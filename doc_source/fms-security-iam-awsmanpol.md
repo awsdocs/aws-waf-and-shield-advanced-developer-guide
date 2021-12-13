@@ -1,6 +1,4 @@
-# AWS managed policies for AWS Firewall Manager<a name="security-iam-awsmanpol"></a>
-
-
+# AWS managed policies for AWS Firewall Manager<a name="fms-security-iam-awsmanpol"></a>
 
 
 
@@ -10,7 +8,7 @@ To add permissions to users, groups, and roles, it is easier to use AWS managed 
 
 AWS services maintain and update AWS managed policies\. You can't change the permissions in AWS managed policies\. Services occasionally add additional permissions to an AWS managed policy to support new features\. This type of update affects all identities \(users, groups, and roles\) where the policy is attached\. Services are most likely to update an AWS managed policy when a new feature is launched or when new operations become available\. Services do not remove permissions from an AWS managed policy, so policy updates won't break your existing permissions\.
 
-Additionally, AWS supports managed policies for job functions that span multiple services\. For example, the **ReadOnlyAccess** AWS managed policy provides read\-only access to all AWS services and resources\. When a service launches a new feature, AWS adds read\-only permissions for new operations and resources\. For a list and descriptions of job function policies, see [AWS managed policies for job functions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html) in the *IAM User Guide*\.
+Additionally, AWS supports managed policies for job functions that span multiple services\. For example, the **ViewOnlyAccess** AWS managed policy provides read\-only access to many AWS services and resources\. When a service launches a new feature, AWS adds read\-only permissions for new operations and resources\. For a list and descriptions of job function policies, see [AWS managed policies for job functions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html) in the *IAM User Guide*\.
 
 
 
@@ -24,7 +22,7 @@ Additionally, AWS supports managed policies for job functions that span multiple
 
 
 
-## Firewall Manager updates to AWS managed policies<a name="security-iam-awsmanpol-updates"></a>
+## Firewall Manager updates to AWS managed policies<a name="fms-security-iam-awsmanpol-updates"></a>
 
 View details about updates to AWS managed policies for Firewall Manager since this service began tracking these changes\. For automatic alerts about changes to this page, subscribe to the RSS feed on the Firewall Manager document history page at [Document history](doc-history.md)\.
 

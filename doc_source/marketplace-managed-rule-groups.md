@@ -3,7 +3,7 @@
 AWS Marketplace managed rule groups are available by subscription through the AWS Marketplace console at [AWS Marketplace](https://aws.amazon.com/marketplace)\. After you subscribe to a AWS Marketplace managed rule group, you can use it in AWS WAF\. To use an AWS Marketplace rule group in an AWS Firewall Manager AWS WAF policy, each account in your organization must subscribe to it\. 
 
 **AWS Marketplace Rule Group Pricing**  
-AWS Marketplace rule groups are available with no long\-term contracts, and no minimum commitments\. When you subscribe to a rule group, you are charged a monthly fee \(prorated hourly\) and ongoing request fees based on volume\. For more information, see [AWS WAF Pricing](https://aws.amazon.com/waf/pricing/) and the description for each AWS Marketplace rule group at [AWS Marketplace](https://aws.amazon.com/marketplace)\.
+AWS Marketplace rule groups are available with no long\-term contracts, and no minimum commitments\. When you subscribe to a rule group, you are charged a monthly fee \(prorated hourly\) and ongoing request fees based on volume\. For more information, see [AWS WAF Pricing](http://aws.amazon.com/waf/pricing/) and the description for each AWS Marketplace rule group at [AWS Marketplace](https://aws.amazon.com/marketplace)\.
 
 ## Subscribing to AWS Marketplace managed rule groups<a name="marketplace-managed-rule-groups-subscribing"></a>
 

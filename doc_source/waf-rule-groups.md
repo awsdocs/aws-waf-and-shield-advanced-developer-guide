@@ -2,9 +2,10 @@
 
 A *rule group* is a reusable set of rules that you can add to a web ACL\. For more information about web ACLs, see [Managing and using a web access control list \(web ACL\)](web-acl.md)\.
 
-Rule groups fall into two main categories: 
+Rule groups fall into the following main categories: 
 + Managed rule groups, which AWS Managed Rules and AWS Marketplace sellers create and maintain for you
 + Your own rule groups, which you create and maintain
++ Rule groups that are owned and managed by other services, like AWS Firewall Manager and Shield Advanced\.
 
 **Differences between rule groups and web ACLs**  
 Rule groups and web ACLs both contain rules, which are defined in the same manner in both places\. Rule groups differ from web ACLs in the following ways: 
@@ -21,3 +22,4 @@ This section describes the types of managed rule groups that are available to yo
 **Topics**
 + [Managed rule groups](waf-managed-rule-groups.md)
 + [Managing your own rule groups](waf-user-created-rule-groups.md)
++ [Rule groups provided by other services](waf-service-owned-rule-groups.md)

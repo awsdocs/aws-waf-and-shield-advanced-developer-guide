@@ -16,11 +16,10 @@ You can't directly attach a Shield Advanced protection to a Network Load Balance
 **Topics**
 + [How AWS Shield works](ddos-overview.md)
 + [Example AWS Shield Advanced use cases](aws-shield-use-case.md)
-+ [AWS Shield pricing](aws-shield-pricing.md)
 + [Getting started with AWS Shield Advanced](getting-started-ddos.md)
-+ [Configuring AWS Shield Advanced setup](ddos-edit-drt.md)
++ [Configuring Shield Response Team \(SRT\) support](ddos-edit-drt.md)
 + [Managing resource protections in AWS Shield Advanced](ddos-manage-protected-resources.md)
-+ [Responding to DDoS events](ddos-responding.md)
++ [Reviewing and responding to DDoS events](ddos-responding.md)
 + [Requesting a credit in AWS Shield Advanced](request-refund.md)
 + [Security in AWS Shield](shd-security.md)
 + [AWS Shield Advanced quotas](shield-limits.md)

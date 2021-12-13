@@ -1,16 +1,18 @@
 # AWS WAF Bot Control example: Allow a specific blocked bot<a name="waf-bot-control-example-allow-blocked-bot"></a>
 
-If AWS WAF Bot Control is blocking a bot that you do not want to block, do the following:
+It's possible for a bot to be blocked by more than one of the Bot Control rules\. Run through the following procedure for each blocking rule\. 
 
-1. Identify the Bot Control rule that's blocking the bot by checking the logs\. For information about the web ACL logs, see [Logging and monitoring web ACL traffic](logging.md)\. Note any identifying features like labels and user agent\. 
+If a AWS WAF Bot Control rule is blocking a bot that you do not want to block, do the following:
 
-1. In your web ACL, exclude the rule that's blocking the bot from the rule group\. To do this in the console, you edit the rule group inside the web ACL and set the blocking rule to count\. This ensures that the bot is not blocked, while still allowing the rule to apply its label to matching requests\. 
+1. Identify the Bot Control rule that's blocking the bot by checking the logs\. The blocking rule will be specified in the logs in the fields whose names start with `terminatingRule`\. For information about the web ACL logs, see [Logging and monitoring web ACL traffic](logging.md)\. Note the label that the rule is adds to the requests\. 
 
-   At this point, you've configured the web ACL to stop blocking all bots that are normally blocked by the Bot Control rule\. 
+1. In your web ACL, exclude the blocking rule from the rule group\. To do this in the console, edit the rule group inside the web ACL and set the blocking rule to count\. This ensures that the bot is not blocked by the rule, while still allowing the rule to apply its label to matching requests\. 
 
-1. Add a custom label matching rule to your web ACL, after the Bot Control managed rule group\. Configure the rule to match against the Bot Control rule label and to block all matching requests except for the bot that you don't want to block\. 
+1. Add a label matching rule to your web ACL, after the Bot Control managed rule group\. Configure the rule to match against the excluded rule's label and to block all matching requests except for the bot that you don't want to block\. 
 
-   Your web ACL is now configured so that the bot you wanted to allow is no longer blocked by the Bot Control managed rule group\.
+   Your web ACL is now configured so that the bot you want to allow is no longer blocked by the blocking rule that you identified through the logs\. 
+
+Check traffic and your logs again, to be sure that the bot is being allowed through\. If not, run through the above procedure again\.
 
 For example, suppose you want to block all monitoring bots except for `pingdom`\. In this case, you exclude the `CategoryMonitoring` rule and then write a rule to block all monitoring bots except for those with the bot name label `pingdom`\. 
 

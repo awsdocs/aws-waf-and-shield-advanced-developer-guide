@@ -5,9 +5,6 @@ You can add and configure AWS Shield Advanced protections for your resources\. Y
 **Note**  
 To use the services of the Shield Response Team \(SRT\), you must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
 
-**Note**  
-The console guidance provided here is for the latest version of the AWS Shield console, released in 2020\. In the console, you can switch between versions\. 
-
 **Topics**
 + [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)
 + [Managing AWS Shield Advanced protection groups](manage-protection-group.md)

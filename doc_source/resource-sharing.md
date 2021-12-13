@@ -16,13 +16,13 @@ If you encounter problems with resource sharing, use the following procedures to
 **Try again to enable resource sharing**
 + Try again to enable sharing using one of the following options: 
   + \(Option\) Through the AWS RAM console, follow the instructions at [Enable Sharing with AWS Organizations](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs) in the *AWS Resource Access Manager User Guide*\.
-  + \(Option\) Using the AWS RAM API, call `EnableSharingWithAwsOrganization`\. See the documentation at [ram/latest/APIReference/API_EnableSharingWithAwsOrganization.html](ram/latest/APIReference/API_EnableSharingWithAwsOrganization.html)\.
+  + \(Option\) Using the AWS RAM API, call `EnableSharingWithAwsOrganization`\. See the documentation at [https://docs.aws.amazon.com/ram/latest/APIReference/API_EnableSharingWithAwsOrganization.html](https://docs.aws.amazon.com/ram/latest/APIReference/API_EnableSharingWithAwsOrganization.html)\.
 
 **Disable resource sharing and then try again to enable it**
 
 1. Disable resource sharing using one of the following options: 
    + \(Option\) Through the AWS RAM console, follow the instructions at [Disabling resource sharing with AWS Organizations](https://docs.aws.amazon.com/ram/latest/userguide/disable-sharing.html) in the *AWS Resource Access Manager User Guide*\.
-   + \(Option\) Using the AWS RAM API, call the AWS Organizations action `DisableAWSServiceAccess`\. See the documentation at [ram/latest/APIReference/API_DisableAWSServiceAccess.html](ram/latest/APIReference/API_DisableAWSServiceAccess.html)\.
+   + \(Option\) Using the AWS RAM API, call the AWS Organizations action `DisableAWSServiceAccess`\. See the documentation at [https://docs.aws.amazon.com/ram/latest/APIReference/API_DisableAWSServiceAccess.html](https://docs.aws.amazon.com/ram/latest/APIReference/API_DisableAWSServiceAccess.html)\.
 
    This should successfully disable resource sharing\.
 

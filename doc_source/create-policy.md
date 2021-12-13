@@ -156,7 +156,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. For **Policy type**, choose **Shield Advanced**\. 
 
-   To create a Shield Advanced policy, you must be subscribed to Shield Advanced\. If you are not subscribed, you are prompted to do so\. For more information, see [AWS Shield pricing](aws-shield-pricing.md)\. 
+   To create a Shield Advanced policy, you must be subscribed to Shield Advanced\. If you are not subscribed, you are prompted to do so\. For information about the cost for subscribing, see [AWS Shield Advanced Pricing](http://aws.amazon.com/shield/pricing/)\. 
 
 1. For **Region**, choose an AWS Region\. To protect Amazon CloudFront resources, choose **Global**\.
 

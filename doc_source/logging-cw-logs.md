@@ -56,12 +56,21 @@ You must provide the following permissions settings to configure your web ACL to
          "Sid":"LoggingConfigurationAPI"
       }
       {
-         "Sid":"WebACLLoggingCWL",
+         "Sid":"WebACLLoggingCWL01",
          "Action":[
             "logs:CreateLogDelivery",
             "logs:DeleteLogDelivery",
             "logs:PutResourcePolicy",
-            "logs:DescribeResourcePolicies",
+            "logs:DescribeResourcePolicies"
+         ],
+         "Resource":[
+            "*"
+         ],
+         "Effect":"Allow"
+      },
+      {
+         "Sid":"WebACLLoggingCWL02",
+         "Action":[
             "logs:DescribeLogGroups"
          ],
          "Resource":[
@@ -70,5 +79,5 @@ You must provide the following permissions settings to configure your web ACL to
          "Effect":"Allow"
       }
    ]
-}
+                }
 ```

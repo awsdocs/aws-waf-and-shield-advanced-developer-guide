@@ -1,6 +1,6 @@
 # Configure Amazon CloudWatch alarms<a name="get-started-fms-shield-alarms"></a>
 
-Shield Advanced records metrics in CloudWatch that you can monitor\. For more information, see [AWS Shield Advanced metrics and alarms](monitoring-cloudwatch.md#set-ddos-alarms)\. CloudWatch incurs additional costs\. For CloudWatch pricing, see [Amazon CloudWatch Pricing](https://aws.amazon.com/cloudwatch/pricing/)\.
+Shield Advanced records metrics in CloudWatch that you can monitor\. For more information, see [AWS Shield Advanced metrics and alarms](monitoring-cloudwatch.md#set-ddos-alarms)\. CloudWatch incurs additional costs\. For CloudWatch pricing, see [Amazon CloudWatch Pricing](http://aws.amazon.com/cloudwatch/pricing/)\.
 
 To create a CloudWatch alarm, follow the instructions in [Using Amazon CloudWatch Alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html)\. By default, Shield Advanced configures CloudWatch to alert you after just one indicator of a potential DDoS event\. If needed, you can use the CloudWatch console to change this setting to alert you only after multiple indicators are detected\. 
 

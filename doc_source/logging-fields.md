@@ -18,7 +18,7 @@ The IP address of the client sending the request\.
 The source country of the request\. If AWS WAF is unable to determine the country of origin, it sets this field to `-`\. 
 
 **excludedRules**  
-The list of rules in the rule group that you have excluded\. The action for these rules is set to COUNT\.    
+Used only for rule group rules\. The list of rules in the rule group that you have excluded\. The action for these rules is set to COUNT\.    
 exclusionType  
 A type that indicates that the excluded rule has the action COUNT\.  
 ruleId  
@@ -58,11 +58,11 @@ The IP address used by a rate\-based rule to aggregate requests for rate limitin
 The maximum number of requests, which have an identical value in the field that is specified by `limitKey`, allowed in a five\-minute period\. If the number of requests exceeds the `maxRateAllowed` and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule\.
 
 **nonTerminatingMatchingRules**  
-The list of non\-terminating rules in the rule group that match the request\.     
+The list of non\-terminating rules that match the request\.     
 action  
 This is either `COUNT` or `CAPTCHA`\. The CAPTCHA action is non\-terminating when the web request contains a valid CAPTCHA token\.  
 ruleId  
-The ID of the rule within the rule group that matches the request and was non\-terminating\.   
+The ID of the rule that matched the request and was non\-terminating\.   
 ruleMatchDetails  
 Detailed information about the rule that matched the request\. This field is only populated for SQL injection and cross\-site scripting \(XSS\) match rule statements\. 
 
@@ -88,7 +88,7 @@ The ID of the rule group\. If the rule blocked the request, the ID for `ruleGrou
 The list of rule groups that acted on this request\. 
 
 **terminatingRule**  
-The rule within the rule group that terminated the request\. If this is a non\-null value, it also contains a **ruleId** and **action**\. 
+The rule that terminated the request\. If this is a non\-null value, it also contains a **ruleId** and **action**\. 
 
 **terminatingRuleId**  
 The ID of the rule that terminated the request\. If nothing terminates the request, the value is `Default_Action`\.

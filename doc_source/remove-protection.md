@@ -3,10 +3,7 @@
 You can remove AWS Shield Advanced protection from any of your AWS resources at any time\. 
 
 **Important**  
-Deleting an AWS resource doesn't remove the resource from AWS Shield Advanced\. You must also remove the protection on the resource from AWS Shield Advanced, as described in this procedure\.
-
-**Note**  
-The console guidance provided here is for the latest version of the AWS Shield console, released in 2020\. In the console, you can switch between versions\. <a name="remove-protection-procedure"></a>
+Deleting an AWS resource doesn't remove the resource from AWS Shield Advanced\. You must also remove the protection on the resource from AWS Shield Advanced, as described in this procedure\.<a name="remove-protection-procedure"></a>
 
 **Remove AWS Shield Advanced protection from an AWS resource**
 

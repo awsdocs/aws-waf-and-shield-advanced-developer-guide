@@ -117,7 +117,7 @@ Shield Advanced reports metrics to Amazon CloudWatch on an AWS resource more fre
 
 Shield Advanced reports metrics in the US East \(N\. Virginia\) Region, `us-east-1` for the following:
 + The global services Amazon CloudFront and Amazon Route 53\.
-+ Protection groups\. For information about protection groups, see [Shield Advanced protection groups](ddos-overview.md#ddos-advanced-protection-groups)\.
++ Protection groups\. For information about protection groups, see [Shield Advanced protection groups](ddos-advanced-protection-groups.md)\.
 
 #### Detection metrics<a name="ddos-metrics-detection"></a>
 
@@ -129,8 +129,8 @@ Shield Advanced provides the following detection metrics and dimensions\.
 | Metric | Description | 
 | --- | --- | 
 | DDoSDetected | Indicates whether a DDoS event is underway for a particular Amazon Resource Name \(ARN\)\. This metric has a value of 1 during an event and a value of 0 otherwise\.   | 
-| DDoSAttackBitsPerSecond | The number of bits observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an event and a value of 0 otherwise\.Units: Bits  | 
-| DDoSAttackPacketsPerSecond | The number of packets observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 3 and layer 4 DDoS events\. This metric has a non\-zero value during an event and a value of 0 otherwise\.Units: Packets  | 
+| DDoSAttackBitsPerSecond | The number of bits observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for network and transport layer \(layer 3 and layer 4\) DDoS events\. This metric has a non\-zero value during an event and a value of 0 otherwise\.Units: Bits  | 
+| DDoSAttackPacketsPerSecond | The number of packets observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for network and transport layer \(layer 3 and layer 4\) DDoS events\. This metric has a non\-zero value during an event and a value of 0 otherwise\.Units: Packets  | 
 | DDoSAttackRequestsPerSecond | The number of requests observed during a DDoS event for a particular Amazon Resource Name \(ARN\)\. This metric is available only for layer 7 DDoS events\. The metric is reported only for the most significant layer 7 events\. This metric has a non\-zero value during an event and a value of 0 otherwise\.Units: Requests  | 
 
 Shield Advanced posts the `DDoSDetected` metric with no other dimensions\. The remaining detection metrics include the `AttackVector` dimensions that correspond to the type of attack, from the following list:

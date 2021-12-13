@@ -10,16 +10,23 @@ When you create a web ACL, you can specify one or more CloudFront distributions 
 
 ## Using AWS WAF with CloudFront custom error pages<a name="cloudfront-features-custom-error-pages"></a>
 
-When AWS WAF blocks a web request based on the conditions that you specify, it returns HTTP status code 403 \(Forbidden\) to CloudFront\. Next, CloudFront returns that status code to the viewer\. The viewer then displays a brief and sparsely formatted default message similar to this:
+By default, when AWS WAF blocks a web request based on the conditions that you specify, it returns HTTP status code `403 (Forbidden)` to CloudFront, and CloudFront returns that status code to the viewer\. The viewer then displays a brief and sparsely formatted default message similar to the following:
 
-`Forbidden: You don't have permission to access /myfilename.html on this server.`
+```
+Forbidden: You don't have permission to access /myfilename.html on this server.
+```
 
-If you'd rather display a custom error message, possibly using the same formatting as the rest of your website, you can configure CloudFront to return to the viewer an object \(for example, an HTML file\) that contains your custom error message\. 
+You can override this behavior in your AWS WAF web ACL rules by defining custom responses\. For more information about customing response behavior using AWS WAF rules, see [Custom responses for block actions](customizing-the-response-for-blocked-requests.md)\.
+
+**Note**  
+Responses that you customize using AWS WAF rules take precedence over any response specifications that you define in CloudFront custom error pages\. 
+
+If you'd rather display a custom error message through CloudFront, possibly using the same formatting as the rest of your website, you can configure CloudFront to return to the viewer an object \(for example, an HTML file\) that contains your custom error message\. 
 
 **Note**  
 CloudFront can't distinguish between an HTTP status code 403 that is returned by your origin and one that is returned by AWS WAF when a request is blocked\. This means that you can't return different custom error pages based on the different causes of an HTTP status code 403\. 
 
-For more information about CloudFront custom error pages, see [Customizing Error Responses](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html) in the *Amazon CloudFront Developer Guide*\.
+For more information about CloudFront custom error pages, see [Generating custom error responses](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GeneratingCustomErrorResponses.html) in the *Amazon CloudFront Developer Guide*\.
 
 ## Using AWS WAF with CloudFront geo restriction<a name="cloudfront-features-geo-restriction"></a>
 

@@ -18,7 +18,7 @@ The use cases for custom responses include the following:
 Custom responses that you specify for the AWS WAF block action take precedence over any response specifications that you define in your protected resource\. 
 
 The host service for the AWS resource that you protect with AWS WAF might allow custom response handling for web requests\. Examples include the following: 
-+ Amazon CloudFront allows you to customize the error page based on status code\. For information, see [Creating a Custom Error Page for Specific HTTP Status Codes](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html) in the *Amazon CloudFront Developer Guide*\. 
++ Amazon CloudFront allows you to customize the error page based on status code\. For information, see [Generating custom error responses](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/GeneratingCustomErrorResponses.html) in the *Amazon CloudFront Developer Guide*\. 
 + Amazon API Gateway allows you to define the response and status code for your gateway\. For information, see [Gateway responses in API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-gatewayResponse-definition.html) in the *Amazon API Gateway Developer Guide*\. 
 
 It's not possible to combine AWS WAF custom responses with any response settings in the protected AWS resource\. Control over the response belongs either completely with AWS WAF or completely with the protected resource: 

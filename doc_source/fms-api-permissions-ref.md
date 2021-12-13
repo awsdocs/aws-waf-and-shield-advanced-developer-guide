@@ -16,7 +16,7 @@ To use the following Firewall Manager API actions, you need permissions on the r
 + [ListComplianceStatus](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListComplianceStatus.html)
 + [PutPolicy](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutPolicy.html)
 
-Additionally, to use the Firewall Manager API action `PutNotificationChannel`, the Amazon SNS topic that you specify must allow the Firewall Manager service linked role to publish messages to it\. The following shows an example SNS topic permission setting: 
+Additionally, to use the Firewall Manager API action `PutNotificationChannel`, the Amazon SNS topic that you specify must allow the Firewall Manager service\-linked role to publish messages to it\. The following shows an example SNS topic permission setting: 
 
 ```
 {

@@ -10,7 +10,7 @@ This documentation helps you understand how to apply the shared responsibility m
 
 **Topics**
 + [Data protection in Shield](shd-data-protection.md)
-+ [Identity and access management in AWS Shield](shd-auth-and-access-control.md)
++ [Identity and access management in AWS Shield Advanced](shd-auth-and-access-control.md)
 + [Logging and monitoring in Shield](shd-incident-response.md)
 + [Compliance validation for Shield](shd-security-compliance.md)
 + [Resilience in Shield](shd-disaster-recovery-resiliency.md)

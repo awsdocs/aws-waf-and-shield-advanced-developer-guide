@@ -1,6 +1,6 @@
 # Making HTTPS requests to AWS WAF or Shield Advanced<a name="waf-api-making-requests"></a>
 
-AWS WAF and Shield Advanced requests are HTTPS requests, as defined by [RFC 2616](http://tools.ietf.org/html/rfc2616)\. Like any HTTP request, a request to AWS WAF or Shield Advanced contains a request method, a URI, request headers, and a request body\. The response contains an HTTP status code, response headers, and sometimes a response body\.
+AWS WAF and Shield Advanced requests are HTTPS requests, as defined by [RFC 2616](https://datatracker.ietf.org/doc/html/rfc2616)\. Like any HTTP request, a request to AWS WAF or Shield Advanced contains a request method, a URI, request headers, and a request body\. The response contains an HTTP status code, response headers, and sometimes a response body\.
 
 ## Request URI<a name="waf-api-making-requests-uri"></a>
 

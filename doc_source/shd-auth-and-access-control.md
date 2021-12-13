@@ -1,6 +1,6 @@
-# Identity and access management in AWS Shield<a name="shd-auth-and-access-control"></a>
+# Identity and access management in AWS Shield Advanced<a name="shd-auth-and-access-control"></a>
 
-Access to AWS Shield requires credentials\. Those credentials must have permissions to access AWS resources, such as an AWS Shield resource or an Amazon S3 bucket\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and Shield to help secure access to your resources\.
+Access to AWS Shield Advanced requires credentials\. Those credentials must have permissions to access AWS resources, such as an AWS Shield Advanced resource or an Amazon S3 bucket\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and Shield Advanced to help secure access to your resources\.
 + [Authentication](#shd-authentication)
 + [Access control](#shd-access-control)
 
@@ -8,11 +8,11 @@ Access to AWS Shield requires credentials\. Those credentials must have permissi
 
 You can access AWS as any of the following types of identities:
 + **AWS account root user** –  When you first create an AWS account, you begin with a single sign\-in identity that has complete access to all AWS services and resources in the account\. This identity is called the AWS account *root user* and is accessed by signing in with the email address and password that you used to create the account\. We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the [best practice of using the root user only to create your first IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users)\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. 
-+ **IAM user** – An [IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html) is an identity within your AWS account that has specific custom permissions \(for example, permissions to create a rule in Shield\)\. You can use an IAM user name and password to sign in to secure AWS webpages like the [AWS Management Console](https://console.aws.amazon.com/), [AWS Discussion Forums](https://forums.aws.amazon.com/), or the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
++ **IAM user** – An [IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html) is an identity within your AWS account that has specific custom permissions \(for example, permissions to create a rule in Shield Advanced\)\. You can use an IAM user name and password to sign in to secure AWS webpages like the [AWS Management Console](https://console.aws.amazon.com/), [AWS Discussion Forums](https://forums.aws.amazon.com/), or the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.
 
    
 
-  In addition to a user name and password, you can also generate [access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for each user\. You can use these keys when you access AWS services programmatically, either through [one of the several SDKs](https://aws.amazon.com/tools/#sdk) or by using the [AWS Command Line Interface \(CLI\)](https://aws.amazon.com/cli/)\. The SDK and CLI tools use the access keys to cryptographically sign your request\. If you don’t use AWS tools, you must sign the request yourself\. Shield supports *Signature Version 4*, a protocol for authenticating inbound API requests\. For more information about authenticating requests, see [Signature Version 4 Signing Process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) in the *AWS General Reference*\.
+  In addition to a user name and password, you can also generate [access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) for each user\. You can use these keys when you access AWS services programmatically, either through [one of the several SDKs](https://aws.amazon.com/tools/#sdk) or by using the [AWS Command Line Interface \(CLI\)](https://aws.amazon.com/cli/)\. The SDK and CLI tools use the access keys to cryptographically sign your request\. If you don’t use AWS tools, you must sign the request yourself\. Shield Advanced supports *Signature Version 4*, a protocol for authenticating inbound API requests\. For more information about authenticating requests, see [Signature Version 4 Signing Process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) in the *AWS General Reference*\.
 
    
 + **IAM role** –  An [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) is an IAM identity that you can create in your account that has specific permissions\. An IAM role is similar to an IAM user in that it is an AWS identity with permissions policies that determine what the identity can and cannot do in AWS\. However, instead of being uniquely associated with one person, a role is intended to be assumable by anyone who needs it\. Also, a role does not have standard long\-term credentials such as a password or access keys associated with it\. Instead, when you assume a role, it provides you with temporary security credentials for your role session\. IAM roles with temporary credentials are useful in the following situations:
@@ -30,9 +30,9 @@ You can access AWS as any of the following types of identities:
 
 ## Access control<a name="shd-access-control"></a>
 
-You can have valid credentials to authenticate your requests, but unless you have permissions you can't create or access AWS Shield resources\. For example, you must have permissions to create a Shield *protection* or list *attacks*\.
+You can have valid credentials to authenticate your requests, but unless you have permissions you can't create or access AWS Shield Advanced resources\. For example, you must have permissions to create a Shield Advanced *protection* or list *attacks*\.
 
-The following sections describe how to manage permissions for AWS Shield\. We recommend that you read the overview first\.
-+ [Overview of managing access permissions to your AWS Shield resources](shd-access-control-overview.md)
-+  [Using identity\-based policies \(IAM policies\) for AWS Shield](shd-access-control-identity-based.md) 
-+  [Shield required permissions for API actions](shd-api-permissions-ref.md) 
+The following sections describe how to manage permissions for AWS Shield Advanced\. We recommend that you read the overview first\.
++ [Overview of managing access permissions to your AWS Shield Advanced resources](shd-access-control-overview.md)
++  [Using identity\-based policies \(IAM policies\) for AWS Shield Advanced](shd-access-control-identity-based.md) 
++  [Shield Advanced required permissions for API actions](shd-api-permissions-ref.md) 
