@@ -2,7 +2,7 @@
 
 After completing the prerequisites, you create an AWS Firewall Manager DNS Firewall policy\. A DNS Firewall policy provides a set of centrally controlled DNS Firewall rule group associations for your entire AWS organization\. It also defines the AWS accounts and resources that the firewall applies to\. 
 
-For more information about how Firewall Manager manages your DNS Firewall rule group associations, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.<a name="get-started-fms-dns-firewall-create-policy-procedure"></a>
+For more information about how Firewall Manager manages your DNS Firewall rule group associations, see [Amazon Route 53 Resolver DNS Firewall policies](dns-firewall-policies.md)\.
 
 **To create a Firewall Manager DNS Firewall policy \(console\)**
 

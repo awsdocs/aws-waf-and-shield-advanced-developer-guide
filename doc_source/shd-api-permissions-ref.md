@@ -11,4 +11,4 @@ To see Shield Advanced actions, resource types, and condition keys, see [Actions
 
 For more information about Shield actions and resources, see the AWS Identity and Access Management guide topic [Actions Defined by AWS Shield](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsshield.html#awsshield-actions-as-permissions)\. 
 
- For a full list of the API actions available for Shield, see [AWS Shield Advanced API Reference](https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/)\.
+For a full list of the API actions available for Shield, see [AWS Shield Advanced API Reference](https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/)\.

@@ -1,7 +1,7 @@
 # Working with size constraint conditions<a name="classic-web-acl-size-conditions"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 If you want to allow or block web requests based on the length of specified parts of requests, create one or more size constraint conditions\. A size constraint condition identifies the part of web requests that you want AWS WAF Classic to look at, the number of bytes that you want AWS WAF Classic to look for, and an operator, such as greater than \(>\) or less than \(<\)\. For example, you can use a size constraint condition to look for query strings that are longer than 100 bytes\. Later in the process, when you create a web ACL, you specify whether to allow or block requests based on those settings\.
@@ -30,6 +30,8 @@ When you add a size constraint condition to a rule, you also can configure AWS W
 **To create a size constraint condition**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. In the navigation pane, choose **Size constraints**\.
 
@@ -125,6 +127,8 @@ You can add or delete filters in a size constraint condition\. To change a filte
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
+
 1. In the navigation pane, choose **Size constraint**\.
 
 1. Choose the condition that you want to add or delete filters in\.
@@ -150,6 +154,8 @@ If you want to delete a size constraint condition, you need to first delete all 
 **To delete a size constraint condition**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. In the navigation pane, choose **Size constraints**\.
 

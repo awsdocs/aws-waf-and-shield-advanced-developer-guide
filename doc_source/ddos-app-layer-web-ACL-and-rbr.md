@@ -1,0 +1,13 @@
+# Shield Advanced application layer AWS WAF web ACLs and rate\-based rules<a name="ddos-app-layer-web-ACL-and-rbr"></a>
+
+To protect an application layer resource with Shield Advanced, you start by associating an AWS WAF web ACL with the resource\. If a DDoS attack occurs, you apply mitigations by adding and managing rules in the associated web ACL\. You can do this directly, with the assistance of the Shield Response Team \(SRT\) or through automatic application layer DDoS mitigation\. 
+
+Additionally, if your associated web ACL doesn't have a rate\-based rule defined, Shield Advanced prompts you to define at least one\. Rate\-based rules automatically block traffic from source IPs when they exceed the thresholds that you define\. Rate\-based rules help protect your application against web request floods and allow you to be alerted about sudden spikes in traffic that might indicate a potential DDoS attack\. 
+
+When you use a rate\-based rule, every 30 seconds, AWS WAF evaluates traffic for the prior five minutes\. AWS WAF blocks requests from any source IP address that exceeds the threshold until the request rate drops down to an acceptable level\. Set the rate\-based rule rate threshold to a value that is greater than the normal traffic rate that you expect from any one source IP in any five minute time window\. 
+
+You might want to use more than one rate\-based rule in a web ACL\. For example, you could have one rate\-based rule for all traffic that has a high threshold plus one or more additional rules that are configured to match select parts of your web application and that have lower thresholds\. For example, you might match on the URI `/login.html` with a lower threshold, to mitigate abuse against a login page\. 
+
+For additional information and guidance, see the security blog post [The three most important AWS WAF rate\-based rules](http://aws.amazon.com/blogs/security/three-most-important-aws-waf-rate-based-rules/)\.
+
+The Shield Advanced console enables you to add a rate\-based rule and configure it with basic settings\. You can define additional configuration options by managing your rate\-based rules through AWS WAF\. For example, you can use a forwarded IP address instead of the standard one and you can add a scope\-down statement to filter out some requests from evaluation\. For a description of all of the configuration options, see [Rate\-based rule statement](waf-rule-statement-type-rate-based.md)\. For information about using AWS WAF to manage your web request monitoring and management rules, see [Creating a web ACL](web-acl-creating.md)\. 

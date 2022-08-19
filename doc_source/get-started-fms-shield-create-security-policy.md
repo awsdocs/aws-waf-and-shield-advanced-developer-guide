@@ -3,7 +3,7 @@
 After completing the prerequisites, you create an AWS Firewall Manager Shield Advanced policy\. A Firewall Manager Shield Advanced policy contains the accounts and resources that you want to protect with Shield Advanced\.
 
 **Important**  
-Firewall Manager does not support Amazon Route 53 or AWS Global Accelerator\. If you need to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)\. <a name="get-started-fms-shield-create-security-policy-procedure"></a>
+Firewall Manager does not support Amazon Route 53 or AWS Global Accelerator\. If you need to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced protection to AWS resources](ddos-manage-protected-resources.md#configure-new-protection)\. 
 
 **To create a Firewall Manager Shield Advanced policy \(console\)**
 
@@ -19,7 +19,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
    To create a Shield Advanced policy, your Firewall Manager administrator account must be subscribed to Shield Advanced\. If you are not subscribed, you are prompted to do so\. For information about the cost for subscribing, see [AWS Shield Advanced Pricing](http://aws.amazon.com/shield/pricing/)\.
 **Note**  
-You don't need to manually subscribe each member account to Shield Advanced\. Firewall Manager does this for you as part of creating the policy\.
+You don't need to manually subscribe each member account to Shield Advanced\. Firewall Manager does this for you when it creates the policy\.
 
 1. For **Region**, choose an AWS Region\. To protect Amazon CloudFront resources, choose **Global**\.
 
@@ -29,30 +29,30 @@ You don't need to manually subscribe each member account to Shield Advanced\. Fi
 
 1. For **Name**, enter a descriptive name\. 
 
-1. **AWS accounts affected by this policy** allows you to narrow the scope of your policy by specifying accounts to include or exclude\. For this tutorial, choose **Include all accounts under my organization\.** 
+1. \(Global Region only\) For **Global** Region policies, you can choose whether you want to manage Shield Advanced automatic application layer DDoS mitigation\. For this tutorial, leave this choice at the default setting of **Ignore**\.
+
+1. For **Policy action**, choose the option that doesn't automatically remediate\. 
+
+1. Choose **Next**\.
+
+1. **AWS accounts this policy applies to** allows you to narrow the scope of your policy by specifying accounts to include or exclude\. For this tutorial, choose **Include all accounts under my organization\.** 
 
 1. Choose the types of resources that you want to protect\.
 
-   Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator\. If you need to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the instructions in [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)\.
+   Firewall Manager doesn't support Amazon Route 53 or AWS Global Accelerator\. If you need to protect these resources with Shield Advanced, you can't use a Firewall Manager policy\. Instead, follow the Shield Advanced guidance at [Adding AWS Shield Advanced protection to AWS resources](ddos-manage-protected-resources.md#configure-new-protection)\.
 
-1. If you want to protect only resources with specific tags, or alternatively exclude resources with specific tags, select **Use tags to include/exclude resources**, enter the tags, and then choose either **Include** or **Exclude**\. You can choose only one option\. 
+1. If you want to protect only resources with specific tags, or alternatively exclude resources with specific tags, select **Use tags to include/exclude resources**, enter the tags separated by commas, and then choose either **Include** or **Exclude**\. You can choose only one option\. 
 
-   If you enter more than one tag \(separated by commas\), and if a resource has any of those tags, it is considered a match\.
+   If you enter more than one tag, and if a resource has any of those tags, it is considered a match\.
 
    For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\.
 
-1. Choose **Create and apply this policy to existing and new resources**\.
+1. Choose **Next**\. 
 
-   This option applies Shield Advanced protection to each applicable account within an organization in AWS Organizations, and associates the protection with the specified resources in the accounts\. This option also applies the policy to all new resources that match the preceding criteria \(resource type and tags\)\. 
-
-   When you create a Shield policy with auto remediation enabled, for each in scope resource that's not already associated with an AWS WAF web ACL, Firewall Manager associates an empty AWS WAF web ACL\. The empty web ACL is used only for Shield monitoring purposes\. If you then associate any other web ACL to the resource, Firewall Manager removes the empty web ACL association\.
-**Note**  
-Shield Advanced protects up to 1,000 resources per account\.
-
-   Alternatively, if you choose **Create but do not apply this policy to existing or new resources**, Firewall Manager doesn't apply Shield Advanced protection to any resources\. You must apply the policy to resources later\.
+1. For **Policy tags**, add any identifying tags that you want for the Firewall Manager policy\. For more information about tags, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\.
 
 1. Choose **Next**\.
 
 1. Review the new policy\. To make any changes, choose **Previous**\. When you are satisfied with the policy, choose **Create policy**\.
 
-Continue to [Step 3: \(Optional\) authorize the Shield Response Team \(SRT\)](get-started-fms-shield-authorize-DRT.md)\.
+Continue to [Step 3: \(Optional\) authorize the Shield Response Team \(SRT\)](get-started-fms-shield-authorize-srt.md)\.

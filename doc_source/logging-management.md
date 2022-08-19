@@ -2,9 +2,14 @@
 
 You can enable and disable logging for a web ACL at any time\.
 
+**Note**  
+You are charged for logging in addition to the charges for using AWS WAF\. For information, see [Pricing for logging web ACL traffic information](logging.md#logging-pricing)\.
+
 In the logging configuration for your web ACL, you can customize what AWS WAF sends to the logs\.
 + **Field redaction** – You can redact some fields from the log records\. Redacted fields appear as `XXX` in the logs\. For example, if you redact the **URI** field, the **URI** field in the logs will be `XXX`\. For a list of the log fields, see [Log Fields](logging-fields.md)\.
-+ **Log filtering** – You can add filtering to specify which web requests are kept in the logs and which are dropped\. You can filter on the rule action and on the web request labels that were applied during the request evaluation\. For information about rule action settings, see [AWS WAF rule action](waf-rule-action.md)\. For information about labels, see [AWS WAF labels on web requests](waf-rule-labels.md)\.<a name="logging-procedure"></a>
++ **Log filtering** – You can add filtering to specify which web requests are kept in the logs and which are dropped\. You filter on the settings that AWS WAF applies during the web request evaluation\. You can filter on the following settings: 
+  + **Rule action** – For information about rule action settings, see [AWS WAF rule action](waf-rule-action.md)\. 
+  + **Fully qualified label** – Fully qualified labels have a prefix, optional namespaces, and label name\. The prefix identifies the rule group or web ACL context of the rule that added the label\. For information about labels, see [Labels on web requests](waf-labels.md)\.
 
 **To enable logging for a web ACL**
 
@@ -14,7 +19,7 @@ This procedure requires a configured logging destination\. For information about
 
 1. In the navigation pane, choose **Web ACLs**\.
 
-1. Choose the web ACL that you want to enable logging for\.
+1. Choose the name of the web ACL that you want to enable logging for\. The console takes you to the web ACL's description, where you can edit it\.
 
 1. On the **Logging** tab, choose **Enable logging**\.
 
@@ -32,7 +37,7 @@ When you successfully enable logging, AWS WAF will create a service linked role 
 
 1. In the navigation pane, choose **Web ACLs**\.
 
-1. Choose the web ACL that you want to disable logging for\.
+1. Choose the name of the web ACL that you want to disable logging for\. The console takes you to the web ACL's description, where you can edit it\.
 
 1. On the **Logging** tab, choose **Disable logging**\.
 

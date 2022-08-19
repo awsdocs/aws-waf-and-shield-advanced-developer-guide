@@ -46,7 +46,7 @@ The source of the request\. Possible values: `CF` for Amazon CloudFront, `APIGW`
 The HTTP version\.
 
 **labels**  
-The labels on the web request\. These labels were applied by rules that were used to evaluate the request\. 
+The labels on the web request\. These labels were applied by rules that were used to evaluate the request\. AWS WAF logs the first 100 labels\. 
 
 **limitKey**  
 Indicates the IP address source that AWS WAF should use to aggregate requests for rate limiting by a rate\-based rule\. Possible values are `IP`, for web request origin, and `FORWARDED_IP`, for an IP forwarded in a header in the request\.
@@ -55,7 +55,7 @@ Indicates the IP address source that AWS WAF should use to aggregate requests fo
 The IP address used by a rate\-based rule to aggregate requests for rate limiting\. If a request contains an IP address that isn't valid, the `limitvalue` is `INVALID`\.
 
 **maxRateAllowed**  
-The maximum number of requests, which have an identical value in the field that is specified by `limitKey`, allowed in a five\-minute period\. If the number of requests exceeds the `maxRateAllowed` and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule\.
+The maximum number of requests, which have an identical value in the field that is specified by `limitKey`, allowed in a five minute period\. If the number of requests exceeds the `maxRateAllowed` and the other predicates specified in the rule are also met, AWS WAF triggers the action that is specified for this rule\.
 
 **nonTerminatingMatchingRules**  
 The list of non\-terminating rules that match the request\.     
@@ -64,13 +64,19 @@ This is either `COUNT` or `CAPTCHA`\. The CAPTCHA action is non\-terminating whe
 ruleId  
 The ID of the rule that matched the request and was non\-terminating\.   
 ruleMatchDetails  
-Detailed information about the rule that matched the request\. This field is only populated for SQL injection and cross\-site scripting \(XSS\) match rule statements\. 
+Detailed information about the rule that matched the request\. This field is only populated for SQL injection and cross\-site scripting \(XSS\) match rule statements\. A matching rule might require a match for more than one inspection criteria, so these match details are provided as an array of match criteria\. 
+
+**oversizeFields**  
+The list of fields in the web request that were inspected by the web ACL and that are over the AWS WAF inspection limit\. This list can contain zero or more of the following values: `REQUEST_BODY`, `REQUEST_JSON_BODY`, `REQUEST_HEADERS`, and `REQUEST_COOKIES`\. If a field is oversize but the web ACL doesn't inspect it, it won't be listed here\. For more information about oversize fields, see [Inspection of the request body, headers, and cookies](web-request-body-inspection.md)\.
 
 **rateBasedRuleId**  
 The ID of the rate\-based rule that acted on the request\. If this has terminated the request, the ID for `rateBasedRuleId` is the same as the ID for `terminatingRuleId`\.
 
 **rateBasedRuleList**  
 The list of rate\-based rules that acted on the request\.
+
+**rateBasedRuleName**  
+The name of the rate\-based rule that acted on the request\. 
 
 **requestHeadersInserted**  
 The list of headers inserted for custom request handling\.
@@ -94,7 +100,8 @@ The rule that terminated the request\. If this is a non\-null value, it also con
 The ID of the rule that terminated the request\. If nothing terminates the request, the value is `Default_Action`\.
 
 **terminatingRuleMatchDetails**  
-Detailed information about the terminating rule that matched the request\. A terminating rule has an action that ends the inspection process against a web request\. Possible actions for a terminating rule are `ALLOW`, `BLOCK`, and `CAPTCHA`\. The matching rule might have more than one inspection criteria that must be met, so the details for the terminating rule are provided as an array of match criteria\. This is only populated for SQL injection and cross\-site scripting \(XSS\) match rule statements\. As with all rule statements that inspect for more than one thing, AWS WAF applies the action on the first match and stops inspecting the web request\. A web request with a terminating action could contain other threats, in addition to the one reported in the log\.
+Detailed information about the terminating rule that matched the request\. A terminating rule has an action that ends the inspection process against a web request\. Possible actions for a terminating rule include `ALLOW`, `BLOCK`, and `CAPTCHA`\. During the inspection of a web request, at the first rule that matches the request and that has a terminating action, AWS WAF stops the inspection and applies the action\. The web request might contain other threats, in addition to the one that's reported in the log for the matching terminating rule\.  
+This is only populated for SQL injection and cross\-site scripting \(XSS\) match rule statements\. The matching rule might require a match for more than one inspection criteria, so these match details are provided as an array of match criteria\. 
 
 **terminatingRuleType**  
 The type of rule that terminated the request\. Possible values: RATE\_BASED, REGULAR, GROUP, and MANAGED\_RULE\_GROUP\.

@@ -1,14 +1,13 @@
 # How AWS WAF Classic works with Amazon CloudFront features<a name="classic-cloudfront-features"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 When you create a web ACL, you can specify one or more CloudFront distributions that you want AWS WAF Classic to inspect\. AWS WAF Classic starts to allow, block, or count web requests for those distributions based on the conditions that you identify in the web ACL\. CloudFront provides some features that enhance the AWS WAF Classic functionality\. This chapter describes a few ways that you can configure CloudFront to make CloudFront and AWS WAF Classic work better together\.
 
 **Topics**
 + [Using AWS WAF Classic with CloudFront custom error pages](#classic-cloudfront-features-custom-error-pages)
-+ [Using AWS WAF Classic with CloudFront geo restriction](#classic-cloudfront-features-geo-restriction)
 + [Using AWS WAF Classic with CloudFront for applications running on your own HTTP server](#classic-cloudfront-features-your-own-http-server)
 + [Choosing the HTTP methods that CloudFront responds to](#classic-cloudfront-features-allowed-http-methods)
 
@@ -24,15 +23,6 @@ If you'd rather display a custom error message, possibly using the same formatti
 CloudFront can't distinguish between an HTTP status code 403 that is returned by your origin and one that is returned by AWS WAF Classic when a request is blocked\. This means that you can't return different custom error pages based on the different causes of an HTTP status code 403\. 
 
 For more information about CloudFront custom error pages, see [Customizing Error Responses](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html) in the *Amazon CloudFront Developer Guide*\.
-
-## Using AWS WAF Classic with CloudFront geo restriction<a name="classic-cloudfront-features-geo-restriction"></a>
-
-You can use the Amazon CloudFront *geo restriction* feature, also known as *geoblocking*, to prevent users in specific geographic locations from accessing content that you distribute through a CloudFront web distribution\. If you want to block web requests from specific countries and also block requests based on other conditions, you can use CloudFront geo restriction in conjunction with AWS WAF Classic\. CloudFront returns the same HTTP status code to viewers—HTTP 403 \(Forbidden\)—whether they try to access your content from a country on a CloudFront geo restriction blacklist or whether the request is blocked by AWS WAF Classic\. 
-
-**Note**  
-You can see the two\-letter country code of the country that requests originate from in the sample of web requests for a web ACL\. For more information, see [Viewing a sample of the web requests that API Gateway CloudFront or an Application Load Balancer has forwarded to AWS WAF Classic](classic-web-acl-testing.md#classic-web-acl-testing-view-sample)\.
-
-For more information about CloudFront geo restriction, see [Restricting the Geographic Distribution of Your Content](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/georestrictions.html) in the *Amazon CloudFront Developer Guide*\.
 
 ## Using AWS WAF Classic with CloudFront for applications running on your own HTTP server<a name="classic-cloudfront-features-your-own-http-server"></a>
 

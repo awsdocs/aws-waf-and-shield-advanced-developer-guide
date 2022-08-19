@@ -13,6 +13,7 @@
     "terminatingRuleMatchDetails": [
         {
             "conditionType": "SQL_INJECTION",
+            "sensitivityLevel": "HIGH",
             "location": "HEADER",
             "matchedData": [
                 "10",
@@ -83,6 +84,7 @@
         ,"ruleMatchDetails":
         [{
             "conditionType":"SQL_INJECTION"
+            ,"sensitivityLevel": "HIGH"
             ,"location":"HEADER"
             ,"matchedData":[
                 "10"
@@ -145,6 +147,7 @@
             ,"ruleMatchDetails":
             [{
                 "conditionType":"SQL_INJECTION"
+                ,"sensitivityLevel": "LOW"
                 ,"location":"HEADER"
                 ,"matchedData":[
                     "10"
@@ -195,6 +198,7 @@ AWS WAF currently reports the location for JSON body inspection as `UNKNOWN`\.
     "terminatingRuleMatchDetails": [
         {
             "conditionType": "SQL_INJECTION",
+            "sensitivityLevel": "LOW",
             "location": "UNKNOWN",
             "matchedData": [
                 "10",

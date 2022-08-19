@@ -1,4 +1,4 @@
-# Customizing web requests and responses in AWS WAF<a name="waf-custom-request-response"></a>
+# Customized web requests and responses in AWS WAF<a name="waf-custom-request-response"></a>
 
 You can add custom web request and response handling behavior to your AWS WAF rule actions and default web ACL actions\. Your custom settings apply whenever the action they're attached to applies\. 
 
@@ -14,11 +14,17 @@ You can specify a custom request or response when you define the following actio
 **Action settings that you cannot customize**  
 You *cannot* specify custom request handling in the override action for a rule group that you use in a web ACL\. See [Web ACL rule and rule group evaluation](web-acl-processing.md)\. Also see [Managed rule group statement](waf-rule-statement-type-managed-rule-group.md) and [Rule group statement](waf-rule-statement-type-rule-group.md)\.
 
-**Eventual consistency**  
-When you make changes to web ACLs or web ACL components, like rules and rule groups, AWS WAF propagates the changes everywhere that the web ACL and its components are stored and used\. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others\. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area\. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another\. This temporary inconsistency can occur when you first associate a web ACL with an AWS resource and when you change a web ACL that is already associated with a resource\. Generally, any inconsistencies of this type last only a few seconds\.
+**Temporary inconsistencies during updates**  
+When you create or change a web ACL or other AWS WAF resources, the changes take a small amount of time to propagate to all areas where the resources are stored\. The propagation time can be from a few seconds to a number of minutes\. 
 
-**Maximum settings for custom request and response handling**  
-For information about maximum settings for custom request and response handling, see [AWS WAF quotas](limits.md)\.
+The following are examples of the temporary inconsistencies that you might notice during change propagation: 
++ After you create a web ACL, if you try to associate it with a resource, you might get an exception indicating that the web ACL is unavailable\. 
++ After you add a rule group to a web ACL, the new rule group rules might be in effect in one area where the web ACL is used and not in another\.
++ After you change a rule action setting, you might see the old action in some places and the new action in others\. 
++ After you add an IP address to an IP set that is in use in a blocking rule, the new address might be blocked in one area while still allowed in another\.
+
+**Limits on your use of custom requests and responses**  
+AWS WAF defines maximum settings for your use of custom requests and responses\. For example, a maximum number of request headers per web ACL or rule group, and a maximum number of custom headers for a single custom response definition\. For information, see [AWS WAF quotas](limits.md)\.
 
 **Topics**
 + [Custom request header insertions for allow, count, and CAPTCHA actions](customizing-the-incoming-request.md)

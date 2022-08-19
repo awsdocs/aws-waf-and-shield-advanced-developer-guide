@@ -1,0 +1,8 @@
+# Configuration required to enable automatic mitigation<a name="ddos-automatic-app-layer-response-config"></a>
+
+You enable Shield Advanced automatic mitigation as part of the application layer DDoS protections for your resource\. For information about doing this through the console, see [Configure application layer DDoS protections](ddos-manage-protected-resources.md#configure-app-layer-protection)\.
+
+The automatic mitigation functionality requires you to do the following:
++ **Associate a web ACL with the resource** – This is required for any Shield Advanced application layer protection\. You can use the same web ACL for multiple resources\. We recommend doing this only for resources that have similar traffic\. For information about web ACLs, including the requirements for using them with multiple resources, see [How AWS WAF works](how-aws-waf-works.md)\.
++ **Enable and configure Shield Advanced automatic application layer DDoS mitigation** – When you enable this, you specify whether you want Shield Advanced to automatically block or count web requests that it determines to be part of a DDoS attack\. Shield Advanced adds a rule group to the associated web ACL and uses it to dynamically manage its response to DDoS attacks on the resource\. For information about the rule action settings, see [AWS WAF rule action](waf-rule-action.md)\.
++ **\(Optional, but recommended\) Add a rate\-based rule to the web ACL** – The rate\-based rule provides your resource with basic protection against DDoS attacks by preventing any individual IP address from sending too many requests in a short time\. For information about rate\-based rules, see [Rate\-based rule statement](waf-rule-statement-type-rate-based.md)\.

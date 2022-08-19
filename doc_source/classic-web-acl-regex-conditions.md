@@ -1,7 +1,7 @@
 # Working with regex match conditions<a name="classic-web-acl-regex-conditions"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 If you want to allow or block web requests based on strings that match a regular expression \(regex\) pattern that appears in the requests, create one or more regex match conditions\. A regex match condition is a type of string match condition that identifies the pattern that you want to search for and the part of web requests, such as a specified header or the query string, that you want AWS WAF Classic to inspect for the pattern\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that contain the pattern\.
@@ -34,6 +34,8 @@ AWS WAF Classic supports most [standard Perl Compatible Regular Expressions \(PC
 **To create a regex match condition**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. In the navigation pane, choose **String and regex matching**\.
 
@@ -137,6 +139,8 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
+
 1. In the navigation pane, choose **String and regex matching**\.
 
 1. Choose **View regex pattern sets**\.
@@ -152,6 +156,8 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 **To add a pattern to an existing pattern set**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. In the navigation pane, choose **String and regex matching**\.
 
@@ -171,6 +177,8 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
+
 1. In the navigation pane, choose **String and regex matching**\.
 
 1. Choose the name of the condition with the filter you want to delete\.
@@ -182,6 +190,8 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 **To delete a regex match condition**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. Delete the filter from the regex condition\. See [To delete a filter from an existing regex match condition](#classic-web-acl-regex-conditions-editing-procedure-delete-filter) for instructions to do this\.\)
 
@@ -210,6 +220,8 @@ You cannot add or delete a pattern set from an existing filter\. You must either
 You can have only one filter in a regex match condition\. If you want to add or change the filter, you must first delete the existing filter\.
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. Delete the filter from the regex condition you want to change\. See [To delete a filter from an existing regex match condition](#classic-web-acl-regex-conditions-editing-procedure-delete-filter) for instructions to do this\.\)
 

@@ -2,7 +2,7 @@
 
 This procedure uses the account and organization that you chose and configured in the preceding step\.
 
-When you set the Firewall Manager administrator account, Firewall Manager automatically sets it as the AWS Organizations Delegated Administrator for Firewall Manager\. This allows Firewall Manager to access information about the organizational units \(OUs\)\. You can use OUs to specify the scope of your Firewall Manager policies\. For more information about setting policy scope, see the guidance for the individual policy types under [Creating an AWS Firewall Manager policy](create-policy.md)\. For more information about Organizations and management accounts, see [Managing the AWS Accounts in Your Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html)\.<a name="enable-integration-procedure-console"></a>
+When you set the Firewall Manager administrator account, Firewall Manager automatically sets it as the AWS Organizations Delegated Administrator for Firewall Manager\. This allows Firewall Manager to access information about the organizational units \(OUs\)\. You can use OUs to specify the scope of your Firewall Manager policies\. For more information about setting policy scope, see the guidance for the individual policy types under [Creating an AWS Firewall Manager policy](create-policy.md)\. For more information about Organizations and management accounts, see [Managing the AWS Accounts in Your Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html)\.
 
 **To set the Firewall Manager administrator account**
 

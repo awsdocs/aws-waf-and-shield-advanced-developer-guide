@@ -1,4 +1,4 @@
-# Creating a web ACL<a name="web-acl-creating"></a><a name="web-acl-creating-procedure"></a>
+# Creating a web ACL<a name="web-acl-creating"></a>
 
 **To create a web ACL**
 
@@ -46,30 +46,30 @@ You can't change the CloudWatch metric name after you create the web ACL\.
 
 1. \(Optional\) If you want to add your own rule, on the **Add rules and rule groups** page, choose **Add rules**, **Add my own rules and rule groups**, **Rule builder**, then **Rule visual editor**\. 
 **Note**  
-The console **Rule visual editor** supports one level of nesting\. For example, you can use a single logical `AND` or `OR` statement and nest one level of other statements inside it, but you can't nest logical statements within logical statements\. To manage more complex rule statements, use the **Rule JSON editor**\. For information about all options for rules, see [AWS WAF rules](waf-rules.md)\.   
+The console **Rule visual editor** supports one level of nesting\. For example, you can use a single logical `AND` or `OR` statement and nest one level of other statements inside it, but you can't nest logical statements within logical statements\. To manage more complex rule statements, use the **Rule JSON editor**\. For information about all options for rules, see [Rules](waf-rules.md)\.   
 This procedure covers the **Rule visual editor**\. 
 
    1. For **Name**, enter the name that you want to use to identify this rule\. 
 
-   1. Enter your rule definition, according to your needs\. You can combine rules inside logical `AND` and `OR` rule statements\. The wizard guides you through the options for each rule, according to context\. For information about your rules options, see [AWS WAF rules](waf-rules.md)\. 
+   1. Enter your rule definition, according to your needs\. You can combine rules inside logical `AND` and `OR` rule statements\. The wizard guides you through the options for each rule, according to context\. For information about your rules options, see [Rules](waf-rules.md)\. 
 
    1. For **Action**, select the action you want the rule to take when it matches a web request\. For information on your choices, see [AWS WAF rule action](waf-rule-action.md) and [Web ACL rule and rule group evaluation](web-acl-processing.md)\.
 
       If you are using the **CAPTCHA** action, adjust the **Immunity time** configuration as needed for this rule\. For more information, see [CAPTCHA tokens and token expiration](waf-captcha-how-it-works.md#waf-captcha-tokens)\.
 
-      If you want to customize the request or response, choose the options for that and fill in the details of your customization\. For more information, see [Customizing web requests and responses in AWS WAF](waf-custom-request-response.md)\.
+      If you want to customize the request or response, choose the options for that and fill in the details of your customization\. For more information, see [Customized web requests and responses in AWS WAF](waf-custom-request-response.md)\.
 
-      If you want to have your rule add labels to matching web requests, choose the options for that and fill in your label details\. For more information, see [AWS WAF labels on web requests](waf-rule-labels.md)\.
+      If you want to have your rule add labels to matching web requests, choose the options for that and fill in your label details\. For more information, see [Labels on web requests](waf-labels.md)\.
 
    1. Choose **Add rule**\.
 
 1. Choose the default action for the web ACL\. This is the action that AWS WAF takes when a web request doesn't match any of the rules in the web ACL\. For more information, see [Deciding on the default action for a web ACL](web-acl-default-action.md)\.
 
-   If you want to customize the default action, choose the options for that and fill in the details of your customization\. For more information, see [Customizing web requests and responses in AWS WAF](waf-custom-request-response.md)\.
+   If you want to customize the default action, choose the options for that and fill in the details of your customization\. For more information, see [Customized web requests and responses in AWS WAF](waf-custom-request-response.md)\.
 
 1. Choose **Next**\.
 
-1. In the **Set rule priority** page, select and move your rules and rule groups to the order that you want AWS WAF to process them\. For more information, see [Web ACL rule and rule group evaluation](web-acl-processing.md)\. 
+1. In the **Set rule priority** page, select and move your rules and rule groups to the order that you want AWS WAF to process them\. AWS WAF processes rules starting from the top of the list\. When you save the web ACL AWS WAF assigns numeric priority settings to the rules, in the order that you have them listed\. For more information, see [Processing order of rules and rule groups in a web ACL](web-acl-processing-order.md)\. 
 
 1. Choose **Next**\.
 

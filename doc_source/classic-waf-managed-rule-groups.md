@@ -1,7 +1,7 @@
 # AWS Marketplace rule groups<a name="classic-waf-managed-rule-groups"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 AWS WAF Classic provides *AWS Marketplace rule groups* to help you protect your resources\. AWS Marketplace rule groups are collections of predefined, ready\-to\-use rules that are written and updated by AWS and AWS partner companies\.
@@ -44,6 +44,8 @@ You can subscribe to and unsubscribe from AWS Marketplace rule groups on the AWS
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
+
 1. In the navigation pane, choose **Marketplace**\.
 
 1. In the **Available marketplace products** section, choose the name of a rule group to view the details and pricing information\.
@@ -62,6 +64,8 @@ When adding a rule group to a web ACL, the action that you set for the rule grou
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
+
 1. Remove the rule group from all web ACLs\. For more information, see [Editing a Web ACL](classic-web-acl-editing.md)\.
 
 1. In the navigation pane, choose **Marketplace**\.
@@ -76,11 +80,13 @@ When adding a rule group to a web ACL, the action that you set for the rule grou
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
+
 1. If not already enabled, enable AWS WAF Classic logging\. For more information, see [Logging Web ACL traffic information](classic-logging.md)\. Use the AWS WAF Classic logs to identify the IDs of the rules that you want to exclude\. These are typically rules that are blocking legitimate requests\.
 
 1. In the navigation pane, choose **Web ACLs**\.
 
-1. Choose the web ACL that you want to edit\.
+1. Choose the name of the web ACL that you want to edit\. This opens a page with the web ACL's details in the right pane\.
 **Note**  
 The rule group that you want to edit must be associated with a web ACL before you can exclude a rule from that rule group\.
 

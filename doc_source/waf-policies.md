@@ -6,7 +6,7 @@ When Firewall Manager creates a web ACL for the policy, it names the web ACL `FM
 
 AWS Firewall Manager enables sampling and Amazon CloudWatch metrics for the web ACLs and rule groups that it creates for an AWS WAF policy\. 
 
-## Rule groups in AWS Firewall Manager AWS WAF policies<a name="waf-policies-rule-groups"></a>
+## Rule groups in AWS WAF policies<a name="waf-policies-rule-groups"></a>
 
 The web ACLs that are managed by Firewall Manager AWS WAF policies contain three sets of rules\. These sets provide a higher level of prioritization for the rules and rule groups in the web ACL: 
 + First rule groups, defined by you in the Firewall Manager AWS WAF policy\. AWS WAF evaluates these rule groups first\.
@@ -32,9 +32,9 @@ Firewall Manager enables sampling and Amazon CloudWatch metrics for the rule gro
 
 Individual account owners have complete control over the metrics and sampling configuration for any rule or rule group that they add to the policy's managed web ACLs\. 
 
-## Configuring logging for an AWS Firewall Manager AWS WAF policy<a name="waf-policies-logging-config"></a>
+## Configuring logging for an AWS WAF policy<a name="waf-policies-logging-config"></a>
 
-You can enable centralized logging for your AWS WAF policies, to get detailed information about traffic within your organization\. Information in the logs includes the time that AWS WAF received the request from your AWS resource, detailed information about the request, and the action for the rule that each request matched from all in\-scope accounts\. For more information about AWS WAF logging, see [Logging and monitoring web ACL traffic](logging.md)\.
+You can enable centralized logging for your AWS WAF policies, to get detailed information about traffic within your organization\. Information in the logs includes the time that AWS WAF received the request from your AWS resource, detailed information about the request, and the action for the rule that each request matched from all in\-scope accounts\. For more information about AWS WAF logging, see [Logging web ACL traffic](logging.md)\.
 
 **Note**  
 AWS Firewall Manager supports this option for the latest version of AWS WAF, and not for AWS WAF Classic\.
@@ -67,7 +67,7 @@ For information about setting up a Firewall Manager administrator account, see [
 
 1. In the navigation pane, choose **Security Policies**\.
 
-1. Choose the AWS WAF policy that you want to enable logging for\. For more information about AWS WAF logging, see [Logging and monitoring web ACL traffic](logging.md)\.
+1. Choose the AWS WAF policy that you want to enable logging for\. For more information about AWS WAF logging, see [Logging web ACL traffic](logging.md)\.
 
 1. On the **Policy details** tab, in the **Policy rules** section, choose **Edit**\. 
 

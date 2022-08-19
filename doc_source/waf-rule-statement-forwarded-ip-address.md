@@ -14,7 +14,7 @@ You can instruct AWS WAF to use a forwarded IP address for any of these rule sta
 The Bot Control managed rule group verifies bots using the IP addresses from AWS WAF\. If you use Bot Control and you have verified bots that route through a proxy or load balancer, you need to explicitly allow them using a custom rule\. For example, you can configure a custom IP set match rule that uses forwarded IP addresses to detect and allow your verified bots\. You can use the rule to customize your bot management in a number of ways\. For information and examples, see [AWS WAF Bot Control](waf-bot-control.md)\. 
 
 **General considerations for using forwarded IP addresses**  
- Before you use a forwarded IP address, note the following general caveats: 
+Before you use a forwarded IP address, note the following general caveats: 
 + A header can be modified by proxies along the way, and the proxies might handle the header in different ways\. 
 + Attackers might alter the contents of the header in an attempt to bypass AWS WAF inspections\. 
 + The IP address inside the header can be malformed or invalid\.
@@ -38,7 +38,7 @@ When you use forwarded IP addresses, use the following best practices:
 + To block web requests that have an invalid header, set the rule action to block and set the fallback behavior for the forwarded IP configuration to match\. 
 
 **Example JSON for forwarded IP addresses**  
- The following geo match statement matches only if the `X-Forwarded-For` header contains an IP whose country of origin is `US`: 
+The following geo match statement matches only if the `X-Forwarded-For` header contains an IP whose country of origin is `US`: 
 
 ```
 {
@@ -66,7 +66,7 @@ When you use forwarded IP addresses, use the following best practices:
 }
 ```
 
-The following rate\-based rule aggregates requests based on the first IP in the `X-Forwarded-For` header\. The rule counts only requests the match the nested geo match statement\. The nested geo match statement also uses the `X-Forwarded-For` header to determine whether the IP address indicates a country of origin of `US`\. If it does, or if the header is present but malformed, the geo match statement returns a match\. 
+The following rate\-based rule aggregates requests based on the first IP in the `X-Forwarded-For` header\. The rule counts only requests that match the nested geo match statement\. The nested geo match statement also uses the `X-Forwarded-For` header to determine whether the IP address indicates a country of origin of `US`\. If it does, or if the header is present but malformed, the geo match statement returns a match\. 
 
 ```
 {

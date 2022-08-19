@@ -19,8 +19,6 @@ In the match string for the label match statement, you specify either a label or
   Example specifications:
   + `testNS1:testNS2:LabelNameA`
   + `awswaf:managed:aws:managed-rule-set:testNS1:testNS2:LabelNameA`
-
-   
 + **Namespace** – The namespace specification for a match consists of any contiguous subset of the label specification excluding the name\. You can include the prefix and you can include one or more namespace strings\. 
 
   Example specifications: 

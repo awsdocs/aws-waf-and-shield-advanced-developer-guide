@@ -12,7 +12,7 @@ For information about other services that support service\-linked roles, see [AW
 
 AWS WAF uses the service\-linked role `AWSServiceRoleForWAFV2Logging`\.
 
-AWS WAF uses this service\-linked role to write logs to Amazon Kinesis Data Firehose\. This role is used only if you enable logging in AWS WAF\. For more information, see [Logging and monitoring web ACL traffic](logging.md)\.
+AWS WAF uses this service\-linked role to write logs to Amazon Kinesis Data Firehose\. This role is used only if you enable logging in AWS WAF\. For more information, see [Logging web ACL traffic](logging.md)\.
 
 The `AWSServiceRoleForWAFV2Logging` service\-linked role trusts the service to assume the role `wafv2.amazonaws.com`\. 
 
@@ -42,7 +42,7 @@ If the AWS WAF service is using the role when you try to delete the resources, t
 
 **To delete AWS WAF resources used by the `AWSServiceRoleForWAFV2Logging`**
 
-1. On the AWS WAF console, remove logging from every web ACL\. For more information, see [Logging and monitoring web ACL traffic](logging.md)\.
+1. On the AWS WAF console, remove logging from every web ACL\. For more information, see [Logging web ACL traffic](logging.md)\.
 
 1. Using the API or CLI, submit a `DeleteLoggingConfiguration` request for each web ACL that has logging enabled\. For more information, see [AWS WAF API Reference](https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html)\.
 

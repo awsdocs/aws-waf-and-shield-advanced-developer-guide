@@ -1,10 +1,8 @@
-# AWS WAF rules<a name="waf-rules"></a>
+# Rules<a name="waf-rules"></a>
 
-In every rule group and every web ACL, rules define how to inspect web requests and what to do when a web request matches the inspection criteria\. Each rule requires one top\-level statement, which might contain nested statements at any depth, depending on the rule and statement type\. 
+An AWS WAF rule defines how to inspect HTTP\(S\) web requests and the action to take on a request when it matches the inspection criteria\. You define rules only in the context of a rule group or web ACL\. 
 
-The inspection instructions are included in the JSON format as rule statements with the action in rule actions\. 
-
-You use the rules in a web ACL to manage HTTP\(S\) web requests based on criteria like the following: 
+You can define rules that inspect for criteria like the following: 
 + Scripts that are likely to be malicious\. Attackers embed scripts that can exploit vulnerabilities in web applications\. This is known as cross\-site scripting \(XSS\)\.
 + IP addresses or address ranges that requests originate from\.
 + Country or geographical location that requests originate from\.
@@ -13,7 +11,7 @@ You use the rules in a web ACL to manage HTTP\(S\) web requests based on criteri
 + Strings that appear in the request, for example, values that appear in the `User-Agent` header or text strings that appear in the query string\. You can also use regular expressions \(regex\) to specify these strings\.
 + Labels that prior rules in the web ACL have added to the request\.
 
-Some rule types take sets of criteria\. For example, you can specify up to 10,000 IP addresses or IP address ranges in an IP address rule\.
+Each rule requires one top\-level statement, which might contain nested statements at any depth, depending on the rule and statement type\. Some rule types take sets of criteria\. For example, you can specify up to 10,000 IP addresses or IP address ranges in an IP address rule\.
 
 In addition to statements with web request inspection criteria, like the ones in the preceding list, AWS WAF supports logical statements for `AND`, `OR`, and `NOT` that you use to combine statements in a rule\. 
 
@@ -29,6 +27,4 @@ Rules don't exist in AWS WAF on their own\. They aren't AWS resources, and they 
 **Topics**
 + [AWS WAF rule name](waf-rule-name.md)
 + [AWS WAF rule action](waf-rule-action.md)
-+ [AWS WAF CAPTCHA](waf-captcha.md)
-+ [AWS WAF labels on web requests](waf-rule-labels.md)
 + [AWS WAF rule statements](waf-rule-statements.md)

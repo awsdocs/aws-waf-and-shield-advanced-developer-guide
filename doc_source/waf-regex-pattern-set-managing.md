@@ -9,7 +9,7 @@ If your regex pattern set contains more than one regex pattern, when it's used i
 AWS WAF supports the pattern syntax used by the PCRE library `libpcre`\. The library is documented at [PCRE \- Perl Compatible Regular Expressions](http://www.pcre.org/)\. 
 
 **Regex pattern use limitations**  
-AWS WAF doesn't support all contructs of the library\. For example, it supports some zero\-width assertions, but not all\. We do not have comprehensive list of the constructs that are supported\. However, if you provide a regex pattern that isn't valid or use unsupported constructs, the AWS WAF API reports a failure\. 
+AWS WAF does not support all constructs of the PCRE library\. For example, it supports some zero\-width assertions, but not all\. We do not have comprehensive list of the constructs that are supported\. However, if you provide a regex pattern that is not valid or use unsupported constructs, the AWS WAF API reports a failure\. 
 
 AWS WAF does not support the following PCRE patterns: 
 + Backreferences and capturing subexpressions

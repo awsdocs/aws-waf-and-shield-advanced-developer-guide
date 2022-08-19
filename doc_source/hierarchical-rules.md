@@ -1,7 +1,7 @@
-# Tutorial: Creating a AWS Firewall Manager policy with hierarchical rules<a name="hierarchical-rules"></a>
+# Tutorial: Creating a AWS Firewall Managerpolicy with hierarchical rules<a name="hierarchical-rules"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 With AWS Firewall Manager, you can create and apply AWS WAF Classic protection policies that contain hierarchical rules\. That is, you can create and enforce certain rules centrally, but delegate the creation and maintenance of account\-specific rules to other individuals\. You can monitor the centrally applied \(common\) rules for any accidental removal or mishandling, thereby ensuring that they are applied consistently\. The account\-specific rules add further protection customized for the needs of individual teams\.

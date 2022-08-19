@@ -12,7 +12,7 @@ You can use this option to test a rule group before you implement it with its no
 
 You can also use this option to troubleshoot a rule group that's generating false positives\. False positives occur when a rule group blocks traffic that you aren't expecting it to block\. If you identify a rule within a rule group that would block requests that you want to allow through, you can keep this count action override on that rule, to exclude it from acting on your requests\.
 
-For more information about using this in testing, see [Testing web ACLs](web-acl-testing.md)\.
+For more information about using this in testing, see [Testing and tuning your AWS WAF protections](web-acl-testing.md)\.
 
 For information about how to use this option, see [Setting rule actions to count in a rule group](web-acl-rule-group-settings.md#web-acl-rule-group-rule-to-count)\.
 
@@ -27,6 +27,6 @@ When you override the rule group action to count, AWS WAF processes the rule gro
 
 If no rules in the rule group match or if all matching rules have a count action, then this override has no effect on the processing of the rule group or the web ACL\.
 
-The first rule in the rule group that matches a web request and that has a terminating rule action causes AWS WAF to stop evaluating the rule group and return the terminating action result to the web ACL evaluation level\. At thist point, in the web ACL evaluation, this override takes effect\. AWS WAF overrides the terminating action so that the result of the rule group evaluation is only a count action\. AWS WAF then continues processing the rest of the rules in the web ACL\.
+The first rule in the rule group that matches a web request and that has a terminating rule action causes AWS WAF to stop evaluating the rule group and return the terminating action result to the web ACL evaluation level\. At this point, in the web ACL evaluation, this override takes effect\. AWS WAF overrides the terminating action so that the result of the rule group evaluation is only a count action\. AWS WAF then continues processing the rest of the rules in the web ACL\.
 
 For information about how to use this option, see [Overriding a rule group's action to count](web-acl-rule-group-settings.md#web-acl-rule-group-action-override)\.

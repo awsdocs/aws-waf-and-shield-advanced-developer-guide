@@ -1,0 +1,7 @@
+# Palo Alto Networks Cloud NGFW policies<a name="cloud-ngfw-policies"></a>
+
+The Palo Alto Networks Cloud Next\-Generation Firewall \(Cloud NGFW\) is a third\-party firewall service that you can for your AWS Firewall Manager policies\. With Cloud NGFW for Firewall Manager, you can create and centrally deploy Cloud NGFW resources and rulestacks across all of your AWS accounts\.
+
+To use Cloud NGFW with Firewall Manager, you first subscribe to the [Cloud NGFW Pay\-As\-You\-Go](https://aws.amazon.com/marketplace/pp/prodview-sdwivzp5q76f4) service in the AWS Marketplace\. After subscribing, you perform a series of steps in the Cloud NGFW service to configure your account and Cloud NGFW settings\. Then, you create a Firewall Manager Cloud FMS policy to centrally deploy and manage Cloud NGFW resources and rules across all of the accounts in your AWS Organizations\.
+
+For the procedure for creating the Firewall Manager policy, see [Creating an AWS Firewall Manager policy for Palo Alto Networks Cloud NGFW](create-policy.md#creating-cloud-ngfw-policy)\. For information about how to configure and manage Cloud NGFW for Firewall Manager, see the *[Palo Alto Networks Cloud NGFW on AWS](https://docs.paloaltonetworks.com/cloud-ngfw/aws/cloud-ngfw-on-aws)* documentation\.

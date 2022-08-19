@@ -1,4 +1,4 @@
-# Step 5: To use AWS Firewall Manager in Regions that are disabled by default<a name="enable-disabled-region"></a>
+# Step 6: To use AWS Firewall Manager in Regions that are disabled by default<a name="enable-disabled-region"></a>
 
 To use Firewall Manager in a Region that's disabled by default, you must enable the Region for both the management account of your AWS organization and the Firewall Manager administrator account\. 
 

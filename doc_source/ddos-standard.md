@@ -1,3 +1,0 @@
-# AWS Shield Standard<a name="ddos-standard"></a>
-
-All AWS customers benefit from the automatic protections of AWS Shield Standard, at no additional charge\. AWS Shield Standard defends against the most common, frequently occurring network and transport layer DDoS attacks that target your website or applications\. While AWS Shield Standard helps protect all AWS customers, you get particular benefit if you are using Amazon CloudFront and Amazon Route 53\. These services receive comprehensive availability protection against all known network and transport layer \(Layer 3 and 4\) attacks\.

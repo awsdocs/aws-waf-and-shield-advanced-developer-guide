@@ -1,6 +1,6 @@
 # Retrieving the available versions for a managed rule group<a name="waf-using-managed-rule-groups-versions"></a>
 
-The available versions of a managed rule group are versions that haven't yet been scheduled to expire\. 
+The available versions of a managed rule group are versions that haven't yet been scheduled to expire\. The list indicates which version is the current default version for the rule group\.
 
 **To retrieve a list of the available versions of a managed rule group**
 + **Console** 

@@ -3,7 +3,7 @@
 If you use a specific version of a rule group, make sure that you don't keep using a version past its expiration date\. 
 
 **Tip**  
-If you track upcoming changes for the managed rule group through Amazon SNS, you'll receive notifications about new, recommended versions\. If you regularly test and move to a newer version, you'll stay ahead of any expiration activities on the older versions\. You'll also benefit from the best current protections from the rule group\. For information about notifications, see [Getting notified of new versions and updates](waf-using-managed-rule-groups-sns-topic.md)\.
+If you track upcoming changes for the managed rule group through Amazon SNS, you'll receive notifications about new and recommended versions\. If you regularly test and move to a newer version, you'll stay ahead of any expiration activities on the older versions\. You'll also benefit from the most current protections from the rule group\. For information about notifications, see [Getting notified of new versions and updates](waf-using-managed-rule-groups-sns-topic.md)\.
 
 If a version that you're using is expired, AWS WAF blocks modifications to the web ACL where you're using the rule group\. The block remains until you update the rule group to an available version or remove it from your web ACL\. 
 

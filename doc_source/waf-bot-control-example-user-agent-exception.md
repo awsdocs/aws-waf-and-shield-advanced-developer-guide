@@ -33,8 +33,7 @@ The following rule must run after the preceding Bot Control managed rule group i
 
 ```
 {
-  "Rule": {
-    "Name": "match_rule",
+	"Name": "match_rule",
     "Statement": {
       "AndStatement": {
         "Statements": [
@@ -54,7 +53,7 @@ The following rule must run after the preceding Bot Control managed rule group i
                     }
                   },
                   "PositionalConstraint": "EXACTLY",
-                  "SearchString": "TW96aWxsYS81LjAgQSBGcmllbmRseSBPbmU=",
+                  "SearchString": "PostmanRuntime/7.29.2",
                   "TextTransformations": [
                     {
                       "Priority": 0,
@@ -77,6 +76,5 @@ The following rule must run after the preceding Bot Control managed rule group i
       "CloudWatchMetricsEnabled": true,
       "MetricName": "match_rule"
     }
-  }
 }
 ```

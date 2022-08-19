@@ -32,4 +32,4 @@ Additionally, to use the Firewall Manager API action `PutNotificationChannel`, t
 
 For more information about Firewall Manager actions and resources, see the AWS Identity and Access Management guide topic [Actions Defined by AWS Firewall Manager](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsfirewallmanager.html#awsfirewallmanager-actions-as-permissions) 
 
- For the full list of the API actions available for Firewall Manager, see [AWS Firewall Manager API Reference](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/)\.
+For the full list of the API actions available for Firewall Manager, see [AWS Firewall Manager API Reference](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/)\.

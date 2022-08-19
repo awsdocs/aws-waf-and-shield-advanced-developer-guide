@@ -36,4 +36,4 @@ The following shows an example name for a firewall that's managed by Firewall Ma
 FMManaged_EXAMPLEDNSFirewallPolicyId
 ```
 
-After you create the policy, account owners in the VPCs can't override your firewall policy settings or your rule group associations\. They can associate other DNS Firewall rule groups to the VPCs that are in scope of the DNS Firewall policy\. Any associations that are created by the individual account owners must have priority settings between your first and last rule group associations\. 
+After you create the policy, if account owners in the VPCs override your firewall policy settings or your rule group associations then Firewall Manager will mark the policy as non\-compliant and try to propose a remedial action\. Account owners can associate other DNS Firewall rule groups to the VPCs that are in scope of the DNS Firewall policy\. Any associations that are created by the individual account owners must have priority settings between your first and last rule group associations\. 

@@ -10,7 +10,7 @@ Each Firewall Manager Network Firewall policy creates a Network Firewall firewal
 
 ## Mutable quotas<a name="fms-limits-mutable"></a>
 
-AWS Firewall Manager has default quotas on the number of entities per Region\. You can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-waf) in these quotas\.
+AWS Firewall Manager has default quotas on the number of entities per Region\. You can [request an increase](https://console.aws.amazon.com/servicequotas/home/services/fms/quotas) in these quotas\.
 
 
 **All policy types**  
@@ -18,7 +18,7 @@ AWS Firewall Manager has default quotas on the number of entities per Region\. Y
 | Resource | Default quota per Region | 
 | --- | --- | 
 | Accounts per organization in AWS Organizations  | Varies\. An invitation sent to an account counts against this quota\. The count is returned if the invited account declines, the management account cancels the invitation, or the invitation expires\. | 
-| Firewall Manager policies per organization in AWS Organizations  | 20\. The Region specifications `Global` and `US East (N. Virginia)` refer to the same Region, so this limit applies to the total combined policies for the two of them\.  | 
+| Firewall Manager policies per organization in AWS Organizations  | 20\. The Region specifications `Global` and `US East (N. Virginia) Region` refer to the same Region, so this limit applies to the total combined policies for the two of them\.  | 
 | Organizational units in scope per Firewall Manager policy | 20  | 
 | Accounts in scope of a Firewall Manager policy if you explicitly include and exclude individual accounts | 200  | 
 | Accounts in scope of a Firewall Manager policy if you do not explicitly include or exclude individual accounts | 2,500  | 

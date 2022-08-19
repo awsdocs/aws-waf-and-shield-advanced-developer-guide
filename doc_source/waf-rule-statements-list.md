@@ -5,7 +5,7 @@ This section describes the statements that you can add to a rule and provides so
 This page groups the rule statements by category, provides a high\-level description for each, and provides a link to a section with more information for the statement type\. 
 
 **Match statements**  
-Match statements compare the web request or its origin against conditions that you provide\. For many statements of this type, AWS WAF compares a specific component of the request for matching content\. 
+Match statements compare the web request or its origin against criteria that you provide\. For many statements of this type, AWS WAF compares a specific component of the request for matching content\. 
 
 Match statements are nestable\. You can nest them inside logical rule statements and use them in scope\-down statements\. 
 
@@ -49,6 +49,6 @@ AWS WAF supports rate\-based and rule group statements\. You can't nest these st
 
 | Statement | Description | WCUs | 
 | --- | --- | --- | 
-|  [Managed rule group](waf-rule-statement-type-managed-rule-group.md)  |  Runs the rules that are defined in the specified managed rule group\.  You can narrow the scope of requests that you evaluate with the rule group by adding a scope\-down statement\.  You cannot nest a managed rule group statement inside any other statement type\.  |  Defined by the rule group, plus any additional WCUs for the scope\-down statement\.  | 
+|  [Managed rule group](waf-rule-statement-type-managed-rule-group.md)  |  Runs the rules that are defined in the specified managed rule group\.  You can narrow the scope of requests that you evaluate with the rule group by adding a scope\-down statement\.  You cannot nest a managed rule group statement inside any other statement type\.  |  Defined by the rule group, plus any additional WCUs for a scope\-down statement\.  | 
 | [Rule group](waf-rule-statement-type-rule-group.md) | Runs the rules that are defined in a rule group that you manage\.  You cannot nest a rule group statement inside any other statement type\. | You define the WCU limit for the rule group when you create it\. | 
-|  [Rate\-based](waf-rule-statement-type-rate-based.md)  |  Tracks the rate of requests from individual IP addresses and temporarily blocks addresses while they are sending too many requests\.  You can narrow the scope of requests that you evaluate with a rate\-based statement by adding a scope\-down statement\.  You cannot nest a rate\-based statement under any rule statement\. You can define a rate\-based statement inside a rule group that you manage\.   |  2, plus any additional WCUs for the scope\-down statement\.  | 
+|  [Rate\-based](waf-rule-statement-type-rate-based.md)  |  Tracks the rate of requests from individual IP addresses and temporarily blocks addresses while they are sending too many requests\.  You can narrow the scope of requests that you evaluate with a rate\-based statement by adding a scope\-down statement\.  You cannot nest a rate\-based statement under any rule statement\. You can define a rate\-based statement inside a rule group that you manage\.   |  2, plus any additional WCUs for a scope\-down statement\.  | 

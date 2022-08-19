@@ -1,4 +1,4 @@
-# Step 4: For Network Firewall and DNS Firewall policies, enable resource sharing<a name="enable-ram"></a>
+# Step 5: For Network Firewall and DNS Firewall policies, enable resource sharing<a name="enable-ram"></a>
 
 To manage Firewall Manager Network Firewall and DNS Firewall policies, you must enable sharing with AWS Organizations in AWS Resource Access Manager\. This allows Firewall Manager to deploy protections across your accounts when you create these policy types\.
 

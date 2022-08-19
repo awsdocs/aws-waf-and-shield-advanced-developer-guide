@@ -1,7 +1,7 @@
 # Testing web ACLs<a name="classic-web-acl-testing"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 To ensure that you don't accidentally configure AWS WAF Classic to block web requests that you want to allow or allow requests that you want to block, we recommend that you test your web ACL thoroughly before you start using it on your website or web application\. 
@@ -24,7 +24,7 @@ After you've configured all the rules in a web ACL to count requests and associa
 + Change the calculation that CloudWatch performs on the data, such as maximum, minimum, average, or sum
 
 **Note**  
-AWS WAF Classic with CloudFront is a global service and metrics are available only when you choose the **US East \(N\. Virginia\)** Region in the AWS Management Console\. If you choose another region, no AWS WAF Classic metrics will appear in the CloudWatch console\.<a name="classic-web-acl-testing-count-procedure"></a>
+AWS WAF Classic with CloudFront is a global service and metrics are available only when you choose the **US East \(N\. Virginia\) Region** in the AWS Management Console\. If you choose another region, no AWS WAF Classic metrics will appear in the CloudWatch console\.<a name="classic-web-acl-testing-count-procedure"></a>
 
 **To view data for the rules in a web ACL**
 
@@ -65,6 +65,8 @@ The sample of requests contains up to 100 requests that matched all the conditio
 **To view a sample of the web requests that API Gateway; CloudFront or an Application Load Balancer has forwarded to AWS WAF Classic**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. In the navigation pane, choose the web ACL for which you want to view requests\.
 

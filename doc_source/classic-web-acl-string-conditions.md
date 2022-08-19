@@ -1,7 +1,7 @@
 # Working with string match conditions<a name="classic-web-acl-string-conditions"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 If you want to allow or block web requests based on strings that appear in the requests, create one or more string match conditions\. A string match condition identifies the string that you want to search for and the part of web requests, such as a specified header or the query string, that you want AWS WAF Classic to inspect for the string\. Later in the process, when you create a web ACL, you specify whether to allow or block requests that contain the string\.
@@ -28,6 +28,8 @@ When you add a string match condition to a rule, you also can configure AWS WAF 
 **To create a string match condition**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. In the navigation pane, choose **String and regex matching**\.
 
@@ -141,6 +143,8 @@ You can add filters to a string match condition or delete filters\. To change a 
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
+
 1. In the navigation pane, choose **String and regex matching**\.
 
 1. Choose the condition that you want to add or delete filters in\.
@@ -166,6 +170,8 @@ If you want to delete a string match condition, you need to first delete all fil
 **To delete a string match condition**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. Remove the string match condition from the rules that are using it:
 

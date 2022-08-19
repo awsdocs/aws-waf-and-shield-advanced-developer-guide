@@ -454,7 +454,7 @@ For more information, see the [CloudTrail userIdentity Element](https://docs.aws
 
 ### Example: Shield Advanced log file entries<a name="understanding-service-name-entries-shield"></a>
 
- A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files are not an ordered stack trace of the public API calls, so they do not appear in any specific order\.
+A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files are not an ordered stack trace of the public API calls, so they do not appear in any specific order\.
 
 The following example shows a CloudTrail log entry that demonstrates the `DeleteProtection` and `ListProtections` actions\.
 
@@ -539,7 +539,7 @@ For more information, see the [CloudTrail userIdentity Element](https://docs.aws
 
 ### Example: Firewall Manager log file entries<a name="understanding-service-name-entries-FMS"></a>
 
- A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files are not an ordered stack trace of the public API calls, so they do not appear in any specific order\.
+A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files are not an ordered stack trace of the public API calls, so they do not appear in any specific order\.
 
 The following example shows a CloudTrail log entry that demonstrates the `GetAdminAccount`\-\-> action\.
 

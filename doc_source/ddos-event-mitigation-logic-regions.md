@@ -1,0 +1,15 @@
+# AWS Shield mitigation logic for AWS Regions<a name="ddos-event-mitigation-logic-regions"></a>
+
+Resources that are launched in AWS Regions are protected by AWS Shield DDoS mitigation systems placed by Shield resource\-level detection\. Regional resources include Elastic IPs \(EIPs\), Classic Load Balancers, and Application Load Balancers\.
+
+Prior to placing a mitigation, Shield identifies the targeted resource and its capacity\. Shield uses the capacity to determine the maximum total traffic that its mitigations should allow to be forwarded to the resource\. Access control lists \(ACLs\) and other shapers within the mitigation might decrease the allowed volumes for some traffic, for example traffic that matches known DDoS attack vectors or that isn't expected to come in large volume\. This further limits the amount of traffic that the mitigations allow for UDP reflection attacks or for TCP traffic that has TCP SYN or FIN flags\.
+
+Shield determines capacity and places mitigations differently for each resource type\. 
++ For an Amazon EC2 instance, or an EIP that's attached to an Amazon EC2 instance, Shield calculates the capacity based on the instance type and other instance attributes, such as whether the instance has enhanced networking enabled\. 
++ For an Application Load Balancer or Classic Load Balancer, Shield calculates capacity individually for each targeted node of the load balancer\. DDoS attack mitigations for these resources are provided by a combination of Shield DDoS mitigations and automatic scaling by the load balancer\. When the Shield Response Team \(SRT\) is engaged on an attack against an Application Load Balancer or Classic Load Balancer resource, they might accelerate scaling as an additional protection measure\. 
++ Shield calculates capacity for some AWS resources is based on the available capacity of the underlying AWS infrastructure\. These resource types include Network Load Balancers \(NLBs\) and resources that route traffic through Gateway Load Balancers or AWS Network Firewall\.
+
+**Note**  
+Protect your Network Load Balancers by attaching EIPs that are protected by Shield Advanced\. You can work with SRT to build custom mitigations that are based on the expected traffic and capacity of the underlying application\. 
+
+When Shield places a mitigation, the initial rate limits that Shield defines in the mitigation logic are applied equally to every Shield DDoS mitigation system\. For example, if Shield places a mitigation with a 100,000 packets per second \(pps\) limit, it will initially allow 100,000 pps at every location\. Then, Shield continuously aggregates mitigation metrics to determine the actual ratio of traffic, and uses the ratio to adapt the rate limit for each location\. This prevents false positives and ensures that the mitigations are not overly permissive\. 

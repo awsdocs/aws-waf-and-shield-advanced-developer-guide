@@ -16,10 +16,10 @@ If you use the request component **All query parameters**, add 10 WCUs\. If you 
 This statement type operates on a web request component, and requires the following request component settings: 
 + **Request components** – The part of the web request to inspect, for example, a query string or the body\.
 **Warning**  
-If you use the request component **Body** or **JSON body**, AWS WAF only inspects the first 8 KB\. For information, see [Web request body inspection](web-request-body-inspection.md)\.
+If you inspect the request components **Body**, **JSON body**, **Headers**, or **Cookies**, read about the limitations on how much content AWS WAF can inspect at [Oversize handling for request components](waf-rule-statement-oversize-handling.md)\.
 
-  For information about web request components, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.
-+ **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For information, see [Text transformations](waf-rule-statement-fields.md#waf-rule-statement-transformation)\.
+  For information about web request components, see [Web request components](waf-rule-statement-fields.md)\.
++ **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For information, see [Text transformations](waf-rule-statement-transformation.md)\.
 
 Additionally, this statement requires the following settings: 
 + **String to match** – This is the string that you want AWS WAF to compare to the specified request component\. Usually, the string consists of printable ASCII characters, but you can use any character from hexadecimal 0x00 to 0xFF \(decimal 0 to 255\)\.

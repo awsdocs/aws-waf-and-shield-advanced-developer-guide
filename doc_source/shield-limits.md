@@ -1,6 +1,6 @@
 # AWS Shield Advanced quotas<a name="shield-limits"></a>
 
-AWS Shield Advanced is subject to the following default quotas \(formerly referred to as limits\)\. To increase these quotas, go to the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\. 
+AWS Shield Advanced has default quotas on the number of entities per Region\. You can [request an increase](https://console.aws.amazon.com/servicequotas/home/services/shield/quotas) in these quotas\.
 
 
 | Resource | Default quota | 

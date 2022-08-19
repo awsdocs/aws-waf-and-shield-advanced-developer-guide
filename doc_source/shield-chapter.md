@@ -1,25 +1,15 @@
 # AWS Shield<a name="shield-chapter"></a>
 
-AWS provides AWS Shield Standard and AWS Shield Advanced for protection against DDoS attacks\. AWS Shield Standard is automatically included at no extra cost beyond what you already pay for AWS WAF and your other AWS services\. For added protection against DDoS attacks, AWS offers AWS Shield Advanced\. AWS Shield Advanced provides expanded DDoS attack protection for your resources\. 
+Protection against Distributed Denial of Service \(DDoS\) attacks is of primary importance for your internet\-facing applications\. When you build your application on AWS, you can make use of protections that AWS provides at no additional cost\. Additionally, you can use the AWS Shield Advanced managed threat protection service to improve your security posture with additional DDoS detection, mitigation, and response capabilities\. 
 
-You can add Shield Advanced protection for any of the following resource types:
-+ Amazon CloudFront distributions
-+ Amazon Route 53 hosted zones
-+ AWS Global Accelerator accelerators
-+ Application Load Balancers
-+ Elastic Load Balancing \(ELB\) load balancers
-+ Amazon Elastic Compute Cloud \(Amazon EC2\) Elastic IP addresses
+AWS is committed to providing you with the tools, best practices, and services to help ensure high availability, security, and resiliency in your defense against bad actors on the internet\. This guide is provided to help IT decision makers and security engineers understand how to use Shield and Shield Advanced to better protect their applications from DDoS attacks and other external threats\. 
 
-**Protecting Network Load Balancers**  
-You can't directly attach a Shield Advanced protection to a Network Load Balancer \(NLB\), but you can protect a Network Load Balancer by first associating an Amazon EC2 Elastic IP address to it and then adding the Elastic IP as a Shield Advanced protected resource\. Some scaling tools, like AWS Elastic Beanstalk, don't let you automatically attach an Elastic IP to a Network Load Balancer\. For those cases, you need to first associate the Elastic IP to the Network Load Balancer and then manually add the Shield Advanced protections to the Elastic IP\.
+When you build your application on AWS, you receive automatic protection by AWS against common volumetric DDoS attack vectors, like UDP reflection attacks and TCP SYN floods\. You can leverage these protections to ensure the availability of the applications that you run on AWS by designing and configuring your architecture for DDoS resiliency\. 
 
-**Topics**
-+ [How AWS Shield works](ddos-overview.md)
-+ [Example AWS Shield Advanced use cases](aws-shield-use-case.md)
-+ [Getting started with AWS Shield Advanced](getting-started-ddos.md)
-+ [Configuring Shield Response Team \(SRT\) support](ddos-edit-drt.md)
-+ [Managing resource protections in AWS Shield Advanced](ddos-manage-protected-resources.md)
-+ [Reviewing and responding to DDoS events](ddos-responding.md)
-+ [Requesting a credit in AWS Shield Advanced](request-refund.md)
-+ [Security in AWS Shield](shd-security.md)
-+ [AWS Shield Advanced quotas](shield-limits.md)
+This guide provides recommendations that can help you design, create, and configure your application architectures for DDoS resiliency\. Applications that adhere to the best practices provided in this guide can benefit from an improved continuity of availability when they are targeted by larger DDoS attacks and by wider ranges of DDoS attack vectors\. Additionally, this guide shows you how to use Shield Advanced to implement an optimized DDoS protection posture for your critical applications\. These include applications for which you've guaranteed a certain level of availability to your customers and those that require operational support from AWS during DDoS events\.
+
+Security is a shared responsibility between AWS and you\. The [shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model/) describes this as security *of* the cloud and security *in* the cloud:
++ **Security of the cloud** – AWS is responsible for protecting the infrastructure that runs AWS services in the AWS Cloud\. AWS also provides you with services that you can use securely\. The effectiveness of our security is regularly tested and verified by third\-party auditors as part of the [AWS compliance programs](https://aws.amazon.com/compliance/programs/)\. To learn about the compliance programs that apply to Shield Advanced, see [AWS Services in Scope by Compliance Program](https://aws.amazon.com/compliance/services-in-scope/)\.
++ **Security in the cloud** – Your responsibility is determined by the AWS service that you use\. You are also responsible for other factors including the sensitivity of your data, your organization’s requirements, and applicable laws and regulations\. 
+
+![\[A diagram shows a rectangle that's split horizontally. The top half is titled Customer: Responsibility for security 'in' the cloud and the bottom half is titled AWS: Responsibility for security 'of' the cloud. The top customer half contains four tiers. The top one is Customer data. The second one is Platform, applications, identity and access management. The third one is Operating system, network and firewall configuration. The fourth and bottom tier for the customer area is split into three sections that are side by side. The left of these is Client-side data, encryption and data integrity, authentication. The middle one is Server-side encryption (file system and/or data). The right one is Networking traffic protection (encryption, integrity, identity). This concludes the contents of the top customer half of the figure. The bottom AWS half of the figure, contains a tier titled Software at the top and below it, a tier titled Hardware/AWS global infrastructure. The software tier is split into four subsections that are side by side and that read Compute, Storage, Database, Networking. The hardware tier is split into three subsections that are side by side and that read Regions, Availability Zones, edge locations.\]](http://docs.aws.amazon.com/waf/latest/developerguide/)

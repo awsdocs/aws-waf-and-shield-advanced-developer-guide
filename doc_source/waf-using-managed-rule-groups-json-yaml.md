@@ -43,7 +43,7 @@ Resources:
       Name: WebACLWithAMR
       Scope: REGIONAL
       Description: This is a demo
-      DefaultAction: 
+      DefaultAction:
         Block: {}
       VisibilityConfig:
         SampledRequestsEnabled: true
@@ -52,7 +52,7 @@ Resources:
       Tags:
         - Key: sampleapple
           Value: sampleorange
-      Rules: 
+      Rules:
         - Name: AWS-AWSManagedRulesCommonRuleSet
           Priority: 0
           OverrideAction:

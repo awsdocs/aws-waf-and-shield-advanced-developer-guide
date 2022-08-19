@@ -10,7 +10,7 @@ For information about other services that support service\-linked roles, see [AW
 
 ## Service\-Linked Role Permissions for Shield Advanced<a name="shd-slr-permissions"></a>
 
-Shield Advanced uses the service\-linked role named **AWSServiceRoleForAWSShield**\. This role allows Shield Advanced to access and manage AWS resources in order to automatically respond to application layer DDoS attacks on your behalf\. For more information about this functionality, see [Shield Advanced automatic application layer DDoS mitigation](ddos-advanced-automatic-app-layer-response.md)\. 
+Shield Advanced uses the service\-linked role named **AWSServiceRoleForAWSShield**\. This role allows Shield Advanced to access and manage AWS resources in order to automatically respond to application layer DDoS attacks on your behalf\. For more information about this functionality, see [Shield Advanced automatic application layer DDoS mitigation](ddos-automatic-app-layer-response.md)\. 
 
 The AWSServiceRoleForAWSShield service\-linked role trusts the following services to assume the role:
 + `shield.amazonaws.com`
@@ -23,7 +23,7 @@ The role permissions policy named AWSShieldServiceRolePolicy allows Shield Advan
 + `cloudfront:ListDistributions`
 + `cloudfront:GetDistribution`
 
-When actions are permitted on all AWS resources, it's indicated in the policy as `"Resource": "*"`\. This means that the service\-linked role can take each indicated action on all AWS resources *that the action supports*\. For example, the action `wafv2:GetWebACL` is supported for only `wafv2` web ACL resources\. 
+When actions are permitted on all AWS resources, it's indicated in the policy as `"Resource": "*"`\. This means that the service\-linked role can take each indicated action on all AWS resources *that the action supports*\. For example, the action `wafv2:GetWebACL` is supported only for `wafv2` web ACL resources\. 
 
 Shield Advanced only makes resource\-level API calls for protected resources for which you've enabled the application layer protections feature and for web ACLs that are associated with those protected resources\. 
 
@@ -48,7 +48,7 @@ If Shield Advanced is using the role when you try to delete the resources, then 
 
 **To delete the Shield Advanced resources that are used by the AWSServiceRoleForAWSShield**
 
-For all of your resources that have application layer DDoS protections configured, disable automatic application layer DDoS mitigation\. For console instructions, see [Configure application layer DDoS protections](manage-protection.md#add-rule-ddos)\. 
+For all of your resources that have application layer DDoS protections configured, disable automatic application layer DDoS mitigation\. For console instructions, see [Configure application layer DDoS protections](ddos-manage-protected-resources.md#configure-app-layer-protection)\. 
 
 **To manually delete the service\-linked role using IAM**
 

@@ -1,27 +1,34 @@
-# Step 2: Add resources to protect<a name="ddos-choose-resources"></a>
+# Add resources to protect and configure protections<a name="ddos-choose-resources"></a>
 
-After you subscribe to AWS Shield Advanced, as described in [Step 1: Subscribe to AWS Shield Advanced](enable-ddos-prem.md), you specify the resources that you want to protect\. 
+After you subscribe to AWS Shield Advanced, as described in [Subscribe to AWS Shield Advanced](enable-ddos-prem.md), you specify the resources that you want to protect\. 
 
-If you are using AWS Firewall Manager to create a Firewall Manager Shield Advanced policy, you don't need to do this step\. You already specified your resources in the Firewall Manager policy\.
+If you are using an AWS Firewall Manager Shield Advanced policy for your Shield Advanced protections, you don't need to do this step\. You specify the resources to protect in the Firewall Manager policy, and Firewall Manager manages adding resource protections according to your policy configuration\.
 
-If you aren't using a Firewall Manager Shield Advanced policy, you can also specify resources later if you want, using the procedure at [Adding AWS Shield Advanced protection to AWS resources](configure-new-protection.md)\. 
+If you aren't using a Firewall Manager Shield Advanced policy, you can add resources here or after your initial configuration, using the procedure at [Adding AWS Shield Advanced protection to AWS resources](ddos-manage-protected-resources.md#configure-new-protection)\. 
 
 **Note**  
-Shield Advanced protects only resources that you have specified either in Shield Advanced or through a Firewall Manager Shield Advanced policy\. It doesn't automatically protect your resources\.<a name="ddos-choose-resources-procedure"></a>
+Shield Advanced doesn't automatically protect your resources\. It protects only resources that you have specified either in Shield Advanced or in a Firewall Manager Shield Advanced policy\. 
 
-**To choose the resources to protect with Shield Advanced**
+**To choose the resources to protect using Shield Advanced**
 
 1. Do one of the following, depending on your starting point: 
-   + From the subscription confirmation page at the end of the procedure [Step 1: Subscribe to AWS Shield Advanced](enable-ddos-prem.md), choose **Add resources to protect**\. 
-   + From the console navigation bar, choose **Protected Resources** and then choose **Add resources to protect**\. 
+   + From the subscription confirmation page at the end of the procedure [Subscribe to AWS Shield Advanced](enable-ddos-prem.md), choose **Add resources to protect**\. 
+   + In the **AWS Shield** navigation bar, choose **Protected Resources** and then choose **Add resources to protect**\. 
 
-1. In the **Choose resources to protect with Shield Advanced** page, select the Regions and resource types that you want to protect, then choose **Load resources**\. 
-**Note**  
-If you want to protect an Amazon EC2 instance or a Network Load Balancer, you first must associate an Elastic IP address to it, and then choose the Elastic IP address as the resource to protect\.
-If you choose an Elastic IP address as the resource to protect, Shield Advanced protects whatever resource is associated with that Elastic IP address\. Shield Advanced automatically identifies the type of resource that is associated with the Elastic IP address and applies the appropriate mitigations for that resource\. This includes configuring network ACLs that are specific to the Elastic IP address\. For more information about using Elastic IP addresses with your AWS resources, see the appropriate guide: [Amazon Elastic Compute Cloud Documentation](https://aws.amazon.com/documentation/ec2/) or [Elastic Load Balancing Documentation](https://aws.amazon.com/documentation/elastic-load-balancing/)\.
-Shield Advanced does not support EC2\-Classic\.
-Some scaling tools, like AWS Elastic Beanstalk, do not let you automatically attach an Elastic IP address to a Network Load Balancer\. For those cases, you need to manually associate the Elastic IP address\. 
+1. In the **Choose resources to protect with Shield Advanced** page, do the following: 
 
-1. Select the resources that you want to protect, then choose **Protect with Shield Advanced**\.
+   1. Select the Region where your resources are located or, if you want to protect resources in multiple Regions, select **All Regions**\. 
 
-After you add resources to protect, go to [Step 3: Configure application layer \(layer 7\) DDoS protections](ddos-get-started-rate-based-rules.md)\.
+   1. Select the resource types that you want to protect\. 
+
+      For information about protections for your resource type, see [AWS Shield Advanced protections by resource type](ddos-protections-by-resource-type.md)\.
+
+   1. Choose **Load resources**\.
+
+   Shield Advanced populates the **Select Resources** section with the AWS resources that match your criteria\. 
+
+1. In the **Select Resources** section, select the resources that you want to protect\.
+
+1. In the **Tags** section, if you want to add tags to the Shield Advanced protections that you are creating, specify those\. For information about tagging AWS resources, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. 
+
+1. Choose **Protect with Shield Advanced**\. This choice adds Shield Advanced protections to the resources\. Proceed through the additional screens provided by the console wizard to further configure your protections, with options like health checks and alarm notifications\. 

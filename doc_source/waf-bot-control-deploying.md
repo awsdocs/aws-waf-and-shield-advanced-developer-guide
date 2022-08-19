@@ -1,4 +1,4 @@
-# Configuring and testing AWS WAF Bot Control<a name="waf-bot-control-deploying"></a>
+# Testing and deploying AWS WAF Bot Control<a name="waf-bot-control-deploying"></a>
 
 This section provides general guidance for configuring and testing an AWS WAF Bot Control implementation for your site\. The specific steps that you choose to follow will depend on your needs, resources, and web requests that you receive\. 
 
@@ -18,11 +18,11 @@ Perform these steps first in a test environment, then in production\.
 
 **Add the Bot Control managed rule group**
 
-   Add the managed AWS rule group AWSManagedRulesBotControlRuleSet to a new or existing web ACL and configure it so that it doesn't alter current web ACL behavior\. 
+   Add the managed AWS rule group `AWSManagedRulesBotControlRuleSet` to a new or existing web ACL and configure it so that it doesn't alter current web ACL behavior\. 
    + When you add the managed rule group, edit it and, in the **Rules** pane, turn on the **Set all rule actions to count** toggle\. With this configuration, AWS WAF evaluates requests against all of the rules in the rule group and only counts the matches that result, while still adding labels to requests\. For more information, see [Setting rule actions to count in a rule group](web-acl-rule-group-settings.md#web-acl-rule-group-rule-to-count)\.
 
      This allows you to monitor the impact of the Bot Control rules to determine whether you want to add exceptions, such as exceptions for internal use cases or for desired bots\. 
-   + Position the rule group so that it's evaluated last in the web ACL, with a priority setting that's numerically higher than any other rules or rule groups that you're already using\. For more information, see [To create a web ACL](web-acl-creating.md#web-acl-creating-procedure)\.
+   + Position the rule group so that it's evaluated last in the web ACL, with a priority setting that's numerically higher than any other rules or rule groups that you're already using\. For more information, see [Processing order of rules and rule groups in a web ACL](web-acl-processing-order.md)\. 
 
      This way, your current handling of traffic isn't disrupted\. For example, if you have rules that detect malicious traffic such as SQL injection or cross\-site scripting, they'll continue to detect and log that\. Alternately, if you have rules that allow known non\-malicious traffic, they can continue to allow that traffic, without having it blocked by the Bot Control managed rule group\. You might decide to adjust the processing order during your testing and tuning activities\.
 
@@ -31,9 +31,9 @@ Perform these steps first in a test environment, then in production\.
 **Enable sampling, logging, and metrics for the web ACL**
 
    As needed, configure logging for the web ACL, and enable sampling and Amazon CloudWatch metrics\. This allows you to monitor the interaction of the Bot Control managed rule group with your traffic\. 
-   + For information about configuring and using logging, see [Logging and monitoring web ACL traffic](logging.md)\. 
+   + For information about configuring and using logging, see [Logging web ACL traffic](logging.md)\. 
    + For information about Amazon CloudWatch metrics, see [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)\. 
-   + For information about web request sampling, see [Viewing a sample of web requests](web-acl-testing.md#web-acl-testing-view-sample)\. 
+   + For information about web request sampling, see [Viewing a sample of web requests](web-acl-testing-view-sample.md)\. 
 
 1. 
 
@@ -59,12 +59,12 @@ The Bot Control managed rule group verifies bots using the IP addresses from AWS
    + Explicitly allow requests with a rule that you add before the Bot Control managed rule group\. With this, the allowed requests never reach the rule group for evaluation\. This can help contain the cost of using the Bot Control managed rule group\. 
    + Exclude requests from Bot Control evaluation with a scope\-down statement inside the Bot Control managed rule group statement\. This functions the same as the preceding option\. It can help contain the cost of using the Bot Control managed rule group because the requests that don't match the scope\-down statement never reach rule group evaluation\. For information about scope\-down statements, see [Scope\-down statements](waf-rule-scope-down-statements.md)\. 
 
-     For examples, see [AWS WAF Bot Control example: Exclude IP range from bot management](waf-bot-control-example-scope-down-ip.md) and [AWS WAF Bot Control example: Allow traffic from a bot that you control](waf-bot-control-example-scope-down-your-bot.md)\.
+     For examples, see [Exclude IP range from bot management](waf-bot-control-example-scope-down-ip.md) and [Allow traffic from a bot that you control](waf-bot-control-example-scope-down-your-bot.md)\.
    + Use Bot Control labels in request handling to allow or block requests\. Add a label match rule after the Bot Control managed rule group to filter out labeled requests that you want to allow from those that you want to block\. After testing, keep the related Bot Control rules in count mode, and maintain the request handling decisions in your custom rule\. For information about label match statements, see [Label match rule statement](waf-rule-statement-type-label-match.md)\. 
 
-     For examples, see [AWS WAF Bot Control example: Block verified bots](waf-bot-control-example-block-verified-bots.md), [AWS WAF Bot Control example: Allow a specific blocked bot](waf-bot-control-example-allow-blocked-bot.md), and [AWS WAF Bot Control example: Create an exception for a blocked user agent](waf-bot-control-example-user-agent-exception.md)\. 
+     For examples, see [Block verified bots](waf-bot-control-example-block-verified-bots.md), [Allow a specific blocked bot](waf-bot-control-example-allow-blocked-bot.md), and [Create an exception for a blocked user agent](waf-bot-control-example-user-agent-exception.md)\. 
 
-   For more examples, see [AWS WAF Bot Control examples](waf-bot-control-examples.md)\.
+   For additional examples, see [AWS WAF Bot Control examples](waf-bot-control-examples.md)\.
 
 1. 
 

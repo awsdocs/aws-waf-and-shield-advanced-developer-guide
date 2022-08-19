@@ -62,7 +62,7 @@ Connection: Keep-Alive
 
 Many AWS WAF and Shield Advanced API actions require you to include JSON\-formatted data in the body of the request\.
 
-The following example request uses a simple JSON statement to update an `IPSet` \(known in the console as an IP match condition\) to include the IP address 192\.0\.2\.44 \(represented in CIDR notation as 192\.0\.2\.44/32\):
+The following example request uses a simple JSON statement to update an `IPSet` to include the IP address 192\.0\.2\.44 \(represented in CIDR notation as 192\.0\.2\.44/32\):
 
 ```
 POST / HTTP/1.1

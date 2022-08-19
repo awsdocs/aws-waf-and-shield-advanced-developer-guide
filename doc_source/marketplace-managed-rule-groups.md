@@ -2,8 +2,15 @@
 
 AWS Marketplace managed rule groups are available by subscription through the AWS Marketplace console at [AWS Marketplace](https://aws.amazon.com/marketplace)\. After you subscribe to a AWS Marketplace managed rule group, you can use it in AWS WAF\. To use an AWS Marketplace rule group in an AWS Firewall Manager AWS WAF policy, each account in your organization must subscribe to it\. 
 
+Test and tune any changes to your AWS WAF protections before you use them for production traffic\. For information, see [Testing and tuning your AWS WAF protections](web-acl-testing.md)\.
+
 **AWS Marketplace Rule Group Pricing**  
 AWS Marketplace rule groups are available with no long\-term contracts, and no minimum commitments\. When you subscribe to a rule group, you are charged a monthly fee \(prorated hourly\) and ongoing request fees based on volume\. For more information, see [AWS WAF Pricing](http://aws.amazon.com/waf/pricing/) and the description for each AWS Marketplace rule group at [AWS Marketplace](https://aws.amazon.com/marketplace)\.
+
+**Have questions about an AWS Marketplace rule group?**  
+For questions about a rule group that's managed by an AWS Marketplace seller and to request changes in functionality, contact the provider's customer support team\. To find contact information, see the provider's listing at [AWS Marketplace](https://aws.amazon.com/marketplace)\.
+
+The AWS Marketplace rule group provider determines how to manage the rule group, for example how to update the rule group and whether the rule group is versioned\. The provider also determines the details of the rule group, including the rules, rule actions, and any labels that the rules add to matching web requests\. 
 
 ## Subscribing to AWS Marketplace managed rule groups<a name="marketplace-managed-rule-groups-subscribing"></a>
 
@@ -55,11 +62,11 @@ To stop the subscription charges for an AWS Marketplace managed rule group, you 
 
 ## Troubleshooting AWS Marketplace rule groups<a name="waf-managed-rule-group-troubleshooting"></a>
 
-If you find that an AWS Marketplace rule group is blocking legitimate traffic, you can troubleshoot the problem by performing the following steps\.<a name="waf-managed-rule-group-troubleshooting-procedure"></a>
+If you find that an AWS Marketplace rule group is blocking legitimate traffic, you can troubleshoot the problem by performing the following steps\.
 
 **To troubleshoot an AWS Marketplace rule group**
 
-1. Exclude the specific rules that are blocking legitimate traffic\. You can identify which rules are blocking which requests using either the AWS WAF sampled requests or AWS WAF logs\. You can identify the rules by looking at the `ruleGroupId` field in the log or the `RuleWithinRuleGroup` in the sampled request\. You can identify the rule in the pattern `<Seller Name>#<RuleGroup Name>#<Rule Name>`\. 
+1. Exclude the specific rules that are blocking legitimate traffic\. You can identify which rules are blocking which requests using either the AWS WAF sampled requests or AWS WAF logs\. You can identify the rules by looking at the `ruleGroupId` field in the log or the `RuleWithinRuleGroup` in the sampled request\. You can identify the rule in the pattern `<Seller Name>#<RuleGroup Name>#<Rule Name>`\.
 
 1. If excluding specific rules does not solve the problem, you can change the action for the AWS Marketplace rule group from **No override** to **Override to count**\. This allows the web request to pass through, regardless of the individual rule actions within the rule group\. This also provides you with Amazon CloudWatch metrics for the rule group\.
 
@@ -67,4 +74,4 @@ If you find that an AWS Marketplace rule group is blocking legitimate traffic, y
 
 ### Contacting AWS support<a name="waf-managed-rule-group-troubleshooting-support"></a>
 
-For problems with AWS WAF or a rule group that is managed by AWS, contact AWS Support\. For problems with a rule group that is managed by an AWS AWS Marketplace seller, contact the provider's customer support team\. To find contact information, see the providers’s listing on AWS Marketplace\.
+For problems with AWS WAF or a rule group that is managed by AWS, contact AWS Support\. For problems with a rule group that is managed by an AWS Marketplace seller, contact the provider's customer support team\. To find contact information, see the provider's listing on AWS Marketplace\.

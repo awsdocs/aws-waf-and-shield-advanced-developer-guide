@@ -1,0 +1,5 @@
+# AWS Shield Advanced mitigation logic for Elastic IPs<a name="ddos-event-mitigation-logic-adv-eip"></a>
+
+When you protect an Elastic IP \(EIP\) with AWS Shield Advanced, Shield Advanced enhances the mitigations that Shield places during a DDoS event\. Shield Advanced DDoS mitigation systems replicate the Network ACL \(NACL\) configuration for the public subnet to which the EIP is associated\. For example, if your NACL is configured to block all UDP traffic, Shield Advanced merges that rule into the mitigations that Shield places\. 
+
+This additional functionality can help you to avoid availability risks due to traffic that's not valid for your application\. You can also use NACLs to block individual source IP addresses or source IP address CIDR ranges\. This can be a useful mitigation tool for DDoS attacks that aren't distributed\. It also allows you to easily manage your own allow lists or to block IP addresses that shouldn't communicate with your application, without relying on intervention by AWS engineers\.

@@ -1,6 +1,15 @@
 # Working with web ACLs<a name="web-acl-working-with"></a>
 
-When you make changes to web ACLs or web ACL components, like rules and rule groups, AWS WAF propagates the changes everywhere that the web ACL and its components are stored and used\. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others\. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area\. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another\. This temporary inconsistency can occur when you first associate a web ACL with an AWS resource and when you change a web ACL that is already associated with a resource\. Generally, any inconsistencies of this type last only a few seconds\.
+This section provides procedures for creating, managing, and using web ACLs through the AWS console\. 
+
+**Temporary inconsistencies during updates**  
+When you create or change a web ACL or other AWS WAF resources, the changes take a small amount of time to propagate to all areas where the resources are stored\. The propagation time can be from a few seconds to a number of minutes\. 
+
+The following are examples of the temporary inconsistencies that you might notice during change propagation: 
++ After you create a web ACL, if you try to associate it with a resource, you might get an exception indicating that the web ACL is unavailable\. 
++ After you add a rule group to a web ACL, the new rule group rules might be in effect in one area where the web ACL is used and not in another\.
++ After you change a rule action setting, you might see the old action in some places and the new action in others\. 
++ After you add an IP address to an IP set that is in use in a blocking rule, the new address might be blocked in one area while still allowed in another\.
 
 **Topics**
 + [Creating a web ACL](web-acl-creating.md)
@@ -8,4 +17,3 @@ When you make changes to web ACLs or web ACL components, like rules and rule gro
 + [Managing rule group behavior in a web ACL](web-acl-rule-group-settings.md)
 + [Associating or disassociating a web ACL with an AWS resource](web-acl-associating-aws-resource.md)
 + [Deleting a web ACL](web-acl-deleting.md)
-+ [Testing web ACLs](web-acl-testing.md)

@@ -7,7 +7,7 @@ To set up an administrator account for the first time, see [AWS Firewall Manager
 After you designate an account as an administrator account, if you later want to designate a different account as the administrator account, perform the following procedure\. 
 
 **Important**  
-To designate a different account, you first must revoke administrator privileges from the current administrator account\. When you revoke the privileges, all Firewall Manager policies created by that account are deleted\. You then must sign into Firewall Manager with the AWS Organizations management account to designate a new administrator account\. <a name="fms-change-administrator-procedure"></a>
+To designate a different account, you first must revoke administrator privileges from the current administrator account\. When you revoke the privileges, all Firewall Manager policies created by that account are deleted\. You then must sign into Firewall Manager with the AWS Organizations management account to designate a new administrator account\. 
 
 **To designate a different account as the AWS Firewall Manager administrator account \(console\)**
 

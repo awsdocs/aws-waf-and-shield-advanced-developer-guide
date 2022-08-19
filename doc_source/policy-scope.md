@@ -30,14 +30,16 @@ When policies are in place, Firewall Manager manages them continuously and appli
 If an account or resource goes out of scope for any reason, AWS Firewall Manager doesn't automatically remove protections or delete Firewall Manager\-managed resources unless you select the **Automatically remove protections from resources that leave the policy scope** check box\.
 
 **Note**  
-**Automatically remove protections from resources that leave the policy scope** is not available for AWS Shield Advanced or AWS WAF Classic policies\.
+The option **Automatically remove protections from resources that leave the policy scope** is not available for AWS Shield Advanced or AWS WAF Classic policies\.
 
 Selecting this check box directs AWS Firewall Manager to automatically clean up resources that Firewall Manager manages for accounts when those accounts leave the policy scope\. For example, Firewall Manager will disassociate a Firewall Manager\-managed web ACL from a protected customer resource when the customer resource leaves the policy scope\.
 
 To determine which resources should be removed from protection when a customer resource leaves the policy scope, Firewall Manager follows these guidelines:
 + *Default behavior*:
   + The associated AWS Config managed rules are deleted\. This behavior is independent of the check box\.
+  + Any associated AWS WAF web access control lists \(web ACLs\) that don't contain any resources are deleted\. This behavior is independent of the check box\.
   + Any protected resource that goes out of scope remains associated and protected\. For example, an Application Load Balancer or API from API Gateway that's associated with a web ACL remains associated with the web ACL, and the protection remains in place\.
 + *With the **Automatically remove protections from resources that leave the policy scope** check box selected*:
   + The associated AWS Config managed rules are deleted\. This behavior is independent of the check box\.
+  + Any associated AWS WAF web access control lists \(web ACLs\) that don't contain any resources are deleted\. This behavior is independent of the check box\.
   + Any protected resource that goes out of scope is automatically disassociated and removed from protection when it leaves the policy scope\. For example, an Elastic Inference accelerator or Amazon EC2 instance is automatically disassociated from the replicated security group when it leaves the policy scope\. The replicated security group and its resources are automatically removed from protection\.

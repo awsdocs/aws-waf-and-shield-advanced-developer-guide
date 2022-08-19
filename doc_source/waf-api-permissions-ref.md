@@ -10,7 +10,7 @@ You can use general AWS condition keys in your AWS WAF policies to express condi
 **Global and regional settings**  
 In the resource settings in this section, use the following `scope` and `region` settings: 
 + For CloudFront distributions, set *scope* to `global` and set *region* to `us-east-1`\.
-+ For an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API, set *scope* to `regional` and set the *region* to the region you're interested in\.
++ For an Amazon API Gateway REST API, an Application Load Balancer, an AWS AppSync GraphQL API, or an Amazon Cognito user pool, set *scope* to `regional` and set the *region* to the region you're interested in\.
 
 ## AWS WAF API permissions for references to resources<a name="waf-api-permissions-for-refs"></a>
 
@@ -63,12 +63,13 @@ The following operations don't follow the standard CRUD and list pattern and req
 For each operation, we list the required policy actions and their associated policy resources\. <a name="actions-related-to-objects-table_pdf"></a>
 
 [AssociateWebACL ](https://docs.aws.amazon.com/waf/latest/APIReference/API_AssociateWebACL.html)  
-**API Actions** – `wafv2:AssociateWebACL`, `elasticloadbalancing:SetWebACL`, `apigateway:SetWebACL`, `appsync:SetWebACL`  
+**API Actions** – `wafv2:AssociateWebACL`, `elasticloadbalancing:SetWebACL`, `apigateway:SetWebACL`, `appsync:SetWebACL`, `cognito-idp:AssociateWebACL`  
 **Resources** –  
 `arn:aws:wafv2:region:account-id:scope/webacl/entity-name/entity-ID`  
 `arn:aws:elasticloadbalancing:region:account-id:loadbalancer/app/ApplicationLoadBalancerName/ApplicationLoadBalancerID`  
 `arn:aws:apigateway:region::/restapis/api-ID/stages/stage-name`  
-`arn:aws:appsync:region:account-id:apis/GraphQLApiId`
+`arn:aws:appsync:region:account-id:apis/GraphQLApiId`  
+`arn:aws:cognito-idp:region:account-id:userpool/USER_POOL_ID`
 
 [CheckCapacity](https://docs.aws.amazon.com/waf/latest/APIReference/API_CheckCapacity.html)  
 **API Action** – `wafv2:CheckCapacity`  
@@ -79,12 +80,13 @@ For each operation, we list the required policy actions and their associated pol
 **Resource** – `arn:aws:wafv2:region:account-id:scope/managedruleset/*`
 
 [DisassociateWebACL](https://docs.aws.amazon.com/waf/latest/APIReference/API_DisassociateWebACL.html)  
-**API Actions** – `wafv2:DisassociateWebACL`, `elasticloadbalancing:SetWebACL`, `apigateway:SetWebACL`, `appsync:SetWebACL`  
+**API Actions** – `wafv2:DisassociateWebACL`, `elasticloadbalancing:SetWebACL`, `apigateway:SetWebACL`, `appsync:SetWebACL`, `cognito-idp:DisassociateWebACL`  
 **Resources** –  
 `arn:aws:wafv2:region:account-id:scope/webacl/entity-name/entity-ID`  
- `arn:aws:elasticloadbalancing:region:account-id:loadbalancer/app/ApplicationLoadBalancerName/ApplicationLoadBalancerID`  
+`arn:aws:elasticloadbalancing:region:account-id:loadbalancer/app/ApplicationLoadBalancerName/ApplicationLoadBalancerID`  
 `arn:aws:apigateway:region::/restapis/api-ID/stages/stage-name`  
-`arn:aws:appsync:region:account-id:apis/GraphQLApiId`
+`arn:aws:appsync:region:account-id:apis/GraphQLApiId`  
+`arn:aws:cognito-idp:region:account-id:userpool/USER_POOL_ID`
 
 [GetRateBasedStatementManagedKeys](https://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedStatementManagedKeys.html)  
 **API Action** – `wafv2:GetRateBasedStatementManagedKeys`  
@@ -94,6 +96,27 @@ For each operation, we list the required policy actions and their associated pol
 **API Action** – `wafv2:GetSampledRequests`  
 **Resource** – The resource permissions depend on the parameters that you specify in the API call\. You must have access to the web ACL that corresponds to the request for samples\. For example: `arn:aws:wafv2:region:account-id:scope/webacl/entity-name/entity-ID`
 
+[GetWebACLForResource](https://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACLForResource.html)  
+**API Action** – `wafv2:GetWebACLForResource`, `cognito-idp:GetWebACLForResource`   
+**Resource** – The resource permissions depend on the resource that you specify in the API call\. You must have access to the web ACL that corresponds to the request\.   
+**Resources** –  
+`arn:aws:wafv2:region:account-id:scope/webacl/entity-name/entity-ID`  
+`arn:aws:wafv2:region:account-id:scope/webacl/entity-name/entity-ID`  
+`arn:aws:elasticloadbalancing:region:account-id:loadbalancer/app/ApplicationLoadBalancerName/ApplicationLoadBalancerID`  
+`arn:aws:apigateway:region::/restapis/api-ID/stages/stage-name`  
+`arn:aws:appsync:region:account-id:apis/GraphQLApiId`  
+`arn:aws:cognito-idp:region:account-id:userpool/USER_POOL_ID`
+
 [ListAvailableManagedRuleGroups](https://docs.aws.amazon.com/waf/latest/APIReference/API_ListAvailableManagedRuleGroups.html)  
 **API Action** – `wafv2:ListAvailableManagedRuleGroups`  
 **Resource** – `arn:aws:wafv2:region:account-id:scope/managedruleset/*`
+
+[ListResourcesForWebACL](https://docs.aws.amazon.com/waf/latest/APIReference/API_ListResourcesForWebACL.html)  
+**API Action** – `wafv2:ListResourcesForWebACL`, `cognito-idp:ListResourcesForWebACL`  
+**Resources** – The resource permissions depend on the resource that you have associated with the web ACL\. You must have access to the web ACL that corresponds to the request\.  
+`arn:aws:wafv2:region:account-id:scope/webacl/entity-name/entity-ID`  
+`arn:aws:wafv2:region:account-id:scope/webacl/entity-name/entity-ID`  
+`arn:aws:elasticloadbalancing:region:account-id:loadbalancer/app/ApplicationLoadBalancerName/ApplicationLoadBalancerID`  
+`arn:aws:apigateway:region::/restapis/api-ID/stages/stage-name`  
+`arn:aws:appsync:region:account-id:apis/GraphQLApiId`  
+`arn:aws:cognito-idp:region:account-id:userpool/USER_POOL_ID`

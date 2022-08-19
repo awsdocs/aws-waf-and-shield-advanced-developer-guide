@@ -1,6 +1,6 @@
-# Managing and using a web access control list \(web ACL\)<a name="web-acl"></a>
+# Web access control lists \(web ACLs\)<a name="web-acl"></a>
 
-A web access control list \(web ACL\) gives you fine\-grained control over all of the HTTP\(S\) web requests that your protected resource responds to\. You can protect Amazon CloudFront, Amazon API Gateway, Application Load Balancer, and AWS AppSync resources\. 
+A web access control list \(web ACL\) gives you fine\-grained control over all of the HTTP\(S\) web requests that your protected resource responds to\. You can protect Amazon CloudFront, Amazon API Gateway, Application Load Balancer, AWS AppSync, and Amazon Cognito resources\. 
 
 You can use criteria like the following to allow or block requests: 
 + IP address origin of the request
@@ -19,7 +19,7 @@ To specify your web request inspection and handling criteria, perform the follow
 
 1. Add any rule groups that you want to use in your web ACL\. Managed rule groups usually contain rules that block web requests\. For information about rule groups, see [Rule groups](waf-rule-groups.md)\. 
 
-1. Specify additional matching criteria and handling instructions in one or more rules\. To add more than one rule, start with `AND` or `OR` rule statements and nest the rules that you want to combine under those\. If you want to negate a rule option, nest the rule in a NOT statement\. You can optionally use a rate\-based rule instead of a regular rule to limit the number of requests from any single IP address that meets the conditions\. For information about rules, see [AWS WAF rules](waf-rules.md)\.
+1. Specify additional matching criteria and handling instructions in one or more rules\. To add more than one rule, start with `AND` or `OR` rule statements and nest the rules that you want to combine under those\. If you want to negate a rule option, nest the rule in a NOT statement\. You can optionally use a rate\-based rule instead of a regular rule to limit the number of requests from any single IP address that meets the conditions\. For information about rules, see [Rules](waf-rules.md)\.
 
 If you add more than one rule to a web ACL, AWS WAF evaluates the rules in the order that they're listed for the web ACL\. For more information, see [Web ACL rule and rule group evaluation](web-acl-processing.md)\.
 

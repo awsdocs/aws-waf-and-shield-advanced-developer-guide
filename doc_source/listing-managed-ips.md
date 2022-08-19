@@ -14,7 +14,7 @@ The following shows the syntax for retrieving the list of blocked IP addresses f
 aws wafv2 get-rate-based-statement-managed-keys --scope=CLOUDFRONT --region=us-east-1 --web-acl-name=WebACLName --web-acl-id=WebACLId --rule-name=RuleName
 ```
 
-The following shows the syntax for a regional application, an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API\. 
+The following shows the syntax for a regional application, an Amazon API Gateway REST API, an Application Load Balancer, an AWS AppSync GraphQL API, or an Amazon Cognito user pool\. 
 
 ```
 aws wafv2 get-rate-based-statement-managed-keys --scope=REGIONAL --region=region --web-acl-name=WebACLName --web-acl-id=WebACLId --rule-name=RuleName

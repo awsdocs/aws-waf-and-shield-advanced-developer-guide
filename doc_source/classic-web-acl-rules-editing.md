@@ -1,7 +1,7 @@
 # Adding and removing conditions in a rule<a name="classic-web-acl-rules-editing"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 You can change a rule by adding or removing conditions\. <a name="classic-web-acl-rules-editing-procedure"></a>
@@ -9,6 +9,8 @@ You can change a rule by adding or removing conditions\. <a name="classic-web-ac
 **To add or remove conditions in a rule**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. In the navigation pane, choose **Rules**\.
 

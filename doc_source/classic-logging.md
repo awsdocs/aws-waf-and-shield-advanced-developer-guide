@@ -1,7 +1,7 @@
 # Logging Web ACL traffic information<a name="classic-logging"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 You can enable logging to get detailed information about traffic that is analyzed by your web ACL\. Information that is contained in the logs include the time that AWS WAF Classic received the request from your AWS resource, detailed information about the request, and the action for the rule that each request matched\.
@@ -26,9 +26,11 @@ One AWS WAF Classic log is equivalent to one Kinesis Data Firehose record\. If y
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
+
 1. In the navigation pane, choose **Web ACLs**\.
 
-1. Choose the web ACL that you want to enable logging for\.
+1. Choose the name of the web ACL that you want to enable logging for\. This opens a page with the web ACL's details in the right pane\.
 
 1. On the **Logging** tab, choose **Enable logging**\.
 
@@ -44,7 +46,7 @@ When you successfully enable logging, AWS WAF Classic will create a service link
 
 1. In the navigation pane, choose **Web ACLs**\.
 
-1. Choose the web ACL that you want to disable logging for\.
+1. Choose the name of the web ACL that you want to disable logging for\. This opens a page with the web ACL's details in the right pane\.
 
 1. On the **Logging** tab, choose **Disable logging**\.
 
@@ -70,7 +72,7 @@ When you successfully enable logging, AWS WAF Classic will create a service link
                           "nonTerminatingMatchingRules":[                  
                                                          {"action" : "COUNT",   
                                                          "ruleId" : "4659b169-2083-4a91-bbd4-08851a9aaf74"}       
-                                                        ]
+                                                        ],
                           "excludedRules":              [
                                                          {"exclusionType" : "EXCLUDED_AS_COUNT",   
                                                           "ruleId" : "5432a230-0113-5b83-bbb2-89375c5bfa98"}

@@ -3,7 +3,7 @@
 This tutorial shows how to use AWS WAF to perform the following tasks:
 + Set up AWS WAF\.
 + Create a web access control list \(web ACL\) using the wizard in the AWS WAF console\. 
-+ Choose the AWS resources that you want AWS WAF to inspect web requests for\. This tutorial covers the steps for Amazon CloudFront\. The process is essentially the same for an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API\. 
++ Choose the AWS resources that you want AWS WAF to inspect web requests for\. This tutorial covers the steps for Amazon CloudFront\. The process is essentially the same for an Amazon API Gateway REST API, an Application Load Balancer, an AWS AppSync GraphQL API, or an Amazon Cognito user pool\. 
 + Add the rules and rule groups that you want to use to filter web requests\. For example, you can specify the IP addresses that the requests originate from and values in the request that are used only by attackers\. For each rule, you specify how to handle matching web requests\. You can block them, allow them, count them, or insert a CAPTCHA check against them\. You define an action for each rule that you define inside a web ACL and for each rule that you define inside a rule group\. 
 + Specify a default action for the web ACL, either `Block` or `Allow`\. This is the action that AWS WAF takes when a web request doesn't match any of the rules\.
 
@@ -15,7 +15,7 @@ AWS typically bills you less than US $0\.25 per day for the resources that you c
 + [Step 2: Create a Web ACL](#getting-started-wizard-create-web-acl)
 + [Step 3: Add a string match rule](#getting-started-wizard-create-string-condition)
 + [Step 4: Add an AWS Managed Rules rule group](#getting-started-wizard-add-rule-group)
-+ [Step 5: Finish your Web ACL configuration](#getting-started-wizard-finish-webacl-options)
++ [Step 5: Finish your web ACL configuration](#getting-started-wizard-finish-webacl-options)
 + [Step 6: Clean up your resources](#getting-started-wizard-clean-up)
 
 ## Step 1: Set up AWS WAF<a name="getting-started-aws-account"></a>
@@ -26,7 +26,7 @@ If not, go to [Setting up](setting-up-waf.md) and perform at least the first two
 
 ## Step 2: Create a Web ACL<a name="getting-started-wizard-create-web-acl"></a>
 
-The AWS WAF console guides you through the process of configuring AWS WAF to block or allow web requests based on conditions that you specify, such as the IP addresses that the requests originate from or values in the requests\. In this step, you create a web ACL\. For more information about AWS WAF web ACLs, see [Managing and using a web access control list \(web ACL\)](web-acl.md)\.<a name="getting-started-wizard-create-web-acl-procedure"></a>
+The AWS WAF console guides you through the process of configuring AWS WAF to block or allow web requests based on criteria that you specify, such as the IP addresses that the requests originate from or values in the requests\. In this step, you create a web ACL\. For more information about AWS WAF web ACLs, see [Web access control lists \(web ACLs\)](web-acl.md)\.
 
 **To create a web ACL**
 
@@ -57,12 +57,12 @@ In this step, you create a rule with a string match statement and indicate what 
 This statement type operates on a web request component, and requires the following request component settings: 
 + **Request components** – The part of the web request to inspect, for example, a query string or the body\.
 **Warning**  
-If you use the request component **Body** or **JSON body**, AWS WAF only inspects the first 8 KB\. For information, see [Web request body inspection](web-request-body-inspection.md)\.
+If you inspect the request components **Body**, **JSON body**, **Headers**, or **Cookies**, read about the limitations on how much content AWS WAF can inspect at [Oversize handling for request components](waf-rule-statement-oversize-handling.md)\.
 
-  For information about web request components, see [Request component](waf-rule-statement-fields.md#waf-rule-statement-request-component)\.
-+ **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For information, see [Text transformations](waf-rule-statement-fields.md#waf-rule-statement-transformation)\.
+  For information about web request components, see [Web request components](waf-rule-statement-fields.md)\.
++ **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For information, see [Text transformations](waf-rule-statement-transformation.md)\.
 
-For additional information about AWS WAF rules, see [AWS WAF rules](waf-rules.md)\. <a name="getting-started-wizard-create-string-condition-procedure"></a>
+For additional information about AWS WAF rules, see [Rules](waf-rules.md)\. 
 
 **To create a string match rule statement**
 
@@ -79,7 +79,7 @@ This procedure uses the **Rule visual editor**\.
 
    The other options are for the logical rule statement types\. You can use them to combine or negate the results of other rule statements\. 
 
-1. On **Statement**, for **Inspect**, open the dropdown and choose the web request component that you want AWS WAF to look for your string in\. For this example, choose **Header**\.
+1. On **Statement**, for **Inspect**, open the dropdown and choose the web request component that you want AWS WAF to inspect\. For this example, choose **Header**\.
 
    When you choose **Header**, you also specify which header you want AWS WAF to inspect\. Enter **User\-Agent**\. This value isn't case sensitive\.
 
@@ -99,7 +99,7 @@ This procedure uses the **Rule visual editor**\.
 
 ## Step 4: Add an AWS Managed Rules rule group<a name="getting-started-wizard-add-rule-group"></a>
 
-AWS Managed Rules offers a set of managed rule groups for your use, most of which are free of charge to AWS WAF customers\. For more information about rule groups, see [Rule groups](waf-rule-groups.md)\. We'll add an AWS Managed Rules rule group to this web ACL\. <a name="getting-started-wizard-add-rule-group-procedure"></a>
+AWS Managed Rules offers a set of managed rule groups for your use, most of which are free of charge to AWS WAF customers\. For more information about rule groups, see [Rule groups](waf-rule-groups.md)\. We'll add an AWS Managed Rules rule group to this web ACL\. 
 
 **To add an AWS Managed Rules rule group**
 
@@ -117,7 +117,7 @@ AWS Managed Rules offers a set of managed rule groups for your use, most of whic
 
 1. In the **Add managed rule groups** page, choose **Add rules**\. This returns you to the **Add rules and rule groups** page\.
 
-## Step 5: Finish your Web ACL configuration<a name="getting-started-wizard-finish-webacl-options"></a>
+## Step 5: Finish your web ACL configuration<a name="getting-started-wizard-finish-webacl-options"></a>
 
 When you're done adding rules and rule groups to your web ACL configuration, finish up by managing the priority of the rules in the web ACL and configuring settings like metrics, tagging, and logging\. 
 
@@ -125,11 +125,11 @@ When you're done adding rules and rule groups to your web ACL configuration, fin
 
 1. On the **Add rules and rule groups** page, choose **Next**\. 
 
-1. On the **Set rule priority** page, you can see the processing order for the rules and rule groups in the web ACL\. AWS WAF processes them starting from the top\. You can change the processing order by moving them up and down\. To do this, select one in the list and choose **Move up** or **Move down**\.
+1. On the **Set rule priority** page, you can see the processing order for the rules and rule groups in the web ACL\. AWS WAF processes them starting from the top of the list\. You can change the processing order by moving the rules up or down\. To do this, select one in the list and choose **Move up** or **Move down**\. For more information about rule priority, see [Processing order of rules and rule groups in a web ACL](web-acl-processing-order.md)\. 
 
 1. Choose **Next**\.
 
-1. On the **Configure metrics** page, for **Amazon CloudWatch metrics**, you can see the planned metrics for your rules and rule groups and you can see the web request sampling options\. For information about Amazon CloudWatch metrics, see [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)\. For information about viewing sampled requests, see [Viewing a sample of web requests](web-acl-testing.md#web-acl-testing-view-sample)\.
+1. On the **Configure metrics** page, for **Amazon CloudWatch metrics**, you can see the planned metrics for your rules and rule groups and you can see the web request sampling options\. For information about Amazon CloudWatch metrics, see [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)\. For information about viewing sampled requests, see [Viewing a sample of web requests](web-acl-testing-view-sample.md)\.
 
 1. Choose **Next**\.
 
@@ -142,13 +142,13 @@ The wizard returns you to the **Web ACL** page, where your new web ACL is listed
 You've now successfully completed the tutorial\. To prevent your account from accruing additional AWS WAF charges, clean up the AWS WAF objects that you created\. Alternatively, you can change the configuration to match the web requests that you really want to manage using AWS WAF\.
 
 **Note**  
-AWS typically bills you less than US $0\.25 per day for the resources that you create during this tutorial\. When you're finished, we recommend that you delete the resources to prevent incurring unnecessary charges\. <a name="getting-started-wizard-clean-up-procedure"></a>
+AWS typically bills you less than US $0\.25 per day for the resources that you create during this tutorial\. When you're finished, we recommend that you delete the resources to prevent incurring unnecessary charges\. 
 
 **To delete the objects that AWS WAF charges for**
 
 1. In the **Web ACL** page, select your web ACL from the list and choose **Edit**\. 
 
-1. On **Associated AWS resources \- optional**, select all associated resources, and then choose **Remove**\. This disassociates the web ACL from your AWS resources\. 
+1. On the **Associated AWS resources** tab, for each associated resource, select the radio button next to the resource name and then choose **Disassociate**\. This disassociates the web ACL from your AWS resources\. 
 
 1. In each of the following screens, choose **Next** until you return to the **Web ACL** page\.
 

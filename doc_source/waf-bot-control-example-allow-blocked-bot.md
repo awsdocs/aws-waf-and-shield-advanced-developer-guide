@@ -4,7 +4,7 @@ It's possible for a bot to be blocked by more than one of the Bot Control rules\
 
 If a AWS WAF Bot Control rule is blocking a bot that you do not want to block, do the following:
 
-1. Identify the Bot Control rule that's blocking the bot by checking the logs\. The blocking rule will be specified in the logs in the fields whose names start with `terminatingRule`\. For information about the web ACL logs, see [Logging and monitoring web ACL traffic](logging.md)\. Note the label that the rule is adds to the requests\. 
+1. Identify the Bot Control rule that's blocking the bot by checking the logs\. The blocking rule will be specified in the logs in the fields whose names start with `terminatingRule`\. For information about the web ACL logs, see [Logging web ACL traffic](logging.md)\. Note the label that the rule is adds to the requests\. 
 
 1. In your web ACL, exclude the blocking rule from the rule group\. To do this in the console, edit the rule group inside the web ACL and set the blocking rule to count\. This ensures that the bot is not blocked by the rule, while still allowing the rule to apply its label to matching requests\. 
 
@@ -47,34 +47,37 @@ The following rule must run after the preceding Bot Control managed rule group i
 
 ```
 {
-  "Rule": {
-    "Name": "match_rule",
-    "Statement": {
-      "AndStatement": {
-        "Statements": [
-          {
-            "LabelMatchStatement": {
-              "Scope": "LABEL",
-              "Key": "awswaf:managed:aws:bot-control:bot:category:monitoring"
-            }
-          },
-          {
-            "NotStatement": {
-              "Statement": {
-                "LabelMatchStatement": {
-                  "Scope": "LABEL",
-                  "Key": "awswaf:managed:aws:bot-control:bot:name:pingdom"
+      "Name": "match_rule",
+      "Priority": 0,
+      "Statement": {
+        "AndStatement": {
+          "Statements": [
+            {
+              "LabelMatchStatement": {
+                "Scope": "LABEL",
+                "Key": "awswaf:managed:aws:bot-control:bot:category:monitoring"
+              }
+            },
+            {
+              "NotStatement": {
+                "Statement": {
+                  "LabelMatchStatement": {
+                    "Scope": "LABEL",
+                    "Key": "awswaf:managed:aws:bot-control:bot:name:pingdom"
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
+      },
+      "Action": {
+        "Block": {}
+      },
+      "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "match_rule"
       }
-    },
-    "RuleLabels": [],
-    "Action": {
-      "Block": {}
-    }
-  }
 }
 ```

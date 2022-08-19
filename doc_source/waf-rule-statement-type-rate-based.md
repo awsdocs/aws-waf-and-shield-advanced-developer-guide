@@ -6,6 +6,13 @@ AWS WAF tracks and manages web requests separately for each instance of a rate\-
 
 When the rule action triggers, AWS WAF applies the action to additional requests from the IP address until the request rate falls below the limit\. It can take a minute or two for the action change to go into effect\. 
 
+You can retrieve the list of IP addresses that are currently blocked due to rate limiting\. For information, see [Listing IP addresses blocked by rate\-based rules](listing-managed-ips.md)\.
+
+The following caveats apply to AWS WAF rate\-based rules: 
++ The minimum rate that you can set is 100\.
++ AWS WAF checks the rate of requests every 30 seconds, and counts requests for the prior five minutes each time\. Because of this, it's possible for an IP address to send requests at too high a rate for 30 seconds before AWS WAF detects and blocks it\. 
++ AWS WAF can block up to 10,000 IP addresses\. If more than 10,000 IP addresses send high rates of requests at the same time, AWS WAF will only block 10,000 of them\. 
+
 You can narrow the scope of the requests that AWS WAF tracks and counts\. To do this, you nest another, scope\-down statement inside the rate\-based statement\. Then, AWS WAF only counts requests that match the scope\-down statement\. For information about scope\-down statements, see [Scope\-down statements](waf-rule-scope-down-statements.md)\.
 
 For example, based on recent requests that you've seen from an attacker in the United States, you might create a rate\-based rule with the following scope\-down statement: 
@@ -13,12 +20,12 @@ For example, based on recent requests that you've seen from an attacker in the U
   + A geo\-match match statement that specifies requests originating in the United States\.
   + A string match statement that searches in the `User-Agent` header for the string `BadBot`\.
 
-Let's say that you also set a rate limit of 1,000\. For each IP address, AWS WAF counts requests that meet both of the conditions\. Requests that don't meet both conditions aren't counted\. If the count for an IP address exceeds 1,000 requests in any 5\-minute time span, the rule's action triggers against that IP address\. 
+Let's say that you also set a rate limit of 1,000\. For each IP address, AWS WAF counts requests that meet the criteria for both of the nested statements\. Requests that don't meet both aren't counted\. If the count for an IP address exceeds 1,000 requests in any 5\-minute time span, the rule's action triggers against that IP address\. 
 
 As another example, you might want to limit requests to the login page on your website\. To do this, you could create a rate\-based rule with the following nested string match statement: 
 + The **Inspect** **Request component** is `URI path`\.
 + The **Match type** is `Starts with string`\. 
-+ The **String to match** is `login`\. 
++ The **String to match** is `/login`\. 
 
 By adding this rate\-based rule to a web ACL, you could limit requests to your login page without affecting the rest of your site\.
 

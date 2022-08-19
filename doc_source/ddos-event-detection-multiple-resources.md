@@ -1,0 +1,12 @@
+# Detection logic for multiple resources in an application<a name="ddos-event-detection-multiple-resources"></a>
+
+AWS Shield Advanced protection groups allow you to create collections of protected resources that are part of the same application\. You can choose which protected resources to place in a group or indicate that all resources of the same type should be treated as one group\. For example, you might create a group of all Application Load Balancers\. When you create a protection group, Shield Advanced detection aggregates all traffic for the protected resources within the group\. This is useful if you have many resources that each have a small amount of traffic, but with a large aggregated volume\. You can also use protection groups to preserve application baselines, for the case of blue\-green deployments where traffic is transferred between protected resources\. 
+
+You can choose to aggregate the traffic in your protection group in one of the following ways: 
++ **Sum** – This aggregation combines all traffic across resources in the protection group\. You can use this aggregation to ensure that newly created resources have an existing baseline and to reduce detection sensitivity, which can help prevent false positives\.
++ **Mean** – This aggregation uses the average of all traffic across the protection group\. You can use this aggregation for applications where traffic across resources is uniform, like load balancers\.
++ **Max** – This aggregation uses the highest traffic of any resource in the protection group\. You can use this aggregation when there are multiple tiers of an application in a protection group\. For example, you may have a protection group that includes a CloudFront distribution, its Application Load Balancer origin, and the Application Load Balancer’s Amazon EC2 instance targets\.
+
+You can also use protection groups to improve the speed at which Shield Advanced places mitigations, for attacks that targets multiple internet\-facing Elastic IPs or AWS Global Accelerator standard accelerators\. When one resource in a protection group is targeted, Shield Advanced establishes confidence for the other resources in the group\. This places Shield Advanced detection on alert and can reduce the time required to create additional mitigations\.
+
+To learn more about protection groups, see [AWS Shield Advanced protection groups](ddos-protection-groups.md)\.

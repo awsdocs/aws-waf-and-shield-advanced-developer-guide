@@ -17,3 +17,4 @@ You incur charges for your AWS Config settings, according to AWS Config pricing\
    + **Security group policy** – Enable Config for the resource types EC2 SecurityGroup, EC2 Instance, and EC2 NetworkInterface\.
    + **Network Firewall policy** – Enable Config for the resource types NetworkFirewall FirewallPolicy, NetworkFirewall RuleGroup, EC2 VPC, EC2 InternetGateway, EC2 RouteTable, and EC2 Subnet\. 
    + **DNS Firewall policy** – Enable Config for the resource types DNSFirewall RuleGroup and EC2 VPC\. 
+   + **Third\-party firewall policy** – Enable Config for the resource types Amazon EC2 VPC, Amazon EC2 InternetGateway, Amazon EC2 RouteTable, Amazon EC2 Subnet, and Amazon EC2 VPCEndpoint\.

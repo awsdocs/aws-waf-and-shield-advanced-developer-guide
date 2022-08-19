@@ -3,9 +3,9 @@
 The label match statement inspects the labels that are on the web request against a string specification\. The labels that are available to a rule for inspection are those that have already been added to the web request by other rules in the same web ACL evaluation\. Labels don't persist outside of the web ACL evaluation\. 
 
 **Note**  
-A label match statement can only see labels from rules that are evaluated earlier in the web ACL\. For information about how AWS WAF evaluates the rules and rule groups in web ACL processing, see [Processing order of rules and rule groups in a web ACL](web-acl-processing-order.md)\.
+A label match statement can only see labels from rules that are evaluated earlier in the web ACL\. For information about how AWS WAF evaluates the rules and rule groups in a web ACL, see [Processing order of rules and rule groups in a web ACL](web-acl-processing-order.md)\.
 
-For more information about labels, see [AWS WAF labels on web requests](waf-rule-labels.md)\.
+For more information about labels, see [Labels on web requests](waf-labels.md)\.
 
 **Nestable** – You can nest this statement type\. 
 

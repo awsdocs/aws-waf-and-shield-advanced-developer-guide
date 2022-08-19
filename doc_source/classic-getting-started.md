@@ -1,7 +1,7 @@
 # Getting started with AWS WAF Classic<a name="classic-getting-started"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 This tutorial shows how to use AWS WAF Classic to perform the following tasks:
@@ -41,6 +41,8 @@ The AWS WAF Classic console guides you through the process of configuring AWS WA
 **To create a web ACL**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. If this is your first time using AWS WAF Classic, choose **Go to AWS WAF Classic**, and then choose **Configure web ACL**\. 
 
@@ -310,7 +312,9 @@ AWS typically bills you less than US $0\.25 per day for the resources that you c
 
    1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
-   1. Choose the web ACL that you want to delete\.
+      If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
+
+   1. Choose the name of the web ACL that you want to delete\. This opens a page with the web ACL's details in the right pane\. 
 
    1. In the right pane, on the **Rules** tab, go to the **AWS resources using this web ACL** section\. For the CloudFront distribution that you associated the web ACL with, choose the **x** in the **Type** column\. 
 
@@ -330,7 +334,7 @@ AWS typically bills you less than US $0\.25 per day for the resources that you c
 
    1. In the navigation pane, choose **Web ACLs**\.
 
-   1. Choose the web ACL that you created during the tutorial\.
+   1. Choose the name of the web ACL that you created during the tutorial\. This opens a page with the web ACL's details in the right pane\.
 
    1. On the **Rules** tab, choose **Edit web ACL**\. 
 

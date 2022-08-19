@@ -1,95 +1,21 @@
-# Testing web ACLs<a name="web-acl-testing"></a>
+# Testing and tuning your AWS WAF protections<a name="web-acl-testing"></a>
 
-To ensure that you don't accidentally configure AWS WAF to block web requests that you want to allow or allow requests that you want to block, we recommend that you test your web ACL thoroughly before you start using it on your website or web application\. 
+We recommend that you test and tune any changes to your AWS WAF web ACL before applying them to your website or web application traffic\. 
 
-**Topics**
-+ [Counting the web requests that match the rules in a web ACL](#web-acl-testing-count)
-+ [Viewing a sample of web requests](#web-acl-testing-view-sample)
+**Production traffic risk**  
+Before you deploy your web ACL implementation for production traffic, test and tune it in a staging or testing environment until you are comfortable with the potential impact to your traffic\. Then test and tune the rules in count mode with your production traffic before enabling them\. 
 
-## Counting the web requests that match the rules in a web ACL<a name="web-acl-testing-count"></a>
+This section provides guidance for testing and tuning your AWS WAF web ACLs, rules, rule groups, IP sets, and regex pattern sets\.
 
-When you add rules to a web ACL, you specify whether you want AWS WAF to allow, block, or count the web requests that match all the conditions in that rule\. We recommend that you begin with the following configuration:
-+ Configure all the rules in a web ACL to count web requests\. For information about how to do this for a rule group in a web ACL, see [Setting rule actions to count in a rule group](web-acl-rule-group-settings.md#web-acl-rule-group-rule-to-count)\.
-+ Set the default action for the web ACL to allow requests\.
+This section also provides general guidance for testing your use of rule groups that are managed by someone else\. These include AWS Managed Rules rule groups, AWS Marketplace managed rule groups, and rule groups that are shared with you by another account\. For these rule groups, also follow any guidance that you get from the rule group provider\.
++ For the Bot Control AWS Managed Rules rule group, see [Testing and deploying AWS WAF Bot Control](waf-bot-control-deploying.md)\. 
++ For the account takeover prevention AWS Managed Rules rule group, see [Testing and deploying ATP](waf-atp-deploying.md)\. 
 
-In this configuration, AWS WAF inspects each web request based on the match statement in the first rule\. If the web request matches a rule, AWS WAF increments a counter for that rule\. Then AWS WAF inspects the web request based on the match statement in the next rule\. If the web request matches the rule, AWS WAF increments a counter for the rule\. This continues until AWS WAF has inspected the request against the match statements in all of your rules\. 
+**Temporary inconsistencies during updates**  
+When you create or change a web ACL or other AWS WAF resources, the changes take a small amount of time to propagate to all areas where the resources are stored\. The propagation time can be from a few seconds to a number of minutes\. 
 
-After you've configured all the rules in a web ACL to count requests and associated the web ACL with one or more AWS resources \(an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API\) you can view the resulting counts in an Amazon CloudWatch graph\. For each rule in a web ACL and for all the requests that an associated resource forwards to AWS WAF for a web ACL, CloudWatch lets you do the following:
-+ View data for the preceding hour or preceding three hours,
-+ Change the interval between data points
-+ Change the calculation that CloudWatch performs on the data, such as maximum, minimum, average, or sum
-
-**Note**  
-AWS WAF with CloudFront is a global service and metrics are available only when you choose the **US East \(N\. Virginia\)** Region in the AWS Management Console\. If you choose another region, no AWS WAF metrics will appear in the CloudWatch console\.<a name="web-acl-testing-count-procedure"></a>
-
-**To view data for the rules in a web ACL**
-
-1. Sign in to the AWS Management Console and open the CloudWatch console at [https://console\.aws\.amazon\.com/cloudwatch/](https://console.aws.amazon.com/cloudwatch/)\.
-
-1. In the navigation pane, under **Metrics**, choose **All metrics** and then search under the **Browse** tab for `WAFV2` metrics\. 
-
-1. Select the check box for the web ACL that you want to view data for\.
-
-1. Change the applicable settings:  
-**Statistic**  
-Choose the calculation that CloudWatch performs on the data\.  
-**Time range**  
-Choose whether you want to view data for the preceding hour or the preceding three hours\.  
-**Period**  
-Choose the interval between data points in the graph\.  
-**Rules**  
-Choose the rules for which you want to view data\.
-
-   Note the following:
-   + If you recently associated a web ACL with an AWS resource, you might need to wait a few minutes for data to appear in the graph and for the metric for the web ACL to appear in the list of available metrics\.
-   + If you associate more than one resource with a web ACL, the CloudWatch data will include requests for all of them\.
-   + You can hover the mouse cursor over a data point to get more information\.
-   + The graph doesn't refresh itself automatically\. To update the display, choose the refresh \(![\[Icon to refresh the CloudWatch graph\]](http://docs.aws.amazon.com/waf/latest/developerguide/images/cloudwatch-refresh-icon.png)\) icon\.
-
-1. \(Optional\) View detailed information about individual requests that an associated AWS resource has forwarded to AWS WAF\. For more information, see [Viewing a sample of web requests](#web-acl-testing-view-sample)\.
-
-1. If you determine that a rule is intercepting requests that you don't want it to intercept, change the applicable settings\. For more information, see [Managing and using a web access control list \(web ACL\)](web-acl.md)\.
-
-   When you're satisfied that all of your rules are intercepting only the correct requests, change the action for each of your rules to **Allow** or **Block**\. For more information, see [Editing a web ACL](web-acl-editing.md)\.
-
-## Viewing a sample of web requests<a name="web-acl-testing-view-sample"></a>
-
-In the AWS WAF console, if you have request sampling enabled, you can view a sample of the requests that an associated resource has forwarded to AWS WAF for inspection\. For each sampled request, you can view detailed data about the request, such as the originating IP address and the headers included in the request\. You also can view which rule the request matched, and whether the rule is configured to allow or block requests\.
-
-The sample of requests contains up to 100 requests that matched all the conditions in each rule and another 100 requests for the default action, which applies to requests that didn't match all the conditions in any rule\. The requests in the sample come from all the protected resources that have received requests for your content in the previous 15 minutes\.<a name="web-acl-testing-view-sample-procedure"></a>
-
-**To view a sample of the web requests that an associated resource has forwarded to AWS WAF**
-
-1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
-
-1. In the navigation pane, choose **Web ACLs**
-
-1. Choose the web ACL for which you want to view requests\.
-
-1. In the **Overview** tab, the **Sampled requests** table displays the following values for each request:  
-**Source IP**  
-Either the IP address that the request originated from or, if the viewer used an HTTP proxy or an Application Load Balancer to send the request, the IP address of the proxy or Application Load Balancer\.   
-**URI**  
-The part of a URL that identifies a resource, for example, `/images/daily-ad.jpg`\.  
-**Matches rule**  
-Identifies the first rule in the web ACL for which the web request matched all the conditions\. If a web request doesn't match all the conditions in any rule in the web ACL, the value of **Matches rule** is **Default**\.  
-Note that when a web request matches all the conditions in a rule and the action for that rule is **Count**, AWS WAF continues inspecting the web request based on subsequent rules in the web ACL\. In this case, a web request could appear twice in the list of sampled requests: once for the rule that has an action of **Count** and again for a subsequent rule or for the default action\.  
-**Action**  
-Indicates whether the action for the corresponding rule is **Allow**, **Block**, or **Count**\.  
-**Time**  
-The time that AWS WAF received the request from Amazon CloudFront, Amazon API Gateway, Application Load Balancer, or AWS AppSync\.
-
-1. To display additional information about the request, choose the arrow on the left side of the IP address for that request\. AWS WAF displays the following information:  
-**Source IP**  
-The same IP address as the value in the **Source IP** column in the table\.  
-**Country**  
-The two\-letter country code of the country that the request originated from\. If the viewer used an HTTP proxy or an Application Load Balancer to send the request, this is the two\-letter country code of the country that the HTTP proxy or an Application Load Balancer is in\.  
-For a list of two\-letter country codes and the corresponding country names, see the Wikipedia entry [ISO 3166\-1 alpha\-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)\.  
-**Method**  
-The HTTP request method for the request: `GET`, `HEAD`, `OPTIONS`, `PUT`, `POST`, `PATCH`, or `DELETE`\.   
-**URI**  
-The same URI as the value in the **URI** column in the table\.  
-**Request headers**  
-The request headers and header values in the request\.
-
-1. To refresh the list of sample requests, choose **Get new samples**\.
+The following are examples of the temporary inconsistencies that you might notice during change propagation: 
++ After you create a web ACL, if you try to associate it with a resource, you might get an exception indicating that the web ACL is unavailable\. 
++ After you add a rule group to a web ACL, the new rule group rules might be in effect in one area where the web ACL is used and not in another\.
++ After you change a rule action setting, you might see the old action in some places and the new action in others\. 
++ After you add an IP address to an IP set that is in use in a blocking rule, the new address might be blocked in one area while still allowed in another\.

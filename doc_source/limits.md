@@ -5,7 +5,7 @@ This is the latest version of AWS WAF\. For AWS WAF Classic, see [AWS WAF Classi
 
 AWS WAF is subject to the following quotas \(formerly referred to as limits\)\. These quotas are the same for all Regions in which AWS WAF is available\. Each Region is subject to these quotas individually\. The quotas are not cumulative across Regions\.
 
-AWS WAF has default quotas on the maximum number of entities you can have per account\. You can [request an increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-waf) in these quotas\.
+AWS WAF has default quotas on the maximum number of entities you can have per account\. You can [request an increase](https://console.aws.amazon.com/servicequotas/home/services/wafv2/quotas) in these quotas\.
 
 
 | Resource | Default quota per account per Region | 
@@ -15,7 +15,7 @@ AWS WAF has default quotas on the maximum number of entities you can have per ac
 |  Maximum web ACL capacity units \(WCUs\) per web ACL  |  1,500  | 
 | Maximum WCUs per rule group |  1,500  | 
 | Maximum number of IP sets  |  100  | 
-| Maximum number of requests per second per web ACL \(applies only to Application Load Balancers\) |  25,000  | 
+| Maximum number of requests per second per web ACL  |  25,000  | 
 | Maximum number of custom request headers per web ACL or rule group | 100 | 
 | Maximum number of custom response headers per web ACL or rule group | 100 | 
 | Maximum number of custom response bodies per web ACL or rule group | 50 | 

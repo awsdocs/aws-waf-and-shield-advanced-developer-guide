@@ -2,7 +2,7 @@
 
 After completing the prerequisites, you create an AWS Firewall Manager Network Firewall policy\. A Network Firewall policy provides a centrally controlled AWS Network Firewall firewall for your entire AWS organization\. It also defines the AWS accounts and resources that the firewall applies to\. 
 
-For more information about how Firewall Manager manages your Network Firewall policies, see [AWS Network Firewall policies](network-firewall-policies.md)\.<a name="get-started-fms-network-firewall-create-policy-procedure"></a>
+For more information about how Firewall Manager manages your Network Firewall policies, see [AWS Network Firewall policies](network-firewall-policies.md)\.
 
 **To create a Firewall Manager Network Firewall policy \(console\)**
 

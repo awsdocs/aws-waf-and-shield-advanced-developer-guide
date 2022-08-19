@@ -38,9 +38,12 @@ For each common security group policy, you provide AWS Firewall Manager with one
 + You can name one or more security groups as primaries for a Firewall Manager security group policy\. By default, the number of security groups allowed in a policy is one, but you can submit a request to increase it\. For information, see [AWS Firewall Manager quotas](fms-limits.md)\.
 
 **Policy rules settings**  
-You can choose one or both of the following change control behaviors for the security groups and resources of your common security group policy:
-+ Identify and revert any changes made by local users to replica security groups\. 
+You can choose one or more of the following change control behaviors for the security groups and resources of your common security group policy:
++ Identify and report on any changes made by local users to replica security groups\. 
 + Disassociate any other security groups from the AWS resources that are within the policy scope\. 
++ Distribute tags from the primary group to the replica security groups\.
+**Important**  
+Firewall Manager won't distribute system tags added by AWS services into the replica security groups\. System tags begin with the `aws:` prefix\.
 
 **Policy creation and management**  
 When you create your common security group policy, Firewall Manager replicates the primary security groups to every Amazon VPC instance within the policy scope, and associates the replicated security groups to accounts and resources that are in scope of the policy\. When you modify a primary security group, Firewall Manager propagates the change to the replicas\.
@@ -110,14 +113,14 @@ For security groups to be considered redundant, they must have exactly the same 
 If you have also chosen to remove unused security groups, Firewall Manager does that next\. This can result in the removal of the security groups that are in the redundant set\.
 
 **How Firewall Manager remediates unused security groups**  
-For security groups to be considered unused, they must remain unused by any resource for the minimum number of minutes specified in the policy rule\. By default, this number is zero\. You can give this a higher setting, in order to allow yourself time to associate new security groups with resources\. Firewall Manager remediates unused security groups by deleting them from your account, according to your rules settings\. 
+For security groups to be considered unused, they must remain unused by any resource for the minimum number of minutes specified in the policy rule\. By default, this number is zero\. You can specify as many as 525,600 minutes \(365 days\) in order to allow yourself time to associate new security groups with resources\. Firewall Manager remediates unused security groups by deleting them from your account, according to your rules settings\. 
 
 **Default account specification**  
 When you create a usage audit security group policy through the console, Firewall Manager automatically chooses **Exclude the specified accounts and include all others**\. The service then puts the Firewall Manager administrator account in the list to exclude\. This is the recommended approach, and allows you to manually manage the security groups that belong to the Firewall Manager administrator account\. 
 
 ## Best practices for security group policies<a name="security-groups-best-practice"></a>
 
- This section lists recommendations for managing security groups using AWS Firewall Manager\.
+This section lists recommendations for managing security groups using AWS Firewall Manager\.
 
 **Exclude the Firewall Manager administrator account**  
 When you set the policy scope, exclude the Firewall Manager administrator account\. When you create a usage audit security group policy through the console, this is the default option\. 
@@ -140,7 +143,7 @@ Similarly, in your outside tool or service, exclude the security groups that Fir
 
 ## Security group policy limitations<a name="security-groups-limitations"></a>
 
- This section lists the limitations for using AWS Firewall Manager security group policies:
+This section lists the limitations for using AWS Firewall Manager security group policies:
 + Updating security groups for Amazon EC2 elastic network interfaces that were created using the Fargate service type is not supported\. You can, however, update security groups for Amazon ECS elastic network interfaces with the Amazon EC2 service type\. 
 + Firewall Manager doesn't support security groups for Amazon EC2 elastic network interfaces that were created by the Amazon Relational Database Service\. 
 + Updating Amazon ECS elastic network interfaces is possible only for Amazon ECS services that use the rolling update \(Amazon ECS\) deployment controller\. For other Amazon ECS deployment controllers such as CODE\_DEPLOY or external controllers, Firewall Manager currently can't update the elastic network interfaces\. 

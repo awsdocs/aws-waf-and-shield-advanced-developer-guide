@@ -1,7 +1,7 @@
 # Working with geographic match conditions<a name="classic-web-acl-geo-conditions"></a>
 
 **Note**  
-This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF ](waf-migrating-from-classic.md)\.  
+This is **AWS WAF Classic** documentation\. You should only use this version if you created AWS WAF resources, like rules and web ACLs, in AWS WAF prior to November 2019, and you have not migrated them over to the latest version yet\. To migrate your resources, see [Migrating your AWS WAF Classic resources to AWS WAF](waf-migrating-from-classic.md)\.  
 **For the latest version of AWS WAF**, see [AWS WAF](waf-chapter.md)\. 
 
 If you want to allow or block web requests based on the country that the requests originate from, create one or more geo match conditions\. A geo match condition lists countries that your requests originate from\. Later in the process, when you create a web ACL, you specify whether to allow or block requests from those countries\.
@@ -27,6 +27,8 @@ When you add a geo match condition to a rule, you also can configure AWS WAF Cla
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
 
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
+
 1. In the navigation pane, choose **Geo match**\.
 
 1. Choose **Create condition**\.
@@ -50,6 +52,8 @@ You can add countries to or delete countries from your geo match condition\.<a n
 **To edit a geo match condition**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. In the navigation pane, choose **Geo match**\.
 
@@ -76,6 +80,8 @@ If you want to delete a geo match condition, you must first remove all countries
 **To delete a geo match condition**
 
 1. Sign in to the AWS Management Console and open the AWS WAF console at [https://console\.aws\.amazon\.com/wafv2/](https://console.aws.amazon.com/wafv2/)\. 
+
+   If you see **Switch to AWS WAF Classic** in the navigation pane, select it\.
 
 1. Remove the geo match condition from the rules that are using it:
 
