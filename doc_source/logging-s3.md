@@ -203,6 +203,39 @@ For example, the following bucket policy allows AWS account `111122223333` to pu
 }
 ```
 
+## Required key policy for SSE\-KMS buckets<a name="logging-kms-permissions"></a>
+
+If the S3 bucket for your standard logs uses server\-side encryption with AWS KMS keys \(SSE\-KMS\) using a customer managed key, you must add the following statement to the key policy for your customer managed key\. This allows AWS WAF to write log files to the bucket\. \(You can’t use SSE\-KMS with the AWS managed key because AWS WAF won’t be able to write log files to the bucket\.\)
+
+```
+{
+    "Sid": "Allow AWS WAF to use the key to deliver logs",
+    "Effect": "Allow",
+    "Principal": {
+        "Service": "delivery.logs.amazonaws.com"
+    },
+    "Action": "kms:GenerateDataKey*",
+    "Resource": "*"
+}
+```
+
+If the S3 bucket for your standard logs uses SSE\-KMS with an [S3 Bucket Key](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html), you also need to add the `kms:Decrypt` permission to policy statement\. In that case, the full policy statement looks like the following\.
+
+```
+{
+    "Sid": "Allow AWS WAF to use the key to deliver logs",
+    "Effect": "Allow",
+    "Principal": {
+        "Service": "delivery.logs.amazonaws.com"
+    },
+    "Action": [
+        "kms:GenerateDataKey*",
+        "kms:Decrypt"
+    ],
+    "Resource": "*"
+}
+```
+
 ## Amazon S3 log file access<a name="logging-s3-log-file-access"></a>
 
 In addition to the required bucket policies, Amazon S3 uses access control lists \(ACLs\) to manage access to the log files created by an AWS WAF log\. By default, the bucket owner has `FULL_CONTROL` permissions on each log file\. The log delivery owner, if different from the bucket owner, has no permissions\. The log delivery account has `READ` and `WRITE` permissions\. For more information, see [Access Control List \(ACL\) Overview](https://docs.aws.amazon.com/AmazonS3/latest/gsg/acl-overview.html) in the *Amazon Simple Storage Service User Guide*\.
