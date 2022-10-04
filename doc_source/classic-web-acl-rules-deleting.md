@@ -14,7 +14,7 @@ If you want to delete a rule, you need to first remove the rule from the web ACL
 
 1. To remove the rule from the web ACLs that are using it, perform the following steps for each of the web ACLs:
 
-   1. In the navigation pane, choose **Web ACLs**\.
+   1. In the navigation panel, choose **Web ACLs**\.
 
    1. Choose the name of a web ACL that is using the rule that you want to delete\.
 
