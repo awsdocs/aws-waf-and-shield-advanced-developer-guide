@@ -56,6 +56,8 @@ AWS WAF reports metrics once a minute\. AWS WAF provides the following metrics a
 | `CountedRequests` |  The number of counted web requests\. Reporting criteria: There is a nonzero value\. A counted web request is one that matches at least one of the rules\. Request counting is typically used for testing\. Valid statistics: Sum  | 
 | `CaptchaRequests` |  The number of web requests that had CAPTCHA controls applied\. Reporting criteria: There is a nonzero value\. A CAPTCHA web request is one that matches a rule that has a CAPTCHA action setting\. This metric records all requests that match, regardless of whether they have a valid CAPTCHA token\. Valid statistics: Sum  | 
 |  `RequestsWithValidCaptchaToken`  |  The number of web requests that had CAPTCHA controls applied and that had a valid CAPTCHA token\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `ChallengeRequests`  |  The number of web requests that had challenge controls applied\. Reporting criteria: There is a nonzero value\. A challenge web request is one that matches a rule that has a Challenge action setting\. This metric records all requests that match, regardless of whether they have a valid challenge token\. Valid statistics: Sum  | 
+|  `RequestsWithValidChallengeToken`  |  The number of web requests that had challenge controls applied and that had a valid challenge token\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 | `PassedRequests` |  The number of passed requests\. This is only used for requests that go through a rule group evaluation without matching any of the rule group rules\.  Reporting criteria: There is a nonzero value\. Passed requests are requests that don't match any of the rules in the rule group\.  Valid statistics: Sum  | 
 
 
@@ -71,34 +73,37 @@ AWS WAF reports metrics once a minute\. AWS WAF provides the following metrics a
 **Note**  
 For any single web request, AWS WAF emits metrics for at most 100 labels\. Your web ACL evaluation can apply more than 100 labels and match against more than 100 labels, but only the first 100 will be reflected in these metrics\. 
 
+For information about labels, see [Labels on web requests](waf-labels.md)\.
 
-**Label and AWS WAF Bot Control metrics**  
+
+**Label metrics**  
 
 | Metric | Description | 
 | --- | --- | 
-|  `AllowedRequests`  |  The number of labels applied to web requests by rules that had an allow action setting\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
-|  `BlockedRequests`  |  The number of labels applied to web requests by rules that had a block action setting\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
-|  `CountedRequests`  |  The number of labels applied to web requests by rules that had a count action setting\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
-|  `CaptchaRequests`  |  The number of labels applied to web requests by rules that had a CAPTCHA action setting\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `AllowedRequests`  |  The number of labels on web requests that had the action setting Allow applied\. The labels can have been added at any point during the web request evaluation\. Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `BlockedRequests`  |  The number of labels on web requests that had the action setting Block applied\. The labels can have been added at any point during the web request evaluation\. Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `CountedRequests`  |  The number of labels added to web requests by rule group rules that have a Count action setting\. This metric is only available to the owner of a rule group, for rules inside the rule group\. For other cases, the count label metrics are rolled up into the terminating action that was applied to the request, like Allow or Block\. Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `CaptchaRequests`  |  The number of labels on web requests that had a terminating CAPTCHA action applied\. The labels can have been added at any point during the web request evaluation\. Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `ChallengeRequests`  |  The number of labels on web requests that had a terminating Challenge action applied\. The labels can have been added at any point during the web request evaluation\. Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 
 
-**Label and AWS WAF Bot Control dimensions**  
+**Label dimensions**  
 
 | Dimension | Description | 
 | --- | --- | 
 |  `Region`  | Required for all protected resource types except for Amazon CloudFront distributions\. | 
 |  `WebACL`  |  The metric name of the `WebACL`\.  | 
 |  `RuleGroup`  |  The metric name of the `RuleGroup`\. Used for the metric `CountedRequests`\.  | 
-|  `LabelNamespace`  | The namespace prefix of the web ACL or rule group where the matching rule is specified\. Used for the metrics AllowedRequests and BlockedRequests\. | 
-|  `Label`  | The label applied to the web request by the matching rule\. Used for the metrics AllowedRequests and BlockedRequests\. | 
+|  `LabelNamespace`  | The namespace prefix of the label that was added to the request\.  | 
+|  `Label`  | The name of the label that was added to the request\.  | 
 
 
 **Free bot visibility metrics**  
 
 | Metric | Description | 
 | --- | --- | 
-|  `SampleAllowedRequests`  |  The percentage of sampled requests that have allow action\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
-|  `SampleBlockedRequests`  |  The percentage of sampled requests that have block action\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `SampleAllowedRequests`  |  The percentage of sampled requests that have Allow action\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
+|  `SampleBlockedRequests`  |  The percentage of sampled requests that have Block action\.  Reporting criteria: There is a nonzero value\. Valid statistics: Sum  | 
 
 
 **Free bot visibility dimensions**  

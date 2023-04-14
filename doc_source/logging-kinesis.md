@@ -3,7 +3,7 @@
 This section provides information for sending your web ACL traffic logs to an Amazon Kinesis Data Firehose\. 
 
 **Note**  
-You are charged for logging in addition to the charges for using AWS WAF\. For information, see [Pricing for logging web ACL traffic information](logging.md#logging-pricing)\.
+You are charged for logging in addition to the charges for using AWS WAF\. For information, see [Pricing for logging web ACL traffic informationPricing for logging](logging-pricing.md)\.
 
 To send logs to Amazon Kinesis Data Firehose, you send logs from your web ACL to an Amazon Kinesis Data Firehose with a configured storage destination\. After you enable logging, AWS WAF delivers logs to your storage destination through the HTTPS endpoint of Kinesis Data Firehose\. 
 

@@ -10,13 +10,13 @@ Retrieves the `String` representation of the `WAFToken`\.
 **`WAFTokenProvider`**  
 Manages tokens in your mobile app\. Implement this using a `WAFConfiguration` object\.    
 **`getToken()`**  
-If background refresh is enabled, this returns the cached token\. If background refresh is disabled, this makes a synchronous, blocking call to the token service to retrieve a new token\.   
+If background refresh is enabled, this returns the cached token\. If background refresh is disabled, this makes a synchronous, blocking call to AWS WAF to retrieve a new token\.   
 **`onTokenReady(WAFTokenResultCallback)`**  
 Instructs the token provider to refresh the token and invoke the provided callback when an active token is ready\. The token provider will invoke your callback in a background thread when the token is cached and ready\. Call this when your app first loads and also when it comes back to an active state\. For more information about returning to an active state, see [Retrieving a token following app inactivity](waf-mobile-sdk-how-it-works.md#waf-mobile-sdk-how-back-from-inactive)\.   
 For Android or iOS apps, you can set `WAFTokenResultCallback` to the operation that you want the token provider to invoke when a requested token is ready\. Your implementation of `WAFTokenResultCallback` must take the parameters `WAFToken`, `SdkError`\. For iOS apps, you can alternately create an inline function\. 
 
 **`WAFConfiguration`**  
-Holds the configuration for the implementation of the `WAFTokenProvider`\. When you implement this, you provide your web ACL’s application URL for the token service, the domain name of the protected resource that’s associated with the web ACL, and any non\-default settings that you want the token provider to use\.   
+Holds the configuration for the implementation of the `WAFTokenProvider`\. When you implement this, you provide your web ACL’s integration URL, the domain name to use in the token, and any non\-default settings that you want the token provider to use\.   
 The following list specifies the configuration settings that you can manage in the `WAFConfiguration` object\.    
 **`applicationIntegrationUrl`**   
 The application integration URL\. Get this from the AWS WAF console or through the `getWebACL` API call\.  
@@ -28,8 +28,9 @@ Required: No
 Type: `Boolean`  
 Default value: `TRUE`  
 **`domainName`**   
-The domain of your resource that’s associated with the web ACL, and where you’ll be sending web requests\. For example, `example.com` or `aws.amazon.com`\. This is used for token retrieval and cookie storage\.  
-For the `AWSManagedRulesATPRuleSet` managed rule group, this will usually match the domain in the login path that you provided to the rule group configuration\.   
+The domain to use in the token, which is used in token acquisition and cookie storage\. For example, `example.com` or `aws.amazon.com`\. This is usually the host domain of your resource that’s associated with the web ACL, where you’ll be sending web requests\. For the `AWSManagedRulesATPRuleSet` managed rule group, this will usually be a single domain that matches the domain in the login path that you provided to the rule group configuration\.   
+Public suffixes aren't allowed\. For example, you can't use `usa.gov` or `co.uk` as the token domain\.  
+The domain must be one that AWS WAF will accept, based on the protected host domain and the web ACL's token domain list\. For more information, see [Configuring the web ACL token domain list](waf-tokens-domains.md#waf-tokens-domain-lists)\.  
 Required: Yes  
 Type: `String`   
 **`maxErrorTokenRefreshDelayMsec`**   
@@ -61,6 +62,6 @@ Default value: `/`
 Used for background refresh\. The maximum amount of time in seconds between background token refreshes\.  
 Required: No  
 Type: `Integer`  
-Default value: `600` \(10 minutes\)  
+Default value: `300` \(5 minutes\)  
 Minimum value allowed: `300` \(5 minutes\)  
 Maximum value allowed: `600` \(10 minutes\)

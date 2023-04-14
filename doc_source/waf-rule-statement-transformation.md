@@ -37,7 +37,7 @@ AWS WAF replaces multiple spaces with one space and replaces the following chara
 + non\-breaking space, decimal 160
 
 CSS decode  
-AWS WAF decodes characters that were encoded using CSS 2\.x escape rules `syndata.html#characters`\. This function uses up to two bytes in the decoding process, so it can help to uncover ASCII characters that were encoded using CSS encoding that wouldn’t typically be encoded\. It's also useful in countering evasion, which is a combination of a backslash and non\-hexadecimal characters\. For example, ja\\vascript for javascript\.
+AWS WAF decodes characters that were encoded using CSS 2\.x escape rules `syndata.html#characters`\. This function uses up to two bytes in the decoding process, so it can help to uncover ASCII characters that were encoded using CSS encoding that wouldn’t typically be encoded\. It's also useful in countering evasion, which is a combination of a backslash and non\-hexadecimal characters\. For example, `ja\vascript` for `javascript`\.
 
 Escape sequence decode  
 AWS WAF decodes the following ANSI C escape sequences: `\a, \b, \f, \n, \r, \t, \v, \\, \?, \', \", \xHH (hexadecimal), \0OOO (octal)`\. Encodings that aren't valid remain in the output\.

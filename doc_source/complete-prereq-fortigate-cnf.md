@@ -1,0 +1,3 @@
+# Step 2: Complete the Fortigate CNF policy prerequisites<a name="complete-prereq-fortigate-cnf"></a>
+
+There are additional mandatory steps that you must complete in order to use Fortigate CNF policies\. Those steps are described in [Fortigate Cloud Native Firewall \(CNF\) as a Service policy prerequisites](fms-third-party-prerequisites.md#fms-fortigate-cnf-prerequisites)\. Complete all the prerequisites before proceeding to the next step\.

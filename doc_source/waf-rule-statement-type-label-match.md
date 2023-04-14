@@ -17,6 +17,6 @@ This statement uses the following settings:
 
 For more information about these settings, see [Matching against a label](waf-rule-label-match.md) and [Label match examples](waf-rule-label-match-examples.md)\.
 
-**Where to find this**
+**Where to find this rule statement**
 + **Rule builder** on the console – For **Request option**, choose **Has label**\.
-+ **API statement** – `LabelMatchStatement`
++ **API** – [LabelMatchStatement](https://docs.aws.amazon.com/waf/latest/APIReference/API_LabelMatchStatement.html)

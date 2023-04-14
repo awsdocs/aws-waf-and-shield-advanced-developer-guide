@@ -24,23 +24,17 @@ Follow the guidance in this section to add Shield Advanced protection to one or 
 
 1. Choose **Add resources to protect**\.
 
-1. In the **Choose resources to protect with Shield Advanced** page, do the following: 
+1. In the **Choose resources to protect with Shield Advanced** page, in **Specify the Region and resource types**, provide the Region and resource type specifications for the resources that you want to protect\. You can protect resources in multiple Regions by selecting **All Regions** and you can narrow the selection to global resources by selecting **Global**\. You can deselect any resource types that you do not want to protect\. For information about protections for your resource types, see [AWS Shield Advanced protections by resource type](ddos-protections-by-resource-type.md)\.
 
-   1. Select the Region where your resources are located or, if you want to protect resources in multiple Regions, select **All Regions**\. 
+1. Choose **Load resources**\. Shield Advanced populates the **Select Resources** section with the AWS resources that match your criteria\. 
 
-   1. Select the resource types that you want to protect\. 
+1. In the **Select Resources** section, you can filter the list of resources by entering a string to search for in the resource listings\. 
 
-      For information about protections for your resource type, see [AWS Shield Advanced protections by resource type](ddos-protections-by-resource-type.md)\.
-
-   1. Choose **Load resources**\.
-
-   Shield Advanced populates the **Select Resources** section with the AWS resources that match your criteria\. 
-
-1. In the **Select Resources** section, select the resources that you want to protect\.
+   Select the resources that you want to protect\.
 
 1. In the **Tags** section, if you want to add tags to the Shield Advanced protections that you are creating, specify those\. For information about tagging AWS resources, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)\. 
 
-1. Choose **Protect with Shield Advanced**\. This choice adds Shield Advanced protections to the resources\. Proceed through the additional screens provided by the console wizard to further configure your protections, with options like health checks and alarm notifications\. 
+1. Choose **Protect with Shield Advanced**\. This adds Shield Advanced protections to the resources\.
 
 ## Configuring AWS Shield Advanced protections<a name="manage-protection"></a>
 
@@ -68,7 +62,7 @@ You can also enable the Shield Advanced automatic application layer DDoS mitigat
 If you manage your Shield Advanced protections through AWS Firewall Manager using a Shield Advanced policy, you can't manage the application layer protections here\. For all other resources, we recommend that, at a minimum, you attach a web ACL to each resource, even if web ACL doesn't contain any rules\.
 
 **Note**  
-When you enable automatic application layer DDoS mitigation for a resource, if needed, the operation automatically adds a service\-linked role to your account to give Shield Advanced the permissions it needs to manage your web ACL protections\. For information, see [Using service\-linked roles for Shield Advanced](shd-using-service-linked-roles.md)\.
+When you enable automatic application layer DDoS mitigation for a resource, if needed, the operation automatically adds a service\-linked role to your account to give Shield Advanced the permissions it needs to manage your web ACL protections\. For information, see [Using service\-linked roles for Shield Advanced](shd-using-service-linked-roles.md)[Using service\-linked roles for Shield Advanced](shd-using-service-linked-roles.md)\.
 
 **To configure application layer DDoS protections**
 

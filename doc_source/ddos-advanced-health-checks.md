@@ -7,7 +7,7 @@ To configure health\-based detection, you define a health check for your resourc
 **Note**  
 Health checks are required for Shield Response Team \(SRT\) proactive engagement support\. For information about proactive engagement, see [Configuring proactive engagement](ddos-srt-proactive-engagement.md)\.
 
-Health checks measure the health of your resources based on the requirements that you define\. The health check status provides input to the Shield Advanced detection mechanisms, allowing them to be more sensitive to the current state of your specific applications\. 
+Health checks measure the health of your resources based on the requirements that you define\. The health check status provides input to the Shield Advanced detection mechanisms, which gives them greater sensitivity to the current state of your specific applications\. 
 
 You can enable health\-based detection for any resource type except for Route 53 hosted zones\.
 + **Network and transport layer \(layer 3/layer 4\) resources** – Health\-based detection improves the accuracy of network\-layer and transport\-layer event detection and mitigation for Network Load Balancers, Elastic IP addresses, and Global Accelerator standard accelerators\. When you protect these resource types with Shield Advanced, Shield Advanced can provide mitigations for smaller attacks and faster mitigation for attacks, even when traffic is within the application’s capacity\.

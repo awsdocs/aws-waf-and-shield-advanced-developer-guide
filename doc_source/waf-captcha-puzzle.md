@@ -1,0 +1,23 @@
+# What is a CAPTCHA puzzle?<a name="waf-captcha-puzzle"></a>
+
+AWS WAF provides standard CAPTCHA functionality that challenges users to confirm that they are human beings\. CAPTCHA stands for Completely Automated Public Turing test to tell Computers and Humans Apart\. CAPTCHA puzzles are designed to verify that a human is sending requests and to prevent activity like web scraping, credential stuffing, and spam\. 
+
+Each CAPTCHA puzzles includes a standard set of controls for the end user to request a new puzzle, switch between audio and visual puzzles, access additional instructions, and submit a puzzle solution\. All puzzles include support for screen readers, keyboard controls, and contrasting colors\. 
+
+The written instructions for CAPTCHA puzzles are provided in multiple languages, including Arabic, German, Spanish, French, Italian, Dutch, Japanese, Portuguese, Turkish, and Chinese \(simplified\)\. AWS WAF CAPTCHA uses the client browser language settings for the written instructions, and provides the option to change the language through a dropdown menu\. The audio portion of the audio puzzles is provided in English only\.
+
+A typical visual puzzle requires interaction to complete a specific part of an image, as shown in the following screenshot\.
+
+![\[A screen contains the title "Solve the puzzle" and the text "Slide the image to complete the donut". Below the text is an image that shows a small screen, split horizontally, with top halves of shapes above the split and bottom halves of shapes below the split. Below the split screen is a slide bar that's connected to the bottom half of the screen. Below the split screen, an open information box has the text "Solve by matching the two halves of the indicated shape." At the bottom of the screen are options to load a different puzzle, toggle the information box into and out of view, toggle to an audio puzzle, and change the language. Also at the bottom is the button "Submit".\]](http://docs.aws.amazon.com/waf/latest/developerguide/images/CAPTCHAPuzzleSlide.png)
+
+AWS WAF CAPTCHA puzzles are designed to be intuitive across multiple geographic regions\. The default puzzles rely on visual elements and various forms of computer interaction\. AWS WAF CAPTCHA includes alternative audio\-based puzzles for users with visual impairment\. The puzzles meet the requirements of the Web Content Accessibility Guidelines \(WCAG\)\. For information, see [Web Content Accessibility Guidelines \(WCAG\) Overview](https://www.w3.org/WAI/standards-guidelines/wcag/) at the World Wide Web Consortium \(W3C\) website\.
+
+The audio puzzle option provides background noise overlaid with instructions in English about text that the user should type into a text box\. The following screenshot shows the display for the audio puzzle choice\.
+
+![\[A screen contains the title "Solve the puzzle" and the text "Click play to listen to instructions". Below the text is an image that shows a Play button. Below the image is the text "Keyboard audio toggle: alt + space". Below is a title "Enter your response" with a text entry box below it. An open information box has the text "Solve by listening to the recording and typing your answer into the text box." At the bottom of the screen are options to load a different puzzle, toggle the information box into and out of view, and toggle to a visual puzzle. Also at the bottom is the button "Submit".\]](http://docs.aws.amazon.com/waf/latest/developerguide/images/CAPTCHAPuzzleAudio.png)
+
+CAPTCHA puzzles are intended to be fairly easy and quick for humans to complete successfully and hard for computers to either complete successfully or to randomly complete with any meaningful rate of success\. CAPTCHA is commonly used when a block action would stop too many legitimate requests, but letting all traffic through would result in unacceptably high levels of unwanted requests, such as from bots\.
+
+CAPTCHA can't weed out all unwanted requests\. Many CAPTCHA puzzles have been solved using machine learning and artificial intelligence\. In an effort to circumvent CAPTCHA, some organizations supplement automated techniques with human intervention\. In spite of this, CAPTCHA continues to be a useful tool to prevent less sophisticated bot traffic and to increase the resources required for large\-scale operations\. 
+
+AWS WAF randomly generates its CAPTCHA puzzles and rotates through them to ensure that users are presented with unique challenges\. AWS WAF regularly adds new types and styles of puzzles to remain effective against automation techniques\. In addition to the puzzles, the AWS WAF CAPTCHA script gathers data about the client to ensure that the task is being completed by a human and to prevent replay attacks\. 

@@ -29,7 +29,7 @@ For more information about choosing the version setting for a list, see [Using m
 When you create a content audit security group policy, you can choose to use managed audit policy rules\. Some of the settings for this option require a managed application list or protocol list\. Examples of these settings include protocols that are allowed in security group rules and applications can access the internet\.
 
 The following restrictions apply for each policy setting that uses a managed list: 
-+ You can specify at most one Firewall Manager managed list for any setting\. By default, you can specify at most one custom list\. The custom list limit is a soft quota, so you can request an increase to it\. For more information, see [AWS Firewall Manager quotas](fms-limits.md)\.
++ You can specify at most one Firewall Manager managed list for any setting\. By default, you can specify at most one custom list\. The custom list limit is a soft quota, soc you can request an increase to it\. For more information, see [AWS Firewall Manager quotas](fms-limits.md)\.
 + In the console, if you select a Firewall Manager managed list, you can't specify the version\. The policy will always use the latest version of the list\. To specify the version, you must define the policy outside of the console, for example through the CLI or one of the SDKs\. For information about versioning for Firewall Manager managed lists, see [Managed list versioning](#versioning-managed-lists)\.
 
 For information about creating a content audit security group policy through the console, see [Creating a content audit security group policy](create-policy.md#creating-firewall-manager-policy-audit-security-group)\.

@@ -2,11 +2,11 @@
 
 AWS WAF requires your login requests to include the cookie named `aws-waf-token` with the value of your current token\. 
 
-The `getToken` operation is an asynchronous SDK call that retrieves the AWS token and stores it in a cookie on the current page with name `aws-waf-token`, and the value set to the token value\. You can use this token cookie as needed in your page\. 
+The `getToken` operation is an asynchronous SDK call that retrieves the AWS WAF token and stores it in a cookie on the current page with name `aws-waf-token`, and the value set to the token value\. You can use this token cookie as needed in your page\. 
 
 When you call `getToken`, it does the following: 
 + If an unexpired token is already available, the call returns it immediately\.
-+ Otherwise, the call retrieves a new token from the AWS token provider, waiting for up to 2 seconds for the token acquisition workflow to complete before timing out\. If the operation times out, it throws an error, which your calling code must handle\. 
++ Otherwise, the call retrieves a new token from the token provider, waiting for up to 2 seconds for the token acquisition workflow to complete before timing out\. If the operation times out, it throws an error, which your calling code must handle\. 
 
 The `getToken` operation has an accompanying `hasToken` operation, which indicates whether the `aws-waf-token` cookie currently holds an unexpired token\. 
 

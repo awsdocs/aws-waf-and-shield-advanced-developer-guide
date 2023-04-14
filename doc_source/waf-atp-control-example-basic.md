@@ -1,6 +1,6 @@
 # ATP example: Simple configuration<a name="waf-atp-control-example-basic"></a>
 
-The following JSON listing shows an example web ACL with an AWS WAF Fraud Control account takeover prevention \(ATP\) managed rule group\. Note the additional sign\-in page configuration, which allows the rule group to monitor and manage your login requests\. This JSON includes the web ACL's automatically generated settings, like the label namespace and the web ACL's application integration URL\.
+The following JSON listing shows an example web ACL with an AWS WAF Fraud Control account takeover prevention \(ATP\) managed rule group\. Note the additional sign\-in page configuration, which gives the rule group the information it needs to monitor and manage your login requests\. This JSON includes the web ACL's automatically generated settings, like the label namespace and the web ACL's application integration URL\.
 
 ```
 {

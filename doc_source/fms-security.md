@@ -10,7 +10,7 @@ This documentation helps you understand how to apply the shared responsibility m
 
 **Topics**
 + [Data protection in Firewall Manager](fms-data-protection.md)
-+ [Identity and access management in AWS Firewall Manager](fms-auth-and-access-control.md)
++ [Identity and Access Management for AWS Firewall Manager](fms-security-iam.md)
 + [Logging and monitoring in Firewall Manager](fms-incident-response.md)
 + [Compliance validation for Firewall Manager](fms-security-compliance.md)
 + [Resilience in Firewall Manager](fms-disaster-recovery-resiliency.md)

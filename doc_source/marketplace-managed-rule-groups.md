@@ -14,7 +14,7 @@ The AWS Marketplace rule group provider determines how to manage the rule group,
 
 ## Subscribing to AWS Marketplace managed rule groups<a name="marketplace-managed-rule-groups-subscribing"></a>
 
-You can subscribe to and unsubscribe from AWS Marketplace rule groups on the AWS WAF console\. If you need to, you can exclude specific rules in a managed rule group when you add it to a web ACL\.
+You can subscribe to and unsubscribe from AWS Marketplace rule groups on the AWS WAF console\. 
 
 **Important**  
 To use an AWS Marketplace rule group in an AWS Firewall Manager policy, each account in your organization must first subscribe to that rule group\. 
@@ -35,7 +35,7 @@ If you don't want to subscribe to this rule group, simply close this page in you
 
 1. Add the rule group to a web ACL, similar to how you add an individual rule\. For more information, see [Creating a web ACL](web-acl-creating.md) or [Editing a web ACL](web-acl-editing.md)\.
 **Note**  
-When adding a rule group to a web ACL, you can override the actions of rules in the rule group and of the rule group result\. For more information, see [Overriding the actions of a rule group or its rules](web-acl-rule-group-override-options.md)\.
+When adding a rule group to a web ACL, you can override the actions of rules in the rule group and of the rule group result\. For more information, see [Action overrides in rule groups](web-acl-rule-group-override-options.md)\.
 
 After you're subscribed to an AWS Marketplace rule group, you use it in your web ACLs as you do other managed rule groups\. For information, see [Creating a web ACL](web-acl-creating.md)\.
 
@@ -66,11 +66,11 @@ If you find that an AWS Marketplace rule group is blocking legitimate traffic, y
 
 **To troubleshoot an AWS Marketplace rule group**
 
-1. Exclude the specific rules that are blocking legitimate traffic\. You can identify which rules are blocking which requests using either the AWS WAF sampled requests or AWS WAF logs\. You can identify the rules by looking at the `ruleGroupId` field in the log or the `RuleWithinRuleGroup` in the sampled request\. You can identify the rule in the pattern `<Seller Name>#<RuleGroup Name>#<Rule Name>`\.
+1. Override the actions to count for the rules that are blocking legitimate traffic\. You can identify which rules are blocking specific requests using either the AWS WAF sampled requests or AWS WAF logs\. You can identify the rules by looking at the `ruleGroupId` field in the log or the `RuleWithinRuleGroup` in the sampled request\. You can identify the rule in the pattern `<Seller Name>#<RuleGroup Name>#<Rule Name>`\.
 
-1. If excluding specific rules does not solve the problem, you can change the action for the AWS Marketplace rule group from **No override** to **Override to count**\. This allows the web request to pass through, regardless of the individual rule actions within the rule group\. This also provides you with Amazon CloudWatch metrics for the rule group\.
+1. If setting specific rules to only count requests doesn't solve the problem, you can override all of the rule actions or change the action for the AWS Marketplace rule group itself from **No override** to **Override to count**\. This allows the web request to pass through, regardless of the individual rule actions within the rule group\. 
 
-1. After setting the AWS Marketplace rule group action to **Override to count**, contact the rule group provider‘s customer support team to further troubleshoot the issue\. For contact information, see the rule group listing on the product listing pages on AWS Marketplace\.
+1. After overriding either the individual rule action or the entire AWS Marketplace rule group action, contact the rule group provider‘s customer support team to further troubleshoot the issue\. For contact information, see the rule group listing on the product listing pages on AWS Marketplace\.
 
 ### Contacting AWS support<a name="waf-managed-rule-group-troubleshooting-support"></a>
 

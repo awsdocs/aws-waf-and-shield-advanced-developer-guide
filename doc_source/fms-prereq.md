@@ -8,8 +8,8 @@ Before you use Firewall Manager for the first time, perform the following steps 
 + [Step 1: Join and configure AWS Organizations](join-aws-orgs.md)
 + [Step 2: Set the AWS Firewall Manager administrator account](enable-integration.md)
 + [Step 3: Enable AWS Config](enable-config.md)
-+ [Step 4: For Cloud NGFW, subscribe in the AWS Marketplace, and configure third\-party settings](fms-cloud-ngfw-prerequisites.md)
++ [Step 4: For third\-party policies, subscribe in the AWS Marketplace and configure third\-party settings](fms-third-party-prerequisites.md)
 + [Step 5: For Network Firewall and DNS Firewall policies, enable resource sharing](enable-ram.md)
 + [Step 6: To use AWS Firewall Manager in Regions that are disabled by default](enable-disabled-region.md)
 
-After you follow these steps, you can configure Firewall Manager to begin protecting your resources\. For more information, see [Getting started with AWS Firewall Manager​ AWS WAF policies](getting-started-fms.md)\.
+After you follow these steps, you can configure Firewall Manager to begin protecting your resources\. For more information, see [Getting started with AWS Firewall Manager​ AWS WAF policiesGetting started with AWS WAF policies](getting-started-fms.md)\.

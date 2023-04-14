@@ -4,9 +4,9 @@ With proactive engagement, the Shield Response Team \(SRT\) contacts you directl
 
 Proactive engagement is available for network\-layer and transport\-layer events on Elastic IP addresses and AWS Global Accelerator standard accelerators, and for web request floods on Amazon CloudFront distributions and Application Load Balancers\. Proactive engagement is available only for Shield Advanced resource protections that have an associated Amazon Route 53 health check\. For information about managing and using health checks, see [Configuring health\-based detection using health checks](ddos-advanced-health-checks.md)\.
 
-During an event that's detected by Shield Advanced, the SRT uses the state of your health checks to determine whether the event qualifies for proactive engagement\. If so, the SRT will contact you within 15 minutes, according to the contact guidance that you provide in your proactive engagement configuration\. 
+During an event that's detected by Shield Advanced, the SRT uses the state of your health checks to determine whether the event qualifies for proactive engagement\. If so, the SRT will contact you according to the contact guidance that you provide in your proactive engagement configuration\. 
 
-You can configure up to ten contacts for proactive engagement, and you can provide notes to guide the SRT in reaching out to you\. Your proactive engagement contacts should be available to engage with the SRT within 15 minutes of contact, as you might provide in a 24/7 operations center\. If you don't have a 24/7 operations center, you can provide a pager contact and indicate this contact preference in your contact notes\.
+You can configure up to ten contacts for proactive engagement, and you can provide notes to guide the SRT in reaching out to you\. Your proactive engagement contacts should be available to engage with the SRT during events\. If you don't have a 24/7 operations center, you can provide a pager contact and indicate this contact preference in your contact notes\.
 
 Proactive engagement requires you to do the following: 
 + You must be subscribed to the [Business Support plan](https://aws.amazon.com/premiumsupport/business-support/) or the [Enterprise Support plan](https://aws.amazon.com/premiumsupport/enterprise-support/)\.
@@ -30,4 +30,4 @@ Proactive engagement requires you to do the following:
 
    The **Overview** page reflects the updated contact information\.
 
-1. Choose **Edit proactive engagement feature**, choose **Enable**, and then choose **Save**\.
+1. Choose **Edit proactive engagement feature**, choose **Enable**, and then choose **Save** to enable proactive engagement\. 

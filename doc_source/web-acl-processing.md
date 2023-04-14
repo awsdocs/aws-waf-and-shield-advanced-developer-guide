@@ -11,5 +11,5 @@ You can customize request and response handling in your rule action settings and
 
 **Topics**
 + [Processing order of rules and rule groups in a web ACL](web-acl-processing-order.md)
-+ [Basic handling of the rule and rule group actions in a web ACL](web-acl-rule-actions.md)
-+ [Overriding the actions of a rule group or its rules](web-acl-rule-group-override-options.md)
++ [How rule and rule group actions are handled in a web ACL](web-acl-rule-actions.md)
++ [Action overrides in rule groups](web-acl-rule-group-override-options.md)

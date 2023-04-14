@@ -13,7 +13,7 @@ When you create the token provider instance in your mobile app, you configure ho
 + **Background refresh disabled** – You can disable background token refresh, and then retrieve tokens only on demand\. Tokens retrieved on demand aren't cached, and you can retrieve more than one if you want\. Each token is independent of any others that you retrieve, and each has its own timestamp that's used to calculate expiration\.
 
   You have the following choices for token retrieval when background refresh is disabled: 
-  + **`getToken()`** – When you call `getToken()` with background refresh disabled, the call synchronously retrieves a new token from the token service\. This is a potentially blocking call that may affect app responsiveness if you invoke it on the main thread\. 
+  + **`getToken()`** – When you call `getToken()` with background refresh disabled, the call synchronously retrieves a new token from AWS WAF\. This is a potentially blocking call that may affect app responsiveness if you invoke it on the main thread\. 
   + **`onTokenReady(WAFTokenResultCallback)`** – This call asynchronously retrieves a new token and then invokes the provided result callback in a background thread when a token is ready\. 
 
 ### How the token provider retries failed token retrievals<a name="waf-mobile-sdk-how-token-retrieval-retries"></a>

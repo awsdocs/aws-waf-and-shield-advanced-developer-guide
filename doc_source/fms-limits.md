@@ -8,7 +8,7 @@ The security group policies managed by Firewall Manager are subject to standard 
 
 Each Firewall Manager Network Firewall policy creates a Network Firewall firewall with an associated firewall policy and its rule groups\. These Network Firewall resources are subject to the quotas listed at [AWS Network Firewall quotas](https://docs.aws.amazon.com/network-firewall/latest/developerguide/quotas.html) in the *Network Firewall Developer Guide*\. 
 
-## Mutable quotas<a name="fms-limits-mutable"></a>
+## Soft quotas<a name="fms-limits-mutable"></a>
 
 AWS Firewall Manager has default quotas on the number of entities per Region\. You can [request an increase](https://console.aws.amazon.com/servicequotas/home/services/fms/quotas) in these quotas\.
 
@@ -23,6 +23,9 @@ AWS Firewall Manager has default quotas on the number of entities per Region\. Y
 | Accounts in scope of a Firewall Manager policy if you explicitly include and exclude individual accounts | 200  | 
 | Accounts in scope of a Firewall Manager policy if you do not explicitly include or exclude individual accounts | 2,500  | 
 |  Tags that include or exclude resources per Firewall Manager policy  | 8 | 
+|  Maximum number of resource sets per account\.  | 20 | 
+|  Maximum number of resources per resource set\.  | 100 | 
+|  Maximum number of resources sets per Firewall Manager policy\.  | 5 | 
 
 
 **Common security group policies**  
@@ -53,7 +56,7 @@ AWS Firewall Manager has default quotas on the number of entities per Region\. Y
 | AWS WAF rule groups per Firewall Manager administrator account | 100 | 
 | AWS WAF Classic rule groups per Firewall Manager administrator account | 10 | 
 | Rule groups per AWS WAF policy | 50 | 
-| Total web ACL capacity units \(WCU\) for the rule groups in an AWS WAF policy | 1500 | 
+| Total web ACL capacity units \(WCU\) for the rule groups in an AWS WAF policy | 5,000 | 
 
 
 **DNS Firewall policies**  
@@ -62,7 +65,7 @@ AWS Firewall Manager has default quotas on the number of entities per Region\. Y
 | --- | --- | 
 | DNS Firewall rule groups per Firewall Manager policy | 2 | 
 
-## Immutable quotas<a name="fms-limits-immutable"></a>
+## Hard quotas<a name="fms-limits-immutable"></a>
 
 The following per\-Region quotas related to AWS Firewall Manager can't be changed\.
 

@@ -8,7 +8,7 @@ This section describes the changes that can disqualify the Firewall Manager admi
 
 If the AWS Firewall Manager administrator account is removed from the organization in AWS Organizations, it can no longer administer policies for the organization\. Firewall Manager takes one of the following actions: 
 + **Account with no policies** – If the Firewall Manager administrator account has no Firewall Manager policies, Firewall Manager revokes the administrator account\. 
-+ **Account with Firewall Manager policies** – If the Firewall Manager administrator account has Firewall Manager policies, Firewall Manager sends an email to inform you of the situation and to provide options that you can take, with the help of your AWS sales account representative\. 
++ **Account with Firewall Manager policies** – If the Firewall Manager administrator account has Firewall Manager policies, AWS retains the Firewall Manager policy data for the account for seven days from the effective date of the administrator account removed from the organization\. After seven days, Firewall Manager deactivates any policies that were managed by the administrator account\. The protections that were provided by those policies are stopped across the organization\.
 
 ## Account closed<a name="closed-admin-account"></a>
 

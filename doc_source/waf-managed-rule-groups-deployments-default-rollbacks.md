@@ -8,5 +8,5 @@ After the rollback of the default version setting, AWS expedites both the expira
 
 **Timing and notifications**  
 AWS performs default version rollbacks only when required\. 
-
-AWS sends a single SNS notification at the time of the rollback\. The notification includes the rule group name, the version that the default version is being set to, and the deployment date\. This deployment type is very quick, so the notification doesn't provide timing information for Regions\. 
++ **SNS** – AWS sends a single SNS notification at the time of the rollback\. The notification includes the rule group name, the version that the default version is being set to, and the deployment date\. This deployment type is very quick, so the notification doesn't provide timing information for Regions\. 
++ **Change log** – AWS doesn't update the change log or other parts of this guide for this type of deployment\.

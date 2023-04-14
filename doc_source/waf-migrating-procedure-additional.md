@@ -20,6 +20,6 @@ Revisit your Amazon CloudWatch metrics and set up alarms as needed\. The migrati
 Work with your application team and check your security posture\. Find out what fields are parsed frequently by the application and add rules to sanitize the input accordingly\. Check for any edge cases and add rules to catch these cases if the application’s business logic fails to process them\. 
 
 **Plan the switchover**  
-Plan the timing of the switch with your application team\. The switch from the old web ACL association to the new one can cause a brief disruption\. 
+Plan the timing of the switch with your application team\. The switch from the old web ACL association to the new one can take a small amount of time to propagate to all areas where your resources are stored\. The propagation time can be from a few seconds to a number of minutes\. During this time, some requests will be processed by the old web ACL and others will be processed by the new web ACL\. Your resources will be protected throughout the switch, but you might notice inconsistencies in request handling while the switch is underway\. 
 
 When you are ready to switch over, follow the procedure at [Migrating a web ACL: switchover](waf-migrating-procedure-switchover.md)\.

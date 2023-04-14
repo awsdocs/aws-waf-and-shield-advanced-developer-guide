@@ -7,10 +7,10 @@ By default, the credentials checks that are performed by the rule group `AWSMana
 For details about the rule group and rule behavior, see [AWS WAF Fraud Control account takeover prevention \(ATP\) rule group](aws-managed-rule-groups-atp.md)\.
 
 You can add custom handling for web requests that have missing or compromised credentials by doing the following: 
-+ **Exclude the `MissingCredential` rule** – When you exclude this blocking rule, it only counts and labels matching requests\.
-+ **Add a label match rule with custom handling** – Configure your rule to match against both of the ATP labels and to perform your custom handling\. For example, you might redirect the customer to your sign\-up page\.
++ **Override the `MissingCredential` rule to Count** – This rule action override causes the rule to only count and label matching requests\.
++ **Add a label match rule with custom handling** – Configure this rule to match against both of the ATP labels and to perform your custom handling\. For example, you might redirect the customer to your sign\-up page\.
 
-The following rule shows the ATP managed rule group from the prior example, with the `MissingCredential` rule excluded\. This exclusion causes the rule to apply its label to matching requests, and then only count the requests, instead of blocking them\. 
+The following rule shows the ATP managed rule group from the prior example, with the `MissingCredential` rule action overridden to count\. This causes the rule to apply its label to matching requests, and then only count the requests, instead of blocking them\. 
 
 ```
 "Rules": [
@@ -47,11 +47,15 @@ The following rule shows the ATP managed rule group from the prior example, with
                 ],
                 "VendorName": "AWS",
                 "Name": "AWSManagedRulesATPRuleSet",
-                "ExcludedRules": [
+                "RuleActionOverrides": [
                   {
+                    "ActionToUse": {
+                      "Count": {}
+                    },
                     "Name": "MissingCredential"
                   }
-                ]
+                ],
+                "ExcludedRules": []
             }
         }
     }
@@ -60,7 +64,7 @@ The following rule shows the ATP managed rule group from the prior example, with
 
 With this configuration, when this rule group evaluates any web request that has missing or compromised credentials, it will label the request, but not block it\. 
 
-The following rule has a higher numeric priority than the preceding rule group, so that it's evaluated after the rule group evaluation\. It's configured to match either of the credentials labels and to send a custom response for matching requests\. 
+The following rule has a higher numeric priority than the preceding rule group, so it's evaluated after the rule group evaluation\. The rule is configured to match either of the credentials labels and to send a custom response for matching requests\. 
 
 ```
 "Name": "redirectToSignup",

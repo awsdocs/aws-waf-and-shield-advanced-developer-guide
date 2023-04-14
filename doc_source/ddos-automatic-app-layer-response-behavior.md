@@ -31,7 +31,7 @@ When Shield Advanced detects an attack on a protected resource that has automati
 
 Throughout an attack, Shield Advanced sends the same notifications and provides the same event information as for basic Shield Advanced application layer protections\. You can see the information about events and DDoS attacks, and about any Shield Advanced mitigations for attacks, in the Shield Advanced event console\. For information, see [Visibility into DDoS events](ddos-viewing-events.md)\. 
 
-If you've configured automatic mitigation to use the `BLOCK` rule action and you experience false positives from the mitigation rules that Shield Advanced has deployed, you can change the rule action to `COUNT`\. For information about how to to this, see [Changing the action used for automatic application layer DDoS mitigation](manage-automatic-app-layer-response.md#change-action-of-automatic-app-layer-response)\. 
+If you've configured automatic mitigation to use the `BLOCK` rule action and you experience false positives from the mitigation rules that Shield Advanced has deployed, you can change the rule action to `COUNT`\. For information about how to do this, see [Changing the action used for automatic application layer DDoS mitigation](manage-automatic-app-layer-response.md#change-action-of-automatic-app-layer-response)\. 
 
 ## What happens when you change the rule action setting<a name="ddos-automatic-app-layer-response-change-action"></a>
 

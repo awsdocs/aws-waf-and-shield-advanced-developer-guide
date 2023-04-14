@@ -1,6 +1,6 @@
 # Web access control lists \(web ACLs\)<a name="web-acl"></a>
 
-A web access control list \(web ACL\) gives you fine\-grained control over all of the HTTP\(S\) web requests that your protected resource responds to\. You can protect Amazon CloudFront, Amazon API Gateway, Application Load Balancer, AWS AppSync, and Amazon Cognito resources\. 
+A web access control list \(web ACL\) gives you fine\-grained control over all of the HTTP\(S\) web requests that your protected resource responds to\. You can protect Amazon CloudFront, Amazon API Gateway, Application Load Balancer, AWS AppSync, Amazon Cognito, and AWS App Runner resources\. 
 
 You can use criteria like the following to allow or block requests: 
 + IP address origin of the request
@@ -9,13 +9,13 @@ You can use criteria like the following to allow or block requests:
 + Size of a particular part of the request
 + Detection of malicious SQL code or scripting 
 
-You can also test for any combination of these conditions\. You can block or count web requests that not only meet the specified conditions, but also exceed a specified number of requests in any 5\-minute period\. You can combine conditions using logical operators\. You can also run CAPTCHA controls against requests\. 
+You can also test for any combination of these conditions\. You can block or count web requests that not only meet the specified conditions, but also exceed a specified number of requests in any 5\-minute period\. You can combine conditions using logical operators\. You can also run CAPTCHA puzzles and silent client session challenges against requests\. 
 
 You provide your matching criteria and the action to take on matches in AWS WAF rule statements\. You can define rule statements directly inside your web ACL and in reusable rule groups that you use in your web ACL\. For a full list of the options, see [AWS WAF rule statements](waf-rule-statements.md) and [AWS WAF rule action](waf-rule-action.md)\.
 
 To specify your web request inspection and handling criteria, perform the following tasks:
 
-1. Choose the default action, either allow or block, for web requests that don't match any of the rules that you specify\. For more information, see [Deciding on the default action for a web ACL](web-acl-default-action.md)\.
+1. Choose the web ACL default action, either Allow or Block, for web requests that don't match any of the rules that you specify\. For more information, see [Deciding on the default action for a web ACL](web-acl-default-action.md)\.
 
 1. Add any rule groups that you want to use in your web ACL\. Managed rule groups usually contain rules that block web requests\. For information about rule groups, see [Rule groups](waf-rule-groups.md)\. 
 
@@ -33,4 +33,6 @@ On some occasions, AWS WAF might encounter an internal error that delays the res
 + [How AWS resources handle response delays from AWS WAF](#web-acl-processing-resource-default)
 + [Web ACL rule and rule group evaluation](web-acl-processing.md)
 + [Deciding on the default action for a web ACL](web-acl-default-action.md)
++ [Body inspection size limits for CloudFront web ACLs](web-acl-setting-body-inspection-limit.md)
++ [CAPTCHA, challenge, and token domain configuration for a web ACL](web-acl-captcha-challenge-token-domains.md)
 + [Working with web ACLs](web-acl-working-with.md)

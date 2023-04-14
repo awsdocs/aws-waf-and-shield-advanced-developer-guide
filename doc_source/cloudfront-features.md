@@ -15,7 +15,7 @@ By default, when AWS WAF blocks a web request based on the criteria that you spe
 Forbidden: You don't have permission to access /myfilename.html on this server.
 ```
 
-You can override this behavior in your AWS WAF web ACL rules by defining custom responses\. For more information about customizing response behavior using AWS WAF rules, see [Custom responses for block actions](customizing-the-response-for-blocked-requests.md)\.
+You can override this behavior in your AWS WAF web ACL rules by defining custom responses\. For more information about customizing response behavior using AWS WAF rules, see [Custom responses for Block actions](customizing-the-response-for-blocked-requests.md)\.
 
 **Note**  
 Responses that you customize using AWS WAF rules take precedence over any response specifications that you define in CloudFront custom error pages\. 

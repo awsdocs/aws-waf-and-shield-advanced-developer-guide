@@ -20,15 +20,15 @@ AWS Managed Rules rule groups use a single SNS topic ARN, so you can retrieve th
 + **CLI** – `aws wafv2 describe-managed-rule-group --scope=<CLOUDFRONT|REGIONAL> --vendor-name <vendor> --name <managedrule_name>`
 
 **Versioning and SNS notifications for AWS Managed Rules rule groups**  
-The AWS Managed Rules rule groups all provide versioning and SNS update notifications except for the rule groups for IP reputation, Bot Control, and Account takeover prevention\. 
+The AWS Managed Rules rule groups all provide versioning and SNS update notifications except for the rule groups for IP reputation, Bot Control, and account takeover prevention\. 
 
 The AWS Managed Rules rule groups that provide notifications all use the same SNS topic Amazon Resource Name \(ARN\)\.
 
-AWS provides SNS notifications to inform you of planned deployments that might affect your protections and to let you know when a deployment is starting\. At the completion of the deployment of a new static version, AWS updates this guide, in the changelog at [AWS Managed Rules changelog](aws-managed-rule-groups-changelog.md) and in the document history page at [Document history](doc-history.md)\. For more information about the notifications provided for each type of deployment, see [Deployments for versioned AWS Managed Rules rule groups ](waf-managed-rule-groups-deployments.md)\.
+For deployments that affect your protections, such as changes to the default version, AWS provides SNS notifications to inform you of planned deployments and to let you know when a deployment is starting\. For deployments that don't affect your protections, such as release candidate and static version deployments, AWS might notify you after the deployment has started or even after it's completed\. At the completion of the deployment of a new static version, AWS updates this guide, in the changelog at [AWS Managed Rules changelog](aws-managed-rule-groups-changelog.md) and in the document history page at [Document history](doc-history.md)\. For more information about the notifications provided for each type of deployment, see [Deployments for versioned AWS Managed Rules rule groups ](waf-managed-rule-groups-deployments.md)\.
 
 To receive all updates that AWS provides for the AWS Managed Rules rule groups, subscribe to the RSS feed from any HTML page of this guide, and subscribe to the SNS topic for the AWS Managed Rules rule groups\. 
 
-The fields in the Amazon SNS notifications always include the `Subject`, `Message`, and `MessageAttributes`\. Additional fields depend on the type of message and which managed rule group the notification is for\. The following shows an example notification listing for `AWSManagedRulesCommonRuleSet`\.
+The fields in the Amazon SNS notifications always include the Subject, Message, and MessageAttributes\. Additional fields depend on the type of message and which managed rule group the notification is for\. The following shows an example notification listing for `AWSManagedRulesCommonRuleSet`\.
 
 ```
 {

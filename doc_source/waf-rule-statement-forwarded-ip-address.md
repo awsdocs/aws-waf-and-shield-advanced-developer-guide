@@ -5,7 +5,7 @@ This section applies to rule statements that use the IP address of a web request
 **Rule statements that use IP addresses**  
 The rule statements that use IP addresses are the following:
 + [IP set match](waf-rule-statement-type-ipset-match.md) \- Inspects the IP address for a match with the addresses that are defined in an IP set\.
-+ [Geographic match](waf-rule-statement-type-geo-match.md) \- Uses the IP address to determine country of origin and matches that against a list of countries\.
++ [Geographic match](waf-rule-statement-type-geo-match.md) \- Uses the IP address to determine country and region of origin and matches the country of origin against a list of countries\.
 + [Rate\-based](waf-rule-statement-type-rate-based.md) \- Aggregates requests by their IP addresses to ensure that no individual IP address sends requests at too high a rate\.
 
 You can instruct AWS WAF to use a forwarded IP address for any of these rule statements, either from the `X-Forwarded-For` header or from another HTTP header, instead of using the web request's origin\. For details on how to provide the specifications, see the guidance for the individual rule statement types\.
@@ -66,7 +66,7 @@ The following geo match statement matches only if the `X-Forwarded-For` header c
 }
 ```
 
-The following rate\-based rule aggregates requests based on the first IP in the `X-Forwarded-For` header\. The rule counts only requests that match the nested geo match statement\. The nested geo match statement also uses the `X-Forwarded-For` header to determine whether the IP address indicates a country of origin of `US`\. If it does, or if the header is present but malformed, the geo match statement returns a match\. 
+The following rate\-based rule aggregates requests based on the first IP in the `X-Forwarded-For` header\. The rule counts only requests that match the nested geo match statement, and it only blocks requests that match the geo match statement\. The nested geo match statement also uses the `X-Forwarded-For` header to determine whether the IP address indicates a country of origin of `US`\. If it does, or if the header is present but malformed, the geo match statement returns a match\. 
 
 ```
 {

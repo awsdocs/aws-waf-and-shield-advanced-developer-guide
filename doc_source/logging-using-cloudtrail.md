@@ -17,7 +17,7 @@ For an ongoing record of events in your AWS account, including events for AWS WA
 All AWS WAF actions are logged by AWS CloudTrail and are documented in the [AWS WAF API Reference](http://docs.aws.amazon.com/waf/latest/APIReference/)\. For example, calls to `ListWebACL`, `UpdateWebACL`, and `DeleteWebACL` generate entries in the CloudTrail log files\. 
 
 Every event or log entry contains information about who generated the request\. The identity information helps you determine the following: 
-+ Whether the request was made with root or IAM user credentials
++ Whether the request was made with root user credentials 
 + Whether the request was made with temporary security credentials for a role or federated user
 + Whether the request was made by another AWS service
 
@@ -353,7 +353,7 @@ The log entry demonstrates the `CreateRule`, `GetRule`, `UpdateRule`, and `Delet
         "ruleId": "723c2943-82dc-4bc1-a29b-c7d73example"
       },
       "responseElements": null,
-      "requestID": "8e4f3211"-d548-11e3-a8a9-73e33example",
+      "requestID": "8e4f3211-d548-11e3-a8a9-73e33example",
       "eventID": "an236542-d1f9-4639-bb3d-8d2bbexample",
       "eventType": "AwsApiCall",
       "apiVersion": "2015-08-24",
@@ -443,10 +443,9 @@ AWS Shield Advanced supports logging the following actions as events in CloudTra
 + [CreateSubscription](https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html)
 + [DescribeSubscription](https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeSubscription.html)
 + [GetSubscriptionState](https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_GetSubscriptionState.html)
-+ [DeleteSubscription](https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteSubscription.html)
 
 Every event or log entry contains information about who generated the request\. The identity information helps you determine the following: 
-+ Whether the request was made with root or IAM user credentials\.
++ Whether the request was made with root user credentials 
 + Whether the request was made with temporary security credentials for a role or federated user\.
 + Whether the request was made by another AWS service\.
 
@@ -531,7 +530,7 @@ AWS Firewall Manager supports logging the following actions as events in CloudTr
 + [ListPolicies](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListPolicies.html)
 
 Every event or log entry contains information about who generated the request\. The identity information helps you determine the following: 
-+ Whether the request was made with root or IAM user credentials\.
++ Whether the request was made with root user credentials 
 + Whether the request was made with temporary security credentials for a role or federated user\.
 + Whether the request was made by another AWS service\.
 

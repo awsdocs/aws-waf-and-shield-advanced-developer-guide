@@ -1,3 +1,3 @@
-# Step 2: Complete the Cloud NGFW prerequisites<a name="complete-prereq-cloud-ngfw"></a>
+# Step 2: Complete the Palo Alto Networks Cloud NGFW policy prerequisites<a name="complete-prereq-cloud-ngfw"></a>
 
-There are a couple of additional mandatory steps that you must complete in order to use Cloud NGFW policies\. Those steps are described in [Step 4: For Cloud NGFW, subscribe in the AWS Marketplace, and configure third\-party settings](fms-cloud-ngfw-prerequisites.md)\. Complete all the prerequisites before proceeding to the next step\.
+There are a couple of additional mandatory steps that you must complete in order to use Palo Alto Networks Cloud NGFW policies\. Those steps are described in [Palo Alto Networks Cloud Next Generation Firewall policy prerequisites](fms-third-party-prerequisites.md#fms-cloud-ngfw-prerequisites)\. Complete all the prerequisites before proceeding to the next step\.

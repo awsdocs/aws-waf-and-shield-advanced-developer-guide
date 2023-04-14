@@ -3,7 +3,7 @@
 Review the scenarios in this section for help deciding which accounts to subscribe to AWS Shield Advanced and where to apply additional protections\. With Shield Advanced, you pay one monthly subscription fee for all accounts created under a consolidated billing account, plus usage fees based on GB of data transferred out\. For information about Shield Advanced pricing, see [AWS Shield Advanced Pricing](http://aws.amazon.com/shield/pricing/)\.
 
 **Note**  
-For accounts that are members of an AWS Organizations organization, Shield Advanced subscriptions are billed against the organization's payer account, regardless of whether the payer account itself is subscribed\. 
+For accounts that are members of an AWS Organizations organization, AWS bills Shield Advanced subscriptions against the organization's payer account, regardless of whether the payer account itself is subscribed\. 
 
 To protect an application and its resources with Shield Advanced, you subscribe the accounts that manage the application to Shield Advanced and then you add protections to the application's resources\. For information about subscribing accounts and protecting resources, see [Getting started with AWS Shield Advanced](getting-started-ddos.md)\.
 

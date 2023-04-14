@@ -8,9 +8,9 @@ Through the console, you access managed rule group information during the proces
 
 When you use a managed rule group in your web ACL, you can edit the following settings: 
 + **Version** – This is available only if the rule group is versioned\. For more information, see [Version management with managed rule groups](waf-managed-rule-groups-versioning.md)\.
-+ **Set rule actions to Count** – You can set the actions for rules in the rule group to Count\. This is useful for testing a rule group before using it to manage your web requests\. For more information, see [Setting the rule actions to count](web-acl-rule-group-override-options.md#web-acl-rule-group-override-options-rules)\.
++ **Override rule actions** – You can override the actions for rules in the rule group to any action\. Setting them to Count is useful for testing a rule group before using it to manage your web requests\. For more information, see [Rule action overrides](web-acl-rule-group-override-options.md#web-acl-rule-group-override-options-rules)\.
 + **Scope\-down statement** – You can add a scope\-down statement, to filter out web requests that you don't want to evaluate with the rule group\. For more information, see [Scope\-down statements](waf-rule-scope-down-statements.md)\.
-+ **Override rule group action** – You can override the action that results from the rule group evaluation, and set it to Count only\. This option isn't commonly used\. It doesn't alter how AWS WAF evaluates the rules in the rule group\. For more information, see [Overriding the resulting rule group's action to count](web-acl-rule-group-override-options.md#web-acl-rule-group-override-options-rule-group)\.
++ **Override rule group action** – You can override the action that results from the rule group evaluation, and set it to Count only\. This option isn't commonly used\. It doesn't alter how AWS WAF evaluates the rules in the rule group\. For more information, see [Rule group action override to Count](web-acl-rule-group-override-options.md#web-acl-rule-group-override-options-rule-group)\.
 
 **To edit the managed rule group settings in your web ACL**
 + **Console** 

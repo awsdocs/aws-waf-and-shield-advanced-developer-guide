@@ -8,7 +8,7 @@ The following rule explicitly allows verified bots\.
 
 ```
 {
-	"Name": "match_rule",
+    "Name": "match_rule",
     "Statement": {
       "LabelMatchStatement": {
         "Scope": "LABEL",

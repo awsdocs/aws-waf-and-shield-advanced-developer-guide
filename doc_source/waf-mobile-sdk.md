@@ -2,9 +2,12 @@
 
 You can use the AWS WAF mobile SDKs to implement AWS WAF application integrations for Android and iOS mobile applications\. With the mobile SDK, you can manage token authorization, and include the tokens in the requests that you send to your protected resources\. By using the SDK, you ensure that these remote procedure calls by your client contain a valid token\. Additionally, when this integration is in place on your application's pages, you can implement mitigating rules in your web ACL, such as blocking requests that don't contain a valid token\.
 
+**Note**  
+The AWS WAF mobile SDKs work with Android versions 23 and later and iOS versions 13 and later\.
+
 For access to the mobile SDKs, contact sales at [Contact AWS](http://aws.amazon.com/contact-us)\.
 
-The basic approach for using the SDK is to create a token provider using a configuration object, then to use the token provider to retrieve tokens from the AWS token service\. By default, the token provider includes the retrieved tokens in your web requests to your protected resource\. 
+The basic approach for using the SDK is to create a token provider using a configuration object, then to use the token provider to retrieve tokens from AWS WAF\. By default, the token provider includes the retrieved tokens in your web requests to your protected resource\. 
 
 The following is a partial listing of an SDK implementation, which shows the main components\. For more detailed examples, see [Writing your code for the AWS WAF mobile SDK](waf-mobile-sdk-coding-examples.md)\.
 

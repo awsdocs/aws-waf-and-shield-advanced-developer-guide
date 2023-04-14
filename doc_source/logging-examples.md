@@ -48,7 +48,7 @@
                 "value": "10 AND 1=1"
             }
         ],
-        "uri": "/foo",
+        "uri": "/myUri",
         "args": "",
         "httpVersion": "HTTP/1.1",
         "httpMethod": "GET",
@@ -99,9 +99,9 @@
             {"name":"Host","value":"localhost:1989"}
             ,{"name":"User-Agent","value":"curl/7.61.1"}
             ,{"name":"Accept","value":"*/*"}
-            ,{"name":"foo","value":"10 AND 1=1"}
+            ,{"name":"myHeader","myValue":"10 AND 1=1"}
             ]
-            ,"uri":"/foo","args":""
+            ,"uri":"/myUri","args":""
             ,"httpVersion":"HTTP/1.1"
             ,"httpMethod":"GET"
             ,"requestId":"rid"
@@ -167,10 +167,10 @@
             {"name":"Host","value":"localhost:1989"}
             ,{"name":"User-Agent","value":"curl/7.61.1"}
             ,{"name":"Accept","value":"*/*"}
-            ,{"name":"xssfoo","value":"<frameset onload=alert(1)>"}
-            ,{"name":"bar","value":"10 AND 1=1"}
+            ,{"name":"myHeader1","value":"<frameset onload=alert(1)>"}
+            ,{"name":"myHeader2","value":"10 AND 1=1"}
             ]
-        ,"uri":"/foo"
+        ,"uri":"/myUri"
         ,"args":""
         ,"httpVersion":"HTTP/1.1"
         ,"httpMethod":"GET"
@@ -233,7 +233,7 @@ AWS WAF currently reports the location for JSON body inspection as `UNKNOWN`\.
 ```
 
 **Example Log output for a CAPTCHA rule against a web request with a valid, unexpired CAPTCHA token**  
-The following log listing is for a web request that matched a rule with CAPTCHA action\. The web request has a valid and unexpired CAPTCHA token, and is only noted as a CAPTCHA match by AWS WAF, similar to a Count action\. This CAPTCHA match is noted under `nonTerminatingMatchingRules`\.  
+The following log listing is for a web request that matched a rule with CAPTCHA action\. The web request has a valid and unexpired CAPTCHA token, and is only noted as a CAPTCHA match by AWS WAF, similar to the behavior for the Count action\. This CAPTCHA match is noted under `nonTerminatingMatchingRules`\.  
 
 ```
 {

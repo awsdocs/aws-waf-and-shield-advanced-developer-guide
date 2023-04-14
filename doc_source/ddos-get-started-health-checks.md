@@ -1,8 +1,8 @@
 # Configure health\-based detection for your protections<a name="ddos-get-started-health-checks"></a>
 
-You can configure Shield Advanced to use health\-based detection, for improved responsiveness and accuracy in attack detection and mitigation\. You can use this option with any resource type except for Route 53 hosted zones\. 
+You can optionally configure Shield Advanced to use health\-based detection, which can improve responsiveness and accuracy in attack detection and mitigation\. You can use this option with any resource type except for Route 53 hosted zones\. 
 
-To configure health\-based detection, you define a health check for your resource in Route 53 and then associate it with your Shield Advanced protection\. For guidance on using health checks with Shield Advanced, see [Configuring health\-based detection using health checks](ddos-advanced-health-checks.md)\. 
+To use health\-based detection, you first need to define a health check for your resource in Route 53 and then associate the health check with your Shield Advanced protection\. It's important that the health check that you configure accurately reflect the health of the resource\. For information and examples for configuring health checks to use with Shield Advanced, see [Configuring health\-based detection using health checks](ddos-advanced-health-checks.md)\. 
 
 Health checks are required for Shield Response Team \(SRT\) proactive engagement support\. For information about proactive engagement, see [Configuring proactive engagement](ddos-srt-proactive-engagement.md)\.
 

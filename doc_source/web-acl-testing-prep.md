@@ -22,12 +22,37 @@ To follow the guidance in this section, you need to understand generally how to 
 
    In your web ACL configuration, switch anything that you want to test to count mode\. This causes the test protections to record matches against web requests without altering how the requests are handled\. You'll be able to see the matches in your metrics, logs, and sampled requests, to verify the match criteria and to understand what the effects might be on your web traffic\. Rules that add labels to matching requests will add labels regardless of the rule action\. 
    + **Rule defined in the web ACL** – Edit the rules in the web ACL and set their actions to `Count`\. 
-   + **Rule group** – In your web ACL configuration, edit the rule statement for the rule group and set the rule actions to `Count`\. If you manage the web ACL in JSON, add the rule to the `ExcludedRules` list in the rule group reference statement\. For more information, see [Setting rule actions to count in a rule group](web-acl-rule-group-settings.md#web-acl-rule-group-rule-to-count)\.
+   + **Rule group** – In your web ACL configuration, edit the rule statement for the rule group and, in the **Rules** pane, open the **Override all rule actions** dropdown and choose **Count**\. If you manage the web ACL in JSON, add the rules to the `RuleActionOverrides` settings in the rule group reference statement, with `ActionToUse` set to `Count`\. The following example listing shows overrides for two rules in the `AWSManagedRulesAnonymousIpList` AWS Managed Rules rule group\. 
 
-     For your own rule group, don't modify the rule actions in the rule group itself\. Rule group rules with `Count` action don't generate the metrics or other artifacts that you need for your testing\. Also, changing a rule group affects all web ACLs that use it, while the changes inside the web ACL configuration only affect the single web ACL\. 
+     ```
+       "ManagedRuleGroupStatement": {
+         "VendorName": "AWS",
+         "Name": "AWSManagedRulesAnonymousIpList",
+           "RuleActionOverrides": [
+             {
+               "ActionToUse": {
+                 "Count": {}
+               },
+               "Name": "AnonymousIPList"
+             },
+             {
+               "ActionToUse": {
+                 "Count": {}
+               },
+               "Name": "HostingProviderIPList"
+             }
+           ],
+           "ExcludedRules": []
+         }
+       },
+     ```
+
+     For more information about rule action overrides, see [Overriding rule actions in a rule group](web-acl-rule-group-settings.md#web-acl-rule-group-rule-action-override)\.
+
+     For your own rule group, don't modify the rule actions in the rule group itself\. Rule group rules with `Count` action don't generate the metrics or other artifacts that you need for your testing\. In addition, changing a rule group affects all web ACLs that use it, while the changes inside the web ACL configuration only affect the single web ACL\. 
    + **Web ACL** – If you're testing a new web ACL, set the default action for the web ACL to allow requests\. This lets you try out the web ACL without affecting traffic in any way\. 
 
-   In general, count mode reports more matches than production\. This is because a rule that counts requests doesn't stop the evaluation of the request by the web ACL, so rules that run later in the web ACL might also match the request\. When you change your rule actions to their production settings, rules that allow or block requests will terminate the evaluation of requests that they match\. As a result, matching requests will generally be inspected by fewer rules in the web ACL\. For more information about the effects of rule actions on the overall evaluation of a web request, see [AWS WAF rule action](waf-rule-action.md)\. 
+   In general, count mode generates more matches than production\. This is because a rule that counts requests doesn't stop the evaluation of the request by the web ACL, so rules that run later in the web ACL might also match the request\. When you change your rule actions to their production settings, rules that allow or block requests will terminate the evaluation of requests that they match\. As a result, matching requests will generally be inspected by fewer rules in the web ACL\. For more information about the effects of rule actions on the overall evaluation of a web request, see [AWS WAF rule action](waf-rule-action.md)\. 
 
    With these settings, your new protections won't alter web traffic, but will generate match information in metrics, web ACL logs, and request samples\. 
 

@@ -15,7 +15,7 @@ In addition to the procedure in this section, you have the option to add a new I
 **Note**  
 You can't change the name after you create the IP set\.
 
-1. For **Region**, choose the Region where you want to store the IP set\. To use an IP set in web ACLs that protect Amazon CloudFront distributions, you must use Global \(CloudFront\)\. 
+1. For **Region**, choose Global \(CloudFront\) or choose the Region where you want to store the IP set\. You can use regional IP sets only in web ACLs that protect regional resources\. To use an IP set in web ACLs that protect Amazon CloudFront distributions, you must use Global \(CloudFront\)\. 
 
 1. For **IP version**, select the version you want to use\.
 

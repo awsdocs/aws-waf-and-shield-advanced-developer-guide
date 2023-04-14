@@ -1,4 +1,4 @@
-# Step 2: Create and apply an AWS Firewall Manager Shield Advanced policy<a name="get-started-fms-shield-create-security-policy"></a>
+# Step 2: Create and apply a Shield Advanced policy<a name="get-started-fms-shield-create-security-policy"></a>
 
 After completing the prerequisites, you create an AWS Firewall Manager Shield Advanced policy\. A Firewall Manager Shield Advanced policy contains the accounts and resources that you want to protect with Shield Advanced\.
 

@@ -23,7 +23,7 @@ The role permissions policy named AWSShieldServiceRolePolicy allows Shield Advan
 + `cloudfront:ListDistributions`
 + `cloudfront:GetDistribution`
 
-When actions are permitted on all AWS resources, it's indicated in the policy as `"Resource": "*"`\. This means that the service\-linked role can take each indicated action on all AWS resources *that the action supports*\. For example, the action `wafv2:GetWebACL` is supported only for `wafv2` web ACL resources\. 
+When actions are permitted on all AWS resources, this is indicated in the policy as `"Resource": "*"`\. This only means that the service\-linked role can take each indicated action on all AWS resources *that the action supports*\. For example, the action `wafv2:GetWebACL` is supported only for `wafv2` web ACL resources\. 
 
 Shield Advanced only makes resource\-level API calls for protected resources for which you've enabled the application layer protections feature and for web ACLs that are associated with those protected resources\. 
 

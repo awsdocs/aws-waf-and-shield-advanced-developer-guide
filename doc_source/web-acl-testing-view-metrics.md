@@ -2,7 +2,7 @@
 
 After you've associated a web ACL with one or more AWS resources, you can view the resulting metrics for the association in an Amazon CloudWatch graph\. 
 
-For information about CloudWatch metrics, see the [Amazon CloudWatch documentation](https://docs.aws.amazon.com/AmazonCloudWatch/)\. For a list of the metrics that AWS WAF provides, see [AWS WAF metrics and dimensions](monitoring-cloudwatch.md#waf-metrics)\.
+For information about CloudWatch metrics, see the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html)\. For a list of the metrics that AWS WAF provides, see [AWS WAF metrics and dimensions](monitoring-cloudwatch.md#waf-metrics)\.
 
 For each rule in a web ACL and for all the requests that an associated resource forwards to AWS WAF for a web ACL, CloudWatch lets you do the following:
 + View data for the preceding hour or preceding three hours\.

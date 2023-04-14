@@ -2,21 +2,21 @@
 
 Account takeover is an online illegal activity in which an attacker gains unauthorized access to a person's account\. The attacker might do this in a number of ways, such as using stolen credentials or guessing the victim's password through a series of attempts\. When the attacker gains access, they might steal money, information, or services from the victim\. The attacker might pose as the victim to gain access to other accounts that the victim owns, or to gain access to the accounts of other people or organizations\. Additionally, they might attempt to change the user's password in order to block the victim from their own accounts\. 
 
-You can monitor and control account takeover attempts by implementing the AWS WAF Fraud Control account takeover prevention \(ATP\) feature\. 
+You can monitor and control account takeover attempts by implementing the AWS WAF Fraud Control account takeover prevention \(ATP\) feature\. AWS WAF offers this feature in the AWS Managed Rules rule group `AWSManagedRulesATPRuleSet` and companion application integration SDKs\. 
+
+The ATP managed rule group labels and manages requests that might be part of malicious account takeover attempts\. The rule group does this by inspecting login attempts that clients send to your application's login endpoint\. 
++ **Request inspection** – ATP gives you visibility and control over anomalous login attempts and login attempts that use stolen credentials, to prevent account takeovers that might lead to fraudulent activity\. ATP checks email and password combinations against its stolen credential database, which is updated regularly as new leaked credentials are found on the dark web\. ATP aggregates data by IP address and client session, to detect and block clients that send too many requests of a suspicious nature\. 
++ **Response inspection** – For CloudFront distributions, in addition to inspecting incoming login requests, the ATP rule group inspects your application's responses to login attempts, to track success and failure rates\. Using this information, ATP can temporarily block client sessions or IP addresses that have too many login failures\. AWS WAF performs response inspection asynchronously, so this doesn't increase latency in your web traffic\. 
 
 **Note**  
-This feature is available for all protected resource types except for Amazon Cognito user pools\.
+You are charged additional fees when you use this managed rule group\. For more information, see [AWS WAF Pricing](http://aws.amazon.com/waf/pricing/)\.
 
-ATP gives you visibility and control over anomalous login attempts and login attempts that use stolen credentials, to prevent account takeovers that might lead to fraudulent activity\. ATP checks user name and password combinations against its stolen credential database, which is updated regularly as new leaked credentials are found on the dark web\. 
+**Note**  
+The ATP feature is not available for Amazon Cognito user pools\.
 
-The primary components of AWS WAF Fraud Control account takeover prevention \(ATP\) are the following: 
-+ **`AWSManagedRulesATPRuleSet`** – The rules in this AWS Managed Rules rule group detect, label, and handle various types of account takeover activity\. The rule group inspects HTTP `POST` web requests sent to the login endpoint that you specify\. For a list of the rule group's rules, see [AWS WAF Fraud Control account takeover prevention \(ATP\) rule group](aws-managed-rule-groups-atp.md)\. You include this rule group in your web ACL using a managed rule group reference statement\. For information about using this rule group, see [Using the ATP managed rule group](waf-atp-rg-using.md)\. You are charged additional fees when you use this rule group\. For more information, see [AWS WAF Pricing](http://aws.amazon.com/waf/pricing/)\.
-+ **Details about your application's login page** – You must provide information about your login page when you add the `AWSManagedRulesATPRuleSet` rule group to your web ACL\. This allows the rule group to narrow the scope of the requests it inspects and to properly validate credentials usage in web requests\. For more information, see [Using the ATP managed rule group](waf-atp-rg-using.md)\. 
-+ **JavaScript and mobile application integration SDKs** – ATP provides JavaScript and mobile SDKs that you can integrate into your application for enhanced detection against automated attacks\. The SDKs serve a silent challenge to the user’s browser or device to determine if a login attempt is coming from an actual user or a bot\. When you implement one of these SDKs, the ATP rule group includes token validation in its inspection criteria\. Client application integration isn't required, but we highly recommend that you do it\. For more information, see [AWS WAF client application integration](waf-application-integration.md)\.
-
-You can combine your ATP implementation with the following to help you monitor, tune, and customize your protections\. 
-+ **Logging and metrics** – You can monitor your traffic, and understand how the ATP managed rule group affects it, by configuring and enabling logs and Amazon CloudWatch metrics for your web ACL\. The labels that `AWSManagedRulesATPRuleSet` adds to your web requests are included in the logs and in Amazon CloudWatch metrics\. For information about logging and metrics, see [Logging web ACL traffic](logging.md) and [Monitoring with Amazon CloudWatch](monitoring-cloudwatch.md)\.
-
-  Depending on your needs and the traffic that you see, you might want to customize your `AWSManagedRulesATPRuleSet` implementation\. For example, you might want to exclude some traffic from ATP evaluation, or you might want to alter how it handles some of the account takeover attempts that it identifies, using AWS WAF features like scope\-down statements or label matching rules\. 
-+ **Labels and label matching rules** – For any of the rules in `AWSManagedRulesATPRuleSet`, you can switch the blocking behavior to count, and then match against the labels that are added by the rules\. This allows you to customize how you handle web requests that are identified by the ATP managed rule group\. For more information about labeling and using label match statements, see [Label match rule statement](waf-rule-statement-type-label-match.md) and [Labels on web requests](waf-labels.md)\. 
-+ **Custom requests and responses** – You can add custom headers to the requests that you allow and you can send custom responses for requests that you block\. To do this, you pair your label matching with the AWS WAF custom request and response features\. For more information about customizing requests and responses, see [Customized web requests and responses in AWS WAF](waf-custom-request-response.md)\.
+**Topics**
++ [ATP components](waf-atp-components.md)
++ [Why you should use the application integration SDKs with ATP](waf-atp-with-tokens.md)
++ [Adding the ATP managed rule group to your web ACL](waf-atp-rg-using.md)
++ [Testing and deploying ATP](waf-atp-deploying.md)
++ [AWS WAF Fraud Control account takeover prevention \(ATP\) examples](waf-atp-control-examples.md)

@@ -30,9 +30,7 @@ AWS typically bills you less than US $0\.25 per day for the resources that you c
 
 ## Step 1: Set up AWS WAF Classic<a name="classic-getting-started-aws-account"></a>
 
-If you already signed up for an AWS account and created an IAM user as described in [Setting up AWS WAF Classic](classic-setting-up-waf.md), go to [Step 2: Create a Web ACL](#classic-getting-started-wizard-create-web-acl)\.
-
-If not, go to [Setting up AWS WAF Classic](classic-setting-up-waf.md) and perform at least the first two steps\. \(You can skip downloading tools for now because this Getting Started topic focuses on using the AWS WAF Classic console\.\)
+If you haven't already followed the general setup steps in [Setting up AWS WAF Classic](classic-setting-up-waf.md), do that now\. 
 
 ## Step 2: Create a Web ACL<a name="classic-getting-started-wizard-create-web-acl"></a>
 

@@ -2,6 +2,12 @@
 
 This section provides procedures for creating, managing, and using web ACLs through the AWS console\. 
 
+**Production traffic risk**  
+Before you deploy changes in your web ACL for production traffic, test and tune them in a staging or testing environment until you are comfortable with the potential impact to your traffic\. Then test and tune your updated rules in count mode with your production traffic before enabling them\. For guidance, see [Testing and tuning your AWS WAF protections](web-acl-testing.md)\.
+
+**Note**  
+Using more than 1,500 WCUs in a web ACL incurs costs beyond the basic web ACL price\. For more information, see [AWS WAF web ACL capacity units \(WCUs\)](aws-waf-capacity-units.md) and [AWS WAF Pricing](http://aws.amazon.com/waf/pricing/)\.
+
 **Temporary inconsistencies during updates**  
 When you create or change a web ACL or other AWS WAF resources, the changes take a small amount of time to propagate to all areas where the resources are stored\. The propagation time can be from a few seconds to a number of minutes\. 
 

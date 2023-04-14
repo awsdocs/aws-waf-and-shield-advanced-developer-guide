@@ -3,9 +3,9 @@
 This tutorial shows how to use AWS WAF to perform the following tasks:
 + Set up AWS WAF\.
 + Create a web access control list \(web ACL\) using the wizard in the AWS WAF console\. 
-+ Choose the AWS resources that you want AWS WAF to inspect web requests for\. This tutorial covers the steps for Amazon CloudFront\. The process is essentially the same for an Amazon API Gateway REST API, an Application Load Balancer, an AWS AppSync GraphQL API, or an Amazon Cognito user pool\. 
-+ Add the rules and rule groups that you want to use to filter web requests\. For example, you can specify the IP addresses that the requests originate from and values in the request that are used only by attackers\. For each rule, you specify how to handle matching web requests\. You can block them, allow them, count them, or insert a CAPTCHA check against them\. You define an action for each rule that you define inside a web ACL and for each rule that you define inside a rule group\. 
-+ Specify a default action for the web ACL, either `Block` or `Allow`\. This is the action that AWS WAF takes when a web request doesn't match any of the rules\.
++ Choose the AWS resources that you want AWS WAF to inspect web requests for\. This tutorial covers the steps for Amazon CloudFront\. The process is essentially the same for an Amazon API Gateway REST API, an Application Load Balancer, an AWS AppSync GraphQL API, Amazon Cognito user pool, or an AWS App Runner service\. 
++ Add the rules and rule groups that you want to use to filter web requests\. For example, you can specify the IP addresses that the requests originate from and specify values in the request that are used only by attackers\. For each rule, you specify how to handle matching web requests\. You can do things like block or count them and you can run bot challenges like CAPTCHA\. You define an action for each rule that you define inside a web ACL and for each rule that you define inside a rule group\. 
++ Specify a default action for the web ACL, either `Block` or `Allow`\. This is the action that AWS WAF takes on a request when the rules in the web ACL don't explicitly allow or block it\. 
 
 **Note**  
 AWS typically bills you less than US $0\.25 per day for the resources that you create during this tutorial\. When you're finished with the tutorial, we recommend that you delete the resources to prevent incurring unnecessary charges\. 
@@ -20,9 +20,7 @@ AWS typically bills you less than US $0\.25 per day for the resources that you c
 
 ## Step 1: Set up AWS WAF<a name="getting-started-aws-account"></a>
 
-If you already signed up for an AWS account and created an IAM user as described in [Setting up](setting-up-waf.md), go to [Step 2: Create a Web ACL](#getting-started-wizard-create-web-acl)\.
-
-If not, go to [Setting up](setting-up-waf.md) and perform at least the first two steps\. \(You can skip downloading tools for now because this Getting Started topic focuses on using the AWS WAF console\.\)
+If you haven't already followed the general setup steps in [Setting up](setting-up-waf.md), do that now\. 
 
 ## Step 2: Create a Web ACL<a name="getting-started-wizard-create-web-acl"></a>
 
@@ -57,7 +55,7 @@ In this step, you create a rule with a string match statement and indicate what 
 This statement type operates on a web request component, and requires the following request component settings: 
 + **Request components** – The part of the web request to inspect, for example, a query string or the body\.
 **Warning**  
-If you inspect the request components **Body**, **JSON body**, **Headers**, or **Cookies**, read about the limitations on how much content AWS WAF can inspect at [Oversize handling for request components](waf-rule-statement-oversize-handling.md)\.
+If you inspect the request components **Body**, **JSON body**, **Headers**, or **Cookies**, read about the limitations on how much content AWS WAF can inspect at [Handling oversize web request components](waf-oversize-request-components.md)\. 
 
   For information about web request components, see [Web request components](waf-rule-statement-fields.md)\.
 + **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For information, see [Text transformations](waf-rule-statement-transformation.md)\.
@@ -111,7 +109,7 @@ AWS Managed Rules offers a set of managed rule groups for your use, most of whic
 
    1. In the **Action** column, turn on the **Add to web ACL** toggle\. 
 
-   1. Select **Edit** and, in the rule group's **Rules** listing, turn on the **Set all rule actions to count** toggle\. This sets the action for all rules in the rule group to count only\. This allows you to see how all of the rules in the rule group behave with your web requests before you put any of them to use\.
+   1. Select **Edit** and, in the rule group's **Rules** listing, open the **Override all rule actions** dropdown and select **Count**\. This sets the action for all rules in the rule group to count only\. This allows you to see how all of the rules in the rule group behave with your web requests before you put any of them to use\.
 
    1. Choose **Save rule**\.
 

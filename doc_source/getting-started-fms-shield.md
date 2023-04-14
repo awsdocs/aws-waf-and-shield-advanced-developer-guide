@@ -9,7 +9,7 @@ To use Firewall Manager to enable Shield Advanced protection, perform the follow
 
 **Topics**
 + [Step 1: Complete the prerequisites](complete-prereq-fms-shield.md)
-+ [Step 2: Create and apply an AWS Firewall Manager Shield Advanced policy](get-started-fms-shield-create-security-policy.md)
++ [Step 2: Create and apply a Shield Advanced policy](get-started-fms-shield-create-security-policy.md)
 + [Step 3: \(Optional\) authorize the Shield Response Team \(SRT\)](get-started-fms-shield-authorize-srt.md)
 + [Step 4: Configure Amazon SNS notifications and Amazon CloudWatch alarms](get-started-fms-shield-cloudwatch.md)
 

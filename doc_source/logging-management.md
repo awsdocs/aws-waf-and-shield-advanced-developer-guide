@@ -3,13 +3,15 @@
 You can enable and disable logging for a web ACL at any time\.
 
 **Note**  
-You are charged for logging in addition to the charges for using AWS WAF\. For information, see [Pricing for logging web ACL traffic information](logging.md#logging-pricing)\.
+You are charged for logging in addition to the charges for using AWS WAF\. For information, see [Pricing for logging web ACL traffic informationPricing for logging](logging-pricing.md)\.
 
 In the logging configuration for your web ACL, you can customize what AWS WAF sends to the logs\.
-+ **Field redaction** – You can redact some fields from the log records\. Redacted fields appear as `XXX` in the logs\. For example, if you redact the **URI** field, the **URI** field in the logs will be `XXX`\. For a list of the log fields, see [Log Fields](logging-fields.md)\.
++ **Field redaction** – You can redact some fields from the log records\. Redacted fields appear as `REDACTED` in the logs\. For example, if you redact the **URI** field, the **URI** field in the logs will be `REDACTED`\. For a list of the log fields, see [Log Fields](logging-fields.md)\.
 + **Log filtering** – You can add filtering to specify which web requests are kept in the logs and which are dropped\. You filter on the settings that AWS WAF applies during the web request evaluation\. You can filter on the following settings: 
-  + **Rule action** – For information about rule action settings, see [AWS WAF rule action](waf-rule-action.md)\. 
   + **Fully qualified label** – Fully qualified labels have a prefix, optional namespaces, and label name\. The prefix identifies the rule group or web ACL context of the rule that added the label\. For information about labels, see [Labels on web requests](waf-labels.md)\.
+  + **Rule action** – You can filter on any normal rule action setting and also on the legacy `EXCLUDED_AS_COUNT` override option for rule group rules\. For information about rule action settings, see [AWS WAF rule action](waf-rule-action.md)\. For information about current and legacy rule action overrides for rule group rules, see [Action overrides in rule groups](web-acl-rule-group-override-options.md)\. 
+    + The normal rule action filters apply to actions that are configured in rules and also to actions that are configured using the current option for overriding a rule group rule action\. 
+    + The `EXCLUDED_AS_COUNT` log filter overlaps with the `Count` action log filter\. `EXCLUDED_AS_COUNT` filters both the current and legacy options for overriding a rule group rule action to Count\. 
 
 **To enable logging for a web ACL**
 
@@ -25,7 +27,7 @@ This procedure requires a configured logging destination\. For information about
 
 1. Choose the logging destination type, and then choose the logging destination that you configured\. You must choose a logging destination whose name begins with `aws-waf-logs-`\.
 
-1. \(Optional\) If you don't want certain fields and their values included in the logs, redact those fields\. Choose the field to redact, and then choose **Add**\. Repeat as necessary to redact additional fields\. The redacted fields appear as `XXX` in the logs\. For example, if you redact the **URI** field, the **URI** field in the logs will be `XXX`\. 
+1. \(Optional\) If you don't want certain fields and their values included in the logs, redact those fields\. Choose the field to redact, and then choose **Add**\. Repeat as necessary to redact additional fields\. The redacted fields appear as `REDACTED` in the logs\. For example, if you redact the **URI** field, the **URI** field in the logs will be `REDACTED`\. 
 
 1. \(Optional\) If you don't want to send all requests to the logs, add your filtering criteria and behavior\. Under **Filter logs**, for each filter that you want to apply, choose **Add filter**, then choose your filtering criteria and specify whether you want to keep or drop requests that match the criteria\. When you finish adding filters, if needed, modify the **Default logging behavior**\. 
 

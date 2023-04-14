@@ -12,14 +12,8 @@ The following rule performs normal Bot Control bot management on all web traffic
     "ManagedRuleGroupStatement": {
       "VendorName": "AWS",
       "Name": "AWSManagedRulesBotControlRuleSet",
-      "ExcludedRules": [
-        {
-          "Name": "CategoryVerifiedSearchEngine"
-        },
-        {
-          "Name": "CategoryVerifiedSocialMedia"
-        }
-      ]
+      "RuleActionOverrides": [],
+      "ExcludedRules": []
     },
     "VisibilityConfig": {
       "SampledRequestsEnabled": true,

@@ -3,7 +3,7 @@
 This topic provides information for sending your web ACL traffic logs to an Amazon S3 bucket\. 
 
 **Note**  
-You are charged for logging in addition to the charges for using AWS WAF\. For information, see [Pricing for logging web ACL traffic information](logging.md#logging-pricing)\.
+You are charged for logging in addition to the charges for using AWS WAF\. For information, see [Pricing for logging web ACL traffic informationPricing for logging](logging-pricing.md)\.
 
 To send your web ACL traffic logs to Amazon S3, you need to set up an Amazon S3 bucket for the logs\. When you enable logging in AWS WAF, you provide the bucket ARN\. For information about creating your logging bucket, see [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in the *Amazon Simple Storage Service User Guide*\.
 
@@ -57,7 +57,7 @@ Your bucket names for AWS WAF logging must start with `aws-waf-logs-` and can en
 
 ## Permissions to publish logs to Amazon S3<a name="logging-s3-permissions"></a>
 
-Configuring web ACL traffic logging for an Amazon S3 bucket requires the following permissions settings\. These permissions are set for you when you use one of the AWS WAF full access managed policies, `AWSWAFConsoleFullAccess` or `AWSWAFFullAccess`\. If you want to manage finer\-grained access to your logging and AWS WAF resources, you can set these permissions yourself\. For information about managing permissions, see [Access management for AWS resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\. For information about the AWS WAF managed policies, see [AWS managed policies for AWS WAF](waf-security-iam-awsmanpol.md)\. 
+Configuring web ACL traffic logging for an Amazon S3 bucket requires the following permissions settings\. These permissions are set for you when you use one of the AWS WAF full access managed policies, `AWSWAFConsoleFullAccess` or `AWSWAFFullAccess`\. If you want to manage finer\-grained access to your logging and AWS WAF resources, you can set these permissions yourself\. For information about managing permissions, see [Access management for AWS resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\. For information about the AWS WAF managed policies, see [AWS managed policies for AWS WAF](security-iam-awsmanpol.md)\. 
 
 The following permissions allow you to change the web ACL logging configuration and to configure log delivery to your Amazon S3 bucket\. These permissions must be attached to the user that you use to manage AWS WAF\. 
 

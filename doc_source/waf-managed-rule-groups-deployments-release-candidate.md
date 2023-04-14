@@ -16,7 +16,7 @@ AWS performs the following steps for a release candidate deployment:
 
    The release candidate contains the following rules: 
    + Rules copied exactly from the current recommended static version, with no changes to rule configurations\. 
-   + Candidate new rules with rule action set to `COUNT` and with names that end with `_RC_COUNT`\. 
+   + Candidate new rules with rule action set to Count and with names that end with `_RC_COUNT`\. 
 
      Most candidate rules provide proposed improvements to rules that exist already in the rule group\. The name for each of these rules is the existing rule's name appended with `_RC_COUNT`\. 
 
@@ -27,7 +27,7 @@ AWS performs the following steps for a release candidate deployment:
    The following diagram shows the state of the example rule group versions at this point\.   
 ![\[At the top of the figure are three stacked static versions, with Version_1.4 on the top. Separate from the static versions stack is the version Version_1.4_PLUS_RC_COUNT. This version contains the rules from Version_1.4 and it also contains two release candidate rules, RuleB_RC_COUNT and RuleZ_RC_COUNT, both with count action. The default version indicator points to Version_1.4_PLUS_RC_COUNT.\]](http://docs.aws.amazon.com/waf/latest/developerguide/)
 
-   The release candidate rules are always configured with `Count` action, so they don't alter how the rule group manages your web traffic\. 
+   The release candidate rules are always configured with Count action, so they don't alter how the rule group manages your web traffic\. 
 
    The release candidate rules generate Amazon CloudWatch count metrics that AWS uses to verify behavior and to identify false positives\. AWS makes adjustments as needed, to tune the behavior of the release candidate count rules\. 
 
@@ -40,5 +40,5 @@ AWS performs the following steps for a release candidate deployment:
 
 **Timing and notifications**  
 AWS deploys release candidate versions on an as\-needed basis, to test improvements to a rule group\. 
-
-AWS sends an SNS notification at the start of the deployment\. The notification indicates the estimated time that the release candidate will be tested\. When testing is complete, AWS silently returns the default to the static version setting, without a second notification\.
++ **SNS** – AWS sends an SNS notification at the start of the deployment\. The notification indicates the estimated time that the release candidate will be tested\. When testing is complete, AWS silently returns the default to the static version setting, without a second notification\.
++ **Change log** – AWS doesn't update the change log or other parts of this guide for this type of deployment\.

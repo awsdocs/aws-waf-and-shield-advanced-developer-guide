@@ -6,7 +6,7 @@ The new static version contains the following rules from the release candidate:
 + Rules from the prior static version that don't have a replacement candidate among the release candidate rules\. 
 + Release candidate rules, with the following changes: 
   + AWS changes the rule name by removing the release candidate suffix `_RC_COUNT`\.
-  + AWS changes the rule actions from `COUNT` to their production rule actions\. 
+  + AWS changes the rule actions from Count to their production rule actions\. 
 
    For release candidate rules that are replacements of prior existing rules, this replaces the functionality of the prior rules in the new static version\. 
 
@@ -20,7 +20,5 @@ A static version is immutable after deployment, and only changes when AWS expire
 
 **Timing and notifications**  
 AWS deploys a new static version as needed, in order to deploy improvements to rule group functionality\. The deployment of a static version doesn't impact the default version setting\.
-
-AWS sends an SNS notification at the start of the deployment\.
-
-After the deployment is complete everywhere that AWS WAF is available, AWS announces the release in this guide, in the AWS Managed Rules rule group change log and in the documentation history page\. 
++ **SNS** – AWS sends an SNS notification at the start of the deployment\.
++ **Change log** – After the deployment is complete everywhere that AWS WAF is available, AWS updates the rule group definition in this guide as needed, and then announces the release in the AWS Managed Rules rule group change log and in the documentation history page\. 

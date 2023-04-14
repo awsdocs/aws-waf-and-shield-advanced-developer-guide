@@ -1,8 +1,11 @@
 # AWS WAF Bot Control example: Create an exception for a blocked user agent<a name="waf-bot-control-example-user-agent-exception"></a>
 
-If a bot is being erroneously blocked, you can create an exception by excluding the offending AWS WAF Bot Control rule and then combining the rule label with the exception criteria\. 
+If traffic from some non\-browser user agents is being erroneously blocked, you can create an exception by setting the offending AWS WAF Bot Control rule `SignalNonBrowserUserAgent` to Count and then combining the rule's labeling with your exception criteria\. 
 
-The following rule uses the Bot Control managed rule group but changes the rule action for `SignalNonBrowserUserAgent` to count, by excluding it from normal rule group processing\. The signal rule applies its labels as usual to matching requests, but only counts them instead of performing its usual action of block\. 
+**Note**  
+Mobile apps typically have non\-browser user agents, which the `SignalNonBrowserUserAgent` rule blocks by default\. 
+
+The following rule uses the Bot Control managed rule group but overrides the rule action for `SignalNonBrowserUserAgent` to Count\. The signal rule applies its labels as usual to matching requests, but only counts them instead of performing its usual action of block\. 
 
 ```
 {
@@ -12,11 +15,15 @@ The following rule uses the Bot Control managed rule group but changes the rule 
     "ManagedRuleGroupStatement": {
       "VendorName": "AWS",
       "Name": "AWSManagedRulesBotControlRuleSet",
-      "ExcludedRules": [
+      "RuleActionOverrides": [
         {
+          "ActionToUse": {
+            "Count": {}
+          },
           "Name": "SignalNonBrowserUserAgent"
         }
-      ]
+      ],
+      "ExcludedRules": []
     }
   },
   "VisibilityConfig": {
@@ -27,13 +34,13 @@ The following rule uses the Bot Control managed rule group but changes the rule 
 }
 ```
 
-The following rule matches against the signal label that the preceding Bot Control excluded rule adds to its matching web requests\. Among the signal requests, this rule blocks all but those that have the user agent that you want to allow\. 
+The following rule matches against the signal label that the Bot Control `SignalNonBrowserUserAgent` rule adds to its matching web requests\. Among the signal requests, this rule blocks all but those that have the user agent that we want to allow\. 
 
 The following rule must run after the preceding Bot Control managed rule group in the web ACL processing order\. 
 
 ```
 {
-	"Name": "match_rule",
+    "Name": "match_rule",
     "Statement": {
       "AndStatement": {
         "Statements": [

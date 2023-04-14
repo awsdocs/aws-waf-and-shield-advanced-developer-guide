@@ -6,6 +6,7 @@ You can use AWS WAF to create the following associations between web ACLS and yo
   + Application Load Balancer
   + AWS AppSync GraphQL API
   + Amazon Cognito user pool
+  + AWS App Runner service
 + Associate a global web ACL with a Amazon CloudFront distribution\. The global web ACL will have a hard\-coded Region of US East \(N\. Virginia\) Region\.
 
 You can also associate a web ACL with a CloudFront distribution when you create or update the distribution itself\. For information, see [Using AWS WAF to Control Access to Your Content](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-awswaf.html) in the *Amazon CloudFront Developer Guide*\.
@@ -19,6 +20,9 @@ You can associate a single web ACL with one or more AWS resources, according to 
 The following additional restrictions apply to web ACL associations: 
 + You can only associate a web ACL to an Application Load Balancer within AWS Regions\. For example, you cannot associate a web ACL to an Application Load Balancer that is on AWS Outposts\.
 + You can't associate an Amazon Cognito user pool with a web ACL that uses the AWS WAF Fraud Control account takeover prevention \(ATP\) managed rule group `AWSManagedRulesATPRuleSet`\. For information about account takeover prevention, see [AWS WAF Fraud Control account takeover prevention \(ATP\)](waf-atp.md)\. 
+
+**Production traffic risk**  
+Before you deploy your web ACL for production traffic, test and tune it in a staging or testing environment until you are comfortable with the potential impact to your traffic\. Then test and tune your rules in count mode with your production traffic before enabling them\. For guidance, see [Testing and tuning your AWS WAF protections](web-acl-testing.md)\.
 
 **To associate a web ACL with an AWS resource**
 

@@ -6,7 +6,7 @@ Shield Advanced protects AWS resources in the network and transport layers \(lay
 Shield Advanced protects only resources that you have specified either in Shield Advanced or through an AWS Firewall Manager Shield Advanced policy\. It doesn't automatically protect your resources\.
 
 You can use Shield Advanced for advanced monitoring and protection with the following resource types:
-+ Amazon CloudFront distributions\. 
++ Amazon CloudFront distributions\. For CloudFront continuous deployment, Shield Advanced protects any staging distribution that's associated with a protected primary distribution\. 
 + Amazon Route 53 hosted zones\.
 + AWS Global Accelerator standard accelerators\.
 + Amazon EC2 Elastic IP addresses\. Shield Advanced protects the resources that are associated with protected Elastic IP addresses\. 
@@ -27,4 +27,4 @@ When you protect Elastic IP addresses, Shield Advanced identifies and protects t
 
 During an attack, Shield Advanced automatically deploys your network ACLs to the border of the AWS network\. When your network ACLs are at the border of the network, Shield Advanced can provide protection against larger DDoS events\. Typically, network ACLs are applied near your Amazon EC2 instances within your Amazon VPC\. The network ACL can mitigate attacks only as large as your Amazon VPC and instance can handle\. For example, if the network interface attached to your Amazon EC2 instance can process up to 10 Gbps, then volumes over 10 Gbps will slow down and possibly block traffic to that instance\. During an attack, Shield Advanced promotes your network ACL to the AWS border, which can process multiple terabytes of traffic\. Your network ACL is able to provide protection for your resource well beyond your network's typical capacity\. For more information about network ACLs, see [Network ACLs](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html)\. 
 
-Some scaling tools, like AWS Elastic Beanstalk, don't allow you to automatically attach an Elastic IP address to a Network Load Balancer\. For those cases, you need to manually attach the Elastic IP address\.
+Some scaling tools, like AWS Elastic Beanstalk, don't let you automatically attach an Elastic IP address to a Network Load Balancer\. For those cases, you need to manually attach the Elastic IP address\.

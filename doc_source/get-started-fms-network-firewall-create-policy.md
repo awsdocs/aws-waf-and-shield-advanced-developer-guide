@@ -1,4 +1,4 @@
-# Step 3: Create and apply an AWS Firewall Manager Network Firewall policy<a name="get-started-fms-network-firewall-create-policy"></a>
+# Step 3: Create and apply a Network Firewall policy<a name="get-started-fms-network-firewall-create-policy"></a>
 
 After completing the prerequisites, you create an AWS Firewall Manager Network Firewall policy\. A Network Firewall policy provides a centrally controlled AWS Network Firewall firewall for your entire AWS organization\. It also defines the AWS accounts and resources that the firewall applies to\. 
 

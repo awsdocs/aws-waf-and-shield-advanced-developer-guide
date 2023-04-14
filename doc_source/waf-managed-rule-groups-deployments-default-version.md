@@ -10,5 +10,5 @@ Before deploying this change to the default version, AWS provides notifications 
 
 **Timing and notifications**  
 AWS updates the default version when it recommends a different static version for the rule group than the one that's currently in use\. 
-
-AWS sends an SNS notification at least one week prior to the targeted deployment day and then another on the deployment day, at the start of the deployment\. Each notification includes the rule group name, the static version that the default version is being updated to, and the deployment date\. The notification sent on the deployment day also provides the scheduled timing of the deployment for each AWS Region where the update is being performed\. 
++ **SNS** – AWS sends an SNS notification at least one week prior to the targeted deployment day and then another on the deployment day, at the start of the deployment\. Each notification includes the rule group name, the static version that the default version is being updated to, the deployment date, and the scheduled timing of the deployment for each AWS Region where the update is being performed\. 
++ **Change log** – AWS doesn't update the change log or other parts of this guide for this type of deployment\.

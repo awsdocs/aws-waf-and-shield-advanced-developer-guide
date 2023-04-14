@@ -2,8 +2,11 @@
 
 This guidance applies to all AWS Managed Rules rule groups and to the AWS Marketplace rule groups that you're subscribed to\. 
 
+**Production traffic risk**  
+Before you deploy changes in your web ACL for production traffic, test and tune them in a staging or testing environment until you are comfortable with the potential impact to your traffic\. Then test and tune your updated rules in count mode with your production traffic before enabling them\. For guidance, see [Testing and tuning your AWS WAF protections](web-acl-testing.md)\.
+
 **Note**  
-Test and tune all changes to your AWS WAF protections according to the guidance at [Testing and tuning your AWS WAF protections](web-acl-testing.md)\.
+Using more than 1,500 WCUs in a web ACL incurs costs beyond the basic web ACL price\. For more information, see [AWS WAF web ACL capacity units \(WCUs\)](aws-waf-capacity-units.md) and [AWS WAF Pricing](http://aws.amazon.com/waf/pricing/)\.
 
 **To add a managed rule group to a web ACL through the console**
 

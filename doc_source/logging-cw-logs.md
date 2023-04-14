@@ -3,7 +3,7 @@
 This topic provides information for sending your web ACL traffic logs to a CloudWatch Logs log group\. 
 
 **Note**  
-You are charged for logging in addition to the charges for using AWS WAF\. For information, see [Pricing for logging web ACL traffic information](logging.md#logging-pricing)\.
+You are charged for logging in addition to the charges for using AWS WAF\. For information, see [Pricing for logging web ACL traffic informationPricing for logging](logging-pricing.md)\.
 
 To send logs to Amazon CloudWatch Logs, you create a CloudWatch Logs log group\. When you enable logging in AWS WAF, you provide the log group ARN\. After you enable logging for your web ACL, AWS WAF delivers logs to the CloudWatch Logs log group in log streams\. 
 
@@ -44,7 +44,7 @@ us-east-1_TestWebACL_19
 
 ## Permissions to publish logs to CloudWatch Logs<a name="logging-cw-logs-permissions"></a>
 
-Configuring web ACL traffic logging for a CloudWatch Logs log group requires the permissions settings described in this section\. The permissions are set for you when you use one of the AWS WAF full access managed policies, `AWSWAFConsoleFullAccess` or `AWSWAFFullAccess`\. If you want to manage finer\-grained access to your logging and AWS WAF resources, you can set the permissions yourself\. For information about managing permissions, see [Access management for AWS resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\. For information about the AWS WAF managed policies, see [AWS managed policies for AWS WAF](waf-security-iam-awsmanpol.md)\. 
+Configuring web ACL traffic logging for a CloudWatch Logs log group requires the permissions settings described in this section\. The permissions are set for you when you use one of the AWS WAF full access managed policies, `AWSWAFConsoleFullAccess` or `AWSWAFFullAccess`\. If you want to manage finer\-grained access to your logging and AWS WAF resources, you can set the permissions yourself\. For information about managing permissions, see [Access management for AWS resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\. For information about the AWS WAF managed policies, see [AWS managed policies for AWS WAF](security-iam-awsmanpol.md)\. 
 
 These permissions allow you to change the web ACL logging configuration, to configure log delivery for CloudWatch Logs, and to retrieve information about your log group\. These permissions must be attached to the user that you use to manage AWS WAF\. 
 

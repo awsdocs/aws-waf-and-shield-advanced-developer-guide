@@ -8,8 +8,8 @@ Before you deploy your web ACL implementation for production traffic, test and t
 This section provides guidance for testing and tuning your AWS WAF web ACLs, rules, rule groups, IP sets, and regex pattern sets\.
 
 This section also provides general guidance for testing your use of rule groups that are managed by someone else\. These include AWS Managed Rules rule groups, AWS Marketplace managed rule groups, and rule groups that are shared with you by another account\. For these rule groups, also follow any guidance that you get from the rule group provider\.
-+ For the Bot Control AWS Managed Rules rule group, see [Testing and deploying AWS WAF Bot Control](waf-bot-control-deploying.md)\. 
-+ For the account takeover prevention AWS Managed Rules rule group, see [Testing and deploying ATP](waf-atp-deploying.md)\. 
++ For the Bot Control AWS Managed Rules rule group, also see [Testing and deploying AWS WAF Bot Control](waf-bot-control-deploying.md)\. 
++ For the account takeover prevention AWS Managed Rules rule group, also see [Testing and deploying ATP](waf-atp-deploying.md)\. 
 
 **Temporary inconsistencies during updates**  
 When you create or change a web ACL or other AWS WAF resources, the changes take a small amount of time to propagate to all areas where the resources are stored\. The propagation time can be from a few seconds to a number of minutes\. 

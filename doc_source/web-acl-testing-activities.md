@@ -21,7 +21,9 @@ Repeat the following procedure until the web ACL is managing your web traffic as
    + **Logs** – In the logs, the test rules that match a web request appear as follows: 
      + Rules in the web ACL that have `Count` action are listed as `nonTerminatingMatchingRules`\.
      + Rule groups are identified in the `ruleGroupId` field\.
-     + Rule group rules that you've set to `Count` through your web ACL configuration show up as `excludedRules` in the `ruleGroupList`\.
+     + Rule group rules that you've set to `Count` through your web ACL configuration show up under the `ruleGroupList` in one of two ways, depending on how and when you configured the `Count` override: 
+       + For rule action override with `Count` chosen, the match is listed under `nonTerminatingMatchingRules`, the `action` is `Count` and the `overriddenAction` is the action that the rule is configured for in the rule group, which is usually `Block`\. Rule action override is the most current, recommended option for overriding rule group rule actions, and it's the only option available through the console wizard\. 
+       + For an excluded rule, the match is listed under `excludedRules`\. This is an older option that was superceded by the override option, and is no longer available through the console\. Web ACLs that you configured through the console wizard prior to October 27, 2022 might still use it, and you can also still choose this option through the APIs\.
      + Labels that rules have applied to the request are listed in the `Labels` field\.
 
      For more information about logging contents, see [Log Fields](logging-fields.md)\.
@@ -68,4 +70,4 @@ For inspection criteria that you don't control and for some complex rules, you m
 
      This is usually a temporary fix\. You might change the version for your production traffic while you continue testing the latest version in your test or staging environment, or while you wait for a more compatible version from the provider\. For information about managed rule group versions, see [Managed rule groups](waf-managed-rule-groups.md)\.
 
-When you're satisfied that the new rules are matching requests as you need them to, move to the next stage of your testing and repeat this procedure\. The final stage of testing and tuning should be in your production environment\.
+When you're satisfied that the new rules are matching requests as you need them to, move to the next stage of your testing and repeat this procedure\. Perform the final stage of testing and tuning in your production environment\.

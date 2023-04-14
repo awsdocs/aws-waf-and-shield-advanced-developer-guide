@@ -19,6 +19,7 @@ Firewall Manager is particularly useful when you want to protect your entire org
 + [Managing the AWS Firewall Manager administrator](fms-administrator.md)
 + [Getting started with AWS Firewall Manager policies](getting-started-fms-intro.md)
 + [Working with AWS Firewall Manager policies](working-with-policies.md)
++ [Working with resource sets in Firewall Manager](fms-resource-sets.md)
 + [Viewing compliance information for an AWS Firewall Manager policy](fms-compliance.md)
 + [AWS Firewall Manager findings](fms-findings.md)
 + [Security in AWS Firewall Manager](fms-security.md)

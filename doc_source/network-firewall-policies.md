@@ -2,7 +2,10 @@
 
 You can use AWS Firewall Manager Network Firewall *policies* to manage AWS Network Firewall *firewalls* for your Amazon Virtual Private Cloud *VPCs* across your *organization* in AWS Organizations\. You can apply centrally controlled firewalls to your entire organization or to a select subset of your accounts and VPCs\. 
 
-Network Firewall provides network traffic filtering protections for the public subnets in your VPCs\. When you apply the Firewall Manager policy, for each account and VPC that's within policy scope, Firewall Manager creates a Network Firewall firewall and deploys firewall endpoints to VPC subnets, to filter network traffic\. 
+Network Firewall provides network traffic filtering protections for the public subnets in your VPCs\. Firewall Manager creates and manages your firewalls based on the *firewall management type* defined by your policy\. Firewall Manager provides the following firewall management models:
++ **Distributed** \- For each account and VPC that's within policy scope, Firewall Manager creates a Network Firewall firewall and deploys firewall endpoints to VPC subnets, to filter network traffic\.
++ **Centralized** \- Firewall Manager creates a single Network Firewall firewall in a single Amazon VPC\.
++ **Import existing firewalls** \- Firewall Manager imports existing firewalls for management in a single Firewall Manager policy\. You can apply additional rules to the imported firewalls managed by your policy to ensure that your firewalls meet your security standards\.
 
 **Note**  
 Firewall Manager Network Firewall policies are Firewall Manager policies that you use to manage Network Firewall protections for your VPCs across your organization\.   
@@ -19,15 +22,25 @@ A Network Firewall policy shares Network Firewall rule groups across the account
 When you specify a new Network Firewall policy, you define the firewall policy the same as you do when you're using AWS Network Firewall directly\. You specify the stateless rule groups to add, default stateless actions, and stateful rule groups\. Your rule groups must already exist in the Firewall Manager administrator account for you to include them in the policy\. For information about creating Network Firewall rule groups, see [AWS Network Firewall rule groups](https://docs.aws.amazon.com/network-firewall/latest/developerguide/rule-groups.html)\.
 
 **How Firewall Manager creates firewall endpoints**  
-The *deployment model* in your policy determines how Firewall Manager creates firewall endpoints\. There are two deployment models to choose from, the *distributed deployment model*, and the *centralized deployment model*:
-+ **Distributed deployment model** \- With the distributed deployment model, Firewall Manager creates endpoints for each VPC that's within policy scope\. You can either customize the endpoint location by specifying which Availability Zones to create firewall endpoints in, or Firewall Manager can automatically create endpoints in the Availability Zones with public subnets\. If you manually choose the Availability Zones, you have the option to restrict the set of allowed CIDRs per Availability Zone\. If you decide to let Firewall Manager automatically create the endpoints, you must also specify whether the service will create a single endpoint or multiple firewall endpoints within your VPCs\.
+The *Firewall management type* in your policy determines how Firewall Manager creates firewalls\. Your policy can create *distributed* firewalls, a *centralized* firewall, or you can **import existing firewalls**:
++ **Distributed** \- With the distributed deployment model, Firewall Manager creates endpoints for each VPC that's within policy scope\. You can either customize the endpoint location by specifying which Availability Zones to create firewall endpoints in, or Firewall Manager can automatically create endpoints in the Availability Zones with public subnets\. If you manually choose the Availability Zones, you have the option to restrict the set of allowed CIDRs per Availability Zone\. If you decide to let Firewall Manager automatically create the endpoints, you must also specify whether the service will create a single endpoint or multiple firewall endpoints within your VPCs\.
   + For multiple firewall endpoints, Firewall Manager deploys a firewall endpoint in each Availability Zone where you have a subnet with an internet gateway or a Firewall Manager\-created firewall endpoint route in the route table\. This is the default option for a Network Firewall policy\.
   + For a single firewall endpoint, Firewall Manager deploys a firewall endpoint in a single Availability Zone in any subnet that has an internet gateway route\. With this option, traffic in other zones needs to cross zone boundaries in order to be filtered by the firewall\.
 **Note**  
 For both of these options, there must be a subnet associated to a route table that has an IPv4/prefixlist route in it\. Firewall Manager does not check for any other resources\.
-+ **Centralized deployment model** \- With the centralized deployment model, Firewall Manager creates one or more firewall endpoints within an *inspection VPC*\. An inspection VPC is a central VPC where Firewall Manager launches your endpoints\. When you use the centralized deployment model, you also specify which Availability Zones to create firewall endpoints in\. You can't change the inspection VPC after you create your policy\. To use a different inspection VPC, you must create a new policy\.
++ **Centralized** \- With the centralized deployment model, Firewall Manager creates one or more firewall endpoints within an *inspection VPC*\. An inspection VPC is a central VPC where Firewall Manager launches your endpoints\. When you use the centralized deployment model, you also specify which Availability Zones to create firewall endpoints in\. You can't change the inspection VPC after you create your policy\. To use a different inspection VPC, you must create a new policy\.
++ **Import existing firewalls** \- When you import existing firewalls, you choose the firewalls to manage in your policy by adding one or more *resource sets* to your policy\. A resource set is a collection of resources, in this case existing firewalls in Network Firewall, that are managed by an account in your organization\. Before you use resource sets in your policy, you must first create a resource set\. For information about Firewall Manager resource sets, see [Working with resource sets in Firewall Manager](fms-resource-sets.md)\.
 
-If you change the list of Availability Zones, Firewall Manager will try to clean up any endpoints that were created in the past, but that aren't currently in policy scope\. Firewall Manager will remove the endpoint only if there are no route table routes that reference the out of scope endpoint\. If Firewall Manager finds that it is unable to delete these endpoints, it will mark the firewall subnet as being non\-compliant and will continue attempting to remove the endpoint until such time as it is safe to delete\.
+  Keep in mind the following considerations when working with imported firewalls:
+  + If an imported firewall become non\-compliant, Firewall Manager will try to automatically resolve the violation, except for under the following circumstances:
+    + If there's a mismatch between the Firewall Manager and Network Firewall policy's stateful or stateless default actions\.
+    + If a rule group in an imported firewall's firewall policy has the same priority as a rule group in the Firewall Manager policy\.
+    + If an imported firewall uses a firewall policy that's associated with a firewall that's not part of the policy's resource set\. This can happen because a firewall can have exactly one firewall policy, but a single firewall policy can be associated with multiple firewalls\.
+    + If a pre\-existing rule group belonging to an imported firewall's firewall policy that is also specified in the Firewall Manager policy is given a different priority\.
+  + If you enable resource cleanup in the policy, Firewall Manager removes the rule groups which have been in FMS import policy from the firewalls in scope of the resource set\.
+  + Firewalls managed by that are managed by a Firewall Manager import existing firewall management type can only be managed by one policy at a time\. If the same resource set is added to multiple import network firewall policies, the firewalls in the resource set will be managed by the first policy the resource set was added to and will be ignored by the second policy\.
+
+If you change the list of Availability Zones for policies using distributed or centralized firewall management, Firewall Manager will try to clean up any endpoints that were created in the past, but that aren't currently in policy scope\. Firewall Manager will remove the endpoint only if there are no route table routes that reference the out of scope endpoint\. If Firewall Manager finds that it is unable to delete these endpoints, it will mark the firewall subnet as being non\-compliant and will continue attempting to remove the endpoint until such time as it is safe to delete\.
 
 **How Firewall Manager manages your firewall subnets**  
 Firewall subnets are the VPC subnets that Firewall Manager creates for the firewall endpoints that filter your network traffic\. Each firewall endpoint must be deployed in a dedicated VPC subnet\. Firewall Manager creates at least one firewall subnet in each VPC that's within scope of the policy\.
@@ -53,7 +66,7 @@ If Firewall Manager can't create a required firewall subnet in an Availability Z
 **How Firewall Manager manages your Network Firewall resources**  
 When you define the policy in Firewall Manager, you provide the network traffic filtering behavior of a standard AWS Network Firewall firewall policy\. You add stateless and stateful Network Firewall rule groups and specify default actions for packets that don’t match any stateless rules\. For information on working with firewall policies in AWS Network Firewall, see the [AWS Network Firewall firewall policies](https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-policies.html)\.
 
-When you save the Network Firewall policy, Firewall Manager creates a firewall and firewall policy in each VPC that's within scope of the policy\. Firewall Manager names these Network Firewall resources by concatenating the following values: 
+For distributed and centralized policies, when you save the Network Firewall policy, Firewall Manager creates a firewall and firewall policy in each VPC that's within scope of the policy\. Firewall Manager names these Network Firewall resources by concatenating the following values: 
 + A fixed string, either `FMManagedNetworkFirewall` or `FMManagedNetworkFirewallPolicy`, depending on the resource type\.
 + Firewall Manager policy name\. This is the name you assign when you create the policy\.
 + Firewall Manager policy ID\. This is the AWS resource ID for the Firewall Manager policy\.
@@ -71,7 +84,7 @@ The following shows an example firewall policy name:
 FMManagedNetworkFirewallPolicyEXAMPLENameEXAMPLEFirewallManagerPolicyIdEXAMPLEVPCId
 ```
 
-After you create the policy, account owners in the VPCs can't override your firewall policy settings or your rule groups, but they can add rule groups to the firewall policy that Firewall Manager has created\. 
+After you create the policy, member accounts in the VPCs can't override your firewall policy settings or your rule groups, but they can add rule groups to the firewall policy that Firewall Manager has created\.
 
 **How Firewall Manager manages and monitors VPC route tables for your policy**
 

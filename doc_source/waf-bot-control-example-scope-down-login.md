@@ -1,6 +1,6 @@
-# AWS WAF Bot Control example: Use Bot Control only for login page<a name="waf-bot-control-example-scope-down-login"></a>
+# AWS WAF Bot Control example: Use Bot Control only for the login page<a name="waf-bot-control-example-scope-down-login"></a>
 
-The following example uses a scope\-down statement to use AWS WAF Bot Control only for traffic that's coming to a website's login page that's identified by the URI path `login`\. The URI path to your login page might be different from the example, depending on your application and environment\.
+The following example uses a scope\-down statement to apply AWS WAF Bot Control only for traffic that's coming to a website's login page, which is identified by the URI path `login`\. The URI path to your login page might be different from the example, depending on your application and environment\.
 
 ```
 {
@@ -10,14 +10,8 @@ The following example uses a scope\-down statement to use AWS WAF Bot Control on
     "ManagedRuleGroupStatement": {
       "VendorName": "AWS",
       "Name": "AWSManagedRulesBotControlRuleSet",
-      "ExcludedRules": [
-        {
-          "Name": "CategoryVerifiedSearchEngine"
-        },
-        {
-          "Name": "CategoryVerifiedSocialMedia"
-        }
-      ]
+      "RuleActionOverrides": [],
+      "ExcludedRules": []
     },
     "VisibilityConfig": {
       "SampledRequestsEnabled": true,

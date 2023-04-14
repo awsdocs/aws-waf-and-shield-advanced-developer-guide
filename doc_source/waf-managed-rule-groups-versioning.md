@@ -5,10 +5,10 @@ Many managed rule group providers update a rule group's options and capabilities
 When you add a managed rule group to your web ACL, if the rule group supports versioning, you can choose to let the provider manage which version you use or you can manage the version setting yourself\. 
 
 **Can't find the version you want?**  
-If you don't see a version in a rule group's version listing, the version is probably scheduled for expiration or already expired\. After a version is scheduled for expiration, AWS WAF no longer allows you to choose it for the rule group\. 
+If you don't see a version in a rule group's version listing, the version is probably scheduled for expiration or already expired\. After a version is scheduled for expiration, AWS WAF no longer lets you to choose it for the rule group\. 
 
 **Versioning and SNS notifications for AWS Managed Rules rule groups**  
-The AWS Managed Rules rule groups all provide versioning and SNS update notifications except for the rule groups for IP reputation, Bot Control, and Account takeover prevention\. 
+The AWS Managed Rules rule groups all provide versioning and SNS update notifications except for the rule groups for IP reputation, Bot Control, and account takeover prevention\. 
 
 The AWS Managed Rules rule groups that provide notifications all use the same SNS topic Amazon Resource Name \(ARN\)\.
 
@@ -37,7 +37,7 @@ When you use a managed rule group in your web ACL, you can choose to use a speci
 + **Default version** – AWS WAF always sets the default version to the static version that's currently recommended by the provider\. When the provider updates their recommended static version, AWS WAF automatically updates the default version setting for the rule group in your web ACL\. 
 
   When you use the default version of a managed rule group, do the following as best practice: 
-  + **Subscribe to notifications** – Subscribe to notifications for changes to the rule group and keep an eye on those\. Most providers send advanced notification of new static versions and of default version changes\. These allow you to check the effects of a new static version before your default version setting moves to it\. For more information see [Getting notified of new versions and updates](waf-using-managed-rule-groups-sns-topic.md)\.
+  + **Subscribe to notifications** – Subscribe to notifications for changes to the rule group and keep an eye on those\. Most providers send advanced notification of new static versions and of default version changes\. These let you check the effects of a new static version before AWS switches the default version to it\. For more information see [Getting notified of new versions and updates](waf-using-managed-rule-groups-sns-topic.md)\.
   + **Review the effects of static version settings and make adjustments as needed before your default is set to it** – Before your default is set to a new static version, review the effects of the static version on the monitoring and management of your web requests\. The new static version might have new rules to review\. Look for false positives or other unexpected behavior, in case you need to modify how you use the rule group\. You can set rules to count, for example, to stop them from blocking traffic while you figure out how you want to handle the new behavior\. For more information, see [Testing and tuning your AWS WAF protections](web-acl-testing.md)\.
 + **Static version** – If you choose to use a static version, you must manually update the version setting when you're ready to adopt a new version of the rule group\. 
 

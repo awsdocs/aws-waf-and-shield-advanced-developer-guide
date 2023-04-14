@@ -66,7 +66,7 @@ WAFToken token = tokenProvider.getToken();
 
 If `setTokenCookie` is `TRUE`, the token provider includes the token cookie for you in your web requests to all locations under the path that's specified in `tokenCookiePath`\. By default,`setTokenCookie` is `TRUE` and `tokenCookiePath` is `/`\. 
 
-You can narrow the scope of the requests that include a token cookie by specifying the token cookie path, for example, `/web/login`\. If you do this, check that your AWS WAF rules don't inspect for tokens in the requests that you send to other paths\. When you use the `AWSManagedRulesATPRuleSet` rule group, you configure the login path, and the rule group checks for tokens in requests that are sent to that path\. For more information, see [Using the ATP managed rule group](waf-atp-rg-using.md)\.
+You can narrow the scope of the requests that include a token cookie by specifying the token cookie path, for example, `/web/login`\. If you do this, check that your AWS WAF rules don't inspect for tokens in the requests that you send to other paths\. When you use the `AWSManagedRulesATPRuleSet` rule group, you configure the login path, and the rule group checks for tokens in requests that are sent to that path\. For more information, see [Adding the ATP managed rule group to your web ACL](waf-atp-rg-using.md)\.
 
 ------
 #### [ iOS ]
@@ -116,7 +116,7 @@ If you set `setTokenCookie` to `FALSE`, then you need to provide the token cooki
 
 ```
 var request = URLRequest(url: wafProtectedEndpoint)
-request.setValue("aws-waf-token=Token from token provider", forHTTPHeaderField: "Cookie")
+request.setValue("aws-waf-token=token from token provider", forHTTPHeaderField: "Cookie")
 request.httpShouldHandleCookies = true
 URLSession.shared.dataTask(with: request) { data, response, error in }
 ```
@@ -127,7 +127,7 @@ URLSession.shared.dataTask(with: request) { data, response, error in }
 ```
 URL url = new URL("Domain name");
 HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
-String wafTokenCookie = "aws-waf-token=Token from token provider";
+String wafTokenCookie = "aws-waf-token=token from token provider";
 connection.setRequestProperty("Cookie", wafTokenCookie);
 connection.getInputStream();
 ```

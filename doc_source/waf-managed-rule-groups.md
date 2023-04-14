@@ -1,8 +1,9 @@
 # Managed rule groups<a name="waf-managed-rule-groups"></a>
 
-Managed rule groups are collections of predefined, ready\-to\-use rules that AWS and AWS Marketplace sellers write and maintain for you:
-+ *AWS Managed Rules rule groups* are mostly available for free to AWS WAF customers\. The AWS WAF Bot Control and AWS WAF Fraud Control account takeover prevention \(ATP\) rule groups have additional fees\. For more information, see [AWS WAF Pricing](http://aws.amazon.com/waf/pricing/)\.
-+ *AWS Marketplace managed rule groups* are available by subscription through AWS Marketplace\. Each of these rule groups is owned and managed by the AWS Marketplace seller\. 
+Managed rule groups are collections of predefined, ready\-to\-use rules that AWS and AWS Marketplace sellers write and maintain for you\. Basic AWS WAF pricing applies to your use of any managed rule group\. For AWS WAF pricing information, see [AWS WAF Pricing](http://aws.amazon.com/waf/pricing/)\.
++ *The AWS Managed Rules rule groups for AWS WAF Bot Control and AWS WAF Fraud Control account takeover prevention \(ATP\)* are available for additional fees, beyond the basic AWS WAF charges\. For pricing details, see [AWS WAF Pricing](http://aws.amazon.com/waf/pricing/)\. 
++ *All other AWS Managed Rules rule groups* are available to AWS WAF customers at no additional cost\. 
++ *AWS Marketplace managed rule groups* are available by subscription through AWS Marketplace\. Each of these rule groups is owned and managed by the AWS Marketplace seller\. For pricing information to use a AWS Marketplace managed rule group, contact the AWS Marketplace seller\. 
 
 Some managed rule groups are designed to help protect specific types of web applications like WordPress, Joomla, or PHP\. Others offer broad protection against known threats or common web application vulnerabilities, including some of the ones listed in the [OWASP Top 10](https://owasp.org/www-project-top-ten/)\. If you're subject to regulatory compliance like PCI or HIPAA, you might be able to use managed rule groups to satisfy web application firewall requirements\.
 

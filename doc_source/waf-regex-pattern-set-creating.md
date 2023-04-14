@@ -12,7 +12,7 @@ Follow the procedure in this section to create a new regex pattern set\.
 **Note**  
 You can't change the name after you create the regex pattern set\.
 
-1. For **Region**, choose the Region where you want to store the regex pattern set\. To use a regex pattern set in web ACLs that protect Amazon CloudFront distributions, you must use Global \(CloudFront\)\. 
+1. For **Region**, choose Global \(CloudFront\) or choose the Region where you want to store the regex pattern set\. You can use regional regex pattern sets only in web ACLs that protect regional resources\. To use a regex pattern set in web ACLs that protect Amazon CloudFront distributions, you must use Global \(CloudFront\)\. 
 
 1. In the **Regular expressions** text box, enter one regex pattern per line\. 
 

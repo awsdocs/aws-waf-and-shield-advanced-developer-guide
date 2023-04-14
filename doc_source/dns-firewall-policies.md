@@ -25,6 +25,15 @@ DNS Firewall filters DNS traffic for the VPC in the following order:
 
 1. Last rule groups, defined by you in the Firewall Manager DNS Firewall policy\. Valid values are between 9901 and 10000\.
 
+**Deleting a rule group**  
+To delete a rule group from a Firewall Manager DNS Firewall policy, you must perform the following steps:
+
+1. Unshare the rule group in AWS Resource Access Manager\. To unshare a rule group that you own, you must remove it from the resource share\. You can do this using the AWS RAM console or the AWS CLI\. For information about unsharing a resource, see [Update a resource share in AWS RAM](https://docs.aws.amazon.com/ram/latest/userguide/working-with-sharing-update.html) in the *AWS RAM User Guide*\.
+
+1. Delete the rule group using the DNS Firewall console or AWS CLI\.
+
+1. Remove the rule group from your Firewall Manager DNS Firewall policy\.
+
 **How Firewall Manager names the rule group associations that it creates**  
 When you save the DNS Firewall policy, if you enabled autoremediation, Firewall Manager creates a DNS Firewall association between the rule groups that you provided in the policy and the VPCs that are in scope of the policy\. Firewall Manager names these associations by concatenating the following values: 
 + The fixed string, `FMManaged_`\.

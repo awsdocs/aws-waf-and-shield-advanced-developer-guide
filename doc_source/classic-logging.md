@@ -36,7 +36,7 @@ One AWS WAF Classic log is equivalent to one Kinesis Data Firehose record\. If y
 
 1. Choose the Kinesis Data Firehose that you created in the first step\. You must choose a firehose that begins with "aws\-waf\-logs\-\."
 
-1. \(Optional\) If you don't want certain fields and their values included in the logs, redact those fields\. Choose the field to redact, and then choose **Add**\. Repeat as necessary to redact additional fields\. The redacted fields appear as `XXX` in the logs\. For example, if you redact the **cookie** field, the **cookie** field in the logs will be `XXX`\. 
+1. \(Optional\) If you don't want certain fields and their values included in the logs, redact those fields\. Choose the field to redact, and then choose **Add**\. Repeat as necessary to redact additional fields\. The redacted fields appear as `REDACTED` in the logs\. For example, if you redact the **cookie** field, the **cookie** field in the logs will be `REDACTED`\. 
 
 1. Choose **Enable logging**\.
 **Note**  

@@ -6,6 +6,8 @@ After you've verified your new web ACL settings, you can start to use it in plac
 
 1. Associate the AWS WAF web ACL with the resources that you want to protect, following the guidance at [Associating or disassociating a web ACL with an AWS resource](web-acl-associating-aws-resource.md)\. This automatically disassociates the resources from the old web ACL\. 
 
+   The switch can take from a few seconds to a number of minutes to propagate\. During this time, some requests might be processed by the old web ACL and others by the new web ACL\. Your resources will be protected throughout the switch, but you might notice inconsistencies in request handling until it's complete\. 
+
 1. Configure logging for the new web ACL, following the guidance at [Logging web ACL traffic](logging.md)\. 
 
 1. \(Optional\) If your AWS WAF Classic web ACL is no longer associated with any resources, consider removing it entirely from AWS WAF Classic\. For information, see [Deleting a Web ACL](classic-web-acl-deleting.md)\.

@@ -2,6 +2,9 @@
 
 When you apply a Firewall Manager Shield Advanced policy with auto remediation enabled, for each in\-scope resource that's not already associated with an AWS WAF web ACL, Firewall Manager associates an empty AWS WAF web ACL\. The empty web ACL is used only for Shield monitoring purposes\. If you then associate any other web ACL to the resource, Firewall Manager removes the empty web ACL association\.
 
+**Note**  
+When a resource that's in scope of a AWS WAF policy comes into the scope of a Shield Advanced policy configured with [automatic application layer DDoS mitigation](ddos-automatic-app-layer-response.md), Firewall Manager applies the Shield Advanced protection only after associating the web ACL created by the AWS WAF policy\.
+
 ## How AWS Firewall Manager manages scope changes in Shield policies<a name="shield-policies-changes-in-scope"></a>
 
 Accounts and resources can go out of scope of an AWS Firewall Manager Shield Advanced policy due to a number of changes, such as changes to policy scope settings, changes to the tags on a resource, and the removal of an account from an organization\. For general information about policy scope settings, see [AWS Firewall Manager policy scope](policy-scope.md)\.
@@ -22,7 +25,7 @@ Shield Advanced automatic application layer DDoS mitigation has the following re
 + Automatic application layer DDoS mitigation works only with Amazon CloudFront resources\.
 
   Because of this, you can only choose this option for Shield Advanced policies that you create for the **Global** Region, for use with Amazon CloudFront distributions\.
-+ Automatic application layer DDoS mitigation works only with web ACLs that were created using the latest version of AWS WAF \(v2\)\. You cannot use automatic mitigation with AWS WAF Classic web ACLs\. 
++ Automatic application layer DDoS mitigation works only with web ACLs that were created using the latest version of AWS WAF \(v2\)\. 
 
   Because of this, if you have a policy that uses AWS WAF Classic web ACLs, you need to either replace the policy with a new policy, which will automatically use the latest version of AWS WAF, or have Firewall Manager create new version web ACLs for your existing policy and switch over to using them\. For more information about the options, see [Replace AWS WAF Classic web ACLs with latest version web ACLs](#shield-policies-auto-app-layer-update-waf-version)\.
 
@@ -37,7 +40,7 @@ You can choose to have Firewall Manager enable or disable automatic mitigation f
 
 ### Replace AWS WAF Classic web ACLs with latest version web ACLs<a name="shield-policies-auto-app-layer-update-waf-version"></a>
 
-Automatic application layer DDoS mitigation works only with web ACLs that were created using the latest version of AWS WAF \(v2\)\. You cannot use automatic mitigation with AWS WAF Classic web ACLs\.
+Automatic application layer DDoS mitigation works only with web ACLs that were created using the latest version of AWS WAF \(v2\)\. 
 
 To determine the web ACL version for your Shield Advanced policy, see [Determining the version of AWS WAF that's used by a Shield Advanced policy](#shield-policies-identify-waf-version)\. 
 

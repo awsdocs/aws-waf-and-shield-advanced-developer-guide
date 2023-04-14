@@ -4,7 +4,7 @@ This example uses a scope\-down statement to apply AWS WAF Bot Control only to d
 
 The scope\-down statement excludes static content by negating the match results for a regex pattern set: 
 + The regex pattern set is configured to match extensions of *static content*\. For example, the regex pattern set specification might be `(?i)\.(jpe?g|gif|png|svg|ico|css|js|woff2?)$`\. For information about regex pattern sets and statements, see [Regex pattern set match rule statement](waf-rule-statement-type-regex-pattern-set-match.md)\. 
-+ In the scope\-down statement, we exclude the matching static content by nesting the regex pattern set statement inside a `NOT` statement\. For information about the `NOT` statement, see [`NOT` rule statement](waf-rule-statement-type-not.md)\.
++ In the scope\-down statement, we exclude the matching static content by nesting the regex pattern set statement inside a `NOT` statement\. For information about the `NOT` statement, see [NOT rule statement](waf-rule-statement-type-not.md)\.
 
 ```
 {
@@ -14,14 +14,8 @@ The scope\-down statement excludes static content by negating the match results 
     "ManagedRuleGroupStatement": {
       "VendorName": "AWS",
       "Name": "AWSManagedRulesBotControlRuleSet",
-      "ExcludedRules": [
-        {
-          "Name": "CategoryVerifiedSearchEngine"
-        },
-        {
-          "Name": "CategoryVerifiedSocialMedia"
-        }
-      ]
+      "RuleActionOverrides": [],
+      "ExcludedRules": []
     },
     "VisibilityConfig": {
       "SampledRequestsEnabled": true,

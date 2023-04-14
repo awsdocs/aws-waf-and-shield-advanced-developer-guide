@@ -1,6 +1,6 @@
 # Supported status codes for custom response<a name="customizing-the-response-status-codes"></a>
 
-For detailed information about HTTP status codes, see [Hypertext Transfer Protocol Status Code Definitions](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html) and [List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)\.
+For detailed information about HTTP status codes, see [Status Codes](https://www.rfc-editor.org/rfc/rfc9110.html#name-status-codes) by the Internet Engineering Task Force \(IETF\) and [List of HTTP status codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) on Wikipedia\.
 
 The following are the HTTP status codes that AWS WAF supports for custom responses\. 
 + `2xx Successful`
@@ -13,7 +13,7 @@ The following are the HTTP status codes that AWS WAF supports for custom respons
   + `300` – `Multiple Choices`
   + `301` – `Moved Permanently`
   + `302` – `Found`
-  + `303` –` See Other`
+  + `303` –`See Other`
   + `304` – `Not Modified`
   + `307` – `Temporary Redirect`
   + `308` – `Permanent Redirect`

@@ -1,3 +1,3 @@
 # Step 1: Complete the prerequisites<a name="complete-prereq-fms-shield"></a>
 
-There are several mandatory steps to prepare your account for AWS Firewall Manager\. Those steps are described in [AWS Firewall Manager prerequisites](fms-prereq.md)\. Complete all the prerequisites before proceeding to [Step 2: Create and apply an AWS Firewall Manager Shield Advanced policy](get-started-fms-shield-create-security-policy.md)\.
+There are several mandatory steps to prepare your account for AWS Firewall Manager\. Those steps are described in [AWS Firewall Manager prerequisites](fms-prereq.md)\. Complete all the prerequisites before proceeding to [Step 2: Create and apply a Shield Advanced policy](get-started-fms-shield-create-security-policy.md)\.

@@ -43,7 +43,7 @@ You can choose one or more of the following change control behaviors for the sec
 + Disassociate any other security groups from the AWS resources that are within the policy scope\. 
 + Distribute tags from the primary group to the replica security groups\.
 **Important**  
-Firewall Manager won't distribute system tags added by AWS services into the replica security groups\. System tags begin with the `aws:` prefix\.
+Firewall Manager won't distribute system tags added by AWS services into the replica security groups\. System tags begin with the `aws:` prefix\. Additionally, Firewall Manager won't update the tags of existing security groups or create new security groups if the policy has tags that conflict with the organization's tag policy\. For information about tag policies, see [Tag policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html) in the AWS Organizations User Guide\.
 
 **Policy creation and management**  
 When you create your common security group policy, Firewall Manager replicates the primary security groups to every Amazon VPC instance within the policy scope, and associates the replicated security groups to accounts and resources that are in scope of the policy\. When you modify a primary security group, Firewall Manager propagates the change to the replicas\.
@@ -78,7 +78,7 @@ You must create audit security groups using your Firewall Manager administrator 
 A security group that you use for a content audit security group policy is used by Firewall Manager only as a comparison reference for the security groups that are in scope of the policy\. Firewall Manager doesn't associate it with any resources in your organization\. 
 
 The way that you define the rules in the audit security group depends on your choices in the policy rules settings:
-+ **Managed policy rules** – For managed policy rules settings, you use an audit security group to override other settings in the policy, to explicitly allow or deny rules that otherwise might have another compliancy outcome\. 
++ **Managed policy rules** – For managed policy rules settings, you use an audit security group to override other settings in the policy, to explicitly allow or deny rules that otherwise might have another compliance outcome\. 
   + If you choose to always *allow* the rules that are defined in the audit security group, any rule that matches one that's defined in the audit security group is considered *compliant* with the policy, regardless of the other policy settings\.
   + If you choose to always *deny* the rules that are defined in the audit security group, any rule that matches one that's defined in the audit security group is considered *noncompliant* with the policy, regardless of the other policy settings\.
 + **Custom policy rules** – For custom policy rules settings, the audit security group provides the example of what is acceptable or not acceptable in the in\-scope security group rules: 

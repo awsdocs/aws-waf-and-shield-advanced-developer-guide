@@ -32,7 +32,7 @@ Perform these steps first in your test environment, then in production\.
       + **Rule defined in the web ACL** – Edit the rules in the web ACL and change their actions from `Count` to their production actions\. 
       + **Rule group** – In your web ACL configuration of the rule group, switch rules to use their own actions or leave them with the `Count` action override, according to the results of your testing and tuning activities\. If you're using a label matching rule to filter the results of a rule group rule, be sure to leave the override for that rule in place\. 
 
-        To switch to using a rule's action, in your web ACL configuration, edit the rule statement for the rule group and remove the `Count` override for the rule\. If you manage the web ACL in JSON, remove the rule from the `ExcludedRules` list in the rule group reference statement\. 
+        To switch to using a rule's action, in your web ACL configuration, edit the rule statement for the rule group and remove the `Count` override for the rule\. If you manage the web ACL in JSON, in the rule group reference statement, remove the entry for the rule from the `RuleActionOverrides` list\. 
       + **Web ACL** – If you changed the web ACL default action for your tests, switch it to its production setting\. 
 
       With these settings, your new protections will be managing web traffic as you intend\. 

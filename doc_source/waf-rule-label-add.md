@@ -4,7 +4,7 @@ When you define a label for a rule, AWS WAF adds the label to requests that matc
 
 Except for the following, you can add labels to any rule and AWS WAF will add your labels to any web request that matches the rule match statement:
 + For rate\-based rules, labels are only added to web requests for a particular IP address while that IP address is blocked by AWS WAF due to rate limiting\. For information about rate\-based rules, see [Rate\-based rule statement](waf-rule-statement-type-rate-based.md)\. 
-+ Labels aren't allowed in statements that reference rule groups\. If you try to add a label to a rule group rule statement through the API, the operation throws a validation exception\. For information about these statement types, see [Managed rule group statement](waf-rule-statement-type-managed-rule-group.md) and [Rule group statement](waf-rule-statement-type-rule-group.md)\.
++ You can't use labels in statements that reference rule groups\. If you try to add a label to a rule group rule statement through the API, the operation throws a validation exception\. For information about these statement types, see [Managed rule group statement](waf-rule-statement-type-managed-rule-group.md) and [Rule group statement](waf-rule-statement-type-rule-group.md)\.
 
 **WCUs ** – 1 WCU for every 5 labels that you define in your web ACL or rule group rules\.
 

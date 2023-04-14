@@ -10,8 +10,8 @@ If a version that you're using is expired, AWS WAF blocks modifications to the w
 Expiration handling for a managed rule group depends on the rule group provider\. For AWS Managed Rules rule groups, the version is automatically changed to the rule group's default version\. For AWS Marketplace rule groups, ask the provider how they handle expiration\.
 
 To monitor expiration scheduling for a managed rule group, track the Amazon CloudWatch expiry metrics from AWS WAF: 
-+ Metric name: `DaysToExpiry`
-+ Metric dimensions: `Region`, `ManagedRuleGroup`, `Vendor`, and `Version`
++ Metric name: DaysToExpiry
++ Metric dimensions: Region, ManagedRuleGroup, Vendor, and Version
 
 Locate the metric for your managed rule group in Amazon CloudWatch and set an alarm on it so that you're notified in time to switch to a newer version of your rule group\. For information about using Amazon CloudWatch metrics and configuring alarms, see the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\. 
 

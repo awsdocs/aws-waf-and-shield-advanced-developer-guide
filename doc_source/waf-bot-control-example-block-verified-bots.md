@@ -6,7 +6,7 @@ The following rule blocks only the `bingbot` verified bot\. This rule must run a
 
 ```
 {
-	"Name": "match_rule",
+    "Name": "match_rule",
     "Statement": {
       "AndStatement": {
         "Statements": [
@@ -36,7 +36,7 @@ The following rule blocks all verified bots\.
 
 ```
 {
-	"Name": "match_rule",
+    "Name": "match_rule",
     "Statement": {
       "LabelMatchStatement": {
         "Scope": "LABEL",

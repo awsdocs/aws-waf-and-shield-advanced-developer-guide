@@ -7,7 +7,7 @@ For web application layer detection, Shield Advanced monitors application traffi
 Shield Advanced performs its measurements against historical time windows\.  This approach reduces false positive notifications from legitimate changes in traffic volume or from changes in traffic that match an expected pattern, such as a sale that's offered at the same time each day\. 
 
 **Note**  
-Avoid false positives in your Shield Advanced protections by allowing Shield Advanced to establish baselines that represent normal, legitimate traffic patterns\. Associate a web ACL with your protected resource at least 24 hours before any planned event that might cause unusual patterns in your web traffic\. Shield Advanced web application layer detection is most accurate when it has observed 30 days of normal traffic\.
+Avoid false positives in your Shield Advanced protections by giving Shield Advanced time to establish baselines that represent normal, legitimate traffic patterns\. Associate a web ACL with your protected resource at least 24 hours before any planned event that might cause unusual patterns in your web traffic\. Shield Advanced web application layer detection is most accurate when it has observed 30 days of normal traffic\.
 
 The time that Shield Advanced takes to detect an event is affected by how much change it observes in the volume of traffic\. For lower volume changes, Shield Advanced observes traffic for a longer period, in order to build confidence that an event is occurring\. For higher volume changes, Shield Advanced detects and reports an event more quickly\. 
 

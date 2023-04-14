@@ -14,7 +14,7 @@ This documentation helps you understand how to apply the shared responsibility m
 
 **Topics**
 + [Data protection in AWS WAF Classic](classic-data-protection.md)
-+ [Identity and access management in AWS WAF Classic](classic-waf-auth-and-access-control.md)
++ [Identity and access management for AWS WAF Classic](classic-security-iam.md)
 + [Logging and monitoring in AWS WAF Classic](classic-waf-incident-response.md)
 + [Compliance validation for AWS WAF Classic](classic-waf-compliance.md)
 + [Resilience in AWS WAF Classic](classic-disaster-recovery-resiliency.md)

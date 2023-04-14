@@ -2,7 +2,7 @@
 
 AWS Firewall Manager provides the following types of policies: 
 
-## <a name="w271aac13c26b5"></a>
+## <a name="w299aac15c26b5"></a>
 + **AWS WAF** **policy** – Firewall Manager supports AWS WAF and AWS WAF Classic policies\. For both versions, you define which resources are protected by the policy\.
   + For the AWS WAF policy, you can define a set of rule groups to run first in the web ACL and a set of rule groups to run last\. In the accounts where you apply the web ACL, the account owner can add rules and rule groups to run in between the two Firewall Manager rule group sets\. 
   + For AWS WAF Classic, you create a policy that defines a single rule group\.
@@ -10,7 +10,8 @@ AWS Firewall Manager provides the following types of policies:
 + **Amazon VPC security group policy** – This type of policy gives you control over security groups that are in use throughout your organization in AWS Organizations and lets you enforce a baseline set of rules across your organization\. 
 + **Network Firewall policy** – This policy applies AWS Network Firewall protection to your organization's VPCs\. 
 + **Amazon Route 53 Resolver DNS Firewall policy** – This policy applies DNS Firewall protections to your organization's VPCs\. 
-+ **Cloud NGFW policy** – This policy applies Palo Alto Networks Cloud Next\-Generation Firewall \(Cloud NGFW\) protections and Cloud NGFW rulestacks to your organization's VPCs\.
++ **Palo Alto Networks Cloud NGFW policy** – This policy applies Palo Alto Networks Cloud Next Generation Firewall \(NGFW\) protections and Palo Alto Networks Cloud NGFW rulestacks to your organization's VPCs\.
++ **Fortigate Cloud Native Firewall \(CNF\) as a Service policy** – This policy applies Fortigate Cloud Native Firewall \(CNF\) as a Service protections\. Fortigate CNF is a cloud\-centered solution that blocks Zero\-Day threats and secures cloud infrastructures with industry\-leading advanced threat prevention, smart web application firewalls \(WAF\), and API protection\.
 
 A Firewall Manager policy is specific to the individual policy type\. If you want to enforce multiple policy types across accounts, you can create multiple policies\. You can create more than one policy for each type\. 
 

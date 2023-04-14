@@ -28,4 +28,4 @@ Indicates whether the action for the corresponding rule is **Allow**, **Block**,
 **Time**  
 The time that AWS WAF received the request from the protected resource\. 
 
-1. To display additional information about the components of the web request, choose the arrow on the left side of the row for that request\. 
+1. To display additional information about the components of the web request, choose the name of the URI in the row of the request\.

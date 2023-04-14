@@ -4,7 +4,7 @@
 Shield Advanced protections are only enabled for resources that you have explicitly specified in Shield Advanced or that you protect through an AWS Firewall Manager Shield Advanced policy\. Shield Advanced doesn't automatically protect your resources\. 
 
 You can use Shield Advanced for advanced monitoring and protection with the following resource types:
-+ Amazon CloudFront distributions\. 
++ Amazon CloudFront distributions\. For CloudFront continuous deployment, Shield Advanced protects any staging distribution that's associated with a protected primary distribution\. 
 + Amazon Route 53 hosted zones\.
 + AWS Global Accelerator standard accelerators\.
 + Amazon EC2 Elastic IP addresses\. Shield Advanced protects the resources that are associated with protected Elastic IP addresses\. 

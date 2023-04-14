@@ -9,11 +9,11 @@ An XSS \(cross\-site scripting\) attack statement inspects for malicious scripts
 This statement type operates on a web request component, and requires the following request component settings: 
 + **Request components** – The part of the web request to inspect, for example, a query string or the body\.
 **Warning**  
-If you inspect the request components **Body**, **JSON body**, **Headers**, or **Cookies**, read about the limitations on how much content AWS WAF can inspect at [Oversize handling for request components](waf-rule-statement-oversize-handling.md)\.
+If you inspect the request components **Body**, **JSON body**, **Headers**, or **Cookies**, read about the limitations on how much content AWS WAF can inspect at [Handling oversize web request components](waf-oversize-request-components.md)\. 
 
   For information about web request components, see [Web request components](waf-rule-statement-fields.md)\.
 + **Optional text transformations** – Transformations that you want AWS WAF to perform on the request component before inspecting it\. For example, you could transform to lowercase or normalize white space\. If you specify more than one transformation, AWS WAF processes them in the order listed\. For information, see [Text transformations](waf-rule-statement-transformation.md)\.
 
-**Where to find this**
+**Where to find this rule statement**
 + **Rule builder** on the console – For **Match type**, choose **Attack match condition** > **Contains XSS injection attacks**\.
-+ **API statement** – `XssMatchStatement`
++ **API** – [XssMatchStatement](https://docs.aws.amazon.com/waf/latest/APIReference/API_XssMatchStatement.html)

@@ -1,4 +1,4 @@
-# Step 3: Create and apply an AWS Firewall Manager DNS Firewall policy<a name="get-started-fms-dns-firewall-create-policy"></a>
+# Step 3: Create and apply a DNS Firewall policy<a name="get-started-fms-dns-firewall-create-policy"></a>
 
 After completing the prerequisites, you create an AWS Firewall Manager DNS Firewall policy\. A DNS Firewall policy provides a set of centrally controlled DNS Firewall rule group associations for your entire AWS organization\. It also defines the AWS accounts and resources that the firewall applies to\. 
 
