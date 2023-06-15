@@ -1,9 +1,0 @@
-# AWS Shield Standard overview<a name="ddos-standard-summary"></a>
-
-AWS Shield is a managed threat protection service that protects the perimeter of your application\. The perimeter is the first point of entry for application traffic coming from outside the AWS network\. 
-
-To determine where your application perimeter lies, consider how users access your application from the internet\. If the first point of entry is in an AWS Region, then the application perimeter is your Amazon Virtual Private Cloud \(VPC\)\. If users are directed to your application by Amazon Route 53, and first access the application using Amazon CloudFront or AWS Global Accelerator, then the application perimeter begins at the edge of the AWS network\. 
-
-Shield provides DDoS detection and mitigation benefits for all applications running on AWS, but the decisions that you make when you design your application architecture will influence your level of DDoS resiliency\. DDoS Resiliency is your application’s ability to continue operating within expected parameters during an attack\. 
-
-All AWS customers benefit from the automatic protection of Shield Standard, at no additional charge\. Shield Standard defends against the most common, frequently occurring network and transport layer DDoS attacks that target your website or applications\. While Shield Standard helps protect all AWS customers, you get particular benefit with Amazon Route 53 hosted zones, Amazon CloudFront distributions, and AWS Global Accelerator standard accelerators\. These resources receive comprehensive availability protection against all known network and transport layer attacks\.
